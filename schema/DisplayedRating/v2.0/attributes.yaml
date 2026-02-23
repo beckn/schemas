@@ -1,0 +1,35 @@
+openapi: 3.1.1
+info:
+  title: Beckn DisplayedRating Schema
+  description: Schema definition for DisplayedRating in the Beckn Protocol v2.0.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    DisplayedRating:
+      type: object
+      properties:
+        '@type':
+          description: Type of the rating
+          type: string
+          enum:
+          - Rating
+          example: Rating
+        ratingCount:
+          description: Number of ratings
+          type: integer
+          minimum: 0
+          example: 1250
+        ratingValue:
+          description: Rating value (0-5)
+          type: number
+          minimum: 0
+          maximum: 5
+          example: 4.8
+      required:
+      - '@type'

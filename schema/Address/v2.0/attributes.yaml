@@ -1,0 +1,43 @@
+openapi: 3.1.1
+info:
+  title: Beckn Address Schema
+  description: Schema definition for Address in the Beckn Protocol v2.0.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    Address:
+      description: '**Postal address** aligned with schema.org `PostalAddress`. Use
+        for human-readable addresses. Geometry lives in `Location.geo` as GeoJSON.'
+      type: object
+      properties:
+        addressCountry:
+          description: Country name or ISO-3166-1 alpha-2 code.
+          type: string
+          example: IN
+        addressLocality:
+          description: City/locality.
+          type: string
+          example: Bengaluru
+        addressRegion:
+          description: State/region/province.
+          type: string
+          example: Karnataka
+        extendedAddress:
+          description: Address extension (apt/suite/floor, C/O).
+          type: string
+          example: Apt 4B
+        postalCode:
+          description: Postal/ZIP code.
+          type: string
+          example: '560001'
+        streetAddress:
+          description: Street address (building name/number and street).
+          type: string
+          example: 123 Tech Street
+      additionalProperties: false

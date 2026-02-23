@@ -1,0 +1,87 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "beckn": "https://raw.githubusercontent.com/beckn/protocol-specifications-v2/refs/heads/draft/main/schema/core/v2/#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "schema": "https://schema.org/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "beckn:Address",
+            "@type": "rdfs:Class",
+            "rdfs:label": "Address",
+            "rdfs:comment": "A structured postal address for a location."
+        },
+        {
+            "@id": "beckn:address",
+            "@type": "rdf:Property",
+            "rdfs:label": "Address",
+            "rdfs:comment": "Postal address for a location.",
+            "rdfs:domain": "beckn:Location",
+            "schema:rangeIncludes": "beckn:Address"
+        },
+        {
+            "@id": "beckn:addressCountry",
+            "rdfs:label": "address Country",
+            "rdfs:domain": [
+                "beckn:Address"
+            ],
+            "schema:rangeIncludes": "schema:Text",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Country name or ISO-3166-1 alpha-2 code."
+        },
+        {
+            "@id": "beckn:addressLocality",
+            "rdfs:label": "address Locality",
+            "rdfs:domain": [
+                "beckn:Address"
+            ],
+            "schema:rangeIncludes": "schema:Text",
+            "@type": "rdf:Property",
+            "rdfs:comment": "City/locality."
+        },
+        {
+            "@id": "beckn:addressRegion",
+            "rdfs:label": "address Region",
+            "rdfs:domain": [
+                "beckn:Address"
+            ],
+            "schema:rangeIncludes": "schema:Text",
+            "@type": "rdf:Property",
+            "rdfs:comment": "State/region/province."
+        },
+        {
+            "@id": "beckn:extendedAddress",
+            "rdfs:label": "extended Address",
+            "rdfs:domain": [
+                "beckn:Address"
+            ],
+            "schema:rangeIncludes": "schema:Text",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Address extension (apt/suite/floor, C/O)."
+        },
+        {
+            "@id": "beckn:postalCode",
+            "rdfs:label": "postal Code",
+            "rdfs:domain": [
+                "beckn:Address"
+            ],
+            "schema:rangeIncludes": "schema:Text",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Postal/ZIP code."
+        },
+        {
+            "@id": "beckn:streetAddress",
+            "rdfs:label": "street Address",
+            "rdfs:domain": [
+                "beckn:Address"
+            ],
+            "schema:rangeIncludes": "schema:Text",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Street address (building name/number and street)."
+        }
+    ]
+}

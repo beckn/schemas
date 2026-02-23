@@ -1,0 +1,56 @@
+openapi: 3.1.1
+info:
+  title: Beckn Descriptor Schema
+  description: Schema definition for Descriptor in the Beckn Protocol v2.0.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    Descriptor:
+      type: object
+      properties:
+        '@context':
+          description: Use case specific JSON-LD context. This can change from use
+            case to use case, even within a domain.
+          type: string
+          format: uri
+          default: https://schema.beckn.io/
+        '@type':
+          description: Type of the descriptor. The type can be overriden with a context-specific
+            type
+          type: string
+          default: beckn:Descriptor
+        longDesc:
+          description: Detailed description of the item
+          type: string
+          example: Powerful gaming laptop with NVIDIA RTX graphics, fast SSD storage,
+            and high-refresh display
+        shortDesc:
+          description: Short description of the item
+          type: string
+          example: High-performance gaming laptop with RTX graphics
+        name:
+          description: Name of the entity being described
+          type: string
+          example: Premium Gaming Laptop Pro
+        thumbnailImage:
+          description: Name of the entity being described
+          type: string
+          format: uri
+        docs:
+          description: Links to downloadable documents
+          type: array
+          items:
+            $ref: 'https://schema.beckn.io/Document.yaml'
+        mediaFile:
+          description: Links to multimedia files and images
+          type: array
+          items:
+            $ref: 'https://schema.beckn.io/MediaFile.yaml'
+      required:
+      - '@type'

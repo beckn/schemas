@@ -1,0 +1,36 @@
+openapi: 3.1.1
+info:
+  title: Beckn Instruction Schema
+  description: Schema definition for Instruction in the Beckn Protocol v2.0.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    Instruction:
+      type: object
+      properties:
+        '@context':
+          type: string
+          format: uri
+          const: https://schema.beckn.io/
+        '@type':
+          type: string
+          enum:
+          - Instruction
+        descriptor:
+          $ref: 'https://schema.beckn.io/Descriptor.yaml'
+        id:
+          type: string
+        validity:
+          $ref: 'https://schema.beckn.io/TimePeriod.yaml'
+      required:
+      - '@context'
+      - '@type'
+      - id
+      - descriptor
+      additionalProperties: false

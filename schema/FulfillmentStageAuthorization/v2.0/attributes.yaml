@@ -1,0 +1,54 @@
+openapi: 3.1.1
+info:
+  title: Beckn FulfillmentStageAuthorization Schema
+  description: Schema definition for FulfillmentStageAuthorization in the Beckn Protocol
+    v2.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    FulfillmentStageAuthorization:
+      type: object
+      additionalProperties: false
+      description: 'A credential/document/proof relevant to authorization at a fulfillment
+        stage endpoint. This may be a token to be verified (QR/OTP/URL) or a document
+        to be inspected manually.
+
+        '
+      required:
+      - purpose
+      - requirement
+      - status
+      properties:
+        '@context':
+          description: CPD
+          type: string
+          format: uri
+          const: https://schema.beckn.io/
+        '@type':
+          type: string
+          default: beckn:FulfillmentStageAuthorization
+        mediaFiles:
+          description: Media files required to enter or exit this fulfillment stage.
+            The could be images of delivered packages, recorded video proof of installation,
+            etc
+          type: array
+          items:
+            $ref: 'https://schema.beckn.io/MediaFile.yaml'
+        docs:
+          description: Documents required to enter or exit this fulfillment stage.
+            The could be entry tickets, boarding passes, waybill, permits, certificates,
+            credentials, etc
+          type: array
+          items:
+            allOf:
+            - $ref: 'https://schema.beckn.io/Document.yaml'
+        authToken:
+          type: string
+          description: A human readable string that needs to be provided to enter
+            or exit this fulfillment stage. Like an OTP

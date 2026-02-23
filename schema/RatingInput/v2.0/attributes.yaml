@@ -1,0 +1,85 @@
+openapi: 3.1.1
+info:
+  title: Beckn Rating Input Schema
+  description: Schema definition for RatingInput in the Beckn Protocol v2.0.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    RatingInput:
+      description: A form designed to capture rating and feedback from a user. This can be used by both BAP and BPP to fetch ratings and feedback of their respective users. 
+      type: object
+      properties:
+        '@context':
+          type: string
+          format: uri
+          const: https://schema.beckn.io/
+        '@type':
+          type: string
+          default: RatingForm
+          x-jsonld:
+            '@id': beckn:RatingForm
+        target:
+          description: The entity being rated
+          type: object
+          properties:
+            '@context':
+              type: string
+              format: uri
+              const: https://schema.beckn.io/
+            '@type':
+              type: string
+              default: RatingTarget
+              x-jsonld:
+                '@id': beckn:RatingTarget
+            id:
+              description: IF of the entity being rated (order/item/fulfillment/provider/agent).
+              type: string
+            category:
+              description: What is being rated. This can be any entity in the order lifecycle that influenced the overall experience of the user
+              type: string
+              enum:
+              - Order
+              - Fulfillment
+              - FulfillmentStage
+              - Provider
+              - Agent
+          required:
+            - '@context'
+            - '@type'
+            - id
+            - category
+        range:
+          oneOf:
+            - type: object
+              properties:
+                bestRating:
+                  description: Maximum of the rating scale (default 5 if omitted).
+                  type: number
+                worstRating:
+                  description: Minimum of the rating scale (default 1 or 0 if omitted).
+                  type: number
+            - type: array
+              description: A custom rating range indexed from 0 to n
+              properties:
+                index:
+                  type: integer
+                  minimum: 0
+                value:
+                  $ref: 'https://schema.beckn.io/Descriptor.yaml'                   
+        feedbackFormSubmission:
+          description: The submission to the feedback form sent along with a rating request
+          allOf:
+            - $ref: 'https://schema.beckn.io/FormSubmission'
+      required:
+      - '@context'
+      - '@type'
+      - target
+      - range
+
+            

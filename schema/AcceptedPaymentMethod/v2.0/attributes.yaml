@@ -1,0 +1,28 @@
+openapi: 3.1.1
+info:
+  title: Beckn AcceptedPaymentMethod Schema
+  description: Schema definition for AcceptedPaymentMethod in the Beckn Protocol v2.0.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    AcceptedPaymentMethod:
+      description: Payment methods accepted by a payee
+      type: array
+      items:
+        type: string
+        enum:
+        - UPI
+        - CREDIT_CARD
+        - DEBIT_CARD
+        - WALLET
+        - BANK_TRANSFER
+        - CASH
+        - APPLE_PAY
+      x-jsonld:
+        '@id': beckn:acceptedPaymentMethod

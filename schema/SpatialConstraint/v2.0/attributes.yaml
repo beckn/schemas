@@ -1,0 +1,82 @@
+openapi: 3.1.1
+info:
+  title: Beckn SpatialConstraint Schema
+  description: Schema definition for SpatialConstraint in the Beckn Protocol v2.0.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    SpatialConstraint:
+      description: "**Spatial predicate** using **OGC CQL2 (JSON semantics)** applied\
+        \ to one or more geometry targets in an item. This is where clients express\
+        \ spatial intent.\nKey ideas: - `targets`: one or more **JSONPath-like** pointers\
+        \ that locate geometry\n\n  fields within each item document (e.g., `$['availableAt'][*]['geo']`).\n\
+        - `op`: spatial operator (CQL2). Common ones:\n\n    • `S_WITHIN`     (A is\
+        \ completely inside B)\n    • `S_INTERSECTS` (A intersects B)\n    • `S_CONTAINS`\
+        \   (A contains B)\n    • `S_DWITHIN`    (A within distance of B)\n- `geometry`:\
+        \ **GeoJSON** literal used as the predicate reference geometry. - `distanceMeters`:\
+        \ required for `S_DWITHIN` when using a GeoJSON Point/shape. - `quantifier`:\
+        \ if a target resolves to an array, choose whether **ANY** (default),\n\n\
+        \  **ALL**, or **NONE** of elements must satisfy the predicate.\n\nCRS: unless\
+        \ otherwise stated, all coordinates are **EPSG:4326**.\n"
+      type: object
+      properties:
+        op:
+          description: OGC CQL2 spatial operator.
+          type: string
+          enum:
+          - S_WITHIN
+          - S_CONTAINS
+          - S_INTERSECTS
+          - S_DISJOINT
+          - S_OVERLAPS
+          - S_CROSSES
+          - S_TOUCHES
+          - S_EQUALS
+          - S_DWITHIN
+        targets:
+          description: '''One or more JSONPath-like pointers to geometry fields within
+            the item.  Example pointers:  - `$[''''availableAt''''][*][''''geo'''']`
+            (array of site Points)  - `$[''''itemAttributes''''][''''ride:dropOff''''][''''geo'''']`
+            (drop zone Polygon)''
+
+            '
+          oneOf:
+          - type: string
+          - type: array
+            items:
+              type: string
+        geometry:
+          $ref: 'https://schema.beckn.io/GeoJSONGeometry.yaml'
+        distanceMeters:
+          description: 'For `S_DWITHIN`: maximum distance in meters from the target
+            geometry to `geometry` (e.g., "within 5000 m of this Point"). Ignored
+            for other ops.'
+          type: number
+          minimum: 0
+        quantifier:
+          description: '''How to evaluate when `targets` resolves to an array - -
+            **any**: at least one element matches (default) - **all**: every element
+            must match  - **none**: no element may match''
+
+            '
+          type: string
+          enum:
+          - ANY
+          - ALL
+          - NONE
+          default: any
+        srid:
+          description: Coordinate Reference System identifier for `geometry`. Default
+            is `"EPSG:4326"`. If provided, servers MAY reproject to EPSG:4326 internally.
+          type: string
+          example: EPSG:4326
+      required:
+      - op
+      - targets
+      additionalProperties: false

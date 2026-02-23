@@ -1,0 +1,39 @@
+openapi: 3.1.1
+info:
+  title: Beckn MediaSearchOptions Schema
+  description: Schema definition for MediaSearchOptions in the Beckn Protocol v2.0.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    MediaSearchOptions:
+      description: How the discovery engine should use the provided media inputs.
+      type: object
+      properties:
+        goals:
+          description: Desired processing goals for the media.
+          type: array
+          items:
+            type: string
+            enum:
+            - VISUAL_SIMILARITY
+            - VISUAL_OBJECT_DETECT
+            - TEXT_FROM_IMAGE
+            - TEXT_FROM_AUDIO
+            - SEMANTIC_AUDIO_MATCH
+            - SEMANTIC_VIDEO_MATCH
+        augmentTextSearch:
+          description: Whether to append extracted text from OCR/ASR to `textSearch`.
+          type: boolean
+          default: true
+        restrictResultsToMediaProximity:
+          description: Restrict results to spatial proximity of media-derived coordinates
+            (e.g., EXIF GPS tags).
+          type: boolean
+          default: false
+      additionalProperties: false

@@ -1,0 +1,19 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "@protected": true,
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "beckn": "https://schema.beckn.io/",
+        "Document": "beckn:Document",
+        "mimeType": "beckn:mimeType",
+        "url": "beckn:url",
+        "docs": "beckn:docs",
+        "label": "beckn:label",
+        "orderDocs": "beckn:orderDocs",
+        "required": "beckn:required",
+        "security": "beckn:security",
+        "standard": "beckn:standard"
+    }
+}

@@ -1,0 +1,89 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "beckn": "https://raw.githubusercontent.com/beckn/protocol-specifications-v2/refs/heads/draft/main/schema/core/v2/#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "schema": "https://schema.org/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "beckn:SpatialConstraint",
+            "rdfs:label": "Spatial Constraint",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "**Spatial predicate** using **OGC CQL2 (JSON semantics)** applied to one or more geometry targets in an item. This is where clients express spatial intent.\nKey ideas: - `targets`: one or more **JSONPath-like** pointers that locate geometry\n\n  fields within each item document (e.g., `$['availableAt'][*]['geo']`).\n- `op`: spatial operator (CQL2). Common ones:\n\n    \u2022 `S_WITHIN`     (A is completely inside B)\n    \u2022 `S_INTERSECTS` (A intersects B)\n    \u2022 `S_CONTAINS`   (A contains B)\n    \u2022 `S_DWITHIN`    (A within distance of B)\n- `geometry`: **GeoJSON** literal used as the predicate reference geometry. - `distanceMeters`: required for `S_DWITHIN` when using a GeoJSON Point/shape. - `quantifier`: if a target resolves to an array, choose whether **ANY** (default),\n\n  **ALL**, or **NONE** of elements must satisfy the predicate.\n\nCRS: unless otherwise stated, all coordinates are **EPSG:4326**.\n"
+        },
+        {
+            "@id": "beckn:distanceMeters",
+            "rdfs:label": "distance Meters",
+            "rdfs:domain": [
+                "beckn:SpatialConstraint"
+            ],
+            "schema:rangeIncludes": "schema:Number",
+            "@type": "rdf:Property",
+            "rdfs:comment": "For `S_DWITHIN`: maximum distance in meters from the target geometry to `geometry` (e.g., \"within 5000 m of this Point\"). Ignored for other ops."
+        },
+        {
+            "@id": "beckn:geometry",
+            "rdfs:label": "geometry",
+            "rdfs:domain": [
+                "beckn:SpatialConstraint"
+            ],
+            "schema:rangeIncludes": "beckn:GeoJSONGeometry",
+            "@type": "rdf:Property",
+            "rdfs:comment": "TODO: Add Description of Property"
+        },
+        {
+            "@id": "beckn:op",
+            "rdfs:label": "op",
+            "rdfs:domain": [
+                "beckn:SpatialConstraint"
+            ],
+            "schema:rangeIncludes": "schema:Text",
+            "@type": "rdf:Property",
+            "rdfs:comment": "OGC CQL2 spatial operator."
+        },
+        {
+            "@id": "beckn:quantifier",
+            "rdfs:label": "quantifier",
+            "rdfs:domain": [
+                "beckn:SpatialConstraint"
+            ],
+            "schema:rangeIncludes": "schema:Text",
+            "@type": "rdf:Property",
+            "rdfs:comment": "'How to evaluate when `targets` resolves to an array - - **any**: at least one element matches (default) - **all**: every element must match  - **none**: no element may match'\n"
+        },
+        {
+            "@id": "beckn:spatial",
+            "rdfs:label": "spatial",
+            "rdfs:domain": [
+                "beckn:DiscoveryIntent"
+            ],
+            "schema:rangeIncludes": "beckn:SpatialConstraint",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Optional array of spatial constraints (CQL2-JSON semantics)."
+        },
+        {
+            "@id": "beckn:srid",
+            "rdfs:label": "srid",
+            "rdfs:domain": [
+                "beckn:SpatialConstraint"
+            ],
+            "schema:rangeIncludes": "schema:Text",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Coordinate Reference System identifier for `geometry`. Default is `\"EPSG:4326\"`. If provided, servers MAY reproject to EPSG:4326 internally."
+        },
+        {
+            "@id": "beckn:targets",
+            "rdfs:label": "targets",
+            "rdfs:domain": [
+                "beckn:SpatialConstraint"
+            ],
+            "schema:rangeIncludes": "schema:Text",
+            "@type": "rdf:Property",
+            "rdfs:comment": "'One or more JSONPath-like pointers to geometry fields within the item.  Example pointers:  - `$[''availableAt''][*][''geo'']` (array of site Points)  - `$[''itemAttributes''][''ride:dropOff''][''geo'']` (drop zone Polygon)'\n"
+        }
+    ]
+}

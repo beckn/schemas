@@ -1,0 +1,25 @@
+openapi: 3.1.1
+info:
+  title: Beckn MediaFile Schema
+  description: Schema definition for MediaFile in the Beckn Protocol v2.0.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    MediaFile:
+      description: A image, audio, or video typically intended for display purposes
+      type: object
+      properties:
+        label:
+          description: The display name of the media file
+          type: string
+        mimeType: MIME type if 'data' is provided (application/pdf, image/png).
+        uri:
+          description: URL to the document
+          type: string
+          format: uri

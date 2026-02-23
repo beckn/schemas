@@ -1,0 +1,49 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "@protected": true,
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "beckn": "https://schema.beckn.io/",
+        "Offer": {
+            "@id": "beckn:Offer",
+            "@context": {
+                "descriptor": "beckn:offerDescriptor"
+            }
+        },
+        "acceptedOffer": "beckn:acceptedOffer",
+        "acceptedPaymentMethod": {
+            "@id": "beckn:acceptedPaymentMethod",
+            "@type": "@id",
+            "@context": {
+                "UPI": "beckn:UPI",
+                "CREDIT_CARD": "beckn:CREDIT_CARD",
+                "CREDIT-CARD": "beckn:CREDIT_CARD",
+                "DEBIT_CARD": "beckn:DEBIT_CARD",
+                "DEBIT-CARD": "beckn:DEBIT_CARD",
+                "WALLET": "beckn:WALLET",
+                "BANK_TRANSFER": "beckn:BANK_TRANSFER",
+                "BANK-TRANSFER": "beckn:BANK_TRANSFER",
+                "CASH": "beckn:CASH",
+                "APPLE_PAY": "beckn:APPLE_PAY",
+                "APPLE-PAY": "beckn:APPLE_PAY"
+            }
+        },
+        "addOnItems": "beckn:addOnItems",
+        "addOns": "beckn:addOns",
+        "category": "beckn:category",
+        "createdAt": "beckn:createdAt",
+        "descriptor": "beckn:descriptor",
+        "eligibleRegion": "beckn:eligibleRegion",
+        "id": "beckn:id",
+        "isActive": "beckn:isActive",
+        "itemCondition": "beckn:itemCondition",
+        "items": "beckn:items",
+        "offerAttributes": "beckn:offerAttributes",
+        "updatedAt": "beckn:updatedAt",
+        "validity": "beckn:validity",
+        "policies": "beckn:policies",
+        "constraints": "beckn:constraints"
+    }
+}

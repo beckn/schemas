@@ -1,0 +1,75 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "beckn": "https://raw.githubusercontent.com/beckn/protocol-specifications-v2/refs/heads/draft/main/schema/core/v2/#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "schema": "https://schema.org/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "beckn:BapCheckoutUi",
+            "rdfs:label": "bap Checkout Ui",
+            "@type": [
+                "beckn:CheckoutTerminal",
+                "schema:Enumeration"
+            ],
+            "rdfs:comment": "The checkout terminal where the consumer makes the payment"
+        },
+        {
+            "@id": "beckn:BppCheckoutWebPage",
+            "rdfs:label": "bpp Checkout Web Page",
+            "@type": [
+                "beckn:CheckoutTerminal",
+                "schema:Enumeration"
+            ],
+            "rdfs:comment": "The checkout terminal where the consumer makes the payment"
+        },
+        {
+            "@id": "beckn:CheckoutTerminal",
+            "rdfs:label": "Checkout Terminal",
+            "@type": "schema:Enumeration",
+            "rdfs:comment": "The checkout terminal where the consumer makes the payment"
+        },
+        {
+            "@id": "beckn:EscrowCheckoutUrl",
+            "rdfs:label": "escrow Checkout Url",
+            "@type": [
+                "beckn:CheckoutTerminal",
+                "schema:Enumeration"
+            ],
+            "rdfs:comment": "The checkout terminal where the consumer makes the payment"
+        },
+        {
+            "@id": "beckn:FulfillmentPointOfSale",
+            "rdfs:label": "fulfillment Point Of Sale",
+            "@type": [
+                "beckn:CheckoutTerminal",
+                "schema:Enumeration"
+            ],
+            "rdfs:comment": "The checkout terminal where the consumer makes the payment"
+        },
+        {
+            "@id": "beckn:ProviderPointOfSale",
+            "rdfs:label": "provider Point Of Sale",
+            "@type": [
+                "beckn:CheckoutTerminal",
+                "schema:Enumeration"
+            ],
+            "rdfs:comment": "The checkout terminal where the consumer makes the payment"
+        },
+        {
+            "@id": "beckn:checkoutAt",
+            "rdfs:label": "checkout At",
+            "rdfs:domain": [
+                "beckn:PaymentAction",
+                "beckn:PaymentTerms"
+            ],
+            "schema:rangeIncludes": "beckn:CheckoutTerminal",
+            "@type": "rdf:Property",
+            "rdfs:comment": "TODO: Add Description of Property"
+        }
+    ]
+}

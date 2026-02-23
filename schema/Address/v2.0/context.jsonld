@@ -1,0 +1,18 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "@protected": true,
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "beckn": "https://schema.beckn.io/",
+        "Address": "beckn:Address",
+        "address": "beckn:Address",
+        "addressCountry": "beckn:addressCountry",
+        "addressLocality": "beckn:addressLocality",
+        "addressRegion": "beckn:addressRegion",
+        "extendedAddress": "beckn:extendedAddress",
+        "postalCode": "beckn:postalCode",
+        "streetAddress": "beckn:streetAddress"
+    }
+}

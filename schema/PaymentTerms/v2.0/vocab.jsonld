@@ -1,0 +1,80 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "beckn": "https://raw.githubusercontent.com/beckn/protocol-specifications-v2/refs/heads/draft/main/schema/core/v2/#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "schema": "https://schema.org/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "beckn:PaymentTerms",
+            "rdfs:label": "Payment Terms",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TODO: Add Description of Property"
+        },
+        {
+            "@id": "beckn:checkoutAt",
+            "rdfs:label": "checkout At",
+            "rdfs:domain": [
+                "beckn:PaymentAction",
+                "beckn:PaymentTerms"
+            ],
+            "schema:rangeIncludes": "beckn:CheckoutTerminal",
+            "@type": "rdf:Property",
+            "rdfs:comment": "TODO: Add Description of Property"
+        },
+        {
+            "@id": "beckn:checkoutTrigger",
+            "rdfs:label": "checkout Trigger",
+            "rdfs:domain": [
+                "beckn:PaymentTerms"
+            ],
+            "schema:rangeIncludes": "beckn:PaymentTrigger",
+            "@type": "rdf:Property",
+            "rdfs:comment": "The stage in the order lifecycle when the checkout should be triggered"
+        },
+        {
+            "@id": "beckn:collectedBy",
+            "rdfs:label": "collected By",
+            "rdfs:domain": [
+                "beckn:PaymentTerms"
+            ],
+            "schema:rangeIncludes": "schema:Text",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Describes the entity that first collects the payment from the consumer. This is the actor who is responsible to initiate the settlement process as per the terms described in the settlementTerms property."
+        },
+        {
+            "@id": "beckn:paymentTerms",
+            "rdfs:label": "payment Terms",
+            "rdfs:domain": [
+                "beckn:Order"
+            ],
+            "schema:rangeIncludes": "beckn:PaymentTerms",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Terms of payment agreed upon by the buyer like source and destination accounts, beneficiary, collector, schedule, etc"
+        },
+        {
+            "@id": "beckn:paymentTermsAttributes",
+            "rdfs:label": "payment Terms Attributes",
+            "rdfs:domain": [
+                "beckn:PaymentTerms"
+            ],
+            "schema:rangeIncludes": "beckn:Attributes",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Rail-specific attribute pack (e.g., UPI: VPA/UTR; CARD: token/3DS; BNPL: plan/schedule)"
+        },
+        {
+            "@id": "beckn:settlementTerms",
+            "rdfs:label": "settlement Terms",
+            "rdfs:domain": [
+                "beckn:PaymentTerms"
+            ],
+            "schema:rangeIncludes": "beckn:SettlementTerm",
+            "@type": "rdf:Property",
+            "rdfs:comment": "TODO: Add Description of Property"
+        }
+    ]
+}

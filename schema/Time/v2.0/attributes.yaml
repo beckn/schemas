@@ -1,0 +1,53 @@
+openapi: 3.1.1
+info:
+  title: Beckn Time Schema
+  description: Schema definition for Time in the Beckn Protocol v2.0.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    Time:
+      type: object
+      description: Represents a moment or duration in time. Can express a timestamp,
+        a duration, or a time range.
+      properties:
+        '@context':
+          type: string
+          format: uri
+          const: https://schema.beckn.io/
+        '@type':
+          type: string
+          default: beckn:Time
+        timestamp:
+          type: string
+          format: date-time
+          description: A specific instant in time (ISO 8601)
+          x-jsonld:
+            '@id': schema:DateTime
+        duration:
+          type: string
+          description: ISO 8601 duration (e.g., PT30M for 30 minutes)
+          x-jsonld:
+            '@id': schema:Duration
+        range:
+          description: A time range with start and end
+          allOf:
+          - $ref: 'https://schema.beckn.io/TimePeriod.yaml'
+          x-jsonld:
+            '@id': beckn:timeRange
+        label:
+          type: string
+          description: Human-readable label for this time
+          x-jsonld:
+            '@id': schema:name
+      anyOf:
+      - required:
+        - timestamp
+      - required:
+        - range
+      additionalProperties: false

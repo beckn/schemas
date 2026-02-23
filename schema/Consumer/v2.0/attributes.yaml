@@ -1,0 +1,56 @@
+openapi: 3.1.1
+info:
+  title: Beckn Consumer Schema
+  description: Schema definition for Consumer in the Beckn Protocol v2.0.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    Consumer:
+      allOf:
+      - type: object
+        additionalProperties: false
+        properties:
+          '@context':
+            type: string
+            format: uri
+            const: https://schema.beckn.io/
+          '@type':
+            type: string
+            const: beckn:Consumer
+            x-jsonld:
+              '@id': schema:Thing
+          role:
+            description: The functional role of the consumer in the transaction.
+            type: string
+            x-jsonld:
+              '@id': schema:roleName
+          consumerAttributes:
+            description: 'Attribute Pack reference for richer identity: # consumer/identity.v1
+              (contact details: email, phone, address) # consumer/org-ids.v1 (LEI,
+              GSTIN, ISIN, CUSIP…) # consumer/kyc.v1 (jurisdictional compliance fields)
+              # consumer/preferences.v1 (delivery preferences, accessibility needs,
+              etc.)'
+            allOf:
+            - $ref: 'https://schema.beckn.io/Attributes.yaml'
+        required:
+        - '@context'
+        - '@type'
+      - oneOf:
+        - type: object
+          properties:
+            person:
+              $ref: 'https://schema.beckn.io/Person.yaml'
+          required:
+          - person
+        - type: object
+          properties:
+            organization:
+              $ref: 'https://schema.beckn.io/Organization.yaml'
+          required:
+          - organization

@@ -1,0 +1,26 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "@protected": true,
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "beckn": "https://schema.beckn.io/",
+        "MediaSearchOptions": "beckn:MediaSearchOptions",
+        "augmentTextSearch": "beckn:augmentTextSearch",
+        "goals": {
+            "@id": "beckn:goals",
+            "@type": "@id",
+            "@context": {
+                "TEXT_FROM_IMAGE": "beckn:TextFromImage",
+                "TEXT_FROM_AUDIO": "beckn:TextFromAudio",
+                "SEMANTIC_AUDIO_MATCH": "beckn:SemanticAudioMatch",
+                "SEMANTIC_VIDEO_MATCH": "beckn:SemanticVideoMatch",
+                "VISUAL_OBJECT_DETECT": "beckn:VisualObjectDetect",
+                "VISUAL_SIMILARITY": "beckn:VisualSimilarity"
+            }
+        },
+        "options": "beckn:options",
+        "restrictResultsToMediaProximity": "beckn:restrictResultsToMediaProximity"
+    }
+}

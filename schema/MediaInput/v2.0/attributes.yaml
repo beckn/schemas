@@ -1,0 +1,51 @@
+openapi: 3.1.1
+info:
+  title: Beckn MediaInput Schema
+  description: Schema definition for MediaInput in the Beckn Protocol v2.0.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    MediaInput:
+      description: Reference to an image, audio clip, or video used for multimodal
+        search.
+      type: object
+      properties:
+        id:
+          description: Client-supplied identifier for this media input.
+          type: string
+        type:
+          description: Media category.
+          type: string
+          enum:
+          - image
+          - audio
+          - video
+        url:
+          description: HTTPS URL or data URI pointing to the media resource.
+          type: string
+          format: uri
+        contentType:
+          description: MIME type, e.g., image/jpeg, audio/mpeg, video/mp4.
+          type: string
+        textHint:
+          description: Optional pre-extracted text (OCR/ASR) for search augmentation.
+          type: string
+        language:
+          description: Language code (BCP-47) of `textHint` or spoken audio.
+          type: string
+        startMs:
+          description: Optional start offset in milliseconds (for audio/video segments).
+          type: integer
+        endMs:
+          description: Optional end offset in milliseconds (for audio/video segments).
+          type: integer
+      required:
+      - type
+      - url
+      additionalProperties: false

@@ -1,0 +1,52 @@
+openapi: 3.1.1
+info:
+  title: Beckn Participant Schema
+  description: Schema definition for Participant in the Beckn Protocol v2.0.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    Participant:
+      type: object
+      properties:
+        '@context':
+          type: string
+          format: uri
+          const: https://schema.beckn.io/
+        '@type':
+          type: string
+          default: beckn:Participant
+        credentials:
+          type: array
+          items:
+            $ref: 'https://schema.beckn.io/Credential.yaml'
+        displayName:
+          type: string
+        email:
+          type: string
+          format: email
+        id:
+          type: string
+        rating:
+          $ref: 'https://schema.beckn.io/Rating.yaml'
+        role:
+          description: Role of participant (consumer, recipient, rider, patient, operator,
+            etc.)
+          type: string
+        skills:
+          type: array
+          items:
+            $ref: 'https://schema.beckn.io/Skill.yaml'
+        telephone:
+          type: string
+      required:
+      - '@context'
+      - '@type'
+      - id
+      - role
+      additionalProperties: false

@@ -1,0 +1,30 @@
+openapi: 3.1.1
+info:
+  title: Beckn Error Schema
+  description: Schema definition for Error in the Beckn Protocol v2.0.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          description: Error code
+          type: string
+          example: INVALID_SCHEMA_FIELD
+        details:
+          description: Additional error details
+          type: object
+        message:
+          description: Human-readable error message
+          type: string
+          example: Field 'electronic:invalidField' not found in ElectronicItem schema
+      required:
+      - code
+      - message

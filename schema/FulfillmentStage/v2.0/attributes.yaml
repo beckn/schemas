@@ -1,0 +1,62 @@
+openapi: 3.1.1
+info:
+  title: Beckn FulfillmentStage Schema
+  description: Schema definition for FulfillmentStage in the Beckn Protocol v2.0.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    FulfillmentStage:
+      type: object
+      properties:
+        '@context':
+          description: CPD
+          type: string
+          format: uri
+          const: https://schema.beckn.io/
+        '@type':
+          type: string
+          default: beckn:FulfillmentStageEndpoint
+        id:
+          description: A unique identifier for this stage of fulfillment
+          type: string
+        instructions:
+          description: A set of instructions to follow during this stage of fulfillment
+          type: array
+          items:
+            $ref: 'https://schema.beckn.io/Instruction.yaml'
+        preferences:
+          description: A extensible set of attributes that describe the fulfillment
+            preferences
+          type: array
+          items:
+            $ref: 'https://schema.beckn.io/Attributes.yaml'
+        start:
+          description: An extensible set of attributes that describe the criteria
+            required to start this stage of fulfillment
+          type: object
+          allOf:
+            $ref: 'https://schema.beckn.io/FulfillmentStageEndpoint.yaml'
+        end:
+          description: An extensible set of attributes that describe the criteria
+            required to end this stage of fulfillment
+          allOf:
+            $ref: 'https://schema.beckn.io/FulfillmentStageEndpoint.yaml'
+        fulfillmentStageAttributes:
+          description: An extensible set of attributes that describe this stage of
+            fulfillment
+          allOf:
+            $ref: 'https://schema.beckn.io/Attributes.yaml'
+      x-jsonld:
+        '@id': beckn:fulfillmentStage
+      required:
+      - '@context'
+      - '@type'
+      - id
+      - location
+      additionalProperties: false

@@ -1,0 +1,33 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "@protected": true,
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "beckn": "https://schema.beckn.io/",
+        "Invoice": {
+            "@id": "beckn:Invoice",
+            "@context": {
+                "descriptor": "beckn:invoiceDescriptor"
+            }
+        },
+        "costBreakup": "beckn:costBreakup",
+        "createdAt": "beckn:createdAt",
+        "dueDate": "beckn:dueDate",
+        "id": "beckn:id",
+        "invoice": "beckn:Invoice",
+        "invoiceAttributes": "beckn:invoiceAttributes",
+        "issueDate": "beckn:issueDate",
+        "number": "beckn:number",
+        "payee": "beckn:payee",
+        "payer": "beckn:payer",
+        "payment": "beckn:payment",
+        "totals": "beckn:totals",
+        "updatedAt": "beckn:updatedAt",
+        "priceComponents": {
+            "@id": "beckn:priceComponents"
+        },
+        "invoices": "beckn:invoices"
+    }
+}

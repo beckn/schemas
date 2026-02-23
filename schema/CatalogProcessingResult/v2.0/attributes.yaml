@@ -1,0 +1,41 @@
+openapi: 3.1.1
+info:
+  title: Beckn CatalogProcessingResult Schema
+  description: Schema definition for CatalogProcessingResult in the Beckn Protocol
+    v2.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    CatalogProcessingResult:
+      type: object
+      properties:
+        catalogId:
+          description: The "id" of the submitted catalog
+          type: string
+        status:
+          description: Final processing outcome for this catalog
+          type: string
+          enum:
+          - ACCEPTED
+          - REJECTED
+          - PARTIAL
+        itemCount:
+          description: Number of items indexed (when accepted/partial)
+          type: integer
+          minimum: 0
+        warnings:
+          description: Non-fatal issues encountered
+          type: array
+          items:
+            $ref: 'https://schema.beckn.io/ProcessingNotice.yaml'
+        error:
+          $ref: 'https://schema.beckn.io/Error.yaml'
+      required:
+      - catalogId
+      - status

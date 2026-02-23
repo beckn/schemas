@@ -1,0 +1,50 @@
+openapi: 3.1.1
+info:
+  title: Beckn Tracking Schema
+  description: Schema definition for Tracking in the Beckn Protocol v2.0.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    Tracking:
+      description: Non-streaming tracking handle per legacy semantics (url/transport/status).
+      type: object
+      properties:
+        '@context':
+          description: TBD
+          type: string
+          format: uri
+          default: https://schema.beckn.io/
+        '@type':
+          description: TBD
+          type: string
+          default: beckn:Tracking
+        expiresAt:
+          description: ISO 8601 expiry timestamp for the tracking handle.
+          type: string
+          format: date-time
+        trackingStatus:
+          type: string
+          enum:
+          - ACTIVE
+          - DISABLED
+          - COMPLETED
+        url:
+          description: Link/handle to off-network tracking UI or endpoint.
+          type: string
+          format: uri
+      required:
+      - '@context'
+      - '@type'
+      - url
+      - trackingStatus
+      x-jsonld:
+        '@type': schema:TrackAction
+        trackingStatus: $.trackingStatus
+        schema:target: $.url
+      additionalProperties: false

@@ -1,0 +1,46 @@
+openapi: 3.1.1
+info:
+  title: Beckn Policy Schema
+  description: Schema definition for Policy in the Beckn Protocol v2.0.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    Policy:
+      type: object
+      properties:
+        '@context':
+          type: string
+          format: uri
+          const: https://schema.beckn.io/
+        '@type':
+          type: string
+          enum:
+          - Policy
+        descriptor:
+          description: Validity window for this policy version
+          allOf:
+          - $ref: 'https://schema.beckn.io/Descriptor.yaml'
+        id:
+          description: Identifier for the policy
+          type: string
+        policyType:
+          description: Type/kind of policy (extensible term)
+          type: string
+        validity:
+          description: Validity window for this policy version
+          allOf:
+          - $ref: 'https://schema.beckn.io/TimePeriod.yaml'
+        policyAttributes:
+          $ref: 'https://schema.beckn.io/Attributes.yaml'
+      required:
+      - '@context'
+      - '@type'
+      - id
+      - descriptor
+      additionalProperties: false

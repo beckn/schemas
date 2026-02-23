@@ -1,0 +1,41 @@
+openapi: 3.1.1
+info:
+  title: Beckn OnRateAction Schema
+  description: Schema definition for the Beckn /beckn/on_rate callback envelope.
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    OnRateAction:
+      description: >
+        Beckn /beckn/on_rate callback envelope. Sent by a BPP to a BAP in
+        response to a /beckn/rate call, optionally returning rating forms
+        to collect structured feedback from the consumer.
+      type: object
+      properties:
+        context:
+          allOf:
+            - $ref: 'https://schema.beckn.io/Context.yaml'
+            - type: object
+              properties:
+                action:
+                  type: string
+                  const: beckn/on_rate
+        message:
+          type: object
+          additionalProperties: true
+          properties:
+            ratingForms:
+              type: array
+              items:
+                $ref: 'https://schema.beckn.io/RatingForm.yaml'
+          required:
+            - ratingForms
+      required:
+        - context
+        - message

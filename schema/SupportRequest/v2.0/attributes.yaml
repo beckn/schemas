@@ -1,0 +1,39 @@
+openapi: 3.1.1
+info:
+  title: Beckn Support Schema
+  description: Schema definition for Support in the Beckn Protocol v2.0.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    SupportRequest:
+      description: Support request by a user. If no field is set, the user can expect a public support contact info
+      type: object
+      properties:
+        '@context':
+          type: string
+          format: uri
+          default: https://schema.beckn.io/
+        "@type":
+          type: string
+          const: Support
+        orderId:
+          description: The order against which support is required
+          type: string
+        ticketIds:
+          description: IDs of support ticket if open
+          type: array
+          items:
+            $ref: 'https://schema.beckn.io/SupportTicket.yaml#/properties/id'
+        callbackPhone:
+          description: Telephone number of the user for callback.
+          type: string
+      required:
+      - '@context'
+      - '@type'
+      additionalProperties: false

@@ -1,0 +1,35 @@
+openapi: 3.1.1
+info:
+  version: 2.0.0
+components:
+  schemas:
+    TransactionEndpoint:
+      title: Beckn Transaction Endpoint
+      description: Beckn protocol transaction endpoint identifier. 
+      allOf:
+        - $ref: 'https://schema.beckn.io/BecknEndpoint.yaml'
+        - properties:
+          type: string
+          enum: 
+            - beckn/discover
+            - beckn/on_discover
+            - beckn/catalog/publish
+            - beckn/catalog/on_publish
+            - beckn/select
+            - beckn/on_select
+            - beckn/init
+            - beckn/on_init
+            - beckn/confirm
+            - beckn/on_confirm
+            - beckn/status
+            - beckn/on_status
+            - beckn/update
+            - beckn/on_update
+            - beckn/cancel
+            - beckn/on_cancel
+            - beckn/track
+            - beckn/on_track
+            - beckn/rate
+            - beckn/on_rate
+            - beckn/support
+            - beckn/on_support

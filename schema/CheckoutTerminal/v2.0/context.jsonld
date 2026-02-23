@@ -1,0 +1,22 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "@protected": true,
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "beckn": "https://schema.beckn.io/",
+        "CheckoutTerminal": {
+            "@id": "beckn:CheckoutTerminal",
+            "@type": "@id",
+            "@context": {
+                "BAP_CHECKOUT": "beckn:BapCheckoutUi",
+                "BPP_CHECKOUT": "beckn:BppCheckoutWebPage",
+                "ESCROW_CHECKOUT_URL": "beckn:EscrowCheckoutUrl",
+                "FULFILLMENT_AGENT_POS": "beckn:FulfillmentPointOfSale",
+                "PROVIDER_POS": "beckn:ProviderPointOfSale"
+            }
+        },
+        "checkoutAt": "beckn:checkoutAt"
+    }
+}

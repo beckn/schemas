@@ -1,0 +1,495 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "beckn": "https://raw.githubusercontent.com/beckn/protocol-specifications-v2/refs/heads/draft/main/schema/core/v2/#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "schema": "https://schema.org/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "beckn:Offer",
+            "@type": "rdfs:Class",
+            "rdfs:label": "Offer",
+            "rdfs:comment": "A commercial offer describing pricing/terms for one or more items."
+        },
+        {
+            "@id": "beckn:acceptedOffer",
+            "@type": "rdf:Property",
+            "rdfs:label": "Accepted offer (line)",
+            "rdfs:comment": "Offer applied to this line.",
+            "rdfs:domain": "beckn:OrderItem",
+            "schema:rangeIncludes": "beckn:Offer"
+        },
+        {
+            "@id": "beckn:acceptedOffers",
+            "@type": "rdf:Property",
+            "rdfs:label": "Accepted offers",
+            "rdfs:comment": "Offers accepted as part of an order.",
+            "rdfs:domain": "beckn:Order",
+            "rdfs:range": "beckn:Offer"
+        },
+        {
+            "@id": "beckn:acceptedPaymentMethod",
+            "@type": "rdf:Property",
+            "rdfs:label": "Accepted payment method",
+            "rdfs:comment": "Payment methods accepted for this entity.",
+            "rdfs:domain": [
+                "beckn:Offer",
+                "beckn:Item",
+                "beckn:Payment"
+            ],
+            "schema:rangeIncludes": "beckn:AcceptedPaymentMethod"
+        },
+        {
+            "@id": "beckn:addOnItems",
+            "@type": "rdf:Property",
+            "rdfs:label": "Add-on items",
+            "rdfs:comment": "Optional extras modeled as items.",
+            "rdfs:domain": "beckn:Offer",
+            "rdfs:range": "beckn:Item"
+        },
+        {
+            "@id": "beckn:addOns",
+            "@type": "rdf:Property",
+            "rdfs:label": "Add-on offers",
+            "rdfs:comment": "Optional extra offers that can be attached.",
+            "rdfs:domain": "beckn:Offer",
+            "rdfs:range": "beckn:Offer"
+        },
+        {
+            "@id": "beckn:alertDescriptor",
+            "rdfs:label": "Alert descriptor",
+            "rdfs:comment": "Scoped descriptor for Alert metadata.",
+            "@type": "rdf:Property",
+            "rdfs:domain": "beckn:Alert",
+            "schema:rangeIncludes": "beckn:AlertDescriptor",
+            "rdfs:subPropertyOf": {
+                "@id": "beckn:descriptor"
+            }
+        },
+        {
+            "@id": "beckn:cancellationPolicyDescriptor",
+            "rdfs:label": "CancellationPolicy descriptor",
+            "rdfs:comment": "Scoped descriptor for CancellationPolicy metadata.",
+            "@type": "rdf:Property",
+            "rdfs:domain": "beckn:CancellationPolicy",
+            "schema:rangeIncludes": "beckn:CancellationPolicyDescriptor",
+            "rdfs:subPropertyOf": {
+                "@id": "beckn:descriptor"
+            }
+        },
+        {
+            "@id": "beckn:catalogDescriptor",
+            "rdfs:label": "Catalog descriptor",
+            "rdfs:comment": "Scoped descriptor for Catalog metadata.",
+            "@type": "rdf:Property",
+            "rdfs:domain": "beckn:Catalog",
+            "schema:rangeIncludes": "beckn:CatalogDescriptor",
+            "rdfs:subPropertyOf": {
+                "@id": "beckn:descriptor"
+            }
+        },
+        {
+            "@id": "beckn:category",
+            "@type": "rdf:Property",
+            "rdfs:label": "Category",
+            "rdfs:comment": "Category or taxonomy classification.",
+            "rdfs:domain": [
+                "beckn:Item",
+                "beckn:Offer"
+            ],
+            "schema:rangeIncludes": [
+                "beckn:CategoryCode",
+                "schema:Text"
+            ]
+        },
+        {
+            "@id": "beckn:constraintDescriptor",
+            "rdfs:label": "Constraint descriptor",
+            "rdfs:comment": "Scoped descriptor for Constraint metadata.",
+            "@type": "rdf:Property",
+            "rdfs:domain": "beckn:Constraint",
+            "schema:rangeIncludes": "beckn:ConstraintDescriptor",
+            "rdfs:subPropertyOf": {
+                "@id": "beckn:descriptor"
+            }
+        },
+        {
+            "@id": "beckn:constraints",
+            "@type": "rdf:Property",
+            "rdfs:label": "Constraints",
+            "rdfs:comment": "Constraints/limits applicable to an item or offer.",
+            "rdfs:domain": [
+                "beckn:Item",
+                "beckn:Offer"
+            ],
+            "schema:rangeIncludes": "beckn:Constraint"
+        },
+        {
+            "@id": "beckn:createdAt",
+            "@type": "rdf:Property",
+            "rdfs:label": "Created at",
+            "rdfs:comment": "Creation timestamp (UTC).",
+            "rdfs:domain": [
+                "beckn:Order",
+                "beckn:Invoice",
+                "beckn:Offer"
+            ],
+            "schema:rangeIncludes": "schema:DateTime"
+        },
+        {
+            "@id": "beckn:credentialDescriptor",
+            "rdfs:label": "Credential descriptor",
+            "rdfs:comment": "Scoped descriptor for Credential metadata.",
+            "@type": "rdf:Property",
+            "rdfs:domain": "beckn:Credential",
+            "schema:rangeIncludes": "beckn:CredentialDescriptor",
+            "rdfs:subPropertyOf": {
+                "@id": "beckn:descriptor"
+            }
+        },
+        {
+            "@id": "beckn:descriptor",
+            "@type": "rdf:Property",
+            "rdfs:label": "Descriptor",
+            "rdfs:comment": "Human or agent-readable description of anything for display or context setting.",
+            "rdfs:domain": [
+                "beckn:Catalog",
+                "beckn:Item",
+                "beckn:Offer",
+                "beckn:Provider"
+            ],
+            "schema:rangeIncludes": "beckn:Descriptor"
+        },
+        {
+            "@id": "beckn:eligibleRegion",
+            "@type": "rdf:Property",
+            "rdfs:label": "Eligible region",
+            "rdfs:comment": "The region(s) for which the offer is eligible.",
+            "rdfs:domain": "beckn:Offer",
+            "schema:rangeIncludes": "schema:DefinedRegion"
+        },
+        {
+            "@id": "beckn:entitlementDescriptor",
+            "rdfs:label": "Entitlement descriptor",
+            "rdfs:comment": "Scoped descriptor for Entitlement metadata.",
+            "@type": "rdf:Property",
+            "rdfs:domain": "beckn:Entitlement",
+            "schema:rangeIncludes": "beckn:EntitlementDescriptor",
+            "rdfs:subPropertyOf": {
+                "@id": "beckn:descriptor"
+            }
+        },
+        {
+            "@id": "beckn:features",
+            "@type": "rdf:Property",
+            "rdfs:label": "Features",
+            "rdfs:comment": "Features/capabilities applicable to an entity.",
+            "rdfs:domain": [
+                "beckn:Item",
+                "beckn:Offer",
+                "beckn:Provider",
+                "beckn:Fulfillment"
+            ],
+            "schema:rangeIncludes": "beckn:Feature"
+        },
+        {
+            "@id": "beckn:fulfillmentAgentDescriptor",
+            "rdfs:label": "FulfillmentAgent descriptor",
+            "rdfs:comment": "Scoped descriptor for FulfillmentAgent metadata.",
+            "@type": "rdf:Property",
+            "rdfs:domain": "beckn:FulfillmentAgent",
+            "schema:rangeIncludes": "beckn:FulfillmentAgentDescriptor",
+            "rdfs:subPropertyOf": {
+                "@id": "beckn:descriptor"
+            }
+        },
+        {
+            "@id": "beckn:fulfillmentDescriptor",
+            "rdfs:label": "Fulfillment descriptor",
+            "rdfs:comment": "Scoped descriptor for Fulfillment metadata.",
+            "@type": "rdf:Property",
+            "rdfs:domain": "beckn:Fulfillment",
+            "schema:rangeIncludes": "beckn:FulfillmentDescriptor",
+            "rdfs:subPropertyOf": {
+                "@id": "beckn:descriptor"
+            }
+        },
+        {
+            "@id": "beckn:fulfillmentStateDescriptor",
+            "rdfs:label": "FulfillmentState descriptor",
+            "rdfs:comment": "Scoped descriptor for FulfillmentState metadata.",
+            "@type": "rdf:Property",
+            "rdfs:domain": "beckn:FulfillmentState",
+            "schema:rangeIncludes": "beckn:FulfillmentStateDescriptor",
+            "rdfs:subPropertyOf": {
+                "@id": "beckn:descriptor"
+            }
+        },
+        {
+            "@id": "beckn:id",
+            "@type": "rdf:Property",
+            "rdfs:label": "Identifier",
+            "rdfs:comment": "Primary identifier (string/URN) for an entity.",
+            "rdfs:domain": [
+                "beckn:Catalog",
+                "beckn:Item",
+                "beckn:Offer",
+                "beckn:Provider",
+                "beckn:Order",
+                "beckn:Fulfillment",
+                "beckn:Payment",
+                "beckn:Buyer",
+                "beckn:Descriptor",
+                "beckn:Location",
+                "beckn:Invoice",
+                "beckn:Rating",
+                "beckn:SupportInfo",
+                "beckn:Tracking"
+            ],
+            "schema:rangeIncludes": "schema:Text"
+        },
+        {
+            "@id": "beckn:instructionDescriptor",
+            "rdfs:label": "Instruction descriptor",
+            "rdfs:comment": "Scoped descriptor for Instruction metadata.",
+            "@type": "rdf:Property",
+            "rdfs:domain": "beckn:Instruction",
+            "schema:rangeIncludes": "beckn:InstructionDescriptor",
+            "rdfs:subPropertyOf": {
+                "@id": "beckn:descriptor"
+            }
+        },
+        {
+            "@id": "beckn:invoiceDescriptor",
+            "rdfs:label": "Invoice descriptor",
+            "rdfs:comment": "Scoped descriptor for Invoice metadata.",
+            "@type": "rdf:Property",
+            "rdfs:domain": "beckn:Invoice",
+            "schema:rangeIncludes": "beckn:InvoiceDescriptor",
+            "rdfs:subPropertyOf": {
+                "@id": "beckn:descriptor"
+            }
+        },
+        {
+            "@id": "beckn:isActive",
+            "@type": "rdf:Property",
+            "rdfs:label": "Is Active",
+            "rdfs:comment": "Whether the entity is currently active for ordering.",
+            "rdfs:domain": [
+                "beckn:Item",
+                "beckn:Offer"
+            ],
+            "schema:rangeIncludes": "schema:Boolean"
+        },
+        {
+            "@id": "beckn:itemCondition",
+            "@type": "rdf:Property",
+            "rdfs:label": "Item condition",
+            "rdfs:comment": "Condition of the item being offered.",
+            "rdfs:domain": "beckn:Offer",
+            "schema:rangeIncludes": "schema:Text"
+        },
+        {
+            "@id": "beckn:itemDescriptor",
+            "rdfs:label": "Item descriptor",
+            "rdfs:comment": "Scoped descriptor for Item metadata.",
+            "@type": "rdf:Property",
+            "rdfs:domain": "beckn:Item",
+            "schema:rangeIncludes": "beckn:ItemDescriptor",
+            "rdfs:subPropertyOf": {
+                "@id": "beckn:descriptor"
+            }
+        },
+        {
+            "@id": "beckn:items",
+            "@type": "rdf:Property",
+            "rdfs:label": "Items",
+            "rdfs:comment": "List of item identifiers or references.",
+            "rdfs:domain": [
+                "beckn:Catalog",
+                "beckn:Offer",
+                "beckn:Order"
+            ],
+            "rdfs:range": "beckn:Item"
+        },
+        {
+            "@id": "beckn:locationDescriptor",
+            "rdfs:label": "Location descriptor",
+            "rdfs:comment": "Scoped descriptor for Location metadata.",
+            "@type": "rdf:Property",
+            "rdfs:domain": "beckn:Location",
+            "schema:rangeIncludes": "beckn:LocationDescriptor",
+            "rdfs:subPropertyOf": {
+                "@id": "beckn:descriptor"
+            }
+        },
+        {
+            "@id": "beckn:offerAttributes",
+            "@type": "rdf:Property",
+            "rdfs:label": "Offer attributes",
+            "rdfs:comment": "Attribute pack for offer terms and pricing models.",
+            "rdfs:domain": "beckn:Offer",
+            "schema:rangeIncludes": "beckn:Attributes"
+        },
+        {
+            "@id": "beckn:offerDescriptor",
+            "rdfs:label": "Offer descriptor",
+            "rdfs:comment": "Scoped descriptor for Offer metadata.",
+            "@type": "rdf:Property",
+            "rdfs:domain": "beckn:Offer",
+            "schema:rangeIncludes": "beckn:OfferDescriptor",
+            "rdfs:subPropertyOf": {
+                "@id": "beckn:descriptor"
+            }
+        },
+        {
+            "@id": "beckn:offers",
+            "@type": "rdf:Property",
+            "rdfs:label": "Offers",
+            "rdfs:comment": "Commercial offers in this catalog.",
+            "rdfs:domain": "beckn:Catalog",
+            "rdfs:range": "beckn:Offer"
+        },
+        {
+            "@id": "beckn:orderDescriptor",
+            "rdfs:label": "Order descriptor",
+            "rdfs:comment": "Scoped descriptor for Order metadata.",
+            "@type": "rdf:Property",
+            "rdfs:domain": "beckn:Order",
+            "schema:rangeIncludes": "beckn:OrderDescriptor",
+            "rdfs:subPropertyOf": {
+                "@id": "beckn:descriptor"
+            }
+        },
+        {
+            "@id": "beckn:orderItemDescriptor",
+            "rdfs:label": "OrderItem descriptor",
+            "rdfs:comment": "Scoped descriptor for OrderItem metadata.",
+            "@type": "rdf:Property",
+            "rdfs:domain": "beckn:OrderItem",
+            "schema:rangeIncludes": "beckn:OrderItemDescriptor",
+            "rdfs:subPropertyOf": {
+                "@id": "beckn:descriptor"
+            }
+        },
+        {
+            "@id": "beckn:participantDescriptor",
+            "rdfs:label": "Participant descriptor",
+            "rdfs:comment": "Scoped descriptor for Participant metadata.",
+            "@type": "rdf:Property",
+            "rdfs:domain": "beckn:Participant",
+            "schema:rangeIncludes": "beckn:ParticipantDescriptor",
+            "rdfs:subPropertyOf": {
+                "@id": "beckn:descriptor"
+            }
+        },
+        {
+            "@id": "beckn:paymentDescriptor",
+            "rdfs:label": "Payment descriptor",
+            "rdfs:comment": "Scoped descriptor for Payment metadata.",
+            "@type": "rdf:Property",
+            "rdfs:domain": "beckn:Payment",
+            "schema:rangeIncludes": "beckn:PaymentDescriptor",
+            "rdfs:subPropertyOf": {
+                "@id": "beckn:descriptor"
+            }
+        },
+        {
+            "@id": "beckn:policies",
+            "@type": "rdf:Property",
+            "rdfs:label": "Policies",
+            "rdfs:comment": "Policies applicable to an entity.",
+            "rdfs:domain": [
+                "beckn:Provider",
+                "beckn:Item",
+                "beckn:Offer",
+                "beckn:Order",
+                "beckn:Fulfillment"
+            ],
+            "schema:rangeIncludes": "beckn:Policy"
+        },
+        {
+            "@id": "beckn:policyDescriptor",
+            "rdfs:label": "Policy descriptor",
+            "rdfs:comment": "Scoped descriptor for Policy metadata.",
+            "@type": "rdf:Property",
+            "rdfs:domain": "beckn:Policy",
+            "schema:rangeIncludes": "beckn:PolicyDescriptor",
+            "rdfs:subPropertyOf": {
+                "@id": "beckn:descriptor"
+            }
+        },
+        {
+            "@id": "beckn:providerDescriptor",
+            "rdfs:label": "Provider descriptor",
+            "rdfs:comment": "Scoped descriptor for Provider metadata.",
+            "@type": "rdf:Property",
+            "rdfs:domain": "beckn:Provider",
+            "schema:rangeIncludes": "beckn:ProviderDescriptor",
+            "rdfs:subPropertyOf": {
+                "@id": "beckn:descriptor"
+            }
+        },
+        {
+            "@id": "beckn:skillDescriptor",
+            "rdfs:label": "Skill descriptor",
+            "rdfs:comment": "Scoped descriptor for Skill metadata.",
+            "@type": "rdf:Property",
+            "rdfs:domain": "beckn:Skill",
+            "schema:rangeIncludes": "beckn:SkillDescriptor",
+            "rdfs:subPropertyOf": {
+                "@id": "beckn:descriptor"
+            }
+        },
+        {
+            "@id": "beckn:stateDescriptor",
+            "rdfs:label": "State descriptor",
+            "rdfs:comment": "Scoped descriptor for State metadata.",
+            "@type": "rdf:Property",
+            "rdfs:domain": "beckn:State",
+            "schema:rangeIncludes": "beckn:StateDescriptor",
+            "rdfs:subPropertyOf": {
+                "@id": "beckn:descriptor"
+            }
+        },
+        {
+            "@id": "beckn:supportInfoDescriptor",
+            "rdfs:label": "SupportInfo descriptor",
+            "rdfs:comment": "Scoped descriptor for SupportInfo metadata.",
+            "@type": "rdf:Property",
+            "rdfs:domain": "beckn:SupportInfo",
+            "schema:rangeIncludes": "beckn:SupportInfoDescriptor",
+            "rdfs:subPropertyOf": {
+                "@id": "beckn:descriptor"
+            }
+        },
+        {
+            "@id": "beckn:updatedAt",
+            "@type": "rdf:Property",
+            "rdfs:label": "Updated at",
+            "rdfs:comment": "Last update timestamp (UTC).",
+            "rdfs:domain": [
+                "beckn:Order",
+                "beckn:Invoice",
+                "beckn:Offer"
+            ],
+            "schema:rangeIncludes": "schema:DateTime"
+        },
+        {
+            "@id": "beckn:validity",
+            "@type": "rdf:Property",
+            "rdfs:label": "Validity",
+            "rdfs:comment": "Validity window for the entity.",
+            "rdfs:domain": [
+                "beckn:Offer",
+                "beckn:Catalog",
+                "beckn:Provider"
+            ],
+            "schema:rangeIncludes": "beckn:TimePeriod"
+        }
+    ]
+}

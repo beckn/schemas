@@ -1,0 +1,83 @@
+openapi: 3.1.1
+info:
+  title: Beckn Item Schema
+  description: Schema definition for Item in the Beckn Protocol v2.0.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    Item:
+      type: object
+      properties:
+        '@context':
+          description: JSON-LD context URI for the core Item schema
+          type: string
+          format: uri
+          const: https://schema.beckn.io/
+        '@type':
+          description: Type of the core item
+          type: string
+          enum:
+          - Item
+        availabilityWindow:
+          description: Time periods when the item is available
+          type: array
+          items:
+            $ref: 'https://schema.beckn.io/TimePeriod.yaml'
+        availableAt:
+          description: Physical locations where the item is available
+          type: array
+          items:
+            $ref: 'https://schema.beckn.io/Location.yaml'
+        category:
+          $ref: 'https://schema.beckn.io/CategoryCode.yaml'
+        constraints:
+          type: array
+          items:
+            $ref: 'https://schema.beckn.io/Constraint.yaml'
+        descriptor:
+          $ref: 'https://schema.beckn.io/Descriptor.yaml'
+        id:
+          description: Unique identifier for the item
+          type: string
+          example: gaming-laptop-001
+        isActive:
+          description: Whether the item is active
+          type: boolean
+          default: true
+        itemAttributes:
+          $ref: 'https://schema.beckn.io/Attributes.yaml'
+        networkId:
+          description: Array of network identifiers for the BAP (Beckn App Provider)
+            that offers this item
+          type: array
+          items:
+            type: string
+          example:
+          - bap.net/electronics
+          - bap.net/tech
+        policies:
+          type: array
+          items:
+            $ref: 'https://schema.beckn.io/Policy.yaml'
+        provider:
+          $ref: 'https://schema.beckn.io/Provider.yaml'
+        rateable:
+          description: Whether the item can be rated by customers
+          type: boolean
+          example: true
+        rating:
+          $ref: 'https://schema.beckn.io/Rating.yaml'
+      required:
+      - '@context'
+      - '@type'
+      - id
+      - descriptor
+      - provider
+      - itemAttributes
+      additionalProperties: false

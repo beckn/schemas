@@ -1,0 +1,26 @@
+openapi: 3.1.1
+info:
+  title: Beckn CancellationPolicy Schema
+  description: Schema definition for CancellationPolicy in the Beckn Protocol v2.0.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    CancellationPolicy:
+      type: object
+      properties:
+        '@context':
+          description: CPD
+          type: string
+          format: uri
+          const: https://schema.beckn.io/
+        '@type':
+          type: string
+          const: beckn:CancellationPolicy
+          x-jsonld:
+            '@id': schema:CreativeWork

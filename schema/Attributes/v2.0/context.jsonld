@@ -1,0 +1,30 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "@protected": true,
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "beckn": "https://schema.beckn.io/",
+        "Attributes": "beckn:Attributes",
+        "buyerAttributes": "beckn:buyerAttributes",
+        "deliveryAttributes": "beckn:deliveryAttributes",
+        "invoiceAttributes": "beckn:invoiceAttributes",
+        "itemAttributes": "beckn:itemAttributes",
+        "offerAttributes": "beckn:offerAttributes",
+        "orderAttributes": "beckn:orderAttributes",
+        "orderItemAttributes": "beckn:orderItemAttributes",
+        "paymentAttributes": "beckn:paymentAttributes",
+        "providerAttributes": "beckn:providerAttributes",
+        "fulfillmentAttributes": "beckn:fulfillmentAttributes",
+        "modeAttributes": "beckn:modeAttributes",
+        "organizationAttributes": "beckn:organizationAttributes",
+        "paymentActionAttributes": "beckn:paymentActionAttributes",
+        "paymentTermsAttributes": "beckn:paymentTermsAttributes",
+        "personAttributes": "beckn:personAttributes",
+        "policyAttributes": "beckn:policyAttributes",
+        "preferences": "beckn:preferences",
+        "settlementTermAttributes": "beckn:settlementTermAttributes",
+        "supportTicketAttributes": "beckn:supportTicketAttributes"
+    }
+}

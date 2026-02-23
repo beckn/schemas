@@ -1,0 +1,17 @@
+openapi: 3.1.1
+info:
+  title: Beckn Feedback Schema
+  description: Schema definition for Feedback in the Beckn Protocol v2.0.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    Feedback:
+      description: Feedback collected from a user (consumer, provider, or fulfillment
+        agent)
+      type: object

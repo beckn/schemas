@@ -1,0 +1,80 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "beckn": "https://raw.githubusercontent.com/beckn/protocol-specifications-v2/refs/heads/draft/main/schema/core/v2/#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "schema": "https://schema.org/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "beckn:Quantity",
+            "@type": "rdfs:Class",
+            "rdfs:label": "Quantity",
+            "rdfs:comment": "A quantitative value specifying units, codes, and quantity constraints.",
+            "schema:rangeIncludes": "schema:QuantitativeValue"
+        },
+        {
+            "@id": "beckn:applicableQuantity",
+            "@type": "rdf:Property",
+            "rdfs:label": "Applicable quantity",
+            "rdfs:comment": "Quantity context for which the quoted price applies.",
+            "rdfs:domain": "schema:PriceSpecification",
+            "schema:rangeIncludes": "beckn:Quantity",
+            "rdfs:seeAlso": "schema:eligibleQuantity"
+        },
+        {
+            "@id": "beckn:maxQuantity",
+            "@type": "rdf:Property",
+            "rdfs:label": "Maximum quantity",
+            "rdfs:comment": "Maximum quantity threshold for which the price applies.",
+            "rdfs:domain": [
+                "beckn:Quantity",
+                "schema:PriceSpecification"
+            ],
+            "schema:rangeIncludes": "schema:Number",
+            "rdfs:seeAlso": "schema:maxValue"
+        },
+        {
+            "@id": "beckn:minQuantity",
+            "@type": "rdf:Property",
+            "rdfs:label": "Minimum quantity",
+            "rdfs:comment": "Minimum quantity threshold for which the price applies.",
+            "rdfs:domain": [
+                "beckn:Quantity",
+                "schema:PriceSpecification"
+            ],
+            "schema:rangeIncludes": "schema:Number"
+        },
+        {
+            "@id": "beckn:quantity",
+            "@type": "rdf:Property",
+            "rdfs:label": "Quantity",
+            "rdfs:comment": "Ordered quantity for this line.",
+            "rdfs:domain": "beckn:OrderItem",
+            "schema:rangeIncludes": "beckn:Quantity"
+        },
+        {
+            "@id": "beckn:unitQuantity",
+            "@type": "rdf:Property",
+            "rdfs:label": "Unit quantity",
+            "rdfs:comment": "Quantity of the referenced measurement unit.",
+            "rdfs:domain": "beckn:Quantity",
+            "schema:rangeIncludes": "schema:Number"
+        },
+        {
+            "@id": "beckn:value",
+            "@type": "rdf:Property",
+            "rdfs:label": "Price value",
+            "rdfs:comment": "Numeric value captured in the price specification.",
+            "rdfs:domain": [
+                "schema:PriceSpecification",
+                "beckn:Quantity"
+            ],
+            "schema:rangeIncludes": "schema:Number",
+            "rdfs:seeAlso": "schema:price"
+        }
+    ]
+}

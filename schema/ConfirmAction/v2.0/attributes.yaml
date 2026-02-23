@@ -1,0 +1,40 @@
+openapi: 3.1.1
+info:
+  title: Beckn ConfirmAction Schema
+  description: Schema definition for the Beckn /beckn/confirm action envelope.
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    ConfirmAction:
+      description: >
+        Beckn /beckn/confirm action envelope. Sent by a BAP to a BPP to confirm
+        a contract, finalising the transaction terms agreed during the
+        select–init negotiation cycle.
+      type: object
+      properties:
+        context:
+          allOf:
+            - $ref: 'https://schema.beckn.io/Context.yaml'
+            - type: object
+              properties:
+                action:
+                  type: string
+                  const: beckn/confirm
+        message:
+          type: object
+          additionalProperties: true
+          properties:
+            contract:
+              allOf:
+                - $ref: 'https://schema.beckn.io/Contract.yaml'
+          required:
+            - contract
+      required:
+        - context
+        - message

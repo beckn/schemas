@@ -1,0 +1,57 @@
+openapi: 3.1.1
+info:
+  title: Beckn SettlementSchedule Schema
+  description: Schema definition for SettlementSchedule in the Beckn Protocol v2.0.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    SettlementSchedule:
+      type: object
+      additionalProperties: false
+      oneOf:
+      - type: object
+        additionalProperties: false
+        required:
+        - tPlusX
+        properties:
+          tPlusX:
+            type: object
+            additionalProperties: false
+            required:
+            - value
+            - unit
+            properties:
+              value:
+                type: integer
+                minimum: 0
+                description: X in T+X
+              unit:
+                type: string
+                enum:
+                - DAY
+                - BUSINESS_DAY
+      - type: object
+        additionalProperties: false
+        required:
+        - settleBy
+        properties:
+          settleByDateTime:
+            type: string
+            format: date-time
+            description: Latest timestamp by which settlement must complete
+      - type: object
+        additionalProperties: false
+        required:
+        - endOf
+        properties:
+          settleByEndOf:
+            type: string
+            enum:
+            - END_OF_DAY
+            - END_OF_MONTH

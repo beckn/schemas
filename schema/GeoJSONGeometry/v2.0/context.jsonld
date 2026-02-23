@@ -1,0 +1,36 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "@protected": true,
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "beckn": "https://schema.beckn.io/",
+        "GeoJSONGeometry": "beckn:GeoJSONGeometry",
+        "geo": "beckn:geo",
+        "geometry": "beckn:geometry",
+        "type": {
+            "@id": "beckn:type",
+            "@type": "@id",
+            "@context": {
+                "Point": "beckn:GeoJSONPoint",
+                "LineString": "beckn:GeoJSONLineString",
+                "Polygon": "beckn:GeoJSONPolygon",
+                "MultiPoint": "beckn:GeoJSONMultiPoint",
+                "MultiLineString": "beckn:GeoJSONMultiLineString",
+                "MultiPolygon": "beckn:GeoJSONMultiPolygon",
+                "GeometryCollection": "beckn:GeoJSONGeometryCollection",
+                "DELIVERY": "beckn:DeliveryPriceComponent",
+                "DISCOUNT": "beckn:DiscountPriceComponent",
+                "FEE": "beckn:FeePriceComponent",
+                "SURCHARGE": "beckn:SurchargePriceComponent",
+                "TAX": "beckn:TaxPriceComponent",
+                "UNIT": "beckn:UnitPriceComponent",
+                "jsonpath": "beckn:JsonPathType"
+            }
+        },
+        "bbox": "beckn:bbox",
+        "coordinates": "beckn:coordinates",
+        "geometries": "beckn:geometries"
+    }
+}

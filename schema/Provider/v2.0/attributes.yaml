@@ -1,0 +1,58 @@
+openapi: 3.1.1
+info:
+  title: Beckn Provider Schema
+  description: Schema definition for Provider in the Beckn Protocol v2.0.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    Provider:
+      type: object
+      properties:
+        '@context':
+          description: CPD
+          type: string
+          format: uri
+          default: https://schema.beckn.io/v2
+        '@type':
+          description: TPD
+          type: string
+          default: beckn:Provider
+        alerts:
+          type: array
+          items:
+            $ref: 'https://schema.beckn.io/Alert.yaml'
+        descriptor:
+          $ref: 'https://schema.beckn.io/Descriptor.yaml'
+        id:
+          description: Unique identifier for the provider
+          type: string
+          example: tech-store-001
+        locations:
+          description: Physical locations where the provider operates
+          type: array
+          items:
+            $ref: 'https://schema.beckn.io/Location.yaml'
+        policies:
+          type: array
+          items:
+            $ref: 'https://schema.beckn.io/Policy.yaml'
+        providerAttributes:
+          $ref: 'https://schema.beckn.io/Attributes.yaml'
+        rateable:
+          description: Whether the provider can be rated by customers
+          type: boolean
+          example: true
+        rating:
+          $ref: 'https://schema.beckn.io/Rating.yaml'
+        validity:
+          $ref: 'https://schema.beckn.io/TimePeriod.yaml'
+      required:
+      - id
+      - descriptor
+      additionalProperties: false

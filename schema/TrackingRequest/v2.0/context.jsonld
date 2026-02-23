@@ -1,0 +1,27 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "@protected": true,
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "beckn": "https://schema.beckn.io/",
+        "TrackingRequest": "beckn:TrackingRequest",
+        "callbackUrl": "beckn:callbackUrl",
+        "modeHint": {
+            "@id": "beckn:modeHint",
+            "@type": "@id",
+            "@context": {
+                "DEEP_LINK": "beckn:DeepLink",
+                "LINK_ONLY": "beckn:LinkOnly",
+                "WEBHOOK": "beckn:Webhook",
+                "WS_HANDLE": "beckn:WsHandle",
+                "deep_link": "beckn:DeepLink",
+                "link_only": "beckn:LinkOnly",
+                "webhook": "beckn:Webhook",
+                "ws_handle": "beckn:WsHandle"
+            }
+        },
+        "trackingDataSchema": "beckn:trackingDataSchema"
+    }
+}

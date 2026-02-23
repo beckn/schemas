@@ -1,0 +1,191 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "beckn": "https://raw.githubusercontent.com/beckn/protocol-specifications-v2/refs/heads/draft/main/schema/core/v2/#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "schema": "https://schema.org/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "beckn:Attributes",
+            "@type": "rdfs:Class",
+            "rdfs:label": "Attributes",
+            "rdfs:comment": "JSON-LD aware attribute pack container used across entities."
+        },
+        {
+            "@id": "beckn:buyerAttributes",
+            "@type": "rdf:Property",
+            "rdfs:label": "Buyer attributes",
+            "rdfs:comment": "Attribute pack for buyer identity and preferences.",
+            "rdfs:domain": "beckn:Buyer",
+            "schema:rangeIncludes": "beckn:Attributes"
+        },
+        {
+            "@id": "beckn:deliveryAttributes",
+            "@type": "rdf:Property",
+            "rdfs:label": "Delivery attributes",
+            "rdfs:comment": "Attribute pack for fulfillment mode details.",
+            "rdfs:domain": "beckn:Fulfillment",
+            "schema:rangeIncludes": "beckn:Attributes"
+        },
+        {
+            "@id": "beckn:fulfillmentAttributes",
+            "rdfs:label": "fulfillment Attributes",
+            "rdfs:domain": [
+                "beckn:Fulfillment"
+            ],
+            "schema:rangeIncludes": "beckn:Attributes",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Extensible set of domain-specific attributes describing the fulfillment"
+        },
+        {
+            "@id": "beckn:invoiceAttributes",
+            "@type": "rdf:Property",
+            "rdfs:label": "Invoice attributes",
+            "rdfs:comment": "Invoice-level attribute pack.",
+            "rdfs:domain": "beckn:Invoice",
+            "schema:rangeIncludes": "beckn:Attributes"
+        },
+        {
+            "@id": "beckn:itemAttributes",
+            "@type": "rdf:Property",
+            "rdfs:label": "Item attributes",
+            "rdfs:comment": "Domain-specific attribute pack for the item.",
+            "rdfs:domain": "beckn:Item",
+            "schema:rangeIncludes": "beckn:Attributes"
+        },
+        {
+            "@id": "beckn:modeAttributes",
+            "rdfs:label": "mode Attributes",
+            "rdfs:domain": [
+                "beckn:FulfillmentMode"
+            ],
+            "schema:rangeIncludes": "beckn:Attributes",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Domain-specific fulfillment mode attributes (e.g., delivery, pickup, reservation, digital)"
+        },
+        {
+            "@id": "beckn:offerAttributes",
+            "@type": "rdf:Property",
+            "rdfs:label": "Offer attributes",
+            "rdfs:comment": "Attribute pack for offer terms and pricing models.",
+            "rdfs:domain": "beckn:Offer",
+            "schema:rangeIncludes": "beckn:Attributes"
+        },
+        {
+            "@id": "beckn:orderAttributes",
+            "@type": "rdf:Property",
+            "rdfs:label": "Order attributes",
+            "rdfs:comment": "Order-level attribute pack.",
+            "rdfs:domain": "beckn:Order",
+            "schema:rangeIncludes": "beckn:Attributes"
+        },
+        {
+            "@id": "beckn:orderItemAttributes",
+            "@type": "rdf:Property",
+            "rdfs:label": "Order item attributes",
+            "rdfs:comment": "Line-level attribute pack.",
+            "rdfs:domain": "beckn:OrderItem",
+            "schema:rangeIncludes": "beckn:Attributes"
+        },
+        {
+            "@id": "beckn:organizationAttributes",
+            "rdfs:label": "organization Attributes",
+            "rdfs:domain": [
+                "beckn:Organization"
+            ],
+            "schema:rangeIncludes": "beckn:Attributes",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Extensible attribute pack for jurisdictional or domain-specific organization properties"
+        },
+        {
+            "@id": "beckn:paymentActionAttributes",
+            "rdfs:label": "payment Action Attributes",
+            "rdfs:domain": [
+                "beckn:PaymentAction"
+            ],
+            "schema:rangeIncludes": "beckn:Attributes",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Extensible set of attributes containing payment actions specific to each ecosystem."
+        },
+        {
+            "@id": "beckn:paymentAttributes",
+            "@type": "rdf:Property",
+            "rdfs:label": "Payment attributes",
+            "rdfs:comment": "Rail-specific payment attribute pack.",
+            "rdfs:domain": "beckn:Payment",
+            "schema:rangeIncludes": "beckn:Attributes"
+        },
+        {
+            "@id": "beckn:paymentTermsAttributes",
+            "rdfs:label": "payment Terms Attributes",
+            "rdfs:domain": [
+                "beckn:PaymentTerms"
+            ],
+            "schema:rangeIncludes": "beckn:Attributes",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Rail-specific attribute pack (e.g., UPI: VPA/UTR; CARD: token/3DS; BNPL: plan/schedule)"
+        },
+        {
+            "@id": "beckn:personAttributes",
+            "rdfs:label": "person Attributes",
+            "rdfs:domain": [
+                "beckn:Person"
+            ],
+            "schema:rangeIncludes": "beckn:Attributes",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Extensible attribute pack for jurisdictional or domain-specific person properties"
+        },
+        {
+            "@id": "beckn:policyAttributes",
+            "rdfs:label": "policy Attributes",
+            "rdfs:domain": [
+                "beckn:Policy"
+            ],
+            "schema:rangeIncludes": "beckn:Attributes",
+            "@type": "rdf:Property",
+            "rdfs:comment": "TODO: Add Description of Property"
+        },
+        {
+            "@id": "beckn:preferences",
+            "rdfs:label": "preferences",
+            "rdfs:domain": [
+                "beckn:FulfillmentStage"
+            ],
+            "schema:rangeIncludes": "beckn:Attributes",
+            "@type": "rdf:Property",
+            "rdfs:comment": "A extensible set of attributes that describe the fulfillment preferences"
+        },
+        {
+            "@id": "beckn:providerAttributes",
+            "@type": "rdf:Property",
+            "rdfs:label": "Provider attributes",
+            "rdfs:comment": "Attribute pack for provider-level metadata.",
+            "rdfs:domain": "beckn:Provider",
+            "schema:rangeIncludes": "beckn:Attributes"
+        },
+        {
+            "@id": "beckn:settlementTermAttributes",
+            "rdfs:label": "settlement Term Attributes",
+            "rdfs:domain": [
+                "beckn:SettlementTerm"
+            ],
+            "schema:rangeIncludes": "beckn:Attributes",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Additional use case specific settlement terms that must be adhered to"
+        },
+        {
+            "@id": "beckn:supportTicketAttributes",
+            "rdfs:label": "support Ticket Attributes",
+            "rdfs:domain": [
+                "beckn:SupportTicket"
+            ],
+            "schema:rangeIncludes": "beckn:Attributes",
+            "@type": "rdf:Property",
+            "rdfs:comment": "TODO: Add Description of Property"
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+openapi: 3.1.1
+info:
+  title: Beckn FulfillmentMode Schema
+  description: Schema definition for FulfillmentMode in the Beckn Protocol v2.0.1
+  version: 2.0.1
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+  license:
+    name: CC-BY-NC-SA 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+components:
+  schemas:
+    FulfillmentMode:
+      type: object
+      description: Describes the mode of fulfillment. This is an extensible container
+        allowing domain-specific fulfillment modes to be expressed via attributes.
+      properties:
+        '@context':
+          type: string
+          format: uri
+          const: https://schema.beckn.io/
+        '@type':
+          type: string
+          default: beckn:FulfillmentMode
+        id:
+          type: string
+        descriptor:
+          $ref: 'https://schema.beckn.io/Descriptor.yaml'
+        modeAttributes:
+          description: Domain-specific fulfillment mode attributes (e.g., delivery,
+            pickup, reservation, digital)
+          allOf:
+          - $ref: 'https://schema.beckn.io/Attributes.yaml'
+      additionalProperties: false
