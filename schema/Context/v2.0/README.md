@@ -1,31 +1,20 @@
-# Context Schema v2.0
+# Context — v2.0
 
-This directory contains the Context schema for Beckn Protocol v2.0.
+The transaction context object carried in every API request.
 
-## Overview
-
-Every API call in beckn protocol has a context. It provides a high-level overview to the receiver about the nature of the intended transaction. Typically, it is the BAP that sets the transaction context based on the consumer's location and action on their UI.
+Part of the [Beckn Protocol Core Schema](../../../README.md) · [Context](../README.md)
 
 ## Files
 
-- `attributes.yaml` - OpenAPI schema definitions for Context
-- `context.jsonld` - JSON-LD context mapping
-- `vocab.jsonld` - RDF vocabulary definitions
-- `README.md` - This documentation file
+| File | Description |
+|------|-------------|
+| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `Context` |
 
-## Context Fields
+## Root linked-data files
 
-The context object contains four types of fields:
+The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
 
-1. **Demographic information** - Fields like `domain`, `country`, and `region`
-2. **Addressing details** - Sending and receiving platform's ID and API URL
-3. **Interoperability information** - Protocol version implemented by the sender
-4. **Transaction details** - Method, transaction_id, message_id, timestamp, ttl, and encryption key
-
-## Usage
-
-This object must be passed in every interaction between a BAP and a BPP. In HTTP/S implementations, it is not necessary to send the context during the synchronous response. However, in asynchronous protocols, the context must be sent during all interactions.
-
-## Version
-
-Current version: 2.0
+| File | Description |
+|------|-------------|
+| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
+| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
