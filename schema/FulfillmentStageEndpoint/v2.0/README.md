@@ -18,3 +18,13 @@ The JSON-LD context and RDF vocabulary for this schema are consolidated at the s
 |------|-------------|
 | [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
 | [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+
+## Properties
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `@context` | string | CPD |
+| `@type` | string |  |
+| `location` | [Location](../../Location/README.md) |  |
+| `time` | [TimePeriod](../../TimePeriod/README.md) |  |
+| `authorization` | [FulfillmentStageAuthorization](../../FulfillmentStageAuthorization/README.md)[] | One or more credentials required and/or issued at this endpoint. Includes machine-readable tokens (QR/URL/OTP) and manual documents (IDs, permits). |

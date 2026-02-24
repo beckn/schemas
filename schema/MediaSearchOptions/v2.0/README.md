@@ -18,3 +18,11 @@ The JSON-LD context and RDF vocabulary for this schema are consolidated at the s
 |------|-------------|
 | [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
 | [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+
+## Properties
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `goals` | string[] | Desired processing goals for the media. |
+| `augmentTextSearch` | boolean | Whether to append extracted text from OCR/ASR to `textSearch`. |
+| `restrictResultsToMediaProximity` | boolean | Restrict results to spatial proximity of media-derived coordinates (e.g., EXIF GPS tags). |

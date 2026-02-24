@@ -18,3 +18,15 @@ The JSON-LD context and RDF vocabulary for this schema are consolidated at the s
 |------|-------------|
 | [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
 | [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+
+## Properties
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `@context` | string |  |
+| `@type` | string |  |
+| `descriptor` | [Descriptor](../../Descriptor/README.md) | Validity window for this policy version |
+| `id` | string | Identifier for the policy |
+| `policyType` | string | Type/kind of policy (extensible term) |
+| `validity` | [TimePeriod](../../TimePeriod/README.md) | Validity window for this policy version |
+| `policyAttributes` | [Attributes](../../Attributes/README.md) |  |

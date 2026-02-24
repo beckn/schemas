@@ -18,3 +18,13 @@ The JSON-LD context and RDF vocabulary for this schema are consolidated at the s
 |------|-------------|
 | [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
 | [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+
+## Properties
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `@context` | string |  |
+| `@type` | string |  |
+| `id` | string |  |
+| `descriptor` | [Descriptor](../../Descriptor/README.md) |  |
+| `modeAttributes` | [Attributes](../../Attributes/README.md) | Domain-specific fulfillment mode attributes (e.g., delivery, pickup, reservation, digital) |
