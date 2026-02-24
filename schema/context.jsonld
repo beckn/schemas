@@ -825,6 +825,34 @@
     "contractDocs": "beckn:contractDocs",
     "OrderStatus": {
       "@id": "beckn:OrderStatus"
+    },
+    "Action": {
+      "@id": "beckn:Action",
+      "@type": "@id",
+      "@context": {
+        "discover": "beckn:DiscoverAction",
+        "on_discover": "beckn:OnDiscoverAction",
+        "select": "beckn:SelectAction",
+        "on_select": "beckn:OnSelectAction",
+        "init": "beckn:InitAction",
+        "on_init": "beckn:OnInitAction",
+        "confirm": "beckn:ConfirmAction",
+        "on_confirm": "beckn:OnConfirmAction",
+        "status": "beckn:StatusAction",
+        "on_status": "beckn:OnStatusAction",
+        "update": "beckn:UpdateAction",
+        "on_update": "beckn:OnUpdateAction",
+        "cancel": "beckn:CancelAction",
+        "on_cancel": "beckn:OnCancelAction",
+        "track": "beckn:TrackAction",
+        "on_track": "beckn:OnTrackAction",
+        "rate": "beckn:RateAction",
+        "on_rate": "beckn:OnRateAction",
+        "support": "beckn:SupportAction",
+        "on_support": "beckn:OnSupportAction",
+        "catalog/publish": "beckn:CatalogPublishAction",
+        "catalog/on_publish": "beckn:CatalogOnPublishAction"
+      }
     }
   }
 }
