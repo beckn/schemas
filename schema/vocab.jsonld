@@ -209,7 +209,7 @@
     },
     {
       "@id": "beckn:id",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Identifier",
       "rdfs:comment": "Primary identifier (string/URN) for an entity.",
       "rdfs:domain": [
@@ -232,7 +232,7 @@
     },
     {
       "@id": "beckn:descriptor",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Descriptor",
       "rdfs:comment": "Human or agent-readable description of anything for display or context setting.",
       "rdfs:domain": [
@@ -245,7 +245,7 @@
     },
     {
       "@id": "beckn:isActive",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Is Active",
       "rdfs:comment": "Whether the entity is currently active for ordering.",
       "rdfs:domain": [
@@ -256,7 +256,7 @@
     },
     {
       "@id": "beckn:provider",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Provider",
       "rdfs:comment": "Provider associated with a catalog, item or order.",
       "rdfs:domain": [
@@ -268,7 +268,7 @@
     },
     {
       "@id": "beckn:category",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Category",
       "rdfs:comment": "Category or taxonomy classification.",
       "rdfs:domain": [
@@ -282,7 +282,7 @@
     },
     {
       "@id": "beckn:items",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Items",
       "rdfs:comment": "List of item identifiers or references.",
       "rdfs:domain": [
@@ -294,7 +294,7 @@
     },
     {
       "@id": "beckn:value",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Price value",
       "rdfs:comment": "Numeric value captured in the price specification.",
       "rdfs:domain": [
@@ -306,7 +306,7 @@
     },
     {
       "@id": "beckn:minQuantity",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Minimum quantity",
       "rdfs:comment": "Minimum quantity threshold for which the price applies.",
       "rdfs:domain": [
@@ -317,7 +317,7 @@
     },
     {
       "@id": "beckn:maxQuantity",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Maximum quantity",
       "rdfs:comment": "Maximum quantity threshold for which the price applies.",
       "rdfs:domain": [
@@ -329,7 +329,7 @@
     },
     {
       "@id": "beckn:acceptedPaymentMethod",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Accepted payment method",
       "rdfs:comment": "Payment methods accepted for this entity.",
       "rdfs:domain": [
@@ -459,7 +459,7 @@
     },
     {
       "@id": "beckn:location",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Location",
       "rdfs:comment": "Physical location or place.",
       "rdfs:domain": [
@@ -518,7 +518,7 @@
     },
     {
       "@id": "beckn:rateable",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Rateable",
       "rdfs:comment": "Whether the entity can be rated by customers.",
       "rdfs:domain": [
@@ -529,7 +529,7 @@
     },
     {
       "@id": "beckn:rating",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Rating",
       "rdfs:comment": "Rating summary for the entity.",
       "rdfs:domain": [
@@ -540,7 +540,7 @@
     },
     {
       "@id": "beckn:validity",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Validity",
       "rdfs:comment": "Validity window for the entity.",
       "rdfs:domain": [
@@ -564,20 +564,26 @@
     },
     {
       "@id": "beckn:paymentStatus",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Payment status",
       "rdfs:comment": "Lifecycle status for a payment (Pending, Authorized, Captured, Failed, Refunded, etc.).",
       "rdfs:domain": "beckn:Payment",
       "schema:rangeIncludes": "beckn:PaymentStatus",
-      "rdfs:seeAlso": "schema:paymentStatus"
+      "rdfs:seeAlso": "schema:paymentStatus",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:paymentStatus"
+      }
     },
     {
       "@id": "beckn:trackingStatus",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Tracking status",
       "rdfs:comment": "Status value for a tracking handle (active, disabled, completed).",
       "rdfs:domain": "beckn:Tracking",
-      "schema:rangeIncludes": "beckn:TrackingStatus"
+      "schema:rangeIncludes": "beckn:TrackingStatus",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:actionStatus"
+      }
     },
     {
       "@id": "beckn:TrackingStatus",
@@ -880,7 +886,7 @@
     },
     {
       "@id": "beckn:currency",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Currency",
       "rdfs:comment": "ISO 4217 currency code associated with a price amount.",
       "rdfs:domain": "schema:PriceSpecification",
@@ -889,7 +895,7 @@
     },
     {
       "@id": "beckn:applicableQuantity",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Applicable quantity",
       "rdfs:comment": "Quantity context for which the quoted price applies.",
       "rdfs:domain": "schema:PriceSpecification",
@@ -898,7 +904,7 @@
     },
     {
       "@id": "beckn:components",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Price components",
       "rdfs:comment": "Optional component breakdowns such as unit, tax, delivery, discount or surcharge.",
       "rdfs:domain": "schema:PriceSpecification",
@@ -906,7 +912,7 @@
     },
     {
       "@id": "beckn:unitQuantity",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Unit quantity",
       "rdfs:comment": "Quantity of the referenced measurement unit.",
       "rdfs:domain": "beckn:Quantity",
@@ -922,7 +928,7 @@
     },
     {
       "@id": "beckn:eligibleRegion",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Eligible region",
       "rdfs:comment": "The region(s) for which the offer is eligible.",
       "rdfs:domain": "beckn:Offer",
@@ -930,7 +936,7 @@
     },
     {
       "@id": "beckn:addOns",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Add-on offers",
       "rdfs:comment": "Optional extra offers that can be attached.",
       "rdfs:domain": "beckn:Offer",
@@ -938,7 +944,7 @@
     },
     {
       "@id": "beckn:addOnItems",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Add-on items",
       "rdfs:comment": "Optional extras modeled as items.",
       "rdfs:domain": "beckn:Offer",
@@ -946,7 +952,7 @@
     },
     {
       "@id": "beckn:offerAttributes",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Offer attributes",
       "rdfs:comment": "Attribute pack for offer terms and pricing models.",
       "rdfs:domain": "beckn:Offer",
@@ -1217,7 +1223,7 @@
     },
     {
       "@id": "beckn:address",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Address",
       "rdfs:comment": "Postal address for a location.",
       "rdfs:domain": "beckn:Location",
@@ -1225,7 +1231,7 @@
     },
     {
       "@id": "beckn:geo",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Geo",
       "rdfs:comment": "GeoJSON geometry for the location.",
       "rdfs:domain": "beckn:Location",
@@ -1265,7 +1271,7 @@
     },
     {
       "@id": "beckn:ratingValue",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Rating value",
       "rdfs:comment": "Numeric rating score. Numeric rating value (legacy usually 1–5).",
       "rdfs:domain": [
@@ -1276,7 +1282,7 @@
     },
     {
       "@id": "beckn:ratingCount",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Rating count",
       "rdfs:comment": "Number of individual ratings aggregated for this entity.",
       "rdfs:domain": "beckn:Rating",
@@ -1284,7 +1290,7 @@
     },
     {
       "@id": "beckn:reviewText",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Review text",
       "rdfs:comment": "Free-form review text.",
       "rdfs:domain": "beckn:Rating",
@@ -1332,7 +1338,7 @@
     },
     {
       "@id": "beckn:mode",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Fulfillment mode",
       "rdfs:comment": "Mode for fulfilling an order (e.g., DELIVERY, PICKUP, RESERVATION, DIGITAL).",
       "rdfs:domain": "beckn:Fulfillment",
@@ -1356,7 +1362,7 @@
     },
     {
       "@id": "beckn:availableAt",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Available at",
       "rdfs:comment": "Physical locations where the item is available.",
       "rdfs:domain": "beckn:Item",
@@ -1364,7 +1370,7 @@
     },
     {
       "@id": "beckn:availabilityWindow",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Availability window",
       "rdfs:comment": "Time periods when the item is available.",
       "rdfs:domain": "beckn:Item",
@@ -1372,7 +1378,7 @@
     },
     {
       "@id": "beckn:networkId",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Network ID",
       "rdfs:comment": "A unique identifier representing a group of platforms. By default, it is the url of the network registry on the Beckn network",
       "rdfs:domain": [
@@ -1383,7 +1389,7 @@
     },
     {
       "@id": "beckn:itemAttributes",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Item attributes",
       "rdfs:comment": "Domain-specific attribute pack for the item.",
       "rdfs:domain": "beckn:Item",
@@ -1391,7 +1397,7 @@
     },
     {
       "@id": "beckn:providerId",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Provider identifier",
       "rdfs:comment": "Identifier of the provider who owns this catalog.",
       "rdfs:domain": "beckn:Catalog",
@@ -1399,7 +1405,7 @@
     },
     {
       "@id": "beckn:bppId",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "BPP identifier",
       "rdfs:comment": "BPP (Beckn Protocol Provider) identifier that publishes this catalog.",
       "rdfs:domain": "beckn:Catalog",
@@ -1407,7 +1413,7 @@
     },
     {
       "@id": "beckn:bppUri",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "BPP URI",
       "rdfs:comment": "BPP (Beckn Protocol Provider) URI endpoint.",
       "rdfs:domain": "beckn:Catalog",
@@ -1415,7 +1421,7 @@
     },
     {
       "@id": "beckn:offers",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Offers",
       "rdfs:comment": "Commercial offers in this catalog.",
       "rdfs:domain": "beckn:Catalog",
@@ -1423,7 +1429,7 @@
     },
     {
       "@id": "beckn:locations",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Locations",
       "rdfs:comment": "Physical locations where the provider operates.",
       "rdfs:domain": "beckn:Provider",
@@ -1431,7 +1437,7 @@
     },
     {
       "@id": "beckn:providerAttributes",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Provider attributes",
       "rdfs:comment": "Attribute pack for provider-level metadata.",
       "rdfs:domain": "beckn:Provider",
@@ -1439,7 +1445,7 @@
     },
     {
       "@id": "beckn:lineId",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Line identifier",
       "rdfs:comment": "Unique line id within order.",
       "rdfs:domain": "beckn:OrderItem",
@@ -1458,7 +1464,7 @@
     },
     {
       "@id": "beckn:acceptedOffer",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Accepted offer (line)",
       "rdfs:comment": "Offer applied to this line.",
       "rdfs:domain": "beckn:OrderItem",
@@ -1466,7 +1472,7 @@
     },
     {
       "@id": "beckn:quantity",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Quantity",
       "rdfs:comment": "Ordered quantity for this line.",
       "rdfs:domain": "beckn:OrderItem",
@@ -1482,7 +1488,7 @@
     },
     {
       "@id": "beckn:number",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Document number",
       "rdfs:comment": "Human-visible invoice number.",
       "rdfs:domain": "beckn:Invoice",
@@ -1490,23 +1496,26 @@
     },
     {
       "@id": "beckn:issueDate",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Issue date",
       "rdfs:comment": "Invoice issue date.",
       "rdfs:domain": "beckn:Invoice",
-      "schema:rangeIncludes": "schema:Date"
+      "schema:rangeIncludes": "schema:DateTime"
     },
     {
       "@id": "beckn:dueDate",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Due date",
       "rdfs:comment": "Payment due date for the invoice.",
       "rdfs:domain": "beckn:Invoice",
-      "schema:rangeIncludes": "schema:Date"
+      "schema:rangeIncludes": "schema:Date",
+      "owl:equivalentProperty": {
+        "@id": "schema:paymentDueDate"
+      }
     },
     {
       "@id": "beckn:payee",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Payee",
       "rdfs:comment": "Seller / issuer of the invoice.",
       "rdfs:domain": "beckn:Invoice",
@@ -1514,7 +1523,7 @@
     },
     {
       "@id": "beckn:payer",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Payer",
       "rdfs:comment": "Buyer being invoiced.",
       "rdfs:domain": "beckn:Invoice",
@@ -1530,7 +1539,7 @@
     },
     {
       "@id": "beckn:invoiceAttributes",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Invoice attributes",
       "rdfs:comment": "Invoice-level attribute pack.",
       "rdfs:domain": "beckn:Invoice",
@@ -1546,7 +1555,7 @@
     },
     {
       "@id": "beckn:amount",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Amount",
       "rdfs:comment": "Amount associated with this payment action.",
       "rdfs:domain": "beckn:Payment",
@@ -1562,7 +1571,7 @@
     },
     {
       "@id": "beckn:txnRef",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Transaction reference",
       "rdfs:comment": "PSP/gateway/bank transaction reference.",
       "rdfs:domain": "beckn:Payment",
@@ -1570,7 +1579,7 @@
     },
     {
       "@id": "beckn:paidAt",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Paid at",
       "rdfs:comment": "Timestamp of last terminal payment event.",
       "rdfs:domain": "beckn:Payment",
@@ -1626,7 +1635,7 @@
     },
     {
       "@id": "beckn:role",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Role",
       "rdfs:comment": "Functional role of the buyer in the transaction.",
       "rdfs:domain": "beckn:Buyer",
@@ -1658,7 +1667,7 @@
     },
     {
       "@id": "beckn:email",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Email",
       "rdfs:comment": "Proxy for schema:email to avoid schema.org IRIs in context.",
       "rdfs:domain": "beckn:SupportInfo",
@@ -1677,7 +1686,7 @@
     },
     {
       "@id": "beckn:channels",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Channels",
       "rdfs:comment": "Available support channels.",
       "rdfs:domain": "beckn:SupportInfo",
@@ -1726,25 +1735,35 @@
     },
     {
       "@id": "beckn:mimeType",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "MIME Type of a document",
       "rdfs:comment": "Mime type of a document used for parsing documents hosted at remote URLs",
       "rdfs:domain": "beckn:Document",
-      "schema:rangeIncludes": "schema:CheckEquivalentInSchema.Org",
-      "owl:equivalentProperty": {
-        "@id": "beckn:mime_type"
-      }
+      "schema:rangeIncludes": "schema:Text",
+      "owl:equivalentProperty": [
+        {
+          "@id": "beckn:mime_type"
+        },
+        {
+          "@id": "schema:fileFormat"
+        }
+      ]
     },
     {
       "@id": "beckn:submissionId",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "MIME Type of a document",
       "rdfs:comment": "The ID obtained after submitting a form on an external url",
       "rdfs:domain": "beckn:Form",
-      "schema:rangeIncludes": "schema:CheckEquivalentInSchema.Org",
-      "owl:equivalentProperty": {
-        "@id": "beckn:submission_id"
-      }
+      "schema:rangeIncludes": "schema:Text",
+      "owl:equivalentProperty": [
+        {
+          "@id": "beckn:submission_id"
+        },
+        {
+          "@id": "schema:identifier"
+        }
+      ]
     },
     {
       "@id": "beckn:tlMethod",
@@ -1759,11 +1778,14 @@
     },
     {
       "@id": "beckn:expiresAt",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Expires at",
       "rdfs:comment": "Expiry timestamp for the tracking handle.",
       "rdfs:domain": "beckn:Tracking",
-      "schema:rangeIncludes": "schema:DateTime"
+      "schema:rangeIncludes": "schema:DateTime",
+      "owl:equivalentProperty": {
+        "@id": "schema:expires"
+      }
     },
     {
       "@id": "beckn:SupportChannel",
@@ -1893,7 +1915,7 @@
     },
     {
       "@id": "beckn:shortDesc",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Short description",
       "rdfs:comment": "Short description for display.",
       "rdfs:domain": "beckn:Descriptor",
@@ -1901,7 +1923,7 @@
     },
     {
       "@id": "beckn:longDesc",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Long description",
       "rdfs:comment": "Detailed description text.",
       "rdfs:domain": "beckn:Descriptor",
@@ -2222,7 +2244,7 @@
     },
     {
       "@id": "beckn:policies",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Policies",
       "rdfs:comment": "Policies applicable to an entity.",
       "rdfs:domain": [
@@ -2236,7 +2258,7 @@
     },
     {
       "@id": "beckn:constraints",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Constraints",
       "rdfs:comment": "Constraints/limits applicable to an item or offer.",
       "rdfs:domain": [
@@ -2247,7 +2269,7 @@
     },
     {
       "@id": "beckn:participants",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Participants",
       "rdfs:comment": "Participants associated with an order or fulfillment.",
       "rdfs:domain": [
@@ -2258,7 +2280,7 @@
     },
     {
       "@id": "beckn:skills",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Skills",
       "rdfs:comment": "Skills associated with a participant.",
       "rdfs:domain": [
@@ -2268,7 +2290,7 @@
     },
     {
       "@id": "beckn:credentials",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Credentials",
       "rdfs:comment": "Credentials associated with a participant.",
       "rdfs:domain": [
@@ -2278,7 +2300,7 @@
     },
     {
       "@id": "beckn:instructions",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Instructions",
       "rdfs:comment": "Instructions applicable to an entity (e.g., stop-level access/pickup/handover instructions).",
       "rdfs:domain": [
@@ -2291,7 +2313,7 @@
     },
     {
       "@id": "beckn:entitlements",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Entitlements",
       "rdfs:comment": "Entitlements issued under an order or fulfillment.",
       "rdfs:domain": [
@@ -2302,7 +2324,7 @@
     },
     {
       "@id": "beckn:alerts",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Alerts",
       "rdfs:comment": "Alerts applicable to a provider, order, or fulfillment.",
       "rdfs:domain": [
@@ -2325,7 +2347,7 @@
     },
     {
       "@id": "beckn:state",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "State",
       "rdfs:comment": "The current state of an entity.",
       "rdfs:domain": [
@@ -2358,7 +2380,7 @@
     },
     {
       "@id": "beckn:severity",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Severity",
       "rdfs:comment": "Severity level for an alert.",
       "rdfs:domain": [
@@ -2637,7 +2659,7 @@
         "beckn:SettlementTerm"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Describes the methods or mechanisms accepted by the payee (described in the payTo property) for the purpose of this settlement."
     },
     {
@@ -2669,7 +2691,7 @@
         "beckn:Context"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "The Beckn protocol method being called by the sender and executed at the receiver."
     },
     {
@@ -2679,7 +2701,7 @@
         "beckn:Address"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Country name or ISO-3166-1 alpha-2 code."
     },
     {
@@ -2689,7 +2711,7 @@
         "beckn:Address"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "City/locality."
     },
     {
@@ -2699,7 +2721,7 @@
         "beckn:Address"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "State/region/province."
     },
     {
@@ -2709,7 +2731,7 @@
         "beckn:Alert"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "IDs of entities affected (route/order/fulfillment/etc.)"
     },
     {
@@ -2719,7 +2741,7 @@
         "beckn:Fulfillment"
       ],
       "schema:rangeIncludes": "beckn:FulfillmentAgent",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "The entity that directly performs the fulfillment"
     },
     {
@@ -2747,7 +2769,7 @@
         "beckn:MediaSearchOptions"
       ],
       "schema:rangeIncludes": "schema:Boolean",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Whether to append extracted text from OCR/ASR to `textSearch`."
     },
     {
@@ -2757,7 +2779,7 @@
         "beckn:FulfillmentStageAuthorization"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "A human readable string that needs to be provided to enter or exit this fulfillment stage. Like an OTP"
     },
     {
@@ -2767,7 +2789,7 @@
         "beckn:FulfillmentStageEndpoint"
       ],
       "schema:rangeIncludes": "beckn:FulfillmentStageAuthorization",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "One or more credentials required and/or issued at this endpoint. Includes machine-readable tokens (QR/URL/OTP) and manual documents (IDs, permits).\n"
     },
     {
@@ -2792,7 +2814,7 @@
         "beckn:Context"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "A globally unique identifier of the BAP, Typically it is the fully qualified domain name (FQDN) of the BAP"
     },
     {
@@ -2802,7 +2824,7 @@
         "beckn:Context"
       ],
       "schema:rangeIncludes": "schema:URL",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "API URL of the BAP for accepting callbacks from BPPs."
     },
     {
@@ -2811,7 +2833,7 @@
       "rdfs:domain": [
         "beckn:GeoJSONGeometry"
       ],
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Optional bounding box `[west, south, east, north]` in degrees."
     },
     {
@@ -2836,7 +2858,7 @@
         "beckn:TrackingRequest"
       ],
       "schema:rangeIncludes": "schema:URL",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Optional callback URL for streaming tracking coordinates/updates"
     },
     {
@@ -2864,7 +2886,7 @@
         "beckn:CatalogProcessingResult"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "The \"id\" of the submitted catalog"
     },
     {
@@ -2875,7 +2897,7 @@
         "beckn:PaymentTerms"
       ],
       "schema:rangeIncludes": "beckn:CheckoutTerminal",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "TODO: Add Description of Property"
     },
     {
@@ -2898,7 +2920,7 @@
         "beckn:ProcessingNotice"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Error code"
     },
     {
@@ -2920,7 +2942,7 @@
         "beckn:Constraint"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Type of constraint (extensible term)"
     },
     {
@@ -2946,7 +2968,7 @@
         "beckn:MediaInput"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "MIME type, e.g., image/jpeg, audio/mpeg, video/mp4."
     },
     {
@@ -2955,7 +2977,7 @@
       "rdfs:domain": [
         "beckn:GeoJSONGeometry"
       ],
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Coordinates per RFC 7946 for all types **except** GeometryCollection. Order is **[lon, lat, (alt)]**. For Polygons, this is an array of linear rings; each ring is an array of positions."
     },
     {
@@ -2965,7 +2987,7 @@
         "beckn:Invoice"
       ],
       "schema:rangeIncludes": "schema:PriceSpecification",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "TODO: Add Description of Property"
     },
     {
@@ -2985,7 +3007,7 @@
         "beckn:Form"
       ],
       "schema:rangeIncludes": "schema:Thing",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "The form submission data"
     },
     {
@@ -3014,7 +3036,7 @@
         "beckn:ProcessingNotice"
       ],
       "schema:rangeIncludes": "schema:Thing",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Additional error details"
     },
     {
@@ -3024,7 +3046,7 @@
         "beckn:SpatialConstraint"
       ],
       "schema:rangeIncludes": "schema:Number",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "For `S_DWITHIN`: maximum distance in meters from the target geometry to `geometry` (e.g., \"within 5000 m of this Point\"). Ignored for other ops."
     },
     {
@@ -3035,7 +3057,7 @@
         "beckn:FulfillmentStageAuthorization"
       ],
       "schema:rangeIncludes": "beckn:Document",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Links to downloadable documents"
     },
     {
@@ -3051,7 +3073,7 @@
         "beckn:MediaInput"
       ],
       "schema:rangeIncludes": "schema:Integer",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Optional end offset in milliseconds (for audio/video segments)."
     },
     {
@@ -3073,7 +3095,7 @@
         "beckn:ErrorResponse"
       ],
       "schema:rangeIncludes": "beckn:Error",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "TODO: Add Description of Property"
     },
     {
@@ -3098,7 +3120,7 @@
         "beckn:Address"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Address extension (apt/suite/floor, C/O)."
     },
     {
@@ -3108,7 +3130,7 @@
         "beckn:DiscoveryIntent"
       ],
       "schema:rangeIncludes": "schema:Thing",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Filter criteria for items"
     },
     {
@@ -3118,7 +3140,7 @@
         "beckn:Fulfillment"
       ],
       "schema:rangeIncludes": "beckn:Attributes",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Extensible set of domain-specific attributes describing the fulfillment"
     },
     {
@@ -3142,7 +3164,7 @@
       "rdfs:domain": [
         "beckn:FulfillmentStage"
       ],
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "An extensible set of attributes that describe this stage of fulfillment"
     },
     {
@@ -3152,7 +3174,7 @@
         "beckn:Order"
       ],
       "schema:rangeIncludes": "beckn:Fulfillment",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Describes various fulfillments used to deliver the order to the consumer"
     },
     {
@@ -3162,7 +3184,7 @@
         "beckn:GeoJSONGeometry"
       ],
       "schema:rangeIncludes": "beckn:GeoJSONGeometry",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Member geometries when `type` is **GeometryCollection**."
     },
     {
@@ -3172,7 +3194,7 @@
         "beckn:SpatialConstraint"
       ],
       "schema:rangeIncludes": "beckn:GeoJSONGeometry",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "TODO: Add Description of Property"
     },
     {
@@ -3182,7 +3204,7 @@
         "beckn:MediaSearchOptions"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Desired processing goals for the media."
     },
     {
@@ -3224,7 +3246,7 @@
         "beckn:CatalogProcessingResult"
       ],
       "schema:rangeIncludes": "schema:Integer",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Number of items indexed (when accepted/partial)"
     },
     {
@@ -3234,7 +3256,7 @@
         "beckn:OrderItem"
       ],
       "schema:rangeIncludes": "beckn:id",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "TODO: Add Description of Property"
     },
     {
@@ -3257,7 +3279,7 @@
         "beckn:MediaFile"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "The display name of the media file"
     },
     {
@@ -3267,7 +3289,7 @@
         "beckn:MediaInput"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Language code (BCP-47) of `textHint` or spoken audio."
     },
     {
@@ -3289,7 +3311,7 @@
         "beckn:MediaSearch"
       ],
       "schema:rangeIncludes": "beckn:MediaInput",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "One or more references to **images, audio notes, or videos** supplied as part of a multimodal search. Each entry references a media resource accessible via HTTPS or data URI."
     },
     {
@@ -3299,7 +3321,7 @@
         "beckn:Descriptor"
       ],
       "schema:rangeIncludes": "beckn:MediaFile",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Links to multimedia files and images"
     },
     {
@@ -3309,7 +3331,7 @@
         "beckn:FulfillmentStageAuthorization"
       ],
       "schema:rangeIncludes": "beckn:MediaFile",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Media files required to enter or exit this fulfillment stage. The could be images of delivered packages, recorded video proof of installation, etc"
     },
     {
@@ -3330,7 +3352,7 @@
         "beckn:ProcessingNotice"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Human-readable error message"
     },
     {
@@ -3340,7 +3362,7 @@
         "beckn:Context"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "This is a unique value which persists during a request / callback cycle. Since beckn protocol APIs are asynchronous, BAPs need a common value to match an incoming callback from a BPP to an earlier call. This value can also be used to ignore duplicate messages coming from the BPP. It is recommended to generate a fresh message_id for every new interaction. When sending unsolicited callbacks, BPPs must generate a new message_id."
     },
     {
@@ -3362,7 +3384,7 @@
         "beckn:TrackingRequest"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Optional delivery mode for the tracking handle."
     },
     {
@@ -3373,7 +3395,7 @@
         "beckn:SupportInfo"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Name of the entity being described"
     },
     {
@@ -3389,7 +3411,7 @@
         "beckn:SpatialConstraint"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "OGC CQL2 spatial operator."
     },
     {
@@ -3399,7 +3421,7 @@
         "beckn:Constraint"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Comparator/operator (<=, >=, =, etc.)"
     },
     {
@@ -3409,7 +3431,7 @@
         "beckn:MediaSearch"
       ],
       "schema:rangeIncludes": "beckn:MediaSearchOptions",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Options controlling how the discovery engine interprets the supplied media — e.g., whether to perform OCR/ASR, semantic similarity, or object detection."
     },
     {
@@ -3457,7 +3479,7 @@
         "beckn:SettlementTerm"
       ],
       "schema:rangeIncludes": "schema:Thing",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Describes the details of the account where the money must be remited. It could be a bank account, a payment gateway, or a virtual payment address (like a UPI ID)"
     },
     {
@@ -3477,7 +3499,7 @@
         "beckn:PaymentAction"
       ],
       "schema:rangeIncludes": "beckn:Attributes",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Extensible set of attributes containing payment actions specific to each ecosystem."
     },
     {
@@ -3487,7 +3509,7 @@
         "beckn:PaymentAction"
       ],
       "schema:rangeIncludes": "schema:Thing",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "TODO: Add Description of Property"
     },
     {
@@ -3507,7 +3529,7 @@
         "beckn:PaymentTerms"
       ],
       "schema:rangeIncludes": "beckn:Attributes",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Rail-specific attribute pack (e.g., UPI: VPA/UTR; CARD: token/3DS; BNPL: plan/schedule)"
     },
     {
@@ -3517,14 +3539,15 @@
         "beckn:SettlementTerm"
       ],
       "schema:rangeIncludes": "beckn:PaymentTrigger",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Describes the event which triggers the payment against this settlement term"
     },
     {
       "@id": "beckn:paymentUrl",
       "rdfs:label": "payment Url",
-      "@type": "schema:Thing",
-      "rdfs:comment": "TODO: Add Description of Property"
+      "@type": "schema:Property",
+      "rdfs:comment": "TODO: Add Description of Property",
+      "schema:rangeIncludes": "schema:URL"
     },
     {
       "@id": "beckn:person",
@@ -3539,7 +3562,7 @@
         "beckn:Policy"
       ],
       "schema:rangeIncludes": "beckn:Attributes",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "TODO: Add Description of Property"
     },
     {
@@ -3549,7 +3572,7 @@
         "beckn:Policy"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Type/kind of policy (extensible term)"
     },
     {
@@ -3565,7 +3588,7 @@
         "beckn:Address"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Postal/ZIP code."
     },
     {
@@ -3581,7 +3604,7 @@
         "beckn:FulfillmentStage"
       ],
       "schema:rangeIncludes": "beckn:Attributes",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "A extensible set of attributes that describe the fulfillment preferences"
     },
     {
@@ -3606,7 +3629,7 @@
         "beckn:SpatialConstraint"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "'How to evaluate when `targets` resolves to an array - - **any**: at least one element matches (default) - **all**: every element must match  - **none**: no element may match'\n"
     },
     {
@@ -3622,7 +3645,7 @@
         "beckn:RefundTerms"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "TODO: Add Description of Property"
     },
     {
@@ -3638,7 +3661,7 @@
         "beckn:MediaSearchOptions"
       ],
       "schema:rangeIncludes": "schema:Boolean",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Restrict results to spatial proximity of media-derived coordinates (e.g., EXIF GPS tags)."
     },
     {
@@ -3664,7 +3687,7 @@
         "beckn:Document"
       ],
       "schema:rangeIncludes": "schema:Thing",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "TODO: Add Description of Property"
     },
     {
@@ -3692,7 +3715,7 @@
         "beckn:SettlementTerm"
       ],
       "schema:rangeIncludes": "beckn:SettlementSchedule",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "TODO: Add Description of Property"
     },
     {
@@ -3702,7 +3725,7 @@
         "beckn:SettlementTerm"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "TODO: Add Description of Property"
     },
     {
@@ -3712,7 +3735,7 @@
         "beckn:SettlementTerm"
       ],
       "schema:rangeIncludes": "beckn:Attributes",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Additional use case specific settlement terms that must be adhered to"
     },
     {
@@ -3722,7 +3745,7 @@
         "beckn:PaymentTerms"
       ],
       "schema:rangeIncludes": "beckn:SettlementTerm",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "TODO: Add Description of Property"
     },
     {
@@ -3744,7 +3767,7 @@
         "beckn:DiscoveryIntent"
       ],
       "schema:rangeIncludes": "beckn:SpatialConstraint",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Optional array of spatial constraints (CQL2-JSON semantics)."
     },
     {
@@ -3754,7 +3777,7 @@
         "beckn:SpatialConstraint"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Coordinate Reference System identifier for `geometry`. Default is `\"EPSG:4326\"`. If provided, servers MAY reproject to EPSG:4326 internally."
     },
     {
@@ -3776,7 +3799,7 @@
         "beckn:Fulfillment"
       ],
       "schema:rangeIncludes": "beckn:FulfillmentStage",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "The various stages of the fulfillment"
     },
     {
@@ -3786,7 +3809,7 @@
         "beckn:Document"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Describes the schema type in case the document follows a standard schema like a verifiableCredential"
     },
     {
@@ -3796,7 +3819,7 @@
         "beckn:MediaInput"
       ],
       "schema:rangeIncludes": "schema:Integer",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Optional start offset in milliseconds (for audio/video segments)."
     },
     {
@@ -3806,7 +3829,7 @@
         "beckn:CatalogProcessingResult"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Final processing outcome for this catalog"
     },
     {
@@ -3816,7 +3839,7 @@
         "beckn:Address"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Street address (building name/number and street)."
     },
     {
@@ -3832,7 +3855,7 @@
         "beckn:SupportTicket"
       ],
       "schema:rangeIncludes": "beckn:Attributes",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "TODO: Add Description of Property"
     },
     {
@@ -3854,7 +3877,7 @@
         "beckn:SpatialConstraint"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "'One or more JSONPath-like pointers to geometry fields within the item.  Example pointers:  - `$[''availableAt''][*][''geo'']` (array of site Points)  - `$[''itemAttributes''][''ride:dropOff''][''geo'']` (drop zone Polygon)'\n"
     },
     {
@@ -3864,7 +3887,7 @@
         "beckn:MediaInput"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Optional pre-extracted text (OCR/ASR) for search augmentation."
     },
     {
@@ -3874,7 +3897,7 @@
         "beckn:DiscoveryIntent"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Free text search query for items",
       "owl:equivalentProperty": {
         "@id": "beckn:text_search"
@@ -3887,8 +3910,11 @@
         "beckn:Descriptor"
       ],
       "schema:rangeIncludes": "schema:URL",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Name of the entity being described"
+      "@type": "schema:Property",
+      "rdfs:comment": "Name of the entity being described",
+      "owl:equivalentProperty": {
+        "@id": "schema:thumbnailUrl"
+      }
     },
     {
       "@id": "beckn:tickets",
@@ -3903,7 +3929,7 @@
         "beckn:FulfillmentStageEndpoint"
       ],
       "schema:rangeIncludes": "beckn:Time",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "TODO: Add Description of Property"
     },
     {
@@ -3914,7 +3940,7 @@
         "beckn:Context"
       ],
       "schema:rangeIncludes": "schema:DateTime",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Time of request generation in RFC3339 format"
     },
     {
@@ -3923,7 +3949,7 @@
       "rdfs:domain": [
         "beckn:TrackingRequest"
       ],
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "A JSON Schema (2020-12) that describes the structure of trackingData payloads."
     },
     {
@@ -3933,7 +3959,7 @@
         "beckn:Fulfillment"
       ],
       "schema:rangeIncludes": "schema:Boolean",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Whether tracking is enabled / possible for this fulfillment"
     },
     {
@@ -3944,7 +3970,7 @@
         "beckn:Context"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "This is a unique value which persists across all API calls from `search` through `confirm`. This is done to indicate an active user session across multiple requests. The BPPs can use this value to push personalized recommendations, and dynamic offerings related to an ongoing transaction despite being unaware of the user active on the BAP."
     },
     {
@@ -3954,7 +3980,7 @@
         "beckn:Context"
       ],
       "schema:rangeIncludes": "schema:Boolean",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "A flag to indicate that this request is intended to 'try' an operation. Typically set to `false` by default, but set to `true` when negotiating terms, updating or cancelling an active order. When set to `true`, the receiver must respond with the expected consequences as per the terms of service initially agreed between the BAP and the BPP during the `init/on_init` cycle. For example, A BAP will set this flag to `true` when requesting the BPP to cancel the order. Upon receiving this the BPP could respond with updated cost, cancellation fees, reasons for cancellation, a cancellation form, payment links, and any additional notifications or prompts informing the BAP about future consequences if continued (like an account ban, or reduced rating). When both participants are ready to continue the transaction, this flag MUST be set back to `false`."
     },
     {
@@ -3964,7 +3990,7 @@
         "beckn:Context"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "The duration in ISO8601 format after timestamp for which this message holds valid"
     },
     {
@@ -3975,7 +4001,7 @@
         "beckn:MediaInput"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Media category."
     },
     {
@@ -3991,7 +4017,7 @@
         "beckn:MediaFile"
       ],
       "schema:rangeIncludes": "schema:URL",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "URL to the document"
     },
     {
@@ -4006,7 +4032,7 @@
         "beckn:Tracking"
       ],
       "schema:rangeIncludes": "schema:URL",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "URL to the document"
     },
     {
@@ -4016,7 +4042,7 @@
         "beckn:Context"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Version of beckn protocol being used by the sender"
     },
     {
@@ -4038,7 +4064,7 @@
         "beckn:CatalogProcessingResult"
       ],
       "schema:rangeIncludes": "beckn:ProcessingNotice",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Non-fatal issues encountered"
     },
     {
@@ -4312,7 +4338,7 @@
         "beckn:PaymentTerms"
       ],
       "schema:rangeIncludes": "beckn:PaymentTrigger",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "The stage in the order lifecycle when the checkout should be triggered"
     },
     {
@@ -4322,7 +4348,7 @@
         "beckn:PaymentTerms"
       ],
       "schema:rangeIncludes": "schema:Text",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Describes the entity that first collects the payment from the consumer. This is the actor who is responsible to initiate the settlement process as per the terms described in the settlementTerms property."
     },
     {
@@ -4338,7 +4364,7 @@
         "beckn:FulfillmentMode"
       ],
       "schema:rangeIncludes": "beckn:Attributes",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Domain-specific fulfillment mode attributes (e.g., delivery, pickup, reservation, digital)"
     },
     {
@@ -4348,7 +4374,7 @@
         "beckn:Organization"
       ],
       "schema:rangeIncludes": "beckn:Attributes",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Extensible attribute pack for jurisdictional or domain-specific organization properties"
     },
     {
@@ -4358,7 +4384,7 @@
         "beckn:Person"
       ],
       "schema:rangeIncludes": "beckn:Attributes",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "Extensible attribute pack for jurisdictional or domain-specific person properties"
     },
     {
@@ -4368,7 +4394,7 @@
         "beckn:Time"
       ],
       "schema:rangeIncludes": "beckn:TimePeriod",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "A time range with start and end"
     },
     {
@@ -4377,7 +4403,7 @@
       "rdfs:domain": [
         "beckn:Document"
       ],
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:comment": "TODO: Add Description of Property"
     },
     {
@@ -4403,12 +4429,17 @@
     },
     {
       "@id": "beckn:displayName",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Display name (legacy v2 IRI)",
       "rdfs:comment": "DEPRECATED: Use beckn:name (Descriptor.name). This legacy property IRI is retained for backward compatibility with Beckn v2.0.",
-      "owl:equivalentProperty": {
-        "@id": "beckn:name"
-      },
+      "owl:equivalentProperty": [
+        {
+          "@id": "beckn:name"
+        },
+        {
+          "@id": "schema:alternateName"
+        }
+      ],
       "rdfs:subPropertyOf": {
         "@id": "beckn:name"
       },
@@ -4416,7 +4447,7 @@
     },
     {
       "@id": "beckn:eligibleQuantity",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Eligible quantity (legacy v2 IRI)",
       "rdfs:comment": "DEPRECATED: Use schema:eligibleQuantity. This legacy property IRI is retained for backward compatibility with Beckn v2.0.",
       "owl:equivalentProperty": {
@@ -4425,7 +4456,7 @@
     },
     {
       "@id": "beckn:price",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Price (legacy v2 IRI)",
       "rdfs:comment": "DEPRECATED: Use schema:price. This legacy property IRI is retained for backward compatibility with Beckn v2.0.",
       "owl:equivalentProperty": {
@@ -4434,7 +4465,7 @@
     },
     {
       "@id": "beckn:unitCode",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Unit code (legacy v2 IRI)",
       "rdfs:comment": "DEPRECATED: Use schema:unitCode. This legacy property IRI is retained for backward compatibility with Beckn v2.0.",
       "owl:equivalentProperty": {
@@ -4443,7 +4474,7 @@
     },
     {
       "@id": "beckn:unitText",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Unit text (legacy v2 IRI)",
       "rdfs:comment": "DEPRECATED: Use schema:unitText. This legacy property IRI is retained for backward compatibility with Beckn v2.0.",
       "owl:equivalentProperty": {
@@ -4492,7 +4523,7 @@
       "@id": "beckn:telephone",
       "rdfs:label": "Telephone",
       "rdfs:comment": "Proxy for schema:telephone to avoid schema.org IRIs in context.",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "owl:equivalentProperty": {
         "@id": "schema:telephone"
       }
@@ -4501,7 +4532,7 @@
       "@id": "beckn:age",
       "rdfs:label": "Age",
       "rdfs:comment": "Proxy for schema:age to avoid schema.org IRIs in context.",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "owl:equivalentProperty": {
         "@id": "schema:age"
       }
@@ -4510,16 +4541,17 @@
       "@id": "beckn:duration",
       "rdfs:label": "Duration",
       "rdfs:comment": "Proxy for schema:duration to avoid schema.org IRIs in context.",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "owl:equivalentProperty": {
         "@id": "schema:duration"
-      }
+      },
+      "schema:rangeIncludes": "schema:Duration"
     },
     {
       "@id": "beckn:knowsLanguage",
       "rdfs:label": "Knows language",
       "rdfs:comment": "Proxy for schema:knowsLanguage to avoid schema.org IRIs in context.",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "owl:equivalentProperty": {
         "@id": "schema:knowsLanguage"
       }
@@ -4528,7 +4560,7 @@
       "@id": "beckn:worksFor",
       "rdfs:label": "Works for",
       "rdfs:comment": "Proxy for schema:worksFor to avoid schema.org IRIs in context.",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "owl:equivalentProperty": {
         "@id": "schema:worksFor"
       }
@@ -4580,7 +4612,7 @@
       "@id": "beckn:media_search",
       "rdfs:label": "media_search (legacy v2 IRI)",
       "rdfs:comment": "DEPRECATED: Use beckn:mediaSearch. This legacy snake_case IRI is retained for backward compatibility with Beckn v2.0.",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "owl:equivalentProperty": {
         "@id": "beckn:mediaSearch"
       },
@@ -4900,7 +4932,7 @@
     },
     {
       "@id": "beckn:contractValue",
-      "@type": "rdf:Property",
+      "@type": "schema:Property",
       "rdfs:label": "Contract value",
       "rdfs:comment": "Total contract value as a price specification.",
       "rdfs:domain": "beckn:Contract",
