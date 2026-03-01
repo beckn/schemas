@@ -3,7 +3,7 @@
 **Status:** Released  
 **Author(s):** Ravi Prakash (Beckn Labs)  
 **Created:** 2026-02-23  
-**Updated:** 2026-02-23  
+**Updated:** 2026-03-01  
 **Conformance impact:** Informative  
 **Security/privacy implications:** No security or privacy implications identified.  
 **Replaces / Relates to:** Companion to [6_Schema_Distribution_Model.md](https://github.com/beckn/protocol-specifications-v2/blob/core-2.0.0-rc2-alt/docs/6_Schema_Distribution_Model.md) in `protocol-specifications-v2`.
