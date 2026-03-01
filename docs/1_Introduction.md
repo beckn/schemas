@@ -1,7 +1,7 @@
 # Introduction to the Beckn Protocol Core Schema
 
 **Status:** Released  
-**Author(s):** Ravi Prakash (FIDE / Beckn Foundation)  
+**Author(s):** Ravi Prakash (Beckn Labs)  
 **Created:** 2026-02-23  
 **Updated:** 2026-02-23  
 **Conformance impact:** Informative  
@@ -18,7 +18,7 @@ This document introduces the Beckn Protocol Core Schema library. It describes wh
 
 ## 1. Context
 
-The Beckn Protocol v2 is an open interoperability protocol that enables commerce across any industry domain — mobility, food delivery, healthcare, education, and beyond. At its heart, the protocol defines a set of standardised data structures (schemas) that all participants — buyers, sellers, platforms, and infrastructure services — use to exchange information.
+The Beckn Protocol v2 is an open interoperability protocol that enables value exchange across any industry domain — mobility, food delivery, healthcare, education, and beyond. At its heart, the protocol defines a set of standardised data structures (schemas) that all participants — buyers, sellers, platforms, and infrastructure services — use to exchange value.
 
 In Beckn Protocol v1.x, all schema definitions lived inside a single monolithic YAML file. This created versioning friction: a change to one schema forced a version bump on all schemas, and domain-specific implementations had difficulty extending the schema without forking the whole specification.
 
