@@ -24,7 +24,8 @@ properties:
     example: "https://bpp.example.com"
   descriptor:
     description: A verbal summary of the catalog for humans, AI agents, etc to read and understand the context.
-    type: object
+    allOf:
+    - $ref: "https://schema.beckn.io/Descriptor/v2.0"
   id:
     description: Unique identifier for the catalog
     type: string
@@ -47,7 +48,9 @@ properties:
     type: string
     example: tech-store-001
   validity:
-    type: object
+    description: The time period during which this catalog is valid
+    allOf:
+    - $ref: "https://schema.beckn.io/TimePeriod/v2.0"
 required:
 - '@context'
 - '@type'
