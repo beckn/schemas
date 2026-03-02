@@ -1,22 +1,11 @@
-openapi: 3.1.1
-info:
-  title: Beckn CheckoutTerminal Schema
-  description: Schema definition for CheckoutTerminal in the Beckn Protocol v2.0.1
-  version: 2.0.1
-  contact:
-    name: Beckn Labs
-    url: https://beckn.io
-  license:
-    name: CC-BY-NC-SA 4.0 International
-    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
-components:
-  schemas:
-    CheckoutTerminal:
-      description: The checkout terminal where the consumer makes the payment
-      type: string
-      enum:
-      - BAP_CHECKOUT
-      - BPP_CHECKOUT
-      - ESCROW_CHECKOUT_URL
-      - PROVIDER_POS
-      - FULFILLMENT_AGENT_POS
+$id: "https://schema.beckn.io/CheckoutTerminal/v2.0"
+$schema: "https://json-schema.org/draft/2020-12/schema"
+description: The checkout terminal where the consumer makes the payment
+title: CheckoutTerminal
+type: string
+enum:
+- BAP_CHECKOUT
+- BPP_CHECKOUT
+- ESCROW_CHECKOUT_URL
+- PROVIDER_POS
+- FULFILLMENT_AGENT_POS

@@ -1,48 +1,39 @@
-openapi: 3.1.1
-info:
-  title: Beckn Entitlement Schema
-  description: Schema definition for Entitlement in the Beckn Protocol v2.0.1
-  version: 2.0.1
-  contact:
-    name: Beckn Labs
-    url: https://beckn.io
-  license:
-    name: CC-BY-NC-SA 4.0 International
-    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
-components:
-  schemas:
-    Entitlement:
-      description: A contractually granted, policy-governed right that allows a specific party to access, use, or claim a defined economic resource within stated scope and validity constraints. It represents the enforceable permission created by an order, independent of the credential used to exercise it.
-      type: object
-      properties:
-        '@context':
-          description: CPD
-          type: string
-          format: uri
-          default: https://schema.beckn.io/
-        '@type':
-          description: The domain-specific type of entitlement that allows domains to extend this schema
-          type: string
-          default: beckn:Entitlement
-        id:
-          description: A unique identifier for this entitlement within the entitlement provider's namespace
-          type: string
-        resource:
-          description: The resource being availed or accessed against this entitlement
-          allOf:
-            - $ref: 'https://schema.beckn.io/ContractItem.yaml#/properties/lineId'
-        descriptor:
-          description: Human-readable information regarding the entitlement like QR-code images, attached documents containing terms and conditions, video or audio files instructing the user on how to use the entitlement
-          allOf:
-            - $ref: 'https://schema.beckn.io/Descriptor.yaml'
-        credentials:
-          type: array
-          items:
-            $ref: 'https://schema.beckn.io/Descriptor.yaml'
-
-      additionalProperties: true
-      required:
-      - '@context'
-      - '@type'
-      - id
-      - descriptor
+$id: "https://schema.beckn.io/Entitlement/v2.0"
+$schema: "https://json-schema.org/draft/2020-12/schema"
+description: A contractually granted, policy-governed right that allows a specific party to access, use, or claim a defined
+  economic resource within stated scope and validity constraints. It represents the enforceable permission created by an order,
+  independent of the credential used to exercise it.
+title: Entitlement
+type: object
+properties:
+  '@context':
+    description: CPD
+    type: string
+    format: uri
+    default: "https://schema.beckn.io/"
+  '@type':
+    description: The domain-specific type of entitlement that allows domains to extend this schema
+    type: string
+    default: beckn:Entitlement
+  id:
+    description: A unique identifier for this entitlement within the entitlement provider's namespace
+    type: string
+  resource:
+    description: The resource being availed or accessed against this entitlement
+    allOf:
+    - $ref: "https://schema.beckn.io/ContractItem.yaml#/properties/lineId"
+  descriptor:
+    description: Human-readable information regarding the entitlement like QR-code images, attached documents containing terms
+      and conditions, video or audio files instructing the user on how to use the entitlement
+    allOf:
+    - $ref: "https://schema.beckn.io/Descriptor.yaml"
+  credentials:
+    type: array
+    items:
+      $ref: "https://schema.beckn.io/Descriptor.yaml"
+additionalProperties: true
+required:
+- '@context'
+- '@type'
+- id
+- descriptor

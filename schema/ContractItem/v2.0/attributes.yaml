@@ -1,48 +1,37 @@
-openapi: 3.1.1
-info:
-  title: Beckn ContractItem Schema
-  description: Schema definition for ContractItem in the Beckn Protocol v2.0.1
-  version: 2.0.1
-  contact:
-    name: Beckn Labs
-    url: https://beckn.io
-  license:
-    name: CC-BY-NC-SA 4.0 International
-    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
-components:
-  schemas:
-    ContractItem:
-      type: object
-      description: A line item within a Contract, linking an accepted Offer and ordered Item with quantity and price.
-      properties:
-        acceptedOffer:
-          description: Offer applied to this line (if different from contract-level)
-          x-jsonld:
-            '@id': schema:acceptedOffer
-          allOf:
-          - $ref: 'https://schema.beckn.io/Offer.yaml'
-        itemId:
-          x-jsonld:
-            '@id': schema:orderedItem
-          allOf:
-          - $ref: 'https://schema.beckn.io/Item.yaml#/properties/id'
-        lineId:
-          description: Unique line id within contract
-          type: string
-        contractItemAttributes:
-          description: Line-level Attribute Pack (options, substitutions, ESG, etc.)
-          allOf:
-          - $ref: 'https://schema.beckn.io/Attributes.yaml'
-        price:
-          description: Line price composition (unit/tax/delivery/discount)
-          x-jsonld:
-            '@id': schema:priceSpecification
-          allOf:
-          - $ref: 'https://schema.beckn.io/PriceSpecification.yaml'
-        quantity:
-          x-jsonld:
-            '@id': beckn:quantity
-          allOf:
-          - $ref: 'https://schema.beckn.io/Quantity.yaml'
-      required:
-      - itemId
+$id: "https://schema.beckn.io/ContractItem/v2.0"
+$schema: "https://json-schema.org/draft/2020-12/schema"
+description: A line item within a Contract, linking an accepted Offer and ordered Item with quantity and price.
+title: ContractItem
+type: object
+properties:
+  acceptedOffer:
+    description: Offer applied to this line (if different from contract-level)
+    x-jsonld:
+      '@id': schema:acceptedOffer
+    allOf:
+    - $ref: "https://schema.beckn.io/Offer.yaml"
+  itemId:
+    x-jsonld:
+      '@id': schema:orderedItem
+    allOf:
+    - $ref: "https://schema.beckn.io/Item.yaml#/properties/id"
+  lineId:
+    description: Unique line id within contract
+    type: string
+  contractItemAttributes:
+    description: Line-level Attribute Pack (options, substitutions, ESG, etc.)
+    allOf:
+    - $ref: "https://schema.beckn.io/Attributes.yaml"
+  price:
+    description: Line price composition (unit/tax/delivery/discount)
+    x-jsonld:
+      '@id': schema:priceSpecification
+    allOf:
+    - $ref: "https://schema.beckn.io/PriceSpecification.yaml"
+  quantity:
+    x-jsonld:
+      '@id': beckn:quantity
+    allOf:
+    - $ref: "https://schema.beckn.io/Quantity.yaml"
+required:
+- itemId

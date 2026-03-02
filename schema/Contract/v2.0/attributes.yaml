@@ -1,89 +1,93 @@
-openapi: 3.1.1
-info:
-  title: Beckn Contract Schema
-  description: Schema definition for Contract in the Beckn Protocol v2.0.1
-  version: 2.0.1
-  contact:
-    name: Beckn Labs
-    url: https://beckn.io
-  license:
-    name: CC-BY-NC-SA 4.0 International
-    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
-components:
-  schemas:
-    Contract:
-      description: This is a JSON-LD compliant, linked-data schema that specifies a generic multi-party, digitally signed Contract between a set of participants. based on the vocabulary defined in the @context. By default, it is the most generic form of contract i.e beckn:Contract. However, based on the mapping being used in @context, it could take values like retail:Order, mobility:Reservation, healthcare:Appointment, and so on, which will be defined as sub-classes of beckn:Contract. 
-      type: object
+$id: "https://schema.beckn.io/Contract/v2.0"
+$schema: "https://json-schema.org/draft/2020-12/schema"
+description: This is a JSON-LD compliant, linked-data schema that specifies a generic multi-party, digitally signed Contract
+  between a set of participants. based on the vocabulary defined in the @context. By default, it is the most generic form
+  of contract i.e beckn:Contract. However, based on the mapping being used in @context, it could take values like retail:Order,
+  mobility:Reservation, healthcare:Appointment, and so on, which will be defined as sub-classes of beckn:Contract.
+title: Contract
+type: object
+properties:
+  '@context':
+    description: A URL to the reference vocabulary where this schema has been defined. If missing, this field defaults to
+      `https://schema.beckn.io/`. It allows applications to fetch the mapping between the simple JSON keys of this class and
+      absolute Beckn IRIs (Internationalized Resource Identifiers), allowing conversion of standard Beckn JSON payload into
+      linked data.
+    type: string
+    format: uri
+    const: "https://schema.beckn.io/"
+  '@type':
+    description: A Beckn IRI on the vocabulary defined in the @context. Must start with "beckn:" followed by URL-safe identifier
+      characters.
+    type: string
+    pattern: ^beckn:[A-Za-z0-9._~-]+$
+    default: beckn:Contract
+  id:
+    description: A UUID string generated at the BPP endpoint at any stage before the confirmation of the order i.e before
+      `/on_confirm` callback. This value is intended typically for indexing or filtering. While the chances of a UUID collision
+      are rare, it is recommended to use a combination of `bppId`, `providerId` and `id` to allow for global uniqueness.
+    type: string
+    format: uuid
+  displayId:
+    description: A human-readable / Agent-readable identifier of the contract intended for display or printing. This value
+      may or may not be different from `id` which is intended purely for machine-readability. Typically, this value is generated
+      after the confirmation of the order at the BPP's end.
+    type: string
+  items:
+    description: The items of value i.e resources, specified in this contract. Depending upon the context, these resources
+      could be a combination physical objects, virtual objects, services, time slots, distance travelled, alloted space, and
+      many more.
+    type: array
+    items:
+      $ref: "https://schema.beckn.io/ContractItem.yaml"
+    minItems: 1
+  status:
+    description: The current state of the contract. Depending on the context, it could be just a code or a detailed description
+      of state.
+    oneOf:
+    - type: string
+      description: A single code describing the status of the contract.
+    - type: object
       properties:
         '@context':
-          description: A URL to the reference vocabulary where this schema has been defined. If missing, this field defaults to `https://schema.beckn.io/`. It allows applications to fetch the mapping between the simple JSON keys of this class and absolute Beckn IRIs (Internationalized Resource Identifiers), allowing conversion of standard Beckn JSON payload into linked data.
           type: string
           format: uri
-          const: https://schema.beckn.io/
+          const: "https://schema.beckn.io/"
         '@type':
-          description: A Beckn IRI on the vocabulary defined in the @context. Must start with "beckn:" followed by URL-safe identifier characters.
           type: string
-          pattern: '^beckn:[A-Za-z0-9._~-]+$'
-          default: beckn:Contract
-        id:
-          description: A UUID string generated at the BPP endpoint at any stage before the confirmation of the order i.e before `/on_confirm` callback. This value is intended typically for indexing or filtering. While the chances of a UUID collision are rare, it is recommended to use a combination of `bppId`, `providerId` and `id` to allow for global uniqueness. 
+          pattern: ^beckn:[A-Za-z0-9._~-]+$
+      additionalProperties: true
+  contractValue:
+    description: An object that captures the total value of the contract including a breakup of the items, discounts, fulfillment
+      charges, and any other additional charges relevant to that context.
+    oneOf:
+    - $ref: "https://schema.beckn.io/PriceSpecification.yaml"
+    - type: object
+      properties:
+        '@context':
           type: string
-          format: uuid
-        displayId:
-          description: A human-readable / Agent-readable identifier of the contract intended for display or printing. This value may or may not be different from `id` which is intended purely for machine-readability. Typically, this value is generated after the confirmation of the order at the BPP's end.
+          format: uri
+          const: "https://schema.beckn.io/"
+        '@type':
           type: string
-        items:
-          description: The items of value i.e resources, specified in this contract. Depending upon the context, these resources could be a combination physical objects, virtual objects, services, time slots, distance travelled, alloted space, and many more. 
-          type: array
-          items:
-            $ref: 'https://schema.beckn.io/ContractItem.yaml'
-          minItems: 1
-        status:
-          description: The current state of the contract. Depending on the context, it could be just a code or a detailed description of state. 
-          oneOf:
-            - type: string
-              description: A single code describing the status of the contract.
-            - type: object
-              properties:
-                '@context':
-                  type: string
-                  format: uri
-                  const: https://schema.beckn.io/
-                '@type':
-                  type: string
-                  pattern: '^beckn:[A-Za-z0-9._~-]+$'
-              additionalProperties: true
-              
-        contractValue:
-          description: An object that captures the total value of the contract including a breakup of the items, discounts, fulfillment charges, and any other additional charges relevant to that context. 
-          oneOf: 
-            - $ref: 'https://schema.beckn.io/PriceSpecification.yaml'
-            - type: object
-              properties:
-                '@context':
-                  type: string
-                  format: uri
-                  const: https://schema.beckn.io/
-                '@type':
-                  type: string
-                  pattern: '^beckn:[A-Za-z0-9._~-]+$'
-              additionalProperties: true
-        participants:
-          description: The participants involved in the contract. Contracts are not always between two individuals. Several entities may play a specific role in the creation, fulfillment, and post-fulfillment of the contract.
-          type: array
-          items:
-            $ref: 'https://schema.beckn.io/Participant.yaml'
-        entitlements:
-          type: array
-          items:
-            $ref: 'https://schema.beckn.io/Entitlement.yaml'
-        fulfillments:
-          description: Describes the acts performed by each participant to fulfill the contract
-          type: array
-          items:
-            $ref: 'https://schema.beckn.io/Fulfillment.yaml'
-      required:
-      - '@type'
-      - participants
-      - items
-      additionalProperties: false
+          pattern: ^beckn:[A-Za-z0-9._~-]+$
+      additionalProperties: true
+  participants:
+    description: The participants involved in the contract. Contracts are not always between two individuals. Several entities
+      may play a specific role in the creation, fulfillment, and post-fulfillment of the contract.
+    type: array
+    items:
+      $ref: "https://schema.beckn.io/Participant.yaml"
+  entitlements:
+    type: array
+    items:
+      $ref: "https://schema.beckn.io/Entitlement.yaml"
+  fulfillments:
+    description: Describes the acts performed by each participant to fulfill the contract
+    type: array
+    items:
+      $ref: "https://schema.beckn.io/Fulfillment.yaml"
+required:
+- '@type'
+- participants
+- items
+additionalProperties: false

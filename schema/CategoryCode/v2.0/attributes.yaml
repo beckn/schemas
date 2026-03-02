@@ -1,40 +1,30 @@
-openapi: 3.1.1
-info:
-  title: Beckn CategoryCode Schema
-  description: Schema definition for CategoryCode in the Beckn Protocol v2.0.1
-  version: 2.0.1
-  contact:
-    name: Beckn Labs
-    url: https://beckn.io
-  license:
-    name: CC-BY-NC-SA 4.0 International
-    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
-components:
-  schemas:
-    CategoryCode:
-      type: object
-      properties:
-        '@context':
-          description: CPD
-          type: string
-          format: uri
-          default: schema:CategoryCode
-        '@type':
-          description: Context-specific Type of the category code
-          type: string
-          default: schema:CategoryCode
-        schema:codeValue:
-          description: Category code value
-          type: string
-          example: electronics
-        schema:description:
-          description: Category description
-          type: string
-          example: Electronic devices and equipment
-        schema:name:
-          description: Category name
-          type: string
-          example: Electronics
-      required:
-      - '@type'
-      - schema:codeValue
+$id: "https://schema.beckn.io/CategoryCode/v2.0"
+$schema: "https://json-schema.org/draft/2020-12/schema"
+description: Schema definition for CategoryCode in the Beckn Protocol v2.0.1
+title: CategoryCode
+type: object
+properties:
+  '@context':
+    description: CPD
+    type: string
+    format: uri
+    default: schema:CategoryCode
+  '@type':
+    description: Context-specific Type of the category code
+    type: string
+    default: schema:CategoryCode
+  schema:codeValue:
+    description: Category code value
+    type: string
+    example: electronics
+  schema:description:
+    description: Category description
+    type: string
+    example: Electronic devices and equipment
+  schema:name:
+    description: Category name
+    type: string
+    example: Electronics
+required:
+- '@type'
+- schema:codeValue

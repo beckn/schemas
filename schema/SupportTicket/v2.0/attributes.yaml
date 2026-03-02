@@ -1,22 +1,11 @@
-openapi: 3.1.1
-info:
-  title: Beckn SupportTicket Schema
-  description: Schema definition for SupportTicket in the Beckn Protocol v2.0.1
-  version: 2.0.1
-  contact:
-    name: Beckn Labs
-    url: https://beckn.io
-  license:
-    name: CC-BY-NC-SA 4.0 International
-    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
-components:
-  schemas:
-    SupportTicket:
-      type: object
-      description: A support ticket raised against an order
-      properties:
-        id:
-          description: Ticket ID
-          type: string
-        supportTicketAttributes:
-          $ref: 'https://schema.beckn.io/Attributes.yaml'
+$id: "https://schema.beckn.io/SupportTicket/v2.0"
+$schema: "https://json-schema.org/draft/2020-12/schema"
+description: A support ticket raised against an order
+title: SupportTicket
+type: object
+properties:
+  id:
+    description: Ticket ID
+    type: string
+  supportTicketAttributes:
+    $ref: "https://schema.beckn.io/Attributes.yaml"

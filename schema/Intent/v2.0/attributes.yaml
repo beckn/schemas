@@ -1,56 +1,44 @@
-openapi: 3.1.1
-info:
-  title: Beckn DiscoveryIntent Schema
-  description: Schema definition for DiscoveryIntent in the Beckn Protocol v2.0.1
-  version: 2.0.1
-  contact:
-    name: Beckn Labs
-    url: https://beckn.io
-  license:
-    name: CC-BY-NC-SA 4.0 International
-    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
-components:
-  schemas:
-    Intent:
-      description: A declaration of an intent to discover catalogs.
-      type: object
-      properties:
-        textSearch:
-          description: Free text search query for items
-          type: string
-          example: gaming laptop premium tech
-        filters:
-          description: Filter criteria for items
-          type: object
-          properties:
-            type:
-              description: Type of filter expression
-              type: string
-              enum:
-              - jsonpath
-              default: jsonpath
-            expression:
-              description: Filter expression based on the specified type
-              type: string
-              example: $[?(@.rating.value >= 4.0 && @.electronic.brand.name == 'Premium
-                Tech')]
-          required:
-          - type
-          - expression
-        spatial:
-          description: Optional array of spatial constraints (CQL2-JSON semantics).
-          type: array
-          items:
-            $ref: 'https://schema.beckn.io/SpatialConstraint.yaml'
-        media_search:
-          $ref: 'https://schema.beckn.io/MediaSearch.yaml'
-      anyOf:
-      - required:
-        - textSearch
-      - required:
-        - filters
-      - required:
-        - spatial
-      - required:
-        - filters
-        - spatial
+$id: "https://schema.beckn.io/Intent/v2.0"
+$schema: "https://json-schema.org/draft/2020-12/schema"
+description: A declaration of an intent to discover catalogs.
+title: Intent
+type: object
+properties:
+  textSearch:
+    description: Free text search query for items
+    type: string
+    example: gaming laptop premium tech
+  filters:
+    description: Filter criteria for items
+    type: object
+    properties:
+      type:
+        description: Type of filter expression
+        type: string
+        enum:
+        - jsonpath
+        default: jsonpath
+      expression:
+        description: Filter expression based on the specified type
+        type: string
+        example: $[?(@.rating.value >= 4.0 && @.electronic.brand.name == 'Premium Tech')]
+    required:
+    - type
+    - expression
+  spatial:
+    description: Optional array of spatial constraints (CQL2-JSON semantics).
+    type: array
+    items:
+      $ref: "https://schema.beckn.io/SpatialConstraint.yaml"
+  media_search:
+    $ref: "https://schema.beckn.io/MediaSearch.yaml"
+anyOf:
+- required:
+  - textSearch
+- required:
+  - filters
+- required:
+  - spatial
+- required:
+  - filters
+  - spatial

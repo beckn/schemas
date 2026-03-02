@@ -1,27 +1,17 @@
-openapi: 3.1.1
-info:
-  title: Beckn Eligibility Schema
-  description: Schema definition for Eligibility in the Beckn Protocol v2.0.1
-  version: 2.0.1
-  contact:
-    name: Beckn Labs
-    url: https://beckn.io
-  license:
-    name: CC-BY-NC-SA 4.0 International
-    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
-components:
-  schemas:
-    Eligibility:
-      type: object
-      properties:
-        eligibleQuantity:
-          type: object
-          properties:
-            max:
-              type: number
-            min:
-              type: number
-        eligibleRegion:
-          type: string
-      x-jsonld:
-        '@id': schema:DefinedRegion|schema:QuantitativeValue
+$id: "https://schema.beckn.io/Eligibility/v2.0"
+$schema: "https://json-schema.org/draft/2020-12/schema"
+description: Schema definition for Eligibility in the Beckn Protocol v2.0.1
+title: Eligibility
+type: object
+properties:
+  eligibleQuantity:
+    type: object
+    properties:
+      max:
+        type: number
+      min:
+        type: number
+  eligibleRegion:
+    type: string
+x-jsonld:
+  '@id': schema:DefinedRegion|schema:QuantitativeValue

@@ -1,33 +1,21 @@
-openapi: 3.1.1
-info:
-  title: Beckn Location Schema
-  description: Schema definition for Location in the Beckn Protocol v2.0.1
-  version: 2.0.1
-  contact:
-    name: Beckn Labs
-    url: https://beckn.io
-  license:
-    name: CC-BY-NC-SA 4.0 International
-    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
-components:
-  schemas:
-    Location:
-      description: A **place** represented by **GeoJSON geometry** (Point/Polygon/Multi*)
-        and optional human-readable `address`. This unifies all Beckn location fields
-        into a single, widely-adopted representation (GeoJSON).
-      type: object
-      properties:
-        '@type':
-          type: string
-          enum:
-          - Location
-        address:
-          description: Optional human-readable address for the same place/area.
-          oneOf:
-          - type: string
-          - $ref: 'https://schema.beckn.io/Address.yaml'
-        geo:
-          $ref: 'https://schema.beckn.io/GeoJSONGeometry.yaml'
-      required:
-      - geo
-      additionalProperties: false
+$id: "https://schema.beckn.io/Location/v2.0"
+$schema: "https://json-schema.org/draft/2020-12/schema"
+description: A **place** represented by **GeoJSON geometry** (Point/Polygon/Multi*) and optional human-readable `address`.
+  This unifies all Beckn location fields into a single, widely-adopted representation (GeoJSON).
+title: Location
+type: object
+properties:
+  '@type':
+    type: string
+    enum:
+    - Location
+  address:
+    description: Optional human-readable address for the same place/area.
+    oneOf:
+    - type: string
+    - $ref: "https://schema.beckn.io/Address.yaml"
+  geo:
+    $ref: "https://schema.beckn.io/GeoJSONGeometry.yaml"
+required:
+- geo
+additionalProperties: false

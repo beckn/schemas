@@ -1,39 +1,29 @@
-openapi: 3.1.1
-info:
-  title: Beckn OnSelectAction Schema
-  description: Schema definition for the Beckn /beckn/on_select callback envelope.
-  version: 2.0.1
-  contact:
-    name: Beckn Labs
-    url: https://beckn.io
-  license:
-    name: CC-BY-NC-SA 4.0 International
-    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
-components:
-  schemas:
-    OnSelectAction:
-      description: >
-        Beckn /beckn/on_select callback envelope. Sent by a BPP to a BAP in
-        response to a /beckn/select call, with updated contract terms.
-      type: object
+$id: "https://schema.beckn.io/OnSelectAction/v2.0"
+$schema: "https://json-schema.org/draft/2020-12/schema"
+description: 'Beckn /beckn/on_select callback envelope. Sent by a BPP to a BAP in response to a /beckn/select call, with updated
+  contract terms.
+
+  '
+title: OnSelectAction
+type: object
+properties:
+  context:
+    allOf:
+    - $ref: "https://schema.beckn.io/Context.yaml"
+    - type: object
       properties:
-        context:
-          allOf:
-            - $ref: 'https://schema.beckn.io/Context.yaml'
-            - type: object
-              properties:
-                action:
-                  type: string
-                  const: beckn/on_select
-        message:
-          type: object
-          additionalProperties: true
-          properties:
-            contract:
-              allOf:
-                - $ref: 'https://schema.beckn.io/Contract.yaml'
-          required:
-            - contract
-      required:
-        - context
-        - message
+        action:
+          type: string
+          const: beckn/on_select
+  message:
+    type: object
+    additionalProperties: true
+    properties:
+      contract:
+        allOf:
+        - $ref: "https://schema.beckn.io/Contract.yaml"
+    required:
+    - contract
+required:
+- context
+- message

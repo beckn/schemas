@@ -1,40 +1,29 @@
-openapi: 3.1.1
-info:
-  title: Beckn OnInitAction Schema
-  description: Schema definition for the Beckn /beckn/on_init callback envelope.
-  version: 2.0.1
-  contact:
-    name: Beckn Labs
-    url: https://beckn.io
-  license:
-    name: CC-BY-NC-SA 4.0 International
-    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
-components:
-  schemas:
-    OnInitAction:
-      description: >
-        Beckn /beckn/on_init callback envelope. Sent by a BPP to a BAP in
-        response to a /beckn/init call, with the updated contract including
-        payment terms and billing confirmation.
-      type: object
+$id: "https://schema.beckn.io/OnInitAction/v2.0"
+$schema: "https://json-schema.org/draft/2020-12/schema"
+description: 'Beckn /beckn/on_init callback envelope. Sent by a BPP to a BAP in response to a /beckn/init call, with the updated
+  contract including payment terms and billing confirmation.
+
+  '
+title: OnInitAction
+type: object
+properties:
+  context:
+    allOf:
+    - $ref: "https://schema.beckn.io/Context.yaml"
+    - type: object
       properties:
-        context:
-          allOf:
-            - $ref: 'https://schema.beckn.io/Context.yaml'
-            - type: object
-              properties:
-                action:
-                  type: string
-                  const: beckn/on_init
-        message:
-          type: object
-          additionalProperties: true
-          properties:
-            contract:
-              allOf:
-                - $ref: 'https://schema.beckn.io/Contract.yaml'
-          required:
-            - contract
-      required:
-        - context
-        - message
+        action:
+          type: string
+          const: beckn/on_init
+  message:
+    type: object
+    additionalProperties: true
+    properties:
+      contract:
+        allOf:
+        - $ref: "https://schema.beckn.io/Contract.yaml"
+    required:
+    - contract
+required:
+- context
+- message

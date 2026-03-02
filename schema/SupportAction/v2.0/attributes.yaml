@@ -1,40 +1,29 @@
-openapi: 3.1.1
-info:
-  title: Beckn SupportAction Schema
-  description: Schema definition for the Beckn /beckn/support action envelope.
-  version: 2.0.1
-  contact:
-    name: Beckn Labs
-    url: https://beckn.io
-  license:
-    name: CC-BY-NC-SA 4.0 International
-    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
-components:
-  schemas:
-    SupportAction:
-      description: >
-        Beckn /beckn/support action envelope. Sent by a BAP to a BPP to request
-        support contact information or to open a support ticket for an existing
-        order/contract.
-      type: object
+$id: "https://schema.beckn.io/SupportAction/v2.0"
+$schema: "https://json-schema.org/draft/2020-12/schema"
+description: 'Beckn /beckn/support action envelope. Sent by a BAP to a BPP to request support contact information or to open
+  a support ticket for an existing order/contract.
+
+  '
+title: SupportAction
+type: object
+properties:
+  context:
+    allOf:
+    - $ref: "https://schema.beckn.io/Context.yaml"
+    - type: object
       properties:
-        context:
-          allOf:
-            - $ref: 'https://schema.beckn.io/Context.yaml'
-            - type: object
-              properties:
-                action:
-                  type: string
-                  const: beckn/support
-        message:
-          type: object
-          additionalProperties: true
-          properties:
-            supportRequest:
-              allOf:
-                - $ref: 'https://schema.beckn.io/SupportRequest.yaml'
-          required:
-            - supportRequest
-      required:
-        - context
-        - message
+        action:
+          type: string
+          const: beckn/support
+  message:
+    type: object
+    additionalProperties: true
+    properties:
+      supportRequest:
+        allOf:
+        - $ref: "https://schema.beckn.io/SupportRequest.yaml"
+    required:
+    - supportRequest
+required:
+- context
+- message

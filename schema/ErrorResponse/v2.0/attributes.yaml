@@ -1,20 +1,10 @@
-openapi: 3.1.1
-info:
-  title: Beckn ErrorResponse Schema
-  description: Schema definition for ErrorResponse in the Beckn Protocol v2.0.1
-  version: 2.0.1
-  contact:
-    name: Beckn Labs
-    url: https://beckn.io
-  license:
-    name: CC-BY-NC-SA 4.0 International
-    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
-components:
-  schemas:
-    ErrorResponse:
-      type: object
-      properties:
-        error:
-          $ref: 'https://schema.beckn.io/Error.yaml'
-      required:
-      - error
+$id: "https://schema.beckn.io/ErrorResponse/v2.0"
+$schema: "https://json-schema.org/draft/2020-12/schema"
+description: Schema definition for ErrorResponse in the Beckn Protocol v2.0.1
+title: ErrorResponse
+type: object
+properties:
+  error:
+    $ref: "https://schema.beckn.io/Error.yaml"
+required:
+- error
