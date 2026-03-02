@@ -38,3 +38,4 @@ anyOf:
 - required:
   - schema:startTime
   - schema:endTime
+additionalProperties: false

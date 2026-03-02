@@ -70,3 +70,4 @@ properties:
     description: Version of beckn protocol being used by the sender
     type: string
     const: 2.1.0
+additionalProperties: false

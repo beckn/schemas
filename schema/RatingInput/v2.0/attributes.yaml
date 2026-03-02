@@ -72,3 +72,4 @@ required:
 - '@type'
 - target
 - range
+additionalProperties: false

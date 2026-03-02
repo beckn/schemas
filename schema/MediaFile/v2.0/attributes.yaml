@@ -12,3 +12,4 @@ properties:
     description: URL to the document
     type: string
     format: uri
+additionalProperties: false

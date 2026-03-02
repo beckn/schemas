@@ -15,4 +15,4 @@ properties:
     - https://schema.beckn.io/CancelAction/v2.0
     - https://schema.beckn.io/RateAction/v2.0
     - https://schema.beckn.io/SupportAction/v2.0
-  
+  additionalProperties: false
