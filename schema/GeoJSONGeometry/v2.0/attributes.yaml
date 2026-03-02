@@ -22,7 +22,7 @@ properties:
     description: Member geometries when `type` is **GeometryCollection**.
     type: array
     items:
-      $ref: "https://schema.beckn.io/GeoJSONGeometry.yaml"
+      $ref: "https://schema.beckn.io/GeoJSONGeometry/v2.0"
   type:
     type: string
     enum:

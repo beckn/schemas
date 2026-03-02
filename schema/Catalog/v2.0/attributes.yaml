@@ -37,11 +37,11 @@ properties:
     description: Array of beckn core Item entities in this catalog
     type: array
     items:
-      type: object
+      $ref: "https://schema.beckn.io/Item/v2.0"
   offers:
     type: array
     items:
-      type: object
+      $ref: "https://schema.beckn.io/Offer/v2.0"
   providerId:
     description: Reference to the provider that owns this catalog
     type: string

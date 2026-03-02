@@ -16,9 +16,9 @@ properties:
   alerts:
     type: array
     items:
-      $ref: "https://schema.beckn.io/Alert.yaml"
+      $ref: "https://schema.beckn.io/Alert/v2.0"
   descriptor:
-    $ref: "https://schema.beckn.io/Descriptor.yaml"
+    $ref: "https://schema.beckn.io/Descriptor/v2.0"
   id:
     description: Unique identifier for the provider
     type: string
@@ -27,21 +27,21 @@ properties:
     description: Physical locations where the provider operates
     type: array
     items:
-      $ref: "https://schema.beckn.io/Location.yaml"
+      $ref: "https://schema.beckn.io/Location/v2.0"
   policies:
     type: array
     items:
-      $ref: "https://schema.beckn.io/Policy.yaml"
+      $ref: "https://schema.beckn.io/Policy/v2.0"
   providerAttributes:
-    $ref: "https://schema.beckn.io/Attributes.yaml"
+    $ref: "https://schema.beckn.io/Attributes/v2.0"
   rateable:
     description: Whether the provider can be rated by customers
     type: boolean
     example: true
   rating:
-    $ref: "https://schema.beckn.io/Rating.yaml"
+    $ref: "https://schema.beckn.io/Rating/v2.0"
   validity:
-    $ref: "https://schema.beckn.io/TimePeriod.yaml"
+    $ref: "https://schema.beckn.io/TimePeriod/v2.0"
 required:
 - id
 - descriptor

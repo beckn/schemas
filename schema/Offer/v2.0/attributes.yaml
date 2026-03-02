@@ -17,32 +17,32 @@ properties:
     x-jsonld:
       '@id': schema:Offer
   acceptedPaymentMethod:
-    $ref: "https://schema.beckn.io/AcceptedPaymentMethod.yaml"
+    $ref: "https://schema.beckn.io/AcceptedPaymentMethod/v2.0"
   addOnItems:
     description: Optional extras modeled as items (e.g., toppings, accessories)
     type: array
     items:
-      $ref: "https://schema.beckn.io/Item.yaml#/properties/id"
+      $ref: "https://schema.beckn.io/Item/v2.0#/properties/id"
     x-jsonld:
       '@id': schema:addOn
   addOns:
     description: Optional extra Offers that can be attached (e.g., warranty, gift wrap)
     type: array
     items:
-      $ref: "https://schema.beckn.io/Offer.yaml#/properties/id"
+      $ref: "https://schema.beckn.io/Offer/v2.0#/properties/id"
     x-jsonld:
       '@id': schema:addOn
   constraints:
     type: array
     items:
-      $ref: "https://schema.beckn.io/Constraint.yaml"
+      $ref: "https://schema.beckn.io/Constraint/v2.0"
   descriptor:
-    $ref: "https://schema.beckn.io/Descriptor.yaml"
+    $ref: "https://schema.beckn.io/Descriptor/v2.0"
   eligibleRegion:
     description: Regions where the offer is eligible
     type: array
     items:
-      $ref: "https://schema.beckn.io/Location.yaml"
+      $ref: "https://schema.beckn.io/Location/v2.0"
   id:
     description: Unique id for this offer
     type: string
@@ -56,36 +56,36 @@ properties:
     description: Base item(s) the offer applies to (single or bundle)
     type: array
     items:
-      $ref: "https://schema.beckn.io/Item.yaml#/properties/id"
+      $ref: "https://schema.beckn.io/Item/v2.0#/properties/id"
     x-jsonld:
       '@id': schema:itemOffered
     minItems: 1
   offerAttributes:
     description: Attribute Pack attachment (pricing models, discounts, rail terms, etc.)
     allOf:
-    - $ref: "https://schema.beckn.io/Attributes.yaml"
+    - $ref: "https://schema.beckn.io/Attributes/v2.0"
   policies:
     type: array
     items:
-      $ref: "https://schema.beckn.io/Policy.yaml"
+      $ref: "https://schema.beckn.io/Policy/v2.0"
   price:
     description: Price snapshot; detailed models can live in offerAttributes
     x-jsonld:
       '@id': schema:priceSpecification
     allOf:
-    - $ref: "https://schema.beckn.io/PriceSpecification.yaml"
+    - $ref: "https://schema.beckn.io/PriceSpecification/v2.0"
   provider:
     description: Seller / provider of this offer
     x-jsonld:
       '@id': schema:seller
     allOf:
-    - $ref: "https://schema.beckn.io/Provider.yaml#/properties/id"
+    - $ref: "https://schema.beckn.io/Provider/v2.0#/properties/id"
   validity:
     description: Offer validity window
     x-jsonld:
       '@id': schema:availabilityStarts|schema:availabilityEnds
     allOf:
-    - $ref: "https://schema.beckn.io/TimePeriod.yaml"
+    - $ref: "https://schema.beckn.io/TimePeriod/v2.0"
 required:
 - '@context'
 - '@type'

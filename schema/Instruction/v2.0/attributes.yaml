@@ -13,11 +13,11 @@ properties:
     enum:
     - Instruction
   descriptor:
-    $ref: "https://schema.beckn.io/Descriptor.yaml"
+    $ref: "https://schema.beckn.io/Descriptor/v2.0"
   id:
     type: string
   validity:
-    $ref: "https://schema.beckn.io/TimePeriod.yaml"
+    $ref: "https://schema.beckn.io/TimePeriod/v2.0"
 required:
 - '@context'
 - '@type'

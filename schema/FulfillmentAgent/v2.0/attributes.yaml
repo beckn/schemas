@@ -23,7 +23,7 @@ allOf:
         needs, etc.)
 
         '
-      $ref: "https://schema.beckn.io/Attributes.yaml"
+      $ref: "https://schema.beckn.io/Attributes/v2.0"
   required:
   - '@context'
   - '@type'
@@ -32,13 +32,13 @@ allOf:
     additionalProperties: false
     properties:
       person:
-        $ref: "https://schema.beckn.io/Person.yaml"
+        $ref: "https://schema.beckn.io/Person/v2.0"
     required:
     - person
   - type: object
     additionalProperties: false
     properties:
       organization:
-        $ref: "https://schema.beckn.io/Organization.yaml"
+        $ref: "https://schema.beckn.io/Organization/v2.0"
     required:
     - organization

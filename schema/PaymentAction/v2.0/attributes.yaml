@@ -65,14 +65,14 @@ properties:
     format: uri
     example: "https://payments.example.com/pay?transactionId=123&amount=100"
   state:
-    $ref: "https://schema.beckn.io/State.yaml"
+    $ref: "https://schema.beckn.io/State/v2.0"
   txnRef:
     description: PSP/gateway/bank transaction reference
     type: string
     x-jsonld:
       '@id': schema:transactionNumber
   checkoutAt:
-    $ref: "https://schema.beckn.io/CheckoutTerminal.yaml"
+    $ref: "https://schema.beckn.io/CheckoutTerminal/v2.0"
   paidAt:
     description: The time at which the payment was made
     type: string
@@ -80,7 +80,7 @@ properties:
   paymentActionAttributes:
     description: Extensible set of attributes containing payment actions specific to each ecosystem.
     allOf:
-    - $ref: "https://schema.beckn.io/Attributes.yaml"
+    - $ref: "https://schema.beckn.io/Attributes/v2.0"
 required:
 - '@context'
 - '@type'

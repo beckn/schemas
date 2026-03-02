@@ -22,9 +22,9 @@ properties:
     description: Non-fatal issues encountered
     type: array
     items:
-      $ref: "https://schema.beckn.io/ProcessingNotice.yaml"
+      $ref: "https://schema.beckn.io/ProcessingNotice/v2.0"
   error:
-    $ref: "https://schema.beckn.io/Error.yaml"
+    $ref: "https://schema.beckn.io/Error/v2.0"
 required:
 - catalogId
 - status

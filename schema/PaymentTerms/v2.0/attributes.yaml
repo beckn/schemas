@@ -20,16 +20,16 @@ properties:
     - BPP
     - ESCROW_AGENT
   checkoutAt:
-    $ref: "https://schema.beckn.io/CheckoutTerminal.yaml"
+    $ref: "https://schema.beckn.io/CheckoutTerminal/v2.0"
   settlementTerms:
     type: array
     items:
-      $ref: "https://schema.beckn.io/SettlementTerm.yaml"
+      $ref: "https://schema.beckn.io/SettlementTerm/v2.0"
   checkoutTrigger:
     description: The stage in the order lifecycle when the checkout should be triggered
     allOf:
-    - $ref: "https://schema.beckn.io/PaymentTrigger.yaml"
+    - $ref: "https://schema.beckn.io/PaymentTrigger/v2.0"
   paymentTermsAttributes:
     description: 'Rail-specific attribute pack (e.g., UPI: VPA/UTR; CARD: token/3DS; BNPL: plan/schedule)'
     allOf:
-    - $ref: "https://schema.beckn.io/Attributes.yaml"
+    - $ref: "https://schema.beckn.io/Attributes/v2.0"

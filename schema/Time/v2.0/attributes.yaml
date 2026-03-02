@@ -25,7 +25,7 @@ properties:
   range:
     description: A time range with start and end
     allOf:
-    - $ref: "https://schema.beckn.io/TimePeriod.yaml"
+    - $ref: "https://schema.beckn.io/TimePeriod/v2.0"
     x-jsonld:
       '@id': beckn:timeRange
   label:

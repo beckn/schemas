@@ -26,7 +26,7 @@ properties:
     description: Unit code (e.g., km, min)
     type: string
   validity:
-    $ref: "https://schema.beckn.io/TimePeriod.yaml"
+    $ref: "https://schema.beckn.io/TimePeriod/v2.0"
   value:
     description: Constraint value
     type: number

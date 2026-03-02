@@ -17,9 +17,9 @@ properties:
     type: string
     default: beckn:FulfillmentStageEndpoint
   location:
-    $ref: "https://schema.beckn.io/Location.yaml"
+    $ref: "https://schema.beckn.io/Location/v2.0"
   time:
-    $ref: "https://schema.beckn.io/TimePeriod.yaml"
+    $ref: "https://schema.beckn.io/TimePeriod/v2.0"
   authorization:
     type: array
     description: 'One or more credentials required and/or issued at this endpoint. Includes machine-readable tokens (QR/URL/OTP)
@@ -27,4 +27,4 @@ properties:
 
       '
     items:
-      $ref: "https://schema.beckn.io/FulfillmentStageAuthorization.yaml"
+      $ref: "https://schema.beckn.io/FulfillmentStageAuthorization/v2.0"

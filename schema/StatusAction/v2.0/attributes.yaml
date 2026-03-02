@@ -9,7 +9,7 @@ type: object
 properties:
   context:
     allOf:
-    - $ref: "https://schema.beckn.io/Context.yaml"
+    - $ref: "https://schema.beckn.io/Context/v2.0"
     - type: object
       properties:
         action:
@@ -26,7 +26,7 @@ properties:
           id:
             description: Identifier of the contract/order whose status is being queried.
             allOf:
-            - $ref: "https://schema.beckn.io/Contract.yaml#/properties/id"
+            - $ref: "https://schema.beckn.io/Contract/v2.0#/properties/id"
         required:
         - id
     required:

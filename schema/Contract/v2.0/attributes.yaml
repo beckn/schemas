@@ -38,7 +38,7 @@ properties:
       many more.
     type: array
     items:
-      $ref: "https://schema.beckn.io/ContractItem.yaml"
+      $ref: "https://schema.beckn.io/ContractItem/v2.0"
     minItems: 1
   status:
     description: The current state of the contract. Depending on the context, it could be just a code or a detailed description
@@ -60,7 +60,7 @@ properties:
     description: An object that captures the total value of the contract including a breakup of the items, discounts, fulfillment
       charges, and any other additional charges relevant to that context.
     oneOf:
-    - $ref: "https://schema.beckn.io/PriceSpecification.yaml"
+    - $ref: "https://schema.beckn.io/PriceSpecification/v2.0"
     - type: object
       properties:
         '@context':
@@ -76,16 +76,16 @@ properties:
       may play a specific role in the creation, fulfillment, and post-fulfillment of the contract.
     type: array
     items:
-      $ref: "https://schema.beckn.io/Participant.yaml"
+      $ref: "https://schema.beckn.io/Participant/v2.0"
   entitlements:
     type: array
     items:
-      $ref: "https://schema.beckn.io/Entitlement.yaml"
+      $ref: "https://schema.beckn.io/Entitlement/v2.0"
   fulfillments:
     description: Describes the acts performed by each participant to fulfill the contract
     type: array
     items:
-      $ref: "https://schema.beckn.io/Fulfillment.yaml"
+      $ref: "https://schema.beckn.io/Fulfillment/v2.0"
 required:
 - '@type'
 - participants

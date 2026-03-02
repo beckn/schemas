@@ -30,7 +30,7 @@ properties:
   invoiceAttributes:
     description: Attribute Pack for tax regime (e.g., GST/VAT), e-invoice refs, legal boilerplate, etc.
     allOf:
-    - $ref: "https://schema.beckn.io/Attributes.yaml"
+    - $ref: "https://schema.beckn.io/Attributes/v2.0"
   issueDate:
     type: string
     x-jsonld:
@@ -46,17 +46,17 @@ properties:
     x-jsonld:
       '@id': schema:provider
     allOf:
-    - $ref: "https://schema.beckn.io/Provider.yaml"
+    - $ref: "https://schema.beckn.io/Provider/v2.0"
   payer:
     description: consumer being invoiced
     x-jsonld:
       '@id': schema:customer
     allOf:
-    - $ref: "https://schema.beckn.io/Consumer.yaml"
+    - $ref: "https://schema.beckn.io/Consumer/v2.0"
   costBreakup:
     type: array
     items:
-      $ref: "https://schema.beckn.io/PriceSpecification.yaml"
+      $ref: "https://schema.beckn.io/PriceSpecification/v2.0"
 required:
 - '@context'
 - '@type'

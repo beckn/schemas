@@ -12,7 +12,7 @@ properties:
     type: number
     description: Total value for this price specification
   applicableQuantity:
-    $ref: "https://schema.beckn.io/Quantity.yaml"
+    $ref: "https://schema.beckn.io/Quantity/v2.0"
     x-jsonld:
       '@id': schema:eligibleQuantity
   components:

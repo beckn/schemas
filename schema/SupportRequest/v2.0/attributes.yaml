@@ -18,7 +18,7 @@ properties:
     description: IDs of support ticket if open
     type: array
     items:
-      $ref: "https://schema.beckn.io/SupportTicket.yaml#/properties/id"
+      $ref: "https://schema.beckn.io/SupportTicket/v2.0#/properties/id"
   callbackPhone:
     description: Telephone number of the user for callback.
     type: string

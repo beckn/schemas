@@ -5,6 +5,6 @@ title: ErrorResponse
 type: object
 properties:
   error:
-    $ref: "https://schema.beckn.io/Error.yaml"
+    $ref: "https://schema.beckn.io/Error/v2.0"
 required:
 - error

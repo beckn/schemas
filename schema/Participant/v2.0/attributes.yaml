@@ -14,7 +14,7 @@ properties:
   credentials:
     type: array
     items:
-      $ref: "https://schema.beckn.io/Credential.yaml"
+      $ref: "https://schema.beckn.io/Credential/v2.0"
   displayName:
     type: string
   email:
@@ -23,14 +23,14 @@ properties:
   id:
     type: string
   rating:
-    $ref: "https://schema.beckn.io/Rating.yaml"
+    $ref: "https://schema.beckn.io/Rating/v2.0"
   role:
     description: Role of participant (consumer, recipient, rider, patient, operator, etc.)
     type: string
   skills:
     type: array
     items:
-      $ref: "https://schema.beckn.io/Skill.yaml"
+      $ref: "https://schema.beckn.io/Skill/v2.0"
   telephone:
     type: string
 required:

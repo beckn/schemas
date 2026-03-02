@@ -57,11 +57,11 @@ properties:
             type: integer
             minimum: 0
           value:
-            $ref: "https://schema.beckn.io/Descriptor.yaml"
+            $ref: "https://schema.beckn.io/Descriptor/v2.0"
     feedbackForm:
       description: A feedback form sent along with a rating request
       allOf:
-      - $ref: "https://schema.beckn.io/Form"
+      - $ref: "https://schema.beckn.io/Form/v2.0"
     feedbackRequired:
       type: boolean
       description: Specifies whether feedback after rating is required for acceptance of rating

@@ -13,9 +13,9 @@ properties:
     description: Optional human-readable address for the same place/area.
     oneOf:
     - type: string
-    - $ref: "https://schema.beckn.io/Address.yaml"
+    - $ref: "https://schema.beckn.io/Address/v2.0"
   geo:
-    $ref: "https://schema.beckn.io/GeoJSONGeometry.yaml"
+    $ref: "https://schema.beckn.io/GeoJSONGeometry/v2.0"
 required:
 - geo
 additionalProperties: false

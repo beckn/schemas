@@ -15,9 +15,9 @@ properties:
   id:
     type: string
   descriptor:
-    $ref: "https://schema.beckn.io/Descriptor.yaml"
+    $ref: "https://schema.beckn.io/Descriptor/v2.0"
   modeAttributes:
     description: Domain-specific fulfillment mode attributes (e.g., delivery, pickup, reservation, digital)
     allOf:
-    - $ref: "https://schema.beckn.io/Attributes.yaml"
+    - $ref: "https://schema.beckn.io/Attributes/v2.0"
 additionalProperties: false

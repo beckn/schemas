@@ -36,7 +36,7 @@ properties:
     description: Physical address
     oneOf:
     - type: string
-    - $ref: "https://schema.beckn.io/Address.yaml"
+    - $ref: "https://schema.beckn.io/Address/v2.0"
     x-jsonld:
       '@id': schema:address
   age:
@@ -55,27 +55,27 @@ properties:
   worksFor:
     description: Organization the person works for
     allOf:
-    - $ref: "https://schema.beckn.io/Organization.yaml"
+    - $ref: "https://schema.beckn.io/Organization/v2.0"
     x-jsonld:
       '@id': schema:worksFor
   credentials:
     type: array
     description: Credentials held by the person
     items:
-      $ref: "https://schema.beckn.io/Credential.yaml"
+      $ref: "https://schema.beckn.io/Credential/v2.0"
     x-jsonld:
       '@id': schema:hasCredential
   skills:
     type: array
     description: Skills possessed by the person
     items:
-      $ref: "https://schema.beckn.io/Skill.yaml"
+      $ref: "https://schema.beckn.io/Skill/v2.0"
     x-jsonld:
       '@id': schema:hasSkill
   personAttributes:
     description: Extensible attribute pack for jurisdictional or domain-specific person properties
     allOf:
-    - $ref: "https://schema.beckn.io/Attributes.yaml"
+    - $ref: "https://schema.beckn.io/Attributes/v2.0"
 required:
 - '@context'
 - '@type'

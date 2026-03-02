@@ -62,11 +62,11 @@ properties:
           type: integer
           minimum: 0
         value:
-          $ref: "https://schema.beckn.io/Descriptor.yaml"
+          $ref: "https://schema.beckn.io/Descriptor/v2.0"
   feedbackFormSubmission:
     description: The submission to the feedback form sent along with a rating request
     allOf:
-    - $ref: "https://schema.beckn.io/FormSubmission"
+    - $ref: "https://schema.beckn.io/FormSubmission/v2.0"
 required:
 - '@context'
 - '@type'

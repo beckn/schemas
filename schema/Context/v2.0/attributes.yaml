@@ -16,7 +16,7 @@ title: Context
 type: object
 properties:
   action:
-    $ref: "https://schema.beckn.io/Action.yaml"
+    $ref: "https://schema.beckn.io/Action/v2.0"
   bapId:
     description: A globally unique identifier of the BAP, Typically it is the fully qualified domain name (FQDN) of the BAP
     type: string

@@ -25,7 +25,7 @@ allOf:
         # consumer/org-ids.v1 (LEI, GSTIN, ISIN, CUSIP…) # consumer/kyc.v1 (jurisdictional compliance fields) # consumer/preferences.v1
         (delivery preferences, accessibility needs, etc.)'
       allOf:
-      - $ref: "https://schema.beckn.io/Attributes.yaml"
+      - $ref: "https://schema.beckn.io/Attributes/v2.0"
   required:
   - '@context'
   - '@type'
@@ -33,12 +33,12 @@ allOf:
   - type: object
     properties:
       person:
-        $ref: "https://schema.beckn.io/Person.yaml"
+        $ref: "https://schema.beckn.io/Person/v2.0"
     required:
     - person
   - type: object
     properties:
       organization:
-        $ref: "https://schema.beckn.io/Organization.yaml"
+        $ref: "https://schema.beckn.io/Organization/v2.0"
     required:
     - organization

@@ -35,7 +35,7 @@ properties:
       items:
         type: string
   geometry:
-    $ref: "https://schema.beckn.io/GeoJSONGeometry.yaml"
+    $ref: "https://schema.beckn.io/GeoJSONGeometry/v2.0"
   distanceMeters:
     description: 'For `S_DWITHIN`: maximum distance in meters from the target geometry to `geometry` (e.g., "within 5000 m
       of this Point"). Ignored for other ops.'

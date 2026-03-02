@@ -9,7 +9,7 @@ type: object
 properties:
   context:
     allOf:
-    - $ref: "https://schema.beckn.io/Context.yaml"
+    - $ref: "https://schema.beckn.io/Context/v2.0"
     - type: object
       properties:
         action:
@@ -22,7 +22,7 @@ properties:
       ratingInputs:
         type: array
         items:
-          $ref: "https://schema.beckn.io/RatingInput.yaml"
+          $ref: "https://schema.beckn.io/RatingInput/v2.0"
     required:
     - ratingInputs
 required:

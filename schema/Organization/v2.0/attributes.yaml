@@ -36,27 +36,27 @@ properties:
     description: Physical address
     oneOf:
     - type: string
-    - $ref: "https://schema.beckn.io/Address.yaml"
+    - $ref: "https://schema.beckn.io/Address/v2.0"
     x-jsonld:
       '@id': schema:address
   credentials:
     type: array
     description: Credentials held by the organization
     items:
-      $ref: "https://schema.beckn.io/Credential.yaml"
+      $ref: "https://schema.beckn.io/Credential/v2.0"
     x-jsonld:
       '@id': schema:hasCredential
   skills:
     type: array
     description: Skills or capabilities of the organization
     items:
-      $ref: "https://schema.beckn.io/Skill.yaml"
+      $ref: "https://schema.beckn.io/Skill/v2.0"
     x-jsonld:
       '@id': schema:hasSkill
   organizationAttributes:
     description: Extensible attribute pack for jurisdictional or domain-specific organization properties
     allOf:
-    - $ref: "https://schema.beckn.io/Attributes.yaml"
+    - $ref: "https://schema.beckn.io/Attributes/v2.0"
 required:
 - '@context'
 - '@type'

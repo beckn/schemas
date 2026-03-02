@@ -29,9 +29,9 @@ properties:
     description: Optional array of spatial constraints (CQL2-JSON semantics).
     type: array
     items:
-      $ref: "https://schema.beckn.io/SpatialConstraint.yaml"
+      $ref: "https://schema.beckn.io/SpatialConstraint/v2.0"
   media_search:
-    $ref: "https://schema.beckn.io/MediaSearch.yaml"
+    $ref: "https://schema.beckn.io/MediaSearch/v2.0"
 anyOf:
 - required:
   - textSearch

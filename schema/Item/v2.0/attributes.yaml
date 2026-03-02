@@ -18,20 +18,20 @@ properties:
     description: Time periods when the item is available
     type: array
     items:
-      $ref: "https://schema.beckn.io/TimePeriod.yaml"
+      $ref: "https://schema.beckn.io/TimePeriod/v2.0"
   availableAt:
     description: Physical locations where the item is available
     type: array
     items:
-      $ref: "https://schema.beckn.io/Location.yaml"
+      $ref: "https://schema.beckn.io/Location/v2.0"
   category:
-    $ref: "https://schema.beckn.io/CategoryCode.yaml"
+    $ref: "https://schema.beckn.io/CategoryCode/v2.0"
   constraints:
     type: array
     items:
-      $ref: "https://schema.beckn.io/Constraint.yaml"
+      $ref: "https://schema.beckn.io/Constraint/v2.0"
   descriptor:
-    $ref: "https://schema.beckn.io/Descriptor.yaml"
+    $ref: "https://schema.beckn.io/Descriptor/v2.0"
   id:
     description: Unique identifier for the item
     type: string
@@ -41,7 +41,7 @@ properties:
     type: boolean
     default: true
   itemAttributes:
-    $ref: "https://schema.beckn.io/Attributes.yaml"
+    $ref: "https://schema.beckn.io/Attributes/v2.0"
   networkId:
     description: Array of network identifiers for the BAP (Beckn App Provider) that offers this item
     type: array
@@ -53,15 +53,15 @@ properties:
   policies:
     type: array
     items:
-      $ref: "https://schema.beckn.io/Policy.yaml"
+      $ref: "https://schema.beckn.io/Policy/v2.0"
   provider:
-    $ref: "https://schema.beckn.io/Provider.yaml"
+    $ref: "https://schema.beckn.io/Provider/v2.0"
   rateable:
     description: Whether the item can be rated by customers
     type: boolean
     example: true
   rating:
-    $ref: "https://schema.beckn.io/Rating.yaml"
+    $ref: "https://schema.beckn.io/Rating/v2.0"
 required:
 - '@context'
 - '@type'

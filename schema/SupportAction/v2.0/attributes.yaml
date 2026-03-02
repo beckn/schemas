@@ -9,7 +9,7 @@ type: object
 properties:
   context:
     allOf:
-    - $ref: "https://schema.beckn.io/Context.yaml"
+    - $ref: "https://schema.beckn.io/Context/v2.0"
     - type: object
       properties:
         action:
@@ -21,7 +21,7 @@ properties:
     properties:
       supportRequest:
         allOf:
-        - $ref: "https://schema.beckn.io/SupportRequest.yaml"
+        - $ref: "https://schema.beckn.io/SupportRequest/v2.0"
     required:
     - supportRequest
 required:
