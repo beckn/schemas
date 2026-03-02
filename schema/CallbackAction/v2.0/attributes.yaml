@@ -1,0 +1,18 @@
+$id: "https://schema.beckn.io/CallbackAction"
+$schema: "https://json-schema.org/draft/2020-12/schema"
+description: Contains the HTTP Request Bodies of all the Beckn Protocol Endpoints consumed by a BAP
+title: RequestAction
+type: object
+properties:
+  oneOf:
+    - https://schema.beckn.io/OnDiscoverAction
+    - https://schema.beckn.io/OnSelectAction
+    - https://schema.beckn.io/OnInitAction
+    - https://schema.beckn.io/OnConfirmAction
+    - https://schema.beckn.io/OnStatusAction
+    - https://schema.beckn.io/OnUpdateAction
+    - https://schema.beckn.io/OnTrackAction
+    - https://schema.beckn.io/OnCancelAction
+    - https://schema.beckn.io/OnRateAction
+    - https://schema.beckn.io/OnSupportAction
+    - https://schema.beckn.io/OnAsyncError
