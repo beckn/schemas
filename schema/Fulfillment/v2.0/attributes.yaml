@@ -48,7 +48,7 @@ properties:
   state:
     description: The current state of fulfillment
     allOf:
-      $ref: "https://schema.beckn.io/State/v2.0"
+    - $ref: "https://schema.beckn.io/State/v2.0"
   stages:
     description: The various stages of the fulfillment
     type: array

@@ -40,3 +40,4 @@ properties:
   - label
   - url
   - mimeType
+additionalProperties: false

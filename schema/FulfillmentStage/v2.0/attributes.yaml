@@ -11,7 +11,7 @@ properties:
     const: "https://schema.beckn.io/"
   '@type':
     type: string
-    default: beckn:FulfillmentStageEndpoint
+    default: beckn:FulfillmentStage
   id:
     description: A unique identifier for this stage of fulfillment
     type: string

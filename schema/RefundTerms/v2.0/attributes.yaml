@@ -9,3 +9,4 @@ properties:
     enum:
     - SOURCE_ACCOUNT
     - OTHER
+additionalProperties: false

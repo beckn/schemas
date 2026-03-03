@@ -24,3 +24,4 @@ properties:
     $ref: "https://json-schema.org/draft/2020-12/schema"
 required:
 - id
+additionalProperties: false

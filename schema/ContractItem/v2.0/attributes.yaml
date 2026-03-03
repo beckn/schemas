@@ -35,3 +35,4 @@ properties:
     - $ref: "https://schema.beckn.io/Quantity/v2.0"
 required:
 - itemId
+additionalProperties: false

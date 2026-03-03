@@ -28,3 +28,4 @@ properties:
 required:
 - catalogId
 - status
+additionalProperties: false

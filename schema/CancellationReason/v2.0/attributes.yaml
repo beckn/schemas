@@ -10,3 +10,4 @@ properties:
     properties:
       '@type':
         default: beckn:CancellationReason
+additionalProperties: false
