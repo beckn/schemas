@@ -14,3 +14,4 @@ properties:
     const: beckn:CancellationPolicy
     x-jsonld:
       '@id': schema:CreativeWork
+additionalProperties: false

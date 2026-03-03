@@ -15,4 +15,4 @@ properties:
     - https://schema.beckn.io/OnCancelAction
     - https://schema.beckn.io/OnRateAction
     - https://schema.beckn.io/OnSupportAction
-    - https://schema.beckn.io/OnAsyncError
+    - https://schema.beckn.io/OnAsyncErroradditionalProperties: false

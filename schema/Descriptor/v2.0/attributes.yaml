@@ -41,3 +41,4 @@ properties:
       $ref: "https://schema.beckn.io/MediaFile/v2.0"
 required:
 - '@type'
+additionalProperties: false

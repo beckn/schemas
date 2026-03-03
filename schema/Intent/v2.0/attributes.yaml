@@ -42,3 +42,4 @@ anyOf:
 - required:
   - filters
   - spatial
+additionalProperties: false

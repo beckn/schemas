@@ -28,3 +28,4 @@ properties:
 required:
 - '@type'
 - schema:codeValue
+additionalProperties: false

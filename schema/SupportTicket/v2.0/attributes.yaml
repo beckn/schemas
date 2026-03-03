@@ -9,3 +9,4 @@ properties:
     type: string
   supportTicketAttributes:
     $ref: "https://schema.beckn.io/Attributes/v2.0"
+additionalProperties: false

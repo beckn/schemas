@@ -8,3 +8,4 @@ properties:
     $ref: "https://schema.beckn.io/Error/v2.0"
 required:
 - error
+additionalProperties: false

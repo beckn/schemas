@@ -33,3 +33,4 @@ properties:
     description: 'Rail-specific attribute pack (e.g., UPI: VPA/UTR; CARD: token/3DS; BNPL: plan/schedule)'
     allOf:
     - $ref: "https://schema.beckn.io/Attributes/v2.0"
+additionalProperties: false
