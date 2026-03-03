@@ -1,5 +1,5 @@
-$id: "https://schema.beckn.io/Fulfillment/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/Fulfillment/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 description: Schema definition for Fulfillment in the Beckn Protocol v2.0.1
 title: Fulfillment
 type: object
@@ -8,7 +8,7 @@ properties:
     description: JSON-LD context URI
     type: string
     format: uri
-    const: "https://schema.beckn.io/"
+    const: https://schema.beckn.io/
   '@type':
     type: string
     enum:
@@ -18,11 +18,11 @@ properties:
   agent:
     description: The entity that directly performs the fulfillment
     allOf:
-    - $ref: "https://schema.beckn.io/FulfillmentAgent/v2.0"
+    - $ref: https://schema.beckn.io/FulfillmentAgent/v2.0
   fulfillmentAttributes:
     description: Extensible set of domain-specific attributes describing the fulfillment
     allOf:
-    - $ref: "https://schema.beckn.io/Attributes/v2.0"
+    - $ref: https://schema.beckn.io/Attributes/v2.0
   id:
     description: Fulfillment identifier
     type: string
@@ -31,29 +31,30 @@ properties:
   instructions:
     type: array
     items:
-      $ref: "https://schema.beckn.io/Descriptor/v2.0"
+      $ref: https://schema.beckn.io/Descriptor/v2.0
   mode:
-    description: Extensible set of attributes describing the mode of fulfillment. Varies with Industry Use Case
+    description: Extensible set of attributes describing the mode of fulfillment. Varies with Industry
+      Use Case
     allOf:
-    - $ref: "https://schema.beckn.io/FulfillmentMode/v2.0"
+    - $ref: https://schema.beckn.io/FulfillmentMode/v2.0
     x-jsonld:
       '@id': beckn:FulfillmentMode
   participants:
-    description: A list of participants who are entitled to receive the fulfillment of the order. By default, it is the consumer
-      who placed the order
+    description: A list of participants who are entitled to receive the fulfillment of the order. By default,
+      it is the consumer who placed the order
     type: array
     items:
-      $ref: "https://schema.beckn.io/Participant/v2.0"
+      $ref: https://schema.beckn.io/Participant/v2.0
     minItems: 1
   state:
     description: The current state of fulfillment
     allOf:
-      $ref: "https://schema.beckn.io/State/v2.0"
+      $ref: https://schema.beckn.io/State/v2.0
   stages:
     description: The various stages of the fulfillment
     type: array
     items:
-      $ref: "https://schema.beckn.io/FulfillmentStage/v2.0"
+      $ref: https://schema.beckn.io/FulfillmentStage/v2.0
     minItems: 1
   trackingEnabled:
     description: Whether tracking is enabled / possible for this fulfillment
@@ -63,3 +64,5 @@ required:
 - '@type'
 - mode
 additionalProperties: false
+x-tags:
+- common

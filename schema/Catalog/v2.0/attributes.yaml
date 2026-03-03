@@ -1,5 +1,5 @@
-$id: "https://schema.beckn.io/Catalog/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/Catalog/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 description: Catalog schema for Beckn Protocol v2.0.1
 title: Catalog
 type: object
@@ -8,7 +8,7 @@ properties:
     description: JSON-LD context URI for the core Catalog schema
     type: string
     format: uri
-    const: "https://schema.beckn.io/"
+    const: https://schema.beckn.io/
   '@type':
     description: Type of the catalog
     type: string
@@ -21,9 +21,10 @@ properties:
     description: BPP (Beckn Protocol Provider) URI endpoint
     type: string
     format: uri
-    example: "https://bpp.example.com"
+    example: https://bpp.example.com
   descriptor:
-    description: A verbal summary of the catalog for humans, AI agents, etc to read and understand the context.
+    description: A verbal summary of the catalog for humans, AI agents, etc to read and understand the
+      context.
     type: object
   id:
     description: Unique identifier for the catalog
@@ -37,11 +38,11 @@ properties:
     description: Array of beckn core Item entities in this catalog
     type: array
     items:
-      $ref: "https://schema.beckn.io/Item/v2.0"
+      $ref: https://schema.beckn.io/Item/v2.0
   offers:
     type: array
     items:
-      $ref: "https://schema.beckn.io/Offer/v2.0"
+      $ref: https://schema.beckn.io/Offer/v2.0
   providerId:
     description: Reference to the provider that owns this catalog
     type: string
@@ -57,3 +58,5 @@ required:
 - bppUri
 - items
 additionalProperties: false
+x-tags:
+- common

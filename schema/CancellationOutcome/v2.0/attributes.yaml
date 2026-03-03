@@ -1,12 +1,14 @@
-$id: "https://schema.beckn.io/CancellationOutcome/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/CancellationOutcome/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 description: Schema definition for CancellationOutcome in the Beckn Protocol v2.0.1
 title: CancellationOutcome
 type: object
 properties:
   descriptor:
     allOf:
-    - $ref: "https://schema.beckn.io/Descriptor/v2.0"
+    - $ref: https://schema.beckn.io/Descriptor/v2.0
     properties:
       '@type':
         default: beckn:CancellationOutcome
+x-tags:
+- common

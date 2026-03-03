@@ -1,14 +1,12 @@
-$id: "https://schema.beckn.io/BecknEndpoint/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/BecknEndpoint/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 title: BecknEndpoint
-description: >-
-  A Beckn protocol endpoint identifier. Must start with the prefix "beckn/"
-  followed by one or more lowercase segments (letters and underscores only)
-  separated by forward slashes. Standard endpoints are listed in the examples
-  below. New actors may define extension endpoints without modifying this
-  schema — the pattern accepts any conforming beckn/ prefixed string.
+description: A Beckn protocol endpoint identifier. Must start with the prefix "beckn/" followed by one
+  or more lowercase segments (letters and underscores only) separated by forward slashes. Standard endpoints
+  are listed in the examples below. New actors may define extension endpoints without modifying this schema
+  — the pattern accepts any conforming beckn/ prefixed string.
 type: string
-pattern: '^beckn\/[a-z_]+(?:\/[a-z_]+)*$'
+pattern: ^beckn\/[a-z_]+(?:\/[a-z_]+)*$
 examples:
 - beckn/discover
 - beckn/on_discover
@@ -30,3 +28,5 @@ examples:
 - beckn/on_rate
 - beckn/support
 - beckn/on_support
+x-tags:
+- common

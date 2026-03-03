@@ -1,5 +1,5 @@
-$id: "https://schema.beckn.io/RefundTerms/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/RefundTerms/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 description: Schema definition for RefundTerms in the Beckn Protocol v2.0.1
 title: RefundTerms
 type: object
@@ -9,3 +9,5 @@ properties:
     enum:
     - SOURCE_ACCOUNT
     - OTHER
+x-tags:
+- common

@@ -1,5 +1,5 @@
-$id: "https://schema.beckn.io/Eligibility/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/Eligibility/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 description: Schema definition for Eligibility in the Beckn Protocol v2.0.1
 title: Eligibility
 type: object
@@ -15,3 +15,5 @@ properties:
     type: string
 x-jsonld:
   '@id': schema:DefinedRegion|schema:QuantitativeValue
+x-tags:
+- common

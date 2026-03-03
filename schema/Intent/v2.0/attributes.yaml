@@ -1,5 +1,5 @@
-$id: "https://schema.beckn.io/Intent/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/Intent/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 description: A declaration of an intent to discover catalogs.
 title: Intent
 type: object
@@ -29,9 +29,9 @@ properties:
     description: Optional array of spatial constraints (CQL2-JSON semantics).
     type: array
     items:
-      $ref: "https://schema.beckn.io/SpatialConstraint/v2.0"
+      $ref: https://schema.beckn.io/SpatialConstraint/v2.0
   media_search:
-    $ref: "https://schema.beckn.io/MediaSearch/v2.0"
+    $ref: https://schema.beckn.io/MediaSearch/v2.0
 anyOf:
 - required:
   - textSearch
@@ -42,3 +42,5 @@ anyOf:
 - required:
   - filters
   - spatial
+x-tags:
+- common

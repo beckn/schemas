@@ -1,5 +1,5 @@
-$id: "https://schema.beckn.io/AcceptedPaymentMethod/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/AcceptedPaymentMethod/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 description: Payment methods accepted by a payee
 title: AcceptedPaymentMethod
 type: array
@@ -15,3 +15,5 @@ items:
   - APPLE_PAY
 x-jsonld:
   '@id': beckn:acceptedPaymentMethod
+x-tags:
+- common

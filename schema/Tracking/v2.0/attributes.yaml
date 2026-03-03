@@ -1,5 +1,5 @@
-$id: "https://schema.beckn.io/Tracking/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/Tracking/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 description: Non-streaming tracking handle per legacy semantics (url/transport/status).
 title: Tracking
 type: object
@@ -8,7 +8,7 @@ properties:
     description: TBD
     type: string
     format: uri
-    default: "https://schema.beckn.io/"
+    default: https://schema.beckn.io/
   '@type':
     description: TBD
     type: string
@@ -37,3 +37,5 @@ x-jsonld:
   trackingStatus: $.trackingStatus
   schema:target: $.url
 additionalProperties: false
+x-tags:
+- common

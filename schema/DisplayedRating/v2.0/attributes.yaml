@@ -1,5 +1,5 @@
-$id: "https://schema.beckn.io/DisplayedRating/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/DisplayedRating/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 description: Schema definition for DisplayedRating in the Beckn Protocol v2.0.1
 title: DisplayedRating
 type: object
@@ -23,3 +23,5 @@ properties:
     example: 4.8
 required:
 - '@type'
+x-tags:
+- common

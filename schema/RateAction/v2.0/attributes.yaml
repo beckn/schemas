@@ -1,7 +1,7 @@
-$id: "https://schema.beckn.io/RateAction/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
-description: 'Beckn /beckn/rate action envelope. Sent by a BAP to a BPP to submit one or more rating inputs for entities in
-  a completed contract (order, fulfillment, item, provider, agent, support).
+$id: https://schema.beckn.io/RateAction/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
+description: 'Beckn /beckn/rate action envelope. Sent by a BAP to a BPP to submit one or more rating inputs
+  for entities in a completed contract (order, fulfillment, item, provider, agent, support).
 
   '
 title: RateAction
@@ -9,7 +9,7 @@ type: object
 properties:
   context:
     allOf:
-    - $ref: "https://schema.beckn.io/Context/v2.0"
+    - $ref: https://schema.beckn.io/Context/v2.0
     - type: object
       properties:
         action:
@@ -22,9 +22,11 @@ properties:
       ratingInputs:
         type: array
         items:
-          $ref: "https://schema.beckn.io/RatingInput/v2.0"
+          $ref: https://schema.beckn.io/RatingInput/v2.0
     required:
     - ratingInputs
 required:
 - context
 - message
+x-tags:
+- common

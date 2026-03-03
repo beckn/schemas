@@ -1,5 +1,5 @@
-$id: "https://schema.beckn.io/PaymentAction/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/PaymentAction/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 description: Schema definition for PaymentAction in the Beckn Protocol v2.0.1
 title: PaymentAction
 type: object
@@ -7,7 +7,7 @@ properties:
   '@context':
     type: string
     format: uri
-    const: "https://schema.beckn.io/"
+    const: https://schema.beckn.io/
   '@type':
     type: string
     const: beckn:PaymentAction
@@ -24,7 +24,8 @@ properties:
         x-jsonld:
           '@id': schema:price
   paymentStatus:
-    description: Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)
+    description: Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund
+      …)
     type: string
     enum:
     - INITIATED
@@ -51,7 +52,7 @@ properties:
     '@context':
       type: string
       format: uri
-      const: "https://schema.beckn.io/"
+      const: https://schema.beckn.io/
     '@type':
       type: string
       const: PaymentMethod
@@ -63,16 +64,16 @@ properties:
     x-jsonld:
       '@id': schema:url
     format: uri
-    example: "https://payments.example.com/pay?transactionId=123&amount=100"
+    example: https://payments.example.com/pay?transactionId=123&amount=100
   state:
-    $ref: "https://schema.beckn.io/State/v2.0"
+    $ref: https://schema.beckn.io/State/v2.0
   txnRef:
     description: PSP/gateway/bank transaction reference
     type: string
     x-jsonld:
       '@id': schema:transactionNumber
   checkoutAt:
-    $ref: "https://schema.beckn.io/CheckoutTerminal/v2.0"
+    $ref: https://schema.beckn.io/CheckoutTerminal/v2.0
   paidAt:
     description: The time at which the payment was made
     type: string
@@ -80,9 +81,11 @@ properties:
   paymentActionAttributes:
     description: Extensible set of attributes containing payment actions specific to each ecosystem.
     allOf:
-    - $ref: "https://schema.beckn.io/Attributes/v2.0"
+    - $ref: https://schema.beckn.io/Attributes/v2.0
 required:
 - '@context'
 - '@type'
 - paymentStatus
 additionalProperties: false
+x-tags:
+- common

@@ -1,5 +1,7 @@
-$id: "https://schema.beckn.io/Feedback/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/Feedback/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 description: Feedback collected from a user (consumer, provider, or fulfillment agent)
 title: Feedback
 type: object
+x-tags:
+- common

@@ -1,5 +1,5 @@
-$id: "https://schema.beckn.io/SupportTicket/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/SupportTicket/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 description: A support ticket raised against an order
 title: SupportTicket
 type: object
@@ -8,4 +8,6 @@ properties:
     description: Ticket ID
     type: string
   supportTicketAttributes:
-    $ref: "https://schema.beckn.io/Attributes/v2.0"
+    $ref: https://schema.beckn.io/Attributes/v2.0
+x-tags:
+- common

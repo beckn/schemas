@@ -1,5 +1,5 @@
-$id: "https://schema.beckn.io/CategoryCode/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/CategoryCode/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 description: Schema definition for CategoryCode in the Beckn Protocol v2.0.1
 title: CategoryCode
 type: object
@@ -28,3 +28,5 @@ properties:
 required:
 - '@type'
 - schema:codeValue
+x-tags:
+- common

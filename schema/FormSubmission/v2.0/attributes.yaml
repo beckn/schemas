@@ -1,16 +1,13 @@
-$id: "https://schema.beckn.io/FormSubmission/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/FormSubmission/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 title: FormSubmission
-description: >-
-  A user's submitted response to a Beckn form. Captures the filled-in field
-  values keyed by form field names. Typically attached to a RatingInput to
-  convey feedback form answers alongside a rating.
+description: A user's submitted response to a Beckn form. Captures the filled-in field values keyed by
+  form field names. Typically attached to a RatingInput to convey feedback form answers alongside a rating.
 type: object
 properties:
   id:
-    description: >-
-      Identifier of the form that was submitted. Typically the form's URL or
-      the value of the form's url field.
+    description: Identifier of the form that was submitted. Typically the form's URL or the value of the
+      form's url field.
     type: string
     format: uri
   submissionId:
@@ -18,10 +15,8 @@ properties:
     type: string
     format: uuid
   data:
-    description: >-
-      Key-value map of form field names to submitted values. Keys correspond
-      to the field identifiers defined in the form; values are the user's
-      responses as strings.
+    description: Key-value map of form field names to submitted values. Keys correspond to the field identifiers
+      defined in the form; values are the user's responses as strings.
     type: object
     additionalProperties:
       type: string
@@ -32,3 +27,5 @@ properties:
 required:
 - data
 additionalProperties: false
+x-tags:
+- common

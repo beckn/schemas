@@ -1,7 +1,7 @@
-$id: "https://schema.beckn.io/PaymentTrigger/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
-description: Describes when in the order lifecycle a payment flow should be triggered. Typically useful for initiating checkouts
-  and settlement flows.
+$id: https://schema.beckn.io/PaymentTrigger/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Describes when in the order lifecycle a payment flow should be triggered. Typically useful
+  for initiating checkouts and settlement flows.
 title: PaymentTrigger
 type: string
 enum:
@@ -9,3 +9,5 @@ enum:
 - PRE_FULFILLMENT
 - ON_FULFILLMENT
 - POST_FULFILLMENT
+x-tags:
+- common

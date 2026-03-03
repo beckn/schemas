@@ -1,5 +1,5 @@
-$id: "https://schema.beckn.io/SettlementSchedule/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/SettlementSchedule/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 description: Schema definition for SettlementSchedule in the Beckn Protocol v2.0.1
 title: SettlementSchedule
 type: object
@@ -45,3 +45,5 @@ oneOf:
       enum:
       - END_OF_DAY
       - END_OF_MONTH
+x-tags:
+- common

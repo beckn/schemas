@@ -1,34 +1,29 @@
-$id: "https://schema.beckn.io/BecknAction/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/BecknAction/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 title: BecknAction
-description: >-
-  Unified Beckn action envelope. All Beckn API requests and callbacks conform
-  to this schema. The context identifies the action being performed; the message
-  carries the action-specific payload. Message content is validated via
-  if/then dispatch based on context.action. For unknown or extension endpoints,
-  no if/then branch applies and message remains unconstrained.
+description: 'Unified Beckn action envelope. All Beckn API requests and callbacks conform to this schema.
+  The context identifies the action being performed; the message carries the action-specific payload.
+  Message content is validated via if/then dispatch based on context.action. For unknown or extension
+  endpoints, no if/then branch applies and message remains unconstrained.
 
-  This schema supersedes RequestAction and CallbackAction, both of which were
-  structurally invalid. The request/callback distinction is encoded in the
-  context.action value (e.g. beckn/discover vs beckn/on_discover), not in
-  a separate schema type.
+  This schema supersedes RequestAction and CallbackAction, both of which were structurally invalid. The
+  request/callback distinction is encoded in the context.action value (e.g. beckn/discover vs beckn/on_discover),
+  not in a separate schema type.'
 type: object
 properties:
   context:
     description: Transaction context identifying the action, sender, receiver, and correlation IDs.
     allOf:
-    - $ref: "https://schema.beckn.io/Context/v2.0"
+    - $ref: https://schema.beckn.io/Context/v2.0
   message:
     description: Action-specific payload. Content constraints applied via if/then dispatch below.
     allOf:
-    - $ref: "https://schema.beckn.io/Message/v2.0"
+    - $ref: https://schema.beckn.io/Message/v2.0
 required:
 - context
 - message
 additionalProperties: false
 allOf:
-
-# --- discover ---
 - if:
     properties:
       context:
@@ -41,11 +36,9 @@ allOf:
         properties:
           intent:
             allOf:
-            - $ref: "https://schema.beckn.io/Intent/v2.0"
+            - $ref: https://schema.beckn.io/Intent/v2.0
         required:
         - intent
-
-# --- on_discover ---
 - if:
     properties:
       context:
@@ -59,11 +52,9 @@ allOf:
           catalogs:
             type: array
             items:
-              $ref: "https://schema.beckn.io/Catalog/v2.0"
+              $ref: https://schema.beckn.io/Catalog/v2.0
         required:
         - catalogs
-
-# --- select ---
 - if:
     properties:
       context:
@@ -76,11 +67,9 @@ allOf:
         properties:
           contract:
             allOf:
-            - $ref: "https://schema.beckn.io/Contract/v2.0"
+            - $ref: https://schema.beckn.io/Contract/v2.0
         required:
         - contract
-
-# --- on_select ---
 - if:
     properties:
       context:
@@ -93,11 +82,9 @@ allOf:
         properties:
           contract:
             allOf:
-            - $ref: "https://schema.beckn.io/Contract/v2.0"
+            - $ref: https://schema.beckn.io/Contract/v2.0
         required:
         - contract
-
-# --- init ---
 - if:
     properties:
       context:
@@ -110,11 +97,9 @@ allOf:
         properties:
           contract:
             allOf:
-            - $ref: "https://schema.beckn.io/Contract/v2.0"
+            - $ref: https://schema.beckn.io/Contract/v2.0
         required:
         - contract
-
-# --- on_init ---
 - if:
     properties:
       context:
@@ -127,11 +112,9 @@ allOf:
         properties:
           contract:
             allOf:
-            - $ref: "https://schema.beckn.io/Contract/v2.0"
+            - $ref: https://schema.beckn.io/Contract/v2.0
         required:
         - contract
-
-# --- confirm ---
 - if:
     properties:
       context:
@@ -144,11 +127,9 @@ allOf:
         properties:
           contract:
             allOf:
-            - $ref: "https://schema.beckn.io/Contract/v2.0"
+            - $ref: https://schema.beckn.io/Contract/v2.0
         required:
         - contract
-
-# --- on_confirm ---
 - if:
     properties:
       context:
@@ -161,11 +142,9 @@ allOf:
         properties:
           contract:
             allOf:
-            - $ref: "https://schema.beckn.io/Contract/v2.0"
+            - $ref: https://schema.beckn.io/Contract/v2.0
         required:
         - contract
-
-# --- status ---
 - if:
     properties:
       context:
@@ -187,8 +166,6 @@ allOf:
             - id
         required:
         - order
-
-# --- on_status ---
 - if:
     properties:
       context:
@@ -201,11 +178,9 @@ allOf:
         properties:
           contract:
             allOf:
-            - $ref: "https://schema.beckn.io/Contract/v2.0"
+            - $ref: https://schema.beckn.io/Contract/v2.0
         required:
         - contract
-
-# --- track ---
 - if:
     properties:
       context:
@@ -218,11 +193,9 @@ allOf:
         properties:
           tracking:
             allOf:
-            - $ref: "https://schema.beckn.io/TrackingRequest/v2.0"
+            - $ref: https://schema.beckn.io/TrackingRequest/v2.0
         required:
         - tracking
-
-# --- on_track ---
 - if:
     properties:
       context:
@@ -235,11 +208,9 @@ allOf:
         properties:
           tracking:
             allOf:
-            - $ref: "https://schema.beckn.io/Tracking/v2.0"
+            - $ref: https://schema.beckn.io/Tracking/v2.0
         required:
         - tracking
-
-# --- update ---
 - if:
     properties:
       context:
@@ -252,11 +223,9 @@ allOf:
         properties:
           contract:
             allOf:
-            - $ref: "https://schema.beckn.io/Contract/v2.0"
+            - $ref: https://schema.beckn.io/Contract/v2.0
         required:
         - contract
-
-# --- on_update ---
 - if:
     properties:
       context:
@@ -269,11 +238,9 @@ allOf:
         properties:
           contract:
             allOf:
-            - $ref: "https://schema.beckn.io/Contract/v2.0"
+            - $ref: https://schema.beckn.io/Contract/v2.0
         required:
         - contract
-
-# --- cancel ---
 - if:
     properties:
       context:
@@ -286,11 +253,9 @@ allOf:
         properties:
           contract:
             allOf:
-            - $ref: "https://schema.beckn.io/Contract/v2.0"
+            - $ref: https://schema.beckn.io/Contract/v2.0
         required:
         - contract
-
-# --- on_cancel ---
 - if:
     properties:
       context:
@@ -303,11 +268,9 @@ allOf:
         properties:
           contract:
             allOf:
-            - $ref: "https://schema.beckn.io/Contract/v2.0"
+            - $ref: https://schema.beckn.io/Contract/v2.0
         required:
         - contract
-
-# --- rate ---
 - if:
     properties:
       context:
@@ -321,11 +284,9 @@ allOf:
           ratingInputs:
             type: array
             items:
-              $ref: "https://schema.beckn.io/RatingInput/v2.0"
+              $ref: https://schema.beckn.io/RatingInput/v2.0
         required:
         - ratingInputs
-
-# --- on_rate ---
 - if:
     properties:
       context:
@@ -339,11 +300,9 @@ allOf:
           ratingForms:
             type: array
             items:
-              $ref: "https://schema.beckn.io/RatingForm/v2.0"
+              $ref: https://schema.beckn.io/RatingForm/v2.0
         required:
         - ratingForms
-
-# --- support ---
 - if:
     properties:
       context:
@@ -356,11 +315,9 @@ allOf:
         properties:
           supportRequest:
             allOf:
-            - $ref: "https://schema.beckn.io/SupportRequest/v2.0"
+            - $ref: https://schema.beckn.io/SupportRequest/v2.0
         required:
         - supportRequest
-
-# --- on_support ---
 - if:
     properties:
       context:
@@ -373,6 +330,8 @@ allOf:
         properties:
           supportInfo:
             allOf:
-            - $ref: "https://schema.beckn.io/SupportInfo/v2.0"
+            - $ref: https://schema.beckn.io/SupportInfo/v2.0
         required:
         - supportInfo
+x-tags:
+- common

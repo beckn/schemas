@@ -1,7 +1,7 @@
-$id: "https://schema.beckn.io/FulfillmentStageAuthorization/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
-description: 'A credential/document/proof relevant to authorization at a fulfillment stage endpoint. This may be a token to
-  be verified (QR/OTP/URL) or a document to be inspected manually.
+$id: https://schema.beckn.io/FulfillmentStageAuthorization/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
+description: 'A credential/document/proof relevant to authorization at a fulfillment stage endpoint. This
+  may be a token to be verified (QR/OTP/URL) or a document to be inspected manually.
 
   '
 title: FulfillmentStageAuthorization
@@ -16,23 +16,26 @@ properties:
     description: CPD
     type: string
     format: uri
-    const: "https://schema.beckn.io/"
+    const: https://schema.beckn.io/
   '@type':
     type: string
     default: beckn:FulfillmentStageAuthorization
   mediaFiles:
-    description: Media files required to enter or exit this fulfillment stage. The could be images of delivered packages,
-      recorded video proof of installation, etc
+    description: Media files required to enter or exit this fulfillment stage. The could be images of
+      delivered packages, recorded video proof of installation, etc
     type: array
     items:
-      $ref: "https://schema.beckn.io/MediaFile/v2.0"
+      $ref: https://schema.beckn.io/MediaFile/v2.0
   docs:
-    description: Documents required to enter or exit this fulfillment stage. The could be entry tickets, boarding passes,
-      waybill, permits, certificates, credentials, etc
+    description: Documents required to enter or exit this fulfillment stage. The could be entry tickets,
+      boarding passes, waybill, permits, certificates, credentials, etc
     type: array
     items:
       allOf:
-      - $ref: "https://schema.beckn.io/Document/v2.0"
+      - $ref: https://schema.beckn.io/Document/v2.0
   authToken:
     type: string
-    description: A human readable string that needs to be provided to enter or exit this fulfillment stage. Like an OTP
+    description: A human readable string that needs to be provided to enter or exit this fulfillment stage.
+      Like an OTP
+x-tags:
+- common

@@ -1,0 +1,66 @@
+openapi: 3.1.0
+info:
+  title: Receipt
+  version: 2.0.0
+  description: Schema for Receipt in Beckn Logistics domain.
+  contact:
+    name: Beckn Foundation
+    url: https://beckn.org
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+paths: {}
+components:
+  schemas:
+    Receipt:
+      type: object
+      title: Receipt
+      description: Digital acknowledgment of payment and delivery for a logistics service.
+      required:
+      - id
+      - shipmentId
+      - fare
+      properties:
+        id:
+          type: string
+          example: RCP-2024-001234
+        shipmentId:
+          type: string
+          example: SHP-2024-001234
+        invoiceNumber:
+          type: string
+          example: INV-2024-9900
+        issuedAt:
+          type: string
+          format: date-time
+        fare:
+          $ref: '#/components/schemas/Fare'
+        paymentMode:
+          type: string
+          enum:
+          - PREPAID
+          - COD
+          - TO_PAY
+          - CREDIT
+          example: PREPAID
+        paymentTransactionId:
+          type: string
+          example: TXN-UPI-2024-123456
+        paidAt:
+          type: string
+          format: date-time
+        shipper:
+          $ref: '#/components/schemas/Contact'
+        consignee:
+          $ref: '#/components/schemas/Contact'
+        carrier:
+          $ref: '#/components/schemas/Carrier'
+        deliveryProof:
+          $ref: '#/components/schemas/Proof'
+        downloadUrl:
+          type: string
+          format: uri
+          description: URL to download PDF receipt
+$id: https://schema.beckn.io/LogisticsReceipt/v2.0
+x-tags:
+- logistics

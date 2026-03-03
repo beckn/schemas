@@ -1,7 +1,8 @@
-$id: "https://schema.beckn.io/Attributes/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
-description: JSON-LD aware container for domain-specific attributes of an Item. MUST include @context (URI) and @type (compact
-  or full IRI). Any additional properties are allowed and interpreted per the provided JSON-LD context.
+$id: https://schema.beckn.io/Attributes/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
+description: JSON-LD aware container for domain-specific attributes of an Item. MUST include @context
+  (URI) and @type (compact or full IRI). Any additional properties are allowed and interpreted per the
+  provided JSON-LD context.
 title: Attributes
 type: object
 properties:
@@ -9,7 +10,7 @@ properties:
     description: Use case specific JSON-LD context URI
     type: string
     format: uri
-    example: "https://example.org/schema/items/v1/ElectronicItem/schema-context.jsonld"
+    example: https://example.org/schema/items/v1/ElectronicItem/schema-context.jsonld
   '@type':
     description: JSON-LD type defined within the context
     type: string
@@ -18,3 +19,5 @@ required:
 - '@context'
 - '@type'
 additionalProperties: true
+x-tags:
+- common

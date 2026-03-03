@@ -1,5 +1,5 @@
-$id: "https://schema.beckn.io/MediaFile/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/MediaFile/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 description: A image, audio, or video typically intended for display purposes
 title: MediaFile
 type: object
@@ -12,3 +12,5 @@ properties:
     description: URL to the document
     type: string
     format: uri
+x-tags:
+- common

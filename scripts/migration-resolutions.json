@@ -1,0 +1,157 @@
+{
+  "_comment": "Migration collision resolutions for beckn domain schema migration. Actions: rename | skip | overwrite",
+  "resolutions": [
+    {
+      "source": "mobility",
+      "folder": "Alert",
+      "action": "rename",
+      "new_name": "TransitAlert",
+      "_conflict_with": "core",
+      "_rationale": "Transit-specific alert (service disruption, delay) vs core generic Alert notification"
+    },
+    {
+      "source": "mobility",
+      "folder": "CancellationPolicy",
+      "action": "rename",
+      "new_name": "MobilityCancellationPolicy",
+      "_conflict_with": "core",
+      "_rationale": "Ride/transit cancellation policy with time-window penalties, vs core generic cancellation policy"
+    },
+    {
+      "source": "mobility",
+      "folder": "Entitlement",
+      "action": "rename",
+      "new_name": "TransitEntitlement",
+      "_conflict_with": "core",
+      "_rationale": "Transit pass, accessibility entitlement, free ride benefit — mobility-specific"
+    },
+    {
+      "source": "mobility",
+      "folder": "Feedback",
+      "action": "rename",
+      "new_name": "MobilityFeedback",
+      "_conflict_with": "core",
+      "_rationale": "Mobility-specific feedback (ride experience, driver rating text)"
+    },
+    {
+      "source": "mobility",
+      "folder": "Provider",
+      "action": "rename",
+      "new_name": "TransportProvider",
+      "_conflict_with": "core",
+      "_rationale": "Transport operator (airline, bus company, cab fleet) vs core generic catalog Provider"
+    },
+    {
+      "source": "mobility",
+      "folder": "Rating",
+      "action": "rename",
+      "new_name": "MobilityRating",
+      "_conflict_with": "core",
+      "_rationale": "Ride/driver rating with mobility-specific categories vs core generic Rating"
+    },
+    {
+      "source": "logistics",
+      "folder": "Alert",
+      "action": "rename",
+      "new_name": "LogisticsAlert",
+      "_conflict_with": "core",
+      "_rationale": "Shipment/delivery alert vs core generic Alert notification"
+    },
+    {
+      "source": "logistics",
+      "folder": "CancellationPolicy",
+      "action": "rename",
+      "new_name": "LogisticsCancellationPolicy",
+      "_conflict_with": "core",
+      "_rationale": "Shipment cancellation policy vs core generic cancellation policy"
+    },
+    {
+      "source": "logistics",
+      "folder": "Driver",
+      "action": "rename",
+      "new_name": "LogisticsDriver",
+      "_conflict_with": "another source",
+      "_rationale": "Logistics truck/van driver vs mobility ride-hailing driver (mobility:Driver)"
+    },
+    {
+      "source": "logistics",
+      "folder": "Fare",
+      "action": "rename",
+      "new_name": "ShippingFare",
+      "_conflict_with": "another source",
+      "_rationale": "Shipping/freight fare structure vs mobility transit fare (mobility:Fare)"
+    },
+    {
+      "source": "logistics",
+      "folder": "FareBreakup",
+      "action": "rename",
+      "new_name": "ShippingFareBreakup",
+      "_conflict_with": "another source",
+      "_rationale": "Shipping fare line-item breakdown vs mobility transit fare breakup"
+    },
+    {
+      "source": "logistics",
+      "folder": "Feedback",
+      "action": "rename",
+      "new_name": "LogisticsFeedback",
+      "_conflict_with": "core",
+      "_rationale": "Delivery experience feedback vs core generic Feedback"
+    },
+    {
+      "source": "logistics",
+      "folder": "Operator",
+      "action": "rename",
+      "new_name": "LogisticsOperator",
+      "_conflict_with": "another source",
+      "_rationale": "Logistics fleet/courier operator vs mobility transport operator (mobility:Operator)"
+    },
+    {
+      "source": "logistics",
+      "folder": "Place",
+      "action": "rename",
+      "new_name": "LogisticsPlace",
+      "_conflict_with": "another source",
+      "_rationale": "Logistics warehouse/hub/delivery point vs mobility pickup/dropoff place"
+    },
+    {
+      "source": "logistics",
+      "folder": "Rating",
+      "action": "rename",
+      "new_name": "LogisticsRating",
+      "_conflict_with": "core",
+      "_rationale": "Delivery/courier rating vs core generic Rating"
+    },
+    {
+      "source": "logistics",
+      "folder": "Receipt",
+      "action": "rename",
+      "new_name": "LogisticsReceipt",
+      "_conflict_with": "another source",
+      "_rationale": "Shipment delivery receipt vs mobility ride receipt (mobility:Receipt)"
+    },
+    {
+      "source": "logistics",
+      "folder": "Route",
+      "action": "rename",
+      "new_name": "LogisticsRoute",
+      "_conflict_with": "another source",
+      "_rationale": "Freight/delivery route vs mobility transit route (mobility:Route)"
+    },
+    {
+      "source": "logistics",
+      "folder": "SupportCase",
+      "action": "rename",
+      "new_name": "LogisticsSupportCase",
+      "_conflict_with": "another source",
+      "_rationale": "Logistics support case vs mobility support case (mobility:SupportCase)"
+    },
+    {
+      "source": "logistics",
+      "folder": "Vehicle",
+      "action": "rename",
+      "new_name": "LogisticsVehicle",
+      "_conflict_with": "another source",
+      "_rationale": "Freight/delivery vehicle (truck, van) vs mobility passenger vehicle (mobility:Vehicle)"
+    }
+  ]
+}

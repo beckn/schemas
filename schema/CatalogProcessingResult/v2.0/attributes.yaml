@@ -1,5 +1,5 @@
-$id: "https://schema.beckn.io/CatalogProcessingResult/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/CatalogProcessingResult/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 description: Schema definition for CatalogProcessingResult in the Beckn Protocol v2.1
 title: CatalogProcessingResult
 type: object
@@ -22,9 +22,11 @@ properties:
     description: Non-fatal issues encountered
     type: array
     items:
-      $ref: "https://schema.beckn.io/ProcessingNotice/v2.0"
+      $ref: https://schema.beckn.io/ProcessingNotice/v2.0
   error:
-    $ref: "https://schema.beckn.io/Error/v2.0"
+    $ref: https://schema.beckn.io/Error/v2.0
 required:
 - catalogId
 - status
+x-tags:
+- common

@@ -1,5 +1,5 @@
-$id: "https://schema.beckn.io/TrackingRequest/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/TrackingRequest/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 description: Schema definition for TrackingRequest in the Beckn Protocol v2.0.1
 title: TrackingRequest
 type: object
@@ -21,6 +21,8 @@ properties:
     - WS_HANDLE
   trackingDataSchema:
     description: A JSON Schema (2020-12) that describes the structure of trackingData payloads.
-    $ref: "https://json-schema.org/draft/2020-12/schema"
+    $ref: https://json-schema.org/draft/2020-12/schema
 required:
 - id
+x-tags:
+- common

@@ -1,6 +1,7 @@
-$id: "https://schema.beckn.io/ContractItem/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
-description: A line item within a Contract, linking an accepted Offer and ordered Item with quantity and price.
+$id: https://schema.beckn.io/ContractItem/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
+description: A line item within a Contract, linking an accepted Offer and ordered Item with quantity and
+  price.
 title: ContractItem
 type: object
 properties:
@@ -9,29 +10,31 @@ properties:
     x-jsonld:
       '@id': schema:acceptedOffer
     allOf:
-    - $ref: "https://schema.beckn.io/Offer/v2.0"
+    - $ref: https://schema.beckn.io/Offer/v2.0
   itemId:
     x-jsonld:
       '@id': schema:orderedItem
     allOf:
-    - $ref: "https://schema.beckn.io/Item/v2.0#/properties/id"
+    - $ref: https://schema.beckn.io/Item/v2.0#/properties/id
   lineId:
     description: Unique line id within contract
     type: string
   contractItemAttributes:
     description: Line-level Attribute Pack (options, substitutions, ESG, etc.)
     allOf:
-    - $ref: "https://schema.beckn.io/Attributes/v2.0"
+    - $ref: https://schema.beckn.io/Attributes/v2.0
   price:
     description: Line price composition (unit/tax/delivery/discount)
     x-jsonld:
       '@id': schema:priceSpecification
     allOf:
-    - $ref: "https://schema.beckn.io/PriceSpecification/v2.0"
+    - $ref: https://schema.beckn.io/PriceSpecification/v2.0
   quantity:
     x-jsonld:
       '@id': beckn:quantity
     allOf:
-    - $ref: "https://schema.beckn.io/Quantity/v2.0"
+    - $ref: https://schema.beckn.io/Quantity/v2.0
 required:
 - itemId
+x-tags:
+- common
