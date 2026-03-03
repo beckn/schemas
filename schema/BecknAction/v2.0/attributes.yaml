@@ -25,6 +25,7 @@ properties:
 required:
 - context
 - message
+additionalProperties: false
 allOf:
 
 # --- discover ---

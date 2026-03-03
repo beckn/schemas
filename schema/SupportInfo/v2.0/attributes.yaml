@@ -1,16 +1,16 @@
-$id: "https://schema.beckn.io/Support/v2.0"
+$id: "https://schema.beckn.io/SupportInfo/v2.0"
 $schema: "https://json-schema.org/draft/2020-12/schema"
 description: Canonical support contact for an entity, mapped to schema.org ContactPoint.
-title: Support
+title: SupportInfo
 type: object
 properties:
   '@context':
     type: string
     format: uri
-    const: "https://schema.beckn.io/"
+    default: "https://schema.beckn.io/"
   '@type':
     type: string
-    const: beckn:Support
+    default: beckn:SupportInfo
   channels:
     description: Available support channels.
     type: array
@@ -46,8 +46,9 @@ properties:
     type: string
     format: uri
   callbackStatus:
+    description: Status of a support callback request. Indicates whether a callback has been requested, scheduled, or completed.
     type: string
 required:
 - '@context'
 - '@type'
-additionalProperties: true
+additionalProperties: false

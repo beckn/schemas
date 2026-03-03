@@ -703,7 +703,7 @@
       "schema:name": "INITIATED",
       "schema:identifier": "INITIATED",
       "rdfs:label": "payment Initiated",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
     },
     {
       "@id": "beckn:PaymentPending",
@@ -714,7 +714,7 @@
       "schema:name": "PENDING",
       "schema:identifier": "PENDING",
       "rdfs:label": "payment Pending",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
     },
     {
       "@id": "beckn:PaymentAuthorized",
@@ -725,7 +725,7 @@
       "schema:name": "AUTHORIZED",
       "schema:identifier": "AUTHORIZED",
       "rdfs:label": "payment Authorized",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
     },
     {
       "@id": "beckn:PaymentCaptured",
@@ -736,7 +736,7 @@
       "schema:name": "CAPTURED",
       "schema:identifier": "CAPTURED",
       "rdfs:label": "payment Captured",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
     },
     {
       "@id": "beckn:PaymentCompleted",
@@ -747,7 +747,7 @@
       "schema:name": "COMPLETED",
       "schema:identifier": "COMPLETED",
       "rdfs:label": "payment Completed",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
     },
     {
       "@id": "beckn:PaymentFailed",
@@ -758,7 +758,7 @@
       "schema:name": "FAILED",
       "schema:identifier": "FAILED",
       "rdfs:label": "payment Failed",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
     },
     {
       "@id": "beckn:PaymentCancelled",
@@ -770,7 +770,7 @@
       "schema:identifier": "CANCELLED",
       "schema:alternateName": "CANCELED",
       "rdfs:label": "payment Cancelled",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
     },
     {
       "@id": "beckn:PaymentRefunded",
@@ -781,7 +781,7 @@
       "schema:name": "REFUNDED",
       "schema:identifier": "REFUNDED",
       "rdfs:label": "payment Refunded",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
     },
     {
       "@id": "beckn:PaymentPartiallyRefunded",
@@ -793,7 +793,7 @@
       "schema:identifier": "PARTIALLY_REFUNDED",
       "schema:alternateName": "PARTIALLY-REFUNDED",
       "rdfs:label": "payment Partially Refunded",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
     },
     {
       "@id": "beckn:PaymentChargeback",
@@ -804,7 +804,7 @@
       "schema:name": "CHARGEBACK",
       "schema:identifier": "CHARGEBACK",
       "rdfs:label": "payment Chargeback",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
     },
     {
       "@id": "beckn:PaymentDisputed",
@@ -815,7 +815,7 @@
       "schema:name": "DISPUTED",
       "schema:identifier": "DISPUTED",
       "rdfs:label": "payment Disputed",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
     },
     {
       "@id": "beckn:PaymentExpired",
@@ -826,7 +826,7 @@
       "schema:name": "EXPIRED",
       "schema:identifier": "EXPIRED",
       "rdfs:label": "payment Expired",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
     },
     {
       "@id": "beckn:PaymentReversed",
@@ -837,7 +837,7 @@
       "schema:name": "REVERSED",
       "schema:identifier": "REVERSED",
       "rdfs:label": "payment Reversed",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
     },
     {
       "@id": "beckn:PaymentVoided",
@@ -848,7 +848,7 @@
       "schema:name": "VOIDED",
       "schema:identifier": "VOIDED",
       "rdfs:label": "payment Voided",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
     },
     {
       "@id": "beckn:PaymentSettled",
@@ -859,7 +859,7 @@
       "schema:name": "SETTLED",
       "schema:identifier": "SETTLED",
       "rdfs:label": "payment Settled",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
     },
     {
       "@id": "beckn:PaymentOnHold",
@@ -871,7 +871,7 @@
       "schema:identifier": "ON_HOLD",
       "schema:alternateName": "ON-HOLD",
       "rdfs:label": "payment On Hold",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
     },
     {
       "@id": "beckn:PaymentAdjusted",
@@ -882,7 +882,7 @@
       "schema:name": "ADJUSTED",
       "schema:identifier": "ADJUSTED",
       "rdfs:label": "payment Adjusted",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
     },
     {
       "@id": "beckn:currency",
@@ -1273,7 +1273,7 @@
       "@id": "beckn:ratingValue",
       "@type": "schema:Property",
       "rdfs:label": "Rating value",
-      "rdfs:comment": "Numeric rating score. Numeric rating value (legacy usually 1–5).",
+      "rdfs:comment": "Numeric rating score. Numeric rating value (legacy usually 1\u20135).",
       "rdfs:domain": [
         "beckn:Rating",
         "beckn:RatingInput"
@@ -2632,7 +2632,7 @@
       "@id": "beckn:SpatialConstraint",
       "rdfs:label": "Spatial Constraint",
       "@type": "rdfs:Class",
-      "rdfs:comment": "**Spatial predicate** using **OGC CQL2 (JSON semantics)** applied to one or more geometry targets in an item. This is where clients express spatial intent.\nKey ideas: - `targets`: one or more **JSONPath-like** pointers that locate geometry\n\n  fields within each item document (e.g., `$['availableAt'][*]['geo']`).\n- `op`: spatial operator (CQL2). Common ones:\n\n    • `S_WITHIN`     (A is completely inside B)\n    • `S_INTERSECTS` (A intersects B)\n    • `S_CONTAINS`   (A contains B)\n    • `S_DWITHIN`    (A within distance of B)\n- `geometry`: **GeoJSON** literal used as the predicate reference geometry. - `distanceMeters`: required for `S_DWITHIN` when using a GeoJSON Point/shape. - `quantifier`: if a target resolves to an array, choose whether **ANY** (default),\n\n  **ALL**, or **NONE** of elements must satisfy the predicate.\n\nCRS: unless otherwise stated, all coordinates are **EPSG:4326**.\n"
+      "rdfs:comment": "**Spatial predicate** using **OGC CQL2 (JSON semantics)** applied to one or more geometry targets in an item. This is where clients express spatial intent.\nKey ideas: - `targets`: one or more **JSONPath-like** pointers that locate geometry\n\n  fields within each item document (e.g., `$['availableAt'][*]['geo']`).\n- `op`: spatial operator (CQL2). Common ones:\n\n    \u2022 `S_WITHIN`     (A is completely inside B)\n    \u2022 `S_INTERSECTS` (A intersects B)\n    \u2022 `S_CONTAINS`   (A contains B)\n    \u2022 `S_DWITHIN`    (A within distance of B)\n- `geometry`: **GeoJSON** literal used as the predicate reference geometry. - `distanceMeters`: required for `S_DWITHIN` when using a GeoJSON Point/shape. - `quantifier`: if a target resolves to an array, choose whether **ANY** (default),\n\n  **ALL**, or **NONE** of elements must satisfy the predicate.\n\nCRS: unless otherwise stated, all coordinates are **EPSG:4326**.\n"
     },
     {
       "@id": "beckn:SupportMethod",
@@ -3432,7 +3432,7 @@
       ],
       "schema:rangeIncludes": "beckn:MediaSearchOptions",
       "@type": "schema:Property",
-      "rdfs:comment": "Options controlling how the discovery engine interprets the supplied media — e.g., whether to perform OCR/ASR, semantic similarity, or object detection."
+      "rdfs:comment": "Options controlling how the discovery engine interprets the supplied media \u2014 e.g., whether to perform OCR/ASR, semantic similarity, or object detection."
     },
     {
       "@id": "beckn:orderDocs",
@@ -5242,6 +5242,48 @@
       "schema:identifier": "catalog/on_publish",
       "rdfs:label": "Catalog On Publish Action",
       "rdfs:comment": "Callback with catalog publish processing results. This value is used as the path parameter in Beckn Protocol HTTP endpoints (e.g., /beckn/{action})."
+    },
+    {
+      "@id": "beckn:BecknAction",
+      "@type": "rdfs:Class",
+      "rdfs:label": "BecknAction",
+      "rdfs:comment": "Unified Beckn action envelope. All Beckn API requests and callbacks conform to this schema. The context identifies the action being performed; the message carries the action-specific payload."
+    },
+    {
+      "@id": "beckn:BecknEndpoint",
+      "@type": "rdfs:Class",
+      "rdfs:label": "BecknEndpoint",
+      "rdfs:comment": "A Beckn protocol endpoint identifier. Conforms to the pattern beckn/{action}. Known endpoints include beckn/discover, beckn/on_discover, and 18 others."
+    },
+    {
+      "@id": "beckn:Message",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Message",
+      "rdfs:comment": "An open container for action-specific payload in a Beckn action envelope. Content constraints are applied per context.action value."
+    },
+    {
+      "@id": "beckn:LineageEntry",
+      "@type": "rdfs:Class",
+      "rdfs:label": "LineageEntry",
+      "rdfs:comment": "A causal attribution record asserting that a Beckn transaction was triggered by an upstream Beckn interaction. Carries the upstream action, transactionId, messageId, and a BLAKE-512 digest."
+    },
+    {
+      "@id": "beckn:FormSubmission",
+      "@type": "rdfs:Class",
+      "rdfs:label": "FormSubmission",
+      "rdfs:comment": "A user's submitted response to a Beckn form. Captures filled-in field values keyed by form field names."
+    },
+    {
+      "@id": "beckn:lineage",
+      "@type": "rdf:Property",
+      "rdfs:label": "lineage",
+      "rdfs:comment": "An optional array of causal attribution records (LineageEntry) asserting that this Beckn transaction was triggered by one or more upstream Beckn interactions.",
+      "rdfs:domain": {
+        "@id": "beckn:Context"
+      },
+      "rdfs:range": {
+        "@id": "beckn:LineageEntry"
+      }
     }
   ]
 }
