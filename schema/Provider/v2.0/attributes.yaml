@@ -8,7 +8,7 @@ properties:
     description: CPD
     type: string
     format: uri
-    default: "https://schema.beckn.io/v2"
+    default: "https://schema.beckn.io/"
   '@type':
     description: TPD
     type: string
