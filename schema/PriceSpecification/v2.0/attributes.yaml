@@ -1,5 +1,5 @@
-$id: "https://schema.beckn.io/PriceSpecification/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/PriceSpecification/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 description: Schema definition for PriceSpecification in the Beckn Protocol v2.0.1
 title: PriceSpecification
 type: object
@@ -12,7 +12,7 @@ properties:
     type: number
     description: Total value for this price specification
   applicableQuantity:
-    $ref: "https://schema.beckn.io/Quantity/v2.0"
+    $ref: https://schema.beckn.io/Quantity/v2.0
     x-jsonld:
       '@id': schema:eligibleQuantity
   components:
@@ -38,3 +38,5 @@ properties:
           type: string
   x-jsonld:
     '@id': schema:PriceSpecification
+x-tags:
+- common

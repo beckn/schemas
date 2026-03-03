@@ -2,6 +2,7 @@ $id: "https://schema.beckn.io/DisplayedRating/v2.0"
 $schema: "https://json-schema.org/draft/2020-12/schema"
 description: Schema definition for DisplayedRating in the Beckn Protocol v2.0.1
 title: DisplayedRating
+x-tags: [common]
 type: object
 properties:
   '@type':

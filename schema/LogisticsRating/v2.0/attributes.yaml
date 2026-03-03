@@ -1,0 +1,69 @@
+openapi: 3.1.0
+info:
+  title: Rating
+  version: 2.0.0
+  description: Schema for Rating in Beckn Logistics domain.
+  contact:
+    name: Beckn Foundation
+    url: https://beckn.org
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+paths: {}
+components:
+  schemas:
+    Rating:
+      type: object
+      title: Rating
+      description: A numeric score given by a user for a logistics service, driver, or carrier.
+      required:
+      - value
+      - ratingFor
+      properties:
+        id:
+          type: string
+          example: RTG-00456
+        value:
+          type: number
+          minimum: 1
+          maximum: 5
+          example: 4.5
+        ratingFor:
+          type: string
+          enum:
+          - DRIVER
+          - CARRIER
+          - SERVICE
+          - PACKAGING
+          example: DRIVER
+        ratedBy:
+          type: string
+          description: User ID who gave the rating
+        shipmentId:
+          type: string
+        categories:
+          type: object
+          description: Category-wise ratings
+          properties:
+            timeliness:
+              type: number
+              minimum: 1
+              maximum: 5
+            packaging:
+              type: number
+              minimum: 1
+              maximum: 5
+            handling:
+              type: number
+              minimum: 1
+              maximum: 5
+            communication:
+              type: number
+              minimum: 1
+              maximum: 5
+        timestamp:
+          type: string
+          format: date-time
+$id: https://schema.beckn.io/LogisticsRating/v2.0
+x-tags:
+- logistics

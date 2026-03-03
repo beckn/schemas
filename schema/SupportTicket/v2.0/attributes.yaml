@@ -2,6 +2,7 @@ $id: "https://schema.beckn.io/SupportTicket/v2.0"
 $schema: "https://json-schema.org/draft/2020-12/schema"
 description: A support ticket raised against an order
 title: SupportTicket
+x-tags: [common]
 type: object
 properties:
   id:

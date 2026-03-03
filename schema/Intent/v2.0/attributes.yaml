@@ -2,6 +2,7 @@ $id: "https://schema.beckn.io/Intent/v2.0"
 $schema: "https://json-schema.org/draft/2020-12/schema"
 description: A declaration of an intent to discover catalogs.
 title: Intent
+x-tags: [common]
 type: object
 properties:
   textSearch:

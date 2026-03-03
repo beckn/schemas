@@ -1,5 +1,5 @@
-$id: "https://schema.beckn.io/Rating/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/Rating/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 description: Aggregated rating information for an entity. Aligns with schema.org/AggregateRating semantics.
 title: Rating
 type: object
@@ -7,7 +7,7 @@ properties:
   '@context':
     type: string
     format: uri
-    const: "https://schema.beckn.io/"
+    const: https://schema.beckn.io/
   '@type':
     type: string
     default: beckn:Rating
@@ -30,3 +30,5 @@ properties:
     x-jsonld:
       '@id': schema:reviewBody
 additionalProperties: false
+x-tags:
+- common

@@ -1,0 +1,55 @@
+# sources.yaml
+# Declarative registry of schema sources for schema.beckn.io.
+#
+# This file is managed via the admin console at schema-admin.beckn.io.
+# Do not edit manually — use the admin UI to add, update, or remove sources.
+#
+# Each entry references an upstream repo + git ref + schema subfolder path.
+# The sync engine clones the repo and reads schemas from the schemaPath subfolder.
+#
+# schemaPath: path within the cloned repo where schema folders live.
+#   Default: "schema" (i.e. <repo>/schema/<SchemaName>/<version>/attributes.yaml)
+#   Can be any relative path: "data", "specification/schema", etc.
+#
+# tags: source-level domain tags applied to schemas that do not have their own x-tags.
+#   Schemas with x-tags in their attributes.yaml use those instead.
+
+sources:
+
+  # ── Beckn Core Schema Registry ───────────────────────────────────────────────
+  # Contains: core protocol schemas + mobility + logistics + retail domain schemas.
+  # All schemas carry x-tags per domain (common / mobility / logistics / retail).
+  - id: beckn-core-v2
+    repo: https://github.com/beckn/core_schema
+    ref: draft
+    schemaPath: schema
+    namespace: https://schema.beckn.io
+    description: >-
+      Beckn Core Schema Registry. Contains core protocol schemas plus domain schemas
+      for mobility, logistics, and retail (all migrated from their source repos).
+      Schemas are tagged per-domain via x-tags in each attributes.yaml.
+    tags:
+      - common
+      - mobility
+      - logistics
+      - retail
+    formats:
+      - jsonschema
+      - jsonld
+
+  # ── Digital Energy Grid (external — indexed, not owned) ──────────────────────
+  # DEG maintains its own schemas. schema.beckn.io indexes them via this entry.
+  # DEG schemas use OpenAPI components.schemas format (not standalone JSON Schema).
+  - id: beckn-deg-v1
+    repo: https://github.com/beckn/DEG
+    ref: main
+    schemaPath: specification/schema
+    namespace: https://schema.beckn.io
+    description: >-
+      Digital Energy Grid domain schemas for P2P energy trading, EV charging,
+      and energy grid management. Maintained by the DEG team at FIDE / IEA.
+    tags:
+      - energy
+    formats:
+      - openapi
+      - jsonld

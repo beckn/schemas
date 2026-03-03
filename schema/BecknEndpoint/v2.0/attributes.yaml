@@ -1,6 +1,7 @@
 $id: "https://schema.beckn.io/BecknEndpoint/v2.0"
 $schema: "https://json-schema.org/draft/2020-12/schema"
 title: BecknEndpoint
+x-tags: [common]
 description: >-
   A Beckn protocol endpoint identifier. Must start with the prefix "beckn/"
   followed by one or more lowercase segments (letters and underscores only)

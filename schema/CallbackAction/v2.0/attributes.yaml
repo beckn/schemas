@@ -1,6 +1,7 @@
 $id: "https://schema.beckn.io/CallbackAction/v2.0"
 $schema: "https://json-schema.org/draft/2020-12/schema"
 title: CallbackAction
+x-tags: [common]
 deprecated: true
 description: >-
   DEPRECATED. This schema is structurally invalid and does not validate

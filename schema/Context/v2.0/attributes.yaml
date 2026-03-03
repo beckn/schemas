@@ -15,6 +15,7 @@ description: >-
   capture sending times, a ttl to specify the validity of the request, and
   a key to encrypt information if necessary.
 title: Context
+x-tags: [common]
 type: object
 properties:
   action:

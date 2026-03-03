@@ -2,6 +2,7 @@ $id: "https://schema.beckn.io/Catalog/v2.0"
 $schema: "https://json-schema.org/draft/2020-12/schema"
 description: Catalog schema for Beckn Protocol v2.0.1
 title: Catalog
+x-tags: [common]
 type: object
 properties:
   '@context':

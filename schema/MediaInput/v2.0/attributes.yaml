@@ -1,5 +1,5 @@
-$id: "https://schema.beckn.io/MediaInput/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/MediaInput/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 description: Reference to an image, audio clip, or video used for multimodal search.
 title: MediaInput
 type: object
@@ -37,3 +37,5 @@ required:
 - type
 - url
 additionalProperties: false
+x-tags:
+- common

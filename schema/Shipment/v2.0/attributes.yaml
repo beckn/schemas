@@ -1,0 +1,126 @@
+openapi: 3.1.0
+info:
+  title: Shipment
+  version: 2.0.0
+  description: Schema definition for the Shipment entity in the Beckn Logistics domain.
+  contact:
+    name: Beckn Foundation
+    url: https://beckn.org
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+paths: {}
+components:
+  schemas:
+    Shipment:
+      type: object
+      title: Shipment
+      description: 'A Shipment represents the movement of one or more packages from an origin to a destination.
+        It is the top-level fulfillment entity in a logistics transaction and maps to beckn:Fulfillment.
+
+        '
+      required:
+      - id
+      - status
+      - origin
+      - destination
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the shipment
+          example: SHP-2024-001234
+        trackingId:
+          type: string
+          description: Public tracking identifier shared with sender/receiver
+          example: TRK9876543210IN
+        status:
+          type: string
+          description: Current status of the shipment
+          enum:
+          - CREATED
+          - PICKUP_PENDING
+          - PICKED_UP
+          - IN_TRANSIT
+          - AT_HUB
+          - OUT_FOR_DELIVERY
+          - DELIVERED
+          - FAILED_DELIVERY
+          - RETURNED
+          - CANCELLED
+          example: IN_TRANSIT
+        origin:
+          $ref: '#/components/schemas/Place'
+        destination:
+          $ref: '#/components/schemas/Place'
+        packages:
+          type: array
+          description: List of packages in this shipment
+          items:
+            $ref: '#/components/schemas/Package'
+        carrier:
+          $ref: '#/components/schemas/Carrier'
+        driver:
+          $ref: '#/components/schemas/Driver'
+        vehicle:
+          $ref: '#/components/schemas/Vehicle'
+        route:
+          $ref: '#/components/schemas/Route'
+        scheduledPickup:
+          type: string
+          format: date-time
+          description: Scheduled pickup time
+        estimatedDelivery:
+          type: string
+          format: date-time
+          description: Estimated delivery date and time
+        actualDelivery:
+          type: string
+          format: date-time
+          description: Actual delivery date and time
+        deliverySlot:
+          $ref: '#/components/schemas/DeliverySlot'
+        serviceType:
+          type: string
+          description: Type of logistics service
+          enum:
+          - HYPERLOCAL
+          - COURIER
+          - INTERSTATE
+          - LONG_HAUL
+          - EXPRESS
+          example: EXPRESS
+        specialInstructions:
+          type: string
+          description: Special handling instructions for the shipment
+          example: Handle with care. Do not tilt.
+        proof:
+          $ref: '#/components/schemas/Proof'
+        fare:
+          $ref: '#/components/schemas/Fare'
+        receipt:
+          $ref: '#/components/schemas/Receipt'
+        cancellationPolicy:
+          $ref: '#/components/schemas/CancellationPolicy'
+        returnPolicy:
+          $ref: '#/components/schemas/ReturnPolicy'
+        alerts:
+          type: array
+          description: Alerts raised for this shipment
+          items:
+            $ref: '#/components/schemas/Alert'
+        trackingUpdates:
+          type: array
+          description: History of tracking updates
+          items:
+            $ref: '#/components/schemas/TrackingUpdate'
+        createdAt:
+          type: string
+          format: date-time
+          description: Timestamp when shipment was created
+        updatedAt:
+          type: string
+          format: date-time
+          description: Timestamp of last update
+$id: https://schema.beckn.io/Shipment/v2.0
+x-tags:
+- logistics

@@ -1,6 +1,7 @@
 $id: "https://schema.beckn.io/FormSubmission/v2.0"
 $schema: "https://json-schema.org/draft/2020-12/schema"
 title: FormSubmission
+x-tags: [common]
 description: >-
   A user's submitted response to a Beckn form. Captures the filled-in field
   values keyed by form field names. Typically attached to a RatingInput to

@@ -1,8 +1,8 @@
-$id: "https://schema.beckn.io/Entitlement/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
-description: A contractually granted, policy-governed right that allows a specific party to access, use, or claim a defined
-  economic resource within stated scope and validity constraints. It represents the enforceable permission created by an order,
-  independent of the credential used to exercise it.
+$id: https://schema.beckn.io/Entitlement/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
+description: A contractually granted, policy-governed right that allows a specific party to access, use,
+  or claim a defined economic resource within stated scope and validity constraints. It represents the
+  enforceable permission created by an order, independent of the credential used to exercise it.
 title: Entitlement
 type: object
 properties:
@@ -10,7 +10,7 @@ properties:
     description: CPD
     type: string
     format: uri
-    default: "https://schema.beckn.io/"
+    default: https://schema.beckn.io/
   '@type':
     description: The domain-specific type of entitlement that allows domains to extend this schema
     type: string
@@ -21,19 +21,21 @@ properties:
   resource:
     description: The resource being availed or accessed against this entitlement
     allOf:
-    - $ref: "https://schema.beckn.io/ContractItem/v2.0#/properties/lineId"
+    - $ref: https://schema.beckn.io/ContractItem/v2.0#/properties/lineId
   descriptor:
-    description: Human-readable information regarding the entitlement like QR-code images, attached documents containing terms
-      and conditions, video or audio files instructing the user on how to use the entitlement
+    description: Human-readable information regarding the entitlement like QR-code images, attached documents
+      containing terms and conditions, video or audio files instructing the user on how to use the entitlement
     allOf:
-    - $ref: "https://schema.beckn.io/Descriptor/v2.0"
+    - $ref: https://schema.beckn.io/Descriptor/v2.0
   credentials:
     type: array
     items:
-      $ref: "https://schema.beckn.io/Descriptor/v2.0"
+      $ref: https://schema.beckn.io/Descriptor/v2.0
 additionalProperties: true
 required:
 - '@context'
 - '@type'
 - id
 - descriptor
+x-tags:
+- common

@@ -1,7 +1,7 @@
-$id: "https://schema.beckn.io/SupportAction/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
-description: 'Beckn /beckn/support action envelope. Sent by a BAP to a BPP to request support contact information or to open
-  a support ticket for an existing order/contract.
+$id: https://schema.beckn.io/SupportAction/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
+description: 'Beckn /beckn/support action envelope. Sent by a BAP to a BPP to request support contact
+  information or to open a support ticket for an existing order/contract.
 
   '
 title: SupportAction
@@ -9,7 +9,7 @@ type: object
 properties:
   context:
     allOf:
-    - $ref: "https://schema.beckn.io/Context/v2.0"
+    - $ref: https://schema.beckn.io/Context/v2.0
     - type: object
       properties:
         action:
@@ -21,9 +21,11 @@ properties:
     properties:
       supportRequest:
         allOf:
-        - $ref: "https://schema.beckn.io/SupportRequest/v2.0"
+        - $ref: https://schema.beckn.io/SupportRequest/v2.0
     required:
     - supportRequest
 required:
 - context
 - message
+x-tags:
+- common

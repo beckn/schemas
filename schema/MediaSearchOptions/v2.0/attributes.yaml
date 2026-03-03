@@ -1,5 +1,5 @@
-$id: "https://schema.beckn.io/MediaSearchOptions/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/MediaSearchOptions/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 description: How the discovery engine should use the provided media inputs.
 title: MediaSearchOptions
 type: object
@@ -25,3 +25,5 @@ properties:
     type: boolean
     default: false
 additionalProperties: false
+x-tags:
+- common

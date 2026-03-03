@@ -1,6 +1,7 @@
 $id: "https://schema.beckn.io/BecknAction/v2.0"
 $schema: "https://json-schema.org/draft/2020-12/schema"
 title: BecknAction
+x-tags: [common]
 description: >-
   Unified Beckn action envelope. All Beckn API requests and callbacks conform
   to this schema. The context identifies the action being performed; the message

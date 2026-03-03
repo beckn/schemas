@@ -1,6 +1,7 @@
 $id: "https://schema.beckn.io/LineageEntry/v2.0"
 $schema: "https://json-schema.org/draft/2020-12/schema"
 title: LineageEntry
+x-tags: [common]
 description: >-
   A causal attribution record asserting that the Beckn transaction in which
   this entry appears was triggered by a specific upstream Beckn interaction.

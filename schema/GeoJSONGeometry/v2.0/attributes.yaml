@@ -1,11 +1,12 @@
-$id: "https://schema.beckn.io/GeoJSONGeometry/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
-description: "**GeoJSON geometry** per RFC 7946. Coordinates are in **EPSG:4326 (WGS-84)** and MUST follow **[longitude, latitude,\
-  \ (altitude?)]** order.\nSupported types: - Point, LineString, Polygon - MultiPoint, MultiLineString, MultiPolygon - GeometryCollection\
-  \ (uses `geometries` instead of `coordinates`)\nNotes: - For rectangles, use a Polygon with a single linear ring where the\
-  \ first\n  and last positions are identical.\n- Circles are **not native** to GeoJSON. For circular searches, use\n  `SpatialConstraint`\
-  \ with `op: s_dwithin` and a Point + `distanceMeters`,\n  or approximate the circle as a Polygon.\n- Optional `bbox` is\
-  \ `[west, south, east, north]` in degrees.\n"
+$id: https://schema.beckn.io/GeoJSONGeometry/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
+description: "**GeoJSON geometry** per RFC 7946. Coordinates are in **EPSG:4326 (WGS-84)** and MUST follow\
+  \ **[longitude, latitude, (altitude?)]** order.\nSupported types: - Point, LineString, Polygon - MultiPoint,\
+  \ MultiLineString, MultiPolygon - GeometryCollection (uses `geometries` instead of `coordinates`)\n\
+  Notes: - For rectangles, use a Polygon with a single linear ring where the first\n  and last positions\
+  \ are identical.\n- Circles are **not native** to GeoJSON. For circular searches, use\n  `SpatialConstraint`\
+  \ with `op: s_dwithin` and a Point + `distanceMeters`,\n  or approximate the circle as a Polygon.\n\
+  - Optional `bbox` is `[west, south, east, north]` in degrees.\n"
 title: GeoJSONGeometry
 type: object
 properties:
@@ -15,14 +16,14 @@ properties:
     minItems: 4
     maxItems: 4
   coordinates:
-    description: Coordinates per RFC 7946 for all types **except** GeometryCollection. Order is **[lon, lat, (alt)]**. For
-      Polygons, this is an array of linear rings; each ring is an array of positions.
+    description: Coordinates per RFC 7946 for all types **except** GeometryCollection. Order is **[lon,
+      lat, (alt)]**. For Polygons, this is an array of linear rings; each ring is an array of positions.
     type: array
   geometries:
     description: Member geometries when `type` is **GeometryCollection**.
     type: array
     items:
-      $ref: "https://schema.beckn.io/GeoJSONGeometry/v2.0"
+      $ref: https://schema.beckn.io/GeoJSONGeometry/v2.0
   type:
     type: string
     enum:
@@ -36,3 +37,5 @@ properties:
 required:
 - type
 additionalProperties: true
+x-tags:
+- common

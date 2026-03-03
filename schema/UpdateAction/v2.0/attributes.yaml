@@ -1,7 +1,8 @@
-$id: "https://schema.beckn.io/UpdateAction/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
-description: 'Beckn /beckn/update action envelope. Sent by a BAP to a BPP to request changes to an active contract (e.g.,
-  update fulfillment address, add items, change quantities). The context.try flag must be true during negotiation.
+$id: https://schema.beckn.io/UpdateAction/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
+description: 'Beckn /beckn/update action envelope. Sent by a BAP to a BPP to request changes to an active
+  contract (e.g., update fulfillment address, add items, change quantities). The context.try flag must
+  be true during negotiation.
 
   '
 title: UpdateAction
@@ -9,7 +10,7 @@ type: object
 properties:
   context:
     allOf:
-    - $ref: "https://schema.beckn.io/Context/v2.0"
+    - $ref: https://schema.beckn.io/Context/v2.0
     - type: object
       properties:
         action:
@@ -21,9 +22,11 @@ properties:
     properties:
       contract:
         allOf:
-        - $ref: "https://schema.beckn.io/Contract/v2.0"
+        - $ref: https://schema.beckn.io/Contract/v2.0
     required:
     - contract
 required:
 - context
 - message
+x-tags:
+- common

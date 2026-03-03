@@ -2,6 +2,7 @@ $id: "https://schema.beckn.io/MediaFile/v2.0"
 $schema: "https://json-schema.org/draft/2020-12/schema"
 description: A image, audio, or video typically intended for display purposes
 title: MediaFile
+x-tags: [common]
 type: object
 properties:
   label:

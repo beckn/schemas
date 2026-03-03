@@ -1,9 +1,9 @@
-$id: "https://schema.beckn.io/TransactionEndpoint/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/TransactionEndpoint/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 description: Beckn protocol transaction endpoint identifier.
 title: TransactionEndpoint
 allOf:
-- $ref: "https://schema.beckn.io/BecknEndpoint/v2.0"
+- $ref: https://schema.beckn.io/BecknEndpoint/v2.0
 - properties: null
   type: string
   enum:
@@ -29,3 +29,5 @@ allOf:
   - beckn/on_rate
   - beckn/support
   - beckn/on_support
+x-tags:
+- common

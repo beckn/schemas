@@ -1,5 +1,5 @@
-$id: "https://schema.beckn.io/FulfillmentStage/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: https://schema.beckn.io/FulfillmentStage/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
 description: Schema definition for FulfillmentStage in the Beckn Protocol v2.0.1
 title: FulfillmentStage
 type: object
@@ -8,7 +8,7 @@ properties:
     description: CPD
     type: string
     format: uri
-    const: "https://schema.beckn.io/"
+    const: https://schema.beckn.io/
   '@type':
     type: string
     default: beckn:FulfillmentStage
@@ -19,25 +19,27 @@ properties:
     description: A set of instructions to follow during this stage of fulfillment
     type: array
     items:
-      $ref: "https://schema.beckn.io/Instruction/v2.0"
+      $ref: https://schema.beckn.io/Instruction/v2.0
   preferences:
     description: A extensible set of attributes that describe the fulfillment preferences
     type: array
     items:
-      $ref: "https://schema.beckn.io/Attributes/v2.0"
+      $ref: https://schema.beckn.io/Attributes/v2.0
   start:
-    description: An extensible set of attributes that describe the criteria required to start this stage of fulfillment
+    description: An extensible set of attributes that describe the criteria required to start this stage
+      of fulfillment
     type: object
     allOf:
-      $ref: "https://schema.beckn.io/FulfillmentStageEndpoint/v2.0"
+      $ref: https://schema.beckn.io/FulfillmentStageEndpoint/v2.0
   end:
-    description: An extensible set of attributes that describe the criteria required to end this stage of fulfillment
+    description: An extensible set of attributes that describe the criteria required to end this stage
+      of fulfillment
     allOf:
-      $ref: "https://schema.beckn.io/FulfillmentStageEndpoint/v2.0"
+      $ref: https://schema.beckn.io/FulfillmentStageEndpoint/v2.0
   fulfillmentStageAttributes:
     description: An extensible set of attributes that describe this stage of fulfillment
     allOf:
-      $ref: "https://schema.beckn.io/Attributes/v2.0"
+      $ref: https://schema.beckn.io/Attributes/v2.0
 x-jsonld:
   '@id': beckn:fulfillmentStage
 required:
@@ -46,3 +48,5 @@ required:
 - id
 - location
 additionalProperties: false
+x-tags:
+- common
