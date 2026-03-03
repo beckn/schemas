@@ -10,7 +10,7 @@ properties:
     const: "https://schema.beckn.io/"
   '@type':
     type: string
-    default: schema:Organization
+    default: beckn:Organization
   id:
     type: string
     description: Unique identifier for the organization

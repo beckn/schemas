@@ -5,27 +5,33 @@ title: CategoryCode
 type: object
 properties:
   '@context':
-    description: CPD
+    description: JSON-LD context URI
     type: string
     format: uri
-    default: schema:CategoryCode
+    default: "https://schema.beckn.io/"
   '@type':
     description: Context-specific Type of the category code
     type: string
-    default: schema:CategoryCode
-  schema:codeValue:
+    default: beckn:CategoryCode
+  codeValue:
     description: Category code value
     type: string
     example: electronics
-  schema:description:
+    x-jsonld:
+      '@id': schema:codeValue
+  description:
     description: Category description
     type: string
     example: Electronic devices and equipment
-  schema:name:
+    x-jsonld:
+      '@id': schema:description
+  name:
     description: Category name
     type: string
     example: Electronics
+    x-jsonld:
+      '@id': schema:name
 required:
 - '@type'
-- schema:codeValue
+- codeValue
 additionalProperties: false

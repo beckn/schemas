@@ -10,7 +10,7 @@ properties:
     const: "https://schema.beckn.io/"
   '@type':
     type: string
-    default: schema:AggregateRating
+    default: beckn:Rating
   ratingValue:
     description: Rating value (typically 0-5)
     type: number
