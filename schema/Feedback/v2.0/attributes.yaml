@@ -3,3 +3,4 @@ $schema: "https://json-schema.org/draft/2020-12/schema"
 description: Feedback collected from a user (consumer, provider, or fulfillment agent)
 title: Feedback
 type: object
+additionalProperties: false

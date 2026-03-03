@@ -15,3 +15,4 @@ properties:
     type: string
 x-jsonld:
   '@id': schema:DefinedRegion|schema:QuantitativeValue
+additionalProperties: false
