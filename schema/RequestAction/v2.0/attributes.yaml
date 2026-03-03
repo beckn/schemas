@@ -1,18 +1,16 @@
 $id: "https://schema.beckn.io/RequestAction/v2.0"
 $schema: "https://json-schema.org/draft/2020-12/schema"
-description: Contains the HTTP Request Bodies of all the Beckn Protocol Endpoints consumed by a BAP
 title: RequestAction
-type: object
-properties:
-  oneOf:
-    - https://schema.beckn.io/DiscoverAction/v2.0
-    - https://schema.beckn.io/SelectAction/v2.0
-    - https://schema.beckn.io/InitAction/v2.0
-    - https://schema.beckn.io/ConfirmAction/v2.0
-    - https://schema.beckn.io/StatusAction/v2.0
-    - https://schema.beckn.io/UpdateAction/v2.0
-    - https://schema.beckn.io/TrackAction/v2.0
-    - https://schema.beckn.io/CancelAction/v2.0
-    - https://schema.beckn.io/RateAction/v2.0
-    - https://schema.beckn.io/SupportAction/v2.0
-  
+deprecated: true
+description: >-
+  DEPRECATED. This schema is structurally invalid and does not validate
+  any payloads — the oneOf keyword was incorrectly nested inside properties,
+  which is not valid JSON Schema.
+
+  Use https://schema.beckn.io/BecknAction/v2.0 instead. BecknAction is the
+  unified envelope for all Beckn actions (both request and callback directions).
+  The request/callback distinction is encoded in context.action (e.g.
+  beckn/discover for requests, beckn/on_discover for callbacks).
+
+  This schema will be removed in a future major version.
+$ref: "https://schema.beckn.io/BecknAction/v2.0"
