@@ -1,55 +1,56 @@
 # sources.yaml
-# Declarative registry of schema sources for schema.beckn.io.
+# Schema source registry for schema.beckn.io.
 #
-# This file is managed via the admin console at schema-admin.beckn.io.
-# Do not edit manually — use the admin UI to add, update, or remove sources.
+# Each entry declares a schema source by type:
 #
-# Each entry references an upstream repo + git ref + schema subfolder path.
-# The sync engine clones the repo and reads schemas from the schemaPath subfolder.
+#   type: internal
+#     schemaPath is a relative folder path within this repo.
+#     The admin console has already cloned this repo — schemas are served
+#     directly from schema-sources/<id>/<schemaPath>/.
 #
-# schemaPath: path within the cloned repo where schema folders live.
-#   Default: "schema" (i.e. <repo>/schema/<SchemaName>/<version>/attributes.yaml)
-#   Can be any relative path: "data", "specification/schema", etc.
+#   type: external
+#     schemaPath is a GitHub tree URL that encodes repo + branch + path:
+#       https://github.com/<owner>/<repo>/tree/<ref>/<path>
+#     The admin console clones the repo into schema-sources/<id>/
+#     and the schema-loader serves schemas from schema-sources/<id>/<path>/.
 #
-# tags: source-level domain tags applied to schemas that do not have their own x-tags.
-#   Schemas with x-tags in their attributes.yaml use those instead.
+# Fields:
+#   id          Unique identifier. Used as the directory name under schema-sources/.
+#   type        'internal' | 'external'
+#   schemaPath  Local folder path (internal) or GitHub tree URL (external).
+#   description Human-readable summary.
+#   namespace   Canonical JSON-LD namespace URI for this schema set.
+#   tags        Domain tags applied to schemas that do not carry x-tags themselves.
 
 sources:
 
-  # ── Beckn Core Schema Registry ───────────────────────────────────────────────
-  # Contains: core protocol schemas + mobility + logistics + retail domain schemas.
-  # All schemas carry x-tags per domain (common / mobility / logistics / retail).
+  # ── Beckn Core Schema Registry (internal) ────────────────────────────────────
+  # This repo. Contains core protocol schemas plus domain schemas for mobility,
+  # logistics, and retail. All schemas carry x-tags per domain.
   - id: beckn-core-v2
-    repo: https://github.com/beckn/core_schema
-    ref: draft
+    type: internal
     schemaPath: schema
-    namespace: https://schema.beckn.io
     description: >-
       Beckn Core Schema Registry. Contains core protocol schemas plus domain schemas
-      for mobility, logistics, and retail (all migrated from their source repos).
-      Schemas are tagged per-domain via x-tags in each attributes.yaml.
+      for mobility, logistics, and retail. Schemas are tagged per-domain via x-tags.
+    namespace: https://schema.beckn.io
     tags:
       - common
       - mobility
       - logistics
       - retail
-    formats:
-      - jsonschema
-      - jsonld
 
-  # ── Digital Energy Grid (external — indexed, not owned) ──────────────────────
-  # DEG maintains its own schemas. schema.beckn.io indexes them via this entry.
-  # DEG schemas use OpenAPI components.schemas format (not standalone JSON Schema).
+  # ── Digital Energy Grid (external) ───────────────────────────────────────────
+  # DEG maintains its own schemas in their GitHub repo. schema.beckn.io indexes
+  # them via this entry. DEG schemas use OpenAPI components.schemas format.
   - id: beckn-deg-v1
-    repo: https://github.com/beckn/DEG
-    ref: main
-    schemaPath: specification/schema
-    namespace: https://schema.beckn.io
+    type: external
+    schemaPath: https://github.com/beckn/DEG/tree/main/specification/schema
     description: >-
       Digital Energy Grid domain schemas for P2P energy trading, EV charging,
       and energy grid management. Maintained by the DEG team at FIDE / IEA.
+    namespace: https://schema.beckn.io
     tags:
       - energy
-    formats:
-      - openapi
-      - jsonld
+      - ev-charging
+      - p2p-trading
