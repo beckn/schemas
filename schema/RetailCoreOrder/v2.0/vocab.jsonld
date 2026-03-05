@@ -1,0 +1,115 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:RetailCoreOrderAttributes",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Retail Core Order Attributes",
+      "rdfs:comment": "Retail-specific order-level attributes that extend core Beckn Order. These attributes capture transaction-instance metadata relevant to retail domains without duplicating core Order semantics."
+    },
+    {
+      "@id": "beckn:deliveryPreferences",
+      "@type": "schema:Property",
+      "rdfs:label": "Delivery Preferences",
+      "rdfs:comment": "Buyer-specified delivery handling preferences during negotiation. Final confirmed schedule should be reflected in core Fulfillment.start/end."
+    },
+    {
+      "@id": "beckn:leaveAtDoor",
+      "@type": "schema:Property",
+      "rdfs:label": "Leave At Door",
+      "rdfs:comment": "TODO: Description Needed - leaveAtDoor"
+    },
+    {
+      "@id": "beckn:contactless",
+      "@type": "schema:Property",
+      "rdfs:label": "Contactless",
+      "rdfs:comment": "TODO: Description Needed - contactless"
+    },
+    {
+      "@id": "beckn:preferredTimeSlot",
+      "@type": "schema:Property",
+      "rdfs:label": "Preferred Time Slot",
+      "rdfs:comment": "TODO: Description Needed - preferredTimeSlot"
+    },
+    {
+      "@id": "beckn:gift",
+      "@type": "schema:Property",
+      "rdfs:label": "Gift",
+      "rdfs:comment": "TODO: Description Needed - gift"
+    },
+    {
+      "@id": "beckn:isGift",
+      "@type": "schema:Property",
+      "rdfs:label": "Is Gift",
+      "rdfs:comment": "TODO: Description Needed - isGift"
+    },
+    {
+      "@id": "beckn:wrap",
+      "@type": "schema:Property",
+      "rdfs:label": "Wrap",
+      "rdfs:comment": "TODO: Description Needed - wrap"
+    },
+    {
+      "@id": "beckn:invoicePreferences",
+      "@type": "schema:Property",
+      "rdfs:label": "Invoice Preferences",
+      "rdfs:comment": "Buyer-provided invoicing details/preferences (if applicable)."
+    },
+    {
+      "@id": "beckn:taxId",
+      "@type": "schema:Property",
+      "rdfs:label": "Tax Id",
+      "rdfs:comment": "Tax identifier for invoicing, expressed in a jurisdiction-neutral manner. Examples: GSTIN (IN), VAT ID (EU/UK), TRN (AE), EIN (US)."
+    },
+    {
+      "@id": "beckn:scheme",
+      "@type": "schema:Property",
+      "rdfs:label": "Scheme",
+      "rdfs:comment": "Identifier scheme (e.g., GSTIN, VAT, EIN, TRN, TIN)."
+    },
+    {
+      "@id": "beckn:loyalty",
+      "@type": "schema:Property",
+      "rdfs:label": "Loyalty",
+      "rdfs:comment": "Loyalty / rewards program details."
+    },
+    {
+      "@id": "beckn:programId",
+      "@type": "schema:Property",
+      "rdfs:label": "Program Id",
+      "rdfs:comment": "TODO: Description Needed - programId"
+    },
+    {
+      "@id": "beckn:pointsRedeemed",
+      "@type": "schema:Property",
+      "rdfs:label": "Points Redeemed",
+      "rdfs:comment": "TODO: Description Needed - pointsRedeemed"
+    },
+    {
+      "@id": "beckn:source",
+      "@type": "schema:Property",
+      "rdfs:label": "Source",
+      "rdfs:comment": "Attribution / source metadata for the order (channel/campaign)."
+    },
+    {
+      "@id": "beckn:channel",
+      "@type": "schema:Property",
+      "rdfs:label": "Channel",
+      "rdfs:comment": "Acquisition / ordering channel identifier."
+    },
+    {
+      "@id": "beckn:campaignId",
+      "@type": "schema:Property",
+      "rdfs:label": "Campaign Id",
+      "rdfs:comment": "Campaign identifier if applicable."
+    }
+  ]
+}

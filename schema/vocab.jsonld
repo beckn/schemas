@@ -6,7 +6,9 @@
     "schema": "https://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "deg": "https://schema.beckn.io/deg/",
+    "vc": "https://www.w3.org/2018/credentials#"
   },
   "@graph": [
     {
@@ -703,7 +705,7 @@
       "schema:name": "INITIATED",
       "schema:identifier": "INITIATED",
       "rdfs:label": "payment Initiated",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
     },
     {
       "@id": "beckn:PaymentPending",
@@ -714,7 +716,7 @@
       "schema:name": "PENDING",
       "schema:identifier": "PENDING",
       "rdfs:label": "payment Pending",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
     },
     {
       "@id": "beckn:PaymentAuthorized",
@@ -725,7 +727,7 @@
       "schema:name": "AUTHORIZED",
       "schema:identifier": "AUTHORIZED",
       "rdfs:label": "payment Authorized",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
     },
     {
       "@id": "beckn:PaymentCaptured",
@@ -736,7 +738,7 @@
       "schema:name": "CAPTURED",
       "schema:identifier": "CAPTURED",
       "rdfs:label": "payment Captured",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
     },
     {
       "@id": "beckn:PaymentCompleted",
@@ -747,7 +749,7 @@
       "schema:name": "COMPLETED",
       "schema:identifier": "COMPLETED",
       "rdfs:label": "payment Completed",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
     },
     {
       "@id": "beckn:PaymentFailed",
@@ -758,7 +760,7 @@
       "schema:name": "FAILED",
       "schema:identifier": "FAILED",
       "rdfs:label": "payment Failed",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
     },
     {
       "@id": "beckn:PaymentCancelled",
@@ -770,7 +772,7 @@
       "schema:identifier": "CANCELLED",
       "schema:alternateName": "CANCELED",
       "rdfs:label": "payment Cancelled",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
     },
     {
       "@id": "beckn:PaymentRefunded",
@@ -781,7 +783,7 @@
       "schema:name": "REFUNDED",
       "schema:identifier": "REFUNDED",
       "rdfs:label": "payment Refunded",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
     },
     {
       "@id": "beckn:PaymentPartiallyRefunded",
@@ -793,7 +795,7 @@
       "schema:identifier": "PARTIALLY_REFUNDED",
       "schema:alternateName": "PARTIALLY-REFUNDED",
       "rdfs:label": "payment Partially Refunded",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
     },
     {
       "@id": "beckn:PaymentChargeback",
@@ -804,7 +806,7 @@
       "schema:name": "CHARGEBACK",
       "schema:identifier": "CHARGEBACK",
       "rdfs:label": "payment Chargeback",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
     },
     {
       "@id": "beckn:PaymentDisputed",
@@ -815,7 +817,7 @@
       "schema:name": "DISPUTED",
       "schema:identifier": "DISPUTED",
       "rdfs:label": "payment Disputed",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
     },
     {
       "@id": "beckn:PaymentExpired",
@@ -826,7 +828,7 @@
       "schema:name": "EXPIRED",
       "schema:identifier": "EXPIRED",
       "rdfs:label": "payment Expired",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
     },
     {
       "@id": "beckn:PaymentReversed",
@@ -837,7 +839,7 @@
       "schema:name": "REVERSED",
       "schema:identifier": "REVERSED",
       "rdfs:label": "payment Reversed",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
     },
     {
       "@id": "beckn:PaymentVoided",
@@ -848,7 +850,7 @@
       "schema:name": "VOIDED",
       "schema:identifier": "VOIDED",
       "rdfs:label": "payment Voided",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
     },
     {
       "@id": "beckn:PaymentSettled",
@@ -859,7 +861,7 @@
       "schema:name": "SETTLED",
       "schema:identifier": "SETTLED",
       "rdfs:label": "payment Settled",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
     },
     {
       "@id": "beckn:PaymentOnHold",
@@ -871,7 +873,7 @@
       "schema:identifier": "ON_HOLD",
       "schema:alternateName": "ON-HOLD",
       "rdfs:label": "payment On Hold",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
     },
     {
       "@id": "beckn:PaymentAdjusted",
@@ -882,7 +884,7 @@
       "schema:name": "ADJUSTED",
       "schema:identifier": "ADJUSTED",
       "rdfs:label": "payment Adjusted",
-      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund \u2026)"
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
     },
     {
       "@id": "beckn:currency",
@@ -1273,7 +1275,7 @@
       "@id": "beckn:ratingValue",
       "@type": "schema:Property",
       "rdfs:label": "Rating value",
-      "rdfs:comment": "Numeric rating score. Numeric rating value (legacy usually 1\u20135).",
+      "rdfs:comment": "Numeric rating score. Numeric rating value (legacy usually 1–5).",
       "rdfs:domain": [
         "beckn:Rating",
         "beckn:RatingInput"
@@ -2632,7 +2634,7 @@
       "@id": "beckn:SpatialConstraint",
       "rdfs:label": "Spatial Constraint",
       "@type": "rdfs:Class",
-      "rdfs:comment": "**Spatial predicate** using **OGC CQL2 (JSON semantics)** applied to one or more geometry targets in an item. This is where clients express spatial intent.\nKey ideas: - `targets`: one or more **JSONPath-like** pointers that locate geometry\n\n  fields within each item document (e.g., `$['availableAt'][*]['geo']`).\n- `op`: spatial operator (CQL2). Common ones:\n\n    \u2022 `S_WITHIN`     (A is completely inside B)\n    \u2022 `S_INTERSECTS` (A intersects B)\n    \u2022 `S_CONTAINS`   (A contains B)\n    \u2022 `S_DWITHIN`    (A within distance of B)\n- `geometry`: **GeoJSON** literal used as the predicate reference geometry. - `distanceMeters`: required for `S_DWITHIN` when using a GeoJSON Point/shape. - `quantifier`: if a target resolves to an array, choose whether **ANY** (default),\n\n  **ALL**, or **NONE** of elements must satisfy the predicate.\n\nCRS: unless otherwise stated, all coordinates are **EPSG:4326**.\n"
+      "rdfs:comment": "**Spatial predicate** using **OGC CQL2 (JSON semantics)** applied to one or more geometry targets in an item. This is where clients express spatial intent.\nKey ideas: - `targets`: one or more **JSONPath-like** pointers that locate geometry\n\n  fields within each item document (e.g., `$['availableAt'][*]['geo']`).\n- `op`: spatial operator (CQL2). Common ones:\n\n    • `S_WITHIN`     (A is completely inside B)\n    • `S_INTERSECTS` (A intersects B)\n    • `S_CONTAINS`   (A contains B)\n    • `S_DWITHIN`    (A within distance of B)\n- `geometry`: **GeoJSON** literal used as the predicate reference geometry. - `distanceMeters`: required for `S_DWITHIN` when using a GeoJSON Point/shape. - `quantifier`: if a target resolves to an array, choose whether **ANY** (default),\n\n  **ALL**, or **NONE** of elements must satisfy the predicate.\n\nCRS: unless otherwise stated, all coordinates are **EPSG:4326**.\n"
     },
     {
       "@id": "beckn:SupportMethod",
@@ -3432,7 +3434,7 @@
       ],
       "schema:rangeIncludes": "beckn:MediaSearchOptions",
       "@type": "schema:Property",
-      "rdfs:comment": "Options controlling how the discovery engine interprets the supplied media \u2014 e.g., whether to perform OCR/ASR, semantic similarity, or object detection."
+      "rdfs:comment": "Options controlling how the discovery engine interprets the supplied media — e.g., whether to perform OCR/ASR, semantic similarity, or object detection."
     },
     {
       "@id": "beckn:orderDocs",
@@ -5284,6 +5286,2485 @@
       "rdfs:range": {
         "@id": "beckn:LineageEntry"
       }
+    },
+    {
+      "@id": "beckn:FoodAndBeverageItemAttributes",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Food And Beverage Item Attributes",
+      "rdfs:comment": "Food & Beverage-specific extensions to RetailCoreItemAttributes. Covers allergens, cuisine classification, and preparation guidance."
+    },
+    {
+      "@id": "beckn:preparation",
+      "@type": "schema:Property",
+      "rdfs:label": "Preparation",
+      "rdfs:comment": "Preparation and storage guidance."
+    },
+    {
+      "@id": "beckn:storageInstructions",
+      "@type": "schema:Property",
+      "rdfs:label": "Storage Instructions",
+      "rdfs:comment": "TODO: Description Needed - storageInstructions"
+    },
+    {
+      "@id": "beckn:FoodAndBeverageOfferAttributes",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Food And Beverage Offer Attributes",
+      "rdfs:comment": "Food & Beverage-specific extensions to RetailCoreOfferAttributes. Covers structured customization groups for dynamic configuration."
+    },
+    {
+      "@id": "beckn:customization",
+      "@type": "schema:Property",
+      "rdfs:label": "Customization",
+      "rdfs:comment": "TODO: Description Needed - customization"
+    },
+    {
+      "@id": "beckn:customizationGroup",
+      "@type": "schema:Property",
+      "rdfs:label": "Customization Group",
+      "rdfs:comment": "TODO: Description Needed - customizationGroup"
+    },
+    {
+      "@id": "beckn:selectionRule",
+      "@type": "schema:Property",
+      "rdfs:label": "Selection Rule",
+      "rdfs:comment": "TODO: Description Needed - selectionRule"
+    },
+    {
+      "@id": "beckn:minSelections",
+      "@type": "schema:Property",
+      "rdfs:label": "Min Selections",
+      "rdfs:comment": "TODO: Description Needed - minSelections"
+    },
+    {
+      "@id": "beckn:maxSelections",
+      "@type": "schema:Property",
+      "rdfs:label": "Max Selections",
+      "rdfs:comment": "TODO: Description Needed - maxSelections"
+    },
+    {
+      "@id": "beckn:option",
+      "@type": "schema:Property",
+      "rdfs:label": "Option",
+      "rdfs:comment": "TODO: Description Needed - option"
+    },
+    {
+      "@id": "beckn:GroceryItemAttributes",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Grocery Item Attributes",
+      "rdfs:comment": "Grocery-specific extensions to RetailCoreItemAttributes. Covers nutrition information and fresh produce declarations."
+    },
+    {
+      "@id": "beckn:nutrition",
+      "@type": "schema:Property",
+      "rdfs:label": "Nutrition",
+      "rdfs:comment": "Nutrition facts per serving or per 100g/100ml. Context of measurement may be specified via unit."
+    },
+    {
+      "@id": "beckn:freshProduce",
+      "@type": "schema:Property",
+      "rdfs:label": "Fresh Produce",
+      "rdfs:comment": "Additional declaration applicable for unpackaged or loose produce."
+    },
+    {
+      "@id": "beckn:netQuantityDeclaration",
+      "@type": "schema:Property",
+      "rdfs:label": "Net Quantity Declaration",
+      "rdfs:comment": "Declared weight/quantity information for loose produce."
+    },
+    {
+      "@id": "beckn:HomeAndKitchenItemAttributes",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Home And Kitchen Item Attributes",
+      "rdfs:comment": "Home & Kitchen-specific extensions to RetailCoreItemAttributes. Covers care, installation and usage environment guidance."
+    },
+    {
+      "@id": "beckn:installation",
+      "@type": "schema:Property",
+      "rdfs:label": "Installation",
+      "rdfs:comment": "Installation requirements and support information."
+    },
+    {
+      "@id": "beckn:installationRequired",
+      "@type": "schema:Property",
+      "rdfs:label": "Installation Required",
+      "rdfs:comment": "Whether professional installation is required."
+    },
+    {
+      "@id": "beckn:installationProvidedBySeller",
+      "@type": "schema:Property",
+      "rdfs:label": "Installation Provided By Seller",
+      "rdfs:comment": "Whether seller provides installation."
+    },
+    {
+      "@id": "beckn:usage",
+      "@type": "schema:Property",
+      "rdfs:label": "Usage",
+      "rdfs:comment": "Usage environment or compatibility constraints."
+    },
+    {
+      "@id": "beckn:RetailCoreFulfillmentAttributes",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Retail Core Fulfillment Attributes",
+      "rdfs:comment": "Retail-specific fulfillment attributes extending Beckn core Fulfillment. Covers delivery endpoint, operating schedule, SLA semantics and handling constraints."
+    },
+    {
+      "@id": "beckn:supportedFulfillmentTypes",
+      "@type": "schema:Property",
+      "rdfs:label": "Supported Fulfillment Types",
+      "rdfs:comment": "TODO: Description Needed - supportedFulfillmentTypes"
+    },
+    {
+      "@id": "beckn:deliveryDetails",
+      "@type": "schema:Property",
+      "rdfs:label": "Delivery Details",
+      "rdfs:comment": "Delivery endpoint details for DELIVERY fulfillment type."
+    },
+    {
+      "@id": "beckn:OperatingSchedule",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Operating Schedule",
+      "rdfs:comment": "TODO: Description Needed - OperatingSchedule"
+    },
+    {
+      "@id": "beckn:timeRange",
+      "@type": "schema:Property",
+      "rdfs:label": "Time Range",
+      "rdfs:comment": "TODO: Description Needed - timeRange"
+    },
+    {
+      "@id": "beckn:closures",
+      "@type": "schema:Property",
+      "rdfs:label": "Closures",
+      "rdfs:comment": "Explicit closure periods overriding operatingHours."
+    },
+    {
+      "@id": "beckn:sla",
+      "@type": "schema:Property",
+      "rdfs:label": "Sla",
+      "rdfs:comment": "Service level agreement for fulfillment. Indicates expected time bounds from defined lifecycle event."
+    },
+    {
+      "@id": "beckn:minDuration",
+      "@type": "schema:Property",
+      "rdfs:label": "Min Duration",
+      "rdfs:comment": "Minimum fulfillment time (ISO 8601 duration)."
+    },
+    {
+      "@id": "beckn:maxDuration",
+      "@type": "schema:Property",
+      "rdfs:label": "Max Duration",
+      "rdfs:comment": "Maximum fulfillment time (ISO 8601 duration)."
+    },
+    {
+      "@id": "beckn:unitBasis",
+      "@type": "schema:Property",
+      "rdfs:label": "Unit Basis",
+      "rdfs:comment": "Lifecycle event from which SLA is measured."
+    },
+    {
+      "@id": "beckn:handling",
+      "@type": "schema:Property",
+      "rdfs:label": "Handling",
+      "rdfs:comment": "TODO: Description Needed - handling"
+    },
+    {
+      "@id": "beckn:RetailCoreItemAttributes",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Retail Core Item Attributes",
+      "rdfs:comment": "TODO: Description Needed - RetailCoreItemAttributes"
+    },
+    {
+      "@id": "beckn:identity",
+      "@type": "schema:Property",
+      "rdfs:label": "Identity",
+      "rdfs:comment": "TODO: Description Needed - identity"
+    },
+    {
+      "@id": "beckn:physical",
+      "@type": "schema:Property",
+      "rdfs:label": "Physical",
+      "rdfs:comment": "TODO: Description Needed - physical"
+    },
+    {
+      "@id": "beckn:dimensions",
+      "@type": "schema:Property",
+      "rdfs:label": "Dimensions",
+      "rdfs:comment": "Physical dimensions expressed using a single unit."
+    },
+    {
+      "@id": "beckn:appearance",
+      "@type": "schema:Property",
+      "rdfs:label": "Appearance",
+      "rdfs:comment": "TODO: Description Needed - appearance"
+    },
+    {
+      "@id": "beckn:finish",
+      "@type": "schema:Property",
+      "rdfs:label": "Finish",
+      "rdfs:comment": "TODO: Description Needed - finish"
+    },
+    {
+      "@id": "beckn:food",
+      "@type": "schema:Property",
+      "rdfs:label": "Food",
+      "rdfs:comment": "TODO: Description Needed - food"
+    },
+    {
+      "@id": "beckn:foodClassification",
+      "@type": "schema:Property",
+      "rdfs:label": "Food Classification",
+      "rdfs:comment": "TODO: Description Needed - foodClassification"
+    },
+    {
+      "@id": "beckn:packagedGoodsDeclaration",
+      "@type": "schema:Property",
+      "rdfs:label": "Packaged Goods Declaration",
+      "rdfs:comment": "Jurisdiction-neutral packaged goods declaration."
+    },
+    {
+      "@id": "beckn:manufacturerOrPacker",
+      "@type": "schema:Property",
+      "rdfs:label": "Manufacturer Or Packer",
+      "rdfs:comment": "TODO: Description Needed - manufacturerOrPacker"
+    },
+    {
+      "@id": "beckn:manufacturePackingImportDate",
+      "@type": "schema:Property",
+      "rdfs:label": "Manufacture Packing Import Date",
+      "rdfs:comment": "TODO: Description Needed - manufacturePackingImportDate"
+    },
+    {
+      "@id": "beckn:foodRegulatoryDeclaration",
+      "@type": "schema:Property",
+      "rdfs:label": "Food Regulatory Declaration",
+      "rdfs:comment": "Jurisdiction-neutral food regulatory declarations."
+    },
+    {
+      "@id": "beckn:registrations",
+      "@type": "schema:Property",
+      "rdfs:label": "Registrations",
+      "rdfs:comment": "TODO: Description Needed - registrations"
+    },
+    {
+      "@id": "beckn:scheme",
+      "@type": "schema:Property",
+      "rdfs:label": "Scheme",
+      "rdfs:comment": "TODO: Description Needed - scheme"
+    },
+    {
+      "@id": "beckn:additives",
+      "@type": "schema:Property",
+      "rdfs:label": "Additives",
+      "rdfs:comment": "TODO: Description Needed - additives"
+    },
+    {
+      "@id": "beckn:RetailCoreOfferAttributes",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Retail Core Offer Attributes",
+      "rdfs:comment": "TODO: Description Needed - RetailCoreOfferAttributes"
+    },
+    {
+      "@id": "beckn:returns",
+      "@type": "schema:Property",
+      "rdfs:label": "Returns",
+      "rdfs:comment": "Return policy applicable to the offer."
+    },
+    {
+      "@id": "beckn:cancellation",
+      "@type": "schema:Property",
+      "rdfs:label": "Cancellation",
+      "rdfs:comment": "Cancellation policy applicable to the offer."
+    },
+    {
+      "@id": "beckn:replacement",
+      "@type": "schema:Property",
+      "rdfs:label": "Replacement",
+      "rdfs:comment": "Replacement policy applicable to the offer."
+    },
+    {
+      "@id": "beckn:allowed",
+      "@type": "schema:Property",
+      "rdfs:label": "Allowed",
+      "rdfs:comment": "TODO: Description Needed - allowed"
+    },
+    {
+      "@id": "beckn:window",
+      "@type": "schema:Property",
+      "rdfs:label": "Window",
+      "rdfs:comment": "Return window as ISO 8601 duration (e.g., P7D). Interpreted from order delivery unless specified otherwise by profile."
+    },
+    {
+      "@id": "beckn:restockingFee",
+      "@type": "schema:Property",
+      "rdfs:label": "Restocking Fee",
+      "rdfs:comment": "Optional restocking fee applicable on return."
+    },
+    {
+      "@id": "beckn:fee",
+      "@type": "schema:Property",
+      "rdfs:label": "Fee",
+      "rdfs:comment": "Optional cancellation fee."
+    },
+    {
+      "@id": "beckn:cutoffEvent",
+      "@type": "schema:Property",
+      "rdfs:label": "Cutoff Event",
+      "rdfs:comment": "Optional lifecycle cutoff for cancellation eligibility."
+    },
+    {
+      "@id": "beckn:subjectToAvailability",
+      "@type": "schema:Property",
+      "rdfs:label": "Subject To Availability",
+      "rdfs:comment": "Indicates whether replacement depends on stock availability."
+    },
+    {
+      "@id": "beckn:serviceability",
+      "@type": "schema:Property",
+      "rdfs:label": "Serviceability",
+      "rdfs:comment": "Additional serviceability constraints beyond geographic eligibility (handled via core Offer.eligibleRegion)."
+    },
+    {
+      "@id": "beckn:distanceConstraint",
+      "@type": "schema:Property",
+      "rdfs:label": "Distance Constraint",
+      "rdfs:comment": "Circular distance constraint from provider location."
+    },
+    {
+      "@id": "beckn:maxDistance",
+      "@type": "schema:Property",
+      "rdfs:label": "Max Distance",
+      "rdfs:comment": "TODO: Description Needed - maxDistance"
+    },
+    {
+      "@id": "beckn:RetailCoreOrderAttributes",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Retail Core Order Attributes",
+      "rdfs:comment": "Retail-specific order-level attributes that extend core Beckn Order. These attributes capture transaction-instance metadata relevant to retail domains without duplicating core Order semantics."
+    },
+    {
+      "@id": "beckn:deliveryPreferences",
+      "@type": "schema:Property",
+      "rdfs:label": "Delivery Preferences",
+      "rdfs:comment": "Buyer-specified delivery handling preferences during negotiation. Final confirmed schedule should be reflected in core Fulfillment.start/end."
+    },
+    {
+      "@id": "beckn:leaveAtDoor",
+      "@type": "schema:Property",
+      "rdfs:label": "Leave At Door",
+      "rdfs:comment": "TODO: Description Needed - leaveAtDoor"
+    },
+    {
+      "@id": "beckn:contactless",
+      "@type": "schema:Property",
+      "rdfs:label": "Contactless",
+      "rdfs:comment": "TODO: Description Needed - contactless"
+    },
+    {
+      "@id": "beckn:preferredTimeSlot",
+      "@type": "schema:Property",
+      "rdfs:label": "Preferred Time Slot",
+      "rdfs:comment": "TODO: Description Needed - preferredTimeSlot"
+    },
+    {
+      "@id": "beckn:gift",
+      "@type": "schema:Property",
+      "rdfs:label": "Gift",
+      "rdfs:comment": "TODO: Description Needed - gift"
+    },
+    {
+      "@id": "beckn:isGift",
+      "@type": "schema:Property",
+      "rdfs:label": "Is Gift",
+      "rdfs:comment": "TODO: Description Needed - isGift"
+    },
+    {
+      "@id": "beckn:wrap",
+      "@type": "schema:Property",
+      "rdfs:label": "Wrap",
+      "rdfs:comment": "TODO: Description Needed - wrap"
+    },
+    {
+      "@id": "beckn:invoicePreferences",
+      "@type": "schema:Property",
+      "rdfs:label": "Invoice Preferences",
+      "rdfs:comment": "Buyer-provided invoicing details/preferences (if applicable)."
+    },
+    {
+      "@id": "beckn:taxId",
+      "@type": "schema:Property",
+      "rdfs:label": "Tax Id",
+      "rdfs:comment": "Tax identifier for invoicing, expressed in a jurisdiction-neutral manner. Examples: GSTIN (IN), VAT ID (EU/UK), TRN (AE), EIN (US)."
+    },
+    {
+      "@id": "beckn:loyalty",
+      "@type": "schema:Property",
+      "rdfs:label": "Loyalty",
+      "rdfs:comment": "Loyalty / rewards program details."
+    },
+    {
+      "@id": "beckn:programId",
+      "@type": "schema:Property",
+      "rdfs:label": "Program Id",
+      "rdfs:comment": "TODO: Description Needed - programId"
+    },
+    {
+      "@id": "beckn:pointsRedeemed",
+      "@type": "schema:Property",
+      "rdfs:label": "Points Redeemed",
+      "rdfs:comment": "TODO: Description Needed - pointsRedeemed"
+    },
+    {
+      "@id": "beckn:source",
+      "@type": "schema:Property",
+      "rdfs:label": "Source",
+      "rdfs:comment": "Attribution / source metadata for the order (channel/campaign)."
+    },
+    {
+      "@id": "beckn:channel",
+      "@type": "schema:Property",
+      "rdfs:label": "Channel",
+      "rdfs:comment": "Acquisition / ordering channel identifier."
+    },
+    {
+      "@id": "beckn:campaignId",
+      "@type": "schema:Property",
+      "rdfs:label": "Campaign Id",
+      "rdfs:comment": "Campaign identifier if applicable."
+    },
+    {
+      "@id": "beckn:RecurringSchedule",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Recurring Schedule",
+      "rdfs:comment": "Defines a recurring temporal schedule such as operating hours or serviceability timing windows. Supports day-based recurrence and optional holiday exclusions."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/EnergyEnrollment",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "schema:ProgramMembership"
+      },
+      "rdfs:comment": "Program enrollment/subscription. Extends schema:ProgramMembership for energy-specific enrollment flows. Reusable pattern for any subscription-based service (telecom, utilities, memberships)."
+    },
+    {
+      "@id": "vc:VerifiableCredential",
+      "@type": "@id",
+      "rdfs:comment": "A W3C Verifiable Credential (https://www.w3.org/TR/vc-data-model-2.0/) used in enrollment. This is a wrapper/reference object that contains the credential data (as JWT or JSON-LD), metadata, and URLs. The actual credential follows W3C VC Data Model v2.0 structure."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/CredentialVerification",
+      "@type": "@id",
+      "rdfs:comment": "Results of credential verification performed by BPP. Contains status and list of verified credentials."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/ConflictCheck",
+      "@type": "@id",
+      "rdfs:comment": "Results of conflict checking with existing enrollments. Indicates if conflicts exist and provides details of conflicting enrollments."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/ConflictingEnrollment",
+      "@type": "@id",
+      "rdfs:comment": "Details of a conflicting enrollment that prevents the requested enrollment from proceeding."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/VerifiedCredential",
+      "@type": "@id",
+      "rdfs:comment": "Details of a credential that has been verified by the BPP, including verification timestamp."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/ConsentRevocation",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "schema:CancelAction"
+      },
+      "rdfs:comment": "Consent revocation. Extends schema:CancelAction for revoking consent/permissions."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/Unenrollment",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "schema:LeaveAction"
+      },
+      "rdfs:comment": "Unenrollment/unsubscription. Extends schema:LeaveAction for leaving a program/membership."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/Customer",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "schema:Person"
+      },
+      "rdfs:comment": "Customer/subscriber entity. Extends schema:Person. Represents the user being enrolled in a program. Can also be schema:Organization for business subscriptions."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/Instrument",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "schema:ItemList"
+      },
+      "rdfs:comment": "Collection of assets (meters, DERs) associated with an enrollment. Extends schema:ItemList as a container for enrollable items."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/Meter",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "schema:Product"
+      },
+      "rdfs:comment": "Electricity meter entity. Extends schema:Product. Represents a physical meter tracking consumption, generation, or net flow."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/DER",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "schema:Product"
+      },
+      "rdfs:comment": "Distributed Energy Resource. Extends schema:Product. Represents a distributed asset such as solar PV, EV, home batteries, V2G, or smart loads."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/enrollmentId",
+      "@type": "xsd:string",
+      "owl:equivalentProperty": {
+        "@id": "schema:membershipNumber"
+      },
+      "rdfs:comment": "Unique identifier for the enrollment/subscription. Equivalent to schema:membershipNumber."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/programId",
+      "@type": "xsd:string",
+      "owl:equivalentProperty": {
+        "@id": "schema:programName"
+      },
+      "rdfs:comment": "Identifier/name of the program. Equivalent to schema:programName."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/status",
+      "@type": "xsd:string",
+      "owl:equivalentProperty": {
+        "@id": "schema:reservationStatus"
+      },
+      "rdfs:comment": "Enrollment status. Equivalent to schema:reservationStatus. Values: ACTIVE (Confirmed), PENDING (Pending), CANCELLED (Cancelled), SUSPENDED (Hold)."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/startDate",
+      "@type": "xsd:dateTime",
+      "owl:equivalentProperty": {
+        "@id": "schema:validFrom"
+      },
+      "rdfs:comment": "When enrollment becomes active. Equivalent to schema:validFrom."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/endDate",
+      "@type": "xsd:dateTime",
+      "owl:equivalentProperty": {
+        "@id": "schema:validThrough"
+      },
+      "rdfs:comment": "When enrollment expires/ends. Equivalent to schema:validThrough."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/enrolledAt",
+      "@type": "xsd:dateTime",
+      "owl:equivalentProperty": {
+        "@id": "schema:dateCreated"
+      },
+      "rdfs:comment": "When enrollment was created/confirmed. Equivalent to schema:dateCreated."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/meters",
+      "@type": "@id",
+      "@container": "@set",
+      "rdfs:comment": "Array of MeterEnrollment objects specifying meters to enroll. Required in confirm request - order will only be confirmed if at least one meter is specified."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/ders",
+      "@type": "@id",
+      "@container": "@set",
+      "rdfs:comment": "Array of DER identifiers associated with the enrollment. Used in enrollment credentials."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/credential",
+      "@type": "@id",
+      "rdfs:comment": "Enrollment credential object. Contains the signed Verifiable Credential proving enrollment."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/credentialId",
+      "@type": "xsd:string",
+      "rdfs:comment": "Unique identifier for the credential. Used to reference credentials in verification and conflict checking."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/credentialData",
+      "@type": "xsd:string",
+      "rdfs:comment": "The credential data itself, typically a JWT or JSON-LD string containing the W3C Verifiable Credential (https://www.w3.org/TR/vc-data-model-2.0/). When decoded, must conform to W3C VC Data Model v2.0 structure."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/credentialUrl",
+      "@type": "@id",
+      "rdfs:comment": "URL where the credential can be accessed or retrieved. Used for enrollment credentials returned in on_confirm."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/verificationUrl",
+      "@type": "@id",
+      "rdfs:comment": "URL for verifying the credential. Used for third-party verification of enrollment credentials."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/format",
+      "@type": "xsd:string",
+      "rdfs:comment": "Credential format as per W3C VC Data Model v2.0. Values: VC-JWT (JWT-encoded VC), VC-JSON-LD (JSON-LD encoded VC), or other W3C Verifiable Credential formats."
+    },
+    {
+      "@id": "vc:issuanceDate",
+      "@type": "xsd:dateTime",
+      "rdfs:comment": "Timestamp when the credential was issued (ISO 8601). Maps to W3C VC issuanceDate property."
+    },
+    {
+      "@id": "vc:expirationDate",
+      "@type": "xsd:dateTime",
+      "rdfs:comment": "Timestamp when the credential expires (ISO 8601). Maps to W3C VC expirationDate property. May be null for non-expiring credentials."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/credentialVerification",
+      "@type": "@id",
+      "rdfs:comment": "Credential verification results object. Returned in on_init response after BPP verifies provided credentials."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/verifiedCredentials",
+      "@type": "@id",
+      "@container": "@set",
+      "rdfs:comment": "Array of VerifiedCredential objects representing credentials that were successfully verified."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/verifiedAt",
+      "@type": "xsd:dateTime",
+      "rdfs:comment": "Timestamp when the credential was verified by BPP (ISO 8601)."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/conflictCheck",
+      "@type": "@id",
+      "rdfs:comment": "Conflict check results object. Returned in on_init response after BPP checks for conflicts with existing enrollments."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/hasConflict",
+      "@type": "xsd:boolean",
+      "rdfs:comment": "Boolean indicating whether a conflict exists with existing enrollments. True if conflict found, false otherwise."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/conflictingEnrollments",
+      "@type": "@id",
+      "@container": "@set",
+      "rdfs:comment": "Array of ConflictingEnrollment objects detailing conflicts found during conflict checking."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/conflictReason",
+      "@type": "xsd:string",
+      "rdfs:comment": "Human-readable description of why the conflict exists. Explains the nature of the conflict."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/conflictType",
+      "@type": "xsd:string",
+      "rdfs:comment": "Type of conflict. Values: METER_ALREADY_ENROLLED, DER_ALREADY_ENROLLED, PROGRAM_CONFLICT, etc."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/checkedAt",
+      "@type": "xsd:dateTime",
+      "rdfs:comment": "Timestamp when the conflict check was performed by BPP (ISO 8601)."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/message",
+      "@type": "xsd:string",
+      "owl:equivalentProperty": {
+        "@id": "schema:description"
+      },
+      "rdfs:comment": "Human-readable message. Equivalent to schema:description."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/loggedAt",
+      "@type": "xsd:dateTime",
+      "rdfs:comment": "Timestamp when the enrollment was logged in BPP's audit system (ISO 8601). Returned in on_confirm response."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/logReference",
+      "@type": "xsd:string",
+      "rdfs:comment": "Reference identifier for the enrollment log entry. Used for audit trail and record keeping."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/credentials",
+      "@type": "@id",
+      "@container": "@set",
+      "rdfs:comment": "Array of VerifiableCredential objects (W3C VC Data Model v2.0) provided in init request. Contains VCs for meter ownership, program eligibility, DER certification, etc."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/existingEnrollments",
+      "@type": "@id",
+      "@container": "@set",
+      "rdfs:comment": "Array of VerifiableCredential objects (W3C VC Data Model v2.0) representing existing enrollments. Provided in init request to help BPP check for conflicts."
+    },
+    {
+      "@id": "vc:type",
+      "@type": "xsd:string",
+      "rdfs:comment": "Credential type as per W3C VC Data Model v2.0. Must include 'VerifiableCredential' plus specific types: MeterOwnershipCredential, ProgramEligibilityCredential, DERCertificationCredential, ProgramEnrollmentCredential."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/derId",
+      "@type": "xsd:string",
+      "rdfs:comment": "DER identifier associated with a DER certification credential. Links the credential to a specific DER."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/updateType",
+      "@type": "xsd:string",
+      "rdfs:comment": "Type of update being performed. Values: CONSENT_REVOCATION, UNENROLLMENT."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/consentRevocation",
+      "@type": "@id",
+      "rdfs:comment": "Consent revocation details object. Contains information about the consent being revoked."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/unenrollment",
+      "@type": "@id",
+      "rdfs:comment": "Unenrollment details object. Contains information about the enrollment being cancelled."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/consentCredentialId",
+      "@type": "xsd:string",
+      "rdfs:comment": "Identifier of the consent credential being revoked. References the Verifiable Credential ID."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/consentType",
+      "@type": "xsd:string",
+      "rdfs:comment": "Type of consent being revoked. Values: DATA_COLLECTION, DER_CONTROL, CROSS_UTILITY_SHARING."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/revokedAt",
+      "@type": "xsd:dateTime",
+      "owl:equivalentProperty": {
+        "@id": "schema:endTime"
+      },
+      "rdfs:comment": "When revocation occurred. Equivalent to schema:endTime for actions."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/effectiveDate",
+      "@type": "xsd:dateTime",
+      "owl:equivalentProperty": {
+        "@id": "schema:scheduledTime"
+      },
+      "rdfs:comment": "When revocation takes effect. Equivalent to schema:scheduledTime."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/statusListUrl",
+      "@type": "@id",
+      "rdfs:comment": "URL of the W3C VC status list where the revoked credential is recorded. Used for verification."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/statusListIndex",
+      "@type": "xsd:string",
+      "rdfs:comment": "Index in the status list where this credential's revocation status is recorded. Used for efficient status checking."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/cancelledAt",
+      "@type": "xsd:dateTime",
+      "rdfs:comment": "Timestamp when the enrollment was cancelled (ISO 8601)."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/enrollmentCredentialStatus",
+      "@type": "@id",
+      "rdfs:comment": "Status information for the enrollment credential after revocation. Contains status list details."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/consentsRevoked",
+      "@type": "@id",
+      "@container": "@set",
+      "rdfs:comment": "Array of consent credentials that were revoked as part of unenrollment."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/revokeAllConsents",
+      "@type": "xsd:boolean",
+      "rdfs:comment": "Boolean indicating whether all associated consents should be revoked during unenrollment."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/UserAuth",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "schema:AuthenticateAction"
+      },
+      "rdfs:comment": "User authentication base type. Extends schema:AuthenticateAction."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/UserAuthRequest",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "UserAuth"
+      },
+      "rdfs:comment": "User authentication request (BAP → BPP). Contains credentials for verification."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/UserAuthResponse",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "UserAuth"
+      },
+      "rdfs:comment": "User authentication response (BPP → BAP). Contains verification results."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/userAuth",
+      "@type": "@id",
+      "owl:equivalentProperty": {
+        "@id": "schema:actionStatus"
+      },
+      "rdfs:comment": "Authentication object. UserAuthRequest for requests, UserAuthResponse for responses."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/OtpAuthRequest",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "UserAuthRequest"
+      },
+      "rdfs:comment": "OTP authentication request. Contains mobile number and optionally OTP+nguid."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/OtpAuthResponse",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "UserAuthResponse"
+      },
+      "rdfs:comment": "OTP authentication response. Contains nguid, verification status, and message."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/OAuth2AuthRequest",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "UserAuthRequest"
+      },
+      "rdfs:comment": "OAuth2/OIDC authentication request. Contains JWT tokens (accessToken, idToken)."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/OAuth2AuthResponse",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "UserAuthResponse"
+      },
+      "rdfs:comment": "OAuth2/OIDC authentication response. Contains verification result and extracted claims."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/authMethod",
+      "@type": "xsd:string",
+      "rdfs:comment": "Authentication method discriminator. Values: OTP, OAUTH2, OIDC."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/accessToken",
+      "@type": "xsd:string",
+      "rdfs:comment": "OAuth2 access token (bearer token) for authentication."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/tokenType",
+      "@type": "xsd:string",
+      "rdfs:comment": "Token type, usually 'Bearer' for OAuth2."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/idToken",
+      "@type": "xsd:string",
+      "rdfs:comment": "OIDC ID token (JWT) containing user identity claims."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/refreshToken",
+      "@type": "xsd:string",
+      "rdfs:comment": "OAuth2 refresh token for obtaining new access tokens."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/scope",
+      "@type": "xsd:string",
+      "rdfs:comment": "OAuth2 scopes granted to the token. Space-separated list."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/issuer",
+      "@type": "@id",
+      "owl:equivalentProperty": {
+        "@id": "schema:issuedBy"
+      },
+      "rdfs:comment": "OIDC issuer URL. Equivalent to schema:issuedBy."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/subject",
+      "@type": "xsd:string",
+      "owl:equivalentProperty": {
+        "@id": "schema:identifier"
+      },
+      "rdfs:comment": "Subject identifier (user ID) from token. Related to schema:identifier."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/MeterEnrollment",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "schema:IndividualProduct"
+      },
+      "rdfs:comment": "A specific product instance for enrollment. Extends schema:IndividualProduct. Represents a device/asset being subscribed (meter, SIM, device, etc.)."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/meterId",
+      "@type": "xsd:string",
+      "owl:equivalentProperty": {
+        "@id": "schema:serialNumber"
+      },
+      "rdfs:comment": "Primary device identifier. Equivalent to schema:serialNumber."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/meterNumber",
+      "@type": "xsd:string",
+      "owl:equivalentProperty": {
+        "@id": "schema:productID"
+      },
+      "rdfs:comment": "Secondary/display identifier. Equivalent to schema:productID."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/utilityId",
+      "@type": "xsd:string",
+      "owl:equivalentProperty": {
+        "@id": "schema:provider"
+      },
+      "rdfs:comment": "Service provider identifier. Related to schema:provider."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/utilityCustomerId",
+      "@type": "xsd:string",
+      "owl:equivalentProperty": {
+        "@id": "schema:accountId"
+      },
+      "rdfs:comment": "Customer account identifier at the utility. Equivalent to schema:accountId. Links the authenticated user to their billing account."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/connectionType",
+      "@type": "xsd:string",
+      "owl:equivalentProperty": {
+        "@id": "schema:category"
+      },
+      "rdfs:comment": "Service category. Equivalent to schema:category (residential, commercial, etc.)."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/sanctionedLoad",
+      "@type": "xsd:decimal",
+      "rdfs:comment": "Capacity/limit for the connection (kW). Domain-specific; no direct schema.org equivalent."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/mobile",
+      "@type": "xsd:string",
+      "owl:equivalentProperty": {
+        "@id": "schema:telephone"
+      },
+      "rdfs:comment": "Mobile phone number. Equivalent to schema:telephone."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/otp",
+      "@type": "xsd:string",
+      "rdfs:comment": "One-time password entered by user for verification. Sent by BPP via SMS to mobile number."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/nguid",
+      "@type": "xsd:string",
+      "rdfs:comment": "Network GUID / session token for OTP verification. Generated by BPP, returned in on_init, required in confirm."
+    },
+    {
+      "@id": "deg:EnergyEnrollment/v2.0/verified",
+      "@type": "xsd:boolean",
+      "rdfs:comment": "Boolean indicating whether OTP verification was successful. Only present in on_confirm response."
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/EnergyTradeOffer",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Energy Trade Offer",
+      "rdfs:comment": "Offer attributes for P2P energy trading, attached to Offer.offerAttributes."
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/EnergyTradeOrder",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Energy Trade Order",
+      "rdfs:comment": "Order attributes for P2P energy trading, attached to Order.orderAttributes."
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/EnergyTradeOrderInterUtility",
+      "@type": "rdfs:Class",
+      "rdfs:subClassOf": "deg:EnergyTrade/v2.0/EnergyTradeOrder",
+      "rdfs:label": "Energy Trade Order Inter-Utility",
+      "rdfs:comment": "Extended order attributes for inter-utility (inter-discom) P2P trading."
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/EnergyTradeDelivery",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Energy Trade Delivery",
+      "rdfs:comment": "Fulfillment attributes for energy trade deliveries, attached to orderItemAttributes.fulfillmentAttributes."
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/EnergyResource",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Energy Resource",
+      "rdfs:comment": "Item attributes for energy resources, attached to Item.itemAttributes."
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/EnergyCustomer",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Energy Customer",
+      "rdfs:comment": "Customer attributes for energy flows, attached to Buyer.buyerAttributes or Provider.providerAttributes."
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/EnergyOrderItem",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Energy Order Item",
+      "rdfs:comment": "Order item attributes wrapper for P2P energy trading, attached to beckn:orderItemAttributes."
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/EnergyGift",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Energy Gift",
+      "rdfs:comment": "Gift parameters for P2P energy gifting, enabling prosumers to gift energy to specific recipients via privacy-preserving discovery and secret-based claim verification."
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/pricingModel",
+      "@type": "rdf:Property",
+      "rdfs:label": "Pricing model",
+      "rdfs:comment": "Pricing model classification (PER_KWH, TIME_OF_DAY, SUBSCRIPTION, FIXED).",
+      "rdfs:domain": "deg:EnergyTrade/v2.0/EnergyTradeOffer",
+      "schema:rangeIncludes": "deg:EnergyTrade/v2.0/PricingModel"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/validityWindow",
+      "@type": "rdf:Property",
+      "rdfs:label": "Validity window",
+      "rdfs:comment": "Time window when the offer can be selected/accepted.",
+      "rdfs:domain": "deg:EnergyTrade/v2.0/EnergyTradeOffer",
+      "schema:rangeIncludes": "schema:TimePeriod"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/deliveryWindow",
+      "@type": "rdf:Property",
+      "rdfs:label": "Delivery window",
+      "rdfs:comment": "Specific time period when energy delivery occurs.",
+      "rdfs:domain": "deg:EnergyTrade/v2.0/EnergyTradeOffer",
+      "schema:rangeIncludes": "schema:TimePeriod"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/gift",
+      "@type": "rdf:Property",
+      "rdfs:label": "Gift",
+      "rdfs:comment": "Optional gift parameters for energy gifting on this offer.",
+      "rdfs:domain": "deg:EnergyTrade/v2.0/EnergyTradeOffer",
+      "schema:rangeIncludes": "deg:EnergyTrade/v2.0/EnergyGift"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/lookupHash",
+      "@type": "rdf:Property",
+      "rdfs:label": "Lookup hash",
+      "rdfs:comment": "SHA-256 hash of the recipient's phone number (E.164 format) for privacy-preserving gift discovery.",
+      "rdfs:domain": "deg:EnergyTrade/v2.0/EnergyGift",
+      "rdfs:range": "xsd:string"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/claimVerifier",
+      "@type": "rdf:Property",
+      "rdfs:label": "Claim verifier",
+      "rdfs:comment": "SHA-256 hash of a claim secret shared out-of-band from gifter to recipient for gift claim validation.",
+      "rdfs:domain": "deg:EnergyTrade/v2.0/EnergyGift",
+      "rdfs:range": "xsd:string"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/expiresAt",
+      "@type": "rdf:Property",
+      "rdfs:label": "Expires at",
+      "rdfs:comment": "Gift expiration timestamp in UTC (ISO 8601 with Z suffix).",
+      "rdfs:domain": "deg:EnergyTrade/v2.0/EnergyGift",
+      "rdfs:range": "xsd:dateTime"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/bap_id",
+      "@type": "rdf:Property",
+      "rdfs:label": "BAP ID",
+      "rdfs:comment": "Beckn Application Platform (BAP) identifier.",
+      "rdfs:domain": "deg:EnergyTrade/v2.0/EnergyTradeOrder",
+      "rdfs:range": "xsd:string"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/bpp_id",
+      "@type": "rdf:Property",
+      "rdfs:label": "BPP ID",
+      "rdfs:comment": "Beckn Provider Platform (BPP) identifier.",
+      "rdfs:domain": "deg:EnergyTrade/v2.0/EnergyTradeOrder",
+      "rdfs:range": "xsd:string"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/total_quantity",
+      "@type": "rdf:Property",
+      "rdfs:label": "Total quantity",
+      "rdfs:comment": "Total quantity of energy in kilowatt-hours (kWh) for this trade order.",
+      "rdfs:domain": "deg:EnergyTrade/v2.0/EnergyTradeOrder",
+      "schema:rangeIncludes": "schema:Number"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/utilityIdBuyer",
+      "@type": "rdf:Property",
+      "rdfs:label": "Utility ID Buyer",
+      "rdfs:comment": "Identifier of the buyer-side utility/distribution company (discom).",
+      "rdfs:domain": "deg:EnergyTrade/v2.0/EnergyTradeOrderInterUtility",
+      "rdfs:range": "xsd:string"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/utilityIdSeller",
+      "@type": "rdf:Property",
+      "rdfs:label": "Utility ID Seller",
+      "rdfs:comment": "Identifier of the seller-side utility/distribution company (discom).",
+      "rdfs:domain": "deg:EnergyTrade/v2.0/EnergyTradeOrderInterUtility",
+      "rdfs:range": "xsd:string"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/deliveryStatus",
+      "@type": "rdf:Property",
+      "rdfs:label": "Delivery status",
+      "rdfs:comment": "Delivery status for the energy transfer (PENDING, IN_PROGRESS, COMPLETED, FAILED).",
+      "rdfs:domain": "deg:EnergyTrade/v2.0/EnergyTradeDelivery",
+      "schema:rangeIncludes": "deg:EnergyTrade/v2.0/DeliveryStatus"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/deliveryMode",
+      "@type": "rdf:Property",
+      "rdfs:label": "Delivery mode",
+      "rdfs:comment": "Mode of energy delivery (EV_CHARGING, BATTERY_SWAP, V2G, GRID_INJECTION).",
+      "schema:rangeIncludes": "deg:EnergyTrade/v2.0/DeliveryMode"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/deliveredQuantity",
+      "@type": "rdf:Property",
+      "rdfs:label": "Delivered quantity",
+      "rdfs:comment": "Total quantity delivered so far in kilowatt-hours (kWh).",
+      "rdfs:domain": "deg:EnergyTrade/v2.0/EnergyTradeDelivery",
+      "schema:rangeIncludes": "schema:Number"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/meterReadings",
+      "@type": "rdf:Property",
+      "rdfs:label": "Meter readings",
+      "rdfs:comment": "Array of meter readings for this orderItem.",
+      "rdfs:domain": "deg:EnergyTrade/v2.0/EnergyTradeDelivery",
+      "schema:rangeIncludes": "schema:ItemList"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/consumedEnergy",
+      "@type": "rdf:Property",
+      "rdfs:label": "Consumed energy",
+      "rdfs:comment": "Energy consumed by the customer (imported from grid) in kWh.",
+      "schema:rangeIncludes": "schema:Number"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/producedEnergy",
+      "@type": "rdf:Property",
+      "rdfs:label": "Produced energy",
+      "rdfs:comment": "Energy produced by the customer (exported to grid) in kWh.",
+      "schema:rangeIncludes": "schema:Number"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/allocatedEnergy",
+      "@type": "rdf:Property",
+      "rdfs:label": "Allocated energy",
+      "rdfs:comment": "Net energy allocated for this trade in kWh.",
+      "schema:rangeIncludes": "schema:Number"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/curtailedQuantity",
+      "@type": "rdf:Property",
+      "rdfs:label": "Curtailed quantity",
+      "rdfs:comment": "Quantity curtailed from original contracted amount (kWh).",
+      "rdfs:domain": "deg:EnergyTrade/v2.0/EnergyTradeDelivery",
+      "schema:rangeIncludes": "schema:Number"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/curtailmentReason",
+      "@type": "rdf:Property",
+      "rdfs:label": "Curtailment reason",
+      "rdfs:comment": "Reason for curtailment (GRID_OUTAGE, EMERGENCY, CONGESTION, MAINTENANCE, OTHER).",
+      "rdfs:domain": "deg:EnergyTrade/v2.0/EnergyTradeDelivery",
+      "schema:rangeIncludes": "deg:EnergyTrade/v2.0/CurtailmentReason"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/sourceType",
+      "@type": "rdf:Property",
+      "rdfs:label": "Source type",
+      "rdfs:comment": "Type of energy source (SOLAR, BATTERY, GRID, HYBRID, RENEWABLE).",
+      "rdfs:domain": "deg:EnergyTrade/v2.0/EnergyResource",
+      "schema:rangeIncludes": "deg:EnergyTrade/v2.0/SourceType"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/meterId",
+      "@type": "rdf:Property",
+      "rdfs:label": "Meter ID",
+      "rdfs:comment": "Meter identifier in DER address format (der://meter/{id}).",
+      "rdfs:range": "xsd:string"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/sanctionedLoad",
+      "@type": "rdf:Property",
+      "rdfs:label": "Sanctioned load",
+      "rdfs:comment": "Sanctioned load capacity in kilowatts (kW).",
+      "rdfs:domain": "deg:EnergyTrade/v2.0/EnergyCustomer",
+      "schema:rangeIncludes": "schema:Number"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/utilityCustomerId",
+      "@type": "rdf:Property",
+      "rdfs:label": "Utility customer ID",
+      "rdfs:comment": "Customer's account identifier with the utility company.",
+      "rdfs:domain": "deg:EnergyTrade/v2.0/EnergyCustomer",
+      "rdfs:range": "xsd:string"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/utilityId",
+      "@type": "rdf:Property",
+      "rdfs:label": "Utility ID",
+      "rdfs:comment": "Utility/DISCOM identifier for the customer's service territory.",
+      "rdfs:domain": "deg:EnergyTrade/v2.0/EnergyCustomer",
+      "rdfs:range": "xsd:string"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/providerAttributes",
+      "@type": "rdf:Property",
+      "rdfs:label": "Provider attributes",
+      "rdfs:comment": "Provider/customer information for this order item.",
+      "rdfs:domain": "deg:EnergyTrade/v2.0/EnergyOrderItem"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/fulfillmentAttributes",
+      "@type": "rdf:Property",
+      "rdfs:label": "Fulfillment attributes",
+      "rdfs:comment": "Optional fulfillment tracking for this order item.",
+      "rdfs:domain": "deg:EnergyTrade/v2.0/EnergyOrderItem"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/PricingModel",
+      "@type": "schema:Enumeration",
+      "schema:name": "Pricing Model",
+      "rdfs:comment": "Enumeration of supported pricing models for energy trade offers."
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/PricingModelPerKwh",
+      "@type": "deg:EnergyTrade/v2.0/PricingModel",
+      "schema:name": "PER_KWH",
+      "schema:identifier": "PER_KWH"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/PricingModelTimeOfDay",
+      "@type": "deg:EnergyTrade/v2.0/PricingModel",
+      "schema:name": "TIME_OF_DAY",
+      "schema:identifier": "TIME_OF_DAY"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/PricingModelSubscription",
+      "@type": "deg:EnergyTrade/v2.0/PricingModel",
+      "schema:name": "SUBSCRIPTION",
+      "schema:identifier": "SUBSCRIPTION"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/PricingModelFixed",
+      "@type": "deg:EnergyTrade/v2.0/PricingModel",
+      "schema:name": "FIXED",
+      "schema:identifier": "FIXED"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/DeliveryStatus",
+      "@type": "schema:Enumeration",
+      "schema:name": "Delivery Status",
+      "rdfs:comment": "Enumeration of delivery statuses."
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/DeliveryStatusPending",
+      "@type": "deg:EnergyTrade/v2.0/DeliveryStatus",
+      "schema:name": "PENDING",
+      "schema:identifier": "PENDING"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/DeliveryStatusInProgress",
+      "@type": "deg:EnergyTrade/v2.0/DeliveryStatus",
+      "schema:name": "IN_PROGRESS",
+      "schema:identifier": "IN_PROGRESS"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/DeliveryStatusCompleted",
+      "@type": "deg:EnergyTrade/v2.0/DeliveryStatus",
+      "schema:name": "COMPLETED",
+      "schema:identifier": "COMPLETED"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/DeliveryStatusFailed",
+      "@type": "deg:EnergyTrade/v2.0/DeliveryStatus",
+      "schema:name": "FAILED",
+      "schema:identifier": "FAILED"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/DeliveryMode",
+      "@type": "schema:Enumeration",
+      "schema:name": "Delivery Mode",
+      "rdfs:comment": "Enumeration of energy delivery modes."
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/DeliveryModeEvCharging",
+      "@type": "deg:EnergyTrade/v2.0/DeliveryMode",
+      "schema:name": "EV_CHARGING",
+      "schema:identifier": "EV_CHARGING"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/DeliveryModeBatterySwap",
+      "@type": "deg:EnergyTrade/v2.0/DeliveryMode",
+      "schema:name": "BATTERY_SWAP",
+      "schema:identifier": "BATTERY_SWAP"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/DeliveryModeV2G",
+      "@type": "deg:EnergyTrade/v2.0/DeliveryMode",
+      "schema:name": "V2G",
+      "schema:identifier": "V2G"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/DeliveryModeGridInjection",
+      "@type": "deg:EnergyTrade/v2.0/DeliveryMode",
+      "schema:name": "GRID_INJECTION",
+      "schema:identifier": "GRID_INJECTION"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/SourceType",
+      "@type": "schema:Enumeration",
+      "schema:name": "Source Type",
+      "rdfs:comment": "Enumeration of energy source types."
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/SourceTypeSolar",
+      "@type": "deg:EnergyTrade/v2.0/SourceType",
+      "schema:name": "SOLAR",
+      "schema:identifier": "SOLAR"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/SourceTypeBattery",
+      "@type": "deg:EnergyTrade/v2.0/SourceType",
+      "schema:name": "BATTERY",
+      "schema:identifier": "BATTERY"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/SourceTypeGrid",
+      "@type": "deg:EnergyTrade/v2.0/SourceType",
+      "schema:name": "GRID",
+      "schema:identifier": "GRID"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/SourceTypeHybrid",
+      "@type": "deg:EnergyTrade/v2.0/SourceType",
+      "schema:name": "HYBRID",
+      "schema:identifier": "HYBRID"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/SourceTypeRenewable",
+      "@type": "deg:EnergyTrade/v2.0/SourceType",
+      "schema:name": "RENEWABLE",
+      "schema:identifier": "RENEWABLE"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/CurtailmentReason",
+      "@type": "schema:Enumeration",
+      "schema:name": "Curtailment Reason",
+      "rdfs:comment": "Enumeration of reasons for energy curtailment."
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/CurtailmentReasonGridOutage",
+      "@type": "deg:EnergyTrade/v2.0/CurtailmentReason",
+      "schema:name": "GRID_OUTAGE",
+      "schema:identifier": "GRID_OUTAGE"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/CurtailmentReasonEmergency",
+      "@type": "deg:EnergyTrade/v2.0/CurtailmentReason",
+      "schema:name": "EMERGENCY",
+      "schema:identifier": "EMERGENCY"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/CurtailmentReasonCongestion",
+      "@type": "deg:EnergyTrade/v2.0/CurtailmentReason",
+      "schema:name": "CONGESTION",
+      "schema:identifier": "CONGESTION"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/CurtailmentReasonMaintenance",
+      "@type": "deg:EnergyTrade/v2.0/CurtailmentReason",
+      "schema:name": "MAINTENANCE",
+      "schema:identifier": "MAINTENANCE"
+    },
+    {
+      "@id": "deg:EnergyTrade/v2.0/CurtailmentReasonOther",
+      "@type": "deg:EnergyTrade/v2.0/CurtailmentReason",
+      "schema:name": "OTHER",
+      "schema:identifier": "OTHER"
+    },
+    {
+      "@id": "deg:EvChargingOffer/v2.0/ChargingOffer",
+      "@type": "rdfs:Class",
+      "rdfs:label": "EV Charging Offer",
+      "rdfs:comment": "An offer specification for electric vehicle charging"
+    },
+    {
+      "@id": "deg:EvChargingOffer/v2.0/tariffModel",
+      "@type": "rdf:Property",
+      "rdfs:label": "Tariff model",
+      "rdfs:comment": "Charging tariff basis: PER_KWH, PER_MINUTE, SUBSCRIPTION, TIME_OF_DAY.",
+      "rdfs:domain": "deg:EvChargingOffer/v2.0/ChargingOffer",
+      "schema:rangeIncludes": "deg:EvChargingOffer/v2.0/TariffModel"
+    },
+    {
+      "@id": "deg:EvChargingOffer/v2.0/idleFeePolicy",
+      "@type": "rdf:Property",
+      "rdfs:label": "Idle fee policy",
+      "rdfs:comment": "Idle fee policy specification for post-charge idle fees associated with an offer (reuses Beckn PriceSpecification).",
+      "rdfs:domain": "deg:EvChargingOffer/v2.0/ChargingOffer",
+      "schema:rangeIncludes": "schema:PriceSpecification"
+    },
+    {
+      "@id": "deg:EvChargingOffer/v2.0/TariffModel",
+      "@type": "schema:Enumeration",
+      "schema:name": "Tariff Model",
+      "rdfs:comment": "Enumeration of supported tariff models for charging offers.",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "deg:EvChargingOffer/v2.0/TariffModelPerKwh"
+        },
+        {
+          "@id": "deg:EvChargingOffer/v2.0/TariffModelPerMinute"
+        },
+        {
+          "@id": "deg:EvChargingOffer/v2.0/TariffModelSubscription"
+        },
+        {
+          "@id": "deg:EvChargingOffer/v2.0/TariffModelTimeOfDay"
+        }
+      ]
+    },
+    {
+      "@id": "deg:EvChargingOffer/v2.0/TariffModelPerKwh",
+      "@type": [
+        "deg:EvChargingOffer/v2.0/TariffModel",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PER_KWH",
+      "schema:identifier": "PER_KWH",
+      "schema:alternateName": "PER-KWH"
+    },
+    {
+      "@id": "deg:EvChargingOffer/v2.0/TariffModelPerMinute",
+      "@type": [
+        "deg:EvChargingOffer/v2.0/TariffModel",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PER_MINUTE",
+      "schema:identifier": "PER_MINUTE",
+      "schema:alternateName": "PER-MINUTE"
+    },
+    {
+      "@id": "deg:EvChargingOffer/v2.0/TariffModelSubscription",
+      "@type": [
+        "deg:EvChargingOffer/v2.0/TariffModel",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SUBSCRIPTION",
+      "schema:identifier": "SUBSCRIPTION"
+    },
+    {
+      "@id": "deg:EvChargingOffer/v2.0/TariffModelTimeOfDay",
+      "@type": [
+        "deg:EvChargingOffer/v2.0/TariffModel",
+        "schema:Enumeration"
+      ],
+      "schema:name": "TIME_OF_DAY",
+      "schema:identifier": "TIME_OF_DAY",
+      "schema:alternateName": "TIME-OF-DAY"
+    },
+    {
+      "@id": "deg:EvChargingPointOperator/v2.0/ChargingPointOperator",
+      "@type": "rdfs:Class",
+      "rdfs:label": "EV Charging Point Operator",
+      "rdfs:comment": "A charging point operator providing electric vehicle charging services"
+    },
+    {
+      "@id": "deg:EvChargingPointOperator/v2.0/operatorName",
+      "@type": "rdf:Property",
+      "rdfs:label": "Operator name",
+      "rdfs:comment": "Operating company name (display).",
+      "rdfs:domain": "deg:EvChargingPointOperator/v2.0/ChargingPointOperator",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "deg:EvChargingPointOperator/v2.0/operatorCode",
+      "@type": "rdf:Property",
+      "rdfs:label": "Operator code",
+      "rdfs:comment": "Short operator code used in roaming/indexes.",
+      "rdfs:domain": "deg:EvChargingPointOperator/v2.0/ChargingPointOperator",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "deg:EvChargingPointOperator/v2.0/identifier",
+      "@type": "rdf:Property",
+      "rdfs:label": "Identifier",
+      "rdfs:comment": "Provider identifier (URN/URL/code).",
+      "rdfs:domain": "deg:EvChargingPointOperator/v2.0/ChargingPointOperator",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "deg:EvChargingPointOperator/v2.0/sameAs",
+      "@type": "rdf:Property",
+      "rdfs:label": "Same as",
+      "rdfs:comment": "Canonical reference (e.g., website, registry entry).",
+      "rdfs:domain": "deg:EvChargingPointOperator/v2.0/ChargingPointOperator",
+      "schema:rangeIncludes": "schema:URL"
+    },
+    {
+      "@id": "deg:EvChargingPointOperator/v2.0/supportEmail",
+      "@type": "rdf:Property",
+      "rdfs:label": "Support email",
+      "rdfs:comment": "Support email (if not provided in core Provider).",
+      "rdfs:domain": "deg:EvChargingPointOperator/v2.0/ChargingPointOperator",
+      "schema:rangeIncludes": "schema:EmailAddress"
+    },
+    {
+      "@id": "deg:EvChargingPointOperator/v2.0/supportPhone",
+      "@type": "rdf:Property",
+      "rdfs:label": "Support phone",
+      "rdfs:comment": "Support phone (if not provided in core Provider).",
+      "rdfs:domain": "deg:EvChargingPointOperator/v2.0/ChargingPointOperator",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "deg:EvChargingPointOperator/v2.0/gstNumber",
+      "@type": "rdf:Property",
+      "rdfs:label": "GST Number",
+      "rdfs:comment": "Tax identifier (India).",
+      "rdfs:domain": "deg:EvChargingPointOperator/v2.0/ChargingPointOperator",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "deg:EvChargingPointOperator/v2.0/cin",
+      "@type": "rdf:Property",
+      "rdfs:label": "CIN",
+      "rdfs:comment": "Corporate Identification Number (India).",
+      "rdfs:domain": "deg:EvChargingPointOperator/v2.0/ChargingPointOperator",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "deg:EvChargingPointOperator/v2.0/msme",
+      "@type": "rdf:Property",
+      "rdfs:label": "MSME ID",
+      "rdfs:comment": "MSME registration identifier (India).",
+      "rdfs:domain": "deg:EvChargingPointOperator/v2.0/ChargingPointOperator",
+      "rdfs:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "deg:EvChargingPointOperator/v2.0/operatorContact",
+      "@type": "rdf:Property",
+      "rdfs:label": "Operator contact",
+      "rdfs:comment": "Free-form contact blob for ops (last resort).",
+      "rdfs:domain": "deg:EvChargingPointOperator/v2.0/ChargingPointOperator",
+      "schema:rangeIncludes": "schema:ContactPoint"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/ChargingService",
+      "@type": "rdfs:Class",
+      "rdfs:label": "EV Charging Service",
+      "rdfs:comment": "A service that provides electric vehicle charging capabilities"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/ChargingStation",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Charging Station",
+      "rdfs:comment": "A charging station containing station identifier and location information."
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/connectorType",
+      "@type": "rdf:Property",
+      "rdfs:label": "Connector type",
+      "rdfs:comment": "Physical connector type supported by the EVSE/charger (e.g., CCS2, Type2, CHAdeMO, GB/T).",
+      "rdfs:domain": "deg:EvChargingService/v2.0/ChargingService",
+      "schema:rangeIncludes": "deg:EvChargingService/v2.0/ConnectorType"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/maxPowerKW",
+      "@type": "rdf:Property",
+      "rdfs:label": "Maximum power (kW)",
+      "rdfs:comment": "Maximum charging power supported by the EVSE in kilowatts.",
+      "rdfs:domain": "deg:EvChargingService/v2.0/ChargingService",
+      "schema:rangeIncludes": "schema:Number"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/minPowerKW",
+      "@type": "rdf:Property",
+      "rdfs:label": "Minimum power (kW)",
+      "rdfs:comment": "Minimum controllable charging power in kilowatts.",
+      "rdfs:domain": "deg:EvChargingService/v2.0/ChargingService",
+      "schema:rangeIncludes": "schema:Number"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/reservationSupported",
+      "@type": "rdf:Property",
+      "rdfs:label": "Reservation supported",
+      "rdfs:comment": "Whether advance reservations are supported for this connector/site.",
+      "rdfs:domain": "deg:EvChargingService/v2.0/ChargingService",
+      "schema:rangeIncludes": "schema:Boolean"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/amenityFeature",
+      "@type": "rdf:Property",
+      "rdfs:label": "Amenity feature",
+      "rdfs:comment": "Nearby amenities such as Restaurant, Restroom, Wi-Fi, Parking.",
+      "rdfs:domain": "deg:EvChargingService/v2.0/ChargingService",
+      "schema:rangeIncludes": "deg:EvChargingService/v2.0/AmenityFeature"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/evseId",
+      "@type": "rdf:Property",
+      "rdfs:label": "EVSE identifier",
+      "rdfs:comment": "Public EVSE identifier (e.g., OCPI/Hubject style).",
+      "rdfs:domain": "deg:EvChargingService/v2.0/ChargingService",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/roamingNetwork",
+      "@type": "rdf:Property",
+      "rdfs:label": "Roaming network",
+      "rdfs:comment": "Roaming federation or network name, if any.",
+      "rdfs:domain": "deg:EvChargingService/v2.0/ChargingService",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/parkingType",
+      "@type": "rdf:Property",
+      "rdfs:label": "Parking type",
+      "rdfs:comment": "Type of parking facility (e.g., Mall, Office, FuelStation).",
+      "rdfs:domain": "deg:EvChargingService/v2.0/ChargingService",
+      "schema:rangeIncludes": "deg:EvChargingService/v2.0/ParkingType"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/powerType",
+      "@type": "rdf:Property",
+      "rdfs:label": "Power type",
+      "rdfs:comment": "Electrical power type (AC_SINGLE_PHASE, AC_3_PHASE, DC).",
+      "rdfs:domain": "deg:EvChargingService/v2.0/ChargingService",
+      "schema:rangeIncludes": "deg:EvChargingService/v2.0/PowerType"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/connectorFormat",
+      "@type": "rdf:Property",
+      "rdfs:label": "Connector format",
+      "rdfs:comment": "Physical presentation of the connector (SOCKET or CABLE).",
+      "rdfs:domain": "deg:EvChargingService/v2.0/ChargingService",
+      "schema:rangeIncludes": "deg:EvChargingService/v2.0/ConnectorFormat"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/chargingSpeed",
+      "@type": "rdf:Property",
+      "rdfs:label": "Charging speed band",
+      "rdfs:comment": "Marketing speed band (SLOW, NORMAL, FAST, ULTRAFAST).",
+      "rdfs:domain": "deg:EvChargingService/v2.0/ChargingService",
+      "schema:rangeIncludes": "deg:EvChargingService/v2.0/ChargingSpeed"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/vehicleType",
+      "@type": "rdf:Property",
+      "rdfs:label": "Vehicle type",
+      "rdfs:comment": "Type of vehicle that can use this charging service (2-WHEELER, 3-WHEELER, 4-WHEELER).",
+      "rdfs:domain": "deg:EvChargingService/v2.0/ChargingService",
+      "schema:rangeIncludes": "deg:EvChargingService/v2.0/VehicleType"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/chargingStation",
+      "@type": "rdf:Property",
+      "rdfs:label": "Charging station",
+      "rdfs:comment": "Charging station information including station ID and location.",
+      "rdfs:domain": "deg:EvChargingService/v2.0/ChargingService",
+      "schema:rangeIncludes": "deg:EvChargingService/v2.0/ChargingStation"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/id",
+      "@type": "rdf:Property",
+      "rdfs:label": "Charging station ID",
+      "rdfs:comment": "Unique identifier for the charging station (chargingStationId).",
+      "rdfs:domain": "deg:EvChargingService/v2.0/ChargingStation",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/serviceLocation",
+      "@type": "rdf:Property",
+      "rdfs:label": "Service location",
+      "rdfs:comment": "Physical location where the charging service is offered; aligns to Beckn Location in payloads.",
+      "rdfs:domain": "deg:EvChargingService/v2.0/ChargingStation",
+      "schema:rangeIncludes": "schema:Place"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/AmenityFeature",
+      "@type": "schema:Enumeration",
+      "schema:name": "Amenity Feature",
+      "rdfs:comment": "Enumeration of amenity features available near the charging service.",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "deg:EvChargingService/v2.0/AmenityRestaurant"
+        },
+        {
+          "@id": "deg:EvChargingService/v2.0/AmenityRestroom"
+        },
+        {
+          "@id": "deg:EvChargingService/v2.0/AmenityWiFi"
+        },
+        {
+          "@id": "deg:EvChargingService/v2.0/AmenityParking"
+        }
+      ]
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/AmenityRestaurant",
+      "@type": [
+        "deg:EvChargingService/v2.0/AmenityFeature",
+        "schema:Enumeration"
+      ],
+      "schema:name": "RESTAURANT",
+      "schema:identifier": "RESTAURANT",
+      "schema:alternateName": "Restaurant"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/AmenityRestroom",
+      "@type": [
+        "deg:EvChargingService/v2.0/AmenityFeature",
+        "schema:Enumeration"
+      ],
+      "schema:name": "RESTROOM",
+      "schema:identifier": "RESTROOM",
+      "schema:alternateName": "Restroom"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/AmenityWiFi",
+      "@type": [
+        "deg:EvChargingService/v2.0/AmenityFeature",
+        "schema:Enumeration"
+      ],
+      "schema:name": "WI-FI",
+      "schema:identifier": "WI-FI",
+      "schema:alternateName": [
+        "Wi-Fi",
+        "WiFi"
+      ]
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/AmenityParking",
+      "@type": [
+        "deg:EvChargingService/v2.0/AmenityFeature",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PARKING",
+      "schema:identifier": "PARKING",
+      "schema:alternateName": "Parking"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/ConnectorType",
+      "@type": "schema:Enumeration",
+      "schema:name": "Connector Type",
+      "rdfs:comment": "Enumeration of electric vehicle connector interface types.",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "deg:EvChargingService/v2.0/ConnectorTypeCCS2"
+        },
+        {
+          "@id": "deg:EvChargingService/v2.0/ConnectorTypeType2"
+        },
+        {
+          "@id": "deg:EvChargingService/v2.0/ConnectorTypeCHAdeMO"
+        },
+        {
+          "@id": "deg:EvChargingService/v2.0/ConnectorTypeGBT"
+        }
+      ]
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/ConnectorTypeCCS2",
+      "@type": [
+        "deg:EvChargingService/v2.0/ConnectorType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CCS2",
+      "schema:identifier": "CCS2"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/ConnectorTypeType2",
+      "@type": [
+        "deg:EvChargingService/v2.0/ConnectorType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Type2",
+      "schema:identifier": "Type2"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/ConnectorTypeCHAdeMO",
+      "@type": [
+        "deg:EvChargingService/v2.0/ConnectorType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CHAdeMO",
+      "schema:identifier": "CHAdeMO"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/ConnectorTypeGBT",
+      "@type": [
+        "deg:EvChargingService/v2.0/ConnectorType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "GB/T",
+      "schema:identifier": "GB_T",
+      "schema:alternateName": "GB-T"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/PowerType",
+      "@type": "schema:Enumeration",
+      "schema:name": "Power Type",
+      "rdfs:comment": "Enumeration of supported electrical power types.",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "deg:EvChargingService/v2.0/PowerTypeACSinglePhase"
+        },
+        {
+          "@id": "deg:EvChargingService/v2.0/PowerTypeAC3Phase"
+        },
+        {
+          "@id": "deg:EvChargingService/v2.0/PowerTypeDC"
+        }
+      ]
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/PowerTypeACSinglePhase",
+      "@type": [
+        "deg:EvChargingService/v2.0/PowerType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "AC_SINGLE_PHASE",
+      "schema:identifier": "AC_SINGLE_PHASE"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/PowerTypeAC3Phase",
+      "@type": [
+        "deg:EvChargingService/v2.0/PowerType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "AC_3_PHASE",
+      "schema:identifier": "AC_3_PHASE",
+      "schema:alternateName": "AC_THREE_PHASE"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/PowerTypeDC",
+      "@type": [
+        "deg:EvChargingService/v2.0/PowerType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "DC",
+      "schema:identifier": "DC"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/ConnectorFormat",
+      "@type": "schema:Enumeration",
+      "schema:name": "Connector Format",
+      "rdfs:comment": "Enumeration of connector presentation formats.",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "deg:EvChargingService/v2.0/ConnectorFormatSocket"
+        },
+        {
+          "@id": "deg:EvChargingService/v2.0/ConnectorFormatCable"
+        }
+      ]
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/ConnectorFormatSocket",
+      "@type": [
+        "deg:EvChargingService/v2.0/ConnectorFormat",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SOCKET",
+      "schema:identifier": "SOCKET"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/ConnectorFormatCable",
+      "@type": [
+        "deg:EvChargingService/v2.0/ConnectorFormat",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CABLE",
+      "schema:identifier": "CABLE"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/ChargingSpeed",
+      "@type": "schema:Enumeration",
+      "schema:name": "Charging Speed",
+      "rdfs:comment": "Enumeration of marketing charging speed bands.",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "deg:EvChargingService/v2.0/ChargingSpeedSlow"
+        },
+        {
+          "@id": "deg:EvChargingService/v2.0/ChargingSpeedNormal"
+        },
+        {
+          "@id": "deg:EvChargingService/v2.0/ChargingSpeedFast"
+        },
+        {
+          "@id": "deg:EvChargingService/v2.0/ChargingSpeedUltraFast"
+        }
+      ]
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/ChargingSpeedSlow",
+      "@type": [
+        "deg:EvChargingService/v2.0/ChargingSpeed",
+        "schema:Enumeration"
+      ],
+      "schema:name": "SLOW",
+      "schema:identifier": "SLOW"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/ChargingSpeedNormal",
+      "@type": [
+        "deg:EvChargingService/v2.0/ChargingSpeed",
+        "schema:Enumeration"
+      ],
+      "schema:name": "NORMAL",
+      "schema:identifier": "NORMAL"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/ChargingSpeedFast",
+      "@type": [
+        "deg:EvChargingService/v2.0/ChargingSpeed",
+        "schema:Enumeration"
+      ],
+      "schema:name": "FAST",
+      "schema:identifier": "FAST"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/ChargingSpeedUltraFast",
+      "@type": [
+        "deg:EvChargingService/v2.0/ChargingSpeed",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ULTRAFAST",
+      "schema:identifier": "ULTRAFAST",
+      "schema:alternateName": "Ultra Fast"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/ParkingType",
+      "@type": "schema:Enumeration",
+      "schema:name": "Parking Type",
+      "rdfs:comment": "Enumeration of parking facility types available at the charging location.",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "deg:EvChargingService/v2.0/ParkingTypeOnStreet"
+        },
+        {
+          "@id": "deg:EvChargingService/v2.0/ParkingTypeOffStreet"
+        },
+        {
+          "@id": "deg:EvChargingService/v2.0/ParkingTypeBasement"
+        },
+        {
+          "@id": "deg:EvChargingService/v2.0/ParkingTypeMall"
+        },
+        {
+          "@id": "deg:EvChargingService/v2.0/ParkingTypeFuelStation"
+        },
+        {
+          "@id": "deg:EvChargingService/v2.0/ParkingTypeOffice"
+        },
+        {
+          "@id": "deg:EvChargingService/v2.0/ParkingTypeHotel"
+        }
+      ]
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/ParkingTypeOnStreet",
+      "@type": [
+        "deg:EvChargingService/v2.0/ParkingType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "OnStreet",
+      "schema:identifier": "OnStreet",
+      "schema:alternateName": "On Street"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/ParkingTypeOffStreet",
+      "@type": [
+        "deg:EvChargingService/v2.0/ParkingType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "OffStreet",
+      "schema:identifier": "OffStreet",
+      "schema:alternateName": "Off Street"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/ParkingTypeBasement",
+      "@type": [
+        "deg:EvChargingService/v2.0/ParkingType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Basement",
+      "schema:identifier": "Basement"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/ParkingTypeMall",
+      "@type": [
+        "deg:EvChargingService/v2.0/ParkingType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Mall",
+      "schema:identifier": "Mall"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/ParkingTypeFuelStation",
+      "@type": [
+        "deg:EvChargingService/v2.0/ParkingType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "FuelStation",
+      "schema:identifier": "FuelStation",
+      "schema:alternateName": "Fuel Station"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/ParkingTypeOffice",
+      "@type": [
+        "deg:EvChargingService/v2.0/ParkingType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Office",
+      "schema:identifier": "Office"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/ParkingTypeHotel",
+      "@type": [
+        "deg:EvChargingService/v2.0/ParkingType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Hotel",
+      "schema:identifier": "Hotel"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/VehicleType",
+      "@type": "schema:Enumeration",
+      "schema:name": "Vehicle Type",
+      "rdfs:comment": "Enumeration of vehicle types that can use the charging service.",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "deg:EvChargingService/v2.0/VehicleType2Wheeler"
+        },
+        {
+          "@id": "deg:EvChargingService/v2.0/VehicleType3Wheeler"
+        },
+        {
+          "@id": "deg:EvChargingService/v2.0/VehicleType4Wheeler"
+        }
+      ]
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/VehicleType2Wheeler",
+      "@type": [
+        "deg:EvChargingService/v2.0/VehicleType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "2-WHEELER",
+      "schema:identifier": "2-WHEELER"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/VehicleType3Wheeler",
+      "@type": [
+        "deg:EvChargingService/v2.0/VehicleType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "3-WHEELER",
+      "schema:identifier": "3-WHEELER"
+    },
+    {
+      "@id": "deg:EvChargingService/v2.0/VehicleType4Wheeler",
+      "@type": [
+        "deg:EvChargingService/v2.0/VehicleType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "4-WHEELER",
+      "schema:identifier": "4-WHEELER"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/ChargingSession",
+      "@type": "rdfs:Class",
+      "rdfs:label": "EV Charging Session",
+      "rdfs:comment": "A charging session for an electric vehicle"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/sessionStatus",
+      "@type": "rdf:Property",
+      "rdfs:label": "Session status",
+      "rdfs:comment": "High-level charging session state (PENDING, ACTIVE, COMPLETED, INTERRUPTED).",
+      "rdfs:domain": "deg:EvChargingSession/v2.0/ChargingSession",
+      "schema:rangeIncludes": "deg:EvChargingSession/v2.0/SessionStatus",
+      "owl:equivalentProperty": "beckn:fulfillmentStatus"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/connectorStatus",
+      "@type": "rdf:Property",
+      "rdfs:label": "Connector status",
+      "rdfs:comment": "Charging connector status (from OCPP status codes).",
+      "rdfs:domain": "deg:EvChargingSession/v2.0/ChargingSession",
+      "schema:rangeIncludes": "deg:EvChargingSession/v2.0/ConnectorStatus"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/buyerFinderFee",
+      "@type": "rdf:Property",
+      "rdfs:label": "Buyer finder fee",
+      "rdfs:comment": "Commission payable by provider to the BAP for this offer.",
+      "rdfs:domain": "deg:EvChargingSession/v2.0/ChargingSession",
+      "schema:rangeIncludes": "schema:PriceSpecification"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/connectorType",
+      "@type": "rdf:Property",
+      "rdfs:label": "Connector type",
+      "rdfs:comment": "Physical connector type supported by the EVSE/charger (e.g., CCS2, Type2, CHAdeMO, GB/T).",
+      "rdfs:domain": "deg:EvChargingSession/v2.0/ChargingSession",
+      "schema:rangeIncludes": "deg:EvChargingSession/v2.0/ConnectorType"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/maxPowerKW",
+      "@type": "rdf:Property",
+      "rdfs:label": "Maximum power (kW)",
+      "rdfs:comment": "Maximum charging power supported by the EVSE in kilowatts.",
+      "rdfs:domain": "deg:EvChargingSession/v2.0/ChargingSession",
+      "schema:rangeIncludes": "schema:Number"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/meteredEnergyKWh",
+      "@type": "rdf:Property",
+      "rdfs:label": "Metered energy (kWh)",
+      "rdfs:comment": "Energy dispensed during a charging session, in kilowatt-hours.",
+      "rdfs:domain": "deg:EvChargingSession/v2.0/ChargingSession",
+      "schema:rangeIncludes": "schema:Number"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/meteredDurationMinutes",
+      "@type": "rdf:Property",
+      "rdfs:label": "Metered duration (minutes)",
+      "rdfs:comment": "Duration of the charging session, in minutes.",
+      "rdfs:domain": "deg:EvChargingSession/v2.0/ChargingSession",
+      "schema:rangeIncludes": "schema:Number"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/chargingTelemetry",
+      "@type": "rdf:Property",
+      "rdfs:label": "Charging telemetry",
+      "rdfs:comment": "List of charging intervals with telemetry metrics (OCPI-style).",
+      "rdfs:domain": "deg:EvChargingSession/v2.0/ChargingSession",
+      "schema:rangeIncludes": "schema:ItemList"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/eventTime",
+      "@type": "rdf:Property",
+      "rdfs:label": "Event time",
+      "rdfs:comment": "Telemetry event timestamp (UTC).",
+      "rdfs:domain": "deg:EvChargingSession/v2.0/ChargingSession",
+      "schema:rangeIncludes": "schema:DateTime"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/metrics",
+      "@type": "rdf:Property",
+      "rdfs:label": "Metrics",
+      "rdfs:comment": "Array of telemetry metrics using schema.org QuantitativeValue (name, value, unitCode).",
+      "rdfs:domain": "deg:EvChargingSession/v2.0/ChargingSession",
+      "schema:rangeIncludes": [
+        "schema:QuantitativeValue",
+        "schema:ItemList"
+      ]
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/totalCost",
+      "@type": "rdf:Property",
+      "rdfs:label": "Total cost",
+      "rdfs:comment": "Total session cost as a price specification.",
+      "rdfs:domain": "deg:EvChargingSession/v2.0/ChargingSession",
+      "schema:rangeIncludes": "schema:PriceSpecification"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/exclVat",
+      "@type": "rdf:Property",
+      "rdfs:label": "Excl. VAT amount",
+      "rdfs:comment": "Total amount excluding VAT.",
+      "rdfs:domain": "deg:EvChargingSession/v2.0/ChargingSession",
+      "schema:rangeIncludes": "schema:Number"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/inclVat",
+      "@type": "rdf:Property",
+      "rdfs:label": "Incl. VAT amount",
+      "rdfs:comment": "Total amount including VAT.",
+      "rdfs:domain": "deg:EvChargingSession/v2.0/ChargingSession",
+      "schema:rangeIncludes": "schema:Number"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/reservationId",
+      "@type": "rdf:Property",
+      "rdfs:label": "Reservation ID",
+      "rdfs:comment": "Server-assigned reservation identifier for a scheduled session.",
+      "rdfs:domain": "deg:EvChargingSession/v2.0/ChargingSession",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/gracePeriodMinutes",
+      "@type": "rdf:Property",
+      "rdfs:label": "Grace period (minutes)",
+      "rdfs:comment": "Minutes allowed after scheduled start before releasing the slot.",
+      "rdfs:domain": "deg:EvChargingSession/v2.0/ChargingSession",
+      "schema:rangeIncludes": "schema:Integer"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/vehicleMake",
+      "@type": "rdf:Property",
+      "rdfs:label": "Vehicle make",
+      "rdfs:comment": "Vehicle make/brand recorded for the session.",
+      "rdfs:domain": "deg:EvChargingSession/v2.0/ChargingSession",
+      "schema:rangeIncludes": [
+        "schema:Brand",
+        "schema:Text"
+      ]
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/vehicleModel",
+      "@type": "rdf:Property",
+      "rdfs:label": "Vehicle model",
+      "rdfs:comment": "Vehicle model recorded for the session.",
+      "rdfs:domain": "deg:EvChargingSession/v2.0/ChargingSession",
+      "schema:rangeIncludes": "schema:Text"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/preferences",
+      "@type": "rdf:Property",
+      "rdfs:label": "Preferences",
+      "rdfs:comment": "Charging session preferences including time windows.",
+      "rdfs:domain": "deg:EvChargingSession/v2.0/ChargingSession",
+      "schema:rangeIncludes": "schema:Thing"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/SessionStatus",
+      "@type": "schema:Enumeration",
+      "schema:name": "Session Status",
+      "rdfs:comment": "Enumeration of supported charging session lifecycle states.",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "deg:EvChargingSession/v2.0/SessionStatusPending"
+        },
+        {
+          "@id": "deg:EvChargingSession/v2.0/SessionStatusActive"
+        },
+        {
+          "@id": "deg:EvChargingSession/v2.0/SessionStatusCompleted"
+        },
+        {
+          "@id": "deg:EvChargingSession/v2.0/SessionStatusInterrupted"
+        }
+      ]
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/SessionStatusPending",
+      "@type": [
+        "deg:EvChargingSession/v2.0/SessionStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PENDING",
+      "schema:identifier": "PENDING"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/SessionStatusActive",
+      "@type": [
+        "deg:EvChargingSession/v2.0/SessionStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ACTIVE",
+      "schema:identifier": "ACTIVE"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/SessionStatusCompleted",
+      "@type": [
+        "deg:EvChargingSession/v2.0/SessionStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "COMPLETED",
+      "schema:identifier": "COMPLETED"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/SessionStatusInterrupted",
+      "@type": [
+        "deg:EvChargingSession/v2.0/SessionStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "INTERRUPTED",
+      "schema:identifier": "INTERRUPTED"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/ConnectorStatus",
+      "@type": "schema:Enumeration",
+      "schema:name": "Connector Status",
+      "rdfs:comment": "Enumeration of charging connector statuses (from OCPP status codes).",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "deg:EvChargingSession/v2.0/ConnectorStatusAvailable"
+        },
+        {
+          "@id": "deg:EvChargingSession/v2.0/ConnectorStatusPreparing"
+        },
+        {
+          "@id": "deg:EvChargingSession/v2.0/ConnectorStatusUnavailable"
+        }
+      ]
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/ConnectorStatusAvailable",
+      "@type": [
+        "deg:EvChargingSession/v2.0/ConnectorStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "AVAILABLE",
+      "schema:identifier": "AVAILABLE"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/ConnectorStatusPreparing",
+      "@type": [
+        "deg:EvChargingSession/v2.0/ConnectorStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "PREPARING",
+      "schema:identifier": "PREPARING"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/ConnectorStatusUnavailable",
+      "@type": [
+        "deg:EvChargingSession/v2.0/ConnectorStatus",
+        "schema:Enumeration"
+      ],
+      "schema:name": "UNAVAILABLE",
+      "schema:identifier": "UNAVAILABLE"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/ConnectorType",
+      "@type": "schema:Enumeration",
+      "schema:name": "Connector Type",
+      "rdfs:comment": "Enumeration of electric vehicle connector interface types.",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "deg:EvChargingSession/v2.0/ConnectorTypeCCS2"
+        },
+        {
+          "@id": "deg:EvChargingSession/v2.0/ConnectorTypeType2"
+        },
+        {
+          "@id": "deg:EvChargingSession/v2.0/ConnectorTypeCHAdeMO"
+        },
+        {
+          "@id": "deg:EvChargingSession/v2.0/ConnectorTypeGBT"
+        }
+      ]
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/ConnectorTypeCCS2",
+      "@type": [
+        "deg:EvChargingSession/v2.0/ConnectorType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CCS2",
+      "schema:identifier": "CCS2"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/ConnectorTypeType2",
+      "@type": [
+        "deg:EvChargingSession/v2.0/ConnectorType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "Type2",
+      "schema:identifier": "Type2"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/ConnectorTypeCHAdeMO",
+      "@type": [
+        "deg:EvChargingSession/v2.0/ConnectorType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CHAdeMO",
+      "schema:identifier": "CHAdeMO"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/ConnectorTypeGBT",
+      "@type": [
+        "deg:EvChargingSession/v2.0/ConnectorType",
+        "schema:Enumeration"
+      ],
+      "schema:name": "GB/T",
+      "schema:identifier": "GB_T",
+      "schema:alternateName": "GB-T"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/TelemetryMetric",
+      "@type": "schema:Enumeration",
+      "schema:name": "Telemetry Metric",
+      "rdfs:comment": "Enumeration of telemetry metric names used in session telemetry.",
+      "schema:hasEnumerationMember": [
+        {
+          "@id": "deg:EvChargingSession/v2.0/TelemetryMetricEnergy"
+        },
+        {
+          "@id": "deg:EvChargingSession/v2.0/TelemetryMetricPower"
+        },
+        {
+          "@id": "deg:EvChargingSession/v2.0/TelemetryMetricCurrent"
+        },
+        {
+          "@id": "deg:EvChargingSession/v2.0/TelemetryMetricVoltage"
+        },
+        {
+          "@id": "deg:EvChargingSession/v2.0/TelemetryMetricStateOfCharge"
+        }
+      ]
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/TelemetryMetricEnergy",
+      "@type": [
+        "deg:EvChargingSession/v2.0/TelemetryMetric",
+        "schema:Enumeration"
+      ],
+      "schema:name": "ENERGY",
+      "schema:identifier": "ENERGY"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/TelemetryMetricPower",
+      "@type": [
+        "deg:EvChargingSession/v2.0/TelemetryMetric",
+        "schema:Enumeration"
+      ],
+      "schema:name": "POWER",
+      "schema:identifier": "POWER"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/TelemetryMetricCurrent",
+      "@type": [
+        "deg:EvChargingSession/v2.0/TelemetryMetric",
+        "schema:Enumeration"
+      ],
+      "schema:name": "CURRENT",
+      "schema:identifier": "CURRENT"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/TelemetryMetricVoltage",
+      "@type": [
+        "deg:EvChargingSession/v2.0/TelemetryMetric",
+        "schema:Enumeration"
+      ],
+      "schema:name": "VOLTAGE",
+      "schema:identifier": "VOLTAGE"
+    },
+    {
+      "@id": "deg:EvChargingSession/v2.0/TelemetryMetricStateOfCharge",
+      "@type": [
+        "deg:EvChargingSession/v2.0/TelemetryMetric",
+        "schema:Enumeration"
+      ],
+      "schema:name": "STATE_OF_CHARGE",
+      "schema:identifier": "STATE_OF_CHARGE",
+      "schema:alternateName": "SOC"
     }
   ]
 }

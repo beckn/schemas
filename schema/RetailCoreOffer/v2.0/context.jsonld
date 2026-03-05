@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "beckn": "https://schema.beckn.io/",
+    "schema": "https://schema.org/",
+    "RetailCoreOfferAttributes": "beckn:RetailCoreOfferAttributes",
+    "policies": "beckn:policies",
+    "returns": "beckn:returns",
+    "cancellation": "beckn:cancellation",
+    "replacement": "beckn:replacement",
+    "allowed": "beckn:allowed",
+    "window": "beckn:window",
+    "method": "beckn:method",
+    "restockingFee": "beckn:restockingFee",
+    "fee": "beckn:fee",
+    "conditions": "schema:description",
+    "cutoffEvent": "beckn:cutoffEvent",
+    "subjectToAvailability": "beckn:subjectToAvailability",
+    "serviceability": "beckn:serviceability",
+    "distanceConstraint": "beckn:distanceConstraint",
+    "maxDistance": "beckn:maxDistance",
+    "unit": "schema:unitText",
+    "OperatingSchedule": "beckn:OperatingSchedule",
+    "daysOfWeek": "schema:dayOfWeek",
+    "timeRange": "beckn:timeRange",
+    "holidays": "schema:date"
+  }
+}

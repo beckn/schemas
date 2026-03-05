@@ -1,0 +1,43 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:HomeAndKitchenItemAttributes",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Home And Kitchen Item Attributes",
+      "rdfs:comment": "Home & Kitchen-specific extensions to RetailCoreItemAttributes. Covers care, installation and usage environment guidance."
+    },
+    {
+      "@id": "beckn:installation",
+      "@type": "schema:Property",
+      "rdfs:label": "Installation",
+      "rdfs:comment": "Installation requirements and support information."
+    },
+    {
+      "@id": "beckn:installationRequired",
+      "@type": "schema:Property",
+      "rdfs:label": "Installation Required",
+      "rdfs:comment": "Whether professional installation is required."
+    },
+    {
+      "@id": "beckn:installationProvidedBySeller",
+      "@type": "schema:Property",
+      "rdfs:label": "Installation Provided By Seller",
+      "rdfs:comment": "Whether seller provides installation."
+    },
+    {
+      "@id": "beckn:usage",
+      "@type": "schema:Property",
+      "rdfs:label": "Usage",
+      "rdfs:comment": "Usage environment or compatibility constraints."
+    }
+  ]
+}

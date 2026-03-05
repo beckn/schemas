@@ -47,5 +47,8 @@ package-lock.json
 # Local working documents (gitignored by design)
 PLAN.md
 
+# Local issue logs
+Issues/
+
 # Migration artefacts (keep scripts but ignore generated log)
 scripts/migration-log.json
