@@ -27,12 +27,11 @@ sources:
   # ── Beckn Core Schema Registry (internal) ────────────────────────────────────
   # This repo. Contains core protocol schemas plus domain schemas for mobility,
   # logistics, and retail. All schemas carry x-tags per domain.
-  - id: beckn-core-v2
+  - inamespace: https://schema.beckn.io
     schemaPath: https://github.com/beckn/core_schema/tree/draft-preview/schema
     description: >-
       Beckn Core Schema Registry. Contains core protocol schemas plus domain schemas
       for mobility, logistics, and retail. Schemas are tagged per-domain via x-tags.
-    namespace: https://schema.beckn.io
     tags:
       - common
       - mobility
@@ -42,13 +41,11 @@ sources:
   # ── Digital Energy Grid (external) ───────────────────────────────────────────
   # DEG maintains its own schemas in their GitHub repo. schema.beckn.io indexes
   # them via this entry. DEG schemas use OpenAPI components.schemas format.
-  - id: beckn-deg-v1
+  - namespace: https://schema.beckn.io
     type: external
     schemaPath: https://github.com/beckn/DEG/tree/draft-preview/specification/schema
     description: >-
       Digital Energy Grid domain schemas for P2P energy trading, EV charging,
-      and energy grid management. Maintained by the DEG team at FIDE / IEA.
-    namespace: https://schema.beckn.io
     tags:
       - energy
       - ev-charging
