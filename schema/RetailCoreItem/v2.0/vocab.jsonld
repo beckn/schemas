@@ -1,0 +1,115 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:RetailCoreItemAttributes",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Retail Core Item Attributes",
+      "rdfs:comment": "TODO: Description Needed - RetailCoreItemAttributes"
+    },
+    {
+      "@id": "beckn:identity",
+      "@type": "schema:Property",
+      "rdfs:label": "Identity",
+      "rdfs:comment": "TODO: Description Needed - identity"
+    },
+    {
+      "@id": "beckn:physical",
+      "@type": "schema:Property",
+      "rdfs:label": "Physical",
+      "rdfs:comment": "TODO: Description Needed - physical"
+    },
+    {
+      "@id": "beckn:dimensions",
+      "@type": "schema:Property",
+      "rdfs:label": "Dimensions",
+      "rdfs:comment": "Physical dimensions expressed using a single unit."
+    },
+    {
+      "@id": "beckn:appearance",
+      "@type": "schema:Property",
+      "rdfs:label": "Appearance",
+      "rdfs:comment": "TODO: Description Needed - appearance"
+    },
+    {
+      "@id": "beckn:finish",
+      "@type": "schema:Property",
+      "rdfs:label": "Finish",
+      "rdfs:comment": "TODO: Description Needed - finish"
+    },
+    {
+      "@id": "beckn:food",
+      "@type": "schema:Property",
+      "rdfs:label": "Food",
+      "rdfs:comment": "TODO: Description Needed - food"
+    },
+    {
+      "@id": "beckn:foodClassification",
+      "@type": "schema:Property",
+      "rdfs:label": "Food Classification",
+      "rdfs:comment": "TODO: Description Needed - foodClassification"
+    },
+    {
+      "@id": "beckn:packagedGoodsDeclaration",
+      "@type": "schema:Property",
+      "rdfs:label": "Packaged Goods Declaration",
+      "rdfs:comment": "Jurisdiction-neutral packaged goods declaration."
+    },
+    {
+      "@id": "beckn:manufacturerOrPacker",
+      "@type": "schema:Property",
+      "rdfs:label": "Manufacturer Or Packer",
+      "rdfs:comment": "TODO: Description Needed - manufacturerOrPacker"
+    },
+    {
+      "@id": "beckn:manufacturePackingImportDate",
+      "@type": "schema:Property",
+      "rdfs:label": "Manufacture Packing Import Date",
+      "rdfs:comment": "TODO: Description Needed - manufacturePackingImportDate"
+    },
+    {
+      "@id": "beckn:foodRegulatoryDeclaration",
+      "@type": "schema:Property",
+      "rdfs:label": "Food Regulatory Declaration",
+      "rdfs:comment": "Jurisdiction-neutral food regulatory declarations."
+    },
+    {
+      "@id": "beckn:registrations",
+      "@type": "schema:Property",
+      "rdfs:label": "Registrations",
+      "rdfs:comment": "TODO: Description Needed - registrations"
+    },
+    {
+      "@id": "beckn:scheme",
+      "@type": "schema:Property",
+      "rdfs:label": "Scheme",
+      "rdfs:comment": "TODO: Description Needed - scheme"
+    },
+    {
+      "@id": "beckn:role",
+      "@type": "schema:Property",
+      "rdfs:label": "Role",
+      "rdfs:comment": "TODO: Description Needed - role"
+    },
+    {
+      "@id": "beckn:additives",
+      "@type": "schema:Property",
+      "rdfs:label": "Additives",
+      "rdfs:comment": "TODO: Description Needed - additives"
+    },
+    {
+      "@id": "beckn:credentials",
+      "@type": "schema:Property",
+      "rdfs:label": "Credentials",
+      "rdfs:comment": "External verifiable credentials or attestations."
+    }
+  ]
+}

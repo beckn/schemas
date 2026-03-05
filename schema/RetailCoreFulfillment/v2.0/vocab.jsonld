@@ -1,0 +1,79 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:RetailCoreFulfillmentAttributes",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Retail Core Fulfillment Attributes",
+      "rdfs:comment": "Retail-specific fulfillment attributes extending Beckn core Fulfillment. Covers delivery endpoint, operating schedule, SLA semantics and handling constraints."
+    },
+    {
+      "@id": "beckn:supportedFulfillmentTypes",
+      "@type": "schema:Property",
+      "rdfs:label": "Supported Fulfillment Types",
+      "rdfs:comment": "TODO: Description Needed - supportedFulfillmentTypes"
+    },
+    {
+      "@id": "beckn:deliveryDetails",
+      "@type": "schema:Property",
+      "rdfs:label": "Delivery Details",
+      "rdfs:comment": "Delivery endpoint details for DELIVERY fulfillment type."
+    },
+    {
+      "@id": "beckn:OperatingSchedule",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Operating Schedule",
+      "rdfs:comment": "TODO: Description Needed - OperatingSchedule"
+    },
+    {
+      "@id": "beckn:timeRange",
+      "@type": "schema:Property",
+      "rdfs:label": "Time Range",
+      "rdfs:comment": "TODO: Description Needed - timeRange"
+    },
+    {
+      "@id": "beckn:closures",
+      "@type": "schema:Property",
+      "rdfs:label": "Closures",
+      "rdfs:comment": "Explicit closure periods overriding operatingHours."
+    },
+    {
+      "@id": "beckn:sla",
+      "@type": "schema:Property",
+      "rdfs:label": "Sla",
+      "rdfs:comment": "Service level agreement for fulfillment. Indicates expected time bounds from defined lifecycle event."
+    },
+    {
+      "@id": "beckn:minDuration",
+      "@type": "schema:Property",
+      "rdfs:label": "Min Duration",
+      "rdfs:comment": "Minimum fulfillment time (ISO 8601 duration)."
+    },
+    {
+      "@id": "beckn:maxDuration",
+      "@type": "schema:Property",
+      "rdfs:label": "Max Duration",
+      "rdfs:comment": "Maximum fulfillment time (ISO 8601 duration)."
+    },
+    {
+      "@id": "beckn:unitBasis",
+      "@type": "schema:Property",
+      "rdfs:label": "Unit Basis",
+      "rdfs:comment": "Lifecycle event from which SLA is measured."
+    },
+    {
+      "@id": "beckn:handling",
+      "@type": "schema:Property",
+      "rdfs:label": "Handling",
+      "rdfs:comment": "TODO: Description Needed - handling"
+    }
+  ]
+}

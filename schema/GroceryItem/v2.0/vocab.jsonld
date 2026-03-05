@@ -1,0 +1,37 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:GroceryItemAttributes",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Grocery Item Attributes",
+      "rdfs:comment": "Grocery-specific extensions to RetailCoreItemAttributes. Covers nutrition information and fresh produce declarations."
+    },
+    {
+      "@id": "beckn:nutrition",
+      "@type": "schema:Property",
+      "rdfs:label": "Nutrition",
+      "rdfs:comment": "Nutrition facts per serving or per 100g/100ml. Context of measurement may be specified via unit."
+    },
+    {
+      "@id": "beckn:freshProduce",
+      "@type": "schema:Property",
+      "rdfs:label": "Fresh Produce",
+      "rdfs:comment": "Additional declaration applicable for unpackaged or loose produce."
+    },
+    {
+      "@id": "beckn:netQuantityDeclaration",
+      "@type": "schema:Property",
+      "rdfs:label": "Net Quantity Declaration",
+      "rdfs:comment": "Declared weight/quantity information for loose produce."
+    }
+  ]
+}
