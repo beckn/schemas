@@ -1,18 +1,35 @@
-# MediaSearchOptions
+# Media Search Options
 
-Options for a media search.
+> **Canonical IRI:** [`https://schema.beckn.io/MediaSearchOptions`](https://schema.beckn.io/MediaSearchOptions)
+> **Tags:** `common`
+> **Namespace:** `https://schema.beckn.io/`
+> Part of the [Beckn Protocol Core Schema](../../README.md)
 
-This schema is part of the [Beckn Protocol Core Schema](../../README.md) library (v2.0).
+---
+
+How the discovery engine should use the provided media inputs.
 
 ## Versions
 
-| Version | Path | Description |
-|---------|------|-------------|
-| v2.0 | [v2.0/](./v2.0/) | Initial release — OpenAPI 3.1.1 attribute definition |
+| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
+|---------|----------------|----------------|--------------|--------|
+| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
 
-## Related root files
+## Properties (latest: v2.0)
 
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../context.jsonld) | Root JSON-LD context (all schemas) |
-| [schema/vocab.jsonld](../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| Property | Type | Required | Description |
+|----------|------|:--------:|-------------|
+| `goals` | string[] | — | Desired processing goals for the media. |
+| `augmentTextSearch` | `boolean` | — | Whether to append extracted text from OCR/ASR to `textSearch`. |
+| `restrictResultsToMediaProximity` | `boolean` | — | Restrict results to spatial proximity of media-derived coordinates (e.g., EXIF GPS tags). |
+
+## Linked Data
+
+| Resource | URL |
+|----------|-----|
+| Canonical IRI | `https://schema.beckn.io/MediaSearchOptions` |
+| JSON Schema (latest) | `https://schema.beckn.io/MediaSearchOptions/2.0` |
+| context.jsonld (latest) | `https://schema.beckn.io/MediaSearchOptions/2.0/context.jsonld` |
+| vocab.jsonld (latest) | `https://schema.beckn.io/MediaSearchOptions/2.0/vocab.jsonld` |
+| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
+| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |

@@ -1,18 +1,36 @@
-# GeoJSONGeometry
+# Geo JSON Geometry
 
-A GeoJSON geometry object (Point, Polygon, etc.).
+> **Canonical IRI:** [`https://schema.beckn.io/GeoJSONGeometry`](https://schema.beckn.io/GeoJSONGeometry)
+> **Tags:** `common`
+> **Namespace:** `https://schema.beckn.io/`
+> Part of the [Beckn Protocol Core Schema](../../README.md)
 
-This schema is part of the [Beckn Protocol Core Schema](../../README.md) library (v2.0).
+---
+
+**GeoJSON geometry** per RFC 7946. Coordinates are in **EPSG:4326 (WGS-84)** and MUST follow **[longitude, latitude, (altitude?)]** order. Supported types: - Point, LineString, Polygon - MultiPoint, MultiLineString, MultiPolygon - GeometryCollection (uses `geometries` instead of `coordinates`) Notes: - For rectangles, use a Polygon with a single linear ring where the first and last positions are identical. - Circles are **not native** to GeoJSON. For circular searches, use `SpatialConstraint` with `op: s_dwithin` and a Point + `distanceMeters`, or approximate the circle as a Polygon. - Optional `bbox` is `[west, south, east, north]` in degrees.
 
 ## Versions
 
-| Version | Path | Description |
-|---------|------|-------------|
-| v2.0 | [v2.0/](./v2.0/) | Initial release — OpenAPI 3.1.1 attribute definition |
+| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
+|---------|----------------|----------------|--------------|--------|
+| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
 
-## Related root files
+## Properties (latest: v2.0)
 
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../context.jsonld) | Root JSON-LD context (all schemas) |
-| [schema/vocab.jsonld](../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| Property | Type | Required | Description |
+|----------|------|:--------:|-------------|
+| `bbox` | any[] | — | Optional bounding box `[west, south, east, north]` in degrees. |
+| `coordinates` | any[] | — | Coordinates per RFC 7946 for all types **except** GeometryCollection. Order is **[lon, lat, (alt)]**. For Polygons, this is an array of linear ring… |
+| `geometries` | any[] | — | Member geometries when `type` is **GeometryCollection**. |
+| `type` | `string` | ✅ | — |
+
+## Linked Data
+
+| Resource | URL |
+|----------|-----|
+| Canonical IRI | `https://schema.beckn.io/GeoJSONGeometry` |
+| JSON Schema (latest) | `https://schema.beckn.io/GeoJSONGeometry/2.0` |
+| context.jsonld (latest) | `https://schema.beckn.io/GeoJSONGeometry/2.0/context.jsonld` |
+| vocab.jsonld (latest) | `https://schema.beckn.io/GeoJSONGeometry/2.0/vocab.jsonld` |
+| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
+| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |

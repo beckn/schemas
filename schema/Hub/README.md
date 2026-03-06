@@ -1,16 +1,27 @@
 # Hub
 
-## Overview
-A **Hub** is a logistics fulfillment center, sorting facility, or distribution point where goods are consolidated, sorted, and dispatched.
+> **Canonical IRI:** [`https://schema.beckn.io/Hub`](https://schema.beckn.io/Hub)
+> **Tags:** `logistics`
+> **Namespace:** `https://schema.beckn.io/`
+> Part of the [Beckn Protocol Core Schema](../../README.md)
 
-## IRI
-`https://schema.beckn.org/logistics/Hub`
+---
 
-## Types
-- FULFILLMENT_CENTER: E-commerce warehouse
-- SORTING_HUB: Package sorting facility
-- DARK_STORE: Quick commerce inventory point
-- LAST_MILE_HUB: Final delivery dispatch center
+The `Hub` schema object.
 
-## Version
-Current version: **v2.0** — [v2.0/attributes.yaml](./v2.0/attributes.yaml)
+## Versions
+
+| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
+|---------|----------------|----------------|--------------|--------|
+| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
+
+## Linked Data
+
+| Resource | URL |
+|----------|-----|
+| Canonical IRI | `https://schema.beckn.io/Hub` |
+| JSON Schema (latest) | `https://schema.beckn.io/Hub/2.0` |
+| context.jsonld (latest) | `https://schema.beckn.io/Hub/2.0/context.jsonld` |
+| vocab.jsonld (latest) | `https://schema.beckn.io/Hub/2.0/vocab.jsonld` |
+| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
+| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |

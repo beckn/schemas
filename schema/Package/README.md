@@ -1,27 +1,27 @@
 # Package
 
-## Overview
-The **Package** entity describes a physical unit of goods prepared for transport. Each shipment may contain one or more packages with distinct weights, dimensions, and handling requirements.
+> **Canonical IRI:** [`https://schema.beckn.io/Package`](https://schema.beckn.io/Package)
+> **Tags:** `logistics`
+> **Namespace:** `https://schema.beckn.io/`
+> Part of the [Beckn Protocol Core Schema](../../README.md)
 
-## IRI
-`https://schema.beckn.org/logistics/Package`
+---
 
-## Beckn Core Mapping
-| Logistics Concept | Beckn Core | Relationship |
-|---|---|---|
-| Package | Item | `owl:equivalentClass` |
+The `Package` schema object.
 
-## Key Attributes
-| Attribute | Type | Description |
-|---|---|---|
-| id | string | Unique package ID |
-| weight | object | Weight with unit |
-| dimensions | object | L x W x H |
-| fragile | boolean | Fragile handling flag |
-| hazardous | boolean | Hazardous material flag |
-| declaredValue | object | Insured value |
-| packageType | enum | BOX / ENVELOPE / PALLET etc. |
-| temperatureControl | object | Cold chain requirements |
+## Versions
 
-## Version
-Current version: **v2.0** — [v2.0/attributes.yaml](./v2.0/attributes.yaml)
+| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
+|---------|----------------|----------------|--------------|--------|
+| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
+
+## Linked Data
+
+| Resource | URL |
+|----------|-----|
+| Canonical IRI | `https://schema.beckn.io/Package` |
+| JSON Schema (latest) | `https://schema.beckn.io/Package/2.0` |
+| context.jsonld (latest) | `https://schema.beckn.io/Package/2.0/context.jsonld` |
+| vocab.jsonld (latest) | `https://schema.beckn.io/Package/2.0/vocab.jsonld` |
+| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
+| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |

@@ -1,16 +1,27 @@
-# DeliverySlot
+# Delivery Slot
 
-## Overview
-A **DeliverySlot** defines the time window for delivery of a shipment to the consignee. Slots are critical for hyperlocal and express deliveries.
+> **Canonical IRI:** [`https://schema.beckn.io/DeliverySlot`](https://schema.beckn.io/DeliverySlot)
+> **Tags:** `logistics`
+> **Namespace:** `https://schema.beckn.io/`
+> Part of the [Beckn Protocol Core Schema](../../README.md)
 
-## IRI
-`https://schema.beckn.org/logistics/DeliverySlot`
+---
 
-## Slot Types
-- EXPRESS_1HR: 1-hour guaranteed delivery
-- EXPRESS_2HR: 2-hour guaranteed delivery  
-- MORNING / AFTERNOON / EVENING: Standard day-part slots
-- NEXT_DAY: Next business day delivery
+The `DeliverySlot` schema object.
 
-## Version
-Current version: **v2.0** — [v2.0/attributes.yaml](./v2.0/attributes.yaml)
+## Versions
+
+| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
+|---------|----------------|----------------|--------------|--------|
+| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
+
+## Linked Data
+
+| Resource | URL |
+|----------|-----|
+| Canonical IRI | `https://schema.beckn.io/DeliverySlot` |
+| JSON Schema (latest) | `https://schema.beckn.io/DeliverySlot/2.0` |
+| context.jsonld (latest) | `https://schema.beckn.io/DeliverySlot/2.0/context.jsonld` |
+| vocab.jsonld (latest) | `https://schema.beckn.io/DeliverySlot/2.0/vocab.jsonld` |
+| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
+| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |

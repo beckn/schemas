@@ -1,40 +1,27 @@
 # Shipment
 
-## Overview
+> **Canonical IRI:** [`https://schema.beckn.io/Shipment`](https://schema.beckn.io/Shipment)
+> **Tags:** `logistics`
+> **Namespace:** `https://schema.beckn.io/`
+> Part of the [Beckn Protocol Core Schema](../../README.md)
 
-The **Shipment** entity is the core fulfillment object in the Beckn Logistics domain. It represents the complete lifecycle of moving goods from a pickup point to a delivery destination.
+---
 
-## IRI
-`https://schema.beckn.org/logistics/Shipment`
+The `Shipment` schema object.
 
-## Beckn Core Mapping
-| Logistics Concept | Beckn Core | Relationship |
-|---|---|---|
-| Shipment | Fulfillment | `owl:equivalentClass` |
-| Shipment | Order | `skos:broadMatch` |
+## Versions
 
-## Use Cases
-- Hyperlocal Delivery: A grocery delivery from a dark store to a customer within 30 minutes
-- Courier: A parcel booked for next-day delivery
-- Interstate: A cargo consignment moving across state borders
-- Long Haul: A truck-load shipment from Mumbai to Delhi
-- Express: A time-critical document requiring same-day guaranteed delivery
+| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
+|---------|----------------|----------------|--------------|--------|
+| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
 
-## Key Attributes
-| Attribute | Type | Description |
-|---|---|---|
-| id | string | Unique shipment identifier |
-| trackingId | string | Public tracking number |
-| status | enum | Current shipment status |
-| origin | Place | Pickup location |
-| destination | Place | Delivery location |
-| serviceType | enum | HYPERLOCAL / COURIER / INTERSTATE / LONG_HAUL / EXPRESS |
-| estimatedDelivery | dateTime | EDD |
-| driver | Driver | Assigned driver |
-| vehicle | Vehicle | Assigned vehicle |
+## Linked Data
 
-## Version
-Current version: **v2.0**
-
-## Schema File
-[v2.0/attributes.yaml](./v2.0/attributes.yaml)
+| Resource | URL |
+|----------|-----|
+| Canonical IRI | `https://schema.beckn.io/Shipment` |
+| JSON Schema (latest) | `https://schema.beckn.io/Shipment/2.0` |
+| context.jsonld (latest) | `https://schema.beckn.io/Shipment/2.0/context.jsonld` |
+| vocab.jsonld (latest) | `https://schema.beckn.io/Shipment/2.0/vocab.jsonld` |
+| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
+| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |

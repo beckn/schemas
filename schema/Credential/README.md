@@ -1,18 +1,27 @@
 # Credential
 
-A verifiable credential or certificate.
+> **Canonical IRI:** [`https://schema.beckn.io/Credential`](https://schema.beckn.io/Credential)
+> **Tags:** `common`
+> **Namespace:** `https://schema.beckn.io/`
+> Part of the [Beckn Protocol Core Schema](../../README.md)
 
-This schema is part of the [Beckn Protocol Core Schema](../../README.md) library (v2.0).
+---
+
+A credential artifact that is either (a) a W3C Verifiable Credential (opaque JSON object) or (b) a document attachment reference requiring manual/offline verification.
 
 ## Versions
 
-| Version | Path | Description |
-|---------|------|-------------|
-| v2.0 | [v2.0/](./v2.0/) | Initial release — OpenAPI 3.1.1 attribute definition |
+| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
+|---------|----------------|----------------|--------------|--------|
+| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
 
-## Related root files
+## Linked Data
 
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../context.jsonld) | Root JSON-LD context (all schemas) |
-| [schema/vocab.jsonld](../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| Resource | URL |
+|----------|-----|
+| Canonical IRI | `https://schema.beckn.io/Credential` |
+| JSON Schema (latest) | `https://schema.beckn.io/Credential/2.0` |
+| context.jsonld (latest) | `https://schema.beckn.io/Credential/2.0/context.jsonld` |
+| vocab.jsonld (latest) | `https://schema.beckn.io/Credential/2.0/vocab.jsonld` |
+| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
+| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |

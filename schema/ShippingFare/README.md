@@ -1,13 +1,27 @@
-# Fare
+# Shipping Fare
 
-## Overview
-**Fare** represents the total cost of a logistics service, including base freight, surcharges, taxes, and discounts.
+> **Canonical IRI:** [`https://schema.beckn.io/ShippingFare`](https://schema.beckn.io/ShippingFare)
+> **Tags:** `logistics`
+> **Namespace:** `https://schema.beckn.io/`
+> Part of the [Beckn Protocol Core Schema](../../README.md)
 
-## IRI
-`https://schema.beckn.org/logistics/Fare`
+---
 
-## Fare Components
-- Base Freight, Fuel Surcharge, ODA Surcharge, COD Charge, Insurance, GST, Discount
+The `ShippingFare` schema object.
 
-## Version
-Current version: **v2.0** — [v2.0/attributes.yaml](./v2.0/attributes.yaml)
+## Versions
+
+| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
+|---------|----------------|----------------|--------------|--------|
+| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
+
+## Linked Data
+
+| Resource | URL |
+|----------|-----|
+| Canonical IRI | `https://schema.beckn.io/ShippingFare` |
+| JSON Schema (latest) | `https://schema.beckn.io/ShippingFare/2.0` |
+| context.jsonld (latest) | `https://schema.beckn.io/ShippingFare/2.0/context.jsonld` |
+| vocab.jsonld (latest) | `https://schema.beckn.io/ShippingFare/2.0/vocab.jsonld` |
+| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
+| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |

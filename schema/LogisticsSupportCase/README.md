@@ -1,13 +1,27 @@
-# SupportCase
+# Logistics Support Case
 
-## Overview
-**SupportCase** is a customer support ticket raised for shipment issues such as loss, damage, delay, billing disputes, or driver misconduct.
+> **Canonical IRI:** [`https://schema.beckn.io/LogisticsSupportCase`](https://schema.beckn.io/LogisticsSupportCase)
+> **Tags:** `logistics`
+> **Namespace:** `https://schema.beckn.io/`
+> Part of the [Beckn Protocol Core Schema](../../README.md)
 
-## IRI
-`https://schema.beckn.org/logistics/SupportCase`
+---
 
-## Issue Types
-- SHIPMENT_LOST, SHIPMENT_DAMAGED, DELIVERY_DELAYED, BILLING_DISPUTE, DRIVER_MISCONDUCT
+The `LogisticsSupportCase` schema object.
 
-## Version
-Current version: **v2.0** — [v2.0/attributes.yaml](./v2.0/attributes.yaml)
+## Versions
+
+| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
+|---------|----------------|----------------|--------------|--------|
+| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
+
+## Linked Data
+
+| Resource | URL |
+|----------|-----|
+| Canonical IRI | `https://schema.beckn.io/LogisticsSupportCase` |
+| JSON Schema (latest) | `https://schema.beckn.io/LogisticsSupportCase/2.0` |
+| context.jsonld (latest) | `https://schema.beckn.io/LogisticsSupportCase/2.0/context.jsonld` |
+| vocab.jsonld (latest) | `https://schema.beckn.io/LogisticsSupportCase/2.0/vocab.jsonld` |
+| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
+| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |

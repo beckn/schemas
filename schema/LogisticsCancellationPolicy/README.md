@@ -1,10 +1,27 @@
-# CancellationPolicy
+# Logistics Cancellation Policy
 
-## Overview
-**CancellationPolicy** defines the terms and charges for cancelling a shipment booking at various stages of the fulfillment lifecycle.
+> **Canonical IRI:** [`https://schema.beckn.io/LogisticsCancellationPolicy`](https://schema.beckn.io/LogisticsCancellationPolicy)
+> **Tags:** `logistics`
+> **Namespace:** `https://schema.beckn.io/`
+> Part of the [Beckn Protocol Core Schema](../../README.md)
 
-## IRI
-`https://schema.beckn.org/logistics/CancellationPolicy`
+---
 
-## Version
-Current version: **v2.0** — [v2.0/attributes.yaml](./v2.0/attributes.yaml)
+The `LogisticsCancellationPolicy` schema object.
+
+## Versions
+
+| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
+|---------|----------------|----------------|--------------|--------|
+| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
+
+## Linked Data
+
+| Resource | URL |
+|----------|-----|
+| Canonical IRI | `https://schema.beckn.io/LogisticsCancellationPolicy` |
+| JSON Schema (latest) | `https://schema.beckn.io/LogisticsCancellationPolicy/2.0` |
+| context.jsonld (latest) | `https://schema.beckn.io/LogisticsCancellationPolicy/2.0/context.jsonld` |
+| vocab.jsonld (latest) | `https://schema.beckn.io/LogisticsCancellationPolicy/2.0/vocab.jsonld` |
+| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
+| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |

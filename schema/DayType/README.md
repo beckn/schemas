@@ -1,49 +1,27 @@
-# DayType
+# Day Type
 
-A schema.beckn.io Type
+> **Canonical IRI:** [`https://schema.beckn.io/DayType`](https://schema.beckn.io/DayType)
+> **Tags:** `mobility`
+> **Namespace:** `https://schema.beckn.io/`
+> Part of the [Beckn Protocol Core Schema](../../README.md)
 
-A classification of a day (e.g., weekday, weekend, public holiday) used to define when a service pattern is valid.
+---
 
-**Canonical IRI :** `mobility:DayType`
+The `DayType` schema object.
 
-**Canonical URL:** https://schema.beckn.io/mobility/DayType
+## Versions
 
-**Related Classes:**
+| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
+|---------|----------------|----------------|--------------|--------|
+| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
 
-| Type | Relationship | Strength |
-|------|--------------|----------|
-| [beckn:TimePeriod](https://github.com/beckn/core_schema/tree/draft/schema/TimePeriod) | rdfs:subClassOf | Subclass |
-| [schema:DayOfWeek](https://schema.org/DayOfWeek) | rdfs:seeAlso | Related |
+## Linked Data
 
-## Open Issues
-
-[Open issues](https://github.com/beckn/mobility/issues)
-
-## Properties
-
-| Property | Expected Type | Description |
-|---|---|---|
-| **[Properties from DayType](https://schema.beckn.io/mobility/DayType)** | | |
-| [dayTypeCode](https://schema.beckn.io/mobility/dayTypeCode) | [schema:Text](https://schema.org/Text) | Code identifying the day type (e.g. WEEKDAY, WEEKEND, HOLIDAY) |
-| [daysOfWeek](https://schema.beckn.io/mobility/daysOfWeek) | [schema:ItemList](https://schema.org/ItemList) | List of days of the week applicable to this day type |
-| **[Properties from TimePeriod](https://github.com/beckn/core_schema/tree/draft/schema/TimePeriod)** | | |
-| [startDate](https://schema.beckn.io/core/startDate) | [schema:DateTime](https://schema.org/DateTime) | Start date and time of the period |
-| [endDate](https://schema.beckn.io/core/endDate) | [schema:DateTime](https://schema.org/DateTime) | End date and time of the period |
-| [startTime](https://schema.beckn.io/core/startTime) | [schema:Text](https://schema.org/Text) | Start time of day in HH:MM:SS format |
-| [endTime](https://schema.beckn.io/core/endTime) | [schema:Text](https://schema.org/Text) | End time of day in HH:MM:SS format |
-
-## Example
-
-[Insert brief description of the example]
-
-```json
-[Insert Example JSON-LD]
-```
-
-## Example Beckn Protocol Requests Payload using this Schema
-
-> [Brief description of the request with container schema, core schema, and mobility bindings]
-
-```json
-[Insert Example JSON-LD]
-```
+| Resource | URL |
+|----------|-----|
+| Canonical IRI | `https://schema.beckn.io/DayType` |
+| JSON Schema (latest) | `https://schema.beckn.io/DayType/2.0` |
+| context.jsonld (latest) | `https://schema.beckn.io/DayType/2.0/context.jsonld` |
+| vocab.jsonld (latest) | `https://schema.beckn.io/DayType/2.0/vocab.jsonld` |
+| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
+| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |

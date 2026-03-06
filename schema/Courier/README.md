@@ -1,15 +1,27 @@
 # Courier
 
-## Overview
-A **Courier** is a last-mile delivery agent who picks up and delivers packages to end consumers. Couriers are typically assigned to hyperlocal, urban, and express delivery use cases.
+> **Canonical IRI:** [`https://schema.beckn.io/Courier`](https://schema.beckn.io/Courier)
+> **Tags:** `logistics`
+> **Namespace:** `https://schema.beckn.io/`
+> Part of the [Beckn Protocol Core Schema](../../README.md)
 
-## IRI
-`https://schema.beckn.org/logistics/Courier`
+---
 
-## Use Cases
-- Hyperlocal Delivery: Grocery, food, or medicine delivery within a city
-- Express: Priority document or parcel delivery
-- Courier: B2C parcel last mile
+The `Courier` schema object.
 
-## Version
-Current version: **v2.0** — [v2.0/attributes.yaml](./v2.0/attributes.yaml)
+## Versions
+
+| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
+|---------|----------------|----------------|--------------|--------|
+| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
+
+## Linked Data
+
+| Resource | URL |
+|----------|-----|
+| Canonical IRI | `https://schema.beckn.io/Courier` |
+| JSON Schema (latest) | `https://schema.beckn.io/Courier/2.0` |
+| context.jsonld (latest) | `https://schema.beckn.io/Courier/2.0/context.jsonld` |
+| vocab.jsonld (latest) | `https://schema.beckn.io/Courier/2.0/vocab.jsonld` |
+| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
+| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |

@@ -1,24 +1,27 @@
-# Driver
+# Logistics Driver
 
-## Overview
-A **Driver** is an individual who operates a vehicle for logistics delivery. Drivers are assigned shipments and are responsible for pickup, transit, and delivery.
+> **Canonical IRI:** [`https://schema.beckn.io/LogisticsDriver`](https://schema.beckn.io/LogisticsDriver)
+> **Tags:** `logistics`
+> **Namespace:** `https://schema.beckn.io/`
+> Part of the [Beckn Protocol Core Schema](../../README.md)
 
-## IRI
-`https://schema.beckn.org/logistics/Driver`
+---
 
-## Use Cases
-- All logistics use cases: Hyperlocal, Courier, Interstate, Long Haul, Express
+The `LogisticsDriver` schema object.
 
-## Key Attributes
-| Attribute | Type | Description |
-|---|---|---|
-| id | string | Unique driver ID |
-| name | string | Driver full name |
-| licenseNumber | string | Driving license |
-| rating | number | Average driver rating |
-| currentLocation | object | Real-time GPS coordinates |
-| status | enum | AVAILABLE / ON_ROUTE etc. |
-| backgroundVerified | boolean | Verification status |
+## Versions
 
-## Version
-Current version: **v2.0** — [v2.0/attributes.yaml](./v2.0/attributes.yaml)
+| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
+|---------|----------------|----------------|--------------|--------|
+| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
+
+## Linked Data
+
+| Resource | URL |
+|----------|-----|
+| Canonical IRI | `https://schema.beckn.io/LogisticsDriver` |
+| JSON Schema (latest) | `https://schema.beckn.io/LogisticsDriver/2.0` |
+| context.jsonld (latest) | `https://schema.beckn.io/LogisticsDriver/2.0/context.jsonld` |
+| vocab.jsonld (latest) | `https://schema.beckn.io/LogisticsDriver/2.0/vocab.jsonld` |
+| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
+| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |

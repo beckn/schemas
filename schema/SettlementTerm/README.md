@@ -1,18 +1,41 @@
-# SettlementTerm
+# Settlement Term
 
-A term within a settlement schedule.
+> **Canonical IRI:** [`https://schema.beckn.io/SettlementTerm`](https://schema.beckn.io/SettlementTerm)
+> **Tags:** `common`
+> **Namespace:** `https://schema.beckn.io/`
+> Part of the [Beckn Protocol Core Schema](../../README.md)
 
-This schema is part of the [Beckn Protocol Core Schema](../../README.md) library (v2.0).
+---
+
+Describes the terms of settlement associated with a given transaction. This is not to be confused with the PaymentAction as it describes all the places where the money gets disbursed after reconciliation.
 
 ## Versions
 
-| Version | Path | Description |
-|---------|------|-------------|
-| v2.0 | [v2.0/](./v2.0/) | Initial release — OpenAPI 3.1.1 attribute definition |
+| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
+|---------|----------------|----------------|--------------|--------|
+| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
 
-## Related root files
+## Properties (latest: v2.0)
 
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../context.jsonld) | Root JSON-LD context (all schemas) |
-| [schema/vocab.jsonld](../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| Property | Type | Required | Description |
+|----------|------|:--------:|-------------|
+| `@context` | `string` (uri) | — | — |
+| `@type` | `string` | — | — |
+| `amount` | object | — | Amount associated with this settlement action |
+| `paymentTrigger` | any | — | Describes the event which triggers the payment against this settlement term |
+| `settlementStatus` | `string` | — | — |
+| `settlementSchedule` | object | — | — |
+| `payTo` | `object` \| `object` \| `object` | — | Describes the details of the account where the money must be remited. It could be a bank account, a payment gateway, or a virtual payment address (… |
+| `acceptedPaymentMethods` | string[] | — | Describes the methods or mechanisms accepted by the payee (described in the payTo property) for the purpose of this settlement. |
+| `settlementTermAttributes` | any | — | Additional use case specific settlement terms that must be adhered to |
+
+## Linked Data
+
+| Resource | URL |
+|----------|-----|
+| Canonical IRI | `https://schema.beckn.io/SettlementTerm` |
+| JSON Schema (latest) | `https://schema.beckn.io/SettlementTerm/2.0` |
+| context.jsonld (latest) | `https://schema.beckn.io/SettlementTerm/2.0/context.jsonld` |
+| vocab.jsonld (latest) | `https://schema.beckn.io/SettlementTerm/2.0/vocab.jsonld` |
+| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
+| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |

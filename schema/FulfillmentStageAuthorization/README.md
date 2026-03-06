@@ -1,18 +1,37 @@
-# FulfillmentStageAuthorization
+# Fulfillment Stage Authorization
 
-Authorization required at a fulfillment stage.
+> **Canonical IRI:** [`https://schema.beckn.io/FulfillmentStageAuthorization`](https://schema.beckn.io/FulfillmentStageAuthorization)
+> **Tags:** `common`
+> **Namespace:** `https://schema.beckn.io/`
+> Part of the [Beckn Protocol Core Schema](../../README.md)
 
-This schema is part of the [Beckn Protocol Core Schema](../../README.md) library (v2.0).
+---
+
+A credential/document/proof relevant to authorization at a fulfillment stage endpoint. This may be a token to be verified (QR/OTP/URL) or a document to be inspected manually.
 
 ## Versions
 
-| Version | Path | Description |
-|---------|------|-------------|
-| v2.0 | [v2.0/](./v2.0/) | Initial release — OpenAPI 3.1.1 attribute definition |
+| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
+|---------|----------------|----------------|--------------|--------|
+| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
 
-## Related root files
+## Properties (latest: v2.0)
 
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../context.jsonld) | Root JSON-LD context (all schemas) |
-| [schema/vocab.jsonld](../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| Property | Type | Required | Description |
+|----------|------|:--------:|-------------|
+| `@context` | `string` (uri) | — | CPD |
+| `@type` | `string` | — | — |
+| `mediaFiles` | any[] | — | Media files required to enter or exit this fulfillment stage. The could be images of delivered packages, recorded video proof of installation, etc |
+| `docs` | any[] | — | Documents required to enter or exit this fulfillment stage. The could be entry tickets, boarding passes, waybill, permits, certificates, credential… |
+| `authToken` | `string` | — | A human readable string that needs to be provided to enter or exit this fulfillment stage. Like an OTP |
+
+## Linked Data
+
+| Resource | URL |
+|----------|-----|
+| Canonical IRI | `https://schema.beckn.io/FulfillmentStageAuthorization` |
+| JSON Schema (latest) | `https://schema.beckn.io/FulfillmentStageAuthorization/2.0` |
+| context.jsonld (latest) | `https://schema.beckn.io/FulfillmentStageAuthorization/2.0/context.jsonld` |
+| vocab.jsonld (latest) | `https://schema.beckn.io/FulfillmentStageAuthorization/2.0/vocab.jsonld` |
+| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
+| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |

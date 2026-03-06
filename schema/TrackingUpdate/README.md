@@ -1,16 +1,27 @@
-# TrackingUpdate
+# Tracking Update
 
-## Overview
-A **TrackingUpdate** represents a real-time or periodic status update for a shipment during its journey from origin to destination.
+> **Canonical IRI:** [`https://schema.beckn.io/TrackingUpdate`](https://schema.beckn.io/TrackingUpdate)
+> **Tags:** `logistics`
+> **Namespace:** `https://schema.beckn.io/`
+> Part of the [Beckn Protocol Core Schema](../../README.md)
 
-## IRI
-`https://schema.beckn.org/logistics/TrackingUpdate`
+---
 
-## Use Cases
-- All logistics use cases: Critical for customer experience in all delivery types
+The `TrackingUpdate` schema object.
 
-## Key Events
-- PICKED_UP, IN_TRANSIT, AT_HUB, OUT_FOR_DELIVERY, DELIVERED, FAILED_DELIVERY, EXCEPTION
+## Versions
 
-## Version
-Current version: **v2.0** — [v2.0/attributes.yaml](./v2.0/attributes.yaml)
+| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
+|---------|----------------|----------------|--------------|--------|
+| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
+
+## Linked Data
+
+| Resource | URL |
+|----------|-----|
+| Canonical IRI | `https://schema.beckn.io/TrackingUpdate` |
+| JSON Schema (latest) | `https://schema.beckn.io/TrackingUpdate/2.0` |
+| context.jsonld (latest) | `https://schema.beckn.io/TrackingUpdate/2.0/context.jsonld` |
+| vocab.jsonld (latest) | `https://schema.beckn.io/TrackingUpdate/2.0/vocab.jsonld` |
+| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
+| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |

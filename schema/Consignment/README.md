@@ -1,20 +1,27 @@
 # Consignment
 
-## Overview
-A **Consignment** groups multiple packages or shipments under a single commercial transaction between a shipper and consignee. Commonly identified by an Air Waybill (AWB) number in courier and freight contexts.
+> **Canonical IRI:** [`https://schema.beckn.io/Consignment`](https://schema.beckn.io/Consignment)
+> **Tags:** `logistics`
+> **Namespace:** `https://schema.beckn.io/`
+> Part of the [Beckn Protocol Core Schema](../../README.md)
 
-## IRI
-`https://schema.beckn.org/logistics/Consignment`
+---
 
-## Beckn Core Mapping
-| Logistics Concept | Beckn Core | Relationship |
-|---|---|---|
-| Consignment | Order | `owl:equivalentClass` |
+The `Consignment` schema object.
 
-## Use Cases
-- Courier: Multiple parcels booked by a business for multiple recipients
-- Interstate: Freight consignment with AWB number
-- Long Haul: Full truck load with customs documentation
+## Versions
 
-## Version
-Current version: **v2.0** — [v2.0/attributes.yaml](./v2.0/attributes.yaml)
+| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
+|---------|----------------|----------------|--------------|--------|
+| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
+
+## Linked Data
+
+| Resource | URL |
+|----------|-----|
+| Canonical IRI | `https://schema.beckn.io/Consignment` |
+| JSON Schema (latest) | `https://schema.beckn.io/Consignment/2.0` |
+| context.jsonld (latest) | `https://schema.beckn.io/Consignment/2.0/context.jsonld` |
+| vocab.jsonld (latest) | `https://schema.beckn.io/Consignment/2.0/vocab.jsonld` |
+| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
+| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |

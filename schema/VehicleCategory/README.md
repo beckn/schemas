@@ -1,47 +1,27 @@
-# VehicleCategory
+# Vehicle Category
 
-A schema.beckn.io Type
+> **Canonical IRI:** [`https://schema.beckn.io/VehicleCategory`](https://schema.beckn.io/VehicleCategory)
+> **Tags:** `mobility`
+> **Namespace:** `https://schema.beckn.io/`
+> Part of the [Beckn Protocol Core Schema](../../README.md)
 
-A broad classification of vehicles by their physical type, such as two-wheeler, three-wheeler, four-wheeler, or bus.
+---
 
-**Canonical IRI :** `mobility:VehicleCategory`
+The `VehicleCategory` schema object.
 
-**Canonical URL:** https://schema.beckn.io/mobility/VehicleCategory
+## Versions
 
-**Related Classes:**
+| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
+|---------|----------------|----------------|--------------|--------|
+| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
 
-| Type | Relationship | Strength |
-|------|--------------|----------|
-| [beckn:CategoryCode](https://github.com/beckn/core_schema/tree/draft/schema/CategoryCode) | rdfs:subClassOf | Subclass |
+## Linked Data
 
-## Open Issues
-
-[Open issues](https://github.com/beckn/mobility/issues)
-
-## Properties
-
-| Property | Expected Type | Description |
-|---|---|---|
-| **[Properties from VehicleCategory](https://schema.beckn.io/mobility/VehicleCategory)** | | |
-| [vehicleCategoryCode](https://schema.beckn.io/mobility/vehicleCategoryCode) | [schema:Text](https://schema.org/Text) | Code for the vehicle category (e.g. TWO_WHEELER, THREE_WHEELER, FOUR_WHEELER, BUS) |
-| [maxPassengers](https://schema.beckn.io/mobility/maxPassengers) | [schema:Number](https://schema.org/Number) | Maximum number of passengers for vehicles in this category |
-| **[Properties from CategoryCode](https://github.com/beckn/core_schema/tree/draft/schema/CategoryCode)** | | |
-| [id](https://schema.beckn.io/core/id) | [schema:Text](https://schema.org/Text) | Unique identifier for the category code |
-| [descriptor](https://schema.beckn.io/core/descriptor) | [Descriptor](https://github.com/beckn/core_schema/tree/draft/schema/Descriptor) | Human-readable label for the category |
-| [parentCategoryId](https://schema.beckn.io/core/parentCategoryId) | [schema:Text](https://schema.org/Text) | Identifier of the parent category if hierarchical |
-
-## Example
-
-[Insert brief description of the example]
-
-```json
-[Insert Example JSON-LD]
-```
-
-## Example Beckn Protocol Requests Payload using this Schema
-
-> [Brief description of the request with container schema, core schema, and mobility bindings]
-
-```json
-[Insert Example JSON-LD]
-```
+| Resource | URL |
+|----------|-----|
+| Canonical IRI | `https://schema.beckn.io/VehicleCategory` |
+| JSON Schema (latest) | `https://schema.beckn.io/VehicleCategory/2.0` |
+| context.jsonld (latest) | `https://schema.beckn.io/VehicleCategory/2.0/context.jsonld` |
+| vocab.jsonld (latest) | `https://schema.beckn.io/VehicleCategory/2.0/vocab.jsonld` |
+| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
+| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |

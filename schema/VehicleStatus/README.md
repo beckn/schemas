@@ -1,50 +1,27 @@
-# VehicleStatus
+# Vehicle Status
 
-A schema.beckn.io Type
+> **Canonical IRI:** [`https://schema.beckn.io/VehicleStatus`](https://schema.beckn.io/VehicleStatus)
+> **Tags:** `mobility`
+> **Namespace:** `https://schema.beckn.io/`
+> Part of the [Beckn Protocol Core Schema](../../README.md)
 
-The real-time operational state of a vehicle or mobility asset, such as available, in use, reserved, or disabled.
+---
 
-**Canonical IRI :** `mobility:VehicleStatus`
+The `VehicleStatus` schema object.
 
-**Canonical URL:** https://schema.beckn.io/mobility/VehicleStatus
+## Versions
 
-**Related Classes:**
+| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
+|---------|----------------|----------------|--------------|--------|
+| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
 
-| Type | Relationship | Strength |
-|------|--------------|----------|
-| [beckn:State](https://github.com/beckn/core_schema/tree/draft/schema/State) | rdfs:subClassOf | Subclass |
-| [schema:ItemAvailability](https://schema.org/ItemAvailability) | rdfs:seeAlso | Related |
+## Linked Data
 
-## Open Issues
-
-[Open issues](https://github.com/beckn/mobility/issues)
-
-## Properties
-
-| Property | Expected Type | Description |
-|---|---|---|
-| **[Properties from VehicleStatus](https://schema.beckn.io/mobility/VehicleStatus)** | | |
-| [statusCode](https://schema.beckn.io/mobility/statusCode) | [schema:Text](https://schema.org/Text) | Operational status code (e.g. AVAILABLE, IN_USE, RESERVED, DISABLED, CHARGING) |
-| [batteryLevel](https://schema.beckn.io/mobility/batteryLevel) | [schema:Number](https://schema.org/Number) | Current battery charge percentage |
-| [rangeMeters](https://schema.beckn.io/mobility/rangeMeters) | [schema:Number](https://schema.org/Number) | Estimated remaining range in metres |
-| [lastReportedAt](https://schema.beckn.io/mobility/lastReportedAt) | [schema:DateTime](https://schema.org/DateTime) | Timestamp of the last status update |
-| **[Properties from State](https://github.com/beckn/core_schema/tree/draft/schema/State)** | | |
-| [id](https://schema.beckn.io/core/id) | [schema:Text](https://schema.org/Text) | Unique identifier for the state |
-| [descriptor](https://schema.beckn.io/core/descriptor) | [Descriptor](https://github.com/beckn/core_schema/tree/draft/schema/Descriptor) | Human-readable description of the state |
-| [updatedAt](https://schema.beckn.io/core/updatedAt) | [schema:DateTime](https://schema.org/DateTime) | Timestamp when the state was last updated |
-
-## Example
-
-[Insert brief description of the example]
-
-```json
-[Insert Example JSON-LD]
-```
-
-## Example Beckn Protocol Requests Payload using this Schema
-
-> [Brief description of the request with container schema, core schema, and mobility bindings]
-
-```json
-[Insert Example JSON-LD]
-```
+| Resource | URL |
+|----------|-----|
+| Canonical IRI | `https://schema.beckn.io/VehicleStatus` |
+| JSON Schema (latest) | `https://schema.beckn.io/VehicleStatus/2.0` |
+| context.jsonld (latest) | `https://schema.beckn.io/VehicleStatus/2.0/context.jsonld` |
+| vocab.jsonld (latest) | `https://schema.beckn.io/VehicleStatus/2.0/vocab.jsonld` |
+| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
+| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |

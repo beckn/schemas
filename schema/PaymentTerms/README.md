@@ -1,18 +1,39 @@
-# PaymentTerms
+# Payment Terms
 
-Terms governing payment.
+> **Canonical IRI:** [`https://schema.beckn.io/PaymentTerms`](https://schema.beckn.io/PaymentTerms)
+> **Tags:** `common`
+> **Namespace:** `https://schema.beckn.io/`
+> Part of the [Beckn Protocol Core Schema](../../README.md)
 
-This schema is part of the [Beckn Protocol Core Schema](../../README.md) library (v2.0).
+---
+
+Schema definition for PaymentTerms in the Beckn Protocol v2.0.1
 
 ## Versions
 
-| Version | Path | Description |
-|---------|------|-------------|
-| v2.0 | [v2.0/](./v2.0/) | Initial release — OpenAPI 3.1.1 attribute definition |
+| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
+|---------|----------------|----------------|--------------|--------|
+| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
 
-## Related root files
+## Properties (latest: v2.0)
 
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../context.jsonld) | Root JSON-LD context (all schemas) |
-| [schema/vocab.jsonld](../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| Property | Type | Required | Description |
+|----------|------|:--------:|-------------|
+| `@context` | `string` (uri) | — | — |
+| `@type` | `string` | — | — |
+| `collectedBy` | `string` | — | Describes the entity that first collects the payment from the consumer. This is the actor who is responsible to initiate the settlement process as … |
+| `checkoutAt` | object | — | — |
+| `settlementTerms` | any[] | — | — |
+| `checkoutTrigger` | any | — | The stage in the order lifecycle when the checkout should be triggered |
+| `paymentTermsAttributes` | any | — | Rail-specific attribute pack (e.g., UPI: VPA/UTR; CARD: token/3DS; BNPL: plan/schedule) |
+
+## Linked Data
+
+| Resource | URL |
+|----------|-----|
+| Canonical IRI | `https://schema.beckn.io/PaymentTerms` |
+| JSON Schema (latest) | `https://schema.beckn.io/PaymentTerms/2.0` |
+| context.jsonld (latest) | `https://schema.beckn.io/PaymentTerms/2.0/context.jsonld` |
+| vocab.jsonld (latest) | `https://schema.beckn.io/PaymentTerms/2.0/vocab.jsonld` |
+| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
+| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |

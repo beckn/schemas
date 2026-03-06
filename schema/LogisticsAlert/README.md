@@ -1,18 +1,27 @@
-# Alert
+# Logistics Alert
 
-## Overview
-An **Alert** is a notification or exception raised during shipment transit — delays, damage, customs holds, SLA breaches, or failed deliveries.
+> **Canonical IRI:** [`https://schema.beckn.io/LogisticsAlert`](https://schema.beckn.io/LogisticsAlert)
+> **Tags:** `logistics`
+> **Namespace:** `https://schema.beckn.io/`
+> Part of the [Beckn Protocol Core Schema](../../README.md)
 
-## IRI
-`https://schema.beckn.org/logistics/Alert`
+---
 
-## Alert Types
-- DELAY: Shipment running late
-- DAMAGE: Package damaged in transit
-- LOSS: Package lost
-- FAILED_DELIVERY: Delivery attempt failed
-- SLA_BREACH: Service level agreement breached
-- CUSTOMS_HOLD: Interstate/international customs hold
+The `LogisticsAlert` schema object.
 
-## Version
-Current version: **v2.0** — [v2.0/attributes.yaml](./v2.0/attributes.yaml)
+## Versions
+
+| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
+|---------|----------------|----------------|--------------|--------|
+| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
+
+## Linked Data
+
+| Resource | URL |
+|----------|-----|
+| Canonical IRI | `https://schema.beckn.io/LogisticsAlert` |
+| JSON Schema (latest) | `https://schema.beckn.io/LogisticsAlert/2.0` |
+| context.jsonld (latest) | `https://schema.beckn.io/LogisticsAlert/2.0/context.jsonld` |
+| vocab.jsonld (latest) | `https://schema.beckn.io/LogisticsAlert/2.0/vocab.jsonld` |
+| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
+| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |

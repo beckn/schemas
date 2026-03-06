@@ -1,46 +1,27 @@
-# BikeAllowed
+# Bike Allowed
 
-A schema.beckn.io Type
+> **Canonical IRI:** [`https://schema.beckn.io/BikeAllowed`](https://schema.beckn.io/BikeAllowed)
+> **Tags:** `mobility`
+> **Namespace:** `https://schema.beckn.io/`
+> Part of the [Beckn Protocol Core Schema](../../README.md)
 
-An indicator specifying whether bicycles are permitted on board a particular route or vehicle journey.
+---
 
-**Canonical IRI :** `mobility:BikeAllowed`
+The `BikeAllowed` schema object.
 
-**Canonical URL:** https://schema.beckn.io/mobility/BikeAllowed
+## Versions
 
-**Related Classes:**
+| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
+|---------|----------------|----------------|--------------|--------|
+| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
 
-| Type | Relationship | Strength |
-|------|--------------|----------|
-| [beckn:Feature](https://github.com/beckn/core_schema/tree/draft/schema/Feature) | rdfs:subClassOf | Subclass |
+## Linked Data
 
-## Open Issues
-
-[Open issues](https://github.com/beckn/mobility/issues)
-
-## Properties
-
-| Property | Expected Type | Description |
-|---|---|---|
-| **[Properties from BikeAllowed](https://schema.beckn.io/mobility/BikeAllowed)** | | |
-| [bikeAllowedValue](https://schema.beckn.io/mobility/bikeAllowedValue) | [schema:Text](https://schema.org/Text) | Indicates whether bikes are allowed: yes, no, or unknown |
-| **[Properties from Feature](https://schema.beckn.io/core/Feature)** | | |
-| [id](https://schema.beckn.io/core/id) | [schema:Text](https://schema.org/Text) | Unique identifier for the feature |
-| [descriptor](https://schema.beckn.io/core/descriptor) | [Descriptor](https://github.com/beckn/core_schema/tree/draft/schema/Descriptor) | Human-readable label of the feature |
-| [value](https://schema.beckn.io/core/value) | [schema:Text](https://schema.org/Text) | Value of the feature (e.g. yes, no, unknown) |
-
-## Example
-
-[Insert brief description of the example]
-
-```json
-[Insert Example JSON-LD]
-```
-
-## Example Beckn Protocol Requests Payload using this Schema
-
-> [Brief description of the request with container schema, core schema, and mobility bindings]
-
-```json
-[Insert Example JSON-LD]
-```
+| Resource | URL |
+|----------|-----|
+| Canonical IRI | `https://schema.beckn.io/BikeAllowed` |
+| JSON Schema (latest) | `https://schema.beckn.io/BikeAllowed/2.0` |
+| context.jsonld (latest) | `https://schema.beckn.io/BikeAllowed/2.0/context.jsonld` |
+| vocab.jsonld (latest) | `https://schema.beckn.io/BikeAllowed/2.0/vocab.jsonld` |
+| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
+| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |

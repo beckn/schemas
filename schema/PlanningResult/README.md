@@ -1,49 +1,27 @@
-# PlanningResult
+# Planning Result
 
-A schema.beckn.io Type
+> **Canonical IRI:** [`https://schema.beckn.io/PlanningResult`](https://schema.beckn.io/PlanningResult)
+> **Tags:** `mobility`
+> **Namespace:** `https://schema.beckn.io/`
+> Part of the [Beckn Protocol Core Schema](../../README.md)
 
-The output of a MaaS platform planning request, listing available transport options for a requested trip.
+---
 
-**Canonical IRI :** `mobility:PlanningResult`
+The `PlanningResult` schema object.
 
-**Canonical URL:** https://schema.beckn.io/mobility/PlanningResult
+## Versions
 
-**Related Classes:**
+| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
+|---------|----------------|----------------|--------------|--------|
+| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
 
-| Type | Relationship | Strength |
-|------|--------------|----------|
-| [beckn:Catalog](https://github.com/beckn/core_schema/tree/draft/schema/Catalog) | rdfs:subClassOf | Subclass |
+## Linked Data
 
-## Open Issues
-
-[Open issues](https://github.com/beckn/mobility/issues)
-
-## Properties
-
-| Property | Expected Type | Description |
-|---|---|---|
-| **[Properties from PlanningResult](https://schema.beckn.io/mobility/PlanningResult)** | | |
-| [origin](https://schema.beckn.io/mobility/origin) | [Location](https://github.com/beckn/core_schema/tree/draft/schema/Location) | Origin location for the planning query |
-| [destination](https://schema.beckn.io/mobility/destination) | [Location](https://github.com/beckn/core_schema/tree/draft/schema/Location) | Destination location for the planning query |
-| [options](https://schema.beckn.io/mobility/options) | [RideOption](https://schema.beckn.io/mobility/RideOption) | Available transport options returned |
-| [itineraries](https://schema.beckn.io/mobility/itineraries) | [Itinerary](https://schema.beckn.io/mobility/Itinerary) | Multi-modal itinerary options if applicable |
-| **[Properties from Catalog](https://github.com/beckn/core_schema/tree/draft/schema/Catalog)** | | |
-| [id](https://schema.beckn.io/core/id) | [schema:Text](https://schema.org/Text) | Unique identifier for the catalog |
-| [descriptor](https://schema.beckn.io/core/descriptor) | [Descriptor](https://github.com/beckn/core_schema/tree/draft/schema/Descriptor) | Human-readable description of the catalog |
-| [tags](https://schema.beckn.io/core/tags) | [schema:Text](https://schema.org/Text) | Tags associated with the catalog |
-
-## Example
-
-[Insert brief description of the example]
-
-```json
-[Insert Example JSON-LD]
-```
-
-## Example Beckn Protocol Requests Payload using this Schema
-
-> [Brief description of the request with container schema, core schema, and mobility bindings]
-
-```json
-[Insert Example JSON-LD]
-```
+| Resource | URL |
+|----------|-----|
+| Canonical IRI | `https://schema.beckn.io/PlanningResult` |
+| JSON Schema (latest) | `https://schema.beckn.io/PlanningResult/2.0` |
+| context.jsonld (latest) | `https://schema.beckn.io/PlanningResult/2.0/context.jsonld` |
+| vocab.jsonld (latest) | `https://schema.beckn.io/PlanningResult/2.0/vocab.jsonld` |
+| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
+| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |

@@ -1,14 +1,27 @@
-# Route
+# Logistics Route
 
-## Overview
-A **Route** defines the planned path from origin to destination for a logistics shipment, including intermediate waypoints, hubs, distance, and transport mode.
+> **Canonical IRI:** [`https://schema.beckn.io/LogisticsRoute`](https://schema.beckn.io/LogisticsRoute)
+> **Tags:** `logistics`
+> **Namespace:** `https://schema.beckn.io/`
+> Part of the [Beckn Protocol Core Schema](../../README.md)
 
-## IRI
-`https://schema.beckn.org/logistics/Route`
+---
 
-## Use Cases
-- Interstate/Long Haul: Multi-state routes with hub stops
-- Hyperlocal: Optimized last-mile delivery paths
+The `LogisticsRoute` schema object.
 
-## Version
-Current version: **v2.0** — [v2.0/attributes.yaml](./v2.0/attributes.yaml)
+## Versions
+
+| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
+|---------|----------------|----------------|--------------|--------|
+| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
+
+## Linked Data
+
+| Resource | URL |
+|----------|-----|
+| Canonical IRI | `https://schema.beckn.io/LogisticsRoute` |
+| JSON Schema (latest) | `https://schema.beckn.io/LogisticsRoute/2.0` |
+| context.jsonld (latest) | `https://schema.beckn.io/LogisticsRoute/2.0/context.jsonld` |
+| vocab.jsonld (latest) | `https://schema.beckn.io/LogisticsRoute/2.0/vocab.jsonld` |
+| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
+| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |
