@@ -4,16 +4,11 @@
 # Each entry declares a GitHub-hosted schema source:
 #   schemaPath is always a GitHub tree URL:
 #     https://github.com/<owner>/<repo>/tree/<ref>/<path>
-#   The admin console clones the repo into schema-sources/<id>/
-#   and the schema-loader serves schemas from schema-sources/<id>/<path>/.
 #
 # Fields:
-#   id          Unique identifier. Used as the directory name under schema-sources/.
-#   schemaPath  GitHub tree URL pointing to the schema folder.
-#   description Human-readable summary.
-#   namespace   Required. Canonical JSON-LD namespace URI. Must be unique per schemaPath.
-#   tags        Domain tags applied to schemas that do not carry x-tags themselves.
-
+#   schemaPath  : GitHub tree URL pointing to the schema folder.
+#   description : Human-readable summary.
+#   tags : Domain tags applied to all schemas sourced from the schema repo
 sources:
 
   # ── Beckn Core Schema Registry ───────────────────────────────────────────────
@@ -24,19 +19,14 @@ sources:
       Beckn Core Schema Registry. Contains core protocol schemas plus domain schemas
       for mobility, logistics, and retail. Schemas are tagged per-domain via x-tags.
     tags:
-      - common
-      - mobility
-      - logistics
-      - retail
+      - core
 
   # ── Digital Energy Grid ───────────────────────────────────────────────────────
   # DEG maintains its own schemas in their GitHub repo. schema.beckn.io indexes
-  # them via this entry. DEG schemas use OpenAPI components.schemas format.
+  # them via this entry. 
   - schemaPath: https://github.com/beckn/DEG/tree/draft-preview/specification/schema
     description: >-
       Digital Energy Grid domain schemas for P2P energy trading, EV charging,
       and related energy use cases.
     tags:
       - energy
-      - ev-charging
-      - p2p-trading
