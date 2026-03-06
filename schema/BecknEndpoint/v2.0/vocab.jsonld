@@ -1,0 +1,19 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:BecknEndpoint",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Beckn Endpoint",
+      "rdfs:comment": "A Beckn protocol endpoint identifier. Must start with the prefix \"beckn/\" followed by one or more lowercase segments (letters and underscores only) separated by forward slashes. Standard endpoints are listed in the examples below. New actors may define extension endpoints without modifying this schema — the pattern accepts any conforming beckn/ prefixed string."
+    }
+  ]
+}

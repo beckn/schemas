@@ -1,0 +1,97 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Context",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Context",
+      "rdfs:comment": "Every API call in Beckn protocol has a context. It provides a high-level overview to the receiver about the nature of the intended transaction. Typically, it is the BAP that sets the transaction context based on the consumer's location and action on their UI. The context object contains four types of fields: (1) demographic information about the transaction using fields like domain, country, and region; (2) addressing details like the sending and receiving platform's ID and API URL; (3) interoperability information like the protocol version implemented by the sender; and (4) transaction details like the method being called at the receiver's endpoint, the transaction_id that represents an end-to-end user session at the BAP, a message ID to pair requests with callbacks, a timestamp to capture sending times, a ttl to specify the validity of the request, and a key to encrypt information if necessary."
+    },
+    {
+      "@id": "beckn:action",
+      "@type": "rdf:Property",
+      "rdfs:label": "action",
+      "rdfs:comment": "The Beckn endpoint being called. Must conform to BecknEndpoint format."
+    },
+    {
+      "@id": "beckn:bapId",
+      "@type": "rdf:Property",
+      "rdfs:label": "bap Id",
+      "rdfs:comment": "A globally unique identifier of the BAP. Typically the fully qualified domain name (FQDN) of the BAP."
+    },
+    {
+      "@id": "beckn:bapUri",
+      "@type": "rdf:Property",
+      "rdfs:label": "bap Uri",
+      "rdfs:comment": "API URL of the BAP for accepting callbacks from BPPs."
+    },
+    {
+      "@id": "beckn:bppId",
+      "@type": "rdf:Property",
+      "rdfs:label": "bpp Id",
+      "rdfs:comment": "A globally unique identifier of the BPP. Typically the fully qualified domain name (FQDN) of the BPP."
+    },
+    {
+      "@id": "beckn:bppUri",
+      "@type": "rdf:Property",
+      "rdfs:label": "bpp Uri",
+      "rdfs:comment": "API URL of the BPP for accepting calls from BAPs."
+    },
+    {
+      "@id": "beckn:messageId",
+      "@type": "rdf:Property",
+      "rdfs:label": "message Id",
+      "rdfs:comment": "A unique value which persists during a request/callback cycle. BAPs use this value to match an incoming callback from a BPP to an earlier call. Generate a fresh message_id for every new interaction."
+    },
+    {
+      "@id": "beckn:networkId",
+      "@type": "rdf:Property",
+      "rdfs:label": "network Id",
+      "rdfs:comment": "A unique identifier representing a group of platforms. By default, the URL of the network registry on the Beckn network."
+    },
+    {
+      "@id": "beckn:timestamp",
+      "@type": "rdf:Property",
+      "rdfs:label": "timestamp",
+      "rdfs:comment": "Time of request generation in RFC3339 format."
+    },
+    {
+      "@id": "beckn:transactionId",
+      "@type": "rdf:Property",
+      "rdfs:label": "transaction Id",
+      "rdfs:comment": "A unique value which persists across all API calls from discover through confirm. Used to indicate an active user session across multiple requests."
+    },
+    {
+      "@id": "beckn:try",
+      "@type": "rdf:Property",
+      "rdfs:label": "try",
+      "rdfs:comment": "A flag to indicate that this request is intended to try an operation. Set to false by default. Set to true when negotiating terms, updating, or cancelling an active contract. When true, the receiver responds with the expected consequences per the terms of service agreed during init/on_init."
+    },
+    {
+      "@id": "beckn:ttl",
+      "@type": "rdf:Property",
+      "rdfs:label": "ttl",
+      "rdfs:comment": "The duration in ISO8601 format after timestamp for which this message holds valid."
+    },
+    {
+      "@id": "beckn:version",
+      "@type": "rdf:Property",
+      "rdfs:label": "version",
+      "rdfs:comment": "Version of Beckn protocol being used by the sender."
+    },
+    {
+      "@id": "beckn:lineage",
+      "@type": "rdf:Property",
+      "rdfs:label": "lineage",
+      "rdfs:comment": "An optional array of causal attribution records asserting that this Beckn transaction was triggered by one or more upstream Beckn interactions. Present only at transaction boundaries. MUST NOT be populated within subsequent steps of the same transaction. Per current Beckn profiles, this array MUST contain at most one entry when present."
+    }
+  ]
+}

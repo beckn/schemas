@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:OnDiscoverAction",
+      "@type": "rdfs:Class",
+      "rdfs:label": "On Discover Action",
+      "rdfs:comment": "Beckn /beckn/on_discover callback envelope. Sent by a BPP to a BAP in response to a /beckn/discover call, containing matching catalogs."
+    },
+    {
+      "@id": "beckn:context",
+      "@type": "rdf:Property",
+      "rdfs:label": "context",
+      "rdfs:comment": "TODO: Description Needed - context"
+    },
+    {
+      "@id": "beckn:message",
+      "@type": "rdf:Property",
+      "rdfs:label": "message",
+      "rdfs:comment": "TODO: Description Needed - message"
+    }
+  ]
+}

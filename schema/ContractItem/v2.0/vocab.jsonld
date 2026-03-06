@@ -1,0 +1,55 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:ContractItem",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Contract Item",
+      "rdfs:comment": "A line item within a Contract, linking an accepted Offer and ordered Item with quantity and price."
+    },
+    {
+      "@id": "beckn:acceptedOffer",
+      "@type": "rdf:Property",
+      "rdfs:label": "accepted Offer",
+      "rdfs:comment": "Offer applied to this line (if different from contract-level)"
+    },
+    {
+      "@id": "beckn:itemId",
+      "@type": "rdf:Property",
+      "rdfs:label": "item Id",
+      "rdfs:comment": "TODO: Description Needed - itemId"
+    },
+    {
+      "@id": "beckn:lineId",
+      "@type": "rdf:Property",
+      "rdfs:label": "line Id",
+      "rdfs:comment": "Unique line id within contract"
+    },
+    {
+      "@id": "beckn:contractItemAttributes",
+      "@type": "rdf:Property",
+      "rdfs:label": "contract Item Attributes",
+      "rdfs:comment": "Line-level Attribute Pack (options, substitutions, ESG, etc.)"
+    },
+    {
+      "@id": "beckn:price",
+      "@type": "rdf:Property",
+      "rdfs:label": "price",
+      "rdfs:comment": "Line price composition (unit/tax/delivery/discount)"
+    },
+    {
+      "@id": "beckn:quantity",
+      "@type": "rdf:Property",
+      "rdfs:label": "quantity",
+      "rdfs:comment": "TODO: Description Needed - quantity"
+    }
+  ]
+}

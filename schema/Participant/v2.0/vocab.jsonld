@@ -1,0 +1,79 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Participant",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Participant",
+      "rdfs:comment": "Schema definition for Participant in the Beckn Protocol v2.0.1"
+    },
+    {
+      "@id": "beckn:@context",
+      "@type": "rdf:Property",
+      "rdfs:label": "@context",
+      "rdfs:comment": "TODO: Description Needed - @context"
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "TODO: Description Needed - @type"
+    },
+    {
+      "@id": "beckn:credentials",
+      "@type": "rdf:Property",
+      "rdfs:label": "credentials",
+      "rdfs:comment": "TODO: Description Needed - credentials"
+    },
+    {
+      "@id": "beckn:displayName",
+      "@type": "rdf:Property",
+      "rdfs:label": "display Name",
+      "rdfs:comment": "TODO: Description Needed - displayName"
+    },
+    {
+      "@id": "beckn:email",
+      "@type": "rdf:Property",
+      "rdfs:label": "email",
+      "rdfs:comment": "TODO: Description Needed - email"
+    },
+    {
+      "@id": "beckn:id",
+      "@type": "rdf:Property",
+      "rdfs:label": "id",
+      "rdfs:comment": "TODO: Description Needed - id"
+    },
+    {
+      "@id": "beckn:rating",
+      "@type": "rdf:Property",
+      "rdfs:label": "rating",
+      "rdfs:comment": "TODO: Description Needed - rating"
+    },
+    {
+      "@id": "beckn:role",
+      "@type": "rdf:Property",
+      "rdfs:label": "role",
+      "rdfs:comment": "Role of participant (consumer, recipient, rider, patient, operator, etc.)"
+    },
+    {
+      "@id": "beckn:skills",
+      "@type": "rdf:Property",
+      "rdfs:label": "skills",
+      "rdfs:comment": "TODO: Description Needed - skills"
+    },
+    {
+      "@id": "beckn:telephone",
+      "@type": "rdf:Property",
+      "rdfs:label": "telephone",
+      "rdfs:comment": "TODO: Description Needed - telephone"
+    }
+  ]
+}

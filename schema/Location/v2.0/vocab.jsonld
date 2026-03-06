@@ -1,0 +1,37 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Location",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Location",
+      "rdfs:comment": "A **place** represented by **GeoJSON geometry** (Point/Polygon/Multi*) and optional human-readable `address`. This unifies all Beckn location fields into a single, widely-adopted representation (GeoJSON)."
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "TODO: Description Needed - @type"
+    },
+    {
+      "@id": "beckn:address",
+      "@type": "rdf:Property",
+      "rdfs:label": "address",
+      "rdfs:comment": "Optional human-readable address for the same place/area."
+    },
+    {
+      "@id": "beckn:geo",
+      "@type": "rdf:Property",
+      "rdfs:label": "geo",
+      "rdfs:comment": "TODO: Description Needed - geo"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "beckn": "https://schema.beckn.io/",
+    "Contract": "beckn:Contract",
+    "@context": "beckn:@context",
+    "@type": "beckn:@type",
+    "id": "beckn:id",
+    "displayId": "beckn:displayId",
+    "items": "beckn:items",
+    "status": "beckn:status",
+    "contractValue": "beckn:contractValue",
+    "participants": "beckn:participants",
+    "entitlements": "beckn:entitlements",
+    "fulfillments": "beckn:fulfillments"
+  }
+}

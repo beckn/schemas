@@ -1,0 +1,67 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:FulfillmentStage",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Fulfillment Stage",
+      "rdfs:comment": "Schema definition for FulfillmentStage in the Beckn Protocol v2.0.1"
+    },
+    {
+      "@id": "beckn:@context",
+      "@type": "rdf:Property",
+      "rdfs:label": "@context",
+      "rdfs:comment": "CPD"
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "TODO: Description Needed - @type"
+    },
+    {
+      "@id": "beckn:id",
+      "@type": "rdf:Property",
+      "rdfs:label": "id",
+      "rdfs:comment": "A unique identifier for this stage of fulfillment"
+    },
+    {
+      "@id": "beckn:instructions",
+      "@type": "rdf:Property",
+      "rdfs:label": "instructions",
+      "rdfs:comment": "A set of instructions to follow during this stage of fulfillment"
+    },
+    {
+      "@id": "beckn:preferences",
+      "@type": "rdf:Property",
+      "rdfs:label": "preferences",
+      "rdfs:comment": "A extensible set of attributes that describe the fulfillment preferences"
+    },
+    {
+      "@id": "beckn:start",
+      "@type": "rdf:Property",
+      "rdfs:label": "start",
+      "rdfs:comment": "An extensible set of attributes that describe the criteria required to start this stage of fulfillment"
+    },
+    {
+      "@id": "beckn:end",
+      "@type": "rdf:Property",
+      "rdfs:label": "end",
+      "rdfs:comment": "An extensible set of attributes that describe the criteria required to end this stage of fulfillment"
+    },
+    {
+      "@id": "beckn:fulfillmentStageAttributes",
+      "@type": "rdf:Property",
+      "rdfs:label": "fulfillment Stage Attributes",
+      "rdfs:comment": "An extensible set of attributes that describe this stage of fulfillment"
+    }
+  ]
+}

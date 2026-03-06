@@ -1,0 +1,43 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:RecurringSchedule",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Recurring Schedule",
+      "rdfs:comment": "Defines a recurring temporal schedule such as operating hours or serviceability timing windows. Supports day-based recurrence and optional holiday exclusions."
+    },
+    {
+      "@id": "beckn:days",
+      "@type": "rdf:Property",
+      "rdfs:label": "days",
+      "rdfs:comment": "Days of week on which the schedule applies."
+    },
+    {
+      "@id": "beckn:timeRange",
+      "@type": "rdf:Property",
+      "rdfs:label": "time Range",
+      "rdfs:comment": "Daily time window for applicable days."
+    },
+    {
+      "@id": "beckn:holidays",
+      "@type": "rdf:Property",
+      "rdfs:label": "holidays",
+      "rdfs:comment": "Specific dates excluded from this schedule."
+    },
+    {
+      "@id": "beckn:timezone",
+      "@type": "rdf:Property",
+      "rdfs:label": "timezone",
+      "rdfs:comment": "IANA timezone identifier (e.g., Asia/Kolkata)."
+    }
+  ]
+}

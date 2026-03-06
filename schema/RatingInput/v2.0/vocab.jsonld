@@ -1,0 +1,49 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:RatingInput",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Rating Input",
+      "rdfs:comment": "A form designed to capture rating and feedback from a user. This can be used by both BAP and BPP to fetch ratings and feedback of their respective users."
+    },
+    {
+      "@id": "beckn:@context",
+      "@type": "rdf:Property",
+      "rdfs:label": "@context",
+      "rdfs:comment": "TODO: Description Needed - @context"
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "TODO: Description Needed - @type"
+    },
+    {
+      "@id": "beckn:target",
+      "@type": "rdf:Property",
+      "rdfs:label": "target",
+      "rdfs:comment": "The entity being rated"
+    },
+    {
+      "@id": "beckn:range",
+      "@type": "rdf:Property",
+      "rdfs:label": "range",
+      "rdfs:comment": "TODO: Description Needed - range"
+    },
+    {
+      "@id": "beckn:feedbackFormSubmission",
+      "@type": "rdf:Property",
+      "rdfs:label": "feedback Form Submission",
+      "rdfs:comment": "The submission to the feedback form sent along with a rating request"
+    }
+  ]
+}

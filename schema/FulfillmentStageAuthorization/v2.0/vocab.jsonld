@@ -1,0 +1,49 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:FulfillmentStageAuthorization",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Fulfillment Stage Authorization",
+      "rdfs:comment": "A credential/document/proof relevant to authorization at a fulfillment stage endpoint. This may be a token to be verified (QR/OTP/URL) or a document to be inspected manually."
+    },
+    {
+      "@id": "beckn:@context",
+      "@type": "rdf:Property",
+      "rdfs:label": "@context",
+      "rdfs:comment": "CPD"
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "TODO: Description Needed - @type"
+    },
+    {
+      "@id": "beckn:mediaFiles",
+      "@type": "rdf:Property",
+      "rdfs:label": "media Files",
+      "rdfs:comment": "Media files required to enter or exit this fulfillment stage. The could be images of delivered packages, recorded video proof of installation, etc"
+    },
+    {
+      "@id": "beckn:docs",
+      "@type": "rdf:Property",
+      "rdfs:label": "docs",
+      "rdfs:comment": "Documents required to enter or exit this fulfillment stage. The could be entry tickets, boarding passes, waybill, permits, certificates, credentials, etc"
+    },
+    {
+      "@id": "beckn:authToken",
+      "@type": "rdf:Property",
+      "rdfs:label": "auth Token",
+      "rdfs:comment": "A human readable string that needs to be provided to enter or exit this fulfillment stage. Like an OTP"
+    }
+  ]
+}

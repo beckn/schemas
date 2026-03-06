@@ -1,0 +1,21 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "beckn": "https://schema.beckn.io/",
+    "SupportInfo": "beckn:SupportInfo",
+    "@context": "beckn:@context",
+    "@type": "beckn:@type",
+    "channels": "beckn:channels",
+    "email": "beckn:email",
+    "hoursAvailable": "beckn:hoursAvailable",
+    "name": "beckn:name",
+    "telephone": "beckn:telephone",
+    "chat": "beckn:chat",
+    "url": "beckn:url",
+    "callbackStatus": "beckn:callbackStatus"
+  }
+}

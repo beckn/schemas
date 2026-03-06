@@ -1,0 +1,61 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:PaymentTerms",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Payment Terms",
+      "rdfs:comment": "Schema definition for PaymentTerms in the Beckn Protocol v2.0.1"
+    },
+    {
+      "@id": "beckn:@context",
+      "@type": "rdf:Property",
+      "rdfs:label": "@context",
+      "rdfs:comment": "TODO: Description Needed - @context"
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "TODO: Description Needed - @type"
+    },
+    {
+      "@id": "beckn:collectedBy",
+      "@type": "rdf:Property",
+      "rdfs:label": "collected By",
+      "rdfs:comment": "Describes the entity that first collects the payment from the consumer. This is the actor who is responsible to initiate the settlement process as per the terms described in the settlementTerms property."
+    },
+    {
+      "@id": "beckn:checkoutAt",
+      "@type": "rdf:Property",
+      "rdfs:label": "checkout At",
+      "rdfs:comment": "TODO: Description Needed - checkoutAt"
+    },
+    {
+      "@id": "beckn:settlementTerms",
+      "@type": "rdf:Property",
+      "rdfs:label": "settlement Terms",
+      "rdfs:comment": "TODO: Description Needed - settlementTerms"
+    },
+    {
+      "@id": "beckn:checkoutTrigger",
+      "@type": "rdf:Property",
+      "rdfs:label": "checkout Trigger",
+      "rdfs:comment": "The stage in the order lifecycle when the checkout should be triggered"
+    },
+    {
+      "@id": "beckn:paymentTermsAttributes",
+      "@type": "rdf:Property",
+      "rdfs:label": "payment Terms Attributes",
+      "rdfs:comment": "Rail-specific attribute pack (e.g., UPI: VPA/UTR; CARD: token/3DS; BNPL: plan/schedule)"
+    }
+  ]
+}

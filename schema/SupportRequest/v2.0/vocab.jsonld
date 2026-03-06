@@ -1,0 +1,49 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:SupportRequest",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Support Request",
+      "rdfs:comment": "Support request by a user. If no field is set, the user can expect a public support contact info"
+    },
+    {
+      "@id": "beckn:@context",
+      "@type": "rdf:Property",
+      "rdfs:label": "@context",
+      "rdfs:comment": "TODO: Description Needed - @context"
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "TODO: Description Needed - @type"
+    },
+    {
+      "@id": "beckn:orderId",
+      "@type": "rdf:Property",
+      "rdfs:label": "order Id",
+      "rdfs:comment": "The order against which support is required"
+    },
+    {
+      "@id": "beckn:ticketIds",
+      "@type": "rdf:Property",
+      "rdfs:label": "ticket Ids",
+      "rdfs:comment": "IDs of support ticket if open"
+    },
+    {
+      "@id": "beckn:callbackPhone",
+      "@type": "rdf:Property",
+      "rdfs:label": "callback Phone",
+      "rdfs:comment": "Telephone number of the user for callback."
+    }
+  ]
+}

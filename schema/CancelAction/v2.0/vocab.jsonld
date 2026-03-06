@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:CancelAction",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Cancel Action",
+      "rdfs:comment": "Beckn /beckn/cancel action envelope. Sent by a BAP to a BPP to request cancellation of an active contract. Set context.try to true to first retrieve cancellation terms and fees before committing."
+    },
+    {
+      "@id": "beckn:context",
+      "@type": "rdf:Property",
+      "rdfs:label": "context",
+      "rdfs:comment": "TODO: Description Needed - context"
+    },
+    {
+      "@id": "beckn:message",
+      "@type": "rdf:Property",
+      "rdfs:label": "message",
+      "rdfs:comment": "TODO: Description Needed - message"
+    }
+  ]
+}

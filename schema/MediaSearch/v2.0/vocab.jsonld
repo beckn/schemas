@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:MediaSearch",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Media Search",
+      "rdfs:comment": "Container for multimodal search inputs and configuration. Supports searching through **images, audio notes, and videos** alongside text, filters, and spatial predicates. For GET, this object should be JSON-encoded and URL-escaped."
+    },
+    {
+      "@id": "beckn:media",
+      "@type": "rdf:Property",
+      "rdfs:label": "media",
+      "rdfs:comment": "One or more references to **images, audio notes, or videos** supplied as part of a multimodal search. Each entry references a media resource accessible via HTTPS or data URI."
+    },
+    {
+      "@id": "beckn:options",
+      "@type": "rdf:Property",
+      "rdfs:label": "options",
+      "rdfs:comment": "Options controlling how the discovery engine interprets the supplied media — e.g., whether to perform OCR/ASR, semantic similarity, or object detection."
+    }
+  ]
+}

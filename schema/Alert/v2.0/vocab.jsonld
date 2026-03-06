@@ -1,0 +1,61 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Alert",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Alert",
+      "rdfs:comment": "Schema definition for Alert in the Beckn Protocol v2.0.1"
+    },
+    {
+      "@id": "beckn:@context",
+      "@type": "rdf:Property",
+      "rdfs:label": "@context",
+      "rdfs:comment": "TODO: Description Needed - @context"
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "TODO: Description Needed - @type"
+    },
+    {
+      "@id": "beckn:affectedEntities",
+      "@type": "rdf:Property",
+      "rdfs:label": "affected Entities",
+      "rdfs:comment": "IDs of entities affected (route/order/fulfillment/etc.)"
+    },
+    {
+      "@id": "beckn:descriptor",
+      "@type": "rdf:Property",
+      "rdfs:label": "descriptor",
+      "rdfs:comment": "TODO: Description Needed - descriptor"
+    },
+    {
+      "@id": "beckn:id",
+      "@type": "rdf:Property",
+      "rdfs:label": "id",
+      "rdfs:comment": "TODO: Description Needed - id"
+    },
+    {
+      "@id": "beckn:severity",
+      "@type": "rdf:Property",
+      "rdfs:label": "severity",
+      "rdfs:comment": "TODO: Description Needed - severity"
+    },
+    {
+      "@id": "beckn:validity",
+      "@type": "rdf:Property",
+      "rdfs:label": "validity",
+      "rdfs:comment": "TODO: Description Needed - validity"
+    }
+  ]
+}

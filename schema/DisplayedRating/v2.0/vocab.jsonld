@@ -1,0 +1,37 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:DisplayedRating",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Displayed Rating",
+      "rdfs:comment": "Schema definition for DisplayedRating in the Beckn Protocol v2.0.1"
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "Type of the rating"
+    },
+    {
+      "@id": "beckn:ratingCount",
+      "@type": "rdf:Property",
+      "rdfs:label": "rating Count",
+      "rdfs:comment": "Number of ratings"
+    },
+    {
+      "@id": "beckn:ratingValue",
+      "@type": "rdf:Property",
+      "rdfs:label": "rating Value",
+      "rdfs:comment": "Rating value (0-5)"
+    }
+  ]
+}

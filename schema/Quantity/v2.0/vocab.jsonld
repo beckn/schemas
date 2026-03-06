@@ -1,0 +1,49 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Quantity",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Quantity",
+      "rdfs:comment": "Schema definition for Quantity in the Beckn Protocol v2.0.1"
+    },
+    {
+      "@id": "beckn:maxQuantity",
+      "@type": "rdf:Property",
+      "rdfs:label": "max Quantity",
+      "rdfs:comment": "Maximum quantity for this price"
+    },
+    {
+      "@id": "beckn:minQuantity",
+      "@type": "rdf:Property",
+      "rdfs:label": "min Quantity",
+      "rdfs:comment": "Minimum quantity for this price"
+    },
+    {
+      "@id": "beckn:unitCode",
+      "@type": "rdf:Property",
+      "rdfs:label": "unit Code",
+      "rdfs:comment": "Unit code for the quoted price (e.g., KWH, MIN, H, MON)"
+    },
+    {
+      "@id": "beckn:unitQuantity",
+      "@type": "rdf:Property",
+      "rdfs:label": "unit Quantity",
+      "rdfs:comment": "Quantity of the unit"
+    },
+    {
+      "@id": "beckn:unitText",
+      "@type": "rdf:Property",
+      "rdfs:label": "unit Text",
+      "rdfs:comment": "Unit for the quoted price (e.g., kWh, minute, hour, month)"
+    }
+  ]
+}

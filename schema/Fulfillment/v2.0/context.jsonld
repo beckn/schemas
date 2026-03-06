@@ -1,0 +1,22 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "beckn": "https://schema.beckn.io/",
+    "Fulfillment": "beckn:Fulfillment",
+    "@context": "beckn:@context",
+    "@type": "beckn:@type",
+    "agent": "beckn:agent",
+    "fulfillmentAttributes": "beckn:fulfillmentAttributes",
+    "id": "beckn:id",
+    "instructions": "beckn:instructions",
+    "mode": "beckn:mode",
+    "participants": "beckn:participants",
+    "state": "beckn:state",
+    "stages": "beckn:stages",
+    "trackingEnabled": "beckn:trackingEnabled"
+  }
+}

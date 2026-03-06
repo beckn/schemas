@@ -1,0 +1,43 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:TrackingRequest",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Tracking Request",
+      "rdfs:comment": "Schema definition for TrackingRequest in the Beckn Protocol v2.0.1"
+    },
+    {
+      "@id": "beckn:id",
+      "@type": "rdf:Property",
+      "rdfs:label": "id",
+      "rdfs:comment": "Tracking reference identifier"
+    },
+    {
+      "@id": "beckn:callbackUrl",
+      "@type": "rdf:Property",
+      "rdfs:label": "callback Url",
+      "rdfs:comment": "Optional callback URL for streaming tracking coordinates/updates"
+    },
+    {
+      "@id": "beckn:modeHint",
+      "@type": "rdf:Property",
+      "rdfs:label": "mode Hint",
+      "rdfs:comment": "Optional delivery mode for the tracking handle."
+    },
+    {
+      "@id": "beckn:trackingDataSchema",
+      "@type": "rdf:Property",
+      "rdfs:label": "tracking Data Schema",
+      "rdfs:comment": "A JSON Schema (2020-12) that describes the structure of trackingData payloads."
+    }
+  ]
+}

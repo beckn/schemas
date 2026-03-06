@@ -1,0 +1,97 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Person",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Person",
+      "rdfs:comment": "A person (alive, deceased, or fictional). Modeled after schema.org/Person."
+    },
+    {
+      "@id": "beckn:@context",
+      "@type": "rdf:Property",
+      "rdfs:label": "@context",
+      "rdfs:comment": "TODO: Description Needed - @context"
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "TODO: Description Needed - @type"
+    },
+    {
+      "@id": "beckn:id",
+      "@type": "rdf:Property",
+      "rdfs:label": "id",
+      "rdfs:comment": "Unique identifier for the person"
+    },
+    {
+      "@id": "beckn:name",
+      "@type": "rdf:Property",
+      "rdfs:label": "name",
+      "rdfs:comment": "Full name of the person"
+    },
+    {
+      "@id": "beckn:email",
+      "@type": "rdf:Property",
+      "rdfs:label": "email",
+      "rdfs:comment": "Email address"
+    },
+    {
+      "@id": "beckn:telephone",
+      "@type": "rdf:Property",
+      "rdfs:label": "telephone",
+      "rdfs:comment": "Telephone number"
+    },
+    {
+      "@id": "beckn:address",
+      "@type": "rdf:Property",
+      "rdfs:label": "address",
+      "rdfs:comment": "Physical address"
+    },
+    {
+      "@id": "beckn:age",
+      "@type": "rdf:Property",
+      "rdfs:label": "age",
+      "rdfs:comment": "Age in years"
+    },
+    {
+      "@id": "beckn:knowsLanguage",
+      "@type": "rdf:Property",
+      "rdfs:label": "knows Language",
+      "rdfs:comment": "Languages known by the person (BCP-47 codes or language names)"
+    },
+    {
+      "@id": "beckn:worksFor",
+      "@type": "rdf:Property",
+      "rdfs:label": "works For",
+      "rdfs:comment": "Organization the person works for"
+    },
+    {
+      "@id": "beckn:credentials",
+      "@type": "rdf:Property",
+      "rdfs:label": "credentials",
+      "rdfs:comment": "Credentials held by the person"
+    },
+    {
+      "@id": "beckn:skills",
+      "@type": "rdf:Property",
+      "rdfs:label": "skills",
+      "rdfs:comment": "Skills possessed by the person"
+    },
+    {
+      "@id": "beckn:personAttributes",
+      "@type": "rdf:Property",
+      "rdfs:label": "person Attributes",
+      "rdfs:comment": "Extensible attribute pack for jurisdictional or domain-specific person properties"
+    }
+  ]
+}

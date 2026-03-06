@@ -1,0 +1,24 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "beckn": "https://schema.beckn.io/",
+    "Context": "beckn:Context",
+    "action": "beckn:action",
+    "bapId": "beckn:bapId",
+    "bapUri": "beckn:bapUri",
+    "bppId": "beckn:bppId",
+    "bppUri": "beckn:bppUri",
+    "messageId": "beckn:messageId",
+    "networkId": "beckn:networkId",
+    "timestamp": "beckn:timestamp",
+    "transactionId": "beckn:transactionId",
+    "try": "beckn:try",
+    "ttl": "beckn:ttl",
+    "version": "beckn:version",
+    "lineage": "beckn:lineage"
+  }
+}

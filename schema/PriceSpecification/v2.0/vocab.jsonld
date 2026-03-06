@@ -1,0 +1,49 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:PriceSpecification",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Price Specification",
+      "rdfs:comment": "Schema definition for PriceSpecification in the Beckn Protocol v2.0.1"
+    },
+    {
+      "@id": "beckn:currency",
+      "@type": "rdf:Property",
+      "rdfs:label": "currency",
+      "rdfs:comment": "ISO 4217 code"
+    },
+    {
+      "@id": "beckn:value",
+      "@type": "rdf:Property",
+      "rdfs:label": "value",
+      "rdfs:comment": "Total value for this price specification"
+    },
+    {
+      "@id": "beckn:applicableQuantity",
+      "@type": "rdf:Property",
+      "rdfs:label": "applicable Quantity",
+      "rdfs:comment": "TODO: Description Needed - applicableQuantity"
+    },
+    {
+      "@id": "beckn:components",
+      "@type": "rdf:Property",
+      "rdfs:label": "components",
+      "rdfs:comment": "Optional components (tax, shipping, discount, fee, surcharge)"
+    },
+    {
+      "@id": "beckn:x-jsonld",
+      "@type": "rdf:Property",
+      "rdfs:label": "x-jsonld",
+      "rdfs:comment": "TODO: Description Needed - x-jsonld"
+    }
+  ]
+}

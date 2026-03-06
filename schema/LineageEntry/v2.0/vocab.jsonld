@@ -1,0 +1,43 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:LineageEntry",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Lineage Entry",
+      "rdfs:comment": "A causal attribution record asserting that the Beckn transaction in which this entry appears was triggered by a specific upstream Beckn interaction. Used in Context.lineage at transaction boundaries — when a new transaction is initiated as a direct consequence of an upstream interaction. MUST NOT be included within subsequent steps of the same transaction, and MUST NOT be propagated by downstream responses."
+    },
+    {
+      "@id": "beckn:action",
+      "@type": "rdf:Property",
+      "rdfs:label": "action",
+      "rdfs:comment": "The Beckn endpoint of the upstream message that caused this transaction to be initiated."
+    },
+    {
+      "@id": "beckn:transactionId",
+      "@type": "rdf:Property",
+      "rdfs:label": "transaction Id",
+      "rdfs:comment": "The transactionId of the upstream Beckn transaction, taken from its Context."
+    },
+    {
+      "@id": "beckn:messageId",
+      "@type": "rdf:Property",
+      "rdfs:label": "message Id",
+      "rdfs:comment": "The messageId of the specific upstream message that directly triggered the creation of this transaction."
+    },
+    {
+      "@id": "beckn:digest",
+      "@type": "rdf:Property",
+      "rdfs:label": "digest",
+      "rdfs:comment": "BLAKE2b-512 hash of the upstream message body bytes, encoded in Base64 and prefixed with the algorithm identifier. Format: BLAKE-512={base64EncodedHash}"
+    }
+  ]
+}

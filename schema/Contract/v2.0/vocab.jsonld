@@ -1,0 +1,79 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Contract",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Contract",
+      "rdfs:comment": "This is a JSON-LD compliant, linked-data schema that specifies a generic multi-party, digitally signed Contract between a set of participants. based on the vocabulary defined in the @context. By default, it is the most generic form of contract i.e beckn:Contract. However, based on the mapping being used in @context, it could take values like retail:Order, mobility:Reservation, healthcare:Appointment, and so on, which will be defined as sub-classes of beckn:Contract."
+    },
+    {
+      "@id": "beckn:@context",
+      "@type": "rdf:Property",
+      "rdfs:label": "@context",
+      "rdfs:comment": "A URL to the reference vocabulary where this schema has been defined. If missing, this field defaults to `https://schema.beckn.io/`. It allows applications to fetch the mapping between the simple JSON keys of this class and absolute Beckn IRIs (Internationalized Resource Identifiers), allowing conversion of standard Beckn JSON payload into linked data."
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "A Beckn IRI on the vocabulary defined in the @context. Must start with \"beckn:\" followed by URL-safe identifier characters."
+    },
+    {
+      "@id": "beckn:id",
+      "@type": "rdf:Property",
+      "rdfs:label": "id",
+      "rdfs:comment": "A UUID string generated at the BPP endpoint at any stage before the confirmation of the order i.e before `/on_confirm` callback. This value is intended typically for indexing or filtering. While the chances of a UUID collision are rare, it is recommended to use a combination of `bppId`, `providerId` and `id` to allow for global uniqueness."
+    },
+    {
+      "@id": "beckn:displayId",
+      "@type": "rdf:Property",
+      "rdfs:label": "display Id",
+      "rdfs:comment": "A human-readable / Agent-readable identifier of the contract intended for display or printing. This value may or may not be different from `id` which is intended purely for machine-readability. Typically, this value is generated after the confirmation of the order at the BPP's end."
+    },
+    {
+      "@id": "beckn:items",
+      "@type": "rdf:Property",
+      "rdfs:label": "items",
+      "rdfs:comment": "The items of value i.e resources, specified in this contract. Depending upon the context, these resources could be a combination physical objects, virtual objects, services, time slots, distance travelled, alloted space, and many more."
+    },
+    {
+      "@id": "beckn:status",
+      "@type": "rdf:Property",
+      "rdfs:label": "status",
+      "rdfs:comment": "The current state of the contract. Depending on the context, it could be just a code or a detailed description of state."
+    },
+    {
+      "@id": "beckn:contractValue",
+      "@type": "rdf:Property",
+      "rdfs:label": "contract Value",
+      "rdfs:comment": "An object that captures the total value of the contract including a breakup of the items, discounts, fulfillment charges, and any other additional charges relevant to that context."
+    },
+    {
+      "@id": "beckn:participants",
+      "@type": "rdf:Property",
+      "rdfs:label": "participants",
+      "rdfs:comment": "The participants involved in the contract. Contracts are not always between two individuals. Several entities may play a specific role in the creation, fulfillment, and post-fulfillment of the contract."
+    },
+    {
+      "@id": "beckn:entitlements",
+      "@type": "rdf:Property",
+      "rdfs:label": "entitlements",
+      "rdfs:comment": "TODO: Description Needed - entitlements"
+    },
+    {
+      "@id": "beckn:fulfillments",
+      "@type": "rdf:Property",
+      "rdfs:label": "fulfillments",
+      "rdfs:comment": "Describes the acts performed by each participant to fulfill the contract"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Address",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Address",
+      "rdfs:comment": "**Postal address** aligned with schema.org `PostalAddress`. Use for human-readable addresses. Geometry lives in `Location.geo` as GeoJSON."
+    },
+    {
+      "@id": "beckn:addressCountry",
+      "@type": "rdf:Property",
+      "rdfs:label": "address Country",
+      "rdfs:comment": "Country name or ISO-3166-1 alpha-2 code."
+    },
+    {
+      "@id": "beckn:addressLocality",
+      "@type": "rdf:Property",
+      "rdfs:label": "address Locality",
+      "rdfs:comment": "City/locality."
+    },
+    {
+      "@id": "beckn:addressRegion",
+      "@type": "rdf:Property",
+      "rdfs:label": "address Region",
+      "rdfs:comment": "State/region/province."
+    },
+    {
+      "@id": "beckn:extendedAddress",
+      "@type": "rdf:Property",
+      "rdfs:label": "extended Address",
+      "rdfs:comment": "Address extension (apt/suite/floor, C/O)."
+    },
+    {
+      "@id": "beckn:postalCode",
+      "@type": "rdf:Property",
+      "rdfs:label": "postal Code",
+      "rdfs:comment": "Postal/ZIP code."
+    },
+    {
+      "@id": "beckn:streetAddress",
+      "@type": "rdf:Property",
+      "rdfs:label": "street Address",
+      "rdfs:comment": "Street address (building name/number and street)."
+    }
+  ]
+}

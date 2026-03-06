@@ -1,0 +1,25 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:ErrorResponse",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Error Response",
+      "rdfs:comment": "Schema definition for ErrorResponse in the Beckn Protocol v2.0.1"
+    },
+    {
+      "@id": "beckn:error",
+      "@type": "rdf:Property",
+      "rdfs:label": "error",
+      "rdfs:comment": "TODO: Description Needed - error"
+    }
+  ]
+}

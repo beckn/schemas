@@ -1,0 +1,67 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Constraint",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Constraint",
+      "rdfs:comment": "Schema definition for Constraint in the Beckn Protocol v2.0.1"
+    },
+    {
+      "@id": "beckn:@context",
+      "@type": "rdf:Property",
+      "rdfs:label": "@context",
+      "rdfs:comment": "CPD"
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "TODO: Description Needed - @type"
+    },
+    {
+      "@id": "beckn:constraintType",
+      "@type": "rdf:Property",
+      "rdfs:label": "constraint Type",
+      "rdfs:comment": "Type of constraint (extensible term)"
+    },
+    {
+      "@id": "beckn:id",
+      "@type": "rdf:Property",
+      "rdfs:label": "id",
+      "rdfs:comment": "Identifier for the constraint"
+    },
+    {
+      "@id": "beckn:operator",
+      "@type": "rdf:Property",
+      "rdfs:label": "operator",
+      "rdfs:comment": "Comparator/operator (<=, >=, =, etc.)"
+    },
+    {
+      "@id": "beckn:unitCode",
+      "@type": "rdf:Property",
+      "rdfs:label": "unit Code",
+      "rdfs:comment": "Unit code (e.g., km, min)"
+    },
+    {
+      "@id": "beckn:validity",
+      "@type": "rdf:Property",
+      "rdfs:label": "validity",
+      "rdfs:comment": "TODO: Description Needed - validity"
+    },
+    {
+      "@id": "beckn:value",
+      "@type": "rdf:Property",
+      "rdfs:label": "value",
+      "rdfs:comment": "Constraint value"
+    }
+  ]
+}

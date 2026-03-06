@@ -1,0 +1,85 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:PaymentAction",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Payment Action",
+      "rdfs:comment": "Schema definition for PaymentAction in the Beckn Protocol v2.0.1"
+    },
+    {
+      "@id": "beckn:@context",
+      "@type": "rdf:Property",
+      "rdfs:label": "@context",
+      "rdfs:comment": "TODO: Description Needed - @context"
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "TODO: Description Needed - @type"
+    },
+    {
+      "@id": "beckn:amount",
+      "@type": "rdf:Property",
+      "rdfs:label": "amount",
+      "rdfs:comment": "Amount associated with this payment action"
+    },
+    {
+      "@id": "beckn:paymentStatus",
+      "@type": "rdf:Property",
+      "rdfs:label": "payment Status",
+      "rdfs:comment": "Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)"
+    },
+    {
+      "@id": "beckn:paymentMethod",
+      "@type": "rdf:Property",
+      "rdfs:label": "payment Method",
+      "rdfs:comment": "TODO: Description Needed - paymentMethod"
+    },
+    {
+      "@id": "beckn:paymentUrl",
+      "@type": "rdf:Property",
+      "rdfs:label": "payment Url",
+      "rdfs:comment": "URL for payment processing/redirection"
+    },
+    {
+      "@id": "beckn:state",
+      "@type": "rdf:Property",
+      "rdfs:label": "state",
+      "rdfs:comment": "TODO: Description Needed - state"
+    },
+    {
+      "@id": "beckn:txnRef",
+      "@type": "rdf:Property",
+      "rdfs:label": "txn Ref",
+      "rdfs:comment": "PSP/gateway/bank transaction reference"
+    },
+    {
+      "@id": "beckn:checkoutAt",
+      "@type": "rdf:Property",
+      "rdfs:label": "checkout At",
+      "rdfs:comment": "TODO: Description Needed - checkoutAt"
+    },
+    {
+      "@id": "beckn:paidAt",
+      "@type": "rdf:Property",
+      "rdfs:label": "paid At",
+      "rdfs:comment": "The time at which the payment was made"
+    },
+    {
+      "@id": "beckn:paymentActionAttributes",
+      "@type": "rdf:Property",
+      "rdfs:label": "payment Action Attributes",
+      "rdfs:comment": "Extensible set of attributes containing payment actions specific to each ecosystem."
+    }
+  ]
+}

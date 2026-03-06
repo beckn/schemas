@@ -1,0 +1,49 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:FulfillmentStageEndpoint",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Fulfillment Stage Endpoint",
+      "rdfs:comment": "A stage boundary endpoint (entry or exit) within a fulfillment, such as pickup, handover, warehouse in/out, border crossing, gate entry/exit, security check, etc. May require one or more proofs/permits/tokens/documents."
+    },
+    {
+      "@id": "beckn:@context",
+      "@type": "rdf:Property",
+      "rdfs:label": "@context",
+      "rdfs:comment": "CPD"
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "TODO: Description Needed - @type"
+    },
+    {
+      "@id": "beckn:location",
+      "@type": "rdf:Property",
+      "rdfs:label": "location",
+      "rdfs:comment": "TODO: Description Needed - location"
+    },
+    {
+      "@id": "beckn:time",
+      "@type": "rdf:Property",
+      "rdfs:label": "time",
+      "rdfs:comment": "TODO: Description Needed - time"
+    },
+    {
+      "@id": "beckn:authorization",
+      "@type": "rdf:Property",
+      "rdfs:label": "authorization",
+      "rdfs:comment": "One or more credentials required and/or issued at this endpoint. Includes machine-readable tokens (QR/URL/OTP) and manual documents (IDs, permits)."
+    }
+  ]
+}

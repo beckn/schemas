@@ -1,0 +1,49 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:CatalogProcessingResult",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Catalog Processing Result",
+      "rdfs:comment": "Schema definition for CatalogProcessingResult in the Beckn Protocol v2.1"
+    },
+    {
+      "@id": "beckn:catalogId",
+      "@type": "rdf:Property",
+      "rdfs:label": "catalog Id",
+      "rdfs:comment": "The \"id\" of the submitted catalog"
+    },
+    {
+      "@id": "beckn:status",
+      "@type": "rdf:Property",
+      "rdfs:label": "status",
+      "rdfs:comment": "Final processing outcome for this catalog"
+    },
+    {
+      "@id": "beckn:itemCount",
+      "@type": "rdf:Property",
+      "rdfs:label": "item Count",
+      "rdfs:comment": "Number of items indexed (when accepted/partial)"
+    },
+    {
+      "@id": "beckn:warnings",
+      "@type": "rdf:Property",
+      "rdfs:label": "warnings",
+      "rdfs:comment": "Non-fatal issues encountered"
+    },
+    {
+      "@id": "beckn:error",
+      "@type": "rdf:Property",
+      "rdfs:label": "error",
+      "rdfs:comment": "TODO: Description Needed - error"
+    }
+  ]
+}

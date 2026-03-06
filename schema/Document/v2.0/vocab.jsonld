@@ -1,0 +1,49 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Document",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Document",
+      "rdfs:comment": "A document, that can be parsed, printed, download or displayed. This has intentionally been kept separate from MediaFile as they may contain additional attributes like signature, schema etc."
+    },
+    {
+      "@id": "beckn:label",
+      "@type": "rdf:Property",
+      "rdfs:label": "label",
+      "rdfs:comment": "The display name of the media file"
+    },
+    {
+      "@id": "beckn:mimeType",
+      "@type": "rdf:Property",
+      "rdfs:label": "mime Type",
+      "rdfs:comment": "MIME type if 'data' is provided (application/pdf, image/png, application/json)."
+    },
+    {
+      "@id": "beckn:standard",
+      "@type": "rdf:Property",
+      "rdfs:label": "standard",
+      "rdfs:comment": "Describes the schema type in case the document follows a standard schema like a verifiableCredential"
+    },
+    {
+      "@id": "beckn:url",
+      "@type": "rdf:Property",
+      "rdfs:label": "url",
+      "rdfs:comment": "URL to the document"
+    },
+    {
+      "@id": "beckn:security",
+      "@type": "rdf:Property",
+      "rdfs:label": "security",
+      "rdfs:comment": "TODO: Description Needed - security"
+    }
+  ]
+}

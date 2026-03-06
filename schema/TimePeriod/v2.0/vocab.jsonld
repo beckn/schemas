@@ -1,0 +1,49 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:TimePeriod",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Time Period",
+      "rdfs:comment": "Time window with date-time precision for availability/validity"
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "JSON-LD type for a date-time period"
+    },
+    {
+      "@id": "beckn:startDate",
+      "@type": "rdf:Property",
+      "rdfs:label": "start Date",
+      "rdfs:comment": "Start instant (inclusive)"
+    },
+    {
+      "@id": "beckn:endDate",
+      "@type": "rdf:Property",
+      "rdfs:label": "end Date",
+      "rdfs:comment": "End instant (exclusive or inclusive per domain semantics)"
+    },
+    {
+      "@id": "beckn:startTime",
+      "@type": "rdf:Property",
+      "rdfs:label": "start Time",
+      "rdfs:comment": "Start time of the time period"
+    },
+    {
+      "@id": "beckn:endTime",
+      "@type": "rdf:Property",
+      "rdfs:label": "end Time",
+      "rdfs:comment": "End time of the time period"
+    }
+  ]
+}

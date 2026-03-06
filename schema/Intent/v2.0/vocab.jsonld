@@ -1,0 +1,43 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Intent",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Intent",
+      "rdfs:comment": "A declaration of an intent to discover catalogs."
+    },
+    {
+      "@id": "beckn:textSearch",
+      "@type": "rdf:Property",
+      "rdfs:label": "text Search",
+      "rdfs:comment": "Free text search query for items"
+    },
+    {
+      "@id": "beckn:filters",
+      "@type": "rdf:Property",
+      "rdfs:label": "filters",
+      "rdfs:comment": "Filter criteria for items"
+    },
+    {
+      "@id": "beckn:spatial",
+      "@type": "rdf:Property",
+      "rdfs:label": "spatial",
+      "rdfs:comment": "Optional array of spatial constraints (CQL2-JSON semantics)."
+    },
+    {
+      "@id": "beckn:media_search",
+      "@type": "rdf:Property",
+      "rdfs:label": "media_search",
+      "rdfs:comment": "TODO: Description Needed - media_search"
+    }
+  ]
+}

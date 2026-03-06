@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:MediaFile",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Media File",
+      "rdfs:comment": "A image, audio, or video typically intended for display purposes"
+    },
+    {
+      "@id": "beckn:label",
+      "@type": "rdf:Property",
+      "rdfs:label": "label",
+      "rdfs:comment": "The display name of the media file"
+    },
+    {
+      "@id": "beckn:uri",
+      "@type": "rdf:Property",
+      "rdfs:label": "uri",
+      "rdfs:comment": "URL to the document"
+    }
+  ]
+}

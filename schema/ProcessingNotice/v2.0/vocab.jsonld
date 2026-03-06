@@ -1,0 +1,37 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:ProcessingNotice",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Processing Notice",
+      "rdfs:comment": "Schema definition for ProcessingNotice in the Beckn Protocol v2.0.1"
+    },
+    {
+      "@id": "beckn:code",
+      "@type": "rdf:Property",
+      "rdfs:label": "code",
+      "rdfs:comment": "TODO: Description Needed - code"
+    },
+    {
+      "@id": "beckn:message",
+      "@type": "rdf:Property",
+      "rdfs:label": "message",
+      "rdfs:comment": "TODO: Description Needed - message"
+    },
+    {
+      "@id": "beckn:details",
+      "@type": "rdf:Property",
+      "rdfs:label": "details",
+      "rdfs:comment": "TODO: Description Needed - details"
+    }
+  ]
+}

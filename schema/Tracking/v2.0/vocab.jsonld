@@ -1,0 +1,49 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Tracking",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Tracking",
+      "rdfs:comment": "Non-streaming tracking handle per legacy semantics (url/transport/status)."
+    },
+    {
+      "@id": "beckn:@context",
+      "@type": "rdf:Property",
+      "rdfs:label": "@context",
+      "rdfs:comment": "TBD"
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "TBD"
+    },
+    {
+      "@id": "beckn:expiresAt",
+      "@type": "rdf:Property",
+      "rdfs:label": "expires At",
+      "rdfs:comment": "ISO 8601 expiry timestamp for the tracking handle."
+    },
+    {
+      "@id": "beckn:trackingStatus",
+      "@type": "rdf:Property",
+      "rdfs:label": "tracking Status",
+      "rdfs:comment": "TODO: Description Needed - trackingStatus"
+    },
+    {
+      "@id": "beckn:url",
+      "@type": "rdf:Property",
+      "rdfs:label": "url",
+      "rdfs:comment": "Link/handle to off-network tracking UI or endpoint."
+    }
+  ]
+}

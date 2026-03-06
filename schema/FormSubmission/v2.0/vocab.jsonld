@@ -1,0 +1,43 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:FormSubmission",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Form Submission",
+      "rdfs:comment": "A user's submitted response to a Beckn form. Captures the filled-in field values keyed by form field names. Typically attached to a RatingInput to convey feedback form answers alongside a rating."
+    },
+    {
+      "@id": "beckn:id",
+      "@type": "rdf:Property",
+      "rdfs:label": "id",
+      "rdfs:comment": "Identifier of the form that was submitted. Typically the form's URL or the value of the form's url field."
+    },
+    {
+      "@id": "beckn:submissionId",
+      "@type": "rdf:Property",
+      "rdfs:label": "submission Id",
+      "rdfs:comment": "Unique identifier for this form submission instance."
+    },
+    {
+      "@id": "beckn:data",
+      "@type": "rdf:Property",
+      "rdfs:label": "data",
+      "rdfs:comment": "Key-value map of form field names to submitted values. Keys correspond to the field identifiers defined in the form; values are the user's responses as strings."
+    },
+    {
+      "@id": "beckn:submittedAt",
+      "@type": "rdf:Property",
+      "rdfs:label": "submitted At",
+      "rdfs:comment": "Timestamp at which the form was submitted, in RFC 3339 / ISO 8601 format."
+    }
+  ]
+}
