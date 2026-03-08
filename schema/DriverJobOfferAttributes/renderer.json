@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "schema": "DriverJobOfferAttributes",
+
+  "card_template": "Offer | {{offerAttributes.salarySpecification.value}} {{offerAttributes.salarySpecification.currency}} / {{offerAttributes.salarySpecification.frequency}} | Joining: {{offerAttributes.joiningDate}} | Depot: {{offerAttributes.assignedDepot}} | Valid until: {{offerAttributes.offerValidity}}",
+
+  "detail_template": "## Job Offer\n**Salary:** {{offerAttributes.salarySpecification.value}} {{offerAttributes.salarySpecification.currency}} per {{offerAttributes.salarySpecification.frequency}}\n**Joining Date:** {{offerAttributes.joiningDate}}\n**Shift:** {{offerAttributes.shiftAssignment}}\n**Depot / Base:** {{offerAttributes.assignedDepot}}\n**Route Type:** {{offerAttributes.routeType}}\n**Insurance Provided:** {{offerAttributes.insuranceProvided}}\n**Accommodation Provided:** {{offerAttributes.accommodationProvided}}\n**Other Benefits:** {{offerAttributes.otherBenefits}}\n**Probation Period:** {{offerAttributes.probationPeriod}}\n**Contract Duration:** {{offerAttributes.contractDuration}}\n**Offer Valid Until:** {{offerAttributes.offerValidity}}\n**Additional Terms:** {{offerAttributes.remarks}}",
+
+  "field_labels": {
+    "offerAttributes.salarySpecification.value":    "Salary Amount",
+    "offerAttributes.salarySpecification.currency": "Currency",
+    "offerAttributes.salarySpecification.frequency":"Pay Frequency",
+    "offerAttributes.joiningDate":                  "Joining Date",
+    "offerAttributes.shiftAssignment":              "Assigned Shift",
+    "offerAttributes.assignedDepot":                "Depot / Base",
+    "offerAttributes.routeType":                    "Route Type",
+    "offerAttributes.insuranceProvided":            "Insurance Provided",
+    "offerAttributes.accommodationProvided":        "Accommodation Provided",
+    "offerAttributes.otherBenefits":                "Additional Benefits",
+    "offerAttributes.probationPeriod":              "Probation Period",
+    "offerAttributes.contractDuration":             "Contract Duration",
+    "offerAttributes.offerValidity":                "Offer Valid Until",
+    "offerAttributes.remarks":                      "Additional Terms"
+  }
+}

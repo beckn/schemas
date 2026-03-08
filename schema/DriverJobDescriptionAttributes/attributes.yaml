@@ -1,0 +1,209 @@
+openapi: 3.1.1
+info:
+  title: DriverJobDescriptionAttributes Schema
+  description: >
+    Beckn v2 extension schema describing a driver job listing published by an operator.
+    Attached to a Beckn Item as itemAttributes when the catalogue category is driver-job.
+
+    Container: Item.itemAttributes
+    Category:  driver-job
+  version: 1.0.0
+
+externalDocs:
+  description: Beckn Protocol v2 Core Specifications
+  url: https://github.com/beckn/protocol-specifications-v2/tree/proposal/v2.1-generalized-core
+
+components:
+  schemas:
+
+    # ===================================================================
+    #  DriverJobDescriptionAttributes Schema
+    #  Container : Item.itemAttributes
+    #  Category  : driver-job
+    # ===================================================================
+    DriverJobDescriptionAttributes:
+      type: object
+      x-jsonld-context: "./context.jsonld"
+      x-beckn-container: itemAttributes
+      x-beckn-category: driver-job
+      description: >
+        Intrinsic attributes of a driver job listing. Covers the role description,
+        eligibility requirements, working conditions, and operator trust signals
+        visible during discovery. Commercial offer terms (salary, benefits confirmation)
+        are modelled separately in DriverJobOfferAttributes.
+      properties:
+
+        roleType:
+          type: string
+          x-jsonld-id: "djda:roleType"
+          description: >
+            Classification of the driver role.
+            Must be a DriverRoleType vocab term.
+          example: "BUS_DRIVER"
+
+        vehicleCategoriesRequired:
+          type: array
+          x-jsonld-id: "djda:vehicleCategoriesRequired"
+          items:
+            type: string
+          description: >
+            Vehicle categories the driver must be licensed to operate.
+            Each entry must be a DriverVehicleCategory vocab term.
+          example: ["HEAVY_MOTOR_VEHICLE", "BUS"]
+
+        jobLocation:
+          x-jsonld-id: "schema:jobLocation"
+          allOf:
+            - $ref: "#/components/schemas/NetworkLocation"
+          description: Primary geographic location of the job posting.
+
+        employmentType:
+          type: string
+          x-jsonld-id: "schema:employmentType"
+          description: >
+            Nature of the employment arrangement.
+            Must be an EmploymentType vocab term.
+          example: "FULL_TIME"
+
+        shiftType:
+          type: string
+          x-jsonld-id: "djda:shiftType"
+          description: >
+            Shift arrangement required for the role.
+            Must be a ShiftType vocab term.
+          example: "DAY"
+
+        workingHours:
+          type: string
+          x-jsonld-id: "schema:workHours"
+          description: Human-readable description of indicative working hours.
+          example: "08:00–17:00, Monday to Friday"
+
+        contractDuration:
+          type: string
+          x-jsonld-id: "djda:contractDuration"
+          description: >
+            Duration of the employment contract as an ISO 8601 duration string.
+            Omit for permanent / open-ended roles.
+          example: "P1Y"
+
+        minExperienceYears:
+          type: number
+          x-jsonld-id: "djda:minExperienceYears"
+          minimum: 0
+          description: Minimum years of professional driving experience required.
+          example: 3
+
+        requiredCredentials:
+          type: array
+          x-jsonld-id: "djda:requiredCredentials"
+          items:
+            type: string
+          description: >
+            Credential types the applicant must hold.
+            Each entry must be a CredentialType vocab term.
+          example: ["DRIVING_LICENCE", "POLICE_VERIFICATION", "MEDICAL_FITNESS"]
+
+        requiredTraining:
+          type: array
+          x-jsonld-id: "djda:requiredTraining"
+          items:
+            type: string
+          description: Training programmes or certifications required for the role.
+          example: ["DEFENSIVE_DRIVING", "FIRST_AID"]
+
+        benefitsSummary:
+          type: array
+          x-jsonld-id: "djda:benefitsSummary"
+          items:
+            type: string
+          description: >
+            High-level list of benefits offered. Catalogue-visible summary only.
+            Confirmed benefit terms appear in DriverJobOfferAttributes at offer stage.
+          example: ["Medical insurance", "Provident fund", "Annual bonus"]
+
+        operatorReputation:
+          x-jsonld-id: "djda:operatorReputation"
+          allOf:
+            - $ref: "#/components/schemas/ReputationSummary"
+          description: >
+            Reputation signals for the operator visible during discovery.
+            Sourced from verifiable attestations — not a centralised scoring system.
+
+        applicationInstructions:
+          type: string
+          x-jsonld-id: "djda:applicationInstructions"
+          description: >
+            Instructions or prerequisites communicated during on_select.
+            Not exposed at on_discover stage.
+
+      required:
+        - roleType
+        - jobLocation
+        - employmentType
+
+    # -------------------------------------------------------------------
+    #  Shared dependency schemas (included for self-contained resolution)
+    # -------------------------------------------------------------------
+
+    ReputationSummary:
+      type: object
+      x-jsonld-context: "./context.jsonld"
+      description: >
+        Aggregated reputation signals for a driver or operator.
+        Sourced from verifiable attestations by trusted network participants.
+        Not a centralised score.
+      properties:
+        ratingValue:
+          type: number
+          x-jsonld-id: "schema:ratingValue"
+          minimum: 0
+          maximum: 5
+          description: Aggregated rating on a 0–5 scale.
+          example: 4.1
+        ratingCount:
+          type: integer
+          x-jsonld-id: "schema:reviewCount"
+          minimum: 0
+          description: Number of verified ratings contributing to the aggregate.
+          example: 312
+        ratingAgency:
+          type: string
+          x-jsonld-id: "schema:author"
+          description: Name or identifier of the entity that computed or attested the rating.
+          example: "Driver Network Trust Layer"
+
+    NetworkLocation:
+      type: object
+      x-jsonld-context: "./context.jsonld"
+      description: >
+        Geographic location representation aligned with schema.org PostalAddress
+        and the Beckn GPS convention. Country code must be ISO 3166-1 alpha-2.
+      properties:
+        gps:
+          type: string
+          x-jsonld-id: "beckn:gps"
+          pattern: "^-?\\d{1,3}\\.\\d+,-?\\d{1,3}\\.\\d+$"
+          description: GPS coordinates as a "latitude,longitude" string.
+          example: "26.8467,80.9462"
+        addressLocality:
+          type: string
+          x-jsonld-id: "schema:addressLocality"
+          description: City, town, or locality name.
+          example: "Lucknow"
+        addressRegion:
+          type: string
+          x-jsonld-id: "schema:addressRegion"
+          description: State, province, or administrative region.
+          example: "Uttar Pradesh"
+        addressCountry:
+          type: string
+          x-jsonld-id: "schema:addressCountry"
+          pattern: "^[A-Z]{2}$"
+          description: ISO 3166-1 alpha-2 country code.
+          example: "IN"
+        postalCode:
+          type: string
+          x-jsonld-id: "schema:postalCode"
+          description: Postal or ZIP code.
+          example: "226001"

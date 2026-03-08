@@ -1,0 +1,139 @@
+openapi: 3.1.1
+info:
+  title: DriverHiringFulfillmentAttributes Schema
+  description: >
+    Beckn v2 extension schema representing the execution stages of the driver hiring process.
+    Attached to a Beckn Fulfillment as fulfillmentAttributes.
+
+    Container: Fulfillment.fulfillmentAttributes
+    Lifecycle : Communicated progressively via update/on_update interactions
+
+    The hiring lifecycle is multi-stage. State transitions follow:
+    APPLICATION_SUBMITTED → UNDER_REVIEW → INTERVIEW_SCHEDULED → EVALUATION_COMPLETE
+      → OFFER_ISSUED → OFFER_ACCEPTED / OFFER_REJECTED → HIRING_CONFIRMED → ONBOARDING_COMPLETE
+  version: 1.0.0
+
+externalDocs:
+  description: Beckn Protocol v2 Core Specifications
+  url: https://github.com/beckn/protocol-specifications-v2/tree/proposal/v2.1-generalized-core
+
+components:
+  schemas:
+
+    # ===================================================================
+    #  DriverHiringFulfillmentAttributes Schema
+    #  Container : Fulfillment.fulfillmentAttributes
+    # ===================================================================
+    DriverHiringFulfillmentAttributes:
+      type: object
+      x-jsonld-context: "./context.jsonld"
+      x-beckn-container: fulfillmentAttributes
+      description: >
+        Attributes representing the execution stages of the driver hiring process.
+        Covers the hiring state machine labels, evaluation scheduling (interviews,
+        driving tests), and screening notes.
+        Transaction-level metadata (application IDs, submitted documents, offer outcome)
+        belongs in DriverApplicationOrderAttributes.
+      properties:
+
+        hiringStage:
+          type: string
+          x-jsonld-id: "dhfa:hiringStage"
+          description: >
+            Current stage of the hiring lifecycle.
+            Must be a HiringStage vocab term.
+          example: "INTERVIEW_SCHEDULED"
+
+        screeningNotes:
+          type: string
+          x-jsonld-id: "dhfa:screeningNotes"
+          description: Outcome notes or observations from the initial screening stage.
+
+        interviewSchedule:
+          type: array
+          x-jsonld-id: "dhfa:interviewSchedule"
+          items:
+            $ref: "#/components/schemas/InterviewDetails"
+          description: >
+            Scheduled or completed interview sessions.
+            A hiring process may include multiple rounds communicated progressively
+            via update/on_update interactions.
+
+        drivingTestSchedule:
+          type: array
+          x-jsonld-id: "dhfa:drivingTestSchedule"
+          items:
+            $ref: "#/components/schemas/DrivingTestDetails"
+          description: Scheduled or completed driving assessment sessions.
+
+    # -------------------------------------------------------------------
+    #  Dependency schemas
+    # -------------------------------------------------------------------
+
+    InterviewDetails:
+      type: object
+      x-jsonld-context: "./context.jsonld"
+      description: Details of a single scheduled or completed interview session.
+      properties:
+        interviewType:
+          type: string
+          x-jsonld-id: "dhfa:interviewType"
+          description: Mode of interview — e.g. IN_PERSON, VIDEO, TELEPHONIC.
+          example: "IN_PERSON"
+        scheduledAt:
+          type: string
+          format: date-time
+          x-jsonld-id: "schema:scheduledTime"
+          description: ISO 8601 datetime the interview is scheduled for.
+        locationOrLink:
+          type: string
+          x-jsonld-id: "schema:location"
+          description: Physical address or video call URL for the interview.
+        interviewer:
+          type: string
+          x-jsonld-id: "schema:organizer"
+          description: Name or identifier of the interviewing officer.
+        status:
+          type: string
+          x-jsonld-id: "dhfa:interviewStatus"
+          description: >
+            Current status of this session.
+            E.g. SCHEDULED, COMPLETED, CANCELLED, NO_SHOW.
+          example: "SCHEDULED"
+        remarks:
+          type: string
+          x-jsonld-id: "schema:description"
+          description: Outcome notes or remarks from the interviewer.
+
+    DrivingTestDetails:
+      type: object
+      x-jsonld-context: "./context.jsonld"
+      description: Details of a single scheduled or completed driving assessment.
+      properties:
+        scheduledAt:
+          type: string
+          format: date-time
+          x-jsonld-id: "schema:scheduledTime"
+          description: ISO 8601 datetime the driving test is scheduled for.
+        location:
+          type: string
+          x-jsonld-id: "schema:location"
+          description: Address of the test venue.
+        vehicleCategory:
+          type: string
+          x-jsonld-id: "dhfa:vehicleCategory"
+          description: Vehicle category being assessed. Must be a DriverVehicleCategory vocab term.
+          example: "HEAVY_MOTOR_VEHICLE"
+        evaluator:
+          type: string
+          x-jsonld-id: "schema:organizer"
+          description: Name or identifier of the evaluating officer.
+        result:
+          type: string
+          x-jsonld-id: "schema:result"
+          description: Test outcome — e.g. PASS, FAIL, PENDING.
+          example: "PASS"
+        remarks:
+          type: string
+          x-jsonld-id: "schema:description"
+          description: Evaluator remarks on the test performance or outcome.

@@ -1,0 +1,36 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "daoa":    "https://schema.beckn.io/DriverApplicationOrderAttributes#",
+    "rdfs":          "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+
+    { "@id": "daoa:OfferStatus", "@type": "rdfs:Class",
+      "rdfs:label": "Offer Status",
+      "rdfs:comment": "Status of a job offer within the hiring transaction." },
+    { "@id": "daoa:OFFER_PENDING",         "@type": "daoa:OfferStatus", "rdfs:label": "Pending",  "rdfs:comment": "Offer issued and awaiting driver response." },
+    { "@id": "daoa:OFFER_ACCEPTED_STATUS", "@type": "daoa:OfferStatus", "rdfs:label": "Accepted", "rdfs:comment": "Driver has accepted the offer." },
+    { "@id": "daoa:OFFER_REJECTED_STATUS", "@type": "daoa:OfferStatus", "rdfs:label": "Rejected", "rdfs:comment": "Driver has rejected the offer." },
+    { "@id": "daoa:OFFER_EXPIRED",         "@type": "daoa:OfferStatus", "rdfs:label": "Expired",  "rdfs:comment": "Offer validity period lapsed without a response." },
+
+    { "@id": "daoa:OnboardingStatus", "@type": "rdfs:Class",
+      "rdfs:label": "Onboarding Status",
+      "rdfs:comment": "Post-confirmation onboarding process status." },
+    { "@id": "daoa:ONBOARDING_PENDING",          "@type": "daoa:OnboardingStatus", "rdfs:label": "Pending",     "rdfs:comment": "Onboarding has not yet begun." },
+    { "@id": "daoa:ONBOARDING_IN_PROGRESS",      "@type": "daoa:OnboardingStatus", "rdfs:label": "In Progress", "rdfs:comment": "Driver is currently completing onboarding steps." },
+    { "@id": "daoa:ONBOARDING_COMPLETE_STATUS",  "@type": "daoa:OnboardingStatus", "rdfs:label": "Complete",    "rdfs:comment": "All onboarding steps successfully completed." },
+
+    { "@id": "daoa:CredentialType", "@type": "rdfs:Class",
+      "rdfs:label": "Credential Type",
+      "rdfs:comment": "Classification of driver credentials submitted as part of an application." },
+    { "@id": "daoa:DRIVING_LICENCE",                "@type": "daoa:CredentialType", "rdfs:label": "Driving Licence",                "rdfs:comment": "Government-issued driving licence." },
+    { "@id": "daoa:POLICE_VERIFICATION",            "@type": "daoa:CredentialType", "rdfs:label": "Police Verification",            "rdfs:comment": "Background check from a law enforcement authority." },
+    { "@id": "daoa:MEDICAL_FITNESS",                "@type": "daoa:CredentialType", "rdfs:label": "Medical Fitness Certificate",    "rdfs:comment": "Certificate confirming health requirements are met." },
+    { "@id": "daoa:BACKGROUND_CHECK",               "@type": "daoa:CredentialType", "rdfs:label": "Background Check",               "rdfs:comment": "General employment background verification." },
+    { "@id": "daoa:DEFENSIVE_DRIVING",              "@type": "daoa:CredentialType", "rdfs:label": "Defensive Driving Certificate",  "rdfs:comment": "Certification from a defensive driving programme." },
+    { "@id": "daoa:FIRST_AID",                      "@type": "daoa:CredentialType", "rdfs:label": "First Aid Certificate",          "rdfs:comment": "Certification in emergency first aid." },
+    { "@id": "daoa:HAZMAT",                         "@type": "daoa:CredentialType", "rdfs:label": "Hazardous Materials Certification","rdfs:comment": "Authorisation for transporting hazardous materials." },
+    { "@id": "daoa:PASSENGER_VEHICLE_AUTHORISATION","@type": "daoa:CredentialType", "rdfs:label": "Passenger Vehicle Authorisation","rdfs:comment": "Regulatory authorisation for carrying passengers commercially." }
+  ]
+}

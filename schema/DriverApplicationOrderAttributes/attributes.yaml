@@ -1,0 +1,145 @@
+openapi: 3.1.1
+info:
+  title: DriverApplicationOrderAttributes Schema
+  description: >
+    Beckn v2 extension schema capturing transaction-level metadata for a driver
+    job application or operator recruitment order. Attached to a Beckn Order as orderAttributes.
+
+    Container: Order.orderAttributes
+    Lifecycle : Established at init, updated through confirm
+
+    Covers: application identifiers, submitted credential documents, passport reference,
+    offer outcome, and onboarding status.
+    Execution stage data (interview scheduling, driving tests, hiring state) belongs in
+    DriverHiringFulfillmentAttributes.
+  version: 1.0.0
+
+externalDocs:
+  description: Beckn Protocol v2 Core Specifications
+  url: https://github.com/beckn/protocol-specifications-v2/tree/proposal/v2.1-generalized-core
+
+components:
+  schemas:
+
+    # ===================================================================
+    #  DriverApplicationOrderAttributes Schema
+    #  Container : Order.orderAttributes
+    # ===================================================================
+    DriverApplicationOrderAttributes:
+      type: object
+      x-jsonld-context: "./context.jsonld"
+      x-beckn-container: orderAttributes
+      description: >
+        Transaction-level metadata for a driver job application or recruitment order.
+        Captures network identifiers, submitted credentials, the Driver Passport reference,
+        and the final offer outcome and onboarding status.
+        All execution stage data lives in DriverHiringFulfillmentAttributes.
+      properties:
+
+        applicationId:
+          type: string
+          x-jsonld-id: "daoa:applicationId"
+          description: Network-assigned unique identifier for this hiring application.
+          example: "app-uuid-x1y2z3e4-f5a6-7b8c-9d0e-a1b2c3d4e5f6"
+
+        jobId:
+          type: string
+          x-jsonld-id: "daoa:jobId"
+          description: Identifier of the job listing this application targets.
+          example: "job-uuid-p9q8r7s6"
+
+        driverPassportReference:
+          type: string
+          x-jsonld-id: "daoa:passportReference"
+          x-pii: true
+          x-pii-disclosure-stage: init
+          description: >
+            Reference URI or token for the Driver Passport shared with this transaction.
+            Must be shared only after explicit driver consent.
+            Platforms must log and audit all passport disclosure events.
+          example: "https://passport.driverplatform.example/p/drv-uuid-a1b2c3d4"
+
+        submittedDocuments:
+          type: array
+          x-jsonld-id: "daoa:submittedDocuments"
+          items:
+            $ref: "#/components/schemas/DriverCredential"
+          description: >
+            Credential documents submitted by the driver as part of this application.
+            Document URLs are PII — protect in transit (TLS 1.2+) and at rest.
+
+        offerReference:
+          type: string
+          x-jsonld-id: "daoa:offerReference"
+          description: Reference identifier for the job offer issued within this transaction.
+
+        offerStatus:
+          type: string
+          x-jsonld-id: "daoa:offerStatus"
+          description: >
+            Current status of the job offer.
+            Must be an OfferStatus vocab term.
+          example: "OFFER_PENDING"
+
+        acceptanceTimestamp:
+          type: string
+          format: date-time
+          x-jsonld-id: "daoa:acceptanceTimestamp"
+          description: Timestamp when the driver formally accepted the job offer.
+
+        onboardingStatus:
+          type: string
+          x-jsonld-id: "daoa:onboardingStatus"
+          description: >
+            Status of the post-acceptance onboarding process.
+            Must be an OnboardingStatus vocab term.
+          example: "ONBOARDING_PENDING"
+
+    # -------------------------------------------------------------------
+    #  Dependency schema
+    # -------------------------------------------------------------------
+
+    DriverCredential:
+      type: object
+      x-jsonld-context: "./context.jsonld"
+      description: >
+        A single driver credential or document reference submitted as part of an application.
+        credentialRef and documentURL are PII-sensitive and must be protected in transit
+        (TLS 1.2+) and at rest (encryption at storage layer).
+      properties:
+        credentialType:
+          type: string
+          x-jsonld-id: "daoa:credentialType"
+          description: Type of credential. Must be a CredentialType vocab term.
+          example: "DRIVING_LICENCE"
+        issuer:
+          type: string
+          x-jsonld-id: "schema:issuedBy"
+          description: Name or identifier of the issuing authority.
+          example: "Regional Transport Office, Lucknow"
+        credentialRef:
+          type: string
+          x-jsonld-id: "daoa:credentialRef"
+          x-pii: true
+          description: >
+            Credential reference number (e.g. licence number, verification ID).
+            Treat as PII — never expose in discovery or indexing.
+          example: "UP32-2019-00087654"
+        issuedOn:
+          type: string
+          format: date
+          x-jsonld-id: "schema:dateIssued"
+          description: Date the credential was issued.
+        validUntil:
+          type: string
+          format: date
+          x-jsonld-id: "schema:expires"
+          description: Expiry date. Null for non-expiring credentials.
+        documentURL:
+          type: string
+          format: uri
+          x-jsonld-id: "schema:url"
+          x-pii: true
+          description: >
+            Signed URL to the credential document. PII — access-controlled with
+            signed URL expiry. Share only after driver consent.

@@ -1,0 +1,26 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "djoa":    "https://schema.beckn.io/DriverJobOfferAttributes#",
+    "rdfs":          "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+
+    { "@id": "djoa:SalaryFrequency", "@type": "rdfs:Class",
+      "rdfs:label": "Salary Frequency",
+      "rdfs:comment": "Payment frequency for salary specification." },
+    { "@id": "djoa:MONTHLY", "@type": "djoa:SalaryFrequency", "rdfs:label": "Monthly", "rdfs:comment": "Salary paid once per calendar month." },
+    { "@id": "djoa:WEEKLY",  "@type": "djoa:SalaryFrequency", "rdfs:label": "Weekly",  "rdfs:comment": "Salary paid once per week." },
+    { "@id": "djoa:DAILY",   "@type": "djoa:SalaryFrequency", "rdfs:label": "Daily",   "rdfs:comment": "Salary paid on a per-day worked basis." },
+    { "@id": "djoa:HOURLY",  "@type": "djoa:SalaryFrequency", "rdfs:label": "Hourly",  "rdfs:comment": "Compensation calculated on an hourly basis." },
+    { "@id": "djoa:ANNUAL",  "@type": "djoa:SalaryFrequency", "rdfs:label": "Annual",  "rdfs:comment": "Total annual salary package." },
+
+    { "@id": "djoa:ShiftType", "@type": "rdfs:Class",
+      "rdfs:label": "Shift Type",
+      "rdfs:comment": "Classification of shift arrangement for driver roles." },
+    { "@id": "djoa:DAY",        "@type": "djoa:ShiftType", "rdfs:label": "Day Shift",  "rdfs:comment": "Standard daytime working hours." },
+    { "@id": "djoa:NIGHT",      "@type": "djoa:ShiftType", "rdfs:label": "Night Shift", "rdfs:comment": "Overnight working hours." },
+    { "@id": "djoa:ROTATIONAL", "@type": "djoa:ShiftType", "rdfs:label": "Rotational", "rdfs:comment": "Alternating day and night shifts on a scheduled rotation." },
+    { "@id": "djoa:FLEXIBLE",   "@type": "djoa:ShiftType", "rdfs:label": "Flexible",   "rdfs:comment": "No fixed shift pattern — varies based on operational demand." }
+  ]
+}

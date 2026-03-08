@@ -1,0 +1,99 @@
+{
+  "_comment": "on_discover — Operator returns a job listing for a City Bus Driver role in Lucknow",
+  "@context": [
+    "https://schema.beckn.io/core/v2/context.jsonld",
+    "https://schema.beckn.io/DriverJobDescriptionAttributes/context.jsonld"
+  ],
+  "context": {
+    "domain": "driver-network",
+    "action": "on_discover",
+    "version": "2.1",
+    "bap_id": "shramik-connect.example",
+    "bpp_id": "upsrtc-hiring.example",
+    "transaction_id": "txn-f7e2a1b4-9c3d-4e8f-a012-b3456c789012",
+    "message_id": "msg-c3d4e5f6-a1b2-7890-cdef-123456789abc",
+    "timestamp": "2025-08-14T09:10:00Z"
+  },
+  "message": {
+    "catalog": {
+      "providers": [
+        {
+          "id": "upsrtc-lucknow",
+          "descriptor": {
+            "name": "UP State Road Transport Corporation — Lucknow Division",
+            "short_desc": "Government-owned transport corporation operating bus services in Uttar Pradesh."
+          },
+          "items": [
+            {
+              "id": "job-uuid-p9q8r7s6",
+              "descriptor": {
+                "name": "City Bus Driver — Lucknow Depot",
+                "short_desc": "Full-time city bus driver at UPSRTC Lucknow Central Depot.",
+                "long_desc": "UPSRTC is recruiting experienced drivers for city bus operations in Lucknow. The role involves operating heavy motor vehicle buses on assigned city routes."
+              },
+              "category_ids": ["driver-job"],
+              "itemAttributes": {
+                "roleType": "BUS_DRIVER",
+                "vehicleCategoriesRequired": ["HEAVY_MOTOR_VEHICLE", "BUS"],
+                "jobLocation": {
+                  "gps": "26.8467,80.9462",
+                  "addressLocality": "Lucknow",
+                  "addressRegion": "Uttar Pradesh",
+                  "addressCountry": "IN",
+                  "postalCode": "226001"
+                },
+                "employmentType": "FULL_TIME",
+                "shiftType": "ROTATIONAL",
+                "workingHours": "8 hours per shift, 5.5 days per week",
+                "minExperienceYears": 3,
+                "requiredCredentials": ["DRIVING_LICENCE", "POLICE_VERIFICATION", "MEDICAL_FITNESS"],
+                "requiredTraining": ["DEFENSIVE_DRIVING"],
+                "benefitsSummary": [
+                  "Medical insurance for self and family",
+                  "Provident fund contribution",
+                  "Annual performance bonus"
+                ],
+                "operatorReputation": {
+                  "ratingValue": 4.1,
+                  "ratingCount": 312,
+                  "ratingAgency": "Driver Network Trust Layer"
+                }
+              }
+            },
+            {
+              "id": "job-uuid-m4n5o6p7",
+              "descriptor": {
+                "name": "Night Shift Bus Driver — Varanasi Route",
+                "short_desc": "Contract position for intercity night bus operations on the Lucknow–Varanasi corridor."
+              },
+              "category_ids": ["driver-job"],
+              "itemAttributes": {
+                "roleType": "BUS_DRIVER",
+                "vehicleCategoriesRequired": ["HEAVY_MOTOR_VEHICLE", "BUS"],
+                "jobLocation": {
+                  "gps": "26.8467,80.9462",
+                  "addressLocality": "Lucknow",
+                  "addressRegion": "Uttar Pradesh",
+                  "addressCountry": "IN"
+                },
+                "employmentType": "CONTRACT",
+                "contractDuration": "P6M",
+                "shiftType": "NIGHT",
+                "workingHours": "22:00–06:00",
+                "minExperienceYears": 5,
+                "requiredCredentials": ["DRIVING_LICENCE", "POLICE_VERIFICATION", "MEDICAL_FITNESS"],
+                "requiredTraining": ["DEFENSIVE_DRIVING", "FIRST_AID"],
+                "benefitsSummary": ["Night allowance", "Medical insurance"],
+                "operatorReputation": {
+                  "ratingValue": 4.1,
+                  "ratingCount": 312,
+                  "ratingAgency": "Driver Network Trust Layer"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

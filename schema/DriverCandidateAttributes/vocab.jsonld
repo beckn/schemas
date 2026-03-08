@@ -1,0 +1,40 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "dca":     "https://schema.beckn.io/DriverCandidateAttributes#",
+    "rdfs":          "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+
+    { "@id": "dca:AvailabilityStatus", "@type": "rdfs:Class",
+      "rdfs:label": "Availability Status",
+      "rdfs:comment": "Driver's current hiring availability status." },
+    { "@id": "dca:AVAILABLE",      "@type": "dca:AvailabilityStatus", "rdfs:label": "Available",      "rdfs:comment": "Driver is actively seeking new employment opportunities." },
+    { "@id": "dca:OPEN_TO_OFFERS", "@type": "dca:AvailabilityStatus", "rdfs:label": "Open to Offers", "rdfs:comment": "Driver is currently employed but open to considering new offers." },
+    { "@id": "dca:UNAVAILABLE",    "@type": "dca:AvailabilityStatus", "rdfs:label": "Unavailable",    "rdfs:comment": "Driver is not available for new engagements at this time." },
+
+    { "@id": "dca:DriverVehicleCategory", "@type": "rdfs:Class",
+      "rdfs:label": "Driver Vehicle Category",
+      "rdfs:comment": "Classification of vehicle types a driver is licensed or qualified to operate." },
+    { "@id": "dca:LIGHT_MOTOR_VEHICLE", "@type": "dca:DriverVehicleCategory", "rdfs:label": "Light Motor Vehicle",  "rdfs:comment": "Cars and light goods vehicles." },
+    { "@id": "dca:HEAVY_MOTOR_VEHICLE", "@type": "dca:DriverVehicleCategory", "rdfs:label": "Heavy Motor Vehicle",  "rdfs:comment": "Trucks and heavy goods vehicles." },
+    { "@id": "dca:TRANSPORT_VEHICLE",   "@type": "dca:DriverVehicleCategory", "rdfs:label": "Transport Vehicle",    "rdfs:comment": "Commercial vehicles carrying passengers or goods for hire." },
+    { "@id": "dca:MOTORCYCLE",          "@type": "dca:DriverVehicleCategory", "rdfs:label": "Motorcycle",           "rdfs:comment": "Two-wheeled powered vehicles." },
+    { "@id": "dca:AUTO_RICKSHAW",       "@type": "dca:DriverVehicleCategory", "rdfs:label": "Auto-Rickshaw",        "rdfs:comment": "Three-wheeled auto-rickshaw vehicles." },
+    { "@id": "dca:BUS",                 "@type": "dca:DriverVehicleCategory", "rdfs:label": "Bus",                  "rdfs:comment": "Passenger buses of any capacity." },
+    { "@id": "dca:TRUCK",               "@type": "dca:DriverVehicleCategory", "rdfs:label": "Truck",                "rdfs:comment": "Freight trucks for goods transport." },
+    { "@id": "dca:AMBULANCE",           "@type": "dca:DriverVehicleCategory", "rdfs:label": "Ambulance",            "rdfs:comment": "Emergency medical service vehicles." },
+
+    { "@id": "dca:CredentialType", "@type": "rdfs:Class",
+      "rdfs:label": "Credential Type",
+      "rdfs:comment": "Classification of driver credentials and verification documents." },
+    { "@id": "dca:DRIVING_LICENCE",                "@type": "dca:CredentialType", "rdfs:label": "Driving Licence",                "rdfs:comment": "Government-issued driving licence." },
+    { "@id": "dca:POLICE_VERIFICATION",            "@type": "dca:CredentialType", "rdfs:label": "Police Verification",            "rdfs:comment": "Background check issued by a law enforcement authority." },
+    { "@id": "dca:MEDICAL_FITNESS",                "@type": "dca:CredentialType", "rdfs:label": "Medical Fitness Certificate",    "rdfs:comment": "Certificate confirming the driver meets health requirements." },
+    { "@id": "dca:BACKGROUND_CHECK",               "@type": "dca:CredentialType", "rdfs:label": "Background Check",               "rdfs:comment": "General employment background verification." },
+    { "@id": "dca:DEFENSIVE_DRIVING",              "@type": "dca:CredentialType", "rdfs:label": "Defensive Driving Certificate",  "rdfs:comment": "Certification from a defensive driving training programme." },
+    { "@id": "dca:FIRST_AID",                      "@type": "dca:CredentialType", "rdfs:label": "First Aid Certificate",          "rdfs:comment": "Certification in emergency first aid procedures." },
+    { "@id": "dca:HAZMAT",                         "@type": "dca:CredentialType", "rdfs:label": "Hazardous Materials Certification","rdfs:comment": "Certification authorising transport of hazardous materials." },
+    { "@id": "dca:PASSENGER_VEHICLE_AUTHORISATION","@type": "dca:CredentialType", "rdfs:label": "Passenger Vehicle Authorisation","rdfs:comment": "Regulatory authorisation for carrying passengers commercially." }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "schema": "DriverApplicationOrderAttributes",
+
+  "card_template": "App {{orderAttributes.applicationId}} | Offer: {{orderAttributes.offerStatus}} | Onboarding: {{orderAttributes.onboardingStatus}}",
+
+  "detail_template": "## Application\n**Application ID:** {{orderAttributes.applicationId}}\n**Job ID:** {{orderAttributes.jobId}}\n**Offer Status:** {{orderAttributes.offerStatus}}\n**Accepted On:** {{orderAttributes.acceptanceTimestamp}}\n**Onboarding Status:** {{orderAttributes.onboardingStatus}}",
+
+  "field_labels": {
+    "orderAttributes.applicationId":         "Application ID",
+    "orderAttributes.jobId":                 "Job ID",
+    "orderAttributes.offerReference":        "Offer Reference",
+    "orderAttributes.offerStatus":           "Offer Status",
+    "orderAttributes.acceptanceTimestamp":   "Accepted On",
+    "orderAttributes.onboardingStatus":      "Onboarding Status"
+  },
+
+  "hidden_fields": [
+    "orderAttributes.driverPassportReference",
+    "orderAttributes.submittedDocuments[].credentialRef",
+    "orderAttributes.submittedDocuments[].documentURL"
+  ]
+}

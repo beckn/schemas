@@ -1,0 +1,43 @@
+{
+  "_comment": "update — Operator schedules an interview; hiringStage transitions to INTERVIEW_SCHEDULED",
+  "@context": [
+    "https://schema.beckn.io/core/v2/context.jsonld",
+    "https://schema.beckn.io/DriverHiringFulfillmentAttributes/context.jsonld"
+  ],
+  "context": {
+    "domain": "driver-network",
+    "action": "update",
+    "version": "2.1",
+    "bap_id": "upsrtc-hiring.example",
+    "bpp_id": "shramik-connect.example",
+    "transaction_id": "txn-f7e2a1b4-9c3d-4e8f-a012-b3456c789012",
+    "message_id": "msg-f6a7b8c9-d0e1-2f3a-b4c5-d6e7f8a9b0c1",
+    "timestamp": "2025-08-16T09:00:00Z"
+  },
+  "message": {
+    "order": {
+      "id": "ord-uuid-q1r2s3t4-u5v6-w7x8-y9z0-a1b2c3d4e5f6",
+      "fulfillments": [
+        {
+          "id": "hire-f-001",
+          "type": "HIRING",
+          "fulfillmentAttributes": {
+            "hiringStage": "INTERVIEW_SCHEDULED",
+            "screeningNotes": "Application reviewed and approved for interview stage. Candidate profile matches role requirements.",
+            "interviewSchedule": [
+              {
+                "interviewType": "IN_PERSON",
+                "scheduledAt": "2025-08-20T10:00:00Z",
+                "locationOrLink": "UPSRTC Divisional Office, Hazratganj, Lucknow",
+                "interviewer": "Mr. Anil Sharma — Divisional Traffic Manager",
+                "status": "SCHEDULED",
+                "remarks": ""
+              }
+            ],
+            "drivingTestSchedule": []
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "https://schema.beckn.io/DriverJobDescriptionAttributes/v1",
+  "name": "DriverJobDescriptionAttributes",
+  "version": "1.0.0",
+  "description": "Discovery profile for driver job listings (driver-job catalogue category).",
+  "container": "itemAttributes",
+  "category": "driver-job",
+
+  "discovery_fields": [
+    "itemAttributes.roleType",
+    "itemAttributes.vehicleCategoriesRequired",
+    "itemAttributes.jobLocation.addressLocality",
+    "itemAttributes.jobLocation.addressRegion",
+    "itemAttributes.jobLocation.addressCountry",
+    "itemAttributes.employmentType",
+    "itemAttributes.shiftType",
+    "itemAttributes.minExperienceYears",
+    "itemAttributes.requiredCredentials"
+  ],
+
+  "indexable_paths": [
+    "itemAttributes.roleType",
+    "itemAttributes.vehicleCategoriesRequired",
+    "itemAttributes.jobLocation.gps",
+    "itemAttributes.jobLocation.addressLocality",
+    "itemAttributes.jobLocation.addressRegion",
+    "itemAttributes.jobLocation.addressCountry",
+    "itemAttributes.employmentType",
+    "itemAttributes.shiftType",
+    "itemAttributes.minExperienceYears",
+    "itemAttributes.requiredCredentials",
+    "itemAttributes.requiredTraining",
+    "itemAttributes.operatorReputation.ratingValue"
+  ],
+
+  "filterable_paths": [
+    "itemAttributes.roleType",
+    "itemAttributes.vehicleCategoriesRequired",
+    "itemAttributes.employmentType",
+    "itemAttributes.shiftType",
+    "itemAttributes.minExperienceYears",
+    "itemAttributes.requiredCredentials",
+    "itemAttributes.jobLocation.addressLocality",
+    "itemAttributes.jobLocation.addressRegion",
+    "itemAttributes.jobLocation.addressCountry"
+  ],
+
+  "sortable_paths": [
+    "itemAttributes.operatorReputation.ratingValue",
+    "itemAttributes.minExperienceYears"
+  ],
+
+  "privacy_notes": [
+    {
+      "path": "itemAttributes.applicationInstructions",
+      "note": "Revealed at on_select stage only — not returned in on_discover catalogue responses.",
+      "pii": false,
+      "min_disclosure_stage": "on_select"
+    }
+  ]
+}

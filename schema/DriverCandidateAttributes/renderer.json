@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "schema": "DriverCandidateAttributes",
+  "category": "driver-candidate",
+
+  "card_template": "Driver {{itemAttributes.driverId}} | {{itemAttributes.vehicleCategories}} | {{itemAttributes.homeLocation.addressLocality}}, {{itemAttributes.homeLocation.addressRegion}} | {{itemAttributes.experienceYears}} yrs exp | {{itemAttributes.availabilityStatus}} | Rating: {{itemAttributes.reputationSummary.ratingValue}}/5",
+
+  "detail_template": "## Driver Profile\n**Network ID:** {{itemAttributes.driverId}}\n**Location:** {{itemAttributes.homeLocation.addressLocality}}, {{itemAttributes.homeLocation.addressRegion}}, {{itemAttributes.homeLocation.addressCountry}}\n**Availability:** {{itemAttributes.availabilityStatus}}\n**Vehicle Categories:** {{itemAttributes.vehicleCategories}}\n**Experience:** {{itemAttributes.experienceYears}} years\n**Training:** {{itemAttributes.trainingSummary}}\n**Credentials Held:** {{itemAttributes.credentialSummary}}\n**Reputation:** {{itemAttributes.reputationSummary.ratingValue}}/5 ({{itemAttributes.reputationSummary.ratingCount}} ratings via {{itemAttributes.reputationSummary.ratingAgency}})\n**Profile Updated:** {{itemAttributes.lastUpdated}}",
+
+  "field_labels": {
+    "itemAttributes.driverId":                       "Driver ID",
+    "itemAttributes.homeLocation.addressLocality":   "Base City",
+    "itemAttributes.homeLocation.addressRegion":     "State / Region",
+    "itemAttributes.homeLocation.addressCountry":    "Country",
+    "itemAttributes.availabilityStatus":             "Availability",
+    "itemAttributes.vehicleCategories":              "Vehicle Categories",
+    "itemAttributes.experienceYears":                "Experience (years)",
+    "itemAttributes.trainingSummary":                "Training",
+    "itemAttributes.credentialSummary":              "Credentials",
+    "itemAttributes.reputationSummary.ratingValue":  "Driver Rating",
+    "itemAttributes.lastUpdated":                    "Profile Updated"
+  },
+
+  "hidden_at_discovery": [
+    "itemAttributes.passportReference"
+  ]
+}

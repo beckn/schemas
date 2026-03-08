@@ -1,0 +1,79 @@
+{
+  "_comment": "on_update — Driver platform acknowledges the job offer issued by the operator; hiringStage is OFFER_ISSUED, offerStatus is OFFER_PENDING awaiting driver response",
+  "_comment_flow": "Step 5 of 7 in the hiring arc. Follows update_offer_issued.json (operator sends offer). Precedes confirm_offer_acceptance.json in DriverApplicationOrderAttributes.",
+  "_comment_bap": "Driver Platform (Shramik Connect) — receives this on_update",
+  "_comment_bpp": "Operator Platform (UPSRTC) — sends this on_update",
+
+  "@context": [
+    "https://schema.beckn.io/core/v2/context.jsonld",
+    "https://schema.beckn.io/DriverJobOfferAttributes/context.jsonld"
+  ],
+  "context": {
+    "domain": "driver-network",
+    "action": "on_update",
+    "version": "2.1",
+    "bap_id": "shramik-connect.example",
+    "bap_uri": "https://shramik-connect.example/beckn",
+    "bpp_id": "upsrtc-hiring.example",
+    "bpp_uri": "https://upsrtc-hiring.example/beckn",
+    "transaction_id": "txn-f7e2a1b4-9c3d-4e8f-a012-b3456c789012",
+    "message_id": "msg-c3d4e5f6-a7b8-9c0d-1e2f-a3b4c5d6e7f8",
+    "timestamp": "2025-08-22T11:05:00Z",
+    "ttl": "PT30M"
+  },
+  "message": {
+    "order": {
+      "id": "ord-uuid-q1r2s3t4-u5v6-w7x8-y9z0-a1b2c3d4e5f6",
+      "items": [
+        {
+          "id": "job-uuid-p9q8r7s6",
+          "category_ids": ["driver-job"]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "hire-f-001",
+          "type": "HIRING",
+          "fulfillmentAttributes": {
+            "hiringStage": "OFFER_ISSUED"
+          }
+        }
+      ],
+      "offers": [
+        {
+          "id": "offer-uuid-o1p2q3r4",
+          "item_ids": ["job-uuid-p9q8r7s6"],
+          "offerAttributes": {
+            "salarySpecification": {
+              "value": 28000,
+              "currency": "INR",
+              "frequency": "MONTHLY"
+            },
+            "joiningDate": "2025-09-15",
+            "shiftAssignment": "ROTATIONAL",
+            "assignedDepot": "UPSRTC Central Depot, Lucknow",
+            "routeType": "CITY",
+            "insuranceProvided": true,
+            "accommodationProvided": false,
+            "otherBenefits": [
+              "Provident fund as per statutory requirement",
+              "Annual performance bonus up to one month salary",
+              "Medical insurance for self and family"
+            ],
+            "probationPeriod": "P6M",
+            "offerIssuedAt": "2025-08-22T11:00:00Z",
+            "offerValidity": "2025-08-29T23:59:59Z",
+            "remarks": "Joining date subject to completion of background verification. Please respond by the offer validity date."
+          }
+        }
+      ],
+      "orderAttributes": {
+        "applicationId": "app-uuid-x1y2z3e4-f5a6-7b8c-9d0e-a1b2c3d4e5f6",
+        "jobId": "job-uuid-p9q8r7s6",
+        "offerReference": "offer-uuid-o1p2q3r4",
+        "offerStatus": "OFFER_PENDING",
+        "onboardingStatus": "ONBOARDING_PENDING"
+      }
+    }
+  }
+}

@@ -1,0 +1,195 @@
+openapi: 3.1.1
+info:
+  title: DriverCandidateAttributes Schema
+  description: >
+    Beckn v2 extension schema for an identity-lite driver profile used during discovery.
+    Attached to a Beckn Item as itemAttributes when the catalogue category is driver-candidate.
+
+    Container: Item.itemAttributes
+    Category:  driver-candidate
+
+    PII Note: Personally identifiable information MUST NOT appear in on_discover responses.
+    The Driver Passport reference is disclosed only after explicit driver consent at init stage.
+  version: 1.0.0
+
+externalDocs:
+  description: Beckn Protocol v2 Core Specifications
+  url: https://github.com/beckn/protocol-specifications-v2/tree/proposal/v2.1-generalized-core
+
+components:
+  schemas:
+
+    # ===================================================================
+    #  DriverCandidateAttributes Schema
+    #  Container : Item.itemAttributes
+    #  Category  : driver-candidate
+    # ===================================================================
+    DriverCandidateAttributes:
+      type: object
+      x-jsonld-context: "./context.jsonld"
+      x-beckn-container: itemAttributes
+      x-beckn-category: driver-candidate
+      description: >
+        Identity-lite representation of a driver profile published by a driver platform
+        or aggregator for discovery by operators. Designed for progressive disclosure:
+        only non-PII fields are visible at on_discover. Full Driver Passport is shared
+        only after explicit driver consent, communicated via passportReference at init stage.
+      properties:
+
+        driverId:
+          type: string
+          x-jsonld-id: "beckn:entityId"
+          description: >
+            Network-assigned identifier for the driver.
+            Not a government-issued identifier. Safe to include in discovery.
+          example: "drv-uuid-a1b2c3d4"
+
+        homeLocation:
+          x-jsonld-id: "schema:homeLocation"
+          allOf:
+            - $ref: "#/components/schemas/NetworkLocation"
+          description: >
+            Approximate home or base location.
+            Must represent a locality/city level only — precise address must not
+            be exposed at discovery stage.
+
+        availabilityStatus:
+          type: string
+          x-jsonld-id: "dca:availabilityStatus"
+          description: >
+            Driver's current hiring availability.
+            Must be an AvailabilityStatus vocab term.
+          example: "AVAILABLE"
+
+        vehicleCategories:
+          type: array
+          x-jsonld-id: "dca:vehicleCategories"
+          items:
+            type: string
+          description: >
+            Vehicle categories the driver is licensed and qualified to operate.
+            Each entry must be a DriverVehicleCategory vocab term.
+          example: ["HEAVY_MOTOR_VEHICLE", "BUS", "TRANSPORT_VEHICLE"]
+
+        experienceYears:
+          type: number
+          x-jsonld-id: "dca:experienceYears"
+          minimum: 0
+          description: Total years of professional driving experience.
+          example: 7
+
+        trainingSummary:
+          type: array
+          x-jsonld-id: "dca:trainingSummary"
+          items:
+            type: string
+          description: >
+            Labels of training programmes completed.
+            Does not expose credential documents or reference numbers.
+          example: ["DEFENSIVE_DRIVING", "FIRST_AID", "HAZMAT"]
+
+        credentialSummary:
+          type: array
+          x-jsonld-id: "dca:credentialSummary"
+          items:
+            type: string
+          description: >
+            Credential type labels held by the driver.
+            Document references and credential numbers must not be exposed here.
+          example: ["DRIVING_LICENCE", "POLICE_VERIFICATION", "MEDICAL_FITNESS"]
+
+        reputationSummary:
+          x-jsonld-id: "dca:reputationSummary"
+          allOf:
+            - $ref: "#/components/schemas/ReputationSummary"
+          description: >
+            Aggregated reputation signals sourced from verifiable attestations by
+            operators and training institutes. Not a centralised score.
+
+        passportReference:
+          type: string
+          x-jsonld-id: "dca:passportReference"
+          x-pii: true
+          x-pii-disclosure-stage: init
+          description: >
+            Reference URI or token pointing to the driver's full Driver Passport.
+            Must be shared only after explicit driver consent.
+            Must not appear in on_discover responses.
+          example: "https://passport.driverplatform.example/p/drv-uuid-a1b2c3d4"
+
+        lastUpdated:
+          type: string
+          format: date-time
+          x-jsonld-id: "schema:dateModified"
+          description: Timestamp of the most recent profile update.
+
+      required:
+        - driverId
+        - availabilityStatus
+        - vehicleCategories
+
+    # -------------------------------------------------------------------
+    #  Shared dependency schemas (included for self-contained resolution)
+    # -------------------------------------------------------------------
+
+    ReputationSummary:
+      type: object
+      x-jsonld-context: "./context.jsonld"
+      description: >
+        Aggregated reputation signals for a driver or operator.
+        Sourced from verifiable attestations by trusted network participants.
+        Not a centralised score.
+      properties:
+        ratingValue:
+          type: number
+          x-jsonld-id: "schema:ratingValue"
+          minimum: 0
+          maximum: 5
+          description: Aggregated rating on a 0–5 scale.
+          example: 4.6
+        ratingCount:
+          type: integer
+          x-jsonld-id: "schema:reviewCount"
+          minimum: 0
+          description: Number of verified ratings contributing to the aggregate.
+          example: 47
+        ratingAgency:
+          type: string
+          x-jsonld-id: "schema:author"
+          description: Name or identifier of the entity that computed or attested the rating.
+          example: "Driver Network Trust Layer"
+
+    NetworkLocation:
+      type: object
+      x-jsonld-context: "./context.jsonld"
+      description: >
+        Geographic location representation aligned with schema.org PostalAddress
+        and the Beckn GPS convention. Country code must be ISO 3166-1 alpha-2.
+      properties:
+        gps:
+          type: string
+          x-jsonld-id: "beckn:gps"
+          pattern: "^-?\\d{1,3}\\.\\d+,-?\\d{1,3}\\.\\d+$"
+          description: GPS coordinates as a "latitude,longitude" string.
+          example: "19.0760,72.8777"
+        addressLocality:
+          type: string
+          x-jsonld-id: "schema:addressLocality"
+          description: City, town, or locality name.
+          example: "Andheri"
+        addressRegion:
+          type: string
+          x-jsonld-id: "schema:addressRegion"
+          description: State, province, or administrative region.
+          example: "Maharashtra"
+        addressCountry:
+          type: string
+          x-jsonld-id: "schema:addressCountry"
+          pattern: "^[A-Z]{2}$"
+          description: ISO 3166-1 alpha-2 country code.
+          example: "IN"
+        postalCode:
+          type: string
+          x-jsonld-id: "schema:postalCode"
+          description: Postal or ZIP code.
+          example: "400069"

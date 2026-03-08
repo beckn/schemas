@@ -1,0 +1,65 @@
+{
+  "_comment": "confirm — Driver formally accepts the job offer; sent by the driver platform (BAP) to the operator platform (BPP)",
+  "_comment_flow": "Step 6 of 7 in the hiring arc. Follows on_update_offer_acknowledged.json in DriverJobOfferAttributes. Triggers on_confirm_hiring_confirmed.json from the operator.",
+  "_comment_bap": "Driver Platform (Shramik Connect) — sends this confirm",
+  "_comment_bpp": "Operator Platform (UPSRTC) — receives this confirm",
+  "_comment_key_changes": "offerStatus transitions to OFFER_ACCEPTED_STATUS; acceptanceTimestamp is set; hiringStage transitions to OFFER_ACCEPTED in fulfillment",
+
+  "@context": [
+    "https://schema.beckn.io/core/v2/context.jsonld",
+    "https://schema.beckn.io/DriverApplicationOrderAttributes/context.jsonld"
+  ],
+  "context": {
+    "domain": "driver-network",
+    "action": "confirm",
+    "version": "2.1",
+    "bap_id": "shramik-connect.example",
+    "bap_uri": "https://shramik-connect.example/beckn",
+    "bpp_id": "upsrtc-hiring.example",
+    "bpp_uri": "https://upsrtc-hiring.example/beckn",
+    "transaction_id": "txn-f7e2a1b4-9c3d-4e8f-a012-b3456c789012",
+    "message_id": "msg-d4e5f6a7-b8c9-0d1e-2f3a-b4c5d6e7f8a9",
+    "timestamp": "2025-08-25T14:30:00Z",
+    "ttl": "PT30M"
+  },
+  "message": {
+    "order": {
+      "id": "ord-uuid-q1r2s3t4-u5v6-w7x8-y9z0-a1b2c3d4e5f6",
+      "items": [
+        {
+          "id": "job-uuid-p9q8r7s6",
+          "category_ids": ["driver-job"]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "hire-f-001",
+          "type": "HIRING",
+          "fulfillmentAttributes": {
+            "hiringStage": "OFFER_ACCEPTED"
+          }
+        }
+      ],
+      "offers": [
+        {
+          "id": "offer-uuid-o1p2q3r4",
+          "item_ids": ["job-uuid-p9q8r7s6"]
+        }
+      ],
+      "billing": {
+        "name": "Ramesh Kumar",
+        "phone": "+91-9876543210",
+        "email": "ramesh.kumar@example.com"
+      },
+      "orderAttributes": {
+        "applicationId": "app-uuid-x1y2z3e4-f5a6-7b8c-9d0e-a1b2c3d4e5f6",
+        "jobId": "job-uuid-p9q8r7s6",
+        "driverPassportReference": "https://passport.shramikconnect.example/p/drv-uuid-a1b2c3d4",
+        "offerReference": "offer-uuid-o1p2q3r4",
+        "offerStatus": "OFFER_ACCEPTED_STATUS",
+        "acceptanceTimestamp": "2025-08-25T14:30:00Z",
+        "onboardingStatus": "ONBOARDING_PENDING"
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "https://schema.beckn.io/DriverCandidateAttributes/v1",
+  "name": "DriverCandidateAttributes",
+  "version": "1.0.0",
+  "description": "Discovery profile for driver candidate profiles (driver-candidate catalogue category).",
+  "container": "itemAttributes",
+  "category": "driver-candidate",
+
+  "discovery_fields": [
+    "itemAttributes.vehicleCategories",
+    "itemAttributes.homeLocation.addressLocality",
+    "itemAttributes.homeLocation.addressRegion",
+    "itemAttributes.homeLocation.addressCountry",
+    "itemAttributes.availabilityStatus",
+    "itemAttributes.experienceYears",
+    "itemAttributes.credentialSummary"
+  ],
+
+  "indexable_paths": [
+    "itemAttributes.driverId",
+    "itemAttributes.vehicleCategories",
+    "itemAttributes.homeLocation.gps",
+    "itemAttributes.homeLocation.addressLocality",
+    "itemAttributes.homeLocation.addressRegion",
+    "itemAttributes.homeLocation.addressCountry",
+    "itemAttributes.availabilityStatus",
+    "itemAttributes.experienceYears",
+    "itemAttributes.credentialSummary",
+    "itemAttributes.trainingSummary",
+    "itemAttributes.reputationSummary.ratingValue"
+  ],
+
+  "filterable_paths": [
+    "itemAttributes.vehicleCategories",
+    "itemAttributes.availabilityStatus",
+    "itemAttributes.experienceYears",
+    "itemAttributes.credentialSummary",
+    "itemAttributes.homeLocation.addressLocality",
+    "itemAttributes.homeLocation.addressRegion",
+    "itemAttributes.homeLocation.addressCountry"
+  ],
+
+  "sortable_paths": [
+    "itemAttributes.reputationSummary.ratingValue",
+    "itemAttributes.experienceYears"
+  ],
+
+  "privacy_notes": [
+    {
+      "path": "itemAttributes.passportReference",
+      "note": "Driver Passport URI. Must not be included in on_discover responses. Disclose only after explicit driver consent at init stage or later.",
+      "pii": true,
+      "min_disclosure_stage": "init"
+    },
+    {
+      "path": "itemAttributes.homeLocation",
+      "note": "Must represent locality/city level resolution only at discovery. Never expose precise address in on_discover.",
+      "pii": true,
+      "min_disclosure_stage": "on_discover",
+      "resolution": "locality"
+    }
+  ]
+}

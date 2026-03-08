@@ -1,0 +1,68 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "djoa": "https://schema.beckn.io/DriverJobOfferAttributes#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "DriverJobOfferAttributes": "djoa:DriverJobOfferAttributes",
+    "SalarySpecification": "schema:MonetaryAmount",
+    "salarySpecification": {
+      "@id": "schema:baseSalary"
+    },
+    "joiningDate": {
+      "@id": "djoa:joiningDate",
+      "@type": "xsd:date"
+    },
+    "shiftAssignment": {
+      "@id": "djoa:shiftAssignment"
+    },
+    "assignedDepot": {
+      "@id": "djoa:assignedDepot"
+    },
+    "routeType": {
+      "@id": "djoa:routeType"
+    },
+    "insuranceProvided": {
+      "@id": "djoa:insuranceProvided",
+      "@type": "xsd:boolean"
+    },
+    "accommodationProvided": {
+      "@id": "djoa:accommodationProvided",
+      "@type": "xsd:boolean"
+    },
+    "otherBenefits": {
+      "@id": "djoa:otherBenefits",
+      "@container": "@list"
+    },
+    "probationPeriod": {
+      "@id": "djoa:probationPeriod"
+    },
+    "contractDuration": {
+      "@id": "djoa:contractDuration"
+    },
+    "offerIssuedAt": {
+      "@id": "djoa:offerIssuedAt",
+      "@type": "xsd:dateTime"
+    },
+    "offerValidity": {
+      "@id": "djoa:offerValidity",
+      "@type": "xsd:dateTime"
+    },
+    "remarks": {
+      "@id": "schema:description"
+    },
+    "value": {
+      "@id": "schema:value",
+      "@type": "xsd:decimal"
+    },
+    "currency": {
+      "@id": "schema:currency"
+    },
+    "frequency": {
+      "@id": "djoa:salaryFrequency"
+    },
+    "SalaryFrequency": "djoa:SalaryFrequency",
+    "ShiftType": "djoa:ShiftType"
+  }
+}

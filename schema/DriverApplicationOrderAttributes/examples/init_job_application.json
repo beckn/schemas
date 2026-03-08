@@ -1,0 +1,75 @@
+{
+  "_comment": "init — Driver submits a job application; orderAttributes established at transaction start",
+  "@context": [
+    "https://schema.beckn.io/core/v2/context.jsonld",
+    "https://schema.beckn.io/DriverApplicationOrderAttributes/context.jsonld"
+  ],
+  "context": {
+    "domain": "driver-network",
+    "action": "init",
+    "version": "2.1",
+    "bap_id": "shramik-connect.example",
+    "bpp_id": "upsrtc-hiring.example",
+    "transaction_id": "txn-f7e2a1b4-9c3d-4e8f-a012-b3456c789012",
+    "message_id": "msg-a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "timestamp": "2025-08-14T09:30:00Z",
+    "ttl": "PT30M"
+  },
+  "message": {
+    "order": {
+      "items": [
+        {
+          "id": "job-uuid-p9q8r7s6",
+          "category_ids": ["driver-job"]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "hire-f-001",
+          "type": "HIRING",
+          "fulfillmentAttributes": {
+            "hiringStage": "APPLICATION_SUBMITTED"
+          }
+        }
+      ],
+      "billing": {
+        "name": "Ramesh Kumar",
+        "phone": "+91-9876543210",
+        "email": "ramesh.kumar@example.com"
+      },
+      "orderAttributes": {
+        "applicationId": "app-uuid-x1y2z3e4-f5a6-7b8c-9d0e-a1b2c3d4e5f6",
+        "jobId": "job-uuid-p9q8r7s6",
+        "driverPassportReference": "https://passport.shramikconnect.example/p/drv-uuid-a1b2c3d4",
+        "submittedDocuments": [
+          {
+            "credentialType": "DRIVING_LICENCE",
+            "issuer": "Regional Transport Office, Lucknow",
+            "credentialRef": "UP32-2019-00087654",
+            "issuedOn": "2019-04-15",
+            "validUntil": "2029-04-14",
+            "documentURL": "https://docs.shramikconnect.example/secure/dl/drv-uuid-a1b2c3d4?token=signed-abc"
+          },
+          {
+            "credentialType": "POLICE_VERIFICATION",
+            "issuer": "Lucknow Police Commissionerate",
+            "credentialRef": "LKO-PV-2024-00023456",
+            "issuedOn": "2024-01-10",
+            "validUntil": "2025-01-09",
+            "documentURL": "https://docs.shramikconnect.example/secure/pv/drv-uuid-a1b2c3d4?token=signed-def"
+          },
+          {
+            "credentialType": "MEDICAL_FITNESS",
+            "issuer": "District Medical Officer, Lucknow",
+            "credentialRef": "LKO-MF-2024-00045678",
+            "issuedOn": "2024-03-01",
+            "validUntil": "2025-02-28",
+            "documentURL": "https://docs.shramikconnect.example/secure/mf/drv-uuid-a1b2c3d4?token=signed-ghi"
+          }
+        ],
+        "offerStatus": "OFFER_PENDING",
+        "onboardingStatus": "ONBOARDING_PENDING"
+      }
+    }
+  }
+}

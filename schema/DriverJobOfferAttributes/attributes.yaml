@@ -1,0 +1,154 @@
+openapi: 3.1.1
+info:
+  title: DriverJobOfferAttributes Schema
+  description: >
+    Beckn v2 extension schema representing commercial and contractual terms of a job offer
+    issued by an operator to a driver. Attached to a Beckn Offer as offerAttributes.
+
+    Container: Offer.offerAttributes
+    Trigger  : Communicated during update/on_update at HiringStage OFFER_ISSUED
+
+    Pricing note: salary is context-dependent and must always include an ISO 4217 currency code.
+  version: 1.0.0
+
+externalDocs:
+  description: Beckn Protocol v2 Core Specifications
+  url: https://github.com/beckn/protocol-specifications-v2/tree/proposal/v2.1-generalized-core
+
+components:
+  schemas:
+
+    # ===================================================================
+    #  DriverJobOfferAttributes Schema
+    #  Container : Offer.offerAttributes
+    # ===================================================================
+    DriverJobOfferAttributes:
+      type: object
+      x-jsonld-context: "./context.jsonld"
+      x-beckn-container: offerAttributes
+      description: >
+        Commercial and contractual terms of a job offer issued by an operator.
+        Communicated during update/on_update interactions when hiringStage reaches OFFER_ISSUED.
+        Pricing is context-dependent — salarySpecification must always carry an ISO 4217 currency.
+      properties:
+
+        salarySpecification:
+          x-jsonld-id: "schema:baseSalary"
+          allOf:
+            - $ref: "#/components/schemas/SalarySpecification"
+          description: >
+            Base salary: monetary amount, ISO 4217 currency code, and payment frequency.
+            Context-dependent — varies by role, location, and operator.
+
+        joiningDate:
+          type: string
+          format: date
+          x-jsonld-id: "djoa:joiningDate"
+          description: Expected or confirmed start date for the role.
+          example: "2025-09-01"
+
+        shiftAssignment:
+          type: string
+          x-jsonld-id: "djoa:shiftAssignment"
+          description: >
+            Confirmed shift assignment for this offer.
+            Must be a ShiftType vocab term.
+          example: "DAY"
+
+        assignedDepot:
+          type: string
+          x-jsonld-id: "djoa:assignedDepot"
+          description: Name or identifier of the depot, terminal, or operating base.
+          example: "Central Bus Depot, Lucknow"
+
+        routeType:
+          type: string
+          x-jsonld-id: "djoa:routeType"
+          description: Category of route assigned — e.g. CITY, INTERCITY, HIGHWAY, LOCAL.
+          example: "CITY"
+
+        insuranceProvided:
+          type: boolean
+          x-jsonld-id: "djoa:insuranceProvided"
+          description: Whether the operator provides employment-related insurance coverage.
+          example: true
+
+        accommodationProvided:
+          type: boolean
+          x-jsonld-id: "djoa:accommodationProvided"
+          description: Whether the operator provides accommodation.
+          example: false
+
+        otherBenefits:
+          type: array
+          x-jsonld-id: "djoa:otherBenefits"
+          items:
+            type: string
+          description: Additional benefits not captured by the standard fields above.
+          example: ["Annual performance bonus", "Provident fund contribution", "Meal allowance"]
+
+        probationPeriod:
+          type: string
+          x-jsonld-id: "djoa:probationPeriod"
+          description: >
+            Duration of the probation period as an ISO 8601 duration string.
+          example: "P3M"
+
+        contractDuration:
+          type: string
+          x-jsonld-id: "djoa:contractDuration"
+          description: >
+            Duration of the employment contract as an ISO 8601 duration string.
+            Omit for permanent / open-ended employment.
+          example: "P1Y"
+
+        offerIssuedAt:
+          type: string
+          format: date-time
+          x-jsonld-id: "djoa:offerIssuedAt"
+          description: Timestamp when the job offer was formally issued.
+
+        offerValidity:
+          type: string
+          format: date-time
+          x-jsonld-id: "djoa:offerValidity"
+          description: Datetime until which the offer remains valid for acceptance.
+
+        remarks:
+          type: string
+          x-jsonld-id: "schema:description"
+          description: Free-text remarks or additional conditions attached to the offer.
+
+    # -------------------------------------------------------------------
+    #  Shared dependency schema
+    # -------------------------------------------------------------------
+
+    SalarySpecification:
+      type: object
+      x-jsonld-context: "./context.jsonld"
+      description: >
+        Salary specification extending the schema:MonetaryAmount concept with a payment
+        frequency dimension. Currency must follow ISO 4217. Intentionally currency-neutral
+        and jurisdiction-neutral.
+      properties:
+        value:
+          type: number
+          x-jsonld-id: "schema:value"
+          description: Salary amount per frequency period.
+          example: 25000
+        currency:
+          type: string
+          x-jsonld-id: "schema:currency"
+          pattern: "^[A-Z]{3}$"
+          description: ISO 4217 three-letter currency code.
+          example: "INR"
+        frequency:
+          type: string
+          x-jsonld-id: "djoa:salaryFrequency"
+          description: >
+            Payment frequency. Must be a SalaryFrequency vocab term.
+          example: "MONTHLY"
+      required:
+        - value
+        - currency
+        - frequency

@@ -1,0 +1,63 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "djda":    "https://schema.beckn.io/DriverJobDescriptionAttributes#",
+    "rdfs":          "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+
+    { "@id": "djda:DriverRoleType", "@type": "rdfs:Class",
+      "rdfs:label": "Driver Role Type",
+      "rdfs:comment": "Classification of driver employment roles." },
+    { "@id": "djda:BUS_DRIVER",          "@type": "djda:DriverRoleType", "rdfs:label": "Bus Driver",           "rdfs:comment": "Driver of passenger buses including city, school, and intercity routes." },
+    { "@id": "djda:TRUCK_DRIVER",         "@type": "djda:DriverRoleType", "rdfs:label": "Truck Driver",          "rdfs:comment": "Driver of heavy goods vehicles and freight trucks." },
+    { "@id": "djda:TAXI_DRIVER",          "@type": "djda:DriverRoleType", "rdfs:label": "Taxi Driver",           "rdfs:comment": "Driver of passenger taxis or cab services." },
+    { "@id": "djda:AUTO_DRIVER",          "@type": "djda:DriverRoleType", "rdfs:label": "Auto-Rickshaw Driver",  "rdfs:comment": "Driver of three-wheeled auto-rickshaw vehicles." },
+    { "@id": "djda:DELIVERY_DRIVER",      "@type": "djda:DriverRoleType", "rdfs:label": "Delivery Driver",       "rdfs:comment": "Driver engaged in last-mile or inter-city goods delivery." },
+    { "@id": "djda:HEAVY_VEHICLE_DRIVER", "@type": "djda:DriverRoleType", "rdfs:label": "Heavy Vehicle Driver",  "rdfs:comment": "Driver of heavy motor vehicles not elsewhere classified." },
+    { "@id": "djda:LIGHT_VEHICLE_DRIVER", "@type": "djda:DriverRoleType", "rdfs:label": "Light Vehicle Driver",  "rdfs:comment": "Driver of light motor vehicles (cars, vans, small goods vehicles)." },
+    { "@id": "djda:SCHOOL_BUS_DRIVER",    "@type": "djda:DriverRoleType", "rdfs:label": "School Bus Driver",     "rdfs:comment": "Driver responsible for transporting school children." },
+    { "@id": "djda:AMBULANCE_DRIVER",     "@type": "djda:DriverRoleType", "rdfs:label": "Ambulance Driver",      "rdfs:comment": "Driver of emergency medical service vehicles." },
+
+    { "@id": "djda:DriverVehicleCategory", "@type": "rdfs:Class",
+      "rdfs:label": "Driver Vehicle Category",
+      "rdfs:comment": "Classification of vehicle types a driver is licensed or qualified to operate." },
+    { "@id": "djda:LIGHT_MOTOR_VEHICLE",  "@type": "djda:DriverVehicleCategory", "rdfs:label": "Light Motor Vehicle",  "rdfs:comment": "Cars and light goods vehicles." },
+    { "@id": "djda:HEAVY_MOTOR_VEHICLE",  "@type": "djda:DriverVehicleCategory", "rdfs:label": "Heavy Motor Vehicle",  "rdfs:comment": "Trucks and heavy goods vehicles." },
+    { "@id": "djda:TRANSPORT_VEHICLE",    "@type": "djda:DriverVehicleCategory", "rdfs:label": "Transport Vehicle",    "rdfs:comment": "Commercial vehicles carrying passengers or goods for hire." },
+    { "@id": "djda:MOTORCYCLE",           "@type": "djda:DriverVehicleCategory", "rdfs:label": "Motorcycle",           "rdfs:comment": "Two-wheeled powered vehicles." },
+    { "@id": "djda:AUTO_RICKSHAW",        "@type": "djda:DriverVehicleCategory", "rdfs:label": "Auto-Rickshaw",        "rdfs:comment": "Three-wheeled auto-rickshaw vehicles." },
+    { "@id": "djda:BUS",                  "@type": "djda:DriverVehicleCategory", "rdfs:label": "Bus",                  "rdfs:comment": "Passenger buses of any capacity." },
+    { "@id": "djda:TRUCK",                "@type": "djda:DriverVehicleCategory", "rdfs:label": "Truck",                "rdfs:comment": "Freight trucks for goods transport." },
+    { "@id": "djda:AMBULANCE",            "@type": "djda:DriverVehicleCategory", "rdfs:label": "Ambulance",            "rdfs:comment": "Emergency medical service vehicles." },
+
+    { "@id": "djda:EmploymentType", "@type": "rdfs:Class",
+      "rdfs:label": "Employment Type",
+      "rdfs:comment": "Nature of the employment arrangement for a driver role." },
+    { "@id": "djda:FULL_TIME",  "@type": "djda:EmploymentType", "rdfs:label": "Full-Time",   "rdfs:comment": "Permanent full-time employment." },
+    { "@id": "djda:PART_TIME",  "@type": "djda:EmploymentType", "rdfs:label": "Part-Time",   "rdfs:comment": "Employment with fewer than standard full-time hours." },
+    { "@id": "djda:CONTRACT",   "@type": "djda:EmploymentType", "rdfs:label": "Contract",    "rdfs:comment": "Fixed-term contractual engagement." },
+    { "@id": "djda:TEMPORARY",  "@type": "djda:EmploymentType", "rdfs:label": "Temporary",   "rdfs:comment": "Short-term temporary engagement." },
+    { "@id": "djda:GIG",        "@type": "djda:EmploymentType", "rdfs:label": "Gig",         "rdfs:comment": "Platform-mediated gig work per assignment." },
+
+    { "@id": "djda:ShiftType", "@type": "rdfs:Class",
+      "rdfs:label": "Shift Type",
+      "rdfs:comment": "Classification of shift arrangement for driver roles." },
+    { "@id": "djda:DAY",        "@type": "djda:ShiftType", "rdfs:label": "Day Shift",    "rdfs:comment": "Standard daytime working hours." },
+    { "@id": "djda:NIGHT",      "@type": "djda:ShiftType", "rdfs:label": "Night Shift",  "rdfs:comment": "Overnight working hours." },
+    { "@id": "djda:ROTATIONAL", "@type": "djda:ShiftType", "rdfs:label": "Rotational",   "rdfs:comment": "Alternating day and night shifts on a scheduled rotation." },
+    { "@id": "djda:FLEXIBLE",   "@type": "djda:ShiftType", "rdfs:label": "Flexible",     "rdfs:comment": "No fixed shift pattern — varies based on operational demand." },
+
+    { "@id": "djda:CredentialType", "@type": "rdfs:Class",
+      "rdfs:label": "Credential Type",
+      "rdfs:comment": "Classification of driver credentials and verification documents." },
+    { "@id": "djda:DRIVING_LICENCE",               "@type": "djda:CredentialType", "rdfs:label": "Driving Licence",                "rdfs:comment": "Government-issued driving licence. Specific class varies by jurisdiction." },
+    { "@id": "djda:POLICE_VERIFICATION",           "@type": "djda:CredentialType", "rdfs:label": "Police Verification",            "rdfs:comment": "Background check issued by a law enforcement authority." },
+    { "@id": "djda:MEDICAL_FITNESS",               "@type": "djda:CredentialType", "rdfs:label": "Medical Fitness Certificate",    "rdfs:comment": "Certificate confirming the driver meets health requirements." },
+    { "@id": "djda:BACKGROUND_CHECK",              "@type": "djda:CredentialType", "rdfs:label": "Background Check",               "rdfs:comment": "General employment background verification." },
+    { "@id": "djda:DEFENSIVE_DRIVING",             "@type": "djda:CredentialType", "rdfs:label": "Defensive Driving Certificate",  "rdfs:comment": "Certification from a defensive driving training programme." },
+    { "@id": "djda:FIRST_AID",                     "@type": "djda:CredentialType", "rdfs:label": "First Aid Certificate",          "rdfs:comment": "Certification in emergency first aid procedures." },
+    { "@id": "djda:HAZMAT",                        "@type": "djda:CredentialType", "rdfs:label": "Hazardous Materials Certification","rdfs:comment": "Certification authorising transport of hazardous materials." },
+    { "@id": "djda:PASSENGER_VEHICLE_AUTHORISATION","@type": "djda:CredentialType", "rdfs:label": "Passenger Vehicle Authorisation","rdfs:comment": "Regulatory authorisation for carrying passengers commercially." }
+  ]
+}

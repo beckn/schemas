@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0",
+  "schema": "DriverJobDescriptionAttributes",
+  "category": "driver-job",
+
+  "card_template": "{{descriptor.name}} | {{itemAttributes.roleType}} | {{itemAttributes.jobLocation.addressLocality}}, {{itemAttributes.jobLocation.addressRegion}} | {{itemAttributes.employmentType}} | {{itemAttributes.shiftType}} | Min. {{itemAttributes.minExperienceYears}} yr exp | Rating: {{itemAttributes.operatorReputation.ratingValue}}/5",
+
+  "detail_template": "## {{descriptor.name}}\n**Role:** {{itemAttributes.roleType}}\n**Location:** {{itemAttributes.jobLocation.addressLocality}}, {{itemAttributes.jobLocation.addressRegion}}, {{itemAttributes.jobLocation.addressCountry}}\n**Employment:** {{itemAttributes.employmentType}} | Shift: {{itemAttributes.shiftType}}\n**Working Hours:** {{itemAttributes.workingHours}}\n**Vehicle Categories:** {{itemAttributes.vehicleCategoriesRequired}}\n**Min Experience:** {{itemAttributes.minExperienceYears}} years\n**Required Credentials:** {{itemAttributes.requiredCredentials}}\n**Required Training:** {{itemAttributes.requiredTraining}}\n**Benefits:** {{itemAttributes.benefitsSummary}}\n**Contract Duration:** {{itemAttributes.contractDuration}}\n**Operator Rating:** {{itemAttributes.operatorReputation.ratingValue}}/5 ({{itemAttributes.operatorReputation.ratingCount}} ratings via {{itemAttributes.operatorReputation.ratingAgency}})\n**How to Apply:** {{itemAttributes.applicationInstructions}}",
+
+  "field_labels": {
+    "itemAttributes.roleType":                      "Job Role",
+    "itemAttributes.vehicleCategoriesRequired":      "Vehicles Required",
+    "itemAttributes.jobLocation.addressLocality":    "City",
+    "itemAttributes.jobLocation.addressRegion":      "State / Region",
+    "itemAttributes.jobLocation.addressCountry":     "Country",
+    "itemAttributes.employmentType":                 "Employment Type",
+    "itemAttributes.shiftType":                      "Shift",
+    "itemAttributes.workingHours":                   "Working Hours",
+    "itemAttributes.contractDuration":               "Contract Duration",
+    "itemAttributes.minExperienceYears":             "Min. Experience (years)",
+    "itemAttributes.requiredCredentials":            "Required Credentials",
+    "itemAttributes.requiredTraining":               "Required Training",
+    "itemAttributes.benefitsSummary":                "Benefits",
+    "itemAttributes.operatorReputation.ratingValue": "Operator Rating",
+    "itemAttributes.applicationInstructions":        "How to Apply"
+  },
+
+  "hidden_at_discovery": [
+    "itemAttributes.applicationInstructions"
+  ]
+}

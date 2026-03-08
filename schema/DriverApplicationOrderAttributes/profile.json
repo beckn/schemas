@@ -1,0 +1,46 @@
+{
+  "id": "https://schema.beckn.io/DriverApplicationOrderAttributes/v1",
+  "name": "DriverApplicationOrderAttributes",
+  "version": "1.0.0",
+  "description": "Transaction metadata profile for driver hiring application orders.",
+  "container": "orderAttributes",
+
+  "indexable_paths": [
+    "orderAttributes.applicationId",
+    "orderAttributes.jobId",
+    "orderAttributes.offerReference",
+    "orderAttributes.offerStatus",
+    "orderAttributes.onboardingStatus",
+    "orderAttributes.acceptanceTimestamp"
+  ],
+
+  "filterable_paths": [
+    "orderAttributes.offerStatus",
+    "orderAttributes.onboardingStatus"
+  ],
+
+  "sortable_paths": [
+    "orderAttributes.acceptanceTimestamp"
+  ],
+
+  "privacy_notes": [
+    {
+      "path": "orderAttributes.driverPassportReference",
+      "note": "Passport reference URI. Protect in transit (TLS 1.2+) and at rest. Log all access and disclosure events. Minimum disclosure stage: init.",
+      "pii": true,
+      "min_disclosure_stage": "init"
+    },
+    {
+      "path": "orderAttributes.submittedDocuments[].credentialRef",
+      "note": "Credential reference number (licence number, verification ID). Treat as PII. Do not index or log.",
+      "pii": true,
+      "min_disclosure_stage": "update"
+    },
+    {
+      "path": "orderAttributes.submittedDocuments[].documentURL",
+      "note": "Signed URL to credential document. PII — access-controlled with URL expiry. Share only after driver consent.",
+      "pii": true,
+      "min_disclosure_stage": "update"
+    }
+  ]
+}

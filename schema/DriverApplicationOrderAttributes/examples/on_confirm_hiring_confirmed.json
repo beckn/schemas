@@ -1,0 +1,101 @@
+{
+  "_comment": "on_confirm — Operator formally confirms employment after driver accepts the job offer; sent by the operator platform (BPP) to the driver platform (BAP)",
+  "_comment_flow": "Step 7 of 7 in the hiring arc. Follows confirm_offer_acceptance.json. This is the terminal happy-path message — hiring is confirmed and onboarding begins.",
+  "_comment_bap": "Driver Platform (Shramik Connect) — receives this on_confirm",
+  "_comment_bpp": "Operator Platform (UPSRTC) — sends this on_confirm",
+  "_comment_key_changes": "hiringStage transitions to HIRING_CONFIRMED; onboardingStatus transitions to ONBOARDING_IN_PROGRESS; employeeId is issued; reportingManager and reportingDepot are set",
+
+  "@context": [
+    "https://schema.beckn.io/core/v2/context.jsonld",
+    "https://schema.beckn.io/DriverApplicationOrderAttributes/context.jsonld",
+    "https://schema.beckn.io/DriverHiringFulfillmentAttributes/context.jsonld"
+  ],
+  "context": {
+    "domain": "driver-network",
+    "action": "on_confirm",
+    "version": "2.1",
+    "bap_id": "shramik-connect.example",
+    "bap_uri": "https://shramik-connect.example/beckn",
+    "bpp_id": "upsrtc-hiring.example",
+    "bpp_uri": "https://upsrtc-hiring.example/beckn",
+    "transaction_id": "txn-f7e2a1b4-9c3d-4e8f-a012-b3456c789012",
+    "message_id": "msg-e5f6a7b8-c9d0-1e2f-3a4b-c5d6e7f8a9b0",
+    "timestamp": "2025-08-25T14:45:00Z",
+    "ttl": "PT30M"
+  },
+  "message": {
+    "order": {
+      "id": "ord-uuid-q1r2s3t4-u5v6-w7x8-y9z0-a1b2c3d4e5f6",
+      "status": "ACTIVE",
+      "items": [
+        {
+          "id": "job-uuid-p9q8r7s6",
+          "category_ids": ["driver-job"]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "hire-f-001",
+          "type": "HIRING",
+          "state": {
+            "descriptor": {
+              "code": "HIRING_CONFIRMED",
+              "name": "Hiring Confirmed"
+            }
+          },
+          "fulfillmentAttributes": {
+            "hiringStage": "HIRING_CONFIRMED",
+            "screeningNotes": "Hiring confirmed. Driver Ramesh Kumar formally employed. Onboarding documentation to be completed by joining date.",
+            "reportingManager": "Mr. Anil Sharma — Divisional Traffic Manager, UPSRTC Hazratganj",
+            "reportingDepot": "UPSRTC Central Depot, Alambagh, Lucknow — PIN 226005"
+          }
+        }
+      ],
+      "offers": [
+        {
+          "id": "offer-uuid-o1p2q3r4",
+          "item_ids": ["job-uuid-p9q8r7s6"],
+          "offerAttributes": {
+            "salarySpecification": {
+              "value": 28000,
+              "currency": "INR",
+              "frequency": "MONTHLY"
+            },
+            "joiningDate": "2025-09-15",
+            "shiftAssignment": "ROTATIONAL",
+            "assignedDepot": "UPSRTC Central Depot, Lucknow",
+            "routeType": "CITY",
+            "insuranceProvided": true,
+            "accommodationProvided": false,
+            "otherBenefits": [
+              "Provident fund as per statutory requirement",
+              "Annual performance bonus up to one month salary",
+              "Medical insurance for self and family"
+            ],
+            "probationPeriod": "P6M",
+            "offerIssuedAt": "2025-08-22T11:00:00Z",
+            "offerValidity": "2025-08-29T23:59:59Z",
+            "remarks": "Joining date subject to completion of background verification."
+          }
+        }
+      ],
+      "billing": {
+        "name": "Ramesh Kumar",
+        "phone": "+91-9876543210",
+        "email": "ramesh.kumar@example.com"
+      },
+      "orderAttributes": {
+        "applicationId": "app-uuid-x1y2z3e4-f5a6-7b8c-9d0e-a1b2c3d4e5f6",
+        "jobId": "job-uuid-p9q8r7s6",
+        "driverPassportReference": "https://passport.shramikconnect.example/p/drv-uuid-a1b2c3d4",
+        "offerReference": "offer-uuid-o1p2q3r4",
+        "offerStatus": "OFFER_ACCEPTED_STATUS",
+        "acceptanceTimestamp": "2025-08-25T14:30:00Z",
+        "onboardingStatus": "ONBOARDING_IN_PROGRESS",
+        "employeeId": "UPSRTC-LKO-DRV-2025-04821",
+        "hiringConfirmedAt": "2025-08-25T14:45:00Z",
+        "onboardingInstructions": "Please report to UPSRTC HR office, Hazratganj on 2025-09-13 with original documents for verification. Bring Aadhaar, PAN, driving licence, and two passport-size photographs."
+      }
+    }
+  }
+}

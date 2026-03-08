@@ -1,0 +1,62 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "dhfa": "https://schema.beckn.io/DriverHiringFulfillmentAttributes#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "DriverHiringFulfillmentAttributes": "dhfa:DriverHiringFulfillmentAttributes",
+    "InterviewDetails": "dhfa:InterviewDetails",
+    "DrivingTestDetails": "dhfa:DrivingTestDetails",
+    "hiringStage": {
+      "@id": "dhfa:hiringStage"
+    },
+    "screeningNotes": {
+      "@id": "dhfa:screeningNotes"
+    },
+    "interviewSchedule": {
+      "@id": "dhfa:interviewSchedule",
+      "@container": "@list"
+    },
+    "drivingTestSchedule": {
+      "@id": "dhfa:drivingTestSchedule",
+      "@container": "@list"
+    },
+    "interviewType": {
+      "@id": "dhfa:interviewType"
+    },
+    "scheduledAt": {
+      "@id": "schema:scheduledTime",
+      "@type": "xsd:dateTime"
+    },
+    "locationOrLink": {
+      "@id": "schema:location"
+    },
+    "location": {
+      "@id": "schema:location"
+    },
+    "interviewer": {
+      "@id": "schema:organizer"
+    },
+    "interviewStatus": {
+      "@id": "dhfa:interviewStatus"
+    },
+    "status": {
+      "@id": "dhfa:interviewStatus"
+    },
+    "vehicleCategory": {
+      "@id": "dhfa:vehicleCategory"
+    },
+    "evaluator": {
+      "@id": "schema:organizer"
+    },
+    "result": {
+      "@id": "schema:result"
+    },
+    "remarks": {
+      "@id": "schema:description"
+    },
+    "HiringStage": "dhfa:HiringStage",
+    "DriverVehicleCategory": "dhfa:DriverVehicleCategory"
+  }
+}

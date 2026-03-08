@@ -1,0 +1,78 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "dca": "https://schema.beckn.io/DriverCandidateAttributes#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "DriverCandidateAttributes": "dca:DriverCandidateAttributes",
+    "ReputationSummary": "dca:ReputationSummary",
+    "NetworkLocation": "dca:NetworkLocation",
+    "driverId": {
+      "@id": "beckn:entityId"
+    },
+    "homeLocation": {
+      "@id": "schema:homeLocation",
+      "@type": "@id"
+    },
+    "availabilityStatus": {
+      "@id": "dca:availabilityStatus"
+    },
+    "vehicleCategories": {
+      "@id": "dca:vehicleCategories",
+      "@container": "@list"
+    },
+    "experienceYears": {
+      "@id": "dca:experienceYears",
+      "@type": "xsd:decimal"
+    },
+    "trainingSummary": {
+      "@id": "dca:trainingSummary",
+      "@container": "@list"
+    },
+    "credentialSummary": {
+      "@id": "dca:credentialSummary",
+      "@container": "@list"
+    },
+    "reputationSummary": {
+      "@id": "dca:reputationSummary"
+    },
+    "passportReference": {
+      "@id": "dca:passportReference",
+      "@type": "@id"
+    },
+    "lastUpdated": {
+      "@id": "schema:dateModified",
+      "@type": "xsd:dateTime"
+    },
+    "ratingValue": {
+      "@id": "schema:ratingValue",
+      "@type": "xsd:decimal"
+    },
+    "ratingCount": {
+      "@id": "schema:reviewCount",
+      "@type": "xsd:integer"
+    },
+    "ratingAgency": {
+      "@id": "schema:author"
+    },
+    "gps": {
+      "@id": "beckn:gps"
+    },
+    "addressLocality": {
+      "@id": "schema:addressLocality"
+    },
+    "addressRegion": {
+      "@id": "schema:addressRegion"
+    },
+    "addressCountry": {
+      "@id": "schema:addressCountry"
+    },
+    "postalCode": {
+      "@id": "schema:postalCode"
+    },
+    "AvailabilityStatus": "dca:AvailabilityStatus",
+    "DriverVehicleCategory": "dca:DriverVehicleCategory",
+    "CredentialType": "dca:CredentialType"
+  }
+}

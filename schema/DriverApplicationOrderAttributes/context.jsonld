@@ -1,0 +1,62 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "daoa": "https://schema.beckn.io/DriverApplicationOrderAttributes#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "DriverApplicationOrderAttributes": "daoa:DriverApplicationOrderAttributes",
+    "DriverCredential": "daoa:DriverCredential",
+    "applicationId": {
+      "@id": "daoa:applicationId"
+    },
+    "jobId": {
+      "@id": "daoa:jobId"
+    },
+    "driverPassportReference": {
+      "@id": "daoa:passportReference",
+      "@type": "@id"
+    },
+    "submittedDocuments": {
+      "@id": "daoa:submittedDocuments",
+      "@container": "@list"
+    },
+    "offerReference": {
+      "@id": "daoa:offerReference"
+    },
+    "offerStatus": {
+      "@id": "daoa:offerStatus"
+    },
+    "acceptanceTimestamp": {
+      "@id": "daoa:acceptanceTimestamp",
+      "@type": "xsd:dateTime"
+    },
+    "onboardingStatus": {
+      "@id": "daoa:onboardingStatus"
+    },
+    "credentialType": {
+      "@id": "daoa:credentialType"
+    },
+    "issuer": {
+      "@id": "schema:issuedBy"
+    },
+    "credentialRef": {
+      "@id": "daoa:credentialRef"
+    },
+    "issuedOn": {
+      "@id": "schema:dateIssued",
+      "@type": "xsd:date"
+    },
+    "validUntil": {
+      "@id": "schema:expires",
+      "@type": "xsd:date"
+    },
+    "documentURL": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "OfferStatus": "daoa:OfferStatus",
+    "OnboardingStatus": "daoa:OnboardingStatus",
+    "CredentialType": "daoa:CredentialType"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "_comment": "update — Operator marks evaluation complete after interview and driving test; hiringStage transitions to EVALUATION_COMPLETE",
+  "_comment_flow": "Step 3 of 7 in the hiring arc. Follows update_interview_scheduled.json. Precedes update_offer_issued.json in DriverJobOfferAttributes.",
+  "_comment_bap": "Driver Platform (Shramik Connect)",
+  "_comment_bpp": "Operator Platform (UPSRTC)",
+
+  "@context": [
+    "https://schema.beckn.io/core/v2/context.jsonld",
+    "https://schema.beckn.io/DriverHiringFulfillmentAttributes/context.jsonld"
+  ],
+  "context": {
+    "domain": "driver-network",
+    "action": "update",
+    "version": "2.1",
+    "bap_id": "shramik-connect.example",
+    "bap_uri": "https://shramik-connect.example/beckn",
+    "bpp_id": "upsrtc-hiring.example",
+    "bpp_uri": "https://upsrtc-hiring.example/beckn",
+    "transaction_id": "txn-f7e2a1b4-9c3d-4e8f-a012-b3456c789012",
+    "message_id": "msg-b2c3d4e5-f6a7-8b9c-0d1e-f2a3b4c5d6e7",
+    "timestamp": "2025-08-21T16:00:00Z",
+    "ttl": "PT30M"
+  },
+  "message": {
+    "order": {
+      "id": "ord-uuid-q1r2s3t4-u5v6-w7x8-y9z0-a1b2c3d4e5f6",
+      "fulfillments": [
+        {
+          "id": "hire-f-001",
+          "type": "HIRING",
+          "fulfillmentAttributes": {
+            "hiringStage": "EVALUATION_COMPLETE",
+            "screeningNotes": "Candidate successfully cleared all evaluation stages. Recommended for offer.",
+            "interviewSchedule": [
+              {
+                "interviewType": "IN_PERSON",
+                "scheduledAt": "2025-08-20T10:00:00Z",
+                "locationOrLink": "UPSRTC Divisional Office, Hazratganj, Lucknow",
+                "interviewer": "Mr. Anil Sharma — Divisional Traffic Manager",
+                "status": "COMPLETED",
+                "remarks": "Strong situational awareness and good knowledge of Lucknow city routes. Recommended for driving test."
+              }
+            ],
+            "drivingTestSchedule": [
+              {
+                "scheduledAt": "2025-08-21T08:30:00Z",
+                "location": "UPSRTC Central Depot, Alambagh, Lucknow",
+                "vehicleCategory": "HEAVY_MOTOR_VEHICLE",
+                "evaluator": "Mr. Suresh Yadav — Senior Fleet Evaluator",
+                "result": "PASS",
+                "remarks": "Confident vehicle handling on city roads. Correct use of mirrors and safe lane discipline throughout the test route. No incidents."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

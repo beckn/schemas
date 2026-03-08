@@ -1,0 +1,38 @@
+{
+  "id": "https://schema.beckn.io/DriverJobOfferAttributes/v1",
+  "name": "DriverJobOfferAttributes",
+  "version": "1.0.0",
+  "description": "Profile for job offer terms communicated at OFFER_ISSUED hiring stage.",
+  "container": "offerAttributes",
+  "trigger_stage": "OFFER_ISSUED",
+
+  "indexable_paths": [
+    "offerAttributes.salarySpecification.value",
+    "offerAttributes.salarySpecification.currency",
+    "offerAttributes.salarySpecification.frequency",
+    "offerAttributes.joiningDate",
+    "offerAttributes.shiftAssignment",
+    "offerAttributes.assignedDepot",
+    "offerAttributes.routeType",
+    "offerAttributes.insuranceProvided",
+    "offerAttributes.accommodationProvided",
+    "offerAttributes.offerValidity"
+  ],
+
+  "filterable_paths": [
+    "offerAttributes.salarySpecification.currency",
+    "offerAttributes.salarySpecification.frequency",
+    "offerAttributes.shiftAssignment",
+    "offerAttributes.routeType",
+    "offerAttributes.insuranceProvided",
+    "offerAttributes.accommodationProvided"
+  ],
+
+  "sortable_paths": [
+    "offerAttributes.salarySpecification.value",
+    "offerAttributes.joiningDate",
+    "offerAttributes.offerValidity"
+  ],
+
+  "privacy_notes": []
+}

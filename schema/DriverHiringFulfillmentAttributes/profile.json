@@ -1,0 +1,40 @@
+{
+  "id": "https://schema.beckn.io/DriverHiringFulfillmentAttributes/v1",
+  "name": "DriverHiringFulfillmentAttributes",
+  "version": "1.0.0",
+  "description": "Fulfillment execution profile for multi-stage driver hiring lifecycle.",
+  "container": "fulfillmentAttributes",
+
+  "indexable_paths": [
+    "fulfillmentAttributes.hiringStage",
+    "fulfillmentAttributes.interviewSchedule[].status",
+    "fulfillmentAttributes.interviewSchedule[].scheduledAt",
+    "fulfillmentAttributes.drivingTestSchedule[].result",
+    "fulfillmentAttributes.drivingTestSchedule[].vehicleCategory"
+  ],
+
+  "filterable_paths": [
+    "fulfillmentAttributes.hiringStage",
+    "fulfillmentAttributes.drivingTestSchedule[].result",
+    "fulfillmentAttributes.drivingTestSchedule[].vehicleCategory"
+  ],
+
+  "sortable_paths": [
+    "fulfillmentAttributes.interviewSchedule[].scheduledAt",
+    "fulfillmentAttributes.drivingTestSchedule[].scheduledAt"
+  ],
+
+  "stage_display_order": [
+    "APPLICATION_SUBMITTED",
+    "UNDER_REVIEW",
+    "INTERVIEW_SCHEDULED",
+    "EVALUATION_COMPLETE",
+    "OFFER_ISSUED",
+    "OFFER_ACCEPTED",
+    "OFFER_REJECTED",
+    "HIRING_CONFIRMED",
+    "ONBOARDING_COMPLETE"
+  ],
+
+  "privacy_notes": []
+}

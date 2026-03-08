@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "schema": "DriverHiringFulfillmentAttributes",
+
+  "card_template": "Stage: {{fulfillmentAttributes.hiringStage}}",
+
+  "detail_template": "## Hiring Progress\n**Current Stage:** {{fulfillmentAttributes.hiringStage}}\n**Screening Notes:** {{fulfillmentAttributes.screeningNotes}}\n\n### Interviews\n{{fulfillmentAttributes.interviewSchedule}}\n\n### Driving Tests\n{{fulfillmentAttributes.drivingTestSchedule}}",
+
+  "field_labels": {
+    "fulfillmentAttributes.hiringStage":               "Current Stage",
+    "fulfillmentAttributes.screeningNotes":            "Screening Notes",
+    "fulfillmentAttributes.interviewSchedule":         "Interviews",
+    "fulfillmentAttributes.drivingTestSchedule":       "Driving Tests"
+  },
+
+  "interview_detail_template": "**Type:** {{interviewType}} | **When:** {{scheduledAt}} | **Where:** {{locationOrLink}} | **Interviewer:** {{interviewer}} | **Status:** {{status}}\n**Remarks:** {{remarks}}",
+
+  "driving_test_detail_template": "**When:** {{scheduledAt}} | **Venue:** {{location}} | **Vehicle:** {{vehicleCategory}} | **Evaluator:** {{evaluator}} | **Result:** {{result}}\n**Remarks:** {{remarks}}"
+}

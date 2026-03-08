@@ -1,0 +1,88 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "djda": "https://schema.beckn.io/DriverJobDescriptionAttributes#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "DriverJobDescriptionAttributes": "djda:DriverJobDescriptionAttributes",
+    "ReputationSummary": "djda:ReputationSummary",
+    "NetworkLocation": "djda:NetworkLocation",
+    "roleType": {
+      "@id": "djda:roleType"
+    },
+    "vehicleCategoriesRequired": {
+      "@id": "djda:vehicleCategoriesRequired",
+      "@container": "@list"
+    },
+    "jobLocation": {
+      "@id": "schema:jobLocation",
+      "@type": "@id"
+    },
+    "employmentType": {
+      "@id": "schema:employmentType"
+    },
+    "shiftType": {
+      "@id": "djda:shiftType"
+    },
+    "workingHours": {
+      "@id": "schema:workHours"
+    },
+    "contractDuration": {
+      "@id": "djda:contractDuration"
+    },
+    "minExperienceYears": {
+      "@id": "djda:minExperienceYears",
+      "@type": "xsd:decimal"
+    },
+    "requiredCredentials": {
+      "@id": "djda:requiredCredentials",
+      "@container": "@list"
+    },
+    "requiredTraining": {
+      "@id": "djda:requiredTraining",
+      "@container": "@list"
+    },
+    "benefitsSummary": {
+      "@id": "djda:benefitsSummary",
+      "@container": "@list"
+    },
+    "operatorReputation": {
+      "@id": "djda:operatorReputation"
+    },
+    "applicationInstructions": {
+      "@id": "djda:applicationInstructions"
+    },
+    "ratingValue": {
+      "@id": "schema:ratingValue",
+      "@type": "xsd:decimal"
+    },
+    "ratingCount": {
+      "@id": "schema:reviewCount",
+      "@type": "xsd:integer"
+    },
+    "ratingAgency": {
+      "@id": "schema:author"
+    },
+    "gps": {
+      "@id": "beckn:gps"
+    },
+    "addressLocality": {
+      "@id": "schema:addressLocality"
+    },
+    "addressRegion": {
+      "@id": "schema:addressRegion"
+    },
+    "addressCountry": {
+      "@id": "schema:addressCountry"
+    },
+    "postalCode": {
+      "@id": "schema:postalCode"
+    },
+    "DriverRoleType": "djda:DriverRoleType",
+    "DriverVehicleCategory": "djda:DriverVehicleCategory",
+    "EmploymentType": "djda:EmploymentType",
+    "ShiftType": "djda:ShiftType",
+    "CredentialType": "djda:CredentialType"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "_comment": "on_discover — Driver aggregator returns candidate profiles to an operator searching for heavy vehicle drivers in Maharashtra",
+  "@context": [
+    "https://schema.beckn.io/core/v2/context.jsonld",
+    "https://schema.beckn.io/DriverCandidateAttributes/context.jsonld"
+  ],
+  "context": {
+    "domain": "driver-network",
+    "action": "on_discover",
+    "version": "2.1",
+    "bap_id": "fastfreight-hiring.example",
+    "bpp_id": "truckwale.example",
+    "transaction_id": "txn-e3d2c1b0-8a7f-6e5d-c4b3-a2918273645f",
+    "message_id": "msg-d4e5f6a7-b8c9-0d1e-f2a3-b4c5d6e7f8a9",
+    "timestamp": "2025-08-18T10:05:00Z"
+  },
+  "message": {
+    "catalog": {
+      "providers": [
+        {
+          "id": "truckwale-mumbai",
+          "descriptor": {
+            "name": "TruckWale Network — Mumbai Hub",
+            "short_desc": "Driver aggregator managing verified heavy vehicle drivers in Maharashtra."
+          },
+          "items": [
+            {
+              "id": "drv-uuid-a1b2c3d4",
+              "descriptor": {
+                "name": "Experienced Heavy Vehicle Driver",
+                "short_desc": "9 years HMV experience, HAZMAT certified, available immediately."
+              },
+              "category_ids": ["driver-candidate"],
+              "itemAttributes": {
+                "driverId": "drv-uuid-a1b2c3d4",
+                "homeLocation": {
+                  "addressLocality": "Andheri",
+                  "addressRegion": "Maharashtra",
+                  "addressCountry": "IN"
+                },
+                "availabilityStatus": "AVAILABLE",
+                "vehicleCategories": ["HEAVY_MOTOR_VEHICLE", "TRUCK", "TRANSPORT_VEHICLE"],
+                "experienceYears": 9,
+                "trainingSummary": ["DEFENSIVE_DRIVING", "HAZMAT", "FIRST_AID"],
+                "credentialSummary": ["DRIVING_LICENCE", "POLICE_VERIFICATION", "MEDICAL_FITNESS", "HAZMAT"],
+                "reputationSummary": {
+                  "ratingValue": 4.6,
+                  "ratingCount": 47,
+                  "ratingAgency": "Driver Network Trust Layer"
+                },
+                "lastUpdated": "2025-07-30T11:00:00Z"
+              }
+            },
+            {
+              "id": "drv-uuid-b2c3d4e5",
+              "descriptor": {
+                "name": "Truck Driver — Pune Based",
+                "short_desc": "6 years HMV experience, available for full-time long-haul routes."
+              },
+              "category_ids": ["driver-candidate"],
+              "itemAttributes": {
+                "driverId": "drv-uuid-b2c3d4e5",
+                "homeLocation": {
+                  "addressLocality": "Pune",
+                  "addressRegion": "Maharashtra",
+                  "addressCountry": "IN"
+                },
+                "availabilityStatus": "AVAILABLE",
+                "vehicleCategories": ["HEAVY_MOTOR_VEHICLE", "TRUCK"],
+                "experienceYears": 6,
+                "trainingSummary": ["DEFENSIVE_DRIVING", "FIRST_AID"],
+                "credentialSummary": ["DRIVING_LICENCE", "POLICE_VERIFICATION", "MEDICAL_FITNESS"],
+                "reputationSummary": {
+                  "ratingValue": 4.2,
+                  "ratingCount": 23,
+                  "ratingAgency": "Driver Network Trust Layer"
+                },
+                "lastUpdated": "2025-08-01T08:30:00Z"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

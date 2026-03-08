@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "dhfa":    "https://schema.beckn.io/DriverHiringFulfillmentAttributes#",
+    "rdfs":          "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+
+    { "@id": "dhfa:HiringStage", "@type": "rdfs:Class",
+      "rdfs:label": "Hiring Stage",
+      "rdfs:comment": "State machine terms for the driver hiring lifecycle, communicated via Fulfillment.fulfillmentAttributes. Transitions: APPLICATION_SUBMITTED → UNDER_REVIEW → INTERVIEW_SCHEDULED → EVALUATION_COMPLETE → OFFER_ISSUED → OFFER_ACCEPTED / OFFER_REJECTED → HIRING_CONFIRMED → ONBOARDING_COMPLETE." },
+    { "@id": "dhfa:APPLICATION_SUBMITTED",  "@type": "dhfa:HiringStage", "rdfs:label": "Application Submitted",  "rdfs:comment": "Application received and acknowledged (init/on_init)." },
+    { "@id": "dhfa:UNDER_REVIEW",           "@type": "dhfa:HiringStage", "rdfs:label": "Under Review",           "rdfs:comment": "Application is being reviewed by the operator." },
+    { "@id": "dhfa:INTERVIEW_SCHEDULED",    "@type": "dhfa:HiringStage", "rdfs:label": "Interview Scheduled",    "rdfs:comment": "One or more interviews have been scheduled." },
+    { "@id": "dhfa:EVALUATION_COMPLETE",    "@type": "dhfa:HiringStage", "rdfs:label": "Evaluation Complete",    "rdfs:comment": "All evaluation stages (interviews, driving tests) completed." },
+    { "@id": "dhfa:OFFER_ISSUED",           "@type": "dhfa:HiringStage", "rdfs:label": "Offer Issued",           "rdfs:comment": "Job offer formally issued to the driver." },
+    { "@id": "dhfa:OFFER_ACCEPTED",         "@type": "dhfa:HiringStage", "rdfs:label": "Offer Accepted",         "rdfs:comment": "Driver has formally accepted the job offer." },
+    { "@id": "dhfa:OFFER_REJECTED",         "@type": "dhfa:HiringStage", "rdfs:label": "Offer Rejected",         "rdfs:comment": "Driver has declined the job offer." },
+    { "@id": "dhfa:HIRING_CONFIRMED",       "@type": "dhfa:HiringStage", "rdfs:label": "Hiring Confirmed",       "rdfs:comment": "Employment confirmed by the operator (on_confirm)." },
+    { "@id": "dhfa:ONBOARDING_COMPLETE",    "@type": "dhfa:HiringStage", "rdfs:label": "Onboarding Complete",    "rdfs:comment": "Driver completed all post-confirmation onboarding steps." },
+
+    { "@id": "dhfa:DriverVehicleCategory", "@type": "rdfs:Class",
+      "rdfs:label": "Driver Vehicle Category",
+      "rdfs:comment": "Vehicle category for driving test assessment." },
+    { "@id": "dhfa:LIGHT_MOTOR_VEHICLE", "@type": "dhfa:DriverVehicleCategory", "rdfs:label": "Light Motor Vehicle",  "rdfs:comment": "Cars and light goods vehicles." },
+    { "@id": "dhfa:HEAVY_MOTOR_VEHICLE", "@type": "dhfa:DriverVehicleCategory", "rdfs:label": "Heavy Motor Vehicle",  "rdfs:comment": "Trucks and heavy goods vehicles." },
+    { "@id": "dhfa:TRANSPORT_VEHICLE",   "@type": "dhfa:DriverVehicleCategory", "rdfs:label": "Transport Vehicle",    "rdfs:comment": "Commercial vehicles for hire." },
+    { "@id": "dhfa:BUS",                 "@type": "dhfa:DriverVehicleCategory", "rdfs:label": "Bus",                  "rdfs:comment": "Passenger buses of any capacity." },
+    { "@id": "dhfa:TRUCK",               "@type": "dhfa:DriverVehicleCategory", "rdfs:label": "Truck",                "rdfs:comment": "Freight trucks." }
+  ]
+}
