@@ -14,7 +14,7 @@ sources:
   # ── Beckn Core Schema Registry ───────────────────────────────────────────────
   # This repo. Contains core protocol schemas plus domain schemas for mobility,
   # logistics, and retail.
-  - schemaPath: https://github.com/beckn/core_schema/tree/draft-preview/schema
+  - schemaPath: https://github.com/beckn/schemas/tree/draft-preview/schema
     description: >-
       Beckn Core Schema Registry. Contains core protocol schemas plus domain schemas
       for mobility, logistics, and retail. Schemas are tagged per-domain via x-tags.
