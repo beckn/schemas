@@ -1,0 +1,81 @@
+{
+  "@context": [
+    "https://schema.beckn.io/core/v2/context.jsonld",
+    "https://schema.beckn.io/SchemeItemAttributes/v1/context.jsonld"
+  ],
+  "message": {
+    "catalog": {
+      "providers": [
+        {
+          "id": "bpp-agri-state-mah-001",
+          "descriptor": {
+            "name": "Maharashtra Agriculture Department — UKI Network"
+          },
+          "items": [
+            {
+              "id": "scheme-pmfby-maharashtra-kharif-2025",
+              "descriptor": {
+                "name": "Pradhan Mantri Fasal Bima Yojana (PMFBY) — Kharif 2025",
+                "short_desc": "Government crop insurance protecting farmers against crop loss from natural calamities. Farmer premium: 2% of sum insured.",
+                "long_desc": "PMFBY provides comprehensive risk insurance coverage for crop failure due to non-preventable natural risks including drought, flood, inundation, pests and diseases, landslide, natural fire, storm, hailstorm and cyclone. Balance premium borne by State and Central Governments."
+              },
+              "category_ids": ["AGRICULTURE_RURAL_DEVELOPMENT"],
+              "fulfillment_ids": ["f1"],
+              "itemAttributes": {
+                "sia:officialSchemeCode": "PMFBY-2016",
+                "sia:schemeType": "INSURANCE",
+                "sia:fundingModel": "CENTRALLY_SPONSORED",
+                "sia:targetBeneficiaryType": ["INDIVIDUAL", "FARMER_GROUP"],
+                "sia:sponsoringMinistry": "Ministry of Agriculture and Farmers Welfare",
+                "sia:officialPortalUrl": "https://pmfby.gov.in",
+                "sia:applicationModes": [
+                  "ONLINE_PORTAL",
+                  "AGENT_ASSISTED",
+                  "GOVERNMENT_OFFICE",
+                  "COMMON_SERVICE_CENTER"
+                ],
+                "sia:availableLanguages": ["hi", "en", "mr"],
+                "sia:requiredDocuments": [
+                  {
+                    "sia:documentCode": "POI",
+                    "sia:documentName": "Proof of Identity",
+                    "sia:documentExample": "Aadhaar Card",
+                    "sia:mandatory": true
+                  },
+                  {
+                    "sia:documentCode": "LAND",
+                    "sia:documentName": "Land Records / 7-12 Extract",
+                    "sia:documentExample": "7/12 Utara (Maharashtra)",
+                    "sia:mandatory": true
+                  },
+                  {
+                    "sia:documentCode": "BANK",
+                    "sia:documentName": "Bank Account Details",
+                    "sia:documentExample": "Bank passbook front page or cancelled cheque",
+                    "sia:mandatory": true
+                  },
+                  {
+                    "sia:documentCode": "SOW",
+                    "sia:documentName": "Sowing Certificate",
+                    "sia:documentExample": "Issued by village Patwari or Gram Panchayat",
+                    "sia:mandatory": true
+                  }
+                ],
+                "sia:schemeBenefits": [
+                  {
+                    "sia:benefitCategory": "CROP_INSURANCE",
+                    "sia:benefitDescription": "Insurance coverage against crop loss from drought, flood, hailstorm, cyclone, pests and diseases. Claim settled on area-yield shortfall at village/panchayat level."
+                  },
+                  {
+                    "sia:benefitCategory": "INCOME_SUPPORT",
+                    "sia:benefitDescription": "Low uniform farmer premium of 2% for Kharif crops. Balance premium borne jointly by State and Central Governments."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

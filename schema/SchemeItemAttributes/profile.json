@@ -1,0 +1,49 @@
+{
+  "id": "https://schema.beckn.io/SchemeItemAttributes/v1",
+  "name": "Scheme Item Attributes",
+  "version": "1.0.0",
+  "description": "Intrinsic metadata for government and NGO scheme items — scheme type, funding model, documentation requirements, and application modes.",
+  "domain": "agri-schemes",
+  "included_schemas": [
+    "https://schema.beckn.io/SchemeItemAttributes/v1",
+    "https://schema.beckn.io/SchemeOfferAttributes/v1",
+    "https://schema.beckn.io/SchemeFulfillmentAttributes/v1",
+    "https://schema.beckn.io/SchemeOrderAttributes/v1"
+  ],
+  "discovery_fields": [
+    "beckn:descriptor.schema:name",
+    "beckn:descriptor.beckn:shortDesc",
+    "beckn:itemAttributes.sia:schemeType",
+    "beckn:itemAttributes.sia:fundingModel",
+    "beckn:itemAttributes.sia:targetBeneficiaryType",
+    "beckn:category.schema:codeValue"
+  ],
+  "indexable_paths": [
+    "beckn:id",
+    "beckn:descriptor.schema:name",
+    "beckn:itemAttributes.sia:officialSchemeCode",
+    "beckn:itemAttributes.sia:schemeType",
+    "beckn:itemAttributes.sia:fundingModel",
+    "beckn:itemAttributes.sia:targetBeneficiaryType",
+    "beckn:itemAttributes.sia:sponsoringMinistry",
+    "beckn:itemAttributes.sia:availableLanguages",
+    "beckn:itemAttributes.sia:schemeBenefits[*].sia:benefitCategory"
+  ],
+  "filterable_paths": [
+    "beckn:itemAttributes.sia:schemeType",
+    "beckn:itemAttributes.sia:fundingModel",
+    "beckn:itemAttributes.sia:targetBeneficiaryType",
+    "beckn:itemAttributes.sia:availableLanguages",
+    "beckn:itemAttributes.sia:applicationModes",
+    "beckn:itemAttributes.sia:schemeBenefits[*].sia:benefitCategory",
+    "beckn:category.schema:codeValue",
+    "beckn:availableAt"
+  ],
+  "sortable_paths": [
+    "beckn:descriptor.schema:name",
+    "beckn:rating.beckn:ratingValue"
+  ],
+  "privacy_notes": [
+    "No PII in item attributes. Applicant personal data is collected only via xinput/Form at offer or fulfillment stage."
+  ]
+}

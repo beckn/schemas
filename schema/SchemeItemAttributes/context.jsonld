@@ -1,0 +1,37 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld",
+
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "sia":   "https://schema.beckn.io/SchemeItemAttributes#",
+
+    "sia:SchemeItemAttributes":  { "@id": "sia:SchemeItemAttributes" },
+
+    "sia:officialSchemeCode":    { "@id": "sia:officialSchemeCode",    "@type": "schema:identifier" },
+    "sia:schemeType":            { "@id": "sia:schemeType",            "@type": "@vocab" },
+    "sia:fundingModel":          { "@id": "sia:fundingModel",          "@type": "@vocab" },
+    "sia:targetBeneficiaryType": { "@id": "sia:targetBeneficiaryType", "@container": "@set", "@type": "@vocab" },
+    "sia:sponsoringMinistry":    { "@id": "sia:sponsoringMinistry",    "@type": "schema:name" },
+    "sia:officialPortalUrl":     { "@id": "sia:officialPortalUrl",     "@type": "@id" },
+    "sia:applicationModes":      { "@id": "sia:applicationModes",      "@container": "@set", "@type": "@vocab" },
+    "sia:availableLanguages":    { "@id": "sia:availableLanguages",    "@container": "@set" },
+    "sia:requiredDocuments":     { "@id": "sia:requiredDocuments",     "@container": "@set" },
+    "sia:schemeBenefits":        { "@id": "sia:schemeBenefits",        "@container": "@set" },
+
+    "sia:documentCode":          { "@id": "sia:documentCode",          "@type": "schema:identifier" },
+    "sia:documentName":          { "@id": "sia:documentName",          "@type": "schema:name" },
+    "sia:documentExample":       { "@id": "sia:documentExample",       "@type": "schema:description" },
+    "sia:mandatory":             { "@id": "sia:mandatory",             "@type": "schema:Boolean" },
+
+    "sia:benefitCategory":       { "@id": "sia:benefitCategory",       "@type": "@vocab" },
+    "sia:benefitDescription":    { "@id": "sia:benefitDescription",    "@type": "schema:description" },
+
+    "SchemeType":                "sia:SchemeType",
+    "FundingModel":              "sia:FundingModel",
+    "BeneficiaryType":           "sia:BeneficiaryType",
+    "ApplicationMode":           "sia:ApplicationMode",
+    "BenefitCategory":           "sia:BenefitCategory"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "CommodityMarketOfferAttributes",
+  "version": "1.0.0",
+  "card_template": {
+    "title":    "{{beckn:items[0]}} — Price Range",
+    "subtitle": "{{beckn:offerAttributes.currency}} {{beckn:offerAttributes.minPrice}} – {{beckn:offerAttributes.maxPrice}} {{beckn:offerAttributes.unitOfMeasure}}",
+    "badge":    "Avg: {{beckn:offerAttributes.currency}} {{beckn:offerAttributes.averagePrice}}",
+    "body":     "Volatility: {{beckn:offerAttributes.priceVolatilityIndicator}}"
+  },
+  "detail_template": {
+    "min_price_label":    "Minimum Price",
+    "min_price_value":    "{{beckn:offerAttributes.currency}} {{beckn:offerAttributes.minPrice}} {{beckn:offerAttributes.unitOfMeasure}}",
+    "max_price_label":    "Maximum Price",
+    "max_price_value":    "{{beckn:offerAttributes.currency}} {{beckn:offerAttributes.maxPrice}} {{beckn:offerAttributes.unitOfMeasure}}",
+    "avg_price_label":    "Average Price",
+    "avg_price_value":    "{{beckn:offerAttributes.currency}} {{beckn:offerAttributes.averagePrice}} {{beckn:offerAttributes.unitOfMeasure}}",
+    "volatility_label":   "Price Volatility",
+    "volatility_value":   "{{beckn:offerAttributes.priceVolatilityIndicator}}",
+    "arrivals_label":     "Market Arrivals",
+    "arrivals_value":     "{{beckn:offerAttributes.arrivals.quantity}} {{beckn:offerAttributes.arrivals.unit}}"
+  },
+  "bindings": [
+    { "placeholder": "beckn:offerAttributes.minPrice",                 "path": "beckn:offerAttributes.minPrice" },
+    { "placeholder": "beckn:offerAttributes.maxPrice",                 "path": "beckn:offerAttributes.maxPrice" },
+    { "placeholder": "beckn:offerAttributes.averagePrice",             "path": "beckn:offerAttributes.averagePrice" },
+    { "placeholder": "beckn:offerAttributes.currency",                 "path": "beckn:offerAttributes.currency" },
+    { "placeholder": "beckn:offerAttributes.unitOfMeasure",            "path": "beckn:offerAttributes.unitOfMeasure" },
+    { "placeholder": "beckn:offerAttributes.priceVolatilityIndicator", "path": "beckn:offerAttributes.priceVolatilityIndicator" },
+    { "placeholder": "beckn:offerAttributes.arrivals.quantity",        "path": "beckn:offerAttributes.arrivals.quantity" },
+    { "placeholder": "beckn:offerAttributes.arrivals.unit",            "path": "beckn:offerAttributes.arrivals.unit" }
+  ]
+}

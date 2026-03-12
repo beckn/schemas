@@ -1,0 +1,36 @@
+{
+  "id": "https://schema.beckn.io/AgriAdvisoryFulfillmentAttributes/v1",
+  "name": "Agri Advisory Fulfillment Attributes",
+  "version": "1.0.0",
+  "description": "Fulfillment-level extension for digital agri advisory services. Shared across crop advisory (UC1), commodity price listing (UC2), and weather forecast (UC3) use cases.",
+  "domain": "advisory:agri",
+  "included_schemas": [
+    "AgriAdvisoryFulfillmentAttributes"
+  ],
+  "discovery_fields": [
+    "beckn:fulfillment.beckn:deliveryAttributes.deliveryMode",
+    "beckn:fulfillment.beckn:deliveryAttributes.targetLocation"
+  ],
+  "indexable_paths": [
+    "beckn:id",
+    "beckn:fulfillmentStatus",
+    "beckn:mode",
+    "beckn:deliveryAttributes.deliveryMode",
+    "beckn:deliveryAttributes.targetLocation",
+    "beckn:deliveryAttributes.requestedLanguage",
+    "beckn:deliveryAttributes.contentAccessUrl"
+  ],
+  "filterable_paths": [
+    "beckn:deliveryAttributes.deliveryMode",
+    "beckn:deliveryAttributes.requestedLanguage"
+  ],
+  "sortable_paths": [
+    "beckn:deliveryAttributes.contentAccessExpiry"
+  ],
+  "privacy_notes": [
+    {
+      "path": "beckn:deliveryAttributes.targetLocation",
+      "note": "targetLocation contains GPS coordinates of the farmer's farm or field. This is sensitive location data (PII). BAP and BPP platforms must handle with consent and not share with third parties without explicit farmer authorisation."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "cpia": "https://schema.beckn.io/CommodityPriceItemAttributes#",
+    "CommodityPriceItemAttributes": "cpia:CommodityPriceItemAttributes",
+    "commodityName": {
+      "@id": "schema:name"
+    },
+    "commodityCode": {
+      "@id": "schema:identifier"
+    },
+    "commodityVariety": {
+      "@id": "cpia:commodityVariety"
+    },
+    "commodityGrade": {
+      "@id": "cpia:commodityGrade"
+    },
+    "commoditySize": {
+      "@id": "cpia:commoditySize"
+    },
+    "unitOfMeasure": {
+      "@id": "schema:unitText"
+    },
+    "mandiName": {
+      "@id": "cpia:mandiName"
+    },
+    "mandiCode": {
+      "@id": "cpia:mandiCode"
+    },
+    "priceObservationPeriod": {
+      "@id": "cpia:priceObservationPeriod",
+      "@type": "@id"
+    },
+    "priceSource": {
+      "@id": "schema:publisher"
+    },
+    "dataLicense": {
+      "@id": "schema:license"
+    },
+    "languages": {
+      "@id": "schema:inLanguage",
+      "@container": "@set"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "cmoa": "https://schema.beckn.io/CommodityMarketOfferAttributes#",
+    "CommodityMarketOfferAttributes": "cmoa:CommodityMarketOfferAttributes",
+    "minPrice": {
+      "@id": "schema:minPrice"
+    },
+    "maxPrice": {
+      "@id": "schema:maxPrice"
+    },
+    "averagePrice": {
+      "@id": "cmoa:averagePrice"
+    },
+    "currency": {
+      "@id": "schema:priceCurrency"
+    },
+    "unitOfMeasure": {
+      "@id": "schema:unitText"
+    },
+    "priceVolatilityIndicator": {
+      "@id": "cmoa:priceVolatilityIndicator"
+    },
+    "arrivals": {
+      "@id": "cmoa:arrivals",
+      "@type": "@id"
+    },
+    "PriceVolatility": "cmoa:PriceVolatility"
+  }
+}

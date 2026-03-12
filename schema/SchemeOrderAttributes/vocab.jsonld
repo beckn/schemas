@@ -1,0 +1,91 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "schema": "https://schema.org/",
+    "beckn":  "https://schema.beckn.io/",
+    "rdfs":   "http://www.w3.org/2000/01/rdf-schema#",
+    "sor":    "https://schema.beckn.io/SchemeOrderAttributes#"
+  },
+  "@graph": [
+    {
+      "@id": "sor:SchemeApplicationStatus",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Scheme Application Status",
+      "rdfs:comment": "The authoritative status of a scheme application as reported by the government scheme authority."
+    },
+    {
+      "@id": "sor:SUBMITTED",
+      "@type": "sor:SchemeApplicationStatus",
+      "rdfs:label": "Submitted",
+      "rdfs:comment": "Application formally submitted to the government scheme authority and acknowledged."
+    },
+    {
+      "@id": "sor:UNDER_REVIEW",
+      "@type": "sor:SchemeApplicationStatus",
+      "rdfs:label": "Under Review",
+      "rdfs:comment": "Application is being verified and reviewed by the scheme authority."
+    },
+    {
+      "@id": "sor:APPROVED",
+      "@type": "sor:SchemeApplicationStatus",
+      "rdfs:label": "Approved",
+      "rdfs:comment": "Application has been sanctioned; benefit disbursement pending."
+    },
+    {
+      "@id": "sor:REJECTED",
+      "@type": "sor:SchemeApplicationStatus",
+      "rdfs:label": "Rejected",
+      "rdfs:comment": "Application rejected by the scheme authority. See rejectionReason."
+    },
+    {
+      "@id": "sor:DISBURSED",
+      "@type": "sor:SchemeApplicationStatus",
+      "rdfs:label": "Disbursed",
+      "rdfs:comment": "Benefit successfully disbursed to the beneficiary."
+    },
+    {
+      "@id": "sor:DISBURSEMENT_FAILED",
+      "@type": "sor:SchemeApplicationStatus",
+      "rdfs:label": "Disbursement Failed",
+      "rdfs:comment": "Disbursement attempt failed (e.g., bank account mismatch, NPCI rejection)."
+    },
+    {
+      "@id": "sor:CLOSED",
+      "@type": "sor:SchemeApplicationStatus",
+      "rdfs:label": "Closed",
+      "rdfs:comment": "Application lifecycle is complete."
+    },
+
+    {
+      "@id": "sor:ExternalEnrollmentIdType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "External Enrollment ID Type",
+      "rdfs:comment": "Type of external identifier used to link a non-Beckn enrollment to a Beckn tracking order (UC2)."
+    },
+    {
+      "@id": "sor:FARMER_REGISTRY_ID",
+      "@type": "sor:ExternalEnrollmentIdType",
+      "rdfs:label": "Farmer Registry ID",
+      "rdfs:comment": "State or national farmer registry identifier (e.g., PM-KISAN farmer ID)."
+    },
+    {
+      "@id": "sor:AADHAAR_MASKED",
+      "@type": "sor:ExternalEnrollmentIdType",
+      "rdfs:label": "Aadhaar (Masked)",
+      "rdfs:comment": "Last 4 digits of Aadhaar used as enrollment lookup key. Full Aadhaar must not be transmitted."
+    },
+    {
+      "@id": "sor:GOVERNMENT_APPLICATION_ID",
+      "@type": "sor:ExternalEnrollmentIdType",
+      "rdfs:label": "Government Application ID",
+      "rdfs:comment": "Official reference number assigned by the scheme authority at the time of external enrollment."
+    },
+    {
+      "@id": "sor:MOBILE_LINKED_ID",
+      "@type": "sor:ExternalEnrollmentIdType",
+      "rdfs:label": "Mobile-Linked ID",
+      "rdfs:comment": "Mobile number registered with the scheme at enrollment, used as lookup key after OTP verification."
+    }
+  ]
+}

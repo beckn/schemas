@@ -1,0 +1,33 @@
+{
+  "message": {
+    "order": {
+      "fulfillments": [
+        {
+          "fulfillmentAttributes": {
+            "deliveryMode": "PDF_DOWNLOAD",
+            "targetLocation": {
+              "geo": {
+                "type": "Point",
+                "coordinates": [
+                  77.5946,
+                  12.9716
+                ]
+              },
+              "address": {
+                "streetAddress": "house number: 12, Village: Rudrapur",
+                "addressLocality": "Rudrapur",
+                "addressRegion": "Maharashtra",
+                "addressCountry": "IN",
+                "postalCode": "416506"
+              }
+            },
+            "requestedLanguage": "mr",
+            "contentAccessUrl": "https://amicusagro.info/reports/forecast-ORD-20240302-001.pdf",
+            "contentAccessExpiry": "2024-04-01T23:59:59Z",
+            "deliveryConfirmation": "AMICUS-DELIVERY-9876543210"
+          }
+        }
+      ]
+    }
+  }
+}

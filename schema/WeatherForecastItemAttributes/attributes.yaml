@@ -1,0 +1,226 @@
+openapi: 3.1.1
+info:
+  title: Weather Forecast Item Attributes
+  description: |
+    Extension schema for weather data and forecast product items on the
+    Beckn v2 agri-advisory network. Attaches to `beckn:itemAttributes` on a
+    Beckn `Item` entity.
+
+    Each item represents a weather forecast product offering — a purchasable
+    or discoverable weather intelligence service that can be delivered digitally
+    to a farmer or agri-enterprise.
+
+    Covers:
+      - Forecast type (weather forecast, seasonal outlook, historical data)
+      - Forecast time horizon (duration)
+      - Spatial resolution of the forecast
+      - Weather data parameters included in the product
+      - Output formats and delivery options
+      - Data source and license information
+
+    Pricing (e.g., INR 30 for a 14-day forecast) lives in
+    `AgriAdvisoryOfferAttributes`. Delivery location and mode live in
+    `AgriAdvisoryFulfillmentAttributes`.
+  version: 1.0.0
+  contact:
+    name: Beckn Protocol
+    url: https://becknprotocol.io
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+components:
+  schemas:
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # TOP-LEVEL: attaches to beckn:itemAttributes
+    # ─────────────────────────────────────────────────────────────────────────
+    WeatherForecastItemAttributes:
+      type: object
+      description: >
+        Intrinsic attributes of a weather forecast or data product item.
+        Describes what forecast data is provided, its temporal horizon,
+        spatial resolution, and available output formats.
+      x-jsonld-context: "./context.jsonld"
+      x-jsonld-type: "wfia:WeatherForecastItemAttributes"
+      x-beckn-container: itemAttributes
+      required:
+        - forecastType
+        - languages
+      additionalProperties: false
+      properties:
+
+        forecastType:
+          type: string
+          description: >
+            Classification of the weather intelligence product.
+          enum:
+            - WEATHER_FORECAST
+            - SEASONAL_OUTLOOK
+            - AGRO_ADVISORY
+            - HISTORICAL_DATA
+            - CLIMATE_RISK
+          x-jsonld-id: "wfia:forecastType"
+
+        forecastDurationDays:
+          type: integer
+          minimum: 1
+          description: >
+            Number of days covered by the forecast horizon.
+            Use for daily/hourly forecast products.
+          example: 14
+          x-jsonld-id: "wfia:forecastDurationDays"
+
+        forecastDurationISO:
+          type: string
+          description: >
+            Forecast horizon expressed as an ISO 8601 duration string
+            (e.g., P7D for 7 days, P3M for 3 months).
+          example: "P14D"
+          x-jsonld-id: "wfia:forecastDurationISO"
+
+        forecastResolution:
+          type: string
+          description: >
+            Spatial granularity of the weather forecast.
+          enum:
+            - HYPERLOCAL
+            - VILLAGE
+            - BLOCK
+            - DISTRICT
+            - STATE
+            - NATIONAL
+          x-jsonld-id: "wfia:forecastResolution"
+
+        weatherDataPoints:
+          type: array
+          minItems: 1
+          description: >
+            List of weather parameters included in the forecast product.
+          items:
+            $ref: "#/components/schemas/WeatherDataPoint"
+          x-jsonld-id: "wfia:weatherDataPoints"
+
+        outputFormats:
+          type: array
+          description: >
+            Output formats in which the forecast data is available.
+          items:
+            $ref: "#/components/schemas/WeatherOutputFormat"
+          x-jsonld-id: "wfia:outputFormats"
+
+        languages:
+          type: array
+          minItems: 1
+          description: >
+            ISO 639-1 language codes in which the forecast is available.
+          items:
+            type: string
+            example: "en"
+          x-jsonld-id: "schema:inLanguage"
+
+        providerLicense:
+          type: string
+          description: >
+            License type under which the weather data is provided.
+          enum:
+            - OPEN
+            - PROPRIETARY
+            - GOVERNMENT
+            - CREATIVE_COMMONS
+            - ACADEMIC
+          x-jsonld-id: "wfia:providerLicense"
+
+        modelSource:
+          type: string
+          description: >
+            Meteorological model or data source used to generate the forecast
+            (e.g., IMD, ECMWF, GFS, NCEP, proprietary model).
+          example: "IMD"
+          x-jsonld-id: "wfia:modelSource"
+
+        updateFrequency:
+          type: string
+          description: >
+            How often the forecast data is refreshed, as an ISO 8601 duration
+            (e.g., PT6H = every 6 hours, P1D = daily).
+          example: "PT6H"
+          x-jsonld-id: "wfia:updateFrequency"
+
+        historicalDataAvailable:
+          type: boolean
+          description: >
+            Whether this product also provides access to historical weather data
+            in addition to forecasts.
+          default: false
+          x-jsonld-id: "wfia:historicalDataAvailable"
+
+        coverageAreaCodes:
+          type: array
+          description: >
+            The geographic scope for which this forecast product is available,
+            expressed as typed codes from an authoritative administrative coding
+            system. Allows BAPs to match forecast products to a buyer's location
+            using standardised administrative identifiers — without requiring
+            GPS coordinates at discovery time.
+
+            Each entry is a CodedValue. Recommended systems for UAI:
+              - https://lgdirectory.gov.in  with @type LGDDistrict,
+                LGDSubDistrict, or LGDVillage
+              - https://www.indiapost.gov.in with @type PINCode
+
+            A BPP may supply multiple entries to express coverage across
+            several districts or administrative units.
+          items:
+            $ref: "../agri-common/CodedValue/attributes.yaml#/components/schemas/CodedValue"
+          x-jsonld-id: "wfia:coverageAreaCodes"
+
+        accreditedBy:
+          type: string
+          description: >
+            Name of the regulatory or accreditation body that has certified
+            this weather data provider (if any).
+          example: "India Meteorological Department (IMD)"
+          x-jsonld-id: "schema:recognizingAuthority"
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # SUB-SCHEMAS
+    # ─────────────────────────────────────────────────────────────────────────
+
+    WeatherDataPoint:
+      type: string
+      description: >
+        A specific meteorological parameter included in a weather forecast product.
+      enum:
+        - TEMPERATURE_MAX
+        - TEMPERATURE_MIN
+        - TEMPERATURE_MEAN
+        - HUMIDITY
+        - RAINFALL
+        - WIND_SPEED
+        - WIND_DIRECTION
+        - ATMOSPHERIC_PRESSURE
+        - SOLAR_RADIATION
+        - DEW_POINT
+        - CLOUD_COVER
+        - UV_INDEX
+        - EVAPOTRANSPIRATION
+        - SOIL_MOISTURE
+        - FROST_RISK
+        - HEAT_INDEX
+        - VISIBILITY
+      x-jsonld-id: "wfia:WeatherDataPoint"
+
+    WeatherOutputFormat:
+      type: string
+      description: >
+        Format in which weather forecast data can be delivered.
+      enum:
+        - PDF
+        - JSON_API
+        - CSV
+        - SMS
+        - PUSH_NOTIFICATION
+        - IN_APP_DISPLAY
+        - EMAIL_REPORT
+      x-jsonld-id: "wfia:WeatherOutputFormat"

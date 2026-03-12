@@ -1,0 +1,57 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "aaoa": "https://schema.beckn.io/AgriAdvisoryOfferAttributes#",
+    "AgriAdvisoryOfferAttributes": {
+      "@id": "aaoa:AgriAdvisoryOfferAttributes"
+    },
+    "CancellationPolicy": {
+      "@id": "aaoa:CancellationPolicy"
+    },
+    "pricingModel": {
+      "@id": "aaoa:pricingModel"
+    },
+    "accessType": {
+      "@id": "aaoa:accessType"
+    },
+    "contentLicense": {
+      "@id": "aaoa:contentLicense"
+    },
+    "accessValidityPeriod": {
+      "@id": "aaoa:accessValidityPeriod",
+      "@type": "@id"
+    },
+    "accessValidityDuration": {
+      "@id": "aaoa:accessValidityDuration"
+    },
+    "cancellationPolicy": {
+      "@id": "aaoa:cancellationPolicy",
+      "@type": "@id"
+    },
+    "trialAvailable": {
+      "@id": "aaoa:trialAvailable"
+    },
+    "maxActiveOrders": {
+      "@id": "aaoa:maxActiveOrders"
+    },
+    "isRefundable": {
+      "@id": "aaoa:isRefundable"
+    },
+    "refundWindowHours": {
+      "@id": "aaoa:refundWindowHours"
+    },
+    "refundPercentage": {
+      "@id": "aaoa:refundPercentage"
+    },
+    "cancellationReasons": {
+      "@id": "aaoa:cancellationReasons",
+      "@container": "@set"
+    },
+    "PricingModel": "aaoa:PricingModel",
+    "AccessType": "aaoa:AccessType",
+    "ContentLicense": "aaoa:ContentLicense"
+  }
+}

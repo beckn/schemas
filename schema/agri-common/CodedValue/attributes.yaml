@@ -1,0 +1,76 @@
+openapi: 3.1.1
+info:
+  title: CodedValue — Shared Type Definition
+  description: |
+    A reusable type definition for representing typed codes from any
+    authoritative code system — external (LGD, PIN, WMO) or UAI-owned
+    (enums defined in this schema pack).
+
+    Uses JSON-LD identity conventions (@context + @type) consistent
+    with Beckn v2 extension schema patterns throughout this pack.
+
+    See RFC-001-CodedValue-Pattern.md for design rationale and
+    thumb rules for when to use CodedValue vs a plain enum.
+
+    Upstream candidate: proposed for promotion to Beckn core to serve
+    any domain requiring typed external or controlled code references.
+  version: 1.0.0
+  contact:
+    name: Beckn Protocol
+    url: https://becknprotocol.io
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+components:
+  schemas:
+
+    CodedValue:
+      type: object
+      description: >
+        A typed code from an authoritative code system, expressed using
+        JSON-LD identity conventions. The @context URI identifies the
+        authority; @type names the code class within that context; code
+        is the actual value.
+
+        For externally owned systems (e.g. LGD, India Post PIN codes),
+        the @context is the authority's URI and code validation against
+        the authority's value set is the responsibility of the receiving
+        participant.
+
+        For UAI-owned enums, @context is the schema pack's context.jsonld
+        and @type is the enum name defined in the relevant attributes.yaml.
+        Code values must match the enum definition.
+      required:
+        - "@context"
+        - "@type"
+        - code
+      additionalProperties: false
+      properties:
+        "@context":
+          type: string
+          format: uri
+          description: >
+            Canonical URI of the code system authority.
+            Examples:
+              - https://lgdirectory.gov.in       (LGD administrative codes)
+              - https://www.indiapost.gov.in      (India Post PIN codes)
+              - ./context.jsonld                  (UAI-owned enum in this pack)
+          example: "https://lgdirectory.gov.in"
+          x-jsonld-id: "@context"
+        "@type":
+          type: string
+          description: >
+            Name of the code class within the identified context.
+            For external systems: the concept class name (e.g. LGDDistrict).
+            For UAI-owned enums: the enum type name from attributes.yaml
+            (e.g. ForecastResolution).
+          example: "LGDDistrict"
+          x-jsonld-id: "@type"
+        code:
+          type: string
+          description: >
+            The code value. Must be a valid member of the set defined
+            by the authority at @context under the class named by @type.
+          example: "507"
+          x-jsonld-id: "beckn:code"

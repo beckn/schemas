@@ -1,0 +1,76 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld",
+
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "soa":   "https://schema.beckn.io/SchemeOfferAttributes#",
+
+    "soa:SchemeOfferAttributes": { "@id": "soa:SchemeOfferAttributes" },
+
+    "soa:eligibilityCriteria":     { "@id": "soa:eligibilityCriteria" },
+    "soa:benefitQuantum":          { "@id": "soa:benefitQuantum" },
+    "soa:applicationWindowNote":   { "@id": "soa:applicationWindowNote", "@type": "schema:description" },
+    "soa:eligibilityForm":         { "@id": "soa:eligibilityForm" },
+    "soa:formUrl":                 { "@id": "soa:formUrl",               "@type": "@id" },
+    "soa:mimeType":                { "@id": "soa:mimeType" },
+    "soa:required":                { "@id": "soa:required",              "@type": "schema:Boolean" },
+    "soa:maxBeneficiaries":        { "@id": "soa:maxBeneficiaries",      "@type": "schema:Number" },
+
+    "soa:demographicCriteria":     { "@id": "soa:demographicCriteria" },
+    "soa:economicCriteria":        { "@id": "soa:economicCriteria" },
+    "soa:professionalCriteria":    { "@id": "soa:professionalCriteria" },
+    "soa:identityCriteria":        { "@id": "soa:identityCriteria" },
+    "soa:educationCriteria":       { "@id": "soa:educationCriteria" },
+    "soa:residencyCriteria":       { "@id": "soa:residencyCriteria" },
+    "soa:additionalCriteria":      { "@id": "soa:additionalCriteria",    "@container": "@set" },
+
+    "soa:gender":                  { "@id": "schema:gender",             "@type": "@vocab" },
+    "soa:minAge":                  { "@id": "schema:minAge",             "@type": "schema:Number" },
+    "soa:maxAge":                  { "@id": "schema:maxAge",             "@type": "schema:Number" },
+    "soa:casteCategory":           { "@id": "soa:casteCategory",         "@container": "@set", "@type": "@vocab" },
+    "soa:differentlyAbled":        { "@id": "soa:differentlyAbled",      "@type": "@vocab" },
+    "soa:minGirlChildren":         { "@id": "soa:minGirlChildren",       "@type": "schema:Number" },
+
+    "soa:rationCardType":          { "@id": "soa:rationCardType",        "@container": "@set", "@type": "@vocab" },
+    "soa:landOwnership":           { "@id": "soa:landOwnership",         "@type": "@vocab" },
+    "soa:annualIncomeMaxCurrency": { "@id": "schema:priceCurrency" },
+    "soa:annualIncomeMax":         { "@id": "soa:annualIncomeMax",       "@type": "schema:Number" },
+    "soa:isTaxpayer":              { "@id": "soa:isTaxpayer",            "@type": "@vocab" },
+    "soa:hasCattleInsurance":      { "@id": "soa:hasCattleInsurance",    "@type": "@vocab" },
+
+    "soa:occupationType":          { "@id": "schema:occupationalCategory", "@container": "@set", "@type": "@vocab" },
+    "soa:enterpriseCategory":      { "@id": "soa:enterpriseCategory",    "@container": "@set", "@type": "@vocab" },
+    "soa:businessSupportType":     { "@id": "soa:businessSupportType",   "@container": "@set", "@type": "@vocab" },
+
+    "soa:hasVoterId":              { "@id": "soa:hasVoterId",            "@type": "@vocab" },
+    "soa:hasAadhaar":              { "@id": "soa:hasAadhaar",            "@type": "@vocab" },
+    "soa:hasSECCRegistration":     { "@id": "soa:hasSECCRegistration",   "@type": "@vocab" },
+
+    "soa:maxEducationLevel":       { "@id": "schema:educationalLevel",   "@type": "@vocab" },
+    "soa:minEducationLevel":       { "@id": "soa:minEducationLevel",     "@type": "@vocab" },
+
+    "soa:statesOfResidence":       { "@id": "schema:addressRegion",      "@container": "@set" },
+    "soa:bornInStateOfResidence":  { "@id": "soa:bornInStateOfResidence","@type": "@vocab" },
+
+    "soa:criterionCode":           { "@id": "soa:criterionCode",         "@type": "schema:identifier" },
+    "soa:criterionName":           { "@id": "soa:criterionName",         "@type": "schema:name" },
+    "soa:criterionValue":          { "@id": "soa:criterionValue" },
+
+    "soa:benefitType":             { "@id": "soa:benefitType",           "@type": "@vocab" },
+    "soa:monetaryAmount":          { "@id": "schema:PriceSpecification" },
+    "soa:subsidyPaymentPercentage":{ "@id": "schema:eligibleTransactionVolume" },
+    "soa:guaranteedEmploymentDays":{ "@id": "soa:guaranteedEmploymentDays", "@type": "schema:Number" },
+    "soa:benefitPeriod":           { "@id": "soa:benefitPeriod",         "@type": "@vocab" },
+    "soa:benefitNote":             { "@id": "soa:benefitNote",           "@type": "schema:description" },
+
+    "CasteCategory":               "soa:CasteCategory",
+    "RationCardType":              "soa:RationCardType",
+    "OccupationType":              "soa:OccupationType",
+    "EnterpriseCategory":          "soa:EnterpriseCategory",
+    "BenefitType":                 "soa:BenefitType",
+    "BenefitPeriod":               "soa:BenefitPeriod",
+    "EducationLevel":              "soa:EducationLevel"
+  }
+}

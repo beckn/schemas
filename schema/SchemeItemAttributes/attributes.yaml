@@ -1,0 +1,226 @@
+openapi: 3.1.1
+info:
+  title: SchemeItemAttributes — Agri Scheme Discovery
+  version: 1.0.0
+  description: |
+    Extension schema for `Item.itemAttributes` in the Agriculture/Government Scheme Discovery
+    vertical (UAI / UKI network). Captures intrinsic descriptive properties of a government
+    or NGO scheme: what it is, who sponsors it, what documents are needed, and what modes of
+    application are supported.
+
+    This schema does NOT model eligibility criteria (→ SchemeOfferAttributes),
+    benefit quantum (→ SchemeOfferAttributes), or fulfillment mechanics (→ SchemeFulfillmentAttributes).
+
+x-jsonld-context: "./context.jsonld"
+
+components:
+  schemas:
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # TOP-LEVEL: SchemeItemAttributes
+    # Attaches to: Item.itemAttributes
+    # ─────────────────────────────────────────────────────────────────────────
+    SchemeItemAttributes:
+      type: object
+      x-beckn-container: itemAttributes
+      description: |
+        Intrinsic metadata describing a government or NGO scheme as a discoverable item.
+        Covers scheme identity, categorisation, documentation requirements, application
+        modes, and content language availability.
+      required:
+        - sia:schemeType
+        - sia:fundingModel
+      additionalProperties: false
+      properties:
+
+        "sia:officialSchemeCode":
+          type: string
+          description: |
+            Official government-assigned identifier for the scheme (e.g., "PM000024" for
+            Central Sector Schemes). Used for cross-referencing with government portals.
+          example: "PM000024"
+          x-jsonld-id: "sia:officialSchemeCode"
+
+        "sia:schemeType":
+          type: string
+          description: |
+            Functional type of the scheme — determines what the beneficiary receives.
+          enum:
+            - INSURANCE
+            - DBT_SUBSIDY
+            - EMPLOYMENT_PLACEMENT
+            - SUBSIDIZED_SERVICE
+            - IN_KIND_TRANSFER
+            - TECHNICAL_ASSISTANCE
+            - TRAINING_SKILLING
+          x-jsonld-id: "sia:schemeType"
+
+        "sia:fundingModel":
+          type: string
+          description: |
+            Which tier of government or organization funds the scheme.
+          enum:
+            - CENTRAL_SECTOR
+            - CENTRALLY_SPONSORED
+            - STATE_SCHEME
+            - DISTRICT_SCHEME
+            - NGO_FUNDED
+            - PPP
+          x-jsonld-id: "sia:fundingModel"
+
+        "sia:targetBeneficiaryType":
+          type: array
+          description: |
+            Who the scheme targets. A single scheme may target multiple beneficiary types.
+          items:
+            type: string
+            enum:
+              - INDIVIDUAL
+              - HOUSEHOLD
+              - FARMER_GROUP
+              - SELF_HELP_GROUP
+              - COOPERATIVE
+              - SMALL_ENTERPRISE
+              - ORGANIZATION
+          x-jsonld-id: "sia:targetBeneficiaryType"
+
+        "sia:sponsoringMinistry":
+          type: string
+          description: |
+            Name of the government ministry or department that sponsors this scheme.
+          example: "Ministry of Health and Family Welfare"
+          x-jsonld-id: "sia:sponsoringMinistry"
+
+        "sia:officialPortalUrl":
+          type: string
+          format: uri
+          description: |
+            URL of the official government or organization portal where the scheme
+            is formally described or where applications can be submitted directly.
+          example: "https://pmjay.gov.in"
+          x-jsonld-id: "sia:officialPortalUrl"
+
+        # ── Application & Access ───────────────────────────────────────────
+
+        "sia:applicationModes":
+          type: array
+          description: |
+            Modes through which the scheme can be applied for.
+          items:
+            type: string
+            enum:
+              - ONLINE_PORTAL
+              - OFFLINE_FORM
+              - AGENT_ASSISTED
+              - GOVERNMENT_OFFICE
+              - COMMON_SERVICE_CENTER
+          x-jsonld-id: "sia:applicationModes"
+
+        "sia:availableLanguages":
+          type: array
+          description: |
+            ISO 639-1 language codes in which scheme information and application forms
+            are officially available. Supports multilingual discovery.
+          items:
+            type: string
+          example: ["hi", "en", "mr", "te", "kn"]
+          x-jsonld-id: "sia:availableLanguages"
+
+        # ── Documentation ──────────────────────────────────────────────────
+
+        "sia:requiredDocuments":
+          type: array
+          description: |
+            List of documents that an applicant must submit with their application.
+            Each entry is a RequiredDocument sub-schema.
+          items:
+            $ref: "#/components/schemas/RequiredDocument"
+          x-jsonld-id: "sia:requiredDocuments"
+
+        # ── Structured Benefits (descriptive only) ─────────────────────────
+
+        "sia:schemeBenefits":
+          type: array
+          description: |
+            High-level descriptive summary of what the scheme provides. Monetary
+            amounts and coverage limits live in SchemeOfferAttributes.benefitQuantum.
+          items:
+            $ref: "#/components/schemas/SchemeBenefitSummary"
+          x-jsonld-id: "sia:schemeBenefits"
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # SUB-SCHEMA: RequiredDocument
+    # Lives within SchemeItemAttributes folder; not a top-level container schema
+    # ─────────────────────────────────────────────────────────────────────────
+    RequiredDocument:
+      type: object
+      description: |
+        A single document required for scheme application, identified by a standard
+        code and human-readable name.
+      required:
+        - sia:documentCode
+        - sia:documentName
+      additionalProperties: false
+      properties:
+        "sia:documentCode":
+          type: string
+          description: |
+            Short code identifying the document type (e.g., "POI" for Proof of Identity,
+            "POR" for Proof of Residence, "POC" for Proof of Caste).
+          example: "POI"
+          x-jsonld-id: "sia:documentCode"
+
+        "sia:documentName":
+          type: string
+          description: Human-readable name for the document type.
+          example: "Proof of Identity"
+          x-jsonld-id: "sia:documentName"
+
+        "sia:documentExample":
+          type: string
+          description: |
+            A common or accepted example of the document
+            (e.g., "Aadhaar Card", "Ration Card").
+          example: "Aadhaar Card"
+          x-jsonld-id: "sia:documentExample"
+
+        "sia:mandatory":
+          type: boolean
+          description: |
+            Whether this document is mandatory for the application. If absent, assume true.
+          default: true
+          x-jsonld-id: "sia:mandatory"
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # SUB-SCHEMA: SchemeBenefitSummary
+    # ─────────────────────────────────────────────────────────────────────────
+    SchemeBenefitSummary:
+      type: object
+      description: |
+        A descriptive summary of one aspect of the scheme's benefit. Monetary or
+        quantitative limits belong in SchemeOfferAttributes.benefitQuantum.
+      additionalProperties: false
+      properties:
+        "sia:benefitCategory":
+          type: string
+          description: Benefit category code
+          enum:
+            - HEALTH_COVERAGE
+            - CROP_INSURANCE
+            - INCOME_SUPPORT
+            - HOUSING
+            - EDUCATION
+            - SKILL_TRAINING
+            - EMPLOYMENT
+            - FOOD_NUTRITION
+            - SOCIAL_SECURITY
+            - INFRASTRUCTURE
+            - EQUIPMENT_SUBSIDY
+          x-jsonld-id: "sia:benefitCategory"
+
+        "sia:benefitDescription":
+          type: string
+          description: |
+            Human-readable description of the benefit provided.
+          example: "Cashless hospitalization at empanelled public and private hospitals."
+          x-jsonld-id: "sia:benefitDescription"

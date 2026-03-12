@@ -1,0 +1,37 @@
+{
+  "id": "https://schema.beckn.io/CommodityMarketOfferAttributes/v1",
+  "name": "Commodity Market Offer Attributes",
+  "version": "1.0.0",
+  "description": "Offer-level extension for commodity market price data on the Beckn agri-advisory network. Provides min/max/average price ranges for agricultural commodities at mandis.",
+  "domain": "advisory:agri",
+  "included_schemas": [
+    "CommodityMarketOfferAttributes"
+  ],
+  "discovery_fields": [
+    "beckn:offerAttributes.minPrice",
+    "beckn:offerAttributes.maxPrice",
+    "beckn:offerAttributes.averagePrice",
+    "beckn:offerAttributes.currency"
+  ],
+  "indexable_paths": [
+    "beckn:id",
+    "beckn:offerAttributes.minPrice",
+    "beckn:offerAttributes.maxPrice",
+    "beckn:offerAttributes.averagePrice",
+    "beckn:offerAttributes.currency",
+    "beckn:offerAttributes.unitOfMeasure"
+  ],
+  "filterable_paths": [
+    "beckn:offerAttributes.minPrice",
+    "beckn:offerAttributes.maxPrice",
+    "beckn:offerAttributes.averagePrice",
+    "beckn:offerAttributes.currency",
+    "beckn:offerAttributes.priceVolatilityIndicator"
+  ],
+  "sortable_paths": [
+    "beckn:offerAttributes.averagePrice",
+    "beckn:offerAttributes.maxPrice",
+    "beckn:offerAttributes.minPrice"
+  ],
+  "privacy_notes": []
+}

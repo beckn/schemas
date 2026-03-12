@@ -1,0 +1,49 @@
+{
+  "schema_id": "https://schema.beckn.io/SchemeFulfillmentAttributes/v1",
+  "card_template": {
+    "title": "Application Status",
+    "subtitle": "{{beckn:fulfillmentAttributes.sfa:applicationStatus}}",
+    "badge_primary": "{{beckn:fulfillmentAttributes.sfa:schemeDeliveryType}}",
+    "metadata_line": "{{beckn:fulfillmentAttributes.sfa:submissionMode}}"
+  },
+  "detail_template": {
+    "header": {
+      "title": "Fulfillment Details"
+    },
+    "sections": [
+      {
+        "label": "Delivery Method",
+        "fields": [
+          { "label": "Delivery Type",        "value": "{{beckn:fulfillmentAttributes.sfa:schemeDeliveryType}}" },
+          { "label": "Disbursement Mode",    "value": "{{beckn:fulfillmentAttributes.sfa:disbursementMode}}" },
+          { "label": "Submission Mode",      "value": "{{beckn:fulfillmentAttributes.sfa:submissionMode}}" },
+          { "label": "Document Collection",  "value": "{{beckn:fulfillmentAttributes.sfa:documentCollectionMode}}" }
+        ]
+      },
+      {
+        "label": "Application Status",
+        "fields": [
+          { "label": "Current Status",       "value": "{{beckn:fulfillmentAttributes.sfa:applicationStatus}}" },
+          { "label": "Status Note",          "value": "{{beckn:fulfillmentAttributes.sfa:statusNote}}" },
+          { "label": "Portal Reference",     "value": "{{beckn:fulfillmentAttributes.sfa:applicationPortalReference}}" }
+        ]
+      },
+      {
+        "label": "Assigned Agent",
+        "fields": [
+          { "label": "Agent Name",           "value": "{{beckn:fulfillmentAttributes.sfa:agentDetails.sfa:agentName}}" },
+          { "label": "Agent Type",           "value": "{{beckn:fulfillmentAttributes.sfa:agentDetails.sfa:agentType}}" },
+          { "label": "Organization",         "value": "{{beckn:fulfillmentAttributes.sfa:agentDetails.sfa:agentOrganization}}" },
+          { "label": "Contact",              "value": "{{beckn:fulfillmentAttributes.sfa:agentDetails.sfa:agentContact}}" }
+        ]
+      },
+      {
+        "label": "Applicant Details",
+        "fields": [
+          { "label": "Name",                 "value": "{{beckn:customer.person.schema:name}}" },
+          { "label": "Phone",                "value": "{{beckn:customer.contact.schema:telephone}}" }
+        ]
+      }
+    ]
+  }
+}

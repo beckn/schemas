@@ -1,0 +1,237 @@
+openapi: 3.1.1
+info:
+  title: Crop Advisory Item Attributes
+  description: |
+    Extension schema for agricultural crop/disease advisory content items
+    on the Beckn v2 generalized core. Attaches to `beckn:itemAttributes` on
+    a Beckn `Item` entity.
+
+    Covers three advisory sub-categories:
+      - Disease control (identification, remedies, prevention)
+      - Spray schedule (pesticide/fertilizer application schedules)
+      - Pest forecast (predictive pest risk for a crop location)
+
+    All items represent a single, atomic, digital knowledge asset
+    (article, PDF, video, audio advisory).
+  version: 1.0.0
+  contact:
+    name: Beckn Protocol
+    url: https://becknprotocol.io
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+components:
+  schemas:
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # TOP-LEVEL: attaches to beckn:itemAttributes
+    # ─────────────────────────────────────────────────────────────────────────
+    CropAdvisoryItemAttributes:
+      type: object
+      description: >
+        Intrinsic attributes of a crop advisory knowledge item. Describes
+        the subject matter, content format, applicable languages, and crop
+        context for which the advisory is relevant.
+      x-jsonld-context: "./context.jsonld"
+      x-jsonld-type: "caia:CropAdvisoryItemAttributes"
+      x-beckn-container: itemAttributes
+      required:
+        - advisoryCategory
+        - languages
+      additionalProperties: false
+      properties:
+
+        advisoryCategory:
+          type: string
+          description: >
+            Broad category of agricultural advisory content.
+          enum:
+            - DISEASE_CONTROL
+            - SPRAY_SCHEDULE
+            - PEST_FORECAST
+            - GENERAL_ADVISORY
+          x-jsonld-id: "caia:advisoryCategory"
+
+        contentType:
+          type: string
+          description: >
+            Format of the content asset delivered to the consumer.
+          enum:
+            - TEXT
+            - VIDEO
+            - PDF
+            - AUDIO
+            - INFOGRAPHIC
+            - INTERACTIVE
+          x-jsonld-id: "caia:contentType"
+
+        contentMimeType:
+          type: string
+          description: >
+            IANA MIME type of the primary content asset
+            (e.g., video/mp4, application/pdf, text/html).
+          example: "video/mp4"
+          x-jsonld-id: "schema:encodingFormat"
+
+        contentUrl:
+          type: string
+          format: uri
+          description: >
+            Direct URL to the primary content asset. For paid items this URL
+            may be behind an access gate and delivered only post-order.
+          example: "https://agri_acad.example.org/videos/stemphylium-blight.mp4"
+          x-jsonld-id: "schema:contentUrl"
+
+        languages:
+          type: array
+          minItems: 1
+          description: >
+            ISO 639-1 language codes in which the advisory content is
+            available. Used for filtering during discovery.
+          items:
+            type: string
+            pattern: "^[a-z]{2}$"
+            example: "en"
+          x-jsonld-id: "schema:inLanguage"
+
+        targetCrops:
+          type: array
+          description: >
+            Common names or scientific names of crops to which this advisory
+            applies. Used for discovery filtering.
+          items:
+            type: string
+          example: ["onion", "grape", "tomato"]
+          x-jsonld-id: "caia:targetCrops"
+
+        targetDiseases:
+          type: array
+          description: >
+            Names of diseases, pests, or infestations this advisory addresses.
+          items:
+            type: string
+          example: ["Stemphylium Blight", "Powdery Mildew", "karpa"]
+          x-jsonld-id: "caia:targetDiseases"
+
+        applicableGrowthStages:
+          type: array
+          description: >
+            Crop growth stages for which this advisory or spray schedule
+            is specifically applicable.
+          items:
+            $ref: "#/components/schemas/CropGrowthStage"
+          x-jsonld-id: "caia:applicableGrowthStages"
+
+        cropContext:
+          $ref: "#/components/schemas/CropContext"
+          description: >
+            Optional structured crop context bundled with the advisory
+            (often populated for personalised/contextual advisories).
+          x-jsonld-id: "caia:cropContext"
+
+        contentDurationSeconds:
+          type: integer
+          minimum: 0
+          description: >
+            Duration of video/audio content in seconds. Omit for non-media types.
+          example: 120
+          x-jsonld-id: "schema:duration"
+
+        advisorySource:
+          type: string
+          description: >
+            Name or identifier of the originating knowledge source
+            (e.g., "TNAU Agritech Portal", "ICAR").
+          example: "TNAU Agritech Portal"
+          x-jsonld-id: "schema:sourceOrganization"
+
+        expertCredentials:
+          $ref: "#/components/schemas/ExpertCredentials"
+          description: >
+            Optional credentials of the expert/author who produced the advisory.
+          x-jsonld-id: "caia:expertCredentials"
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # SUB-SCHEMAS (referenced within CropAdvisoryItemAttributes)
+    # ─────────────────────────────────────────────────────────────────────────
+
+    CropGrowthStage:
+      type: string
+      description: Enumerated crop growth stages used for advisory filtering.
+      enum:
+        - SOWING
+        - GERMINATION
+        - SEEDLING
+        - VEGETATIVE
+        - FLOWERING
+        - FRUITING
+        - MATURATION
+        - HARVESTING
+        - POST_HARVEST
+      x-jsonld-id: "caia:CropGrowthStage"
+
+    CropContext:
+      type: object
+      description: >
+        Contextual crop and environmental details that define the agronomic
+        scenario for which an advisory or spray schedule was generated.
+        These attributes mirror the search intent tags from v1.
+      additionalProperties: false
+      properties:
+        cropName:
+          type: string
+          description: Common name of the crop.
+          example: "grape"
+          x-jsonld-id: "caia:cropName"
+        cropVariety:
+          type: string
+          description: Specific variety of the crop.
+          example: "Thompson Seedless"
+          x-jsonld-id: "caia:cropVariety"
+        plantationDate:
+          type: string
+          format: date-time
+          description: Date when the crop was planted (ISO 8601).
+          example: "2024-07-02T00:00:00Z"
+          x-jsonld-id: "schema:startDate"
+        growthStage:
+          $ref: "#/components/schemas/CropGrowthStage"
+          x-jsonld-id: "caia:growthStage"
+        soilType:
+          type: string
+          description: Soil type at the farm (e.g., black soil, sandy soil).
+          example: "black soil"
+          x-jsonld-id: "caia:soilType"
+        irrigationType:
+          type: string
+          description: Irrigation method in use (e.g., drip, flood, rainfed).
+          example: "surface drip"
+          x-jsonld-id: "caia:irrigationType"
+        diseaseName:
+          type: string
+          description: Specific disease/pest observed or suspected.
+          example: "karpa"
+          x-jsonld-id: "caia:diseaseName"
+      x-jsonld-id: "caia:CropContext"
+
+    ExpertCredentials:
+      type: object
+      description: >
+        Brief credentials of the expert or institution that authored
+        the advisory content.
+      additionalProperties: false
+      properties:
+        expertName:
+          type: string
+          example: "Dr. A. Sharma"
+          x-jsonld-id: "schema:name"
+        institution:
+          type: string
+          example: "TNAU"
+          x-jsonld-id: "schema:memberOf"
+        qualification:
+          type: string
+          example: "Ph.D. Plant Pathology"
+          x-jsonld-id: "schema:hasCredential"
+      x-jsonld-id: "caia:ExpertCredentials"

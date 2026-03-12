@@ -1,0 +1,51 @@
+{
+  "schema": "CropAdvisoryItemAttributes",
+  "version": "1.0.0",
+  "card_template": {
+    "title":    "{{beckn:descriptor.schema:name}}",
+    "subtitle": "{{beckn:itemAttributes.advisoryCategory}} · {{beckn:itemAttributes.contentType}}",
+    "badge":    "{{beckn:itemAttributes.languages}}",
+    "rating":   "{{beckn:rating.beckn:ratingValue}}",
+    "image":    "{{beckn:descriptor.schema:image[0]}}",
+    "body":     "{{beckn:descriptor.beckn:shortDesc}}"
+  },
+  "detail_template": {
+    "heading":          "{{beckn:descriptor.schema:name}}",
+    "category_label":  "Advisory Type",
+    "category_value":  "{{beckn:itemAttributes.advisoryCategory}}",
+    "format_label":    "Content Format",
+    "format_value":    "{{beckn:itemAttributes.contentType}}",
+    "language_label":  "Available Languages",
+    "language_value":  "{{beckn:itemAttributes.languages}}",
+    "crops_label":     "Applicable Crops",
+    "crops_value":     "{{beckn:itemAttributes.targetCrops}}",
+    "diseases_label":  "Diseases / Pests Covered",
+    "diseases_value":  "{{beckn:itemAttributes.targetDiseases}}",
+    "stages_label":    "Applicable Growth Stages",
+    "stages_value":    "{{beckn:itemAttributes.applicableGrowthStages}}",
+    "source_label":    "Source",
+    "source_value":    "{{beckn:itemAttributes.advisorySource}}",
+    "duration_label":  "Duration (seconds)",
+    "duration_value":  "{{beckn:itemAttributes.contentDurationSeconds}}",
+    "description":     "{{beckn:descriptor.beckn:longDesc}}",
+    "content_url":     "{{beckn:itemAttributes.contentUrl}}",
+    "rating":          "{{beckn:rating.beckn:ratingValue}} / 5 ({{beckn:rating.beckn:ratingCount}} ratings)"
+  },
+  "bindings": [
+    { "placeholder": "beckn:descriptor.schema:name",                  "path": "beckn:descriptor.schema:name" },
+    { "placeholder": "beckn:itemAttributes.advisoryCategory",         "path": "beckn:itemAttributes.advisoryCategory" },
+    { "placeholder": "beckn:itemAttributes.contentType",              "path": "beckn:itemAttributes.contentType" },
+    { "placeholder": "beckn:itemAttributes.languages",                "path": "beckn:itemAttributes.languages" },
+    { "placeholder": "beckn:itemAttributes.targetCrops",              "path": "beckn:itemAttributes.targetCrops" },
+    { "placeholder": "beckn:itemAttributes.targetDiseases",           "path": "beckn:itemAttributes.targetDiseases" },
+    { "placeholder": "beckn:itemAttributes.applicableGrowthStages",   "path": "beckn:itemAttributes.applicableGrowthStages" },
+    { "placeholder": "beckn:itemAttributes.advisorySource",           "path": "beckn:itemAttributes.advisorySource" },
+    { "placeholder": "beckn:itemAttributes.contentDurationSeconds",   "path": "beckn:itemAttributes.contentDurationSeconds" },
+    { "placeholder": "beckn:itemAttributes.contentUrl",               "path": "beckn:itemAttributes.contentUrl" },
+    { "placeholder": "beckn:descriptor.beckn:shortDesc",              "path": "beckn:descriptor.beckn:shortDesc" },
+    { "placeholder": "beckn:descriptor.beckn:longDesc",               "path": "beckn:descriptor.beckn:longDesc" },
+    { "placeholder": "beckn:descriptor.schema:image[0]",              "path": "beckn:descriptor.schema:image[0]" },
+    { "placeholder": "beckn:rating.beckn:ratingValue",                "path": "beckn:rating.beckn:ratingValue" },
+    { "placeholder": "beckn:rating.beckn:ratingCount",                "path": "beckn:rating.beckn:ratingCount" }
+  ]
+}

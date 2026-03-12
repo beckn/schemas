@@ -1,0 +1,30 @@
+{
+  "message": {
+    "order": {
+      "offers": [
+        {
+          "offerAttributes": {
+            "pricingModel": "PAID",
+            "accessType": "ONE_TIME_PURCHASE",
+            "contentLicense": "ALL_RIGHTS_RESERVED",
+            "accessValidityPeriod": {
+              "durationISO": "P30D"
+            },
+            "trialAvailable": false,
+            "maxActiveOrders": 1,
+            "cancellationPolicy": {
+              "isRefundable": true,
+              "refundWindowHours": 24,
+              "refundPercentage": 100,
+              "cancellationReasons": [
+                "TECHNICAL_ISSUE",
+                "CONTENT_NOT_DELIVERED",
+                "WRONG_ITEM"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

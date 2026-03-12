@@ -1,0 +1,38 @@
+{
+  "message": {
+    "catalog": {
+      "providers": [
+        {
+          "items": [
+            {
+              "itemAttributes": {
+                "advisoryCategory": "DISEASE_CONTROL",
+                "contentType": "TEXT",
+                "contentMimeType": "text/html",
+                "languages": [
+                  "en",
+                  "mr"
+                ],
+                "targetCrops": [
+                  "onion"
+                ],
+                "targetDiseases": [
+                  "Stemphylium Blight"
+                ],
+                "applicableGrowthStages": [
+                  "VEGETATIVE",
+                  "FLOWERING",
+                  "FRUITING"
+                ],
+                "advisorySource": "TNAU Agritech Portal",
+                "expertCredentials": {
+                  "institution": "Tamil Nadu Agricultural University (TNAU)"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

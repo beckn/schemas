@@ -1,0 +1,93 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "caia": "https://schema.beckn.io/CropAdvisoryItemAttributes#",
+    "CropAdvisoryItemAttributes": {
+      "@id": "caia:CropAdvisoryItemAttributes"
+    },
+    "CropContext": {
+      "@id": "caia:CropContext"
+    },
+    "ExpertCredentials": {
+      "@id": "caia:ExpertCredentials"
+    },
+    "CropGrowthStage": "caia:CropGrowthStage",
+    "advisoryCategory": {
+      "@id": "caia:advisoryCategory"
+    },
+    "contentType": {
+      "@id": "caia:contentType"
+    },
+    "contentMimeType": {
+      "@id": "schema:encodingFormat"
+    },
+    "contentUrl": {
+      "@id": "schema:contentUrl"
+    },
+    "languages": {
+      "@id": "schema:inLanguage",
+      "@container": "@set"
+    },
+    "targetCrops": {
+      "@id": "caia:targetCrops",
+      "@container": "@set"
+    },
+    "targetDiseases": {
+      "@id": "caia:targetDiseases",
+      "@container": "@set"
+    },
+    "applicableGrowthStages": {
+      "@id": "caia:applicableGrowthStages",
+      "@container": "@set"
+    },
+    "cropContext": {
+      "@id": "caia:cropContext",
+      "@type": "@id"
+    },
+    "contentDurationSeconds": {
+      "@id": "schema:duration"
+    },
+    "advisorySource": {
+      "@id": "schema:sourceOrganization"
+    },
+    "expertCredentials": {
+      "@id": "caia:expertCredentials",
+      "@type": "@id"
+    },
+    "cropName": {
+      "@id": "caia:cropName"
+    },
+    "cropVariety": {
+      "@id": "caia:cropVariety"
+    },
+    "plantationDate": {
+      "@id": "schema:startDate"
+    },
+    "growthStage": {
+      "@id": "caia:growthStage"
+    },
+    "soilType": {
+      "@id": "caia:soilType"
+    },
+    "irrigationType": {
+      "@id": "caia:irrigationType"
+    },
+    "diseaseName": {
+      "@id": "caia:diseaseName"
+    },
+    "expertName": {
+      "@id": "schema:name"
+    },
+    "institution": {
+      "@id": "schema:memberOf"
+    },
+    "qualification": {
+      "@id": "schema:hasCredential"
+    },
+    "AdvisoryCategory": "caia:AdvisoryCategory",
+    "ContentType": "caia:ContentType"
+  }
+}

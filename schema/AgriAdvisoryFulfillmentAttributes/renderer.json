@@ -1,0 +1,38 @@
+{
+  "schema": "AgriAdvisoryFulfillmentAttributes",
+  "version": "1.0.0",
+  "card_template": {
+    "title":    "Delivery: {{beckn:deliveryAttributes.deliveryMode}}",
+    "subtitle": "Language: {{beckn:deliveryAttributes.requestedLanguage}}",
+    "badge":    "{{beckn:fulfillmentStatus}}",
+    "body":     "Access: {{beckn:deliveryAttributes.contentAccessUrl}}"
+  },
+  "detail_template": {
+    "mode_label":       "Delivery Mode",
+    "mode_value":       "{{beckn:deliveryAttributes.deliveryMode}}",
+    "language_label":   "Delivery Language",
+    "language_value":   "{{beckn:deliveryAttributes.requestedLanguage}}",
+    "location_label":   "Target Location (GPS)",
+    "location_value":   "{{beckn:deliveryAttributes.targetLocation.geo.coordinates}}",
+    "radius_label":     "Search Radius",
+    "radius_value":     "{{beckn:deliveryAttributes.targetRegionRadiusKm}} km",
+    "access_label":     "Content Access URL",
+    "access_value":     "{{beckn:deliveryAttributes.contentAccessUrl}}",
+    "expiry_label":     "Access Expiry",
+    "expiry_value":     "{{beckn:deliveryAttributes.contentAccessExpiry}}",
+    "confirm_label":    "Delivery Reference",
+    "confirm_value":    "{{beckn:deliveryAttributes.deliveryConfirmation}}",
+    "status_label":     "Fulfillment Status",
+    "status_value":     "{{beckn:fulfillmentStatus}}"
+  },
+  "bindings": [
+    { "placeholder": "beckn:deliveryAttributes.deliveryMode",                     "path": "beckn:deliveryAttributes.deliveryMode" },
+    { "placeholder": "beckn:deliveryAttributes.requestedLanguage",                "path": "beckn:deliveryAttributes.requestedLanguage" },
+    { "placeholder": "beckn:deliveryAttributes.targetLocation.geo.coordinates",   "path": "beckn:deliveryAttributes.targetLocation.geo.coordinates" },
+    { "placeholder": "beckn:deliveryAttributes.targetRegionRadiusKm",             "path": "beckn:deliveryAttributes.targetRegionRadiusKm" },
+    { "placeholder": "beckn:deliveryAttributes.contentAccessUrl",                 "path": "beckn:deliveryAttributes.contentAccessUrl" },
+    { "placeholder": "beckn:deliveryAttributes.contentAccessExpiry",              "path": "beckn:deliveryAttributes.contentAccessExpiry" },
+    { "placeholder": "beckn:deliveryAttributes.deliveryConfirmation",             "path": "beckn:deliveryAttributes.deliveryConfirmation" },
+    { "placeholder": "beckn:fulfillmentStatus",                                   "path": "beckn:fulfillmentStatus" }
+  ]
+}

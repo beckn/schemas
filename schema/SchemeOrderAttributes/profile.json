@@ -1,0 +1,41 @@
+{
+  "id": "https://schema.beckn.io/SchemeOrderAttributes/v1",
+  "name": "Scheme Order Attributes",
+  "version": "1.0.0",
+  "description": "Transaction metadata for confirmed scheme application orders: government reference IDs, disbursement records, and application outcome.",
+  "domain": "agri-schemes",
+  "included_schemas": [
+    "https://schema.beckn.io/SchemeItemAttributes/v1",
+    "https://schema.beckn.io/SchemeOfferAttributes/v1",
+    "https://schema.beckn.io/SchemeFulfillmentAttributes/v1",
+    "https://schema.beckn.io/SchemeOrderAttributes/v1"
+  ],
+  "discovery_fields": [
+    "beckn:orderAttributes.sor:schemeApplicationStatus",
+    "beckn:orderAttributes.sor:governmentApplicationId"
+  ],
+  "indexable_paths": [
+    "beckn:id",
+    "beckn:orderAttributes.sor:governmentApplicationId",
+    "beckn:orderAttributes.sor:schemeApplicationStatus",
+    "beckn:orderAttributes.sor:applicationSubmissionDate",
+    "beckn:orderAttributes.sor:disbursementRecord.sor:disbursementDate",
+    "beckn:orderAttributes.sor:disbursementRecord.sor:governmentTransactionReference"
+  ],
+  "filterable_paths": [
+    "beckn:orderAttributes.sor:schemeApplicationStatus",
+    "beckn:orderAttributes.sor:applicationSubmissionDate",
+    "beckn:orderAttributes.sor:disbursementRecord.sor:disbursementDate"
+  ],
+  "sortable_paths": [
+    "beckn:orderAttributes.sor:applicationSubmissionDate",
+    "beckn:orderAttributes.sor:disbursementRecord.sor:disbursementDate",
+    "beckn:updatedAt"
+  ],
+  "privacy_notes": [
+    "sor:governmentApplicationId is a sensitive government reference — do not expose in public indices.",
+    "sor:governmentTransactionReference is a financial transaction ID — treat as PII.",
+    "sor:applicantConsentGiven and sor:consentTimestamp are consent records — retain per applicable data retention law.",
+    "Core Order billing fields (name, address, phone) are PII — handle per local data protection regulation."
+  ]
+}

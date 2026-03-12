@@ -1,0 +1,176 @@
+openapi: 3.1.1
+info:
+  title: Agri Advisory Offer Attributes
+  description: |
+    Extension schema for commercial offer attributes for digital agri
+    advisory services on the Beckn v2 network. Attaches to
+    `beckn:offerAttributes` on a Beckn `Offer` entity.
+
+    Applicable to:
+      - UC1: Crop/Disease advisory (free and paid variants)
+      - UC3: Weather forecast data products (paid)
+
+    Covers:
+      - Access and pricing model (free / paid / freemium)
+      - Content license and redistribution terms
+      - Cancellation and refund policy
+      - Post-purchase validity period
+
+    Commodity market price ranges (UC2) use the separate
+    `CommodityMarketOfferAttributes` schema.
+
+    Core pricing (`beckn:price` via PriceSpecification) is used for
+    the price snapshot; this schema extends it with access-model and
+    commercial policy metadata specific to advisory services.
+  version: 1.0.0
+  contact:
+    name: Beckn Protocol
+    url: https://becknprotocol.io
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+components:
+  schemas:
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # TOP-LEVEL: attaches to beckn:offerAttributes
+    # ─────────────────────────────────────────────────────────────────────────
+    AgriAdvisoryOfferAttributes:
+      type: object
+      description: >
+        Commercial policy attributes for an agri advisory offer.
+        Extends the Offer's core `beckn:price` (PriceSpecification) with
+        access model, content license, and cancellation/refund policy.
+      x-jsonld-context: "./context.jsonld"
+      x-jsonld-type: "aaoa:AgriAdvisoryOfferAttributes"
+      x-beckn-container: offerAttributes
+      required:
+        - pricingModel
+        - accessType
+      additionalProperties: false
+      properties:
+
+        pricingModel:
+          type: string
+          description: >
+            Top-level pricing model for the advisory service.
+          enum:
+            - FREE
+            - PAID
+            - FREEMIUM
+            - SUBSCRIPTION
+          x-jsonld-id: "aaoa:pricingModel"
+
+        accessType:
+          type: string
+          description: >
+            How the buyer gains access to the content after accepting the offer.
+          enum:
+            - OPEN_ACCESS
+            - ONE_TIME_PURCHASE
+            - SUBSCRIPTION_ACCESS
+            - API_KEY_ACCESS
+          x-jsonld-id: "aaoa:accessType"
+
+        contentLicense:
+          type: string
+          description: >
+            Redistribution and usage license for the content delivered under
+            this offer.
+          enum:
+            - ALL_RIGHTS_RESERVED
+            - CC_BY
+            - CC_BY_NC
+            - CC_BY_SA
+            - OPEN_GOVERNMENT
+            - PROPRIETARY
+          x-jsonld-id: "aaoa:contentLicense"
+
+        accessValidityPeriod:
+          description: >
+            How long the buyer retains access to the content after purchase.
+            References core TimePeriod semantics; expressed as ISO 8601
+            duration (e.g., P30D = 30 days) or as a specific end date-time.
+          type: object
+          additionalProperties: false
+          properties:
+            durationISO:
+              type: string
+              description: Access validity as ISO 8601 duration.
+              example: "P30D"
+              x-jsonld-id: "aaoa:accessValidityDuration"
+            "schema:endDate":
+              type: string
+              format: date-time
+              description: Absolute expiry date-time of access.
+              example: "2024-12-31T23:59:59Z"
+              x-jsonld-id: "schema:expires"
+          x-jsonld-id: "aaoa:accessValidityPeriod"
+
+        cancellationPolicy:
+          $ref: "#/components/schemas/CancellationPolicy"
+          description: >
+            Cancellation and refund policy for this offer.
+          x-jsonld-id: "aaoa:cancellationPolicy"
+
+        trialAvailable:
+          type: boolean
+          description: >
+            Whether a free trial or preview of the content is available
+            before purchase.
+          default: false
+          x-jsonld-id: "aaoa:trialAvailable"
+
+        maxActiveOrders:
+          type: integer
+          minimum: 1
+          description: >
+            Maximum number of simultaneous active orders a single buyer can
+            hold for this offer (e.g., 1 for one-time reports).
+          example: 1
+          x-jsonld-id: "aaoa:maxActiveOrders"
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # SUB-SCHEMA
+    # ─────────────────────────────────────────────────────────────────────────
+
+    CancellationPolicy:
+      type: object
+      description: >
+        Cancellation and refund terms for an agri advisory offer.
+        Digital content (knowledge/weather) may have limited cancellation
+        windows since content is typically delivered immediately.
+      additionalProperties: false
+      properties:
+        isRefundable:
+          type: boolean
+          description: >
+            Whether a refund is available upon cancellation.
+          x-jsonld-id: "aaoa:isRefundable"
+        refundWindowHours:
+          type: integer
+          minimum: 0
+          description: >
+            Number of hours after purchase within which a refund can be
+            requested. 0 means no refund window (non-refundable).
+          example: 24
+          x-jsonld-id: "aaoa:refundWindowHours"
+        refundPercentage:
+          type: number
+          minimum: 0
+          maximum: 100
+          description: >
+            Percentage of the purchase amount refunded upon cancellation
+            within the refund window.
+          example: 100
+          x-jsonld-id: "aaoa:refundPercentage"
+        cancellationReasons:
+          type: array
+          description: >
+            Accepted reasons for cancellation eligible for a refund.
+          items:
+            type: string
+          example: ["TECHNICAL_ISSUE", "CONTENT_NOT_DELIVERED", "WRONG_ITEM"]
+          x-jsonld-id: "aaoa:cancellationReasons"
+      x-jsonld-id: "aaoa:CancellationPolicy"

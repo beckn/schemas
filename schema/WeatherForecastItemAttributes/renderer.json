@@ -1,0 +1,52 @@
+{
+  "schema": "WeatherForecastItemAttributes",
+  "version": "1.0.0",
+  "card_template": {
+    "title":    "{{beckn:descriptor.schema:name}}",
+    "subtitle": "{{beckn:itemAttributes.forecastType}} · {{beckn:itemAttributes.forecastDurationDays}}-day forecast",
+    "badge":    "{{beckn:itemAttributes.forecastResolution}}",
+    "rating":   "{{beckn:rating.beckn:ratingValue}}",
+    "image":    "{{beckn:descriptor.schema:image[0]}}",
+    "body":     "{{beckn:descriptor.beckn:shortDesc}}"
+  },
+  "detail_template": {
+    "heading":         "{{beckn:descriptor.schema:name}}",
+    "type_label":      "Forecast Type",
+    "type_value":      "{{beckn:itemAttributes.forecastType}}",
+    "duration_label":  "Forecast Horizon",
+    "duration_value":  "{{beckn:itemAttributes.forecastDurationDays}} days",
+    "resolution_label":"Spatial Resolution",
+    "resolution_value":"{{beckn:itemAttributes.forecastResolution}}",
+    "params_label":    "Weather Parameters",
+    "params_value":    "{{beckn:itemAttributes.weatherDataPoints}}",
+    "formats_label":   "Output Formats",
+    "formats_value":   "{{beckn:itemAttributes.outputFormats}}",
+    "language_label":  "Available Languages",
+    "language_value":  "{{beckn:itemAttributes.languages}}",
+    "source_label":    "Data Model / Source",
+    "source_value":    "{{beckn:itemAttributes.modelSource}}",
+    "license_label":   "Data License",
+    "license_value":   "{{beckn:itemAttributes.providerLicense}}",
+    "update_label":    "Update Frequency",
+    "update_value":    "{{beckn:itemAttributes.updateFrequency}}",
+    "description":     "{{beckn:descriptor.beckn:longDesc}}",
+    "rating":          "{{beckn:rating.beckn:ratingValue}} / 5 ({{beckn:rating.beckn:ratingCount}} ratings)"
+  },
+  "bindings": [
+    { "placeholder": "beckn:descriptor.schema:name",                "path": "beckn:descriptor.schema:name" },
+    { "placeholder": "beckn:descriptor.beckn:shortDesc",            "path": "beckn:descriptor.beckn:shortDesc" },
+    { "placeholder": "beckn:descriptor.beckn:longDesc",             "path": "beckn:descriptor.beckn:longDesc" },
+    { "placeholder": "beckn:descriptor.schema:image[0]",            "path": "beckn:descriptor.schema:image[0]" },
+    { "placeholder": "beckn:itemAttributes.forecastType",           "path": "beckn:itemAttributes.forecastType" },
+    { "placeholder": "beckn:itemAttributes.forecastDurationDays",   "path": "beckn:itemAttributes.forecastDurationDays" },
+    { "placeholder": "beckn:itemAttributes.forecastResolution",     "path": "beckn:itemAttributes.forecastResolution" },
+    { "placeholder": "beckn:itemAttributes.weatherDataPoints",      "path": "beckn:itemAttributes.weatherDataPoints" },
+    { "placeholder": "beckn:itemAttributes.outputFormats",          "path": "beckn:itemAttributes.outputFormats" },
+    { "placeholder": "beckn:itemAttributes.languages",              "path": "beckn:itemAttributes.languages" },
+    { "placeholder": "beckn:itemAttributes.modelSource",            "path": "beckn:itemAttributes.modelSource" },
+    { "placeholder": "beckn:itemAttributes.providerLicense",        "path": "beckn:itemAttributes.providerLicense" },
+    { "placeholder": "beckn:itemAttributes.updateFrequency",        "path": "beckn:itemAttributes.updateFrequency" },
+    { "placeholder": "beckn:rating.beckn:ratingValue",              "path": "beckn:rating.beckn:ratingValue" },
+    { "placeholder": "beckn:rating.beckn:ratingCount",              "path": "beckn:rating.beckn:ratingCount" }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "cpia": "https://schema.beckn.io/CommodityPriceItemAttributes#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+    {
+      "@id": "cpia:CommodityPriceItemAttributes",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Commodity Price Item Attributes",
+      "rdfs:comment": "Extension attributes for an agricultural commodity price data item on the Beckn agri-advisory network."
+    },
+    {
+      "@id": "cpia:commodityVariety",
+      "@type": "rdf:Property",
+      "rdfs:label": "Commodity Variety",
+      "rdfs:comment": "Specific cultivar or variety of an agricultural commodity (e.g., Thompson Seedless for grapes)."
+    },
+    {
+      "@id": "cpia:commodityGrade",
+      "@type": "rdf:Property",
+      "rdfs:label": "Commodity Grade",
+      "rdfs:comment": "Quality grade assigned to a commodity lot (e.g., Grade A, Grade B, FAQ)."
+    },
+    {
+      "@id": "cpia:commoditySize",
+      "@type": "rdf:Property",
+      "rdfs:label": "Commodity Size",
+      "rdfs:comment": "Physical size range or calibre for size-graded produce (e.g., 18 to 25 mm for grapes)."
+    },
+    {
+      "@id": "cpia:mandiName",
+      "@type": "rdf:Property",
+      "rdfs:label": "Mandi Name",
+      "rdfs:comment": "Common name of the agricultural market (mandi/APMC) where the commodity price was recorded."
+    },
+    {
+      "@id": "cpia:mandiCode",
+      "@type": "rdf:Property",
+      "rdfs:label": "Mandi Code",
+      "rdfs:comment": "Official identifier code for the agricultural market (e.g., AGMARKNET market code)."
+    },
+    {
+      "@id": "cpia:priceObservationPeriod",
+      "@type": "rdf:Property",
+      "rdfs:label": "Price Observation Period",
+      "rdfs:comment": "Date range during which the commodity price data was recorded or is considered valid."
+    }
+  ]
+}

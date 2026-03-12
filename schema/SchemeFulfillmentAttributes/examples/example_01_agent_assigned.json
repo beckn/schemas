@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://schema.beckn.io/core/v2/context.jsonld",
+    "https://schema.beckn.io/SchemeFulfillmentAttributes/v1/context.jsonld"
+  ],
+  "message": {
+    "order": {
+      "fulfillments": [
+        {
+          "id": "f2",
+          "type": "SCHEME_APPLICATION",
+          "fulfillmentAttributes": {
+            "sfa:schemeDeliveryType": "AGENT_ASSISTED_APPLICATION",
+            "sfa:disbursementMode": "NOT_APPLICABLE",
+            "sfa:submissionMode": "AGENT_ASSISTED",
+            "sfa:documentCollectionMode": "PHYSICAL_DOORSTEP_COLLECTION",
+            "sfa:applicationStatus": "AGENT_ASSIGNED",
+            "sfa:statusNote": "Field agent Shwetha Patil assigned. Will visit on 2025-06-15 between 10am–12pm to collect documents.",
+            "sfa:agentDetails": {
+              "sfa:agentName": "Shwetha Patil",
+              "sfa:agentContact": "+91-9764356400",
+              "sfa:agentOrganization": "SchemeFinder Field Services",
+              "sfa:agentOrganizationCode": "scheme-finder",
+              "sfa:agentType": "FIELD_AGENT"
+            },
+            "sfa:applicationPortalReference": "SCHAPP-MH-2025-98765"
+          }
+        }
+      ]
+    }
+  }
+}

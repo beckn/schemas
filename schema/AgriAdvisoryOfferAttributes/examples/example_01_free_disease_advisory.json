@@ -1,0 +1,21 @@
+{
+  "message": {
+    "order": {
+      "offers": [
+        {
+          "offerAttributes": {
+            "pricingModel": "FREE",
+            "accessType": "OPEN_ACCESS",
+            "contentLicense": "CC_BY",
+            "trialAvailable": false,
+            "cancellationPolicy": {
+              "isRefundable": false,
+              "refundWindowHours": 0,
+              "refundPercentage": 0
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "@context": [
+    "https://schema.beckn.io/core/v2/context.jsonld",
+    "https://schema.beckn.io/SchemeOfferAttributes/v1/context.jsonld"
+  ],
+  "message": {
+    "order": {
+      "offers": [
+        {
+          "id": "offer-pmfby-mah-kharif-2025",
+          "descriptor": {
+            "name": "PMFBY — Kharif 2025, Maharashtra",
+            "short_desc": "Crop insurance for Kharif 2025. Farmer premium: 2% of sum insured. Balance borne by government."
+          },
+          "provider": "bpp-agri-state-mah-001",
+          "items": ["scheme-pmfby-maharashtra-kharif-2025"],
+          "validity": {
+            "start": "2025-06-01T00:00:00Z",
+            "end": "2025-07-31T23:59:59Z"
+          },
+          "offerAttributes": {
+            "soa:eligibilityCriteria": {
+              "soa:professionalCriteria": {
+                "soa:occupationType": ["FARMER", "AGRICULTURAL_LABOURER"],
+                "soa:enterpriseCategory": ["AGRICULTURE", "HORTICULTURE"]
+              },
+              "soa:economicCriteria": {
+                "soa:landOwnership": "REQUIRED"
+              },
+              "soa:identityCriteria": {
+                "soa:hasAadhaar": "REQUIRED"
+              },
+              "soa:residencyCriteria": {
+                "soa:statesOfResidence": ["IN-MH"]
+              }
+            },
+            "soa:benefitQuantum": {
+              "soa:benefitType": "INSURANCE_COVER",
+              "soa:subsidyPaymentPercentage": 98,
+              "soa:benefitPeriod": "PER_SEASON",
+              "soa:benefitNote": "Sum insured based on Scale of Finance for the notified crop. Farmers pay only 2% as premium. Claim settled on area-yield shortfall basis at village/panchayat level."
+            },
+            "soa:applicationWindowNote": "Applications open 1 June to 31 July 2025 for Kharif season. Applications via enrolled bank or CSC only.",
+            "soa:eligibilityForm": {
+              "soa:formUrl": "https://pmfby.gov.in/eligibility/kharif2025/formid/mh-kharif-001",
+              "soa:mimeType": "text/html",
+              "soa:required": true
+            }
+          }
+        }
+      ]
+    }
+  }
+}

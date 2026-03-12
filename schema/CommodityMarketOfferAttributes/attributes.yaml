@@ -1,0 +1,124 @@
+openapi: 3.1.1
+info:
+  title: Commodity Market Offer Attributes
+  description: |
+    Extension schema for commodity market price data offer attributes on the
+    Beckn v2 agri-advisory network. Attaches to `beckn:offerAttributes` on a
+    Beckn `Offer` entity.
+
+    Applicable to UC2: Agricultural commodity price listing (market/mandi prices).
+
+    Each offer corresponds to a specific price observation for a commodity at
+    a mandi, including:
+      - Minimum, maximum, and average/modal prices observed
+      - Unit for price quotation
+      - Currency (ISO 4217, currency-neutral)
+
+    The companion item schema `CommodityPriceItemAttributes` carries the
+    commodity identity (name, variety, grade) and mandi identification.
+
+    Note: Core `beckn:price` on the Offer carries the single representative
+    price (typically the average/modal price). This schema extends it with the
+    full statistical range required for agricultural market intelligence.
+  version: 1.0.0
+  contact:
+    name: Beckn Protocol
+    url: https://becknprotocol.io
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+components:
+  schemas:
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # TOP-LEVEL: attaches to beckn:offerAttributes
+    # ─────────────────────────────────────────────────────────────────────────
+    CommodityMarketOfferAttributes:
+      type: object
+      description: >
+        Price range and market observation attributes for an agricultural
+        commodity at a specific mandi. Extends the core `beckn:price` snapshot
+        with statistical price distribution data.
+      x-jsonld-context: "./context.jsonld"
+      x-jsonld-type: "cmoa:CommodityMarketOfferAttributes"
+      x-beckn-container: offerAttributes
+      required:
+        - currency
+        - unitOfMeasure
+      additionalProperties: false
+      properties:
+
+        minPrice:
+          type: number
+          minimum: 0
+          description: >
+            Lowest price recorded for this commodity at the mandi during the
+            observation period.
+          example: 301
+          x-jsonld-id: "schema:minPrice"
+
+        maxPrice:
+          type: number
+          minimum: 0
+          description: >
+            Highest price recorded for this commodity at the mandi during the
+            observation period.
+          example: 2190
+          x-jsonld-id: "schema:maxPrice"
+
+        averagePrice:
+          type: number
+          minimum: 0
+          description: >
+            Average (arithmetic mean) or modal price for this commodity at the
+            mandi during the observation period. Maps to `estimated_value` in v1.
+          example: 1400
+          x-jsonld-id: "cmoa:averagePrice"
+
+        currency:
+          type: string
+          description: >
+            ISO 4217 currency code for all price fields in this offer.
+          example: "INR"
+          x-jsonld-id: "schema:priceCurrency"
+
+        unitOfMeasure:
+          type: string
+          description: >
+            Unit for which prices are quoted (e.g., per Quintal, per Kg,
+            per Dozen, per MT).
+          example: "per Quintal"
+          x-jsonld-id: "schema:unitText"
+
+        priceVolatilityIndicator:
+          type: string
+          description: >
+            Qualitative indicator of price volatility during the observation
+            period, derived from the spread between min and max prices.
+          enum:
+            - LOW
+            - MODERATE
+            - HIGH
+            - VERY_HIGH
+          x-jsonld-id: "cmoa:priceVolatilityIndicator"
+
+        arrivals:
+          type: object
+          description: >
+            Volume of commodity arrivals at the mandi during the observation
+            period. Useful context for interpreting price levels.
+          additionalProperties: false
+          properties:
+            quantity:
+              type: number
+              minimum: 0
+              description: Quantity of arrivals.
+              example: 520.5
+              x-jsonld-id: "schema:Number"
+            unit:
+              type: string
+              description: Unit for arrivals quantity (e.g., Tonnes, Quintals).
+              example: "Tonnes"
+              x-jsonld-id: "schema:unitText"
+          x-jsonld-id: "cmoa:arrivals"

@@ -1,0 +1,186 @@
+openapi: 3.1.1
+info:
+  title: SchemeOrderAttributes — Agri Scheme Discovery
+  version: 1.0.0
+  description: |
+    Extension schema for `Order.orderAttributes` in the Agriculture/Government Scheme
+    Discovery vertical (UAI / UKI network). Models transaction metadata associated with
+    a confirmed scheme application order: the official government application reference ID,
+    disbursement records, scheme application status from the government's perspective, and
+    any rejection reason.
+
+    This schema does NOT model scheme content (→ SchemeItemAttributes), eligibility
+    (→ SchemeOfferAttributes), or fulfillment execution (→ SchemeFulfillmentAttributes).
+
+x-jsonld-context: "./context.jsonld"
+
+components:
+  schemas:
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # TOP-LEVEL: SchemeOrderAttributes
+    # Attaches to: Order.orderAttributes
+    # ─────────────────────────────────────────────────────────────────────────
+    SchemeOrderAttributes:
+      type: object
+      x-beckn-container: orderAttributes
+      description: |
+        Transaction-level metadata for a confirmed scheme application order.
+        Captures the official government application reference, disbursement records,
+        and final outcome (approved/rejected/disbursed).
+      required: []
+      additionalProperties: false
+      properties:
+
+        "sor:governmentApplicationId":
+          type: string
+          description: |
+            Official application reference number assigned by the government
+            scheme authority after formal submission. This is distinct from
+            the BPP's internal portal reference (in SchemeFulfillmentAttributes).
+          example: "PMJAY-MH-2025-00123456"
+          x-jsonld-id: "sor:governmentApplicationId"
+
+        "sor:applicationSubmissionDate":
+          type: string
+          format: date-time
+          description: |
+            ISO 8601 timestamp when the application was formally submitted to
+            the government scheme authority.
+          example: "2025-06-20T14:30:00Z"
+          x-jsonld-id: "sor:applicationSubmissionDate"
+
+        # ── Scheme Application Outcome ────────────────────────────────────
+
+        "sor:schemeApplicationStatus":
+          type: string
+          description: |
+            Final or current status of the application as reported by the
+            government scheme authority. This is the authoritative status from
+            the scheme side (distinct from the fulfillment process status in
+            SchemeFulfillmentAttributes.sfa:applicationStatus).
+          enum:
+            - SUBMITTED
+            - UNDER_REVIEW
+            - APPROVED
+            - REJECTED
+            - DISBURSED
+            - DISBURSEMENT_FAILED
+            - CLOSED
+          x-jsonld-id: "sor:schemeApplicationStatus"
+
+        "sor:rejectionReason":
+          type: string
+          description: |
+            Reason provided by the scheme authority for rejecting the application.
+            Only populated when soa:schemeApplicationStatus = REJECTED.
+          example: "Applicant income exceeds prescribed annual limit for this scheme tier."
+          x-jsonld-id: "sor:rejectionReason"
+
+        # ── Disbursement Record ───────────────────────────────────────────
+
+        "sor:disbursementRecord":
+          $ref: "#/components/schemas/DisbursementRecord"
+          description: |
+            Record of the actual benefit disbursement.
+            Populated after status reaches DISBURSED.
+          x-jsonld-id: "sor:disbursementRecord"
+
+        # ── Consent & Declaration ─────────────────────────────────────────
+
+        "sor:applicantConsentGiven":
+          type: boolean
+          description: |
+            Whether the applicant has given explicit consent for their data
+            to be submitted to the scheme authority and for benefit disbursal.
+          default: false
+          x-jsonld-id: "sor:applicantConsentGiven"
+
+        "sor:consentTimestamp":
+          type: string
+          format: date-time
+          description: |
+            ISO 8601 timestamp when the applicant's consent was captured.
+          example: "2025-06-18T10:15:00Z"
+          x-jsonld-id: "sor:consentTimestamp"
+
+        # ── External Enrollment Link (UC2) ────────────────────────────────────
+
+        "sor:externalEnrollmentRef":
+          type: string
+          description: |
+            External enrollment reference number for beneficiaries who enrolled in a
+            scheme through a non-Beckn channel (government portal, CSC, bank branch,
+            or field agent visit). Used as the primary lookup key when a BAP creates
+            a Beckn tracking order against an existing government enrollment (UC2 —
+            Status Enquiry and Grievance Redressal). Not populated for UC1 orders
+            initiated through the Beckn network.
+          example: "MH-FARMER-2024-112345"
+          x-jsonld-id: "sor:externalEnrollmentRef"
+
+        "sor:externalEnrollmentIdType":
+          type: string
+          description: |
+            Type of external identifier provided in sor:externalEnrollmentRef.
+          enum:
+            - FARMER_REGISTRY_ID
+            - AADHAAR_MASKED
+            - GOVERNMENT_APPLICATION_ID
+            - MOBILE_LINKED_ID
+          x-jsonld-id: "sor:externalEnrollmentIdType"
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # SUB-SCHEMA: DisbursementRecord
+    # ─────────────────────────────────────────────────────────────────────────
+    DisbursementRecord:
+      type: object
+      description: |
+        Record of a single benefit disbursement event — the date, amount, and
+        government transaction reference for audit and reconciliation purposes.
+      additionalProperties: false
+      properties:
+        "sor:disbursementDate":
+          type: string
+          format: date-time
+          description: ISO 8601 timestamp when the benefit was disbursed.
+          example: "2025-08-01T00:00:00Z"
+          x-jsonld-id: "sor:disbursementDate"
+
+        "sor:disbursedAmount":
+          type: number
+          minimum: 0
+          description: |
+            Actual amount disbursed (may differ from sanctioned amount in partial
+            disbursements or installment schemes).
+          example: 2000
+          x-jsonld-id: "sor:disbursedAmount"
+
+        "sor:disbursedCurrency":
+          type: string
+          description: ISO 4217 currency code for the disbursed amount.
+          example: "INR"
+          x-jsonld-id: "sor:disbursedCurrency"
+
+        "sor:governmentTransactionReference":
+          type: string
+          description: |
+            Government-side transaction reference number (e.g., PFMS transaction ID,
+            DBT reference, or insurance claim settlement number) for audit purposes.
+          example: "PFMS2025080100123456"
+          x-jsonld-id: "sor:governmentTransactionReference"
+
+        "sor:disbursementInstallment":
+          type: integer
+          minimum: 1
+          description: |
+            Installment number if the benefit is disbursed in multiple tranches
+            (e.g., PM-KISAN disburses ₹6,000/year in 3 installments of ₹2,000 each).
+          example: 2
+          x-jsonld-id: "sor:disbursementInstallment"
+
+        "sor:totalInstallments":
+          type: integer
+          minimum: 1
+          description: Total number of disbursement installments for this scheme.
+          example: 3
+          x-jsonld-id: "sor:totalInstallments"

@@ -1,0 +1,513 @@
+openapi: 3.1.1
+info:
+  title: SchemeOfferAttributes — Agri Scheme Discovery
+  version: 1.0.0
+  description: |
+    Extension schema for `Offer.offerAttributes` in the Agriculture/Government Scheme Discovery
+    vertical (UAI / UKI network). Models the commercial and access policy of a scheme offer:
+    who is eligible, what benefit they receive, over what application window, and in which
+    geographic region.
+
+    This schema does NOT model scheme identity (→ SchemeItemAttributes) or
+    fulfillment mechanics (→ SchemeFulfillmentAttributes).
+
+x-jsonld-context: "./context.jsonld"
+
+components:
+  schemas:
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # TOP-LEVEL: SchemeOfferAttributes
+    # Attaches to: Offer.offerAttributes
+    # ─────────────────────────────────────────────────────────────────────────
+    SchemeOfferAttributes:
+      type: object
+      x-beckn-container: offerAttributes
+      description: |
+        Commercial and access policy for a scheme offer. Contains structured eligibility
+        criteria, benefit quantum, application window, and geographic applicability.
+      required: []
+      additionalProperties: false
+      properties:
+
+        "soa:eligibilityCriteria":
+          $ref: "#/components/schemas/EligibilityCriteria"
+          description: |
+            Multi-dimensional eligibility criteria that an applicant must satisfy.
+            All sub-dimensions are optional; a missing sub-dimension implies no
+            restriction on that dimension.
+          x-jsonld-id: "soa:eligibilityCriteria"
+
+        # ── Benefit Quantum ───────────────────────────────────────────────
+
+        "soa:benefitQuantum":
+          $ref: "#/components/schemas/BenefitQuantum"
+          description: |
+            Quantitative description of what the beneficiary receives.
+          x-jsonld-id: "soa:benefitQuantum"
+
+        # ── Application Window ────────────────────────────────────────────
+        # Uses core TimePeriod — referenced, not redefined
+
+        "soa:applicationWindowNote":
+          type: string
+          description: |
+            Human-readable note about the application window or season
+            (e.g., "Applications open 1 June – 31 July for Kharif season").
+          example: "Applications open 1 June – 31 July for Kharif season 2025."
+          x-jsonld-id: "soa:applicationWindowNote"
+
+        # ── Eligibility Collection Form ───────────────────────────────────
+
+        "soa:eligibilityForm":
+          type: object
+          description: |
+            Reference to a multi-step eligibility questionnaire (xinput equivalent in v2).
+            If present, the BAP should render this form to collect applicant details that
+            the BPP uses to filter applicable offers.
+          additionalProperties: false
+          properties:
+            "soa:formUrl":
+              type: string
+              format: uri
+              description: URL where the eligibility form can be fetched.
+              example: "https://scheme-finder.example.in/eligibility/formid/a23f2fdfbbb8ac4"
+              x-jsonld-id: "soa:formUrl"
+            "soa:mimeType":
+              type: string
+              description: MIME type of the eligibility form content.
+              enum: ["text/html", "application/json", "application/xml"]
+              x-jsonld-id: "soa:mimeType"
+            "soa:required":
+              type: boolean
+              description: |
+                Whether completing this form is mandatory before an offer can be transacted.
+              default: false
+              x-jsonld-id: "soa:required"
+          x-jsonld-id: "soa:eligibilityForm"
+
+        # ── Max Beneficiaries ─────────────────────────────────────────────
+
+        "soa:maxBeneficiaries":
+          type: integer
+          minimum: 1
+          description: |
+            Maximum number of beneficiaries that can be enrolled in this scheme offer,
+            if a cap exists. Omit if there is no cap.
+          example: 50000000
+          x-jsonld-id: "soa:maxBeneficiaries"
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # SUB-SCHEMA: EligibilityCriteria
+    # ─────────────────────────────────────────────────────────────────────────
+    EligibilityCriteria:
+      type: object
+      description: |
+        Structured eligibility requirements across demographic, economic, professional,
+        identity, educational, and residency dimensions. Each sub-object is optional.
+        A missing sub-object implies no restriction on that dimension.
+      additionalProperties: false
+      properties:
+
+        "soa:demographicCriteria":
+          $ref: "#/components/schemas/DemographicCriteria"
+          x-jsonld-id: "soa:demographicCriteria"
+
+        "soa:economicCriteria":
+          $ref: "#/components/schemas/EconomicCriteria"
+          x-jsonld-id: "soa:economicCriteria"
+
+        "soa:professionalCriteria":
+          $ref: "#/components/schemas/ProfessionalCriteria"
+          x-jsonld-id: "soa:professionalCriteria"
+
+        "soa:identityCriteria":
+          $ref: "#/components/schemas/IdentityCriteria"
+          x-jsonld-id: "soa:identityCriteria"
+
+        "soa:educationCriteria":
+          $ref: "#/components/schemas/EducationCriteria"
+          x-jsonld-id: "soa:educationCriteria"
+
+        "soa:residencyCriteria":
+          $ref: "#/components/schemas/ResidencyCriteria"
+          x-jsonld-id: "soa:residencyCriteria"
+
+        "soa:additionalCriteria":
+          type: array
+          description: |
+            Free-form key-value additional eligibility conditions not captured by
+            the structured sub-schemas above (used for rare or scheme-specific rules).
+          items:
+            $ref: "#/components/schemas/AdditionalEligibilityCriterion"
+          x-jsonld-id: "soa:additionalCriteria"
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # SUB-SCHEMA: DemographicCriteria
+    # ─────────────────────────────────────────────────────────────────────────
+    DemographicCriteria:
+      type: object
+      description: Age, gender, caste, and physical ability eligibility rules.
+      additionalProperties: false
+      properties:
+        "soa:gender":
+          type: string
+          description: Required gender of the applicant, if restricted.
+          enum: [MALE, FEMALE, TRANSGENDER, ANY]
+          x-jsonld-id: "soa:gender"
+
+        "soa:minAge":
+          type: integer
+          minimum: 0
+          description: Minimum age (in years) of the applicant.
+          example: 18
+          x-jsonld-id: "soa:minAge"
+
+        "soa:maxAge":
+          type: integer
+          minimum: 0
+          description: Maximum age (in years) of the applicant.
+          example: 60
+          x-jsonld-id: "soa:maxAge"
+
+        "soa:casteCategory":
+          type: array
+          description: |
+            Caste categories eligible for the scheme. If absent, all categories are eligible.
+          items:
+            type: string
+            enum:
+              - GENERAL
+              - OBC
+              - SC
+              - ST
+              - EWS
+              - ANY
+          x-jsonld-id: "soa:casteCategory"
+
+        "soa:differentlyAbled":
+          type: string
+          description: |
+            Whether the applicant must be differently-abled. Use ONLY_DIFFERENTLY_ABLED
+            to restrict; ANY to indicate no restriction.
+          enum: [ONLY_DIFFERENTLY_ABLED, NOT_REQUIRED, ANY]
+          x-jsonld-id: "soa:differentlyAbled"
+
+        "soa:minGirlChildren":
+          type: integer
+          minimum: 0
+          description: Minimum number of girl children required (for girl-child welfare schemes).
+          example: 1
+          x-jsonld-id: "soa:minGirlChildren"
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # SUB-SCHEMA: EconomicCriteria
+    # ─────────────────────────────────────────────────────────────────────────
+    EconomicCriteria:
+      type: object
+      description: Income, land ownership, and poverty classification eligibility rules.
+      additionalProperties: false
+      properties:
+        "soa:rationCardType":
+          type: array
+          description: |
+            Ration card types that are eligible. If absent, any or no ration card is acceptable.
+          items:
+            type: string
+            enum:
+              - BELOW_POVERTY_LINE
+              - ANTYODAYA
+              - ABOVE_POVERTY_LINE
+              - PRIORITY_HOUSEHOLD
+              - NONE_REQUIRED
+          x-jsonld-id: "soa:rationCardType"
+
+        "soa:landOwnership":
+          type: string
+          description: Whether the applicant or their household must own land.
+          enum: [REQUIRED, NOT_REQUIRED, ANY]
+          x-jsonld-id: "soa:landOwnership"
+
+        "soa:annualIncomeMaxCurrency":
+          type: string
+          description: |
+            ISO 4217 currency code for the annual income cap. Must accompany
+            soa:annualIncomeMax.
+          example: "INR"
+          x-jsonld-id: "soa:annualIncomeMaxCurrency"
+
+        "soa:annualIncomeMax":
+          type: number
+          minimum: 0
+          description: |
+            Maximum annual household income (in the specified currency) to be eligible.
+            If absent, there is no income ceiling.
+          example: 200000
+          x-jsonld-id: "soa:annualIncomeMax"
+
+        "soa:isTaxpayer":
+          type: string
+          description: Whether the applicant must NOT be an income-tax payer.
+          enum: [TAXPAYERS_EXCLUDED, TAXPAYERS_ALLOWED, ANY]
+          x-jsonld-id: "soa:isTaxpayer"
+
+        "soa:hasCattleInsurance":
+          type: string
+          description: Whether the applicant must have insurance for cattle/small ruminants.
+          enum: [REQUIRED, NOT_REQUIRED, ANY]
+          x-jsonld-id: "soa:hasCattleInsurance"
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # SUB-SCHEMA: ProfessionalCriteria
+    # ─────────────────────────────────────────────────────────────────────────
+    ProfessionalCriteria:
+      type: object
+      description: Occupation, enterprise type, and business support eligibility rules.
+      additionalProperties: false
+      properties:
+        "soa:occupationType":
+          type: array
+          description: Eligible occupations or job types.
+          items:
+            type: string
+            enum:
+              - FARMER
+              - AGRICULTURAL_LABOURER
+              - DAIRY_FARMER
+              - FISHERMAN
+              - CARPENTER
+              - ARTISAN
+              - SELF_EMPLOYED
+              - DAILY_WAGE_WORKER
+              - ANY
+          x-jsonld-id: "soa:occupationType"
+
+        "soa:enterpriseCategory":
+          type: array
+          description: Enterprise sector categories eligible for the scheme.
+          items:
+            type: string
+            enum:
+              - AGRICULTURE
+              - AGRICULTURE_ALLIED
+              - HORTICULTURE
+              - ANIMAL_HUSBANDRY
+              - FISHERIES
+              - FOOD_PROCESSING
+              - RURAL_CRAFTS
+              - OTHERS
+          x-jsonld-id: "soa:enterpriseCategory"
+
+        "soa:businessSupportType":
+          type: array
+          description: Type of business support being sought, if the scheme is restricted.
+          items:
+            type: string
+            enum:
+              - REGISTRATION
+              - LOAN
+              - SUBSIDY
+              - MARKET_LINKAGE
+              - INFRASTRUCTURE
+              - TRAINING
+              - ANY
+          x-jsonld-id: "soa:businessSupportType"
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # SUB-SCHEMA: IdentityCriteria
+    # ─────────────────────────────────────────────────────────────────────────
+    IdentityCriteria:
+      type: object
+      description: Government identity document possession requirements.
+      additionalProperties: false
+      properties:
+        "soa:hasVoterId":
+          type: string
+          description: Whether the applicant must possess a Voter ID card.
+          enum: [REQUIRED, NOT_REQUIRED, ANY]
+          x-jsonld-id: "soa:hasVoterId"
+
+        "soa:hasAadhaar":
+          type: string
+          description: Whether the applicant must have an Aadhaar number.
+          enum: [REQUIRED, NOT_REQUIRED, ANY]
+          x-jsonld-id: "soa:hasAadhaar"
+
+        "soa:hasSECCRegistration":
+          type: string
+          description: Whether the applicant must have a SECC (Socio-Economic Caste Census) registration.
+          enum: [REQUIRED, NOT_REQUIRED, ANY]
+          x-jsonld-id: "soa:hasSECCRegistration"
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # SUB-SCHEMA: EducationCriteria
+    # ─────────────────────────────────────────────────────────────────────────
+    EducationCriteria:
+      type: object
+      description: Educational attainment eligibility rules.
+      additionalProperties: false
+      properties:
+        "soa:maxEducationLevel":
+          type: string
+          description: |
+            Maximum education level that an applicant may have to qualify.
+            Used for schemes targeting less-educated or economically backward groups.
+          enum:
+            - NO_FORMAL_EDUCATION
+            - PRIMARY
+            - UPPER_PRIMARY
+            - SECONDARY
+            - HIGHER_SECONDARY
+            - GRADUATE
+            - POST_GRADUATE
+            - ANY
+          x-jsonld-id: "soa:maxEducationLevel"
+
+        "soa:minEducationLevel":
+          type: string
+          description: |
+            Minimum education level required to apply (e.g., for scholarship or skill schemes).
+          enum:
+            - NO_FORMAL_EDUCATION
+            - PRIMARY
+            - UPPER_PRIMARY
+            - SECONDARY
+            - HIGHER_SECONDARY
+            - GRADUATE
+            - ANY
+          x-jsonld-id: "soa:minEducationLevel"
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # SUB-SCHEMA: ResidencyCriteria
+    # ─────────────────────────────────────────────────────────────────────────
+    ResidencyCriteria:
+      type: object
+      description: Geographic residency and domicile requirements.
+      additionalProperties: false
+      properties:
+        "soa:statesOfResidence":
+          type: array
+          description: |
+            ISO 3166-2 codes for states where the applicant must be currently residing.
+            (e.g., ["IN-MH"] for Maharashtra). If empty, all states are eligible.
+          items:
+            type: string
+          example: ["IN-MH", "IN-KA"]
+          x-jsonld-id: "soa:statesOfResidence"
+
+        "soa:bornInStateOfResidence":
+          type: string
+          description: |
+            Whether the applicant must have been born in their current state of residence
+            (domicile requirement).
+          enum: [REQUIRED, NOT_REQUIRED, ANY]
+          x-jsonld-id: "soa:bornInStateOfResidence"
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # SUB-SCHEMA: AdditionalEligibilityCriterion
+    # ─────────────────────────────────────────────────────────────────────────
+    AdditionalEligibilityCriterion:
+      type: object
+      description: |
+        A free-form key-value eligibility condition for rare or scheme-specific rules
+        not covered by structured sub-schemas.
+      required:
+        - soa:criterionCode
+        - soa:criterionValue
+      additionalProperties: false
+      properties:
+        "soa:criterionCode":
+          type: string
+          description: Short code identifying the eligibility condition (matches v1 tag descriptor codes).
+          example: "CT0001TU"
+          x-jsonld-id: "soa:criterionCode"
+
+        "soa:criterionName":
+          type: string
+          description: Human-readable name of the eligibility condition.
+          example: "Has SECC Registration Number"
+          x-jsonld-id: "soa:criterionName"
+
+        "soa:criterionValue":
+          type: string
+          description: Required or expected value for this eligibility condition.
+          example: "Yes"
+          x-jsonld-id: "soa:criterionValue"
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # SUB-SCHEMA: BenefitQuantum
+    # ─────────────────────────────────────────────────────────────────────────
+    BenefitQuantum:
+      type: object
+      description: |
+        Quantitative description of what the scheme delivers. Monetary amounts reference
+        core PriceSpecification; non-monetary benefits (employment days, rations) use
+        dedicated fields.
+      additionalProperties: false
+      properties:
+        "soa:benefitType":
+          type: string
+          description: Primary type of quantifiable benefit.
+          enum:
+            - CASH_TRANSFER
+            - INSURANCE_COVER
+            - SUBSIDY_PERCENTAGE
+            - IN_KIND
+            - EMPLOYMENT_DAYS
+            - MIXED
+          x-jsonld-id: "soa:benefitType"
+
+        "soa:monetaryAmount":
+          description: |
+            Maximum monetary benefit amount per beneficiary per annum (or per episode).
+            References core PriceSpecification — currency-neutral.
+          type: object
+          properties:
+            currency:
+              type: string
+              description: ISO 4217 currency code
+              example: "INR"
+            value:
+              type: number
+              description: Monetary amount
+              example: 500000
+          x-jsonld-id: "soa:monetaryAmount"
+
+        "soa:subsidyPaymentPercentage":
+          type: number
+          minimum: 0
+          maximum: 100
+          description: |
+            Percentage of cost/premium subsidized by the government (for insurance and
+            subsidized-service scheme types).
+          example: 98
+          x-jsonld-id: "soa:subsidyPaymentPercentage"
+
+        "soa:guaranteedEmploymentDays":
+          type: integer
+          minimum: 1
+          description: |
+            Number of days of guaranteed employment per household per year
+            (for MGNREGA-type employment schemes).
+          example: 100
+          x-jsonld-id: "soa:guaranteedEmploymentDays"
+
+        "soa:benefitPeriod":
+          type: string
+          description: |
+            Duration over which the benefit is calculated or provided.
+          enum:
+            - PER_EPISODE
+            - PER_ANNUM
+            - PER_SEASON
+            - LIFETIME
+            - ONE_TIME
+          x-jsonld-id: "soa:benefitPeriod"
+
+        "soa:benefitNote":
+          type: string
+          description: |
+            Human-readable note further explaining the benefit quantum
+            (e.g., "On a family floater basis").
+          example: "On a family floater basis. Cover resets each policy year."
+          x-jsonld-id: "soa:benefitNote"

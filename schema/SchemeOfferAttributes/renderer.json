@@ -1,0 +1,59 @@
+{
+  "schema_id": "https://schema.beckn.io/SchemeOfferAttributes/v1",
+  "card_template": {
+    "title": "{{beckn:descriptor.schema:name}}",
+    "subtitle": "Benefit: {{beckn:offerAttributes.soa:benefitQuantum.soa:benefitType}}",
+    "badge_primary": "{{beckn:offerAttributes.soa:benefitQuantum.soa:benefitPeriod}}",
+    "metadata_line": "Valid until {{beckn:validity.schema:endDate}}"
+  },
+  "detail_template": {
+    "header": {
+      "title": "Offer Details"
+    },
+    "sections": [
+      {
+        "label": "Benefit",
+        "fields": [
+          { "label": "Benefit Type",    "value": "{{beckn:offerAttributes.soa:benefitQuantum.soa:benefitType}}" },
+          { "label": "Maximum Amount",  "value": "{{beckn:offerAttributes.soa:benefitQuantum.soa:monetaryAmount.currency}} {{beckn:offerAttributes.soa:benefitQuantum.soa:monetaryAmount.value}}" },
+          { "label": "Subsidy %",       "value": "{{beckn:offerAttributes.soa:benefitQuantum.soa:subsidyPercentage}}%" },
+          { "label": "Employment Days", "value": "{{beckn:offerAttributes.soa:benefitQuantum.soa:guaranteedEmploymentDays}} days" },
+          { "label": "Benefit Period",  "value": "{{beckn:offerAttributes.soa:benefitQuantum.soa:benefitPeriod}}" },
+          { "label": "Notes",           "value": "{{beckn:offerAttributes.soa:benefitQuantum.soa:benefitNote}}" }
+        ]
+      },
+      {
+        "label": "Eligibility — Demographics",
+        "fields": [
+          { "label": "Gender",           "value": "{{beckn:offerAttributes.soa:eligibilityCriteria.soa:demographicCriteria.soa:gender}}" },
+          { "label": "Age Range",        "value": "{{beckn:offerAttributes.soa:eligibilityCriteria.soa:demographicCriteria.soa:minAge}} – {{beckn:offerAttributes.soa:eligibilityCriteria.soa:demographicCriteria.soa:maxAge}} years" },
+          { "label": "Caste Category",   "value": "{{beckn:offerAttributes.soa:eligibilityCriteria.soa:demographicCriteria.soa:casteCategory}}" },
+          { "label": "Differently Abled","value": "{{beckn:offerAttributes.soa:eligibilityCriteria.soa:demographicCriteria.soa:differentlyAbled}}" }
+        ]
+      },
+      {
+        "label": "Eligibility — Economic",
+        "fields": [
+          { "label": "Ration Card",     "value": "{{beckn:offerAttributes.soa:eligibilityCriteria.soa:economicCriteria.soa:rationCardType}}" },
+          { "label": "Land Ownership",  "value": "{{beckn:offerAttributes.soa:eligibilityCriteria.soa:economicCriteria.soa:landOwnership}}" },
+          { "label": "Max Income",      "value": "{{beckn:offerAttributes.soa:eligibilityCriteria.soa:economicCriteria.soa:annualIncomeMaxCurrency}} {{beckn:offerAttributes.soa:eligibilityCriteria.soa:economicCriteria.soa:annualIncomeMax}}/year" }
+        ]
+      },
+      {
+        "label": "Eligibility — Professional",
+        "fields": [
+          { "label": "Occupation",      "value": "{{beckn:offerAttributes.soa:eligibilityCriteria.soa:professionalCriteria.soa:occupationType}}" },
+          { "label": "Enterprise",      "value": "{{beckn:offerAttributes.soa:eligibilityCriteria.soa:professionalCriteria.soa:enterpriseCategory}}" }
+        ]
+      },
+      {
+        "label": "Application Window",
+        "fields": [
+          { "label": "Open From",  "value": "{{beckn:validity.schema:startDate}}" },
+          { "label": "Closes On",  "value": "{{beckn:validity.schema:endDate}}" },
+          { "label": "Notes",      "value": "{{beckn:offerAttributes.soa:applicationWindowNote}}" }
+        ]
+      }
+    ]
+  }
+}

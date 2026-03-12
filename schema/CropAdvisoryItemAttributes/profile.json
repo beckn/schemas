@@ -1,0 +1,53 @@
+{
+  "id": "https://schema.beckn.io/CropAdvisoryItemAttributes/v1",
+  "name": "Crop Advisory Item Attributes",
+  "version": "1.0.0",
+  "description": "Attribute pack for crop disease, spray schedule, and pest forecast advisory knowledge items on the UAI/agri-advisory Beckn network.",
+  "domain": "advisory:agri",
+  "included_schemas": [
+    "CropAdvisoryItemAttributes",
+    "CropContext",
+    "ExpertCredentials",
+    "CropGrowthStage"
+  ],
+  "discovery_fields": [
+    "beckn:descriptor.schema:name",
+    "beckn:itemAttributes.advisoryCategory",
+    "beckn:itemAttributes.languages",
+    "beckn:itemAttributes.targetCrops",
+    "beckn:itemAttributes.targetDiseases"
+  ],
+  "indexable_paths": [
+    "beckn:id",
+    "beckn:descriptor.schema:name",
+    "beckn:descriptor.beckn:shortDesc",
+    "beckn:itemAttributes.advisoryCategory",
+    "beckn:itemAttributes.contentType",
+    "beckn:itemAttributes.languages",
+    "beckn:itemAttributes.targetCrops",
+    "beckn:itemAttributes.targetDiseases",
+    "beckn:itemAttributes.cropContext.cropName",
+    "beckn:itemAttributes.cropContext.growthStage",
+    "beckn:rating.beckn:ratingValue"
+  ],
+  "filterable_paths": [
+    "beckn:itemAttributes.advisoryCategory",
+    "beckn:itemAttributes.contentType",
+    "beckn:itemAttributes.languages",
+    "beckn:itemAttributes.targetCrops",
+    "beckn:itemAttributes.targetDiseases",
+    "beckn:itemAttributes.applicableGrowthStages",
+    "beckn:itemAttributes.cropContext.soilType",
+    "beckn:rating.beckn:ratingValue"
+  ],
+  "sortable_paths": [
+    "beckn:rating.beckn:ratingValue",
+    "beckn:itemAttributes.contentDurationSeconds"
+  ],
+  "privacy_notes": [
+    {
+      "path": "beckn:itemAttributes.cropContext",
+      "note": "CropContext is search-intent data provided by the farmer. When embedded in catalog items it is de-personalised; however BAP platforms must NOT persist this in user profiles without explicit consent."
+    }
+  ]
+}

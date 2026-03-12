@@ -1,0 +1,44 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "aafa": "https://schema.beckn.io/AgriAdvisoryFulfillmentAttributes#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+    {
+      "@id": "aafa:DeliveryMode",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Delivery Mode",
+      "rdfs:comment": "Mechanism through which digital agri advisory content or data is delivered to the beneficiary."
+    },
+    { "@id": "aafa:DIGITAL_LINK",      "@type": "aafa:DeliveryMode", "rdfs:label": "Digital Link",      "rdfs:comment": "Content delivered as a URL/hyperlink to a resource (web page, report, dashboard)." },
+    { "@id": "aafa:API_RESPONSE",      "@type": "aafa:DeliveryMode", "rdfs:label": "API Response",      "rdfs:comment": "Structured data returned via an API endpoint (JSON/XML)." },
+    { "@id": "aafa:PDF_DOWNLOAD",      "@type": "aafa:DeliveryMode", "rdfs:label": "PDF Download",      "rdfs:comment": "Content delivered as a downloadable PDF document." },
+    { "@id": "aafa:SMS",               "@type": "aafa:DeliveryMode", "rdfs:label": "SMS",               "rdfs:comment": "Key advisory data delivered as an SMS text message to the buyer's phone." },
+    { "@id": "aafa:PUSH_NOTIFICATION", "@type": "aafa:DeliveryMode", "rdfs:label": "Push Notification", "rdfs:comment": "Advisory summary delivered as a mobile or web push notification." },
+    { "@id": "aafa:IN_APP_DISPLAY",    "@type": "aafa:DeliveryMode", "rdfs:label": "In-App Display",    "rdfs:comment": "Content rendered directly within the consumer's agri application interface." },
+    { "@id": "aafa:EMAIL_ATTACHMENT",  "@type": "aafa:DeliveryMode", "rdfs:label": "Email Attachment",  "rdfs:comment": "Content delivered as an email with a file attachment." },
+
+    {
+      "@id": "aafa:targetLocation",
+      "@type": "rdf:Property",
+      "rdfs:label": "Target Location",
+      "rdfs:comment": "Geographic location (farm, field, or region) for which a location-specific advisory, price query, or weather forecast is requested or fulfilled."
+    },
+    {
+      "@id": "aafa:targetRegionRadiusKm",
+      "@type": "rdf:Property",
+      "rdfs:label": "Target Region Radius (km)",
+      "rdfs:comment": "Search radius in kilometres around the target location point for proximity-based queries."
+    },
+    {
+      "@id": "aafa:priceQueryTimeRange",
+      "@type": "rdf:Property",
+      "rdfs:label": "Price Query Time Range",
+      "rdfs:comment": "Date range for which commodity price data is requested or has been fulfilled."
+    }
+  ]
+}

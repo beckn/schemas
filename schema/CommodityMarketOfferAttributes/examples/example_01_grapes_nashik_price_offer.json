@@ -1,0 +1,22 @@
+{
+  "message": {
+    "order": {
+      "offers": [
+        {
+          "offerAttributes": {
+            "minPrice": 301,
+            "maxPrice": 2190,
+            "averagePrice": 1400,
+            "currency": "INR",
+            "unitOfMeasure": "per Quintal",
+            "priceVolatilityIndicator": "HIGH",
+            "arrivals": {
+              "quantity": 320.5,
+              "unit": "Tonnes"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

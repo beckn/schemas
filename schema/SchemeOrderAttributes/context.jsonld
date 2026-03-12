@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld",
+
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "sor":   "https://schema.beckn.io/SchemeOrderAttributes#",
+
+    "sor:SchemeOrderAttributes":          { "@id": "sor:SchemeOrderAttributes" },
+
+    "sor:governmentApplicationId":        { "@id": "sor:governmentApplicationId",       "@type": "schema:identifier" },
+    "sor:applicationSubmissionDate":      { "@id": "sor:applicationSubmissionDate",      "@type": "schema:DateTime" },
+    "sor:schemeApplicationStatus":        { "@id": "sor:schemeApplicationStatus",        "@type": "@vocab" },
+    "sor:rejectionReason":                { "@id": "sor:rejectionReason",               "@type": "schema:description" },
+    "sor:disbursementRecord":             { "@id": "sor:disbursementRecord" },
+    "sor:applicantConsentGiven":          { "@id": "schema:agreementAccepted",           "@type": "schema:Boolean" },
+    "sor:consentTimestamp":               { "@id": "sor:consentTimestamp",               "@type": "schema:DateTime" },
+
+    "sor:disbursementDate":               { "@id": "schema:paymentDueDate",              "@type": "schema:DateTime" },
+    "sor:disbursedAmount":                { "@id": "schema:price",                       "@type": "schema:Number" },
+    "sor:disbursedCurrency":              { "@id": "schema:priceCurrency" },
+    "sor:governmentTransactionReference": { "@id": "sor:governmentTransactionReference", "@type": "schema:identifier" },
+    "sor:disbursementInstallment":        { "@id": "sor:disbursementInstallment",         "@type": "schema:Number" },
+    "sor:totalInstallments":              { "@id": "sor:totalInstallments",               "@type": "schema:Number" },
+
+    "sor:externalEnrollmentRef":          { "@id": "sor:externalEnrollmentRef",           "@type": "schema:identifier" },
+    "sor:externalEnrollmentIdType":       { "@id": "sor:externalEnrollmentIdType",        "@type": "@vocab" },
+
+    "SchemeApplicationStatus":            "sor:SchemeApplicationStatus",
+    "ExternalEnrollmentIdType":           "sor:ExternalEnrollmentIdType"
+  }
+}

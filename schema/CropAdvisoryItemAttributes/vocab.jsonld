@@ -1,0 +1,147 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "schema":  "https://schema.org/",
+    "beckn":   "https://schema.beckn.io/",
+    "caia":    "https://schema.beckn.io/CropAdvisoryItemAttributes#",
+    "rdfs":    "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+
+    {
+      "@id": "caia:AdvisoryCategory",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Advisory Category",
+      "rdfs:comment": "Top-level category for agricultural knowledge advisory content."
+    },
+    {
+      "@id": "caia:DISEASE_CONTROL",
+      "@type": "caia:AdvisoryCategory",
+      "rdfs:label": "Disease Control",
+      "rdfs:comment": "Advisory content focused on identifying, treating, and preventing crop diseases."
+    },
+    {
+      "@id": "caia:SPRAY_SCHEDULE",
+      "@type": "caia:AdvisoryCategory",
+      "rdfs:label": "Spray Schedule",
+      "rdfs:comment": "Recommended pesticide, fungicide, or fertilizer application schedule for a specific crop and disease context."
+    },
+    {
+      "@id": "caia:PEST_FORECAST",
+      "@type": "caia:AdvisoryCategory",
+      "rdfs:label": "Pest Forecast",
+      "rdfs:comment": "Predictive advisory on likelihood and type of pest infestation based on crop stage and location."
+    },
+    {
+      "@id": "caia:GENERAL_ADVISORY",
+      "@type": "caia:AdvisoryCategory",
+      "rdfs:label": "General Advisory",
+      "rdfs:comment": "General crop management or best practice advisory not specific to a disease or pest."
+    },
+
+    {
+      "@id": "caia:ContentType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Content Type",
+      "rdfs:comment": "Format of the delivered advisory knowledge asset."
+    },
+    {
+      "@id": "caia:TEXT",
+      "@type": "caia:ContentType",
+      "rdfs:label": "Text",
+      "rdfs:comment": "Plain text or HTML article advisory."
+    },
+    {
+      "@id": "caia:VIDEO",
+      "@type": "caia:ContentType",
+      "rdfs:label": "Video",
+      "rdfs:comment": "Video advisory content (e.g., MP4 or YouTube link)."
+    },
+    {
+      "@id": "caia:PDF",
+      "@type": "caia:ContentType",
+      "rdfs:label": "PDF",
+      "rdfs:comment": "Advisory delivered as a PDF document."
+    },
+    {
+      "@id": "caia:AUDIO",
+      "@type": "caia:ContentType",
+      "rdfs:label": "Audio",
+      "rdfs:comment": "Advisory delivered as an audio recording."
+    },
+    {
+      "@id": "caia:INFOGRAPHIC",
+      "@type": "caia:ContentType",
+      "rdfs:label": "Infographic",
+      "rdfs:comment": "Advisory delivered as a visual infographic."
+    },
+    {
+      "@id": "caia:INTERACTIVE",
+      "@type": "caia:ContentType",
+      "rdfs:label": "Interactive",
+      "rdfs:comment": "Interactive advisory module (e.g., chatbot, decision tool)."
+    },
+
+    {
+      "@id": "caia:CropGrowthStage",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Crop Growth Stage",
+      "rdfs:comment": "Phenological stage of a crop's life cycle."
+    },
+    {
+      "@id": "caia:SOWING",
+      "@type": "caia:CropGrowthStage",
+      "rdfs:label": "Sowing",
+      "rdfs:comment": "Seed placement or transplanting stage."
+    },
+    {
+      "@id": "caia:GERMINATION",
+      "@type": "caia:CropGrowthStage",
+      "rdfs:label": "Germination",
+      "rdfs:comment": "Stage at which seeds sprout."
+    },
+    {
+      "@id": "caia:SEEDLING",
+      "@type": "caia:CropGrowthStage",
+      "rdfs:label": "Seedling",
+      "rdfs:comment": "Early leaf development stage."
+    },
+    {
+      "@id": "caia:VEGETATIVE",
+      "@type": "caia:CropGrowthStage",
+      "rdfs:label": "Vegetative",
+      "rdfs:comment": "Active shoot and leaf growth phase."
+    },
+    {
+      "@id": "caia:FLOWERING",
+      "@type": "caia:CropGrowthStage",
+      "rdfs:label": "Flowering",
+      "rdfs:comment": "Flower development stage; critical period for disease susceptibility."
+    },
+    {
+      "@id": "caia:FRUITING",
+      "@type": "caia:CropGrowthStage",
+      "rdfs:label": "Fruiting",
+      "rdfs:comment": "Fruit set and development stage."
+    },
+    {
+      "@id": "caia:MATURATION",
+      "@type": "caia:CropGrowthStage",
+      "rdfs:label": "Maturation",
+      "rdfs:comment": "Ripening and grain fill stage."
+    },
+    {
+      "@id": "caia:HARVESTING",
+      "@type": "caia:CropGrowthStage",
+      "rdfs:label": "Harvesting",
+      "rdfs:comment": "Crop collection stage."
+    },
+    {
+      "@id": "caia:POST_HARVEST",
+      "@type": "caia:CropGrowthStage",
+      "rdfs:label": "Post-Harvest",
+      "rdfs:comment": "Storage, handling, and processing after harvest."
+    }
+  ]
+}

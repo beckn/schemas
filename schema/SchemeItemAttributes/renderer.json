@@ -1,0 +1,57 @@
+{
+  "schema_id": "https://schema.beckn.io/SchemeItemAttributes/v1",
+  "card_template": {
+    "title": "{{beckn:descriptor.schema:name}}",
+    "subtitle": "{{beckn:descriptor.beckn:shortDesc}}",
+    "badge_primary": "{{beckn:itemAttributes.sia:schemeType}}",
+    "badge_secondary": "{{beckn:itemAttributes.sia:fundingModel}}",
+    "metadata_line": "{{beckn:category.schema:name}} · {{beckn:availableAt[0].address.addressRegion}}",
+    "tags": [
+      "{{beckn:itemAttributes.sia:targetBeneficiaryType}}"
+    ]
+  },
+  "detail_template": {
+    "header": {
+      "title": "{{beckn:descriptor.schema:name}}",
+      "subtitle": "{{beckn:descriptor.beckn:shortDesc}}",
+      "logo": "{{beckn:descriptor.schema:image[0]}}"
+    },
+    "sections": [
+      {
+        "label": "About this Scheme",
+        "fields": [
+          { "label": "Scheme Type",       "value": "{{beckn:itemAttributes.sia:schemeType}}" },
+          { "label": "Funding Model",     "value": "{{beckn:itemAttributes.sia:fundingModel}}" },
+          { "label": "Sponsored By",      "value": "{{beckn:itemAttributes.sia:sponsoringMinistry}}" },
+          { "label": "Scheme Code",       "value": "{{beckn:itemAttributes.sia:officialSchemeCode}}" },
+          { "label": "Official Portal",   "value": "{{beckn:itemAttributes.sia:officialPortalUrl}}" }
+        ]
+      },
+      {
+        "label": "Who Can Apply",
+        "fields": [
+          { "label": "Target Beneficiary", "value": "{{beckn:itemAttributes.sia:targetBeneficiaryType}}" },
+          { "label": "Apply Via",          "value": "{{beckn:itemAttributes.sia:applicationModes}}" },
+          { "label": "Languages",          "value": "{{beckn:itemAttributes.sia:availableLanguages}}" }
+        ]
+      },
+      {
+        "label": "Required Documents",
+        "list": {
+          "source": "{{beckn:itemAttributes.sia:requiredDocuments}}",
+          "item_template": "{{sia:documentName}} ({{sia:documentCode}}){{#sia:mandatory}} — Required{{/sia:mandatory}}",
+          "sub_template": "{{sia:documentExample}}"
+        }
+      },
+      {
+        "label": "Benefits",
+        "list": {
+          "source": "{{beckn:itemAttributes.sia:schemeBenefits}}",
+          "item_template": "{{sia:benefitCategory}}",
+          "sub_template": "{{sia:benefitDescription}}"
+        }
+      }
+    ],
+    "long_description": "{{beckn:descriptor.beckn:longDesc}}"
+  }
+}

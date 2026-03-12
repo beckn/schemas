@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://schema.beckn.io/core/v2/context.jsonld",
+    "https://schema.beckn.io/SchemeFulfillmentAttributes/v1/context.jsonld"
+  ],
+  "message": {
+    "order": {
+      "fulfillments": [
+        {
+          "id": "f-pmkisan-mh-2025-001",
+          "type": "SCHEME_APPLICATION",
+          "fulfillmentAttributes": {
+            "sfa:schemeDeliveryType": "DBT_BANK_TRANSFER",
+            "sfa:disbursementMode": "DIRECT_BANK_CREDIT",
+            "sfa:submissionMode": "BANK_BRANCH",
+            "sfa:documentCollectionMode": "PHYSICAL_OFFICE_SUBMISSION",
+            "sfa:applicationStatus": "DISBURSED",
+            "sfa:statusNote": "Annual installment of ₹2,000 credited to beneficiary account ending 4521 on 2025-08-01. PFMS Transaction ID: PFMS2025080100123456.",
+            "sfa:agentDetails": {
+              "sfa:agentName": "Suresh Sharma",
+              "sfa:agentContact": "+91-2224567890",
+              "sfa:agentOrganization": "Bank of Maharashtra — Nashik Branch",
+              "sfa:agentOrganizationCode": "bank-of-maharashtra-nashik",
+              "sfa:agentType": "BANK_OFFICER"
+            },
+            "sfa:applicationPortalReference": "PMKISAN-MH-2025-FY2-001234"
+          }
+        }
+      ]
+    }
+  }
+}

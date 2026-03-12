@@ -1,0 +1,34 @@
+{
+  "message": {
+    "catalog": {
+      "providers": [
+        {
+          "items": [
+            {
+              "itemAttributes": {
+                "commodityName": "Basmati Rice",
+                "commodityCode": "RICE-BASMATI-001",
+                "commodityVariety": "Pusa Basmati 1121",
+                "commodityGrade": "FAQ",
+                "unitOfMeasure": "per Quintal",
+                "mandiName": "Pune APMC",
+                "mandiCode": "MAH-PUNE-001",
+                "priceObservationPeriod": {
+                  "schema:startDate": "2024-12-01T00:00:00Z",
+                  "schema:endDate": "2024-12-31T23:59:59Z"
+                },
+                "priceSource": "AGMARKNET",
+                "dataLicense": "Government Open Data License India (GODL)",
+                "languages": [
+                  "en",
+                  "hi",
+                  "mr"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

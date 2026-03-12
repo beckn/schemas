@@ -1,0 +1,41 @@
+{
+  "schema_id": "https://schema.beckn.io/SchemeOrderAttributes/v1",
+  "card_template": {
+    "title": "Order #{{beckn:id}}",
+    "subtitle": "{{beckn:orderAttributes.sor:schemeApplicationStatus}}",
+    "badge_primary": "{{beckn:orderAttributes.sor:governmentApplicationId}}",
+    "metadata_line": "Submitted: {{beckn:orderAttributes.sor:applicationSubmissionDate}}"
+  },
+  "detail_template": {
+    "header": {
+      "title": "Application Details"
+    },
+    "sections": [
+      {
+        "label": "Application Reference",
+        "fields": [
+          { "label": "Government Application ID",  "value": "{{beckn:orderAttributes.sor:governmentApplicationId}}" },
+          { "label": "Application Status",         "value": "{{beckn:orderAttributes.sor:schemeApplicationStatus}}" },
+          { "label": "Submitted On",               "value": "{{beckn:orderAttributes.sor:applicationSubmissionDate}}" },
+          { "label": "Rejection Reason",           "value": "{{beckn:orderAttributes.sor:rejectionReason}}" }
+        ]
+      },
+      {
+        "label": "Disbursement",
+        "fields": [
+          { "label": "Disbursement Date",       "value": "{{beckn:orderAttributes.sor:disbursementRecord.sor:disbursementDate}}" },
+          { "label": "Amount Disbursed",        "value": "{{beckn:orderAttributes.sor:disbursementRecord.sor:disbursedCurrency}} {{beckn:orderAttributes.sor:disbursementRecord.sor:disbursedAmount}}" },
+          { "label": "Transaction Reference",   "value": "{{beckn:orderAttributes.sor:disbursementRecord.sor:governmentTransactionReference}}" },
+          { "label": "Installment",             "value": "{{beckn:orderAttributes.sor:disbursementRecord.sor:disbursementInstallment}} of {{beckn:orderAttributes.sor:disbursementRecord.sor:totalInstallments}}" }
+        ]
+      },
+      {
+        "label": "Consent",
+        "fields": [
+          { "label": "Consent Given",     "value": "{{beckn:orderAttributes.sor:applicantConsentGiven}}" },
+          { "label": "Consent Date/Time", "value": "{{beckn:orderAttributes.sor:consentTimestamp}}" }
+        ]
+      }
+    ]
+  }
+}

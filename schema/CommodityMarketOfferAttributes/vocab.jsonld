@@ -1,0 +1,46 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "cmoa": "https://schema.beckn.io/CommodityMarketOfferAttributes#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+    {
+      "@id": "cmoa:CommodityMarketOfferAttributes",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Commodity Market Offer Attributes",
+      "rdfs:comment": "Price range and market statistics for a commodity at a specific mandi during an observation period."
+    },
+    {
+      "@id": "cmoa:averagePrice",
+      "@type": "rdf:Property",
+      "rdfs:label": "Average Price",
+      "rdfs:comment": "Arithmetic mean or modal price for a commodity lot at a market during an observation period."
+    },
+    {
+      "@id": "cmoa:arrivals",
+      "@type": "rdf:Property",
+      "rdfs:label": "Market Arrivals",
+      "rdfs:comment": "Quantity of commodity that arrived at the market during the observation period, providing supply-side context for price interpretation."
+    },
+    {
+      "@id": "cmoa:priceVolatilityIndicator",
+      "@type": "rdf:Property",
+      "rdfs:label": "Price Volatility Indicator",
+      "rdfs:comment": "Qualitative categorisation of price range spread during the observation period."
+    },
+    {
+      "@id": "cmoa:PriceVolatility",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Price Volatility",
+      "rdfs:comment": "Enumeration of price volatility levels for agricultural commodity markets."
+    },
+    { "@id": "cmoa:LOW",       "@type": "cmoa:PriceVolatility", "rdfs:label": "Low",       "rdfs:comment": "Stable prices; min-max spread is narrow (<10%)." },
+    { "@id": "cmoa:MODERATE",  "@type": "cmoa:PriceVolatility", "rdfs:label": "Moderate",  "rdfs:comment": "Some price variation; min-max spread is 10–30%." },
+    { "@id": "cmoa:HIGH",      "@type": "cmoa:PriceVolatility", "rdfs:label": "High",      "rdfs:comment": "Significant price variation; min-max spread is 30–60%." },
+    { "@id": "cmoa:VERY_HIGH", "@type": "cmoa:PriceVolatility", "rdfs:label": "Very High", "rdfs:comment": "Extreme price variation; min-max spread exceeds 60%." }
+  ]
+}

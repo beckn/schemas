@@ -1,0 +1,35 @@
+{
+  "id": "https://schema.beckn.io/AgriAdvisoryOfferAttributes/v1",
+  "name": "Agri Advisory Offer Attributes",
+  "version": "1.0.0",
+  "description": "Offer-level extension for commercial terms of digital agri advisory services (disease advisory, weather forecast). Covers access model, content license, and cancellation policy.",
+  "domain": "advisory:agri",
+  "included_schemas": [
+    "AgriAdvisoryOfferAttributes",
+    "CancellationPolicy"
+  ],
+  "discovery_fields": [
+    "beckn:offerAttributes.pricingModel",
+    "beckn:offerAttributes.accessType",
+    "beckn:price.value",
+    "beckn:price.currency"
+  ],
+  "indexable_paths": [
+    "beckn:id",
+    "beckn:offerAttributes.pricingModel",
+    "beckn:offerAttributes.accessType",
+    "beckn:offerAttributes.contentLicense",
+    "beckn:price.value",
+    "beckn:price.currency"
+  ],
+  "filterable_paths": [
+    "beckn:offerAttributes.pricingModel",
+    "beckn:offerAttributes.accessType",
+    "beckn:offerAttributes.contentLicense",
+    "beckn:offerAttributes.trialAvailable"
+  ],
+  "sortable_paths": [
+    "beckn:price.value"
+  ],
+  "privacy_notes": []
+}

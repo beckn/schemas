@@ -1,0 +1,67 @@
+{
+  "@context": [
+    "https://schema.beckn.io/core/v2/context.jsonld",
+    "https://schema.beckn.io/SchemeOfferAttributes/v1/context.jsonld"
+  ],
+  "message": {
+    "order": {
+      "offers": [
+        {
+          "id": "offer-pmjay-mah-2025",
+          "descriptor": {
+            "name": "PM-JAY — Maharashtra 2025",
+            "short_desc": "Cashless health insurance of INR 500,000 per family per year for BPL and priority households."
+          },
+          "provider": "bpp-schemefinder-001",
+          "items": ["scheme-ayushman-bharat-001"],
+          "validity": {
+            "start": "2025-04-01T00:00:00Z",
+            "end": "2026-03-31T23:59:59Z"
+          },
+          "offerAttributes": {
+            "soa:eligibilityCriteria": {
+              "soa:demographicCriteria": {
+                "soa:gender": "ANY",
+                "soa:casteCategory": ["SC", "ST", "OBC", "EWS", "GENERAL"]
+              },
+              "soa:economicCriteria": {
+                "soa:rationCardType": ["BELOW_POVERTY_LINE", "ANTYODAYA", "PRIORITY_HOUSEHOLD"],
+                "soa:isTaxpayer": "TAXPAYERS_EXCLUDED"
+              },
+              "soa:identityCriteria": {
+                "soa:hasAadhaar": "REQUIRED",
+                "soa:hasSECCRegistration": "REQUIRED"
+              },
+              "soa:residencyCriteria": {
+                "soa:statesOfResidence": ["IN-MH"]
+              },
+              "soa:additionalCriteria": [
+                {
+                  "soa:criterionCode": "CT0001TU",
+                  "soa:criterionName": "Has SECC Registration Number",
+                  "soa:criterionValue": "Yes"
+                }
+              ]
+            },
+            "soa:benefitQuantum": {
+              "soa:benefitType": "INSURANCE_COVER",
+              "soa:monetaryAmount": {
+                "currency": "INR",
+                "value": 500000
+              },
+              "soa:benefitPeriod": "PER_ANNUM",
+              "soa:benefitNote": "On a family floater basis. Cover resets each policy year. Includes pre- and post-hospitalization expenses."
+            },
+            "soa:applicationWindowNote": "Enrollment is open year-round. Benefits apply from the date of enrollment.",
+            "soa:eligibilityForm": {
+              "soa:formUrl": "https://schemefinder.example.in/eligibility/pmjay/formid/a23f2fdfbbb8ac402bfd54f",
+              "soa:mimeType": "text/html",
+              "soa:required": false
+            },
+            "soa:maxBeneficiaries": 100000000
+          }
+        }
+      ]
+    }
+  }
+}

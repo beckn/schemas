@@ -1,0 +1,86 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "wfia": "https://schema.beckn.io/WeatherForecastItemAttributes#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+    {
+      "@id": "wfia:ForecastType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Forecast Type",
+      "rdfs:comment": "Classification of the weather intelligence product being offered."
+    },
+    { "@id": "wfia:WEATHER_FORECAST",   "@type": "wfia:ForecastType", "rdfs:label": "Weather Forecast",    "rdfs:comment": "Short to medium range weather forecast (1–15 days)." },
+    { "@id": "wfia:SEASONAL_OUTLOOK",   "@type": "wfia:ForecastType", "rdfs:label": "Seasonal Outlook",    "rdfs:comment": "Probabilistic outlook for a season (1–3 months)." },
+    { "@id": "wfia:AGRO_ADVISORY",      "@type": "wfia:ForecastType", "rdfs:label": "Agro Advisory",       "rdfs:comment": "Weather-based advisory translated into actionable agronomic recommendations." },
+    { "@id": "wfia:HISTORICAL_DATA",    "@type": "wfia:ForecastType", "rdfs:label": "Historical Data",     "rdfs:comment": "Historical weather observations for a location and time range." },
+    { "@id": "wfia:CLIMATE_RISK",       "@type": "wfia:ForecastType", "rdfs:label": "Climate Risk",        "rdfs:comment": "Long-range climate risk indices (drought, flood, heat stress)." },
+
+    {
+      "@id": "wfia:ForecastResolution",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Forecast Resolution",
+      "rdfs:comment": "Spatial granularity level of a weather forecast product."
+    },
+    { "@id": "wfia:HYPERLOCAL", "@type": "wfia:ForecastResolution", "rdfs:label": "Hyperlocal", "rdfs:comment": "Farm-level or sub-kilometre spatial resolution." },
+    { "@id": "wfia:VILLAGE",    "@type": "wfia:ForecastResolution", "rdfs:label": "Village",    "rdfs:comment": "Village or panchayat level (1–5 km radius)." },
+    { "@id": "wfia:BLOCK",      "@type": "wfia:ForecastResolution", "rdfs:label": "Block",      "rdfs:comment": "Administrative block or taluk level." },
+    { "@id": "wfia:DISTRICT",   "@type": "wfia:ForecastResolution", "rdfs:label": "District",   "rdfs:comment": "District or county level." },
+    { "@id": "wfia:STATE",      "@type": "wfia:ForecastResolution", "rdfs:label": "State",      "rdfs:comment": "State or province level." },
+    { "@id": "wfia:NATIONAL",   "@type": "wfia:ForecastResolution", "rdfs:label": "National",   "rdfs:comment": "Country-wide forecast." },
+
+    {
+      "@id": "wfia:WeatherDataPoint",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Weather Data Point",
+      "rdfs:comment": "A specific meteorological parameter included in a forecast product."
+    },
+    { "@id": "wfia:TEMPERATURE_MAX",      "@type": "wfia:WeatherDataPoint", "rdfs:label": "Maximum Temperature",     "rdfs:comment": "Daily maximum air temperature (°C or °F)." },
+    { "@id": "wfia:TEMPERATURE_MIN",      "@type": "wfia:WeatherDataPoint", "rdfs:label": "Minimum Temperature",     "rdfs:comment": "Daily minimum air temperature." },
+    { "@id": "wfia:TEMPERATURE_MEAN",     "@type": "wfia:WeatherDataPoint", "rdfs:label": "Mean Temperature",        "rdfs:comment": "Daily mean air temperature." },
+    { "@id": "wfia:HUMIDITY",             "@type": "wfia:WeatherDataPoint", "rdfs:label": "Humidity",                "rdfs:comment": "Relative humidity (%)." },
+    { "@id": "wfia:RAINFALL",             "@type": "wfia:WeatherDataPoint", "rdfs:label": "Rainfall",                "rdfs:comment": "Cumulative or daily precipitation (mm)." },
+    { "@id": "wfia:WIND_SPEED",           "@type": "wfia:WeatherDataPoint", "rdfs:label": "Wind Speed",              "rdfs:comment": "Mean wind speed (km/h or m/s)." },
+    { "@id": "wfia:WIND_DIRECTION",       "@type": "wfia:WeatherDataPoint", "rdfs:label": "Wind Direction",          "rdfs:comment": "Prevailing wind direction (degrees or cardinal)." },
+    { "@id": "wfia:ATMOSPHERIC_PRESSURE", "@type": "wfia:WeatherDataPoint", "rdfs:label": "Atmospheric Pressure",   "rdfs:comment": "Surface atmospheric pressure (hPa)." },
+    { "@id": "wfia:SOLAR_RADIATION",      "@type": "wfia:WeatherDataPoint", "rdfs:label": "Solar Radiation",        "rdfs:comment": "Incoming solar radiation (MJ/m²/day or W/m²)." },
+    { "@id": "wfia:DEW_POINT",            "@type": "wfia:WeatherDataPoint", "rdfs:label": "Dew Point",              "rdfs:comment": "Dew point temperature." },
+    { "@id": "wfia:CLOUD_COVER",          "@type": "wfia:WeatherDataPoint", "rdfs:label": "Cloud Cover",            "rdfs:comment": "Sky cloud cover fraction (oktas or %)." },
+    { "@id": "wfia:UV_INDEX",             "@type": "wfia:WeatherDataPoint", "rdfs:label": "UV Index",               "rdfs:comment": "Ultraviolet radiation index." },
+    { "@id": "wfia:EVAPOTRANSPIRATION",   "@type": "wfia:WeatherDataPoint", "rdfs:label": "Evapotranspiration",     "rdfs:comment": "Reference ET₀ (mm/day) for irrigation planning." },
+    { "@id": "wfia:SOIL_MOISTURE",        "@type": "wfia:WeatherDataPoint", "rdfs:label": "Soil Moisture",          "rdfs:comment": "Volumetric soil water content (m³/m³ or %)." },
+    { "@id": "wfia:FROST_RISK",           "@type": "wfia:WeatherDataPoint", "rdfs:label": "Frost Risk",             "rdfs:comment": "Probability of frost occurrence." },
+    { "@id": "wfia:HEAT_INDEX",           "@type": "wfia:WeatherDataPoint", "rdfs:label": "Heat Index",             "rdfs:comment": "Apparent temperature accounting for humidity." },
+    { "@id": "wfia:VISIBILITY",           "@type": "wfia:WeatherDataPoint", "rdfs:label": "Visibility",             "rdfs:comment": "Horizontal visibility (km)." },
+
+    {
+      "@id": "wfia:WeatherOutputFormat",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Weather Output Format",
+      "rdfs:comment": "Delivery format for weather forecast data."
+    },
+    { "@id": "wfia:PDF",              "@type": "wfia:WeatherOutputFormat", "rdfs:label": "PDF",               "rdfs:comment": "Delivered as a formatted PDF report." },
+    { "@id": "wfia:JSON_API",         "@type": "wfia:WeatherOutputFormat", "rdfs:label": "JSON API",          "rdfs:comment": "Machine-readable JSON served via API." },
+    { "@id": "wfia:CSV",              "@type": "wfia:WeatherOutputFormat", "rdfs:label": "CSV",               "rdfs:comment": "Comma-separated tabular data download." },
+    { "@id": "wfia:SMS",              "@type": "wfia:WeatherOutputFormat", "rdfs:label": "SMS",               "rdfs:comment": "Key forecast data delivered via SMS text message." },
+    { "@id": "wfia:PUSH_NOTIFICATION","@type": "wfia:WeatherOutputFormat", "rdfs:label": "Push Notification", "rdfs:comment": "Delivered via mobile or web push notification." },
+    { "@id": "wfia:IN_APP_DISPLAY",   "@type": "wfia:WeatherOutputFormat", "rdfs:label": "In-App Display",    "rdfs:comment": "Rendered within the consumer's agri app interface." },
+    { "@id": "wfia:EMAIL_REPORT",     "@type": "wfia:WeatherOutputFormat", "rdfs:label": "Email Report",      "rdfs:comment": "Delivered as a formatted email report." },
+
+    {
+      "@id": "wfia:ProviderLicense",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Provider License",
+      "rdfs:comment": "License type governing redistribution and use of the weather data."
+    },
+    { "@id": "wfia:OPEN",            "@type": "wfia:ProviderLicense", "rdfs:label": "Open",            "rdfs:comment": "Freely available open data." },
+    { "@id": "wfia:PROPRIETARY",     "@type": "wfia:ProviderLicense", "rdfs:label": "Proprietary",     "rdfs:comment": "Commercial proprietary data requiring purchase." },
+    { "@id": "wfia:GOVERNMENT",      "@type": "wfia:ProviderLicense", "rdfs:label": "Government",      "rdfs:comment": "Published by a national meteorological authority." },
+    { "@id": "wfia:CREATIVE_COMMONS","@type": "wfia:ProviderLicense", "rdfs:label": "Creative Commons", "rdfs:comment": "Licensed under a Creative Commons license." },
+    { "@id": "wfia:ACADEMIC",        "@type": "wfia:ProviderLicense", "rdfs:label": "Academic",        "rdfs:comment": "Research-grade data for academic use." }
+  ]
+}

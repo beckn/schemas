@@ -1,0 +1,97 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "schema": "https://schema.org/",
+    "beckn":  "https://schema.beckn.io/",
+    "rdfs":   "http://www.w3.org/2000/01/rdf-schema#",
+    "sfa":    "https://schema.beckn.io/SchemeFulfillmentAttributes#"
+  },
+  "@graph": [
+
+    {
+      "@id": "sfa:SchemeDeliveryType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Scheme Delivery Type",
+      "rdfs:comment": "The primary mechanism by which a government or NGO scheme benefit reaches the beneficiary."
+    },
+    { "@id": "sfa:DBT_BANK_TRANSFER",         "@type": "sfa:SchemeDeliveryType", "rdfs:label": "Direct Benefit Transfer — Bank",    "rdfs:comment": "Cash or subsidy credited directly to beneficiary's registered bank account via NEFT/RTGS/PFMS." },
+    { "@id": "sfa:SUBSIDIZED_SERVICE",        "@type": "sfa:SchemeDeliveryType", "rdfs:label": "Subsidized Service",                "rdfs:comment": "Service provided at a reduced/subsidized cost (healthcare, housing, utilities)." },
+    { "@id": "sfa:EMPLOYMENT_PLACEMENT",      "@type": "sfa:SchemeDeliveryType", "rdfs:label": "Employment & Placement",            "rdfs:comment": "Guaranteed employment days or job placement fulfillment." },
+    { "@id": "sfa:IN_KIND_COMMODITY",         "@type": "sfa:SchemeDeliveryType", "rdfs:label": "In-Kind Commodity Transfer",        "rdfs:comment": "Physical goods — seeds, fertilizers, rations, equipment — delivered to beneficiary." },
+    { "@id": "sfa:INSURANCE_CLAIM_SETTLEMENT","@type": "sfa:SchemeDeliveryType", "rdfs:label": "Insurance Claim Settlement",        "rdfs:comment": "Insurance claim payment triggered by an insured event (crop failure, hospitalization)." },
+    { "@id": "sfa:AGENT_ASSISTED_APPLICATION","@type": "sfa:SchemeDeliveryType", "rdfs:label": "Agent-Assisted Application",        "rdfs:comment": "Field agent assists beneficiary in completing and submitting the scheme application." },
+    { "@id": "sfa:DIGITAL_ENTITLEMENT",       "@type": "sfa:SchemeDeliveryType", "rdfs:label": "Digital Entitlement",               "rdfs:comment": "Digital voucher, token, or e-certificate issued to the beneficiary." },
+
+    {
+      "@id": "sfa:DisbursementMode",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Disbursement Mode",
+      "rdfs:comment": "Channel through which monetary benefits are disbursed to the beneficiary."
+    },
+    { "@id": "sfa:BANK_TRANSFER_NEFT",  "@type": "sfa:DisbursementMode", "rdfs:label": "NEFT Bank Transfer",   "rdfs:comment": "Transfer via NEFT (National Electronic Funds Transfer)." },
+    { "@id": "sfa:BANK_TRANSFER_RTGS",  "@type": "sfa:DisbursementMode", "rdfs:label": "RTGS Bank Transfer",   "rdfs:comment": "Transfer via RTGS (Real Time Gross Settlement)." },
+    { "@id": "sfa:DIRECT_BANK_CREDIT",  "@type": "sfa:DisbursementMode", "rdfs:label": "Direct Bank Credit",   "rdfs:comment": "Direct credit via PFMS or DBT gateway." },
+    { "@id": "sfa:CHEQUE",              "@type": "sfa:DisbursementMode", "rdfs:label": "Cheque",               "rdfs:comment": "Account payee cheque issued to the beneficiary." },
+    { "@id": "sfa:COMMODITY_IN_KIND",   "@type": "sfa:DisbursementMode", "rdfs:label": "In-Kind (Commodity)",  "rdfs:comment": "Physical commodity or goods provided (not monetary)." },
+    { "@id": "sfa:NOT_APPLICABLE",      "@type": "sfa:DisbursementMode", "rdfs:label": "Not Applicable",       "rdfs:comment": "No monetary disbursement; benefit is service-based or in-kind." },
+
+    {
+      "@id": "sfa:SubmissionMode",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Application Submission Mode",
+      "rdfs:comment": "Channel through which the scheme application is submitted."
+    },
+    { "@id": "sfa:SELF_ONLINE",             "@type": "sfa:SubmissionMode", "rdfs:label": "Self — Online",             "rdfs:comment": "Applicant submits via online portal without assistance." },
+    { "@id": "sfa:SELF_OFFLINE",            "@type": "sfa:SubmissionMode", "rdfs:label": "Self — Offline",            "rdfs:comment": "Applicant submits paper form in person." },
+    { "@id": "sfa:AGENT_ASSISTED",          "@type": "sfa:SubmissionMode", "rdfs:label": "Agent Assisted",            "rdfs:comment": "Submission completed by an assigned field agent on behalf of the applicant." },
+    { "@id": "sfa:GOVERNMENT_OFFICE",       "@type": "sfa:SubmissionMode", "rdfs:label": "Government Office",         "rdfs:comment": "Submitted at the relevant government office (Block/Tehsil/District)." },
+    { "@id": "sfa:BANK_BRANCH",             "@type": "sfa:SubmissionMode", "rdfs:label": "Bank Branch",               "rdfs:comment": "Submitted at an enrolled bank branch (common for crop insurance)." },
+    { "@id": "sfa:COMMON_SERVICE_CENTER",   "@type": "sfa:SubmissionMode", "rdfs:label": "Common Service Centre (CSC)", "rdfs:comment": "Submitted via Government of India's CSC network." },
+
+    {
+      "@id": "sfa:DocumentCollectionMode",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Document Collection Mode",
+      "rdfs:comment": "How required application documents are collected from the beneficiary."
+    },
+    { "@id": "sfa:PHYSICAL_DOORSTEP_COLLECTION", "@type": "sfa:DocumentCollectionMode", "rdfs:label": "Physical Doorstep Collection", "rdfs:comment": "Agent visits beneficiary's home to collect original documents." },
+    { "@id": "sfa:PHYSICAL_OFFICE_SUBMISSION",   "@type": "sfa:DocumentCollectionMode", "rdfs:label": "Physical Office Submission",   "rdfs:comment": "Beneficiary brings documents to a designated office or agent." },
+    { "@id": "sfa:DIGITAL_UPLOAD",               "@type": "sfa:DocumentCollectionMode", "rdfs:label": "Digital Upload",               "rdfs:comment": "Applicant scans and uploads documents via web portal or mobile app." },
+    { "@id": "sfa:DIGILOCKER_PULL",              "@type": "sfa:DocumentCollectionMode", "rdfs:label": "DigiLocker Pull",              "rdfs:comment": "Documents fetched directly from the applicant's DigiLocker account with consent." },
+    { "@id": "sfa:NOT_REQUIRED",                 "@type": "sfa:DocumentCollectionMode", "rdfs:label": "Not Required",                 "rdfs:comment": "No document collection required for this fulfillment." },
+
+    {
+      "@id": "sfa:ApplicationStatus",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Application Status",
+      "rdfs:comment": "Lifecycle status of a scheme application from initial booking through disbursement."
+    },
+    { "@id": "sfa:BOOKING_CONFIRMED",       "@type": "sfa:ApplicationStatus", "rdfs:label": "Booking Confirmed",         "rdfs:comment": "Agent booking or application slot confirmed. Corresponds to v1 'Booking-Confirmed'." },
+    { "@id": "sfa:AGENT_ASSIGNED",          "@type": "sfa:ApplicationStatus", "rdfs:label": "Agent Assigned",            "rdfs:comment": "A field agent has been assigned. Corresponds to v1 'Agent-Assigned'." },
+    { "@id": "sfa:DOCUMENTS_REQUESTED",     "@type": "sfa:ApplicationStatus", "rdfs:label": "Documents Requested",       "rdfs:comment": "Agent has sent a document checklist to the applicant." },
+    { "@id": "sfa:DOCUMENTS_COLLECTED",     "@type": "sfa:ApplicationStatus", "rdfs:label": "Documents Collected",       "rdfs:comment": "All required documents have been collected from the applicant." },
+    { "@id": "sfa:DOCUMENTS_INVALID",       "@type": "sfa:ApplicationStatus", "rdfs:label": "Documents Invalid",         "rdfs:comment": "Submitted documents were rejected; applicant must re-submit." },
+    { "@id": "sfa:APPLICATION_INITIATED",   "@type": "sfa:ApplicationStatus", "rdfs:label": "Application Initiated",     "rdfs:comment": "Application form has been started on the government portal. Corresponds to v1 'Application-Initiated'." },
+    { "@id": "sfa:APPLICATION_SUBMITTED",   "@type": "sfa:ApplicationStatus", "rdfs:label": "Application Submitted",     "rdfs:comment": "Application formally submitted to the scheme authority." },
+    { "@id": "sfa:UNDER_REVIEW",            "@type": "sfa:ApplicationStatus", "rdfs:label": "Under Review",              "rdfs:comment": "Application is being reviewed by the scheme authority." },
+    { "@id": "sfa:APPROVED",               "@type": "sfa:ApplicationStatus", "rdfs:label": "Approved",                  "rdfs:comment": "Application has been approved; awaiting disbursement." },
+    { "@id": "sfa:REJECTED",               "@type": "sfa:ApplicationStatus", "rdfs:label": "Rejected",                  "rdfs:comment": "Application was rejected by the scheme authority." },
+    { "@id": "sfa:DISBURSEMENT_INITIATED",  "@type": "sfa:ApplicationStatus", "rdfs:label": "Disbursement Initiated",    "rdfs:comment": "Payment or benefit transfer process has been initiated." },
+    { "@id": "sfa:DISBURSED",               "@type": "sfa:ApplicationStatus", "rdfs:label": "Disbursed",                 "rdfs:comment": "Benefit has been successfully disbursed to the beneficiary." },
+    { "@id": "sfa:DISBURSEMENT_FAILED",     "@type": "sfa:ApplicationStatus", "rdfs:label": "Disbursement Failed",       "rdfs:comment": "Disbursement attempt failed (e.g., invalid bank account)." },
+    { "@id": "sfa:CLOSED",                  "@type": "sfa:ApplicationStatus", "rdfs:label": "Closed",                    "rdfs:comment": "Application lifecycle completed (may be after successful disbursement or final rejection)." },
+
+    {
+      "@id": "sfa:AgentType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Agent Type",
+      "rdfs:comment": "Category of agent assisting with scheme application."
+    },
+    { "@id": "sfa:FIELD_AGENT",     "@type": "sfa:AgentType", "rdfs:label": "Field Agent",         "rdfs:comment": "Privately employed field executive from a scheme aggregator platform." },
+    { "@id": "sfa:CSC_OPERATOR",    "@type": "sfa:AgentType", "rdfs:label": "CSC Operator",        "rdfs:comment": "Village Level Entrepreneur (VLE) operating a Common Service Centre." },
+    { "@id": "sfa:BANK_OFFICER",    "@type": "sfa:AgentType", "rdfs:label": "Bank Officer",        "rdfs:comment": "Bank branch officer or Business Correspondent." },
+    { "@id": "sfa:GOVERNMENT_STAFF","@type": "sfa:AgentType", "rdfs:label": "Government Staff",    "rdfs:comment": "Government employee at block/district level." },
+    { "@id": "sfa:NGO_WORKER",      "@type": "sfa:AgentType", "rdfs:label": "NGO Worker",          "rdfs:comment": "Field worker from a civil society or NGO partner." }
+  ]
+}

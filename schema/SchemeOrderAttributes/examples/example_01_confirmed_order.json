@@ -1,0 +1,18 @@
+{
+  "@context": [
+    "https://schema.beckn.io/core/v2/context.jsonld",
+    "https://schema.beckn.io/SchemeOrderAttributes/v1/context.jsonld"
+  ],
+  "message": {
+    "order": {
+      "id": "ord-pmjay-mh-20250618-001",
+      "orderAttributes": {
+        "sor:schemeApplicationStatus": "SUBMITTED",
+        "sor:governmentApplicationId": "PMJAY-MH-2025-00123456",
+        "sor:applicationSubmissionDate": "2025-06-20T14:30:00Z",
+        "sor:applicantConsentGiven": true,
+        "sor:consentTimestamp": "2025-06-18T10:15:00Z"
+      }
+    }
+  }
+}

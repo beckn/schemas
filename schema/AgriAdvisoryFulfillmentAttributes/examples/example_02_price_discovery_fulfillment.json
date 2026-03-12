@@ -1,0 +1,35 @@
+{
+  "message": {
+    "order": {
+      "fulfillments": [
+        {
+          "fulfillmentAttributes": {
+            "deliveryMode": "IN_APP_DISPLAY",
+            "targetLocation": {
+              "geo": {
+                "type": "Point",
+                "coordinates": [
+                  73.7898,
+                  20.0059
+                ]
+              },
+              "address": {
+                "streetAddress": "house number: 12, Village: Rudrapur",
+                "addressLocality": "Nashik",
+                "addressRegion": "Maharashtra",
+                "addressCountry": "IN",
+                "postalCode": "416506"
+              }
+            },
+            "targetRegionRadiusKm": 100,
+            "requestedLanguage": "mr",
+            "priceQueryTimeRange": {
+              "schema:startDate": "2024-12-01T00:00:00Z",
+              "schema:endDate": "2024-12-31T23:59:59Z"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

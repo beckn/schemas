@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld",
+
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "sfa":   "https://schema.beckn.io/SchemeFulfillmentAttributes#",
+
+    "sfa:SchemeFulfillmentAttributes": { "@id": "sfa:SchemeFulfillmentAttributes" },
+
+    "sfa:schemeDeliveryType":        { "@id": "sfa:schemeDeliveryType",        "@type": "@vocab" },
+    "sfa:disbursementMode":          { "@id": "sfa:disbursementMode",          "@type": "@vocab" },
+    "sfa:submissionMode":            { "@id": "sfa:submissionMode",            "@type": "@vocab" },
+    "sfa:documentCollectionMode":    { "@id": "sfa:documentCollectionMode",    "@type": "@vocab" },
+    "sfa:applicationStatus":         { "@id": "sfa:applicationStatus",         "@type": "@vocab" },
+    "sfa:statusNote":                { "@id": "sfa:statusNote",                "@type": "schema:description" },
+    "sfa:agentDetails":              { "@id": "sfa:agentDetails" },
+    "sfa:applicationPortalReference":{ "@id": "sfa:applicationPortalReference","@type": "schema:identifier" },
+
+    "sfa:agentName":                 { "@id": "schema:name" },
+    "sfa:agentContact":              { "@id": "schema:telephone" },
+    "sfa:agentOrganization":         { "@id": "schema:legalName" },
+    "sfa:agentOrganizationCode":     { "@id": "schema:identifier" },
+    "sfa:agentType":                 { "@id": "sfa:agentType",                 "@type": "@vocab" },
+
+    "SchemeDeliveryType":            "sfa:SchemeDeliveryType",
+    "DisbursementMode":              "sfa:DisbursementMode",
+    "SubmissionMode":                "sfa:SubmissionMode",
+    "DocumentCollectionMode":        "sfa:DocumentCollectionMode",
+    "ApplicationStatus":             "sfa:ApplicationStatus",
+    "AgentType":                     "sfa:AgentType"
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "schema":  "https://schema.org/",
+    "beckn":   "https://schema.beckn.io/",
+    "rdfs":    "http://www.w3.org/2000/01/rdf-schema#",
+    "sia":     "https://schema.beckn.io/SchemeItemAttributes#"
+  },
+  "@graph": [
+
+    {
+      "@id": "sia:SchemeType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Scheme Type",
+      "rdfs:comment": "Functional classification of what a government or NGO scheme provides to beneficiaries."
+    },
+    {
+      "@id": "sia:INSURANCE",
+      "@type": "sia:SchemeType",
+      "rdfs:label": "Insurance",
+      "rdfs:comment": "Scheme provides insurance coverage (crop, health, livestock, etc.)."
+    },
+    {
+      "@id": "sia:DBT_SUBSIDY",
+      "@type": "sia:SchemeType",
+      "rdfs:label": "Direct Benefit Transfer / Subsidy",
+      "rdfs:comment": "Cash, subsidy, or direct monetary transfer to beneficiary's bank account."
+    },
+    {
+      "@id": "sia:EMPLOYMENT_PLACEMENT",
+      "@type": "sia:SchemeType",
+      "rdfs:label": "Employment & Placement",
+      "rdfs:comment": "Job guarantees, apprenticeships, or employment-linked benefits."
+    },
+    {
+      "@id": "sia:SUBSIDIZED_SERVICE",
+      "@type": "sia:SchemeType",
+      "rdfs:label": "Subsidized Service",
+      "rdfs:comment": "Discounts or subsidized access to services (housing, healthcare, utilities)."
+    },
+    {
+      "@id": "sia:IN_KIND_TRANSFER",
+      "@type": "sia:SchemeType",
+      "rdfs:label": "In-Kind Transfer",
+      "rdfs:comment": "Physical goods or commodities provided to beneficiaries (seeds, fertilizers, rations)."
+    },
+    {
+      "@id": "sia:TECHNICAL_ASSISTANCE",
+      "@type": "sia:SchemeType",
+      "rdfs:label": "Technical Assistance",
+      "rdfs:comment": "Expert advisory, extension services, or technical support."
+    },
+    {
+      "@id": "sia:TRAINING_SKILLING",
+      "@type": "sia:SchemeType",
+      "rdfs:label": "Training & Skilling",
+      "rdfs:comment": "Skill development, vocational training, or capacity building programmes."
+    },
+
+    {
+      "@id": "sia:FundingModel",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Funding Model",
+      "rdfs:comment": "Tier of government or organization that funds the scheme."
+    },
+    {
+      "@id": "sia:CENTRAL_SECTOR",
+      "@type": "sia:FundingModel",
+      "rdfs:label": "Central Sector Scheme",
+      "rdfs:comment": "Fully funded by the Central Government; implemented by central agencies."
+    },
+    {
+      "@id": "sia:CENTRALLY_SPONSORED",
+      "@type": "sia:FundingModel",
+      "rdfs:label": "Centrally Sponsored Scheme",
+      "rdfs:comment": "Cost-shared between Central and State Governments; implemented by states."
+    },
+    {
+      "@id": "sia:STATE_SCHEME",
+      "@type": "sia:FundingModel",
+      "rdfs:label": "State Scheme",
+      "rdfs:comment": "Funded and implemented by a state government."
+    },
+    {
+      "@id": "sia:DISTRICT_SCHEME",
+      "@type": "sia:FundingModel",
+      "rdfs:label": "District Scheme",
+      "rdfs:comment": "Funded and implemented at the district administrative level."
+    },
+    {
+      "@id": "sia:NGO_FUNDED",
+      "@type": "sia:FundingModel",
+      "rdfs:label": "NGO Funded",
+      "rdfs:comment": "Funded and run by a non-governmental or civil society organization."
+    },
+    {
+      "@id": "sia:PPP",
+      "@type": "sia:FundingModel",
+      "rdfs:label": "Public-Private Partnership",
+      "rdfs:comment": "Joint scheme funded or delivered by both government and private sector."
+    },
+
+    {
+      "@id": "sia:BeneficiaryType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Target Beneficiary Type",
+      "rdfs:comment": "The entity type(s) that the scheme is designed to benefit."
+    },
+    { "@id": "sia:INDIVIDUAL",      "@type": "sia:BeneficiaryType", "rdfs:label": "Individual",         "rdfs:comment": "A single person." },
+    { "@id": "sia:HOUSEHOLD",       "@type": "sia:BeneficiaryType", "rdfs:label": "Household",          "rdfs:comment": "A family unit sharing a common dwelling." },
+    { "@id": "sia:FARMER_GROUP",    "@type": "sia:BeneficiaryType", "rdfs:label": "Farmer Group",       "rdfs:comment": "A group of farmers organized informally or formally." },
+    { "@id": "sia:SELF_HELP_GROUP", "@type": "sia:BeneficiaryType", "rdfs:label": "Self-Help Group",    "rdfs:comment": "A registered SHG, typically women-led in rural India." },
+    { "@id": "sia:COOPERATIVE",     "@type": "sia:BeneficiaryType", "rdfs:label": "Cooperative",        "rdfs:comment": "A registered farmers' or workers' cooperative society." },
+    { "@id": "sia:SMALL_ENTERPRISE","@type": "sia:BeneficiaryType", "rdfs:label": "Small Enterprise",   "rdfs:comment": "A micro, small, or medium enterprise (MSME)." },
+    { "@id": "sia:ORGANIZATION",    "@type": "sia:BeneficiaryType", "rdfs:label": "Organization",       "rdfs:comment": "Any formal organization entity." },
+
+    {
+      "@id": "sia:ApplicationMode",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Application Mode",
+      "rdfs:comment": "Channel through which a beneficiary can apply for the scheme."
+    },
+    { "@id": "sia:ONLINE_PORTAL",         "@type": "sia:ApplicationMode", "rdfs:label": "Online Portal",           "rdfs:comment": "Application via official web portal." },
+    { "@id": "sia:OFFLINE_FORM",          "@type": "sia:ApplicationMode", "rdfs:label": "Offline Form",            "rdfs:comment": "Paper-based application form." },
+    { "@id": "sia:AGENT_ASSISTED",        "@type": "sia:ApplicationMode", "rdfs:label": "Agent Assisted",          "rdfs:comment": "Assisted by a trained field agent or CSC operator." },
+    { "@id": "sia:GOVERNMENT_OFFICE",     "@type": "sia:ApplicationMode", "rdfs:label": "Government Office",       "rdfs:comment": "Walk-in to relevant government department." },
+    { "@id": "sia:COMMON_SERVICE_CENTER", "@type": "sia:ApplicationMode", "rdfs:label": "Common Service Centre",   "rdfs:comment": "Via a Government of India Common Service Centre (CSC)." },
+
+    {
+      "@id": "sia:BenefitCategory",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Benefit Category",
+      "rdfs:comment": "Sector or life domain in which the scheme delivers its primary benefit."
+    },
+    { "@id": "sia:HEALTH_COVERAGE",   "@type": "sia:BenefitCategory", "rdfs:label": "Health Coverage",    "rdfs:comment": "Medical insurance or health service access." },
+    { "@id": "sia:CROP_INSURANCE",    "@type": "sia:BenefitCategory", "rdfs:label": "Crop Insurance",     "rdfs:comment": "Protection against crop loss from weather or pests." },
+    { "@id": "sia:INCOME_SUPPORT",    "@type": "sia:BenefitCategory", "rdfs:label": "Income Support",     "rdfs:comment": "Direct cash transfers to supplement or replace income." },
+    { "@id": "sia:HOUSING",           "@type": "sia:BenefitCategory", "rdfs:label": "Housing",            "rdfs:comment": "Support for construction, repair, or access to housing." },
+    { "@id": "sia:EDUCATION",         "@type": "sia:BenefitCategory", "rdfs:label": "Education",          "rdfs:comment": "Scholarships, tuition fee reimbursement, or school materials." },
+    { "@id": "sia:SKILL_TRAINING",    "@type": "sia:BenefitCategory", "rdfs:label": "Skill Training",     "rdfs:comment": "Vocational or livelihood skill development." },
+    { "@id": "sia:EMPLOYMENT",        "@type": "sia:BenefitCategory", "rdfs:label": "Employment",         "rdfs:comment": "Guaranteed employment days or job placement." },
+    { "@id": "sia:FOOD_NUTRITION",    "@type": "sia:BenefitCategory", "rdfs:label": "Food & Nutrition",   "rdfs:comment": "Subsidized food rations or nutrition supplements." },
+    { "@id": "sia:SOCIAL_SECURITY",   "@type": "sia:BenefitCategory", "rdfs:label": "Social Security",    "rdfs:comment": "Pension, disability benefits, or survivor benefits." },
+    { "@id": "sia:INFRASTRUCTURE",    "@type": "sia:BenefitCategory", "rdfs:label": "Infrastructure",     "rdfs:comment": "Rural roads, irrigation, electrification access." },
+    { "@id": "sia:EQUIPMENT_SUBSIDY", "@type": "sia:BenefitCategory", "rdfs:label": "Equipment Subsidy",  "rdfs:comment": "Subsidized farm equipment, tools, or inputs." }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": "https://schema.beckn.io/SchemeOfferAttributes/v1",
+  "name": "Scheme Offer Attributes",
+  "version": "1.0.0",
+  "description": "Eligibility criteria, benefit quantum, and application window for government/NGO scheme offers.",
+  "domain": "agri-schemes",
+  "included_schemas": [
+    "https://schema.beckn.io/SchemeItemAttributes/v1",
+    "https://schema.beckn.io/SchemeOfferAttributes/v1",
+    "https://schema.beckn.io/SchemeFulfillmentAttributes/v1",
+    "https://schema.beckn.io/SchemeOrderAttributes/v1"
+  ],
+  "discovery_fields": [
+    "beckn:offerAttributes.soa:eligibilityCriteria.soa:demographicCriteria.soa:gender",
+    "beckn:offerAttributes.soa:eligibilityCriteria.soa:economicCriteria.soa:rationCardType",
+    "beckn:offerAttributes.soa:benefitQuantum.soa:benefitType",
+    "beckn:eligibleRegion"
+  ],
+  "indexable_paths": [
+    "beckn:id",
+    "beckn:offerAttributes.soa:eligibilityCriteria.soa:demographicCriteria.soa:gender",
+    "beckn:offerAttributes.soa:eligibilityCriteria.soa:demographicCriteria.soa:casteCategory",
+    "beckn:offerAttributes.soa:eligibilityCriteria.soa:economicCriteria.soa:rationCardType",
+    "beckn:offerAttributes.soa:eligibilityCriteria.soa:economicCriteria.soa:landOwnership",
+    "beckn:offerAttributes.soa:eligibilityCriteria.soa:professionalCriteria.soa:occupationType",
+    "beckn:offerAttributes.soa:eligibilityCriteria.soa:residencyCriteria.soa:statesOfResidence",
+    "beckn:offerAttributes.soa:benefitQuantum.soa:benefitType",
+    "beckn:offerAttributes.soa:benefitQuantum.soa:benefitPeriod",
+    "beckn:validity"
+  ],
+  "filterable_paths": [
+    "beckn:offerAttributes.soa:eligibilityCriteria.soa:demographicCriteria.soa:gender",
+    "beckn:offerAttributes.soa:eligibilityCriteria.soa:demographicCriteria.soa:casteCategory",
+    "beckn:offerAttributes.soa:eligibilityCriteria.soa:demographicCriteria.soa:minAge",
+    "beckn:offerAttributes.soa:eligibilityCriteria.soa:demographicCriteria.soa:maxAge",
+    "beckn:offerAttributes.soa:eligibilityCriteria.soa:economicCriteria.soa:rationCardType",
+    "beckn:offerAttributes.soa:eligibilityCriteria.soa:economicCriteria.soa:landOwnership",
+    "beckn:offerAttributes.soa:eligibilityCriteria.soa:economicCriteria.soa:annualIncomeMax",
+    "beckn:offerAttributes.soa:eligibilityCriteria.soa:professionalCriteria.soa:occupationType",
+    "beckn:offerAttributes.soa:eligibilityCriteria.soa:professionalCriteria.soa:enterpriseCategory",
+    "beckn:offerAttributes.soa:eligibilityCriteria.soa:residencyCriteria.soa:statesOfResidence",
+    "beckn:offerAttributes.soa:benefitQuantum.soa:benefitType",
+    "beckn:eligibleRegion"
+  ],
+  "sortable_paths": [
+    "beckn:offerAttributes.soa:benefitQuantum.soa:monetaryAmount.value",
+    "beckn:validity.schema:endDate"
+  ],
+  "privacy_notes": [
+    "soa:eligibilityCriteria contains applicant-profile parameters sent in search intent — treat as PII when populated with real applicant data.",
+    "soa:eligibilityCriteria.soa:identityCriteria fields (Aadhaar, VoterId) are sensitive identity indicators — do not log or index.",
+    "soa:economicCriteria.soa:annualIncomeMax is an applicant-provided financial figure — handle with care."
+  ]
+}

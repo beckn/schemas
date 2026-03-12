@@ -1,0 +1,37 @@
+{
+  "schema": "AgriAdvisoryOfferAttributes",
+  "version": "1.0.0",
+  "card_template": {
+    "title":    "{{beckn:descriptor.schema:name}}",
+    "subtitle": "{{beckn:offerAttributes.pricingModel}} · {{beckn:offerAttributes.accessType}}",
+    "badge":    "{{beckn:price.currency}} {{beckn:price.value}}",
+    "body":     "License: {{beckn:offerAttributes.contentLicense}}"
+  },
+  "detail_template": {
+    "pricing_label":    "Pricing Model",
+    "pricing_value":    "{{beckn:offerAttributes.pricingModel}}",
+    "access_label":     "Access Type",
+    "access_value":     "{{beckn:offerAttributes.accessType}}",
+    "price_label":      "Price",
+    "price_value":      "{{beckn:price.currency}} {{beckn:price.value}}",
+    "license_label":    "Content License",
+    "license_value":    "{{beckn:offerAttributes.contentLicense}}",
+    "validity_label":   "Access Validity",
+    "validity_value":   "{{beckn:offerAttributes.accessValidityPeriod.durationISO}}",
+    "trial_label":      "Trial Available",
+    "trial_value":      "{{beckn:offerAttributes.trialAvailable}}",
+    "refund_label":     "Refund Policy",
+    "refund_value":     "Refundable within {{beckn:offerAttributes.cancellationPolicy.refundWindowHours}} hours ({{beckn:offerAttributes.cancellationPolicy.refundPercentage}}%)"
+  },
+  "bindings": [
+    { "placeholder": "beckn:offerAttributes.pricingModel",                              "path": "beckn:offerAttributes.pricingModel" },
+    { "placeholder": "beckn:offerAttributes.accessType",                                "path": "beckn:offerAttributes.accessType" },
+    { "placeholder": "beckn:offerAttributes.contentLicense",                            "path": "beckn:offerAttributes.contentLicense" },
+    { "placeholder": "beckn:offerAttributes.accessValidityPeriod.durationISO",          "path": "beckn:offerAttributes.accessValidityPeriod.durationISO" },
+    { "placeholder": "beckn:offerAttributes.trialAvailable",                            "path": "beckn:offerAttributes.trialAvailable" },
+    { "placeholder": "beckn:offerAttributes.cancellationPolicy.refundWindowHours",      "path": "beckn:offerAttributes.cancellationPolicy.refundWindowHours" },
+    { "placeholder": "beckn:offerAttributes.cancellationPolicy.refundPercentage",       "path": "beckn:offerAttributes.cancellationPolicy.refundPercentage" },
+    { "placeholder": "beckn:price.value",                                               "path": "beckn:price.value" },
+    { "placeholder": "beckn:price.currency",                                            "path": "beckn:price.currency" }
+  ]
+}

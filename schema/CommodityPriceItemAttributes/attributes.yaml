@@ -1,0 +1,145 @@
+openapi: 3.1.1
+info:
+  title: Commodity Price Item Attributes
+  description: |
+    Extension schema for agricultural commodity price listing items on the
+    Beckn v2 generalized network. Attaches to `beckn:itemAttributes` on a
+    Beckn `Item` entity.
+
+    Each item represents a single commodity's price data at a specific
+    agricultural market (mandi), for a specific observation period.
+    Multiple such items (one per mandi) are returned in a catalog response
+    for a commodity price discovery query.
+
+    Covers:
+      - Commodity identification (name, variety, grade, size)
+      - Market/mandi identification and location
+      - Observation time window
+
+    Pricing ranges (min/max/average) live in `CommodityMarketOfferAttributes`.
+  version: 1.0.0
+  contact:
+    name: Beckn Protocol
+    url: https://becknprotocol.io
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+components:
+  schemas:
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # TOP-LEVEL: attaches to beckn:itemAttributes
+    # ─────────────────────────────────────────────────────────────────────────
+    CommodityPriceItemAttributes:
+      type: object
+      description: >
+        Intrinsic attributes of a commodity market price data item.
+        Describes the commodity (what), the market/mandi (where), and the
+        observation period (when). Price ranges (min/max/average) belong in
+        the associated `CommodityMarketOfferAttributes` on the Offer.
+      x-jsonld-context: "./context.jsonld"
+      x-jsonld-type: "cpia:CommodityPriceItemAttributes"
+      x-beckn-container: itemAttributes
+      required:
+        - commodityName
+        - mandiName
+      additionalProperties: false
+      properties:
+
+        commodityName:
+          type: string
+          description: >
+            Common name of the agricultural commodity.
+          example: "Grapes"
+          x-jsonld-id: "schema:name"
+
+        commodityCode:
+          type: string
+          description: >
+            Standardised commodity code (e.g., AGMARKNET code, FAOSTAT code).
+          example: "GRAPES-001"
+          x-jsonld-id: "schema:identifier"
+
+        commodityVariety:
+          type: string
+          description: >
+            Specific variety or cultivar of the commodity.
+          example: "Thompson Seedless"
+          x-jsonld-id: "cpia:commodityVariety"
+
+        commodityGrade:
+          type: string
+          description: >
+            Quality grade of the commodity at the time of price observation.
+          example: "Grade A"
+          x-jsonld-id: "cpia:commodityGrade"
+
+        commoditySize:
+          type: string
+          description: >
+            Physical size range descriptor for the commodity (where applicable).
+          example: "18 to 25 mm"
+          x-jsonld-id: "cpia:commoditySize"
+
+        unitOfMeasure:
+          type: string
+          description: >
+            Unit for which the price is quoted (e.g., per Quintal, per Kg, per Dozen).
+          example: "per Quintal"
+          x-jsonld-id: "schema:unitText"
+
+        mandiName:
+          type: string
+          description: >
+            Common name of the agricultural market (mandi) where this price
+            was recorded.
+          example: "Nashik APMC"
+          x-jsonld-id: "cpia:mandiName"
+
+        mandiCode:
+          type: string
+          description: >
+            Official code of the mandi (e.g., APMC code or AGMARKNET market ID).
+          example: "MAH-NASHIK-001"
+          x-jsonld-id: "cpia:mandiCode"
+
+        priceObservationPeriod:
+          description: >
+            Date range during which the price data was recorded or is valid.
+            References core TimePeriod — do not redefine.
+          type: object
+          properties:
+            "schema:startDate":
+              type: string
+              format: date-time
+              example: "2024-02-12T00:00:00Z"
+            "schema:endDate":
+              type: string
+              format: date-time
+              example: "2024-02-17T23:59:59Z"
+          x-jsonld-id: "cpia:priceObservationPeriod"
+
+        priceSource:
+          type: string
+          description: >
+            Name of the data source from which prices are sourced
+            (e.g., AGMARKNET, e-NAM, National Horticulture Board).
+          example: "AGMARKNET"
+          x-jsonld-id: "schema:publisher"
+
+        dataLicense:
+          type: string
+          description: >
+            License under which the price data is published.
+          example: "Government Open Data License India (GODL)"
+          x-jsonld-id: "schema:license"
+
+        languages:
+          type: array
+          description: >
+            ISO 639-1 language codes in which this price listing is available.
+          items:
+            type: string
+            example: "en"
+          x-jsonld-id: "schema:inLanguage"

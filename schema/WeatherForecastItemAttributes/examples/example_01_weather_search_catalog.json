@@ -1,0 +1,44 @@
+{
+  "message": {
+    "catalog": {
+      "providers": [
+        {
+          "items": [
+            {
+              "itemAttributes": {
+                "forecastType": "WEATHER_FORECAST",
+                "forecastDurationDays": 14,
+                "forecastDurationISO": "P14D",
+                "forecastResolution": "HYPERLOCAL",
+                "weatherDataPoints": [
+                  "TEMPERATURE_MAX",
+                  "TEMPERATURE_MIN",
+                  "HUMIDITY",
+                  "RAINFALL",
+                  "WIND_SPEED",
+                  "WIND_DIRECTION",
+                  "EVAPOTRANSPIRATION"
+                ],
+                "outputFormats": [
+                  "PDF",
+                  "JSON_API",
+                  "IN_APP_DISPLAY"
+                ],
+                "languages": [
+                  "en",
+                  "mr",
+                  "hi"
+                ],
+                "providerLicense": "PROPRIETARY",
+                "modelSource": "Amicus Ensemble + IMD",
+                "updateFrequency": "PT6H",
+                "historicalDataAvailable": false,
+                "accreditedBy": "India Meteorological Department (IMD)"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

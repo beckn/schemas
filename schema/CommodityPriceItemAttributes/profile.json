@@ -1,0 +1,45 @@
+{
+  "id": "https://schema.beckn.io/CommodityPriceItemAttributes/v1",
+  "name": "Commodity Price Item Attributes",
+  "version": "1.0.0",
+  "description": "Attribute pack for commodity market price data items representing mandi prices on the agri-advisory Beckn network.",
+  "domain": "advisory:agri",
+  "included_schemas": [
+    "CommodityPriceItemAttributes"
+  ],
+  "discovery_fields": [
+    "beckn:descriptor.schema:name",
+    "beckn:itemAttributes.commodityName",
+    "beckn:itemAttributes.commodityVariety",
+    "beckn:itemAttributes.commodityGrade",
+    "beckn:itemAttributes.mandiName"
+  ],
+  "indexable_paths": [
+    "beckn:id",
+    "beckn:descriptor.schema:name",
+    "beckn:itemAttributes.commodityName",
+    "beckn:itemAttributes.commodityCode",
+    "beckn:itemAttributes.commodityVariety",
+    "beckn:itemAttributes.commodityGrade",
+    "beckn:itemAttributes.commoditySize",
+    "beckn:itemAttributes.mandiName",
+    "beckn:itemAttributes.mandiCode",
+    "beckn:availableAt",
+    "beckn:itemAttributes.priceObservationPeriod"
+  ],
+  "filterable_paths": [
+    "beckn:itemAttributes.commodityName",
+    "beckn:itemAttributes.commodityVariety",
+    "beckn:itemAttributes.commodityGrade",
+    "beckn:itemAttributes.mandiName",
+    "beckn:itemAttributes.mandiCode",
+    "beckn:availableAt",
+    "beckn:itemAttributes.priceObservationPeriod.schema:startDate",
+    "beckn:itemAttributes.priceObservationPeriod.schema:endDate",
+    "beckn:itemAttributes.languages"
+  ],
+  "sortable_paths": [
+    "beckn:itemAttributes.priceObservationPeriod.schema:startDate"
+  ],
+  "privacy_notes": []
+}

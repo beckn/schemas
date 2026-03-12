@@ -1,0 +1,40 @@
+{
+  "message": {
+    "catalog": {
+      "providers": [
+        {
+          "items": [
+            {
+              "itemAttributes": {
+                "forecastType": "AGRO_ADVISORY",
+                "forecastDurationDays": 120,
+                "forecastDurationISO": "P4M",
+                "forecastResolution": "DISTRICT",
+                "weatherDataPoints": [
+                  "RAINFALL",
+                  "TEMPERATURE_MAX",
+                  "TEMPERATURE_MIN",
+                  "HUMIDITY",
+                  "SOIL_MOISTURE"
+                ],
+                "outputFormats": [
+                  "PDF",
+                  "EMAIL_REPORT"
+                ],
+                "languages": [
+                  "en",
+                  "mr"
+                ],
+                "providerLicense": "GOVERNMENT",
+                "modelSource": "IMD Long-Range Forecast",
+                "updateFrequency": "P30D",
+                "historicalDataAvailable": true,
+                "accreditedBy": "India Meteorological Department (IMD)"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

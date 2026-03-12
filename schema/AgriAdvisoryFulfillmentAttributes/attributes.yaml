@@ -1,0 +1,178 @@
+openapi: 3.1.1
+info:
+  title: Agri Advisory Fulfillment Attributes
+  description: |
+    Extension schema for fulfillment attributes for all three agri advisory
+    use cases on the Beckn v2 network. Attaches to `beckn:deliveryAttributes`
+    on a Beckn `Fulfillment` entity (mode: DIGITAL).
+
+    Shared across:
+      - UC1: Crop/Disease advisory (digital content delivery)
+      - UC2: Commodity price listing (location-bound price discovery)
+      - UC3: Weather forecast data (location-specific digital delivery)
+
+    Covers:
+      - Delivery mode (how the digital content is delivered)
+      - Target location (farm GPS or region for location-specific advisories,
+        price queries, and weather forecasts)
+      - Target region radius (for proximity-based price discovery queries)
+      - Content access URL (post-fulfillment link to the delivered content)
+      - Content expiry (when access to delivered content expires)
+      - Requested delivery language (for language-specific content delivery)
+
+    All agri advisory fulfillments use `beckn:Fulfillment.beckn:mode: DIGITAL`.
+    Physical logistics are not involved.
+  version: 1.0.0
+  contact:
+    name: Beckn Protocol
+    url: https://becknprotocol.io
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+components:
+  schemas:
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # TOP-LEVEL: attaches to beckn:Fulfillment.beckn:deliveryAttributes
+    # ─────────────────────────────────────────────────────────────────────────
+    AgriAdvisoryFulfillmentAttributes:
+      type: object
+      description: >
+        Fulfillment execution metadata for digital agri advisory content delivery.
+        Covers the delivery mode, target location (for location-specific services),
+        content access details, and delivery language preferences.
+      x-jsonld-context: "./context.jsonld"
+      x-jsonld-type: "aafa:AgriAdvisoryFulfillmentAttributes"
+      x-beckn-container: fulfillmentAttributes
+      required:
+        - deliveryMode
+      additionalProperties: false
+      properties:
+
+        deliveryMode:
+          type: string
+          description: >
+            How the digital advisory content or data is delivered to the
+            beneficiary.
+          enum:
+            - DIGITAL_LINK
+            - API_RESPONSE
+            - PDF_DOWNLOAD
+            - SMS
+            - PUSH_NOTIFICATION
+            - IN_APP_DISPLAY
+            - EMAIL_ATTACHMENT
+          x-jsonld-id: "aafa:deliveryMode"
+
+        targetLocation:
+          description: >
+            Geographic location for which the advisory, price data, or weather
+            forecast is requested. Supports two complementary forms that may
+            be used independently or together:
+
+            - geo: GeoJSON Point/Polygon for GPS-based location (preferred for
+              hyperlocal and spatial discovery).
+            - areaCodes: one or more CodedValue entries using administrative
+              coding systems (LGD district/sub-district/village, India Post PIN)
+              for location reference by administrative identity rather than
+              coordinates. Preferred when GPS is unavailable or when the buyer
+              is specifying a known administrative unit.
+
+            Use cases:
+              - UC1 (Pest Forecast): farm GPS point, or LGD village/sub-district code
+              - UC2 (Price Discovery): mandi GPS point or LGD district code
+              - UC3 (Weather Forecast): farm GPS point, or LGD district/sub-district code
+          type: object
+          properties:
+            "@type":
+              type: string
+              enum: ["beckn:Location"]
+            geo:
+              type: object
+              description: GeoJSON geometry (Point or Polygon) per RFC 7946.
+              properties:
+                type:
+                  type: string
+                  enum: ["Point", "Polygon", "MultiPolygon"]
+                coordinates:
+                  type: array
+            areaCodes:
+              type: array
+              description: >
+                Administrative area codes identifying the target location.
+                Each entry is a CodedValue. Recommended systems for UAI:
+                  - https://lgdirectory.gov.in  (@type: LGDDistrict,
+                    LGDSubDistrict, LGDVillage)
+                  - https://www.indiapost.gov.in (@type: PINCode)
+              items:
+                $ref: "../agri-common/CodedValue/attributes.yaml#/components/schemas/CodedValue"
+            address:
+              type: object
+              description: Optional human-readable postal address.
+          x-jsonld-id: "aafa:targetLocation"
+
+        targetRegionRadiusKm:
+          type: number
+          minimum: 0
+          description: >
+            Search radius in kilometres around the `targetLocation` point.
+            Used for proximity-based price discovery (UC2) or regional
+            advisory queries. A value of 0 means exact location match only.
+          example: 100
+          x-jsonld-id: "aafa:targetRegionRadiusKm"
+
+        requestedLanguage:
+          type: string
+          description: >
+            ISO 639-1 language code of the language in which the buyer
+            wishes to receive the advisory content or report.
+          example: "mr"
+          x-jsonld-id: "schema:inLanguage"
+
+        contentAccessUrl:
+          type: string
+          format: uri
+          description: >
+            URL at which the fulfilled content (PDF, report, API endpoint)
+            can be accessed by the buyer post-confirmation. For free
+            advisories this may be present in the catalog; for paid items
+            it is provided after order confirmation.
+          example: "https://amicusagro.info/reports/forecast-ORD-12345.pdf"
+          x-jsonld-id: "schema:contentUrl"
+
+        contentAccessExpiry:
+          type: string
+          format: date-time
+          description: >
+            Date-time after which the contentAccessUrl will no longer be valid.
+            Relevant for time-limited access (e.g., a 30-day forecast report link).
+          example: "2024-04-01T23:59:59Z"
+          x-jsonld-id: "schema:expires"
+
+        deliveryConfirmation:
+          type: string
+          description: >
+            Confirmation reference or identifier issued by the BPP once
+            content has been delivered successfully.
+          example: "DELIVERY-REF-9876543210"
+          x-jsonld-id: "schema:confirmationNumber"
+
+        priceQueryTimeRange:
+          description: >
+            Date range for which price data is being requested or has been
+            fulfilled (UC2 specific). Expressed as start/end date-times.
+          type: object
+          additionalProperties: false
+          properties:
+            "schema:startDate":
+              type: string
+              format: date-time
+              example: "2024-12-01T00:00:00Z"
+              x-jsonld-id: "schema:startDate"
+            "schema:endDate":
+              type: string
+              format: date-time
+              example: "2024-12-31T23:59:59Z"
+              x-jsonld-id: "schema:endDate"
+          x-jsonld-id: "aafa:priceQueryTimeRange"

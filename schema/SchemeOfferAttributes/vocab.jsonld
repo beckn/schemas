@@ -1,0 +1,67 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "schema": "https://schema.org/",
+    "beckn":  "https://schema.beckn.io/",
+    "rdfs":   "http://www.w3.org/2000/01/rdf-schema#",
+    "soa":    "https://schema.beckn.io/SchemeOfferAttributes#"
+  },
+  "@graph": [
+
+    { "@id": "soa:CasteCategory", "@type": "rdfs:Class", "rdfs:label": "Caste Category", "rdfs:comment": "Social classification categories used in India for welfare targeting." },
+    { "@id": "soa:GENERAL", "@type": "soa:CasteCategory", "rdfs:label": "General", "rdfs:comment": "General / Unreserved category." },
+    { "@id": "soa:OBC",     "@type": "soa:CasteCategory", "rdfs:label": "OBC",     "rdfs:comment": "Other Backward Class." },
+    { "@id": "soa:SC",      "@type": "soa:CasteCategory", "rdfs:label": "SC",      "rdfs:comment": "Scheduled Caste." },
+    { "@id": "soa:ST",      "@type": "soa:CasteCategory", "rdfs:label": "ST",      "rdfs:comment": "Scheduled Tribe." },
+    { "@id": "soa:EWS",     "@type": "soa:CasteCategory", "rdfs:label": "EWS",     "rdfs:comment": "Economically Weaker Section." },
+
+    { "@id": "soa:RationCardType", "@type": "rdfs:Class", "rdfs:label": "Ration Card Type", "rdfs:comment": "Type of Public Distribution System ration card held by the household." },
+    { "@id": "soa:BELOW_POVERTY_LINE",  "@type": "soa:RationCardType", "rdfs:label": "Below Poverty Line (BPL)",   "rdfs:comment": "BPL ration card held by household." },
+    { "@id": "soa:ANTYODAYA",           "@type": "soa:RationCardType", "rdfs:label": "Antyodaya Anna Yojana (AAY)","rdfs:comment": "Issued to the poorest of the poor households." },
+    { "@id": "soa:ABOVE_POVERTY_LINE",  "@type": "soa:RationCardType", "rdfs:label": "Above Poverty Line (APL)",  "rdfs:comment": "APL ration card." },
+    { "@id": "soa:PRIORITY_HOUSEHOLD",  "@type": "soa:RationCardType", "rdfs:label": "Priority Household (PHH)",  "rdfs:comment": "Priority Household under NFSA." },
+    { "@id": "soa:NONE_REQUIRED",       "@type": "soa:RationCardType", "rdfs:label": "None Required",             "rdfs:comment": "No ration card required for this scheme." },
+
+    { "@id": "soa:OccupationType", "@type": "rdfs:Class", "rdfs:label": "Occupation Type", "rdfs:comment": "Occupational category or job type for professional eligibility." },
+    { "@id": "soa:FARMER",              "@type": "soa:OccupationType", "rdfs:label": "Farmer",                "rdfs:comment": "Cultivator of land (owned or leased)." },
+    { "@id": "soa:AGRICULTURAL_LABOURER","@type": "soa:OccupationType","rdfs:label": "Agricultural Labourer", "rdfs:comment": "Landless farm worker." },
+    { "@id": "soa:DAIRY_FARMER",        "@type": "soa:OccupationType", "rdfs:label": "Dairy Farmer",          "rdfs:comment": "Engaged in dairy or animal husbandry." },
+    { "@id": "soa:FISHERMAN",           "@type": "soa:OccupationType", "rdfs:label": "Fisherman",             "rdfs:comment": "Engaged in fishing." },
+    { "@id": "soa:CARPENTER",           "@type": "soa:OccupationType", "rdfs:label": "Carpenter",             "rdfs:comment": "Wood-working artisan." },
+    { "@id": "soa:ARTISAN",             "@type": "soa:OccupationType", "rdfs:label": "Artisan",               "rdfs:comment": "Skilled craft worker (weaver, potter, blacksmith, etc.)." },
+    { "@id": "soa:SELF_EMPLOYED",       "@type": "soa:OccupationType", "rdfs:label": "Self-Employed",         "rdfs:comment": "Running own business or trade." },
+    { "@id": "soa:DAILY_WAGE_WORKER",   "@type": "soa:OccupationType", "rdfs:label": "Daily Wage Worker",     "rdfs:comment": "Earns daily wages without long-term employment." },
+
+    { "@id": "soa:EnterpriseCategory", "@type": "rdfs:Class", "rdfs:label": "Enterprise Category", "rdfs:comment": "Sector of business or enterprise activity." },
+    { "@id": "soa:AGRICULTURE",         "@type": "soa:EnterpriseCategory", "rdfs:label": "Agriculture",          "rdfs:comment": "Crop cultivation and related farming activities." },
+    { "@id": "soa:AGRICULTURE_ALLIED",  "@type": "soa:EnterpriseCategory", "rdfs:label": "Agriculture Allied",   "rdfs:comment": "Dairy, poultry, fisheries, beekeeping, etc." },
+    { "@id": "soa:HORTICULTURE",        "@type": "soa:EnterpriseCategory", "rdfs:label": "Horticulture",         "rdfs:comment": "Fruits, vegetables, flowers, plantation crops." },
+    { "@id": "soa:ANIMAL_HUSBANDRY",    "@type": "soa:EnterpriseCategory", "rdfs:label": "Animal Husbandry",     "rdfs:comment": "Livestock rearing and management." },
+    { "@id": "soa:FOOD_PROCESSING",     "@type": "soa:EnterpriseCategory", "rdfs:label": "Food Processing",      "rdfs:comment": "Value-added food production." },
+
+    { "@id": "soa:BenefitType", "@type": "rdfs:Class", "rdfs:label": "Benefit Type", "rdfs:comment": "Primary form of quantifiable benefit delivered by the scheme." },
+    { "@id": "soa:CASH_TRANSFER",       "@type": "soa:BenefitType", "rdfs:label": "Cash Transfer",       "rdfs:comment": "Direct cash payment to beneficiary's bank account." },
+    { "@id": "soa:INSURANCE_COVER",     "@type": "soa:BenefitType", "rdfs:label": "Insurance Cover",     "rdfs:comment": "Insurance coverage up to a defined maximum amount." },
+    { "@id": "soa:SUBSIDY_PERCENTAGE",  "@type": "soa:BenefitType", "rdfs:label": "Subsidy Percentage",  "rdfs:comment": "A percentage of cost is subsidized." },
+    { "@id": "soa:IN_KIND",             "@type": "soa:BenefitType", "rdfs:label": "In-Kind",             "rdfs:comment": "Physical goods, rations, or equipment provided." },
+    { "@id": "soa:EMPLOYMENT_DAYS",     "@type": "soa:BenefitType", "rdfs:label": "Employment Days",     "rdfs:comment": "Guaranteed number of employment days." },
+    { "@id": "soa:MIXED",               "@type": "soa:BenefitType", "rdfs:label": "Mixed",               "rdfs:comment": "Combination of multiple benefit types." },
+
+    { "@id": "soa:BenefitPeriod", "@type": "rdfs:Class", "rdfs:label": "Benefit Period", "rdfs:comment": "Duration over which the benefit quantum is calculated or provided." },
+    { "@id": "soa:PER_EPISODE",   "@type": "soa:BenefitPeriod", "rdfs:label": "Per Episode",  "rdfs:comment": "Per hospitalization, disaster, or incident episode." },
+    { "@id": "soa:PER_ANNUM",     "@type": "soa:BenefitPeriod", "rdfs:label": "Per Annum",    "rdfs:comment": "Per year / policy year." },
+    { "@id": "soa:PER_SEASON",    "@type": "soa:BenefitPeriod", "rdfs:label": "Per Season",   "rdfs:comment": "Per agricultural season (Kharif / Rabi)." },
+    { "@id": "soa:LIFETIME",      "@type": "soa:BenefitPeriod", "rdfs:label": "Lifetime",     "rdfs:comment": "Benefit is a one-time lifetime entitlement." },
+    { "@id": "soa:ONE_TIME",      "@type": "soa:BenefitPeriod", "rdfs:label": "One-Time",     "rdfs:comment": "Single disbursement or enrollment." },
+
+    { "@id": "soa:EducationLevel", "@type": "rdfs:Class", "rdfs:label": "Education Level", "rdfs:comment": "Maximum academic qualification attained." },
+    { "@id": "soa:NO_FORMAL_EDUCATION", "@type": "soa:EducationLevel", "rdfs:label": "No Formal Education", "rdfs:comment": "No formal schooling." },
+    { "@id": "soa:PRIMARY",             "@type": "soa:EducationLevel", "rdfs:label": "Primary",             "rdfs:comment": "Class 1–5 equivalent." },
+    { "@id": "soa:UPPER_PRIMARY",       "@type": "soa:EducationLevel", "rdfs:label": "Upper Primary",       "rdfs:comment": "Class 6–8 equivalent." },
+    { "@id": "soa:SECONDARY",           "@type": "soa:EducationLevel", "rdfs:label": "Secondary",           "rdfs:comment": "Class 9–10 (SSC/Matric) equivalent." },
+    { "@id": "soa:HIGHER_SECONDARY",    "@type": "soa:EducationLevel", "rdfs:label": "Higher Secondary",    "rdfs:comment": "Class 11–12 (HSC/Intermediate) equivalent." },
+    { "@id": "soa:GRADUATE",            "@type": "soa:EducationLevel", "rdfs:label": "Graduate",            "rdfs:comment": "Bachelor's degree." },
+    { "@id": "soa:POST_GRADUATE",       "@type": "soa:EducationLevel", "rdfs:label": "Post-Graduate",       "rdfs:comment": "Master's degree or equivalent." }
+  ]
+}

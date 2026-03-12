@@ -1,0 +1,56 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "wfia": "https://schema.beckn.io/WeatherForecastItemAttributes#",
+    "WeatherForecastItemAttributes": {
+      "@id": "wfia:WeatherForecastItemAttributes"
+    },
+    "WeatherDataPoint": "wfia:WeatherDataPoint",
+    "WeatherOutputFormat": "wfia:WeatherOutputFormat",
+    "forecastType": {
+      "@id": "wfia:forecastType"
+    },
+    "forecastDurationDays": {
+      "@id": "wfia:forecastDurationDays"
+    },
+    "forecastDurationISO": {
+      "@id": "wfia:forecastDurationISO"
+    },
+    "forecastResolution": {
+      "@id": "wfia:forecastResolution"
+    },
+    "weatherDataPoints": {
+      "@id": "wfia:weatherDataPoints",
+      "@container": "@set"
+    },
+    "outputFormats": {
+      "@id": "wfia:outputFormats",
+      "@container": "@set"
+    },
+    "languages": {
+      "@id": "schema:inLanguage",
+      "@container": "@set"
+    },
+    "providerLicense": {
+      "@id": "wfia:providerLicense"
+    },
+    "modelSource": {
+      "@id": "wfia:modelSource"
+    },
+    "updateFrequency": {
+      "@id": "wfia:updateFrequency"
+    },
+    "historicalDataAvailable": {
+      "@id": "wfia:historicalDataAvailable"
+    },
+    "accreditedBy": {
+      "@id": "schema:recognizingAuthority"
+    },
+    "ForecastType": "wfia:ForecastType",
+    "ForecastResolution": "wfia:ForecastResolution",
+    "ProviderLicense": "wfia:ProviderLicense"
+  }
+}

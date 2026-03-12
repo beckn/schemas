@@ -1,0 +1,41 @@
+{
+  "schema": "CommodityPriceItemAttributes",
+  "version": "1.0.0",
+  "card_template": {
+    "title":     "{{beckn:itemAttributes.commodityName}} — {{beckn:itemAttributes.mandiName}}",
+    "subtitle":  "{{beckn:itemAttributes.commodityVariety}} · {{beckn:itemAttributes.commodityGrade}}",
+    "badge":     "{{beckn:itemAttributes.priceObservationPeriod.schema:startDate}}",
+    "body":      "Size: {{beckn:itemAttributes.commoditySize}} | Unit: {{beckn:itemAttributes.unitOfMeasure}}"
+  },
+  "detail_template": {
+    "heading":          "{{beckn:itemAttributes.commodityName}}",
+    "variety_label":    "Variety",
+    "variety_value":    "{{beckn:itemAttributes.commodityVariety}}",
+    "grade_label":      "Grade",
+    "grade_value":      "{{beckn:itemAttributes.commodityGrade}}",
+    "size_label":       "Size",
+    "size_value":       "{{beckn:itemAttributes.commoditySize}}",
+    "unit_label":       "Unit",
+    "unit_value":       "{{beckn:itemAttributes.unitOfMeasure}}",
+    "mandi_label":      "Market (Mandi)",
+    "mandi_value":      "{{beckn:itemAttributes.mandiName}}",
+    "period_label":     "Observation Period",
+    "period_value":     "{{beckn:itemAttributes.priceObservationPeriod.schema:startDate}} to {{beckn:itemAttributes.priceObservationPeriod.schema:endDate}}",
+    "source_label":     "Data Source",
+    "source_value":     "{{beckn:itemAttributes.priceSource}}",
+    "license_label":    "Data License",
+    "license_value":    "{{beckn:itemAttributes.dataLicense}}"
+  },
+  "bindings": [
+    { "placeholder": "beckn:itemAttributes.commodityName",                          "path": "beckn:itemAttributes.commodityName" },
+    { "placeholder": "beckn:itemAttributes.commodityVariety",                       "path": "beckn:itemAttributes.commodityVariety" },
+    { "placeholder": "beckn:itemAttributes.commodityGrade",                         "path": "beckn:itemAttributes.commodityGrade" },
+    { "placeholder": "beckn:itemAttributes.commoditySize",                          "path": "beckn:itemAttributes.commoditySize" },
+    { "placeholder": "beckn:itemAttributes.unitOfMeasure",                          "path": "beckn:itemAttributes.unitOfMeasure" },
+    { "placeholder": "beckn:itemAttributes.mandiName",                              "path": "beckn:itemAttributes.mandiName" },
+    { "placeholder": "beckn:itemAttributes.priceObservationPeriod.schema:startDate","path": "beckn:itemAttributes.priceObservationPeriod.schema:startDate" },
+    { "placeholder": "beckn:itemAttributes.priceObservationPeriod.schema:endDate",  "path": "beckn:itemAttributes.priceObservationPeriod.schema:endDate" },
+    { "placeholder": "beckn:itemAttributes.priceSource",                            "path": "beckn:itemAttributes.priceSource" },
+    { "placeholder": "beckn:itemAttributes.dataLicense",                            "path": "beckn:itemAttributes.dataLicense" }
+  ]
+}

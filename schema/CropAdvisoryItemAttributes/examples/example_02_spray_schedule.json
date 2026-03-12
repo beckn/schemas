@@ -1,0 +1,43 @@
+{
+  "message": {
+    "catalog": {
+      "providers": [
+        {
+          "items": [
+            {
+              "itemAttributes": {
+                "advisoryCategory": "SPRAY_SCHEDULE",
+                "contentType": "TEXT",
+                "contentMimeType": "text/html",
+                "languages": [
+                  "en",
+                  "mr"
+                ],
+                "targetCrops": [
+                  "grape"
+                ],
+                "targetDiseases": [
+                  "Powdery Mildew"
+                ],
+                "applicableGrowthStages": [
+                  "FLOWERING",
+                  "FRUITING"
+                ],
+                "cropContext": {
+                  "cropName": "grape",
+                  "cropVariety": "Thompson Seedless",
+                  "plantationDate": "2024-07-02T00:00:00Z",
+                  "growthStage": "FLOWERING",
+                  "soilType": "black soil",
+                  "irrigationType": "surface drip",
+                  "diseaseName": "Powdery Mildew"
+                },
+                "advisorySource": "xyz Agri Services"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

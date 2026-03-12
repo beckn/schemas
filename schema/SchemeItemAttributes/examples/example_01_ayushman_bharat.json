@@ -1,0 +1,77 @@
+{
+  "@context": [
+    "https://schema.beckn.io/core/v2/context.jsonld",
+    "https://schema.beckn.io/SchemeItemAttributes/v1/context.jsonld"
+  ],
+  "message": {
+    "catalog": {
+      "providers": [
+        {
+          "id": "bpp-schemefinder-001",
+          "descriptor": {
+            "name": "SchemeFinder",
+            "short_desc": "A Scheme Discovery and Application Service"
+          },
+          "items": [
+            {
+              "id": "scheme-ayushman-bharat-001",
+              "descriptor": {
+                "name": "Ayushman Bharat — Pradhan Mantri Jan Arogya Yojana (PM-JAY)",
+                "short_desc": "Cashless health coverage of up to INR 5 lakhs per family per year.",
+                "long_desc": "PM-JAY provides comprehensive health cover for secondary and tertiary hospitalisation at empanelled public and private hospitals. Fully cashless and paperless."
+              },
+              "category_ids": ["HEALTH_WELFARE"],
+              "fulfillment_ids": ["f2"],
+              "itemAttributes": {
+                "sia:officialSchemeCode": "PM000024",
+                "sia:schemeType": "SUBSIDIZED_SERVICE",
+                "sia:fundingModel": "CENTRAL_SECTOR",
+                "sia:targetBeneficiaryType": ["INDIVIDUAL", "HOUSEHOLD"],
+                "sia:sponsoringMinistry": "Ministry of Health and Family Welfare",
+                "sia:officialPortalUrl": "https://pmjay.gov.in",
+                "sia:applicationModes": [
+                  "ONLINE_PORTAL",
+                  "AGENT_ASSISTED",
+                  "COMMON_SERVICE_CENTER"
+                ],
+                "sia:availableLanguages": ["hi", "en", "mr", "te", "kn", "ta", "gu", "bn"],
+                "sia:requiredDocuments": [
+                  {
+                    "sia:documentCode": "POI",
+                    "sia:documentName": "Proof of Identity",
+                    "sia:documentExample": "Aadhaar Card, Voter ID",
+                    "sia:mandatory": true
+                  },
+                  {
+                    "sia:documentCode": "POR",
+                    "sia:documentName": "Proof of Residence",
+                    "sia:documentExample": "Aadhaar Card, Utility Bill",
+                    "sia:mandatory": true
+                  },
+                  {
+                    "sia:documentCode": "SECC",
+                    "sia:documentName": "SECC Registration",
+                    "sia:documentExample": "SECC-linked Ration Card",
+                    "sia:mandatory": true
+                  },
+                  {
+                    "sia:documentCode": "POC",
+                    "sia:documentName": "Proof of Caste",
+                    "sia:documentExample": "Caste Certificate from Tehsildar",
+                    "sia:mandatory": false
+                  }
+                ],
+                "sia:schemeBenefits": [
+                  {
+                    "sia:benefitCategory": "HEALTH_COVERAGE",
+                    "sia:benefitDescription": "Cashless and paperless hospitalization at empanelled public and private hospitals. Pre- and post-hospitalization expenses covered. Includes most secondary and tertiary care procedures."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

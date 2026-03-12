@@ -1,0 +1,46 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "aaoa": "https://schema.beckn.io/AgriAdvisoryOfferAttributes#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+    {
+      "@id": "aaoa:PricingModel",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Pricing Model",
+      "rdfs:comment": "Top-level business model for an agri advisory offer."
+    },
+    { "@id": "aaoa:FREE",         "@type": "aaoa:PricingModel", "rdfs:label": "Free",         "rdfs:comment": "No charge; open access advisory content." },
+    { "@id": "aaoa:PAID",         "@type": "aaoa:PricingModel", "rdfs:label": "Paid",         "rdfs:comment": "Requires payment to access the advisory content." },
+    { "@id": "aaoa:FREEMIUM",     "@type": "aaoa:PricingModel", "rdfs:label": "Freemium",     "rdfs:comment": "Basic tier is free; premium features require payment." },
+    { "@id": "aaoa:SUBSCRIPTION", "@type": "aaoa:PricingModel", "rdfs:label": "Subscription", "rdfs:comment": "Recurring payment model for ongoing advisory access." },
+
+    {
+      "@id": "aaoa:AccessType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Access Type",
+      "rdfs:comment": "Mechanism by which a buyer gains access to advisory content after accepting an offer."
+    },
+    { "@id": "aaoa:OPEN_ACCESS",          "@type": "aaoa:AccessType", "rdfs:label": "Open Access",          "rdfs:comment": "Content is accessible without authentication or payment." },
+    { "@id": "aaoa:ONE_TIME_PURCHASE",    "@type": "aaoa:AccessType", "rdfs:label": "One-Time Purchase",    "rdfs:comment": "Single payment grants access for the specified validity period." },
+    { "@id": "aaoa:SUBSCRIPTION_ACCESS",  "@type": "aaoa:AccessType", "rdfs:label": "Subscription Access",  "rdfs:comment": "Ongoing subscription provides access while active." },
+    { "@id": "aaoa:API_KEY_ACCESS",       "@type": "aaoa:AccessType", "rdfs:label": "API Key Access",       "rdfs:comment": "Purchase provides an API key for programmatic data access." },
+
+    {
+      "@id": "aaoa:ContentLicense",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Content License",
+      "rdfs:comment": "License governing redistribution and use of advisory content."
+    },
+    { "@id": "aaoa:ALL_RIGHTS_RESERVED", "@type": "aaoa:ContentLicense", "rdfs:label": "All Rights Reserved",  "rdfs:comment": "No redistribution permitted." },
+    { "@id": "aaoa:CC_BY",               "@type": "aaoa:ContentLicense", "rdfs:label": "CC BY",                "rdfs:comment": "Creative Commons Attribution license." },
+    { "@id": "aaoa:CC_BY_NC",            "@type": "aaoa:ContentLicense", "rdfs:label": "CC BY-NC",             "rdfs:comment": "Creative Commons Attribution-NonCommercial license." },
+    { "@id": "aaoa:CC_BY_SA",            "@type": "aaoa:ContentLicense", "rdfs:label": "CC BY-SA",             "rdfs:comment": "Creative Commons Attribution-ShareAlike license." },
+    { "@id": "aaoa:OPEN_GOVERNMENT",     "@type": "aaoa:ContentLicense", "rdfs:label": "Open Government",      "rdfs:comment": "Open Government License (e.g., GODL-India)." },
+    { "@id": "aaoa:PROPRIETARY",         "@type": "aaoa:ContentLicense", "rdfs:label": "Proprietary",          "rdfs:comment": "Commercial proprietary license." }
+  ]
+}

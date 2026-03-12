@@ -1,0 +1,48 @@
+{
+  "id": "https://schema.beckn.io/WeatherForecastItemAttributes/v1",
+  "name": "Weather Forecast Item Attributes",
+  "version": "1.0.0",
+  "description": "Attribute pack for weather data and forecast product items on the Beckn agri-advisory network (UAI). Covers weather forecast, seasonal outlook, agro-advisory, and historical data products.",
+  "domain": "advisory:agri",
+  "included_schemas": [
+    "WeatherForecastItemAttributes",
+    "WeatherDataPoint",
+    "WeatherOutputFormat"
+  ],
+  "discovery_fields": [
+    "beckn:descriptor.schema:name",
+    "beckn:itemAttributes.forecastType",
+    "beckn:itemAttributes.forecastDurationDays",
+    "beckn:itemAttributes.forecastResolution",
+    "beckn:itemAttributes.weatherDataPoints",
+    "beckn:itemAttributes.languages"
+  ],
+  "indexable_paths": [
+    "beckn:id",
+    "beckn:descriptor.schema:name",
+    "beckn:descriptor.beckn:shortDesc",
+    "beckn:itemAttributes.forecastType",
+    "beckn:itemAttributes.forecastDurationDays",
+    "beckn:itemAttributes.forecastResolution",
+    "beckn:itemAttributes.weatherDataPoints",
+    "beckn:itemAttributes.outputFormats",
+    "beckn:itemAttributes.languages",
+    "beckn:itemAttributes.providerLicense",
+    "beckn:itemAttributes.modelSource",
+    "beckn:rating.beckn:ratingValue"
+  ],
+  "filterable_paths": [
+    "beckn:itemAttributes.forecastType",
+    "beckn:itemAttributes.forecastDurationDays",
+    "beckn:itemAttributes.forecastResolution",
+    "beckn:itemAttributes.weatherDataPoints",
+    "beckn:itemAttributes.outputFormats",
+    "beckn:itemAttributes.languages",
+    "beckn:itemAttributes.providerLicense"
+  ],
+  "sortable_paths": [
+    "beckn:rating.beckn:ratingValue",
+    "beckn:itemAttributes.forecastDurationDays"
+  ],
+  "privacy_notes": []
+}

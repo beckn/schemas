@@ -1,0 +1,184 @@
+openapi: 3.1.1
+info:
+  title: SchemeFulfillmentAttributes — Agri Scheme Discovery
+  version: 1.0.0
+  description: |
+    Extension schema for `Fulfillment.deliveryAttributes` in the Agriculture/Government
+    Scheme Discovery vertical (UAI / UKI network). Models how a scheme benefit is
+    physically or digitally delivered to the beneficiary: the disbursement mode, the
+    application submission process, agent details when agent-assisted, and domain-specific
+    fulfillment status codes.
+
+    This schema does NOT model scheme identity (→ SchemeItemAttributes), eligibility
+    (→ SchemeOfferAttributes), or transaction records (→ SchemeOrderAttributes).
+
+x-jsonld-context: "./context.jsonld"
+
+components:
+  schemas:
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # TOP-LEVEL: SchemeFulfillmentAttributes
+    # Attaches to: Fulfillment.deliveryAttributes
+    # ─────────────────────────────────────────────────────────────────────────
+    SchemeFulfillmentAttributes:
+      type: object
+      x-beckn-container: fulfillmentAttributes
+      description: |
+        Execution model attributes for how a scheme benefit is delivered. Covers
+        the type of delivery mechanism (DBT, subsidized service, employment, etc.),
+        the application submission mode, agent details for assisted applications,
+        and domain-specific application status codes.
+      required:
+        - sfa:schemeDeliveryType
+      additionalProperties: false
+      properties:
+
+        "sfa:schemeDeliveryType":
+          type: string
+          description: |
+            How the scheme benefit is delivered to the beneficiary. Corresponds to
+            v1 fulfillment types. This is the primary mode discriminator.
+          enum:
+            - DBT_BANK_TRANSFER
+            - SUBSIDIZED_SERVICE
+            - EMPLOYMENT_PLACEMENT
+            - IN_KIND_COMMODITY
+            - INSURANCE_CLAIM_SETTLEMENT
+            - AGENT_ASSISTED_APPLICATION
+            - DIGITAL_ENTITLEMENT
+          x-jsonld-id: "sfa:schemeDeliveryType"
+
+        "sfa:disbursementMode":
+          type: string
+          description: |
+            Channel through which the monetary benefit is disbursed (for DBT-type schemes).
+          enum:
+            - BANK_TRANSFER_NEFT
+            - BANK_TRANSFER_RTGS
+            - DIRECT_BANK_CREDIT
+            - CHEQUE
+            - COMMODITY_IN_KIND
+            - NOT_APPLICABLE
+          x-jsonld-id: "sfa:disbursementMode"
+
+        # ── Application Submission ────────────────────────────────────────
+
+        "sfa:submissionMode":
+          type: string
+          description: How the scheme application is submitted on behalf of the beneficiary.
+          enum:
+            - SELF_ONLINE
+            - SELF_OFFLINE
+            - AGENT_ASSISTED
+            - GOVERNMENT_OFFICE
+            - BANK_BRANCH
+            - COMMON_SERVICE_CENTER
+          x-jsonld-id: "sfa:submissionMode"
+
+        "sfa:documentCollectionMode":
+          type: string
+          description: How required documents are collected from the applicant.
+          enum:
+            - PHYSICAL_DOORSTEP_COLLECTION
+            - PHYSICAL_OFFICE_SUBMISSION
+            - DIGITAL_UPLOAD
+            - DIGILOCKER_PULL
+            - NOT_REQUIRED
+          x-jsonld-id: "sfa:documentCollectionMode"
+
+        # ── Application Status (domain-specific codes) ────────────────────
+
+        "sfa:applicationStatus":
+          type: string
+          description: |
+            Domain-specific status code for the scheme application lifecycle.
+            Maps to v1 fulfillment.state.descriptor.code values.
+          enum:
+            - BOOKING_CONFIRMED
+            - AGENT_ASSIGNED
+            - DOCUMENTS_REQUESTED
+            - DOCUMENTS_COLLECTED
+            - DOCUMENTS_INVALID
+            - APPLICATION_INITIATED
+            - APPLICATION_SUBMITTED
+            - UNDER_REVIEW
+            - APPROVED
+            - REJECTED
+            - DISBURSEMENT_INITIATED
+            - DISBURSED
+            - DISBURSEMENT_FAILED
+            - CLOSED
+          x-jsonld-id: "sfa:applicationStatus"
+
+        "sfa:statusNote":
+          type: string
+          description: |
+            Human-readable explanation for the current status (especially for
+            DOCUMENTS_INVALID, REJECTED, or DISBURSEMENT_FAILED states).
+          example: "Original land records (7/12) required — photocopy not accepted."
+          x-jsonld-id: "sfa:statusNote"
+
+        # ── Agent Details ─────────────────────────────────────────────────
+
+        "sfa:agentDetails":
+          $ref: "#/components/schemas/SchemeAgent"
+          description: |
+            Details of the field agent or organization assigned to assist with
+            the scheme application. Populated after BOOKING_CONFIRMED.
+          x-jsonld-id: "sfa:agentDetails"
+
+        # ── Scheme-Specific Application Reference ─────────────────────────
+
+        "sfa:applicationPortalReference":
+          type: string
+          description: |
+            Reference ID generated by the government portal or BPP system when the
+            application is first initiated (prior to a formal government application ID).
+          example: "SCHAPP-MH-2025-98765"
+          x-jsonld-id: "sfa:applicationPortalReference"
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # SUB-SCHEMA: SchemeAgent
+    # ─────────────────────────────────────────────────────────────────────────
+    SchemeAgent:
+      type: object
+      description: |
+        Details of the field agent or organization assigned to assist the applicant
+        with the scheme application process.
+      additionalProperties: false
+      properties:
+        "sfa:agentName":
+          type: string
+          description: Full name of the individual agent.
+          example: "Shwetha Patil"
+          x-jsonld-id: "sfa:agentName"
+
+        "sfa:agentContact":
+          type: string
+          description: Contact phone number for the assigned agent.
+          example: "+91-9764356400"
+          x-jsonld-id: "sfa:agentContact"
+
+        "sfa:agentOrganization":
+          type: string
+          description: Name of the organization the agent belongs to.
+          example: "SchemeFinder Field Services"
+          x-jsonld-id: "sfa:agentOrganization"
+
+        "sfa:agentOrganizationCode":
+          type: string
+          description: Internal code for the agent's organization (corresponds to v1 agent.organization.descriptor.code).
+          example: "scheme-finder"
+          x-jsonld-id: "sfa:agentOrganizationCode"
+
+        "sfa:agentType":
+          type: string
+          description: Type of agent assigned for this application.
+          enum:
+            - FIELD_AGENT
+            - CSC_OPERATOR
+            - BANK_OFFICER
+            - GOVERNMENT_STAFF
+            - NGO_WORKER
+          x-jsonld-id: "sfa:agentType"

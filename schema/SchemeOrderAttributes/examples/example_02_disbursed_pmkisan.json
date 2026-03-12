@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://schema.beckn.io/core/v2/context.jsonld",
+    "https://schema.beckn.io/SchemeOrderAttributes/v1/context.jsonld"
+  ],
+  "message": {
+    "order": {
+      "id": "ord-pmkisan-mh-20250301-004",
+      "orderAttributes": {
+        "sor:governmentApplicationId": "PMKISAN-MH-FY2526-0012345",
+        "sor:applicationSubmissionDate": "2025-03-05T11:00:00Z",
+        "sor:schemeApplicationStatus": "DISBURSED",
+        "sor:disbursementRecord": {
+          "sor:disbursementDate": "2025-08-01T00:00:00Z",
+          "sor:disbursedAmount": 2000,
+          "sor:disbursedCurrency": "INR",
+          "sor:governmentTransactionReference": "PFMS2025080100123456",
+          "sor:disbursementInstallment": 2,
+          "sor:totalInstallments": 3
+        },
+        "sor:applicantConsentGiven": true,
+        "sor:consentTimestamp": "2025-03-01T08:05:00Z"
+      }
+    }
+  }
+}

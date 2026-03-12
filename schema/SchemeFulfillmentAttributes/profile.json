@@ -1,0 +1,42 @@
+{
+  "id": "https://schema.beckn.io/SchemeFulfillmentAttributes/v1",
+  "name": "Scheme Fulfillment Attributes",
+  "version": "1.0.0",
+  "description": "Delivery model, application submission mode, agent details, and lifecycle status codes for government/NGO scheme fulfillment.",
+  "domain": "agri-schemes",
+  "included_schemas": [
+    "https://schema.beckn.io/SchemeItemAttributes/v1",
+    "https://schema.beckn.io/SchemeOfferAttributes/v1",
+    "https://schema.beckn.io/SchemeFulfillmentAttributes/v1",
+    "https://schema.beckn.io/SchemeOrderAttributes/v1"
+  ],
+  "discovery_fields": [
+    "beckn:fulfillmentAttributes.sfa:schemeDeliveryType",
+    "beckn:fulfillmentAttributes.sfa:submissionMode",
+    "beckn:fulfillmentAttributes.sfa:applicationStatus"
+  ],
+  "indexable_paths": [
+    "beckn:id",
+    "beckn:fulfillmentAttributes.sfa:schemeDeliveryType",
+    "beckn:fulfillmentAttributes.sfa:submissionMode",
+    "beckn:fulfillmentAttributes.sfa:disbursementMode",
+    "beckn:fulfillmentAttributes.sfa:documentCollectionMode",
+    "beckn:fulfillmentAttributes.sfa:applicationStatus",
+    "beckn:fulfillmentAttributes.sfa:applicationPortalReference"
+  ],
+  "filterable_paths": [
+    "beckn:fulfillmentAttributes.sfa:schemeDeliveryType",
+    "beckn:fulfillmentAttributes.sfa:submissionMode",
+    "beckn:fulfillmentAttributes.sfa:applicationStatus",
+    "beckn:fulfillmentAttributes.sfa:disbursementMode"
+  ],
+  "sortable_paths": [
+    "beckn:updatedAt",
+    "beckn:fulfillmentAttributes.sfa:applicationStatus"
+  ],
+  "privacy_notes": [
+    "sfa:agentDetails.sfa:agentContact is a phone number — handle as PII.",
+    "sfa:agentDetails.sfa:agentName is a personal name — handle as PII.",
+    "beckn:customer.person fields (name, phone) collected in core Fulfillment are PII — do not log."
+  ]
+}
