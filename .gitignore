@@ -52,3 +52,9 @@ Issues/
 
 # Migration artefacts (keep scripts but ignore generated log)
 scripts/migration-log.json
+
+# Local working directories (moved to spec_work/ parent)
+plans/
+github_todos/
+examples/
+scripts/
