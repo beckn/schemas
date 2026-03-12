@@ -1,0 +1,67 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:SupportResponse",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Support Response",
+      "rdfs:comment": "Support response payload returned by a BPP to a BAP in the /beckn/on_support callback."
+    },
+    {
+      "@id": "beckn:@context",
+      "@type": "rdf:Property",
+      "rdfs:label": "@context",
+      "rdfs:comment": "JSON-LD context URI."
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "JSON-LD type identifier."
+    },
+    {
+      "@id": "beckn:refId",
+      "@type": "rdf:Property",
+      "rdfs:label": "ref Id",
+      "rdfs:comment": "Reference identifier against which support was requested."
+    },
+    {
+      "@id": "beckn:ticketId",
+      "@type": "rdf:Property",
+      "rdfs:label": "ticket Id",
+      "rdfs:comment": "Support ticket identifier assigned by the BPP."
+    },
+    {
+      "@id": "beckn:descriptor",
+      "@type": "rdf:Property",
+      "rdfs:label": "descriptor",
+      "rdfs:comment": "Human-readable label for this support response."
+    },
+    {
+      "@id": "beckn:channels",
+      "@type": "rdf:Property",
+      "rdfs:label": "channels",
+      "rdfs:comment": "Available support channels with contact details."
+    },
+    {
+      "@id": "beckn:sla",
+      "@type": "rdf:Property",
+      "rdfs:label": "sla",
+      "rdfs:comment": "Service level agreement for this support response."
+    },
+    {
+      "@id": "beckn:consumer",
+      "@type": "rdf:Property",
+      "rdfs:label": "consumer",
+      "rdfs:comment": "The consumer the support response is addressed to."
+    }
+  ]
+}

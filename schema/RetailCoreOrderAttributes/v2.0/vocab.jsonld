@@ -1,0 +1,67 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:RetailCoreOrderAttributes",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Retail Core Order Attributes",
+      "rdfs:comment": "Retail-specific order attribute pack capturing buyer preferences and supplementary information at the order level."
+    },
+    {
+      "@id": "beckn:@context",
+      "@type": "rdf:Property",
+      "rdfs:label": "@context",
+      "rdfs:comment": "JSON-LD context URI."
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "JSON-LD type identifier."
+    },
+    {
+      "@id": "beckn:buyerInstructions",
+      "@type": "rdf:Property",
+      "rdfs:label": "buyer Instructions",
+      "rdfs:comment": "Free-text instructions from the buyer to the seller."
+    },
+    {
+      "@id": "beckn:deliveryPreferences",
+      "@type": "rdf:Property",
+      "rdfs:label": "delivery Preferences",
+      "rdfs:comment": "Preferences relating to delivery time, instructions, or contactless options."
+    },
+    {
+      "@id": "beckn:gift",
+      "@type": "rdf:Property",
+      "rdfs:label": "gift",
+      "rdfs:comment": "Gifting metadata such as message and wrapping preference."
+    },
+    {
+      "@id": "beckn:invoicePreferences",
+      "@type": "rdf:Property",
+      "rdfs:label": "invoice Preferences",
+      "rdfs:comment": "Invoicing preferences including GST number or billing address."
+    },
+    {
+      "@id": "beckn:loyalty",
+      "@type": "rdf:Property",
+      "rdfs:label": "loyalty",
+      "rdfs:comment": "Loyalty programme details for earning or redeeming points."
+    },
+    {
+      "@id": "beckn:source",
+      "@type": "rdf:Property",
+      "rdfs:label": "source",
+      "rdfs:comment": "Order source attribution details."
+    }
+  ]
+}

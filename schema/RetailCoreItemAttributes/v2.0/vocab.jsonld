@@ -1,0 +1,67 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:RetailCoreItemAttributes",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Retail Core Item Attributes",
+      "rdfs:comment": "Retail-specific item attribute pack for use as Item.itemAttributes in retail domain transactions."
+    },
+    {
+      "@id": "beckn:@context",
+      "@type": "rdf:Property",
+      "rdfs:label": "@context",
+      "rdfs:comment": "JSON-LD context URI."
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "JSON-LD type identifier."
+    },
+    {
+      "@id": "beckn:identity",
+      "@type": "rdf:Property",
+      "rdfs:label": "identity",
+      "rdfs:comment": "Brand and origin information for the item."
+    },
+    {
+      "@id": "beckn:physical",
+      "@type": "rdf:Property",
+      "rdfs:label": "physical",
+      "rdfs:comment": "Weight, volume, dimensions, and appearance of the item."
+    },
+    {
+      "@id": "beckn:food",
+      "@type": "rdf:Property",
+      "rdfs:label": "food",
+      "rdfs:comment": "Food classification such as VEG, NON_VEG, or EGG."
+    },
+    {
+      "@id": "beckn:packagedGoodsDeclaration",
+      "@type": "rdf:Property",
+      "rdfs:label": "packaged Goods Declaration",
+      "rdfs:comment": "Jurisdiction-neutral packaged goods declaration for the item."
+    },
+    {
+      "@id": "beckn:foodRegulatoryDeclaration",
+      "@type": "rdf:Property",
+      "rdfs:label": "food Regulatory Declaration",
+      "rdfs:comment": "Jurisdiction-neutral food regulatory declarations for the item."
+    },
+    {
+      "@id": "beckn:credentials",
+      "@type": "rdf:Property",
+      "rdfs:label": "credentials",
+      "rdfs:comment": "External verifiable credentials or attestations associated with the item."
+    }
+  ]
+}

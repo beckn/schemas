@@ -1,0 +1,16 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "beckn": "https://schema.beckn.io/",
+    "RetailCoreFulfillmentAttributes": "beckn:RetailCoreFulfillmentAttributes",
+    "@context": "@context",
+    "@type": "@type",
+    "supportedFulfillmentTypes": "beckn:supportedFulfillmentTypes",
+    "deliveryDetails": "beckn:deliveryDetails",
+    "operatingHours": "beckn:operatingHours",
+    "closures": "beckn:closures",
+    "sla": "beckn:sla",
+    "handling": "beckn:handling"
+  }
+}

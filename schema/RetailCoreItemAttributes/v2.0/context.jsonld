@@ -1,0 +1,16 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "beckn": "https://schema.beckn.io/",
+    "RetailCoreItemAttributes": "beckn:RetailCoreItemAttributes",
+    "@context": "@context",
+    "@type": "@type",
+    "identity": "beckn:identity",
+    "physical": "beckn:physical",
+    "food": "beckn:food",
+    "packagedGoodsDeclaration": "beckn:packagedGoodsDeclaration",
+    "foodRegulatoryDeclaration": "beckn:foodRegulatoryDeclaration",
+    "credentials": "beckn:credentials"
+  }
+}

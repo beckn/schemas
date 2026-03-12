@@ -1,0 +1,79 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:PaymentTerm",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Payment Term",
+      "rdfs:comment": "A single payment instruction for an order. Represents one line item in the paymentTerms array of an Order."
+    },
+    {
+      "@id": "beckn:@context",
+      "@type": "rdf:Property",
+      "rdfs:label": "@context",
+      "rdfs:comment": "JSON-LD context URI."
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "JSON-LD type identifier."
+    },
+    {
+      "@id": "beckn:id",
+      "@type": "rdf:Property",
+      "rdfs:label": "id",
+      "rdfs:comment": "Unique identifier for this payment term within the order."
+    },
+    {
+      "@id": "beckn:type",
+      "@type": "rdf:Property",
+      "rdfs:label": "type",
+      "rdfs:comment": "Payment lifecycle stage (PRE_ORDER, ON_FULFILLMENT, POST_FULFILLMENT, INSTALLMENT)."
+    },
+    {
+      "@id": "beckn:method",
+      "@type": "rdf:Property",
+      "rdfs:label": "method",
+      "rdfs:comment": "Payment instrument or rail to use (UPI, CREDIT_CARD, CASH, etc.)."
+    },
+    {
+      "@id": "beckn:amount",
+      "@type": "rdf:Property",
+      "rdfs:label": "amount",
+      "rdfs:comment": "Amount due under this payment term."
+    },
+    {
+      "@id": "beckn:due",
+      "@type": "rdf:Property",
+      "rdfs:label": "due",
+      "rdfs:comment": "ISO 8601 date-time by which this payment is due."
+    },
+    {
+      "@id": "beckn:payTo",
+      "@type": "rdf:Property",
+      "rdfs:label": "pay To",
+      "rdfs:comment": "Payee details for this payment term."
+    },
+    {
+      "@id": "beckn:status",
+      "@type": "rdf:Property",
+      "rdfs:label": "status",
+      "rdfs:comment": "Payment status (NOT_PAID, PAID, PENDING, FAILED, REFUNDED, PARTIALLY_PAID)."
+    },
+    {
+      "@id": "beckn:transactionId",
+      "@type": "rdf:Property",
+      "rdfs:label": "transaction Id",
+      "rdfs:comment": "Payment gateway or bank transaction reference ID."
+    }
+  ]
+}

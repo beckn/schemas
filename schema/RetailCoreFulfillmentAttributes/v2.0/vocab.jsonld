@@ -1,0 +1,67 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:RetailCoreFulfillmentAttributes",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Retail Core Fulfillment Attributes",
+      "rdfs:comment": "Retail-specific fulfillment attribute pack describing how a seller fulfills orders, including supported types, delivery details, operating hours, and SLA."
+    },
+    {
+      "@id": "beckn:@context",
+      "@type": "rdf:Property",
+      "rdfs:label": "@context",
+      "rdfs:comment": "JSON-LD context URI."
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "JSON-LD type identifier."
+    },
+    {
+      "@id": "beckn:supportedFulfillmentTypes",
+      "@type": "rdf:Property",
+      "rdfs:label": "supported Fulfillment Types",
+      "rdfs:comment": "Fulfillment types supported by the provider such as HOME_DELIVERY or STORE_PICKUP."
+    },
+    {
+      "@id": "beckn:deliveryDetails",
+      "@type": "rdf:Property",
+      "rdfs:label": "delivery Details",
+      "rdfs:comment": "Details about delivery logistics such as radius, charges, and partner."
+    },
+    {
+      "@id": "beckn:operatingHours",
+      "@type": "rdf:Property",
+      "rdfs:label": "operating Hours",
+      "rdfs:comment": "Operating hours windows during which fulfillment is available."
+    },
+    {
+      "@id": "beckn:closures",
+      "@type": "rdf:Property",
+      "rdfs:label": "closures",
+      "rdfs:comment": "Scheduled closure dates or holidays when fulfillment is unavailable."
+    },
+    {
+      "@id": "beckn:sla",
+      "@type": "rdf:Property",
+      "rdfs:label": "sla",
+      "rdfs:comment": "Service level agreement for fulfillment, including preparation and delivery time."
+    },
+    {
+      "@id": "beckn:handling",
+      "@type": "rdf:Property",
+      "rdfs:label": "handling",
+      "rdfs:comment": "Special handling instructions such as fragile or temperature-controlled."
+    }
+  ]
+}
