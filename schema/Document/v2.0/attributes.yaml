@@ -37,8 +37,8 @@ properties:
         description: e.g., Ed25519, ES256
       keyId:
         type: string
-  required:
-  - label
-  - url
-  - mimeType
+required:
+- label
+- url
+- mimeType
 additionalProperties: false
