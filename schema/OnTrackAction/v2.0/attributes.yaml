@@ -21,7 +21,7 @@ properties:
     properties:
       tracking:
         allOf:
-        - $ref: https://schema.beckn.io/Tracking/v2.0
+        - $ref: https://schema.beckn.io/Tracking/v2.1
     required:
     - tracking
 required:

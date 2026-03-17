@@ -22,7 +22,7 @@ properties:
       ratingInputs:
         type: array
         items:
-          $ref: https://schema.beckn.io/RatingInput/v2.0
+          $ref: https://schema.beckn.io/RatingInput/v2.1
     required:
     - ratingInputs
 required:

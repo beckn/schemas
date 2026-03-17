@@ -22,7 +22,7 @@ properties:
       catalogs:
         type: array
         items:
-          $ref: https://schema.beckn.io/Catalog/v2.0
+          $ref: https://schema.beckn.io/Catalog/v2.1
     required:
     - catalogs
 required:
