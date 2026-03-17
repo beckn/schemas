@@ -80,8 +80,7 @@ properties:
     type: array
     maxItems: 1
     items:
-      allOf:
-      - $ref: "https://schema.beckn.io/LineageEntry/v2.0"
+      $ref: https://schema.beckn.io/LineageEntry/v2.0
 required:
 - action
 - bapId

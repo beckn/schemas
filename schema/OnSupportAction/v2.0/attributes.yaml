@@ -1,7 +1,6 @@
 $id: https://schema.beckn.io/OnSupportAction/v2.0
 $schema: https://json-schema.org/draft/2020-12/schema
-description: 'Beckn /beckn/on_support callback envelope. Sent by a BPP to a BAP in response to a /beckn/support
-  call, returning support contact details and available channels.
+description: 'Beckn /beckn/on_support callback envelope. Sent by a BPP to a BAP in response to a /beckn/support call, returning support contact details and available channels.
 
   '
 title: OnSupportAction
@@ -20,8 +19,7 @@ properties:
     additionalProperties: true
     properties:
       supportInfo:
-        allOf:
-        - $ref: https://schema.beckn.io/SupportInfo/v2.1
+        $ref: https://schema.beckn.io/SupportInfo/v2.1
     required:
     - supportInfo
 required:

@@ -26,19 +26,14 @@ properties:
     items:
       $ref: https://schema.beckn.io/Attributes/v2.0
   start:
-    description: An extensible set of attributes that describe the criteria required to start this stage
-      of fulfillment
-    allOf:
-    - $ref: https://schema.beckn.io/FulfillmentStageEndpoint/v2.0
+    description: An extensible set of attributes that describe the criteria required to start this stage of fulfillment
+    $ref: https://schema.beckn.io/FulfillmentStageEndpoint/v2.0
   end:
-    description: An extensible set of attributes that describe the criteria required to end this stage
-      of fulfillment
-    allOf:
-    - $ref: https://schema.beckn.io/FulfillmentStageEndpoint/v2.0
+    description: An extensible set of attributes that describe the criteria required to end this stage of fulfillment
+    $ref: https://schema.beckn.io/FulfillmentStageEndpoint/v2.0
   fulfillmentStageAttributes:
     description: An extensible set of attributes that describe this stage of fulfillment
-    allOf:
-    - $ref: https://schema.beckn.io/Attributes/v2.0
+    $ref: https://schema.beckn.io/Attributes/v2.0
 x-jsonld:
   '@id': beckn:fulfillmentStage
 required:

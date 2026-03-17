@@ -24,10 +24,9 @@ properties:
       '@id': schema:Duration
   range:
     description: A time range with start and end
-    allOf:
-    - $ref: https://schema.beckn.io/TimePeriod/v2.1
     x-jsonld:
       '@id': beckn:timeRange
+    $ref: https://schema.beckn.io/TimePeriod/v2.1
   label:
     type: string
     description: Human-readable label for this time

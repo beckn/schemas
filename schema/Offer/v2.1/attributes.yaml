@@ -62,8 +62,7 @@ properties:
     minItems: 1
   offerAttributes:
     description: Attribute Pack attachment (pricing models, discounts, rail terms, etc.)
-    allOf:
-    - $ref: https://schema.beckn.io/Attributes/v2.0
+    $ref: https://schema.beckn.io/Attributes/v2.0
   policies:
     type: array
     items:
@@ -72,20 +71,17 @@ properties:
     description: Price snapshot; detailed models can live in offerAttributes
     x-jsonld:
       '@id': schema:priceSpecification
-    allOf:
-    - $ref: https://schema.beckn.io/PriceSpecification/v2.1
+    $ref: https://schema.beckn.io/PriceSpecification/v2.1
   provider:
     description: Seller / provider of this offer
     x-jsonld:
       '@id': schema:seller
-    allOf:
-    - $ref: https://schema.beckn.io/Provider/v2.1#/properties/id
+    $ref: https://schema.beckn.io/Provider/v2.1#/properties/id
   validity:
     description: Offer validity window
     x-jsonld:
       '@id': schema:availabilityStarts|schema:availabilityEnds
-    allOf:
-    - $ref: https://schema.beckn.io/TimePeriod/v2.1
+    $ref: https://schema.beckn.io/TimePeriod/v2.1
 required:
 - '@context'
 - '@type'

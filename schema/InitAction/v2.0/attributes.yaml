@@ -1,7 +1,6 @@
 $id: https://schema.beckn.io/InitAction/v2.0
 $schema: https://json-schema.org/draft/2020-12/schema
-description: 'Beckn /beckn/init action envelope. Sent by a BAP to a BPP to initialise a contract with
-  consumer details (billing address, fulfillment preferences, etc.).
+description: 'Beckn /beckn/init action envelope. Sent by a BAP to a BPP to initialise a contract with consumer details (billing address, fulfillment preferences, etc.).
 
   '
 title: InitAction
@@ -20,8 +19,7 @@ properties:
     additionalProperties: true
     properties:
       contract:
-        allOf:
-        - $ref: https://schema.beckn.io/Contract/v2.0
+        $ref: https://schema.beckn.io/Contract/v2.0
     required:
     - contract
 required:

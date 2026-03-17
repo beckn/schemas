@@ -1,7 +1,6 @@
 $id: https://schema.beckn.io/Organization/v2.0
 $schema: https://json-schema.org/draft/2020-12/schema
-description: An organization such as a company, non-profit, or governmental institution. Modeled after
-  schema.org/Organization.
+description: An organization such as a company, non-profit, or governmental institution. Modeled after schema.org/Organization.
 title: Organization
 type: object
 properties:
@@ -56,8 +55,7 @@ properties:
       '@id': schema:hasSkill
   organizationAttributes:
     description: Extensible attribute pack for jurisdictional or domain-specific organization properties
-    allOf:
-    - $ref: https://schema.beckn.io/Attributes/v2.0
+    $ref: https://schema.beckn.io/Attributes/v2.0
 required:
 - '@context'
 - '@type'

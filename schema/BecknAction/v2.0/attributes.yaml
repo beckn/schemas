@@ -17,12 +17,10 @@ type: object
 properties:
   context:
     description: Transaction context identifying the action, sender, receiver, and correlation IDs.
-    allOf:
-    - $ref: "https://schema.beckn.io/Context/v2.0"
+    $ref: https://schema.beckn.io/Context/v2.0
   message:
     description: Action-specific payload. Content constraints applied via if/then dispatch below.
-    allOf:
-    - $ref: "https://schema.beckn.io/Message/v2.0"
+    $ref: https://schema.beckn.io/Message/v2.0
 required:
 - context
 - message
@@ -41,8 +39,7 @@ allOf:
       message:
         properties:
           intent:
-            allOf:
-            - $ref: "https://schema.beckn.io/Intent/v2.0"
+            $ref: https://schema.beckn.io/Intent/v2.0
         required:
         - intent
 
@@ -76,8 +73,7 @@ allOf:
       message:
         properties:
           contract:
-            allOf:
-            - $ref: "https://schema.beckn.io/Contract/v2.0"
+            $ref: https://schema.beckn.io/Contract/v2.0
         required:
         - contract
 
@@ -93,8 +89,7 @@ allOf:
       message:
         properties:
           contract:
-            allOf:
-            - $ref: "https://schema.beckn.io/Contract/v2.0"
+            $ref: https://schema.beckn.io/Contract/v2.0
         required:
         - contract
 
@@ -110,8 +105,7 @@ allOf:
       message:
         properties:
           contract:
-            allOf:
-            - $ref: "https://schema.beckn.io/Contract/v2.0"
+            $ref: https://schema.beckn.io/Contract/v2.0
         required:
         - contract
 
@@ -127,8 +121,7 @@ allOf:
       message:
         properties:
           contract:
-            allOf:
-            - $ref: "https://schema.beckn.io/Contract/v2.0"
+            $ref: https://schema.beckn.io/Contract/v2.0
         required:
         - contract
 
@@ -144,8 +137,7 @@ allOf:
       message:
         properties:
           contract:
-            allOf:
-            - $ref: "https://schema.beckn.io/Contract/v2.0"
+            $ref: https://schema.beckn.io/Contract/v2.0
         required:
         - contract
 
@@ -161,8 +153,7 @@ allOf:
       message:
         properties:
           contract:
-            allOf:
-            - $ref: "https://schema.beckn.io/Contract/v2.0"
+            $ref: https://schema.beckn.io/Contract/v2.0
         required:
         - contract
 
@@ -201,8 +192,7 @@ allOf:
       message:
         properties:
           contract:
-            allOf:
-            - $ref: "https://schema.beckn.io/Contract/v2.0"
+            $ref: https://schema.beckn.io/Contract/v2.0
         required:
         - contract
 
@@ -218,8 +208,7 @@ allOf:
       message:
         properties:
           tracking:
-            allOf:
-            - $ref: "https://schema.beckn.io/TrackingRequest/v2.0"
+            $ref: https://schema.beckn.io/TrackingRequest/v2.0
         required:
         - tracking
 
@@ -235,8 +224,7 @@ allOf:
       message:
         properties:
           tracking:
-            allOf:
-            - $ref: "https://schema.beckn.io/Tracking/v2.1"
+            $ref: https://schema.beckn.io/Tracking/v2.1
         required:
         - tracking
 
@@ -252,8 +240,7 @@ allOf:
       message:
         properties:
           contract:
-            allOf:
-            - $ref: "https://schema.beckn.io/Contract/v2.0"
+            $ref: https://schema.beckn.io/Contract/v2.0
         required:
         - contract
 
@@ -269,8 +256,7 @@ allOf:
       message:
         properties:
           contract:
-            allOf:
-            - $ref: "https://schema.beckn.io/Contract/v2.0"
+            $ref: https://schema.beckn.io/Contract/v2.0
         required:
         - contract
 
@@ -286,8 +272,7 @@ allOf:
       message:
         properties:
           contract:
-            allOf:
-            - $ref: "https://schema.beckn.io/Contract/v2.0"
+            $ref: https://schema.beckn.io/Contract/v2.0
         required:
         - contract
 
@@ -303,8 +288,7 @@ allOf:
       message:
         properties:
           contract:
-            allOf:
-            - $ref: "https://schema.beckn.io/Contract/v2.0"
+            $ref: https://schema.beckn.io/Contract/v2.0
         required:
         - contract
 
@@ -356,8 +340,7 @@ allOf:
       message:
         properties:
           supportRequest:
-            allOf:
-            - $ref: "https://schema.beckn.io/SupportRequest/v2.0"
+            $ref: https://schema.beckn.io/SupportRequest/v2.0
         required:
         - supportRequest
 
@@ -373,7 +356,6 @@ allOf:
       message:
         properties:
           supportInfo:
-            allOf:
-            - $ref: "https://schema.beckn.io/SupportInfo/v2.1"
+            $ref: https://schema.beckn.io/SupportInfo/v2.1
         required:
         - supportInfo

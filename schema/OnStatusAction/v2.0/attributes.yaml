@@ -1,7 +1,6 @@
 $id: https://schema.beckn.io/OnStatusAction/v2.0
 $schema: https://json-schema.org/draft/2020-12/schema
-description: 'Beckn /beckn/on_status callback envelope. Sent by a BPP to a BAP in response to a /beckn/status
-  call (or as an unsolicited status push), returning the current state of the contract.
+description: 'Beckn /beckn/on_status callback envelope. Sent by a BPP to a BAP in response to a /beckn/status call (or as an unsolicited status push), returning the current state of the contract.
 
   '
 title: OnStatusAction
@@ -20,8 +19,7 @@ properties:
     additionalProperties: true
     properties:
       contract:
-        allOf:
-        - $ref: https://schema.beckn.io/Contract/v2.0
+        $ref: https://schema.beckn.io/Contract/v2.0
     required:
     - contract
 required:

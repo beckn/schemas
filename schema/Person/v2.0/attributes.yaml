@@ -54,10 +54,9 @@ properties:
       '@id': schema:knowsLanguage
   worksFor:
     description: Organization the person works for
-    allOf:
-    - $ref: https://schema.beckn.io/Organization/v2.0
     x-jsonld:
       '@id': schema:worksFor
+    $ref: https://schema.beckn.io/Organization/v2.0
   credentials:
     type: array
     description: Credentials held by the person
@@ -74,8 +73,7 @@ properties:
       '@id': schema:hasSkill
   personAttributes:
     description: Extensible attribute pack for jurisdictional or domain-specific person properties
-    allOf:
-    - $ref: https://schema.beckn.io/Attributes/v2.0
+    $ref: https://schema.beckn.io/Attributes/v2.0
 required:
 - '@context'
 - '@type'

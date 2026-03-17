@@ -1,7 +1,6 @@
 $id: https://schema.beckn.io/OnConfirmAction/v2.0
 $schema: https://json-schema.org/draft/2020-12/schema
-description: 'Beckn /beckn/on_confirm callback envelope. Sent by a BPP to a BAP in response to a /beckn/confirm
-  call, returning the confirmed contract with status set to CONFIRMED.
+description: 'Beckn /beckn/on_confirm callback envelope. Sent by a BPP to a BAP in response to a /beckn/confirm call, returning the confirmed contract with status set to CONFIRMED.
 
   '
 title: OnConfirmAction
@@ -20,8 +19,7 @@ properties:
     additionalProperties: true
     properties:
       contract:
-        allOf:
-        - $ref: https://schema.beckn.io/Contract/v2.0
+        $ref: https://schema.beckn.io/Contract/v2.0
     required:
     - contract
 required:

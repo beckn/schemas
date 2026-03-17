@@ -24,8 +24,7 @@ properties:
         x-jsonld:
           '@id': schema:price
   paymentStatus:
-    description: Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund
-      …)
+    description: Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)
     type: string
     enum:
     - INITIATED
@@ -80,8 +79,7 @@ properties:
     format: date-time
   paymentActionAttributes:
     description: Extensible set of attributes containing payment actions specific to each ecosystem.
-    allOf:
-    - $ref: https://schema.beckn.io/Attributes/v2.0
+    $ref: https://schema.beckn.io/Attributes/v2.0
 required:
 - '@context'
 - '@type'

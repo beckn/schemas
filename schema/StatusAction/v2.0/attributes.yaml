@@ -1,7 +1,6 @@
 $id: https://schema.beckn.io/StatusAction/v2.0
 $schema: https://json-schema.org/draft/2020-12/schema
-description: 'Beckn /beckn/status action envelope. Sent by a BAP to a BPP to request the current status
-  of an existing contract/order, identified by its id.
+description: 'Beckn /beckn/status action envelope. Sent by a BAP to a BPP to request the current status of an existing contract/order, identified by its id.
 
   '
 title: StatusAction
@@ -25,8 +24,7 @@ properties:
         properties:
           id:
             description: Identifier of the contract/order whose status is being queried.
-            allOf:
-            - $ref: https://schema.beckn.io/Contract/v2.0#/properties/id
+            $ref: https://schema.beckn.io/Contract/v2.0#/properties/id
         required:
         - id
     required:

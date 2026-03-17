@@ -1,8 +1,6 @@
 $id: https://schema.beckn.io/SettlementTerm/v2.0
 $schema: https://json-schema.org/draft/2020-12/schema
-description: Describes the terms of settlement associated with a given transaction. This is not to be
-  confused with the PaymentAction as it describes all the places where the money gets disbursed after
-  reconciliation.
+description: Describes the terms of settlement associated with a given transaction. This is not to be confused with the PaymentAction as it describes all the places where the money gets disbursed after reconciliation.
 title: SettlementTerm
 type: object
 properties:
@@ -27,8 +25,7 @@ properties:
           '@id': schema:price
   paymentTrigger:
     description: Describes the event which triggers the payment against this settlement term
-    allOf:
-    - $ref: https://schema.beckn.io/PaymentTrigger/v2.0
+    $ref: https://schema.beckn.io/PaymentTrigger/v2.0
   settlementStatus:
     type: string
     enum:
@@ -37,8 +34,7 @@ properties:
   settlementSchedule:
     $ref: https://schema.beckn.io/SettlementSchedule/v2.0
   payTo:
-    description: Describes the details of the account where the money must be remited. It could be a bank
-      account, a payment gateway, or a virtual payment address (like a UPI ID)
+    description: Describes the details of the account where the money must be remited. It could be a bank account, a payment gateway, or a virtual payment address (like a UPI ID)
     anyOf:
     - type: object
       properties:
@@ -60,8 +56,7 @@ properties:
           type: string
           format: uri
   acceptedPaymentMethods:
-    description: Describes the methods or mechanisms accepted by the payee (described in the payTo property)
-      for the purpose of this settlement.
+    description: Describes the methods or mechanisms accepted by the payee (described in the payTo property) for the purpose of this settlement.
     type: array
     items:
       type: string
@@ -71,7 +66,6 @@ properties:
       additionalProperties: true
   settlementTermAttributes:
     description: Additional use case specific settlement terms that must be adhered to
-    allOf:
-    - $ref: https://schema.beckn.io/Attributes/v2.0
+    $ref: https://schema.beckn.io/Attributes/v2.0
 x-tags:
 - common

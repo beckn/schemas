@@ -23,8 +23,7 @@ properties:
     type: string
   descriptor:
     description: Human-readable label for this support response.
-    allOf:
-    - $ref: https://schema.beckn.io/Descriptor/v2.1
+    $ref: https://schema.beckn.io/Descriptor/v2.1
   channels:
     description: Available support channels with contact details.
     type: array
@@ -65,8 +64,7 @@ properties:
         type: string
   consumer:
     description: The consumer the support response is addressed to (optional).
-    allOf:
-    - $ref: https://schema.beckn.io/Consumer/v2.0
+    $ref: https://schema.beckn.io/Consumer/v2.0
 required:
 - '@context'
 - '@type'

@@ -1,7 +1,6 @@
 $id: https://schema.beckn.io/OnSelectAction/v2.0
 $schema: https://json-schema.org/draft/2020-12/schema
-description: 'Beckn /beckn/on_select callback envelope. Sent by a BPP to a BAP in response to a /beckn/select
-  call, with updated contract terms.
+description: 'Beckn /beckn/on_select callback envelope. Sent by a BPP to a BAP in response to a /beckn/select call, with updated contract terms.
 
   '
 title: OnSelectAction
@@ -20,8 +19,7 @@ properties:
     additionalProperties: true
     properties:
       contract:
-        allOf:
-        - $ref: https://schema.beckn.io/Contract/v2.0
+        $ref: https://schema.beckn.io/Contract/v2.0
     required:
     - contract
 required:

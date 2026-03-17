@@ -1,7 +1,6 @@
 $id: "https://schema.beckn.io/RatingInput/v2.1"
 $schema: "https://json-schema.org/draft/2020-12/schema"
-description: A form designed to capture rating and feedback from a user. This can be used by both BAP and BPP to fetch ratings
-  and feedback of their respective users.
+description: A form designed to capture rating and feedback from a user. This can be used by both BAP and BPP to fetch ratings and feedback of their respective users.
 title: RatingInput
 x-tags: [common]
 type: object
@@ -32,8 +31,7 @@ properties:
         description: IF of the entity being rated (order/item/fulfillment/provider/agent).
         type: string
       category:
-        description: What is being rated. This can be any entity in the order lifecycle that influenced the overall experience
-          of the user
+        description: What is being rated. This can be any entity in the order lifecycle that influenced the overall experience of the user
         type: string
         enum:
         - Order
@@ -66,8 +64,7 @@ properties:
           $ref: "https://schema.beckn.io/Descriptor/v2.1"
   feedbackFormSubmission:
     description: The submission to the feedback form sent along with a rating request
-    allOf:
-    - $ref: "https://schema.beckn.io/FormSubmission/v2.0"
+    $ref: https://schema.beckn.io/FormSubmission/v2.0
 required:
 - '@context'
 - '@type'

@@ -13,8 +13,7 @@ properties:
     type: string
     const: beckn:PaymentTerm
   collectedBy:
-    description: Describes the entity that first collects the payment from the consumer. This is the actor who is responsible
-      to initiate the settlement process as per the terms described in the settlementTerms property.
+    description: Describes the entity that first collects the payment from the consumer. This is the actor who is responsible to initiate the settlement process as per the terms described in the settlementTerms property.
     type: string
     enum:
     - BAP
@@ -28,10 +27,8 @@ properties:
       $ref: "https://schema.beckn.io/SettlementTerm/v2.0"
   checkoutTrigger:
     description: The stage in the order lifecycle when the checkout should be triggered
-    allOf:
-    - $ref: "https://schema.beckn.io/PaymentTrigger/v2.0"
+    $ref: https://schema.beckn.io/PaymentTrigger/v2.0
   paymentTermsAttributes:
     description: 'Rail-specific attribute pack (e.g., UPI: VPA/UTR; CARD: token/3DS; BNPL: plan/schedule)'
-    allOf:
-    - $ref: "https://schema.beckn.io/Attributes/v2.0"
+    $ref: https://schema.beckn.io/Attributes/v2.0
 additionalProperties: false

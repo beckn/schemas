@@ -18,12 +18,10 @@ properties:
       '@id': schema:Thing
   agent:
     description: The entity that directly performs the fulfillment
-    allOf:
-    - $ref: "https://schema.beckn.io/FulfillmentAgent/v2.0"
+    $ref: https://schema.beckn.io/FulfillmentAgent/v2.0
   fulfillmentAttributes:
     description: Extensible set of domain-specific attributes describing the fulfillment
-    allOf:
-    - $ref: "https://schema.beckn.io/Attributes/v2.0"
+    $ref: https://schema.beckn.io/Attributes/v2.0
   id:
     description: Fulfillment identifier
     type: string
@@ -35,21 +33,18 @@ properties:
       $ref: "https://schema.beckn.io/Descriptor/v2.1"
   mode:
     description: Extensible set of attributes describing the mode of fulfillment. Varies with Industry Use Case
-    allOf:
-    - $ref: "https://schema.beckn.io/FulfillmentMode/v2.0"
     x-jsonld:
       '@id': beckn:FulfillmentMode
+    $ref: https://schema.beckn.io/FulfillmentMode/v2.0
   participants:
-    description: A list of participants who are entitled to receive the fulfillment of the order. By default, it is the consumer
-      who placed the order
+    description: A list of participants who are entitled to receive the fulfillment of the order. By default, it is the consumer who placed the order
     type: array
     items:
       $ref: "https://schema.beckn.io/Participant/v2.0"
     minItems: 1
   state:
     description: The current state of fulfillment
-    allOf:
-    - $ref: "https://schema.beckn.io/State/v2.0"
+    $ref: https://schema.beckn.io/State/v2.0
   stages:
     description: The various stages of the fulfillment
     type: array
