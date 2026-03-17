@@ -1,9 +1,10 @@
-$id: https://schema.beckn.io/OnDiscoverAction/v2.0
+$id: https://schema.beckn.io/CatalogPublishAction/v2.0
 $schema: https://json-schema.org/draft/2020-12/schema
-title: OnDiscoverAction
+title: CatalogPublishAction
 description: |
-  Beckn /beckn/on_discover message payload. Sent by a BPP or CDS to a BAP
-  in response to a discover request. Contains matching catalogs.
+  Beckn /beckn/catalog_publish message payload. Sent by a BPP to a CDS
+  (Catalog Discovery Service) to publish or update one or more catalogs.
+  The CDS indexes the catalogs and makes them discoverable.
 x-tags: [common]
 type: object
 properties:
@@ -14,17 +15,15 @@ properties:
       properties:
         action:
           type: string
-          const: beckn/on_discover
+          const: beckn/catalog_publish
   message:
     type: object
-    additionalProperties: true
     required: [catalogs]
     properties:
       catalogs:
         type: array
-        description: |
-          Array of catalogs matching the discovery request.
-          Each catalog contains items and/or resources available from a provider.
+        minItems: 1
+        description: One or more catalogs to be indexed by the CDS.
         items:
           $ref: https://schema.beckn.io/Catalog/v2.1
 required:

@@ -1,0 +1,29 @@
+$id: https://schema.beckn.io/CatalogPublishResponse/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
+title: CatalogPublishResponse
+description: |
+  Beckn /beckn/on_catalog_publish message payload. Sent by a CDS back to a BPP
+  after processing a catalog publish request. Contains per-catalog processing results
+  indicating success, failure, or partial indexing.
+x-tags: [common]
+type: object
+properties:
+  context:
+    allOf:
+    - $ref: https://schema.beckn.io/Context/v2.0
+    - type: object
+      properties:
+        action:
+          type: string
+          const: beckn/on_catalog_publish
+  message:
+    type: object
+    properties:
+      results:
+        type: array
+        description: Per-catalog processing results from the CDS.
+        items:
+          $ref: https://schema.beckn.io/CatalogProcessingResult/v2.0
+required:
+- context
+- message

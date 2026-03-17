@@ -1,3 +1,3 @@
-# OnDiscoverAction v2.0
+# CatalogPublishAction v2.0
 
 See [attributes.yaml](./attributes.yaml) for the JSON Schema definition.
