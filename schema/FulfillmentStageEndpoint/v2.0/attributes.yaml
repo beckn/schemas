@@ -19,7 +19,7 @@ properties:
   location:
     $ref: https://schema.beckn.io/Location/v2.0
   time:
-    $ref: https://schema.beckn.io/TimePeriod/v2.0
+    $ref: https://schema.beckn.io/TimePeriod/v2.1
   authorization:
     type: array
     description: 'One or more credentials required and/or issued at this endpoint. Includes machine-readable

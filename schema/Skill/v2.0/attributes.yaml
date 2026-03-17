@@ -13,9 +13,9 @@ properties:
     enum:
     - Skill
   category:
-    $ref: https://schema.beckn.io/CategoryCode/v2.0
+    $ref: https://schema.beckn.io/CategoryCode/v2.1
   descriptor:
-    $ref: https://schema.beckn.io/Descriptor/v2.0
+    $ref: https://schema.beckn.io/Descriptor/v2.1
   id:
     type: string
 required:

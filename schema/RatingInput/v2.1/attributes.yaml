@@ -67,7 +67,7 @@ properties:
   feedbackFormSubmission:
     description: The submission to the feedback form sent along with a rating request
     allOf:
-    - $ref: "https://schema.beckn.io/FormSubmission/v2.1"
+    - $ref: "https://schema.beckn.io/FormSubmission/v2.0"
 required:
 - '@context'
 - '@type'

@@ -18,20 +18,20 @@ properties:
     description: Time periods when the item is available
     type: array
     items:
-      $ref: https://schema.beckn.io/TimePeriod/v2.0
+      $ref: https://schema.beckn.io/TimePeriod/v2.1
   availableAt:
     description: Physical locations where the item is available
     type: array
     items:
       $ref: https://schema.beckn.io/Location/v2.0
   category:
-    $ref: https://schema.beckn.io/CategoryCode/v2.0
+    $ref: https://schema.beckn.io/CategoryCode/v2.1
   constraints:
     type: array
     items:
       $ref: https://schema.beckn.io/Constraint/v2.0
   descriptor:
-    $ref: https://schema.beckn.io/Descriptor/v2.0
+    $ref: https://schema.beckn.io/Descriptor/v2.1
   id:
     description: Unique identifier for the item
     type: string
@@ -55,13 +55,13 @@ properties:
     items:
       $ref: https://schema.beckn.io/Policy/v2.0
   provider:
-    $ref: https://schema.beckn.io/Provider/v2.0
+    $ref: https://schema.beckn.io/Provider/v2.1
   rateable:
     description: Whether the item can be rated by customers
     type: boolean
     example: true
   rating:
-    $ref: https://schema.beckn.io/Rating/v2.0
+    $ref: https://schema.beckn.io/Rating/v2.1
 required:
 - '@context'
 - '@type'

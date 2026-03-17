@@ -14,7 +14,7 @@ properties:
     type: string
     default: beckn:State
   descriptor:
-    $ref: https://schema.beckn.io/Descriptor/v2.0
+    $ref: https://schema.beckn.io/Descriptor/v2.1
 required:
 - '@context'
 - '@type'

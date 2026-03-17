@@ -7,7 +7,7 @@ type: object
 properties:
   descriptor:
     allOf:
-    - $ref: "https://schema.beckn.io/Descriptor/v2.0"
+    - $ref: "https://schema.beckn.io/Descriptor/v2.1"
     properties:
       '@type':
         default: beckn:CancellationOutcome

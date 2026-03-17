@@ -23,7 +23,7 @@ properties:
   id:
     type: string
   rating:
-    $ref: https://schema.beckn.io/Rating/v2.0
+    $ref: https://schema.beckn.io/Rating/v2.1
   role:
     description: Role of participant (consumer, recipient, rider, patient, operator, etc.)
     type: string

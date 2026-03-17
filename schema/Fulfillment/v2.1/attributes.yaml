@@ -19,11 +19,11 @@ properties:
   agent:
     description: The entity that directly performs the fulfillment
     allOf:
-    - $ref: "https://schema.beckn.io/FulfillmentAgent/v2.1"
+    - $ref: "https://schema.beckn.io/FulfillmentAgent/v2.0"
   fulfillmentAttributes:
     description: Extensible set of domain-specific attributes describing the fulfillment
     allOf:
-    - $ref: "https://schema.beckn.io/Attributes/v2.1"
+    - $ref: "https://schema.beckn.io/Attributes/v2.0"
   id:
     description: Fulfillment identifier
     type: string
@@ -36,7 +36,7 @@ properties:
   mode:
     description: Extensible set of attributes describing the mode of fulfillment. Varies with Industry Use Case
     allOf:
-    - $ref: "https://schema.beckn.io/FulfillmentMode/v2.1"
+    - $ref: "https://schema.beckn.io/FulfillmentMode/v2.0"
     x-jsonld:
       '@id': beckn:FulfillmentMode
   participants:
@@ -44,17 +44,17 @@ properties:
       who placed the order
     type: array
     items:
-      $ref: "https://schema.beckn.io/Participant/v2.1"
+      $ref: "https://schema.beckn.io/Participant/v2.0"
     minItems: 1
   state:
     description: The current state of fulfillment
     allOf:
-    - $ref: "https://schema.beckn.io/State/v2.1"
+    - $ref: "https://schema.beckn.io/State/v2.0"
   stages:
     description: The various stages of the fulfillment
     type: array
     items:
-      $ref: "https://schema.beckn.io/FulfillmentStage/v2.1"
+      $ref: "https://schema.beckn.io/FulfillmentStage/v2.0"
     minItems: 1
   trackingEnabled:
     description: Whether tracking is enabled / possible for this fulfillment

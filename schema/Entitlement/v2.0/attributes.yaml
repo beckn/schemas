@@ -26,11 +26,11 @@ properties:
     description: Human-readable information regarding the entitlement like QR-code images, attached documents
       containing terms and conditions, video or audio files instructing the user on how to use the entitlement
     allOf:
-    - $ref: https://schema.beckn.io/Descriptor/v2.0
+    - $ref: https://schema.beckn.io/Descriptor/v2.1
   credentials:
     type: array
     items:
-      $ref: https://schema.beckn.io/Descriptor/v2.0
+      $ref: https://schema.beckn.io/Descriptor/v2.1
 additionalProperties: true
 required:
 - '@context'

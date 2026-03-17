@@ -15,7 +15,7 @@ properties:
   descriptor:
     description: Validity window for this policy version
     allOf:
-    - $ref: https://schema.beckn.io/Descriptor/v2.0
+    - $ref: https://schema.beckn.io/Descriptor/v2.1
   id:
     description: Identifier for the policy
     type: string
@@ -25,7 +25,7 @@ properties:
   validity:
     description: Validity window for this policy version
     allOf:
-    - $ref: https://schema.beckn.io/TimePeriod/v2.0
+    - $ref: https://schema.beckn.io/TimePeriod/v2.1
   policyAttributes:
     $ref: https://schema.beckn.io/Attributes/v2.0
 required:

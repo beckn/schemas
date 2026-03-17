@@ -60,7 +60,7 @@ allOf:
           catalogs:
             type: array
             items:
-              $ref: "https://schema.beckn.io/Catalog/v2.0"
+              $ref: "https://schema.beckn.io/Catalog/v2.1"
         required:
         - catalogs
 
@@ -236,7 +236,7 @@ allOf:
         properties:
           tracking:
             allOf:
-            - $ref: "https://schema.beckn.io/Tracking/v2.0"
+            - $ref: "https://schema.beckn.io/Tracking/v2.1"
         required:
         - tracking
 
@@ -322,7 +322,7 @@ allOf:
           ratingInputs:
             type: array
             items:
-              $ref: "https://schema.beckn.io/RatingInput/v2.0"
+              $ref: "https://schema.beckn.io/RatingInput/v2.1"
         required:
         - ratingInputs
 
@@ -374,6 +374,6 @@ allOf:
         properties:
           supportInfo:
             allOf:
-            - $ref: "https://schema.beckn.io/SupportInfo/v2.0"
+            - $ref: "https://schema.beckn.io/SupportInfo/v2.1"
         required:
         - supportInfo

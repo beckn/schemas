@@ -42,7 +42,7 @@ properties:
     x-jsonld:
       '@id': schema:orderNumber
   beckn:seller:
-    $ref: 'https://schema.beckn.io/Provider/v2.0'
+    $ref: 'https://schema.beckn.io/Provider/v2.1'
     x-jsonld:
       '@id': schema:seller
   beckn:buyer:
@@ -59,17 +59,17 @@ properties:
   beckn:acceptedOffers:
     type: array
     items:
-      $ref: 'https://schema.beckn.io/Offer/v2.0'
+      $ref: 'https://schema.beckn.io/Offer/v2.1'
     description: Offers accepted at order-level (optional if captured per line)
     x-jsonld:
       '@id': schema:acceptedOffer
   beckn:orderValue:
-    $ref: 'https://schema.beckn.io/PriceSpecification/v2.0'
+    $ref: 'https://schema.beckn.io/PriceSpecification/v2.1'
     description: Order totals snapshot (derivable from lines; optional)
     x-jsonld:
       '@id': schema:priceSpecification
   beckn:invoice:
-    $ref: 'https://schema.beckn.io/Invoice/v2.0'
+    $ref: 'https://schema.beckn.io/Invoice/v2.1'
     description: Invoice reference/summary
     x-jsonld:
       '@id': schema:Invoice
@@ -79,7 +79,7 @@ properties:
     x-jsonld:
       '@id': schema:PaymentMethod|schema:PaymentStatusType
   beckn:fulfillment:
-    $ref: 'https://schema.beckn.io/Fulfillment/v2.0'
+    $ref: 'https://schema.beckn.io/Fulfillment/v2.1'
     description: Parcel delivery or reservation summary
     x-jsonld:
       '@id': schema:ParcelDelivery|schema:Reservation

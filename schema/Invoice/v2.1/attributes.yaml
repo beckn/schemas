@@ -46,7 +46,7 @@ properties:
     x-jsonld:
       '@id': schema:provider
     allOf:
-    - $ref: https://schema.beckn.io/Provider/v2.0
+    - $ref: https://schema.beckn.io/Provider/v2.1
   payer:
     description: consumer being invoiced
     x-jsonld:
@@ -56,7 +56,7 @@ properties:
   costBreakup:
     type: array
     items:
-      $ref: https://schema.beckn.io/PriceSpecification/v2.0
+      $ref: https://schema.beckn.io/PriceSpecification/v2.1
 required:
 - '@context'
 - '@type'

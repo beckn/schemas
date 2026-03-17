@@ -8,11 +8,11 @@ properties:
     type: string
     description: Unique line id within order
   beckn:orderedItem:
-    $ref: 'https://schema.beckn.io/Item/v2.0'
+    $ref: 'https://schema.beckn.io/Item/v2.1'
     x-jsonld:
       '@id': schema:orderedItem
   beckn:acceptedOffer:
-    $ref: 'https://schema.beckn.io/Offer/v2.0'
+    $ref: 'https://schema.beckn.io/Offer/v2.1'
     description: Offer applied to this line (if different from order-level)
     x-jsonld:
       '@id': schema:acceptedOffer
@@ -21,7 +21,7 @@ properties:
     x-jsonld:
       '@id': beckn:quantity
   beckn:price:
-    $ref: 'https://schema.beckn.io/PriceSpecification/v2.0'
+    $ref: 'https://schema.beckn.io/PriceSpecification/v2.1'
     description: Line price composition (unit/tax/delivery/discount)
     x-jsonld:
       '@id': schema:priceSpecification

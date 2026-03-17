@@ -18,13 +18,13 @@ properties:
     items:
       type: string
   descriptor:
-    $ref: https://schema.beckn.io/Descriptor/v2.0
+    $ref: https://schema.beckn.io/Descriptor/v2.1
   id:
     type: string
   severity:
     type: string
   validity:
-    $ref: https://schema.beckn.io/TimePeriod/v2.0
+    $ref: https://schema.beckn.io/TimePeriod/v2.1
 required:
 - '@context'
 - '@type'

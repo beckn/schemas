@@ -17,7 +17,7 @@ properties:
     description: Unique identifier for the catalog
     example: catalog-electronics-001
   beckn:descriptor:
-    $ref: 'https://schema.beckn.io/Descriptor/v2.0'
+    $ref: 'https://schema.beckn.io/Descriptor/v2.1'
   beckn:providerId:
     type: string
     description: Reference to the provider that owns this catalog
@@ -32,7 +32,7 @@ properties:
     description: BPP (Beckn Protocol Provider) URI endpoint
     example: https://bpp.example.com
   beckn:validity:
-    $ref: 'https://schema.beckn.io/TimePeriod/v2.0'
+    $ref: 'https://schema.beckn.io/TimePeriod/v2.1'
   beckn:isActive:
     type: boolean
     description: Whether the catalog is active
@@ -45,11 +45,11 @@ properties:
 
       '
     items:
-      $ref: 'https://schema.beckn.io/Item/v2.0'
+      $ref: 'https://schema.beckn.io/Item/v2.1'
   beckn:offers:
     type: array
     items:
-      $ref: 'https://schema.beckn.io/Offer/v2.0'
+      $ref: 'https://schema.beckn.io/Offer/v2.1'
 required:
 - '@context'
 - '@type'

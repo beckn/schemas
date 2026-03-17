@@ -43,7 +43,7 @@ properties:
     x-jsonld:
       '@id': beckn:mode
   trackingAction:
-    $ref: 'https://schema.beckn.io/TrackAction/v2.0'
+    $ref: 'https://schema.beckn.io/TrackAction/v2.1'
     description: 'Tracking entrypoint for this fulfillment, modeled as schema.org
       TrackAction. Use target.url for a clickable tracking URL; may also include deliveryMethod.
 

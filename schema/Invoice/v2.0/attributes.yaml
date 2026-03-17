@@ -36,7 +36,7 @@ properties:
     x-jsonld:
       '@id': schema:paymentDueDate
   beckn:payee:
-    $ref: 'https://schema.beckn.io/Provider/v2.0'
+    $ref: 'https://schema.beckn.io/Provider/v2.1'
     description: Seller / issuer of the invoice
     x-jsonld:
       '@id': schema:provider
@@ -46,7 +46,7 @@ properties:
     x-jsonld:
       '@id': schema:customer
   beckn:totals:
-    $ref: 'https://schema.beckn.io/PriceSpecification/v2.0'
+    $ref: 'https://schema.beckn.io/PriceSpecification/v2.1'
     description: Invoice grand totals (tax/shipping/discount components inside)
     x-jsonld:
       '@id': schema:priceSpecification

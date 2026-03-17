@@ -34,12 +34,12 @@ properties:
     description: Links to downloadable documents
     type: array
     items:
-      $ref: "https://schema.beckn.io/Document/v2.1"
+      $ref: "https://schema.beckn.io/Document/v2.0"
   mediaFile:
     description: Links to multimedia files and images
     type: array
     items:
-      $ref: "https://schema.beckn.io/MediaFile/v2.1"
+      $ref: "https://schema.beckn.io/MediaFile/v2.0"
 required:
 - '@type'
 additionalProperties: false

@@ -9,9 +9,9 @@ properties:
     description: Unique identifier for the provider
     example: tech-store-001
   beckn:descriptor:
-    $ref: 'https://schema.beckn.io/Descriptor/v2.0'
+    $ref: 'https://schema.beckn.io/Descriptor/v2.1'
   beckn:validity:
-    $ref: 'https://schema.beckn.io/TimePeriod/v2.0'
+    $ref: 'https://schema.beckn.io/TimePeriod/v2.1'
   beckn:locations:
     type: array
     items:
@@ -22,7 +22,7 @@ properties:
     description: Whether the provider can be rated by customers
     example: true
   beckn:rating:
-    $ref: 'https://schema.beckn.io/Rating/v2.0'
+    $ref: 'https://schema.beckn.io/Rating/v2.1'
   beckn:providerAttributes:
     $ref: 'https://schema.beckn.io/Attributes/v2.0'
 required:
