@@ -1,4 +1,4 @@
-$id: https://schema.beckn.io/TrackAction/v2.0
+$id: https://schema.beckn.io/TrackAction/v2.1
 $schema: https://json-schema.org/draft/2020-12/schema
 description: 'Beckn /beckn/track action envelope. Sent by a BAP to a BPP to request a real-time tracking
   handle for a fulfillment within an active contract.

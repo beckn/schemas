@@ -1,4 +1,4 @@
-$id: https://schema.beckn.io/Offer/v2.0
+$id: https://schema.beckn.io/Offer/v2.1
 $schema: https://json-schema.org/draft/2020-12/schema
 description: Schema definition for Offer in the Beckn Protocol v2.0.1
 title: Offer
