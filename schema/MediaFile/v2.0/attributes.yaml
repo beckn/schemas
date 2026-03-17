@@ -8,7 +8,10 @@ properties:
   label:
     description: The display name of the media file
     type: string
-  mimeType: MIME type if 'data' is provided (application/pdf, image/png).
+  mimeType:
+    description: MIME type if 'data' is provided (application/pdf, image/png).
+    type: string
+    example: image/png
   uri:
     description: URL to the document
     type: string
