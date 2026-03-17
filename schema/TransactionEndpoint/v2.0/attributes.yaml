@@ -4,8 +4,7 @@ description: Beckn protocol transaction endpoint identifier.
 title: TransactionEndpoint
 allOf:
 - $ref: https://schema.beckn.io/BecknEndpoint/v2.0
-- properties: null
-  type: string
+- type: string
   enum:
   - beckn/discover
   - beckn/on_discover

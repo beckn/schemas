@@ -33,6 +33,17 @@ properties:
     items:
       allOf:
       - $ref: https://schema.beckn.io/Document/v2.0
+  purpose:
+    description: The purpose of this authorization. e.g., proof of delivery, entry verification,
+      identity check
+    type: string
+  requirement:
+    description: Describes what is required to fulfill this authorization. e.g., OTP, QR code,
+      government ID
+    type: string
+  status:
+    description: The current status of this authorization. e.g., valid, expired, pending, used
+    type: string
   authToken:
     type: string
     description: A human readable string that needs to be provided to enter or exit this fulfillment stage.
