@@ -1,0 +1,73 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Buyer",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Buyer",
+      "rdfs:comment": "Schema definition for Buyer in the Beckn Protocol"
+    },
+    {
+      "@id": "beckn:context",
+      "@type": "rdf:Property",
+      "rdfs:label": "context",
+      "rdfs:comment": "context property of Buyer"
+    },
+    {
+      "@id": "beckn:type",
+      "@type": "rdf:Property",
+      "rdfs:label": "type",
+      "rdfs:comment": "type property of Buyer"
+    },
+    {
+      "@id": "beckn:id",
+      "@type": "rdf:Property",
+      "rdfs:label": "id",
+      "rdfs:comment": "id property of Buyer"
+    },
+    {
+      "@id": "beckn:role",
+      "@type": "rdf:Property",
+      "rdfs:label": "role",
+      "rdfs:comment": "role property of Buyer"
+    },
+    {
+      "@id": "beckn:displayName",
+      "@type": "rdf:Property",
+      "rdfs:label": "displayName",
+      "rdfs:comment": "displayName property of Buyer"
+    },
+    {
+      "@id": "beckn:telephone",
+      "@type": "rdf:Property",
+      "rdfs:label": "telephone",
+      "rdfs:comment": "telephone property of Buyer"
+    },
+    {
+      "@id": "beckn:email",
+      "@type": "rdf:Property",
+      "rdfs:label": "email",
+      "rdfs:comment": "email property of Buyer"
+    },
+    {
+      "@id": "beckn:taxID",
+      "@type": "rdf:Property",
+      "rdfs:label": "taxID",
+      "rdfs:comment": "taxID property of Buyer"
+    },
+    {
+      "@id": "beckn:buyerAttributes",
+      "@type": "rdf:Property",
+      "rdfs:label": "buyerAttributes",
+      "rdfs:comment": "buyerAttributes property of Buyer"
+    }
+  ]
+}

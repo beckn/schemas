@@ -9,8 +9,9 @@
     "Tracking": "beckn:Tracking",
     "@context": "beckn:@context",
     "@type": "beckn:@type",
-    "expiresAt": "beckn:expiresAt",
+    "tl_method": "beckn:tl_method",
+    "url": "beckn:url",
     "trackingStatus": "beckn:trackingStatus",
-    "url": "beckn:url"
+    "expires_at": "beckn:expires_at"
   }
 }

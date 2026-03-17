@@ -1,76 +1,61 @@
-$id: "https://schema.beckn.io/RatingInput/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
-description: A form designed to capture rating and feedback from a user. This can be used by both BAP and BPP to fetch ratings
-  and feedback of their respective users.
+$id: https://schema.beckn.io/RatingInput/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Schema definition for RatingInput in the Beckn Protocol
 title: RatingInput
-x-tags: [common]
 type: object
 properties:
   '@context':
     type: string
     format: uri
-    const: "https://schema.beckn.io/"
+    example: https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld
   '@type':
     type: string
-    default: RatingForm
+    enum:
+    - beckn:RatingInput
     x-jsonld:
-      '@id': beckn:RatingForm
-  target:
-    description: The entity being rated
+      '@id': beckn:RatingInput
+  id:
+    type: string
+    description: Target entity ID being rated (order/item/fulfillment/provider/agent).
+  ratingValue:
+    type: number
+    description: Numeric rating value (legacy usually 1–5).
+    minimum: 0
+  bestRating:
+    type: number
+    description: Maximum of the rating scale (default 5 if omitted).
+  worstRating:
+    type: number
+    description: Minimum of the rating scale (default 1 or 0 if omitted).
+  category:
+    type: string
+    description: What is being rated.
+    enum:
+    - ORDER
+    - FULFILLMENT
+    - ITEM
+    - PROVIDER
+    - AGENT
+    - OTHER
+  feedback:
     type: object
+    additionalProperties: false
     properties:
-      '@context':
+      comments:
         type: string
-        format: uri
-        const: "https://schema.beckn.io/"
-      '@type':
-        type: string
-        default: RatingTarget
-        x-jsonld:
-          '@id': beckn:RatingTarget
-      id:
-        description: IF of the entity being rated (order/item/fulfillment/provider/agent).
-        type: string
-      category:
-        description: What is being rated. This can be any entity in the order lifecycle that influenced the overall experience
-          of the user
-        type: string
-        enum:
-        - Order
-        - Fulfillment
-        - FulfillmentStage
-        - Provider
-        - Agent
-    required:
-    - '@context'
-    - '@type'
-    - id
-    - category
-  range:
-    oneOf:
-    - type: object
-      properties:
-        bestRating:
-          description: Maximum of the rating scale (default 5 if omitted).
-          type: number
-        worstRating:
-          description: Minimum of the rating scale (default 1 or 0 if omitted).
-          type: number
-    - type: array
-      description: A custom rating range indexed from 0 to n
-      properties:
-        index:
-          type: integer
-          minimum: 0
-        value:
-          $ref: "https://schema.beckn.io/Descriptor/v2.0"
-  feedbackFormSubmission:
-    description: The submission to the feedback form sent along with a rating request
-    allOf:
-    - $ref: "https://schema.beckn.io/FormSubmission/v2.0"
+      tags:
+        type: array
+        items:
+          type: string
 required:
 - '@context'
 - '@type'
-- target
-- range
+- id
+- ratingValue
 additionalProperties: false
+x-jsonld:
+  '@type': schema:Rating
+  schema:itemReviewed: $.id
+  schema:ratingValue: $.value
+  schema:bestRating: $.best
+  schema:worstRating: $.worst

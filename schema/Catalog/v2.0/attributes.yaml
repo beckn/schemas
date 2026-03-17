@@ -1,63 +1,61 @@
-$id: "https://schema.beckn.io/Catalog/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
-description: Catalog schema for Beckn Protocol v2.0.1
+$id: https://schema.beckn.io/Catalog/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Schema definition for Catalog in the Beckn Protocol
 title: Catalog
-x-tags: [common]
 type: object
 properties:
   '@context':
+    type: string
+    format: uri
     description: JSON-LD context URI for the core Catalog schema
-    type: string
-    format: uri
-    const: "https://schema.beckn.io/"
   '@type':
+    type: string
     description: Type of the catalog
+    example: beckn:Catalog
+  beckn:id:
     type: string
-    const: beckn:Catalog
-  bppId:
+    description: Unique identifier for the catalog
+    example: catalog-electronics-001
+  beckn:descriptor:
+    $ref: 'https://schema.beckn.io/Descriptor/v2.0'
+  beckn:providerId:
+    type: string
+    description: Reference to the provider that owns this catalog
+    example: tech-store-001
+  beckn:bppId:
+    type: string
     description: BPP (Beckn Protocol Provider) identifier that publishes this catalog
-    type: string
     example: bpp.example.com
-  bppUri:
-    description: BPP (Beckn Protocol Provider) URI endpoint
+  beckn:bppUri:
     type: string
     format: uri
-    example: "https://bpp.example.com"
-  descriptor:
-    description: A verbal summary of the catalog for humans, AI agents, etc to read and understand the context.
-    allOf:
-    - $ref: "https://schema.beckn.io/Descriptor/v2.0"
-  id:
-    description: Unique identifier for the catalog
-    type: string
-    example: catalog-electronics-001
-  isActive:
-    description: Whether the catalog is active
+    description: BPP (Beckn Protocol Provider) URI endpoint
+    example: https://bpp.example.com
+  beckn:validity:
+    $ref: 'https://schema.beckn.io/TimePeriod/v2.0'
+  beckn:isActive:
     type: boolean
+    description: Whether the catalog is active
     default: true
-  items:
-    description: Array of beckn core Item entities in this catalog
+  beckn:items:
+    type: array
+    description: 'Array of beckn core Item entities in this catalog, returned directly
+      without ItemResult wrapper for improved performance and simplified response
+      structure
+
+      '
+    items:
+      $ref: 'https://schema.beckn.io/Item/v2.0'
+  beckn:offers:
     type: array
     items:
-      $ref: "https://schema.beckn.io/Item/v2.0"
-  offers:
-    type: array
-    items:
-      $ref: "https://schema.beckn.io/Offer/v2.0"
-  providerId:
-    description: Reference to the provider that owns this catalog
-    type: string
-    example: tech-store-001
-  validity:
-    description: The time period during which this catalog is valid
-    allOf:
-    - $ref: "https://schema.beckn.io/TimePeriod/v2.0"
+      $ref: 'https://schema.beckn.io/Offer/v2.0'
 required:
 - '@context'
 - '@type'
-- id
-- descriptor
-- bppId
-- bppUri
-- items
+- beckn:id
+- beckn:descriptor
+- beckn:bppId
+- beckn:bppUri
+- beckn:items
 additionalProperties: false

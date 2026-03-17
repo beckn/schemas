@@ -16,40 +16,40 @@
       "rdfs:comment": "Describes a form"
     },
     {
-      "@id": "beckn:@context",
+      "@id": "beckn:context",
       "@type": "rdf:Property",
-      "rdfs:label": "@context",
-      "rdfs:comment": "CPD"
+      "rdfs:label": "context",
+      "rdfs:comment": "context property of Form"
     },
     {
-      "@id": "beckn:@type",
+      "@id": "beckn:type",
       "@type": "rdf:Property",
-      "rdfs:label": "@type",
-      "rdfs:comment": "TODO: Description Needed - @type"
-    },
-    {
-      "@id": "beckn:data",
-      "@type": "rdf:Property",
-      "rdfs:label": "data",
-      "rdfs:comment": "The form submission data"
-    },
-    {
-      "@id": "beckn:mimeType",
-      "@type": "rdf:Property",
-      "rdfs:label": "mime Type",
-      "rdfs:comment": "This field indicates the nature and format of the form received by querying the url. MIME types are defined and standardized in IETF's RFC 6838."
-    },
-    {
-      "@id": "beckn:submissionId",
-      "@type": "rdf:Property",
-      "rdfs:label": "submission Id",
-      "rdfs:comment": "TODO: Description Needed - submissionId"
+      "rdfs:label": "type",
+      "rdfs:comment": "type property of Form"
     },
     {
       "@id": "beckn:url",
       "@type": "rdf:Property",
       "rdfs:label": "url",
-      "rdfs:comment": "The URL from where the form can be fetched. The content fetched from the url must be processed as per the mimeType specified in this object. Once fetched, the rendering platform can choosed to render the form as-is as an embeddable element; or process it further to blend with the theme of the application. In case the interface is non-visual, the the render can process the form data and reproduce it as per the standard specified in the form."
+      "rdfs:comment": "url property of Form"
+    },
+    {
+      "@id": "beckn:data",
+      "@type": "rdf:Property",
+      "rdfs:label": "data",
+      "rdfs:comment": "data property of Form"
+    },
+    {
+      "@id": "beckn:mime_type",
+      "@type": "rdf:Property",
+      "rdfs:label": "mime_type",
+      "rdfs:comment": "mime_type property of Form"
+    },
+    {
+      "@id": "beckn:submission_id",
+      "@type": "rdf:Property",
+      "rdfs:label": "submission_id",
+      "rdfs:comment": "submission_id property of Form"
     }
   ]
 }

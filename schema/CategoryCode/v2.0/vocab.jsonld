@@ -12,38 +12,32 @@
     {
       "@id": "beckn:CategoryCode",
       "@type": "rdfs:Class",
-      "rdfs:label": "Category Code",
-      "rdfs:comment": "Schema definition for CategoryCode in the Beckn Protocol v2.0.1"
+      "rdfs:label": "CategoryCode",
+      "rdfs:comment": "Schema definition for CategoryCode in the Beckn Protocol"
     },
     {
-      "@id": "beckn:@context",
+      "@id": "beckn:type",
       "@type": "rdf:Property",
-      "rdfs:label": "@context",
-      "rdfs:comment": "JSON-LD context URI"
-    },
-    {
-      "@id": "beckn:@type",
-      "@type": "rdf:Property",
-      "rdfs:label": "@type",
-      "rdfs:comment": "Context-specific Type of the category code"
+      "rdfs:label": "type",
+      "rdfs:comment": "type property of CategoryCode"
     },
     {
       "@id": "beckn:codeValue",
       "@type": "rdf:Property",
-      "rdfs:label": "code Value",
-      "rdfs:comment": "Category code value"
-    },
-    {
-      "@id": "beckn:description",
-      "@type": "rdf:Property",
-      "rdfs:label": "description",
-      "rdfs:comment": "Category description"
+      "rdfs:label": "codeValue",
+      "rdfs:comment": "codeValue property of CategoryCode"
     },
     {
       "@id": "beckn:name",
       "@type": "rdf:Property",
       "rdfs:label": "name",
-      "rdfs:comment": "Category name"
+      "rdfs:comment": "name property of CategoryCode"
+    },
+    {
+      "@id": "beckn:description",
+      "@type": "rdf:Property",
+      "rdfs:label": "description",
+      "rdfs:comment": "description property of CategoryCode"
     }
   ]
 }

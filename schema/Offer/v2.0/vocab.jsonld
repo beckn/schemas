@@ -13,103 +13,91 @@
       "@id": "beckn:Offer",
       "@type": "rdfs:Class",
       "rdfs:label": "Offer",
-      "rdfs:comment": "Schema definition for Offer in the Beckn Protocol v2.0.1"
+      "rdfs:comment": "Schema definition for Offer in the Beckn Protocol"
     },
     {
-      "@id": "beckn:@context",
+      "@id": "beckn:context",
       "@type": "rdf:Property",
-      "rdfs:label": "@context",
-      "rdfs:comment": "JSON-LD context URI for the core offer schema"
+      "rdfs:label": "context",
+      "rdfs:comment": "context property of Offer"
     },
     {
-      "@id": "beckn:@type",
+      "@id": "beckn:type",
       "@type": "rdf:Property",
-      "rdfs:label": "@type",
-      "rdfs:comment": "TPD"
-    },
-    {
-      "@id": "beckn:acceptedPaymentMethod",
-      "@type": "rdf:Property",
-      "rdfs:label": "accepted Payment Method",
-      "rdfs:comment": "TODO: Description Needed - acceptedPaymentMethod"
-    },
-    {
-      "@id": "beckn:addOnItems",
-      "@type": "rdf:Property",
-      "rdfs:label": "add On Items",
-      "rdfs:comment": "Optional extras modeled as items (e.g., toppings, accessories)"
-    },
-    {
-      "@id": "beckn:addOns",
-      "@type": "rdf:Property",
-      "rdfs:label": "add Ons",
-      "rdfs:comment": "Optional extra Offers that can be attached (e.g., warranty, gift wrap)"
-    },
-    {
-      "@id": "beckn:constraints",
-      "@type": "rdf:Property",
-      "rdfs:label": "constraints",
-      "rdfs:comment": "TODO: Description Needed - constraints"
-    },
-    {
-      "@id": "beckn:descriptor",
-      "@type": "rdf:Property",
-      "rdfs:label": "descriptor",
-      "rdfs:comment": "TODO: Description Needed - descriptor"
-    },
-    {
-      "@id": "beckn:eligibleRegion",
-      "@type": "rdf:Property",
-      "rdfs:label": "eligible Region",
-      "rdfs:comment": "Regions where the offer is eligible"
+      "rdfs:label": "type",
+      "rdfs:comment": "type property of Offer"
     },
     {
       "@id": "beckn:id",
       "@type": "rdf:Property",
       "rdfs:label": "id",
-      "rdfs:comment": "Unique id for this offer"
+      "rdfs:comment": "id property of Offer"
     },
     {
-      "@id": "beckn:isActive",
+      "@id": "beckn:descriptor",
       "@type": "rdf:Property",
-      "rdfs:label": "is Active",
-      "rdfs:comment": "Whether the offer is active"
-    },
-    {
-      "@id": "beckn:items",
-      "@type": "rdf:Property",
-      "rdfs:label": "items",
-      "rdfs:comment": "Base item(s) the offer applies to (single or bundle)"
-    },
-    {
-      "@id": "beckn:offerAttributes",
-      "@type": "rdf:Property",
-      "rdfs:label": "offer Attributes",
-      "rdfs:comment": "Attribute Pack attachment (pricing models, discounts, rail terms, etc.)"
-    },
-    {
-      "@id": "beckn:policies",
-      "@type": "rdf:Property",
-      "rdfs:label": "policies",
-      "rdfs:comment": "TODO: Description Needed - policies"
-    },
-    {
-      "@id": "beckn:price",
-      "@type": "rdf:Property",
-      "rdfs:label": "price",
-      "rdfs:comment": "Price snapshot; detailed models can live in offerAttributes"
+      "rdfs:label": "descriptor",
+      "rdfs:comment": "descriptor property of Offer"
     },
     {
       "@id": "beckn:provider",
       "@type": "rdf:Property",
       "rdfs:label": "provider",
-      "rdfs:comment": "Seller / provider of this offer"
+      "rdfs:comment": "provider property of Offer"
+    },
+    {
+      "@id": "beckn:items",
+      "@type": "rdf:Property",
+      "rdfs:label": "items",
+      "rdfs:comment": "items property of Offer"
+    },
+    {
+      "@id": "beckn:addOns",
+      "@type": "rdf:Property",
+      "rdfs:label": "addOns",
+      "rdfs:comment": "addOns property of Offer"
+    },
+    {
+      "@id": "beckn:addOnItems",
+      "@type": "rdf:Property",
+      "rdfs:label": "addOnItems",
+      "rdfs:comment": "addOnItems property of Offer"
+    },
+    {
+      "@id": "beckn:isActive",
+      "@type": "rdf:Property",
+      "rdfs:label": "isActive",
+      "rdfs:comment": "isActive property of Offer"
     },
     {
       "@id": "beckn:validity",
       "@type": "rdf:Property",
       "rdfs:label": "validity",
-      "rdfs:comment": "Offer validity window"
+      "rdfs:comment": "validity property of Offer"
+    },
+    {
+      "@id": "beckn:price",
+      "@type": "rdf:Property",
+      "rdfs:label": "price",
+      "rdfs:comment": "price property of Offer"
+    },
+    {
+      "@id": "beckn:eligibleRegion",
+      "@type": "rdf:Property",
+      "rdfs:label": "eligibleRegion",
+      "rdfs:comment": "eligibleRegion property of Offer"
+    },
+    {
+      "@id": "beckn:acceptedPaymentMethod",
+      "@type": "rdf:Property",
+      "rdfs:label": "acceptedPaymentMethod",
+      "rdfs:comment": "acceptedPaymentMethod property of Offer"
+    },
+    {
+      "@id": "beckn:offerAttributes",
+      "@type": "rdf:Property",
+      "rdfs:label": "offerAttributes",
+      "rdfs:comment": "offerAttributes property of Offer"
     }
   ]
 }

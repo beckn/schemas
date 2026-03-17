@@ -9,18 +9,16 @@
     "Item": "beckn:Item",
     "@context": "beckn:@context",
     "@type": "beckn:@type",
-    "availabilityWindow": "beckn:availabilityWindow",
-    "availableAt": "beckn:availableAt",
-    "category": "beckn:category",
-    "constraints": "beckn:constraints",
-    "descriptor": "beckn:descriptor",
     "id": "beckn:id",
-    "isActive": "beckn:isActive",
-    "itemAttributes": "beckn:itemAttributes",
-    "networkId": "beckn:networkId",
-    "policies": "beckn:policies",
-    "provider": "beckn:provider",
+    "descriptor": "beckn:descriptor",
+    "category": "beckn:category",
+    "availableAt": "beckn:availableAt",
+    "availabilityWindow": "beckn:availabilityWindow",
     "rateable": "beckn:rateable",
-    "rating": "beckn:rating"
+    "rating": "beckn:rating",
+    "isActive": "beckn:isActive",
+    "networkId": "beckn:networkId",
+    "provider": "beckn:provider",
+    "itemAttributes": "beckn:itemAttributes"
   }
 }

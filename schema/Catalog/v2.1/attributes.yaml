@@ -1,0 +1,63 @@
+$id: "https://schema.beckn.io/Catalog/v2.1"
+$schema: "https://json-schema.org/draft/2020-12/schema"
+description: Catalog schema for Beckn Protocol v2.0.1
+title: Catalog
+x-tags: [common]
+type: object
+properties:
+  '@context':
+    description: JSON-LD context URI for the core Catalog schema
+    type: string
+    format: uri
+    const: "https://schema.beckn.io/"
+  '@type':
+    description: Type of the catalog
+    type: string
+    const: beckn:Catalog
+  bppId:
+    description: BPP (Beckn Protocol Provider) identifier that publishes this catalog
+    type: string
+    example: bpp.example.com
+  bppUri:
+    description: BPP (Beckn Protocol Provider) URI endpoint
+    type: string
+    format: uri
+    example: "https://bpp.example.com"
+  descriptor:
+    description: A verbal summary of the catalog for humans, AI agents, etc to read and understand the context.
+    allOf:
+    - $ref: "https://schema.beckn.io/Descriptor/v2.1"
+  id:
+    description: Unique identifier for the catalog
+    type: string
+    example: catalog-electronics-001
+  isActive:
+    description: Whether the catalog is active
+    type: boolean
+    default: true
+  items:
+    description: Array of beckn core Item entities in this catalog
+    type: array
+    items:
+      $ref: "https://schema.beckn.io/Item/v2.1"
+  offers:
+    type: array
+    items:
+      $ref: "https://schema.beckn.io/Offer/v2.1"
+  providerId:
+    description: Reference to the provider that owns this catalog
+    type: string
+    example: tech-store-001
+  validity:
+    description: The time period during which this catalog is valid
+    allOf:
+    - $ref: "https://schema.beckn.io/TimePeriod/v2.1"
+required:
+- '@context'
+- '@type'
+- id
+- descriptor
+- bppId
+- bppUri
+- items
+additionalProperties: false

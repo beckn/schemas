@@ -1,40 +1,18 @@
-# Item — v2.0
+# Item
 
-A product or service offered by a provider.
+## Description
 
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [Item](../README.md)
+Schema definition for Item in the Beckn Protocol
 
-## Files
+## Version
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `Item` |
+- **v2.0**: From protocol-specifications-v2 main branch
+- **v2.1**: Updated version in the schemas repository
 
-## Root linked-data files
+## Usage
 
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
-
-## Properties
-
-| Property | Type | Description |
-|----------|------|-------------|
-| `@context` | string | JSON-LD context URI for the core Item schema |
-| `@type` | string | Type of the core item |
-| `availabilityWindow` | [TimePeriod](../../TimePeriod/README.md)[] | Time periods when the item is available |
-| `availableAt` | [Location](../../Location/README.md)[] | Physical locations where the item is available |
-| `category` | [CategoryCode](../../CategoryCode/README.md) |  |
-| `constraints` | [Constraint](../../Constraint/README.md)[] |  |
-| `descriptor` | [Descriptor](../../Descriptor/README.md) |  |
-| `id` | string | Unique identifier for the item |
-| `isActive` | boolean | Whether the item is active |
-| `itemAttributes` | [Attributes](../../Attributes/README.md) |  |
-| `networkId` | string[] | Array of network identifiers for the BAP (Beckn App Provider) that offers this item |
-| `policies` | [Policy](../../Policy/README.md)[] |  |
-| `provider` | [Provider](../../Provider/README.md) |  |
-| `rateable` | boolean | Whether the item can be rated by customers |
-| `rating` | [Rating](../../Rating/README.md) |  |
+```json
+{
+  "$ref": "https://schema.beckn.io/Item/v2.0"
+}
+```

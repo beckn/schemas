@@ -9,14 +9,12 @@
     "Provider": "beckn:Provider",
     "@context": "beckn:@context",
     "@type": "beckn:@type",
-    "alerts": "beckn:alerts",
-    "descriptor": "beckn:descriptor",
     "id": "beckn:id",
+    "descriptor": "beckn:descriptor",
+    "validity": "beckn:validity",
     "locations": "beckn:locations",
-    "policies": "beckn:policies",
-    "providerAttributes": "beckn:providerAttributes",
     "rateable": "beckn:rateable",
     "rating": "beckn:rating",
-    "validity": "beckn:validity"
+    "providerAttributes": "beckn:providerAttributes"
   }
 }

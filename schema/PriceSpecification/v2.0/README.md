@@ -1,30 +1,18 @@
-# PriceSpecification — v2.0
+# PriceSpecification
 
-A price breakdown specification.
+## Description
 
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [PriceSpecification](../README.md)
+Schema definition for PriceSpecification in the Beckn Protocol
 
-## Files
+## Version
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `PriceSpecification` |
+- **v2.0**: From protocol-specifications-v2 main branch
+- **v2.1**: Updated version in the schemas repository
 
-## Root linked-data files
+## Usage
 
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
-
-## Properties
-
-| Property | Type | Description |
-|----------|------|-------------|
-| `currency` | string | ISO 4217 code |
-| `value` | number | Total value for this price specification |
-| `applicableQuantity` | [Quantity](../../Quantity/README.md) |  |
-| `components` | object[] | Optional components (tax, shipping, discount, fee, surcharge) |
-| `x-jsonld` |  |  |
+```json
+{
+  "$ref": "https://schema.beckn.io/PriceSpecification/v2.0"
+}
+```

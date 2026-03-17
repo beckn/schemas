@@ -16,34 +16,40 @@
       "rdfs:comment": "Non-streaming tracking handle per legacy semantics (url/transport/status)."
     },
     {
-      "@id": "beckn:@context",
+      "@id": "beckn:context",
       "@type": "rdf:Property",
-      "rdfs:label": "@context",
-      "rdfs:comment": "TBD"
+      "rdfs:label": "context",
+      "rdfs:comment": "context property of Tracking"
     },
     {
-      "@id": "beckn:@type",
+      "@id": "beckn:type",
       "@type": "rdf:Property",
-      "rdfs:label": "@type",
-      "rdfs:comment": "TBD"
+      "rdfs:label": "type",
+      "rdfs:comment": "type property of Tracking"
     },
     {
-      "@id": "beckn:expiresAt",
+      "@id": "beckn:tl_method",
       "@type": "rdf:Property",
-      "rdfs:label": "expires At",
-      "rdfs:comment": "ISO 8601 expiry timestamp for the tracking handle."
-    },
-    {
-      "@id": "beckn:trackingStatus",
-      "@type": "rdf:Property",
-      "rdfs:label": "tracking Status",
-      "rdfs:comment": "TODO: Description Needed - trackingStatus"
+      "rdfs:label": "tl_method",
+      "rdfs:comment": "tl_method property of Tracking"
     },
     {
       "@id": "beckn:url",
       "@type": "rdf:Property",
       "rdfs:label": "url",
-      "rdfs:comment": "Link/handle to off-network tracking UI or endpoint."
+      "rdfs:comment": "url property of Tracking"
+    },
+    {
+      "@id": "beckn:trackingStatus",
+      "@type": "rdf:Property",
+      "rdfs:label": "trackingStatus",
+      "rdfs:comment": "trackingStatus property of Tracking"
+    },
+    {
+      "@id": "beckn:expires_at",
+      "@type": "rdf:Property",
+      "rdfs:label": "expires_at",
+      "rdfs:comment": "expires_at property of Tracking"
     }
   ]
 }

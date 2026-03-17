@@ -1,0 +1,85 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Payment",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Payment",
+      "rdfs:comment": "Schema definition for Payment in the Beckn Protocol"
+    },
+    {
+      "@id": "beckn:context",
+      "@type": "rdf:Property",
+      "rdfs:label": "context",
+      "rdfs:comment": "context property of Payment"
+    },
+    {
+      "@id": "beckn:type",
+      "@type": "rdf:Property",
+      "rdfs:label": "type",
+      "rdfs:comment": "type property of Payment"
+    },
+    {
+      "@id": "beckn:id",
+      "@type": "rdf:Property",
+      "rdfs:label": "id",
+      "rdfs:comment": "id property of Payment"
+    },
+    {
+      "@id": "beckn:paymentStatus",
+      "@type": "rdf:Property",
+      "rdfs:label": "paymentStatus",
+      "rdfs:comment": "paymentStatus property of Payment"
+    },
+    {
+      "@id": "beckn:amount",
+      "@type": "rdf:Property",
+      "rdfs:label": "amount",
+      "rdfs:comment": "amount property of Payment"
+    },
+    {
+      "@id": "beckn:paymentURL",
+      "@type": "rdf:Property",
+      "rdfs:label": "paymentURL",
+      "rdfs:comment": "paymentURL property of Payment"
+    },
+    {
+      "@id": "beckn:txnRef",
+      "@type": "rdf:Property",
+      "rdfs:label": "txnRef",
+      "rdfs:comment": "txnRef property of Payment"
+    },
+    {
+      "@id": "beckn:paidAt",
+      "@type": "rdf:Property",
+      "rdfs:label": "paidAt",
+      "rdfs:comment": "paidAt property of Payment"
+    },
+    {
+      "@id": "beckn:acceptedPaymentMethod",
+      "@type": "rdf:Property",
+      "rdfs:label": "acceptedPaymentMethod",
+      "rdfs:comment": "acceptedPaymentMethod property of Payment"
+    },
+    {
+      "@id": "beckn:beneficiary",
+      "@type": "rdf:Property",
+      "rdfs:label": "beneficiary",
+      "rdfs:comment": "beneficiary property of Payment"
+    },
+    {
+      "@id": "beckn:paymentAttributes",
+      "@type": "rdf:Property",
+      "rdfs:label": "paymentAttributes",
+      "rdfs:comment": "paymentAttributes property of Payment"
+    }
+  ]
+}

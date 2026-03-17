@@ -12,38 +12,32 @@
     {
       "@id": "beckn:PriceSpecification",
       "@type": "rdfs:Class",
-      "rdfs:label": "Price Specification",
-      "rdfs:comment": "Schema definition for PriceSpecification in the Beckn Protocol v2.0.1"
+      "rdfs:label": "PriceSpecification",
+      "rdfs:comment": "Schema definition for PriceSpecification in the Beckn Protocol"
     },
     {
       "@id": "beckn:currency",
       "@type": "rdf:Property",
       "rdfs:label": "currency",
-      "rdfs:comment": "ISO 4217 code"
+      "rdfs:comment": "currency property of PriceSpecification"
     },
     {
       "@id": "beckn:value",
       "@type": "rdf:Property",
       "rdfs:label": "value",
-      "rdfs:comment": "Total value for this price specification"
+      "rdfs:comment": "value property of PriceSpecification"
     },
     {
       "@id": "beckn:applicableQuantity",
       "@type": "rdf:Property",
-      "rdfs:label": "applicable Quantity",
-      "rdfs:comment": "TODO: Description Needed - applicableQuantity"
+      "rdfs:label": "applicableQuantity",
+      "rdfs:comment": "applicableQuantity property of PriceSpecification"
     },
     {
       "@id": "beckn:components",
       "@type": "rdf:Property",
       "rdfs:label": "components",
-      "rdfs:comment": "Optional components (tax, shipping, discount, fee, surcharge)"
-    },
-    {
-      "@id": "beckn:x-jsonld",
-      "@type": "rdf:Property",
-      "rdfs:label": "x-jsonld",
-      "rdfs:comment": "TODO: Description Needed - x-jsonld"
+      "rdfs:comment": "components property of PriceSpecification"
     }
   ]
 }

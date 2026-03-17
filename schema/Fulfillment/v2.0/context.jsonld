@@ -9,14 +9,10 @@
     "Fulfillment": "beckn:Fulfillment",
     "@context": "beckn:@context",
     "@type": "beckn:@type",
-    "agent": "beckn:agent",
-    "fulfillmentAttributes": "beckn:fulfillmentAttributes",
     "id": "beckn:id",
-    "instructions": "beckn:instructions",
+    "fulfillmentStatus": "beckn:fulfillmentStatus",
     "mode": "beckn:mode",
-    "participants": "beckn:participants",
-    "state": "beckn:state",
-    "stages": "beckn:stages",
-    "trackingEnabled": "beckn:trackingEnabled"
+    "trackingAction": "beckn:trackingAction",
+    "deliveryAttributes": "beckn:deliveryAttributes"
   }
 }

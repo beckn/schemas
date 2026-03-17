@@ -1,0 +1,109 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Item",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Item",
+      "rdfs:comment": "Schema definition for Item in the Beckn Protocol v2.0.1"
+    },
+    {
+      "@id": "beckn:@context",
+      "@type": "rdf:Property",
+      "rdfs:label": "@context",
+      "rdfs:comment": "JSON-LD context URI for the core Item schema"
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "Type of the core item"
+    },
+    {
+      "@id": "beckn:availabilityWindow",
+      "@type": "rdf:Property",
+      "rdfs:label": "availability Window",
+      "rdfs:comment": "Time periods when the item is available"
+    },
+    {
+      "@id": "beckn:availableAt",
+      "@type": "rdf:Property",
+      "rdfs:label": "available At",
+      "rdfs:comment": "Physical locations where the item is available"
+    },
+    {
+      "@id": "beckn:category",
+      "@type": "rdf:Property",
+      "rdfs:label": "category",
+      "rdfs:comment": "TODO: Description Needed - category"
+    },
+    {
+      "@id": "beckn:constraints",
+      "@type": "rdf:Property",
+      "rdfs:label": "constraints",
+      "rdfs:comment": "TODO: Description Needed - constraints"
+    },
+    {
+      "@id": "beckn:descriptor",
+      "@type": "rdf:Property",
+      "rdfs:label": "descriptor",
+      "rdfs:comment": "TODO: Description Needed - descriptor"
+    },
+    {
+      "@id": "beckn:id",
+      "@type": "rdf:Property",
+      "rdfs:label": "id",
+      "rdfs:comment": "Unique identifier for the item"
+    },
+    {
+      "@id": "beckn:isActive",
+      "@type": "rdf:Property",
+      "rdfs:label": "is Active",
+      "rdfs:comment": "Whether the item is active"
+    },
+    {
+      "@id": "beckn:itemAttributes",
+      "@type": "rdf:Property",
+      "rdfs:label": "item Attributes",
+      "rdfs:comment": "TODO: Description Needed - itemAttributes"
+    },
+    {
+      "@id": "beckn:networkId",
+      "@type": "rdf:Property",
+      "rdfs:label": "network Id",
+      "rdfs:comment": "Array of network identifiers for the BAP (Beckn App Provider) that offers this item"
+    },
+    {
+      "@id": "beckn:policies",
+      "@type": "rdf:Property",
+      "rdfs:label": "policies",
+      "rdfs:comment": "TODO: Description Needed - policies"
+    },
+    {
+      "@id": "beckn:provider",
+      "@type": "rdf:Property",
+      "rdfs:label": "provider",
+      "rdfs:comment": "TODO: Description Needed - provider"
+    },
+    {
+      "@id": "beckn:rateable",
+      "@type": "rdf:Property",
+      "rdfs:label": "rateable",
+      "rdfs:comment": "Whether the item can be rated by customers"
+    },
+    {
+      "@id": "beckn:rating",
+      "@type": "rdf:Property",
+      "rdfs:label": "rating",
+      "rdfs:comment": "TODO: Description Needed - rating"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Form",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Form",
+      "rdfs:comment": "Describes a form"
+    },
+    {
+      "@id": "beckn:@context",
+      "@type": "rdf:Property",
+      "rdfs:label": "@context",
+      "rdfs:comment": "CPD"
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "TODO: Description Needed - @type"
+    },
+    {
+      "@id": "beckn:data",
+      "@type": "rdf:Property",
+      "rdfs:label": "data",
+      "rdfs:comment": "The form submission data"
+    },
+    {
+      "@id": "beckn:mimeType",
+      "@type": "rdf:Property",
+      "rdfs:label": "mime Type",
+      "rdfs:comment": "This field indicates the nature and format of the form received by querying the url. MIME types are defined and standardized in IETF's RFC 6838."
+    },
+    {
+      "@id": "beckn:submissionId",
+      "@type": "rdf:Property",
+      "rdfs:label": "submission Id",
+      "rdfs:comment": "TODO: Description Needed - submissionId"
+    },
+    {
+      "@id": "beckn:url",
+      "@type": "rdf:Property",
+      "rdfs:label": "url",
+      "rdfs:comment": "The URL from where the form can be fetched. The content fetched from the url must be processed as per the mimeType specified in this object. Once fetched, the rendering platform can choosed to render the form as-is as an embeddable element; or process it further to blend with the theme of the application. In case the interface is non-visual, the the render can process the form data and reproduce it as per the standard specified in the form."
+    }
+  ]
+}

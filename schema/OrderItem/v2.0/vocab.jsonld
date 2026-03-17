@@ -1,0 +1,55 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:OrderItem",
+      "@type": "rdfs:Class",
+      "rdfs:label": "OrderItem",
+      "rdfs:comment": "Schema definition for OrderItem in the Beckn Protocol"
+    },
+    {
+      "@id": "beckn:lineId",
+      "@type": "rdf:Property",
+      "rdfs:label": "lineId",
+      "rdfs:comment": "lineId property of OrderItem"
+    },
+    {
+      "@id": "beckn:orderedItem",
+      "@type": "rdf:Property",
+      "rdfs:label": "orderedItem",
+      "rdfs:comment": "orderedItem property of OrderItem"
+    },
+    {
+      "@id": "beckn:acceptedOffer",
+      "@type": "rdf:Property",
+      "rdfs:label": "acceptedOffer",
+      "rdfs:comment": "acceptedOffer property of OrderItem"
+    },
+    {
+      "@id": "beckn:quantity",
+      "@type": "rdf:Property",
+      "rdfs:label": "quantity",
+      "rdfs:comment": "quantity property of OrderItem"
+    },
+    {
+      "@id": "beckn:price",
+      "@type": "rdf:Property",
+      "rdfs:label": "price",
+      "rdfs:comment": "price property of OrderItem"
+    },
+    {
+      "@id": "beckn:orderItemAttributes",
+      "@type": "rdf:Property",
+      "rdfs:label": "orderItemAttributes",
+      "rdfs:comment": "orderItemAttributes property of OrderItem"
+    }
+  ]
+}

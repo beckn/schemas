@@ -1,70 +1,66 @@
 $id: https://schema.beckn.io/Invoice/v2.0
 $schema: https://json-schema.org/draft/2020-12/schema
-description: Schema definition for Invoice in the Beckn Protocol v2.0.1
+description: Schema definition for Invoice in the Beckn Protocol
 title: Invoice
 type: object
 properties:
   '@context':
-    description: CPD
     type: string
     format: uri
-    const: https://schema.beckn.io/
+    example: https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld
   '@type':
-    description: TPD
     type: string
     enum:
-    - Invoice
+    - beckn:Invoice
     x-jsonld:
       '@id': schema:Invoice
-  dueDate:
+  beckn:id:
     type: string
-    x-jsonld:
-      '@id': schema:paymentDueDate
-    format: date
-    nullable: true
-  id:
     description: Stable invoice identifier (system id)
-    type: string
     x-jsonld:
       '@id': schema:identifier
-  invoiceAttributes:
-    description: Attribute Pack for tax regime (e.g., GST/VAT), e-invoice refs, legal boilerplate, etc.
-    allOf:
-    - $ref: https://schema.beckn.io/Attributes/v2.0
-  issueDate:
+  beckn:number:
     type: string
-    x-jsonld:
-      '@id': schema:dateIssued
-    format: date
-  number:
     description: Human-visible invoice number
-    type: string
     x-jsonld:
       '@id': schema:confirmationNumber
-  payee:
+  beckn:issueDate:
+    type: string
+    format: date
+    x-jsonld:
+      '@id': schema:dateIssued
+  beckn:dueDate:
+    type: string
+    format: date
+    nullable: true
+    x-jsonld:
+      '@id': schema:paymentDueDate
+  beckn:payee:
+    $ref: 'https://schema.beckn.io/Provider/v2.0'
     description: Seller / issuer of the invoice
     x-jsonld:
       '@id': schema:provider
-    allOf:
-    - $ref: https://schema.beckn.io/Provider/v2.0
-  payer:
-    description: consumer being invoiced
+  beckn:payer:
+    $ref: 'https://schema.beckn.io/Buyer/v2.0'
+    description: Buyer being invoiced
     x-jsonld:
       '@id': schema:customer
-    allOf:
-    - $ref: https://schema.beckn.io/Consumer/v2.0
-  costBreakup:
-    type: array
-    items:
-      $ref: https://schema.beckn.io/PriceSpecification/v2.0
+  beckn:totals:
+    $ref: 'https://schema.beckn.io/PriceSpecification/v2.0'
+    description: Invoice grand totals (tax/shipping/discount components inside)
+    x-jsonld:
+      '@id': schema:priceSpecification
+  beckn:invoiceAttributes:
+    $ref: 'https://schema.beckn.io/Attributes/v2.0'
+    description: Attribute Pack for tax regime (e.g., GST/VAT), e-invoice refs, legal
+      boilerplate, etc.
 required:
 - '@context'
 - '@type'
-- id
-- number
-- issueDate
-- payee
-- payer
+- beckn:id
+- beckn:number
+- beckn:issueDate
+- beckn:totals
+- beckn:payee
+- beckn:payer
 additionalProperties: false
-x-tags:
-- common

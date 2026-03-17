@@ -7,10 +7,11 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "beckn": "https://schema.beckn.io/",
     "PriceSpecification": "beckn:PriceSpecification",
+    "@context": "beckn:@context",
+    "@type": "beckn:@type",
     "currency": "beckn:currency",
     "value": "beckn:value",
     "applicableQuantity": "beckn:applicableQuantity",
-    "components": "beckn:components",
-    "x-jsonld": "beckn:x-jsonld"
+    "components": "beckn:components"
   }
 }

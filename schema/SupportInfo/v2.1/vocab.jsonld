@@ -1,0 +1,79 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:SupportInfo",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Support Info",
+      "rdfs:comment": "Canonical support contact for an entity, mapped to schema.org ContactPoint."
+    },
+    {
+      "@id": "beckn:@context",
+      "@type": "rdf:Property",
+      "rdfs:label": "@context",
+      "rdfs:comment": "TODO: Description Needed - @context"
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "TODO: Description Needed - @type"
+    },
+    {
+      "@id": "beckn:channels",
+      "@type": "rdf:Property",
+      "rdfs:label": "channels",
+      "rdfs:comment": "Available support channels."
+    },
+    {
+      "@id": "beckn:email",
+      "@type": "rdf:Property",
+      "rdfs:label": "email",
+      "rdfs:comment": "Support email address."
+    },
+    {
+      "@id": "beckn:hoursAvailable",
+      "@type": "rdf:Property",
+      "rdfs:label": "hours Available",
+      "rdfs:comment": "Human-readable support hours (local time)"
+    },
+    {
+      "@id": "beckn:name",
+      "@type": "rdf:Property",
+      "rdfs:label": "name",
+      "rdfs:comment": "Name of the support organization or contact."
+    },
+    {
+      "@id": "beckn:telephone",
+      "@type": "rdf:Property",
+      "rdfs:label": "telephone",
+      "rdfs:comment": "Telephone number."
+    },
+    {
+      "@id": "beckn:chat",
+      "@type": "rdf:Property",
+      "rdfs:label": "chat",
+      "rdfs:comment": "Embeddable chat endpoint for support."
+    },
+    {
+      "@id": "beckn:url",
+      "@type": "rdf:Property",
+      "rdfs:label": "url",
+      "rdfs:comment": "Generic URL to a support page."
+    },
+    {
+      "@id": "beckn:callbackStatus",
+      "@type": "rdf:Property",
+      "rdfs:label": "callback Status",
+      "rdfs:comment": "Status of a support callback request. Indicates whether a callback has been requested, scheduled, or completed."
+    }
+  ]
+}

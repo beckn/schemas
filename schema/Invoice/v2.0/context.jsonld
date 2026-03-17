@@ -9,13 +9,13 @@
     "Invoice": "beckn:Invoice",
     "@context": "beckn:@context",
     "@type": "beckn:@type",
-    "dueDate": "beckn:dueDate",
     "id": "beckn:id",
-    "invoiceAttributes": "beckn:invoiceAttributes",
-    "issueDate": "beckn:issueDate",
     "number": "beckn:number",
+    "issueDate": "beckn:issueDate",
+    "dueDate": "beckn:dueDate",
     "payee": "beckn:payee",
     "payer": "beckn:payer",
-    "costBreakup": "beckn:costBreakup"
+    "totals": "beckn:totals",
+    "invoiceAttributes": "beckn:invoiceAttributes"
   }
 }

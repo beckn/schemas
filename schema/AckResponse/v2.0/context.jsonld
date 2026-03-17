@@ -1,0 +1,17 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "beckn": "https://schema.beckn.io/",
+    "AckResponse": "beckn:AckResponse",
+    "@context": "beckn:@context",
+    "@type": "beckn:@type",
+    "transaction_id": "beckn:transaction_id",
+    "timestamp": "beckn:timestamp",
+    "ack_status": "beckn:ack_status",
+    "error": "beckn:error"
+  }
+}

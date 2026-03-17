@@ -9,13 +9,11 @@
     "SupportInfo": "beckn:SupportInfo",
     "@context": "beckn:@context",
     "@type": "beckn:@type",
-    "channels": "beckn:channels",
-    "email": "beckn:email",
-    "hoursAvailable": "beckn:hoursAvailable",
     "name": "beckn:name",
-    "telephone": "beckn:telephone",
-    "chat": "beckn:chat",
+    "phone": "beckn:phone",
+    "email": "beckn:email",
     "url": "beckn:url",
-    "callbackStatus": "beckn:callbackStatus"
+    "hours": "beckn:hours",
+    "channels": "beckn:channels"
   }
 }

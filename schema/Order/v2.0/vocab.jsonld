@@ -1,0 +1,103 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Order",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Order",
+      "rdfs:comment": "Schema definition for Order in the Beckn Protocol"
+    },
+    {
+      "@id": "beckn:context",
+      "@type": "rdf:Property",
+      "rdfs:label": "context",
+      "rdfs:comment": "context property of Order"
+    },
+    {
+      "@id": "beckn:type",
+      "@type": "rdf:Property",
+      "rdfs:label": "type",
+      "rdfs:comment": "type property of Order"
+    },
+    {
+      "@id": "beckn:id",
+      "@type": "rdf:Property",
+      "rdfs:label": "id",
+      "rdfs:comment": "id property of Order"
+    },
+    {
+      "@id": "beckn:orderStatus",
+      "@type": "rdf:Property",
+      "rdfs:label": "orderStatus",
+      "rdfs:comment": "orderStatus property of Order"
+    },
+    {
+      "@id": "beckn:orderNumber",
+      "@type": "rdf:Property",
+      "rdfs:label": "orderNumber",
+      "rdfs:comment": "orderNumber property of Order"
+    },
+    {
+      "@id": "beckn:seller",
+      "@type": "rdf:Property",
+      "rdfs:label": "seller",
+      "rdfs:comment": "seller property of Order"
+    },
+    {
+      "@id": "beckn:buyer",
+      "@type": "rdf:Property",
+      "rdfs:label": "buyer",
+      "rdfs:comment": "buyer property of Order"
+    },
+    {
+      "@id": "beckn:orderItems",
+      "@type": "rdf:Property",
+      "rdfs:label": "orderItems",
+      "rdfs:comment": "orderItems property of Order"
+    },
+    {
+      "@id": "beckn:acceptedOffers",
+      "@type": "rdf:Property",
+      "rdfs:label": "acceptedOffers",
+      "rdfs:comment": "acceptedOffers property of Order"
+    },
+    {
+      "@id": "beckn:orderValue",
+      "@type": "rdf:Property",
+      "rdfs:label": "orderValue",
+      "rdfs:comment": "orderValue property of Order"
+    },
+    {
+      "@id": "beckn:invoice",
+      "@type": "rdf:Property",
+      "rdfs:label": "invoice",
+      "rdfs:comment": "invoice property of Order"
+    },
+    {
+      "@id": "beckn:payment",
+      "@type": "rdf:Property",
+      "rdfs:label": "payment",
+      "rdfs:comment": "payment property of Order"
+    },
+    {
+      "@id": "beckn:fulfillment",
+      "@type": "rdf:Property",
+      "rdfs:label": "fulfillment",
+      "rdfs:comment": "fulfillment property of Order"
+    },
+    {
+      "@id": "beckn:orderAttributes",
+      "@type": "rdf:Property",
+      "rdfs:label": "orderAttributes",
+      "rdfs:comment": "orderAttributes property of Order"
+    }
+  ]
+}

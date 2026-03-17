@@ -1,30 +1,18 @@
-# CategoryCode — v2.0
+# CategoryCode
 
-Standardised category code.
+## Description
 
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [CategoryCode](../README.md)
+Schema definition for CategoryCode in the Beckn Protocol
 
-## Files
+## Version
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `CategoryCode` |
+- **v2.0**: From protocol-specifications-v2 main branch
+- **v2.1**: Updated version in the schemas repository
 
-## Root linked-data files
+## Usage
 
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
-
-## Properties
-
-| Property | Type | Description |
-|----------|------|-------------|
-| `@context` | string | CPD |
-| `@type` | string | Context-specific Type of the category code |
-| `schema:codeValue` | string | Category code value |
-| `schema:description` | string | Category description |
-| `schema:name` | string | Category name |
+```json
+{
+  "$ref": "https://schema.beckn.io/CategoryCode/v2.0"
+}
+```

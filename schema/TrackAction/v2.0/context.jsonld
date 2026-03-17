@@ -7,7 +7,9 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "beckn": "https://schema.beckn.io/",
     "TrackAction": "beckn:TrackAction",
-    "context": "beckn:context",
-    "message": "beckn:message"
+    "@context": "beckn:@context",
+    "@type": "beckn:@type",
+    "id": "beckn:id",
+    "url": "beckn:url"
   }
 }

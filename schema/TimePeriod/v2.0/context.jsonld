@@ -7,6 +7,7 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "beckn": "https://schema.beckn.io/",
     "TimePeriod": "beckn:TimePeriod",
+    "@context": "beckn:@context",
     "@type": "beckn:@type",
     "startDate": "beckn:startDate",
     "endDate": "beckn:endDate",

@@ -13,37 +13,25 @@
       "@id": "beckn:Rating",
       "@type": "rdfs:Class",
       "rdfs:label": "Rating",
-      "rdfs:comment": "Aggregated rating information for an entity. Aligns with schema.org/AggregateRating semantics."
+      "rdfs:comment": "Schema definition for Rating in the Beckn Protocol"
     },
     {
-      "@id": "beckn:@context",
+      "@id": "beckn:type",
       "@type": "rdf:Property",
-      "rdfs:label": "@context",
-      "rdfs:comment": "TODO: Description Needed - @context"
-    },
-    {
-      "@id": "beckn:@type",
-      "@type": "rdf:Property",
-      "rdfs:label": "@type",
-      "rdfs:comment": "TODO: Description Needed - @type"
+      "rdfs:label": "type",
+      "rdfs:comment": "type property of Rating"
     },
     {
       "@id": "beckn:ratingValue",
       "@type": "rdf:Property",
-      "rdfs:label": "rating Value",
-      "rdfs:comment": "Rating value (typically 0-5)"
+      "rdfs:label": "ratingValue",
+      "rdfs:comment": "ratingValue property of Rating"
     },
     {
       "@id": "beckn:ratingCount",
       "@type": "rdf:Property",
-      "rdfs:label": "rating Count",
-      "rdfs:comment": "Number of ratings"
-    },
-    {
-      "@id": "beckn:reviewText",
-      "@type": "rdf:Property",
-      "rdfs:label": "review Text",
-      "rdfs:comment": "Optional textual review or comment"
+      "rdfs:label": "ratingCount",
+      "rdfs:comment": "ratingCount property of Rating"
     }
   ]
 }

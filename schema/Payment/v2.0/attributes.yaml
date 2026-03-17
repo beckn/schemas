@@ -1,0 +1,99 @@
+$id: https://schema.beckn.io/Payment/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Schema definition for Payment in the Beckn Protocol
+title: Payment
+type: object
+properties:
+  '@context':
+    type: string
+    format: uri
+    example: https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld
+  '@type':
+    type: string
+    enum:
+    - beckn:Payment
+    x-jsonld:
+      '@id': schema:Thing
+  beckn:id:
+    type: string
+    description: Payment record identifier
+    x-jsonld:
+      '@id': schema:identifier
+  beckn:paymentStatus:
+    type: string
+    description: Payment lifecycle status (Pending | Authorized | Captured | Failed
+      | Refunded | PartialRefund …)
+    enum:
+    - INITIATED
+    - PENDING
+    - AUTHORIZED
+    - CAPTURED
+    - COMPLETED
+    - FAILED
+    - CANCELLED
+    - REFUNDED
+    - PARTIALLY_REFUNDED
+    - CHARGEBACK
+    - DISPUTED
+    - EXPIRED
+    - REVERSED
+    - VOIDED
+    - SETTLED
+    - ON_HOLD
+    - ADJUSTED
+    x-jsonld:
+      '@id': beckn:paymentStatus
+  beckn:amount:
+    type: object
+    description: Amount associated with this payment action
+    properties:
+      currency:
+        type: string
+        x-jsonld:
+          '@id': schema:priceCurrency
+      value:
+        type: number
+        x-jsonld:
+          '@id': schema:price
+  beckn:paymentURL:
+    type: string
+    format: uri
+    description: URL for payment processing/redirection
+    example: https://payments.example.com/pay?transaction_id=123&amount=100
+    x-jsonld:
+      '@id': schema:url
+  beckn:txnRef:
+    type: string
+    description: PSP/gateway/bank transaction reference
+    x-jsonld:
+      '@id': schema:transactionNumber
+  beckn:paidAt:
+    type: string
+    format: date-time
+    nullable: true
+    description: When the last terminal event (capture/refund) happened
+    x-jsonld:
+      '@id': schema:paymentDueDate
+  beckn:acceptedPaymentMethod:
+    $ref: 'https://schema.beckn.io/AcceptedPaymentMethod/v2.0'
+  beckn:beneficiary:
+    type: string
+    description: Who will be the beneficiary or recipient of the payment
+    enum:
+    - BPP
+    - BAP
+    - BUYER
+    example: BPP
+    x-jsonld:
+      '@id': schema:beneficiary
+  beckn:paymentAttributes:
+    $ref: 'https://schema.beckn.io/Attributes/v2.0'
+    description: 'Rail-specific attribute pack (e.g., UPI: VPA/UTR; CARD: token/3DS;
+      BNPL: plan/schedule)
+
+      '
+required:
+- '@context'
+- '@type'
+- beckn:paymentStatus
+additionalProperties: false

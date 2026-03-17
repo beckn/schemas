@@ -9,14 +9,14 @@
     "Catalog": "beckn:Catalog",
     "@context": "beckn:@context",
     "@type": "beckn:@type",
+    "id": "beckn:id",
+    "descriptor": "beckn:descriptor",
+    "providerId": "beckn:providerId",
     "bppId": "beckn:bppId",
     "bppUri": "beckn:bppUri",
-    "descriptor": "beckn:descriptor",
-    "id": "beckn:id",
+    "validity": "beckn:validity",
     "isActive": "beckn:isActive",
     "items": "beckn:items",
-    "offers": "beckn:offers",
-    "providerId": "beckn:providerId",
-    "validity": "beckn:validity"
+    "offers": "beckn:offers"
   }
 }

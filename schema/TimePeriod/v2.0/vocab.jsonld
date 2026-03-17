@@ -12,38 +12,38 @@
     {
       "@id": "beckn:TimePeriod",
       "@type": "rdfs:Class",
-      "rdfs:label": "Time Period",
+      "rdfs:label": "TimePeriod",
       "rdfs:comment": "Time window with date-time precision for availability/validity"
     },
     {
-      "@id": "beckn:@type",
+      "@id": "beckn:type",
       "@type": "rdf:Property",
-      "rdfs:label": "@type",
-      "rdfs:comment": "JSON-LD type for a date-time period"
+      "rdfs:label": "type",
+      "rdfs:comment": "type property of TimePeriod"
     },
     {
       "@id": "beckn:startDate",
       "@type": "rdf:Property",
-      "rdfs:label": "start Date",
-      "rdfs:comment": "Start instant (inclusive)"
+      "rdfs:label": "startDate",
+      "rdfs:comment": "startDate property of TimePeriod"
     },
     {
       "@id": "beckn:endDate",
       "@type": "rdf:Property",
-      "rdfs:label": "end Date",
-      "rdfs:comment": "End instant (exclusive or inclusive per domain semantics)"
+      "rdfs:label": "endDate",
+      "rdfs:comment": "endDate property of TimePeriod"
     },
     {
       "@id": "beckn:startTime",
       "@type": "rdf:Property",
-      "rdfs:label": "start Time",
-      "rdfs:comment": "Start time of the time period"
+      "rdfs:label": "startTime",
+      "rdfs:comment": "startTime property of TimePeriod"
     },
     {
       "@id": "beckn:endTime",
       "@type": "rdf:Property",
-      "rdfs:label": "end Time",
-      "rdfs:comment": "End time of the time period"
+      "rdfs:label": "endTime",
+      "rdfs:comment": "endTime property of TimePeriod"
     }
   ]
 }

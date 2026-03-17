@@ -1,0 +1,67 @@
+$id: https://schema.beckn.io/Buyer/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Schema definition for Buyer in the Beckn Protocol
+title: Buyer
+type: object
+properties:
+  '@context':
+    type: string
+    format: uri
+    example: https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld
+  '@type':
+    type: string
+    enum:
+    - beckn:Buyer
+    x-jsonld:
+      '@id': schema:Thing
+  beckn:id:
+    type: string
+    description: Unique identifier for the buyer (personId or orgId in legacy schema)
+    x-jsonld:
+      '@id': schema:identifier
+  beckn:role:
+    type: string
+    enum:
+    - BUYER
+    - SELLER
+    - INTERMEDIARY
+    - PAYER
+    - PAYEE
+    - FULFILLER
+    description: The functional role of the buyer in the transaction.
+    x-jsonld:
+      '@id': schema:roleName
+  beckn:displayName:
+    type: string
+    description: Human-readable display name
+    x-jsonld:
+      '@id': schema:name
+  beckn:telephone:
+    type: string
+    description: Telephone number
+    x-jsonld:
+      '@id': schema:telephone
+  beckn:email:
+    type: string
+    format: email
+    description: Email Address
+    x-jsonld:
+      '@id': schema:email
+  beckn:taxID:
+    type: string
+    description: Tax identifier for the buyer.
+    x-jsonld:
+      '@id': schema:taxID
+  beckn:buyerAttributes:
+    $ref: 'https://schema.beckn.io/Attributes/v2.0'
+    description: 'Attribute Pack reference for richer identity: # buyer/identity.v1
+      (contact details: email, phone, address) # buyer/org-ids.v1 (LEI, GSTIN, ISIN,
+      CUSIP…) # buyer/kyc.v1 (jurisdictional compliance fields) # buyer/preferences.v1
+      (delivery preferences, accessibility needs, etc.)
+
+      '
+required:
+- '@context'
+- '@type'
+- beckn:id
+additionalProperties: false

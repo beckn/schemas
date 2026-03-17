@@ -1,20 +1,41 @@
-$id: "https://schema.beckn.io/SupportInfo/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
-description: Canonical support contact for an entity, mapped to schema.org ContactPoint.
+$id: https://schema.beckn.io/SupportInfo/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
+description: 'Canonical support contact for an entity, mapped to schema.org ContactPoint.
+
+  '
 title: SupportInfo
-x-tags: [common]
 type: object
 properties:
   '@context':
     type: string
     format: uri
-    default: "https://schema.beckn.io/"
+    example: https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld
   '@type':
     type: string
-    default: beckn:SupportInfo
+    enum:
+    - beckn:SupportInfo
+    x-jsonld:
+      '@id': beckn:SupportInfo
+  name:
+    type: string
+    description: Name of the support organization or contact.
+  phone:
+    type: string
+    description: Telephone number.
+  email:
+    type: string
+    format: email
+    description: Support email address.
+  url:
+    type: string
+    format: uri
+    description: Webpage or chat endpoint for support.
+  hours:
+    type: string
+    description: Human-readable support hours (local time).
   channels:
-    description: Available support channels.
     type: array
+    description: Available support channels.
     items:
       type: string
       enum:
@@ -25,31 +46,15 @@ properties:
       - WHATSAPP
       - IN_APP
       - OTHER
-  email:
-    description: Support email address.
-    type: string
-    format: email
-  hoursAvailable:
-    description: Human-readable support hours (local time)
-    type: string
-  name:
-    description: Name of the support organization or contact.
-    type: string
-  telephone:
-    description: Telephone number.
-    type: string
-  chat:
-    description: Embeddable chat endpoint for support.
-    type: string
-    format: uri
-  url:
-    description: Generic URL to a support page.
-    type: string
-    format: uri
-  callbackStatus:
-    description: Status of a support callback request. Indicates whether a callback has been requested, scheduled, or completed.
-    type: string
 required:
 - '@context'
 - '@type'
 additionalProperties: false
+x-jsonld:
+  '@type': schema:ContactPoint
+  schema:contactType: '"Customer Support"'
+  schema:telephone: $.phone
+  schema:email: $.email
+  schema:url: $.url
+  schema:name: $.name
+  schema:hoursAvailable: $.hours

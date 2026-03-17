@@ -10,7 +10,6 @@
     "@context": "beckn:@context",
     "@type": "beckn:@type",
     "ratingValue": "beckn:ratingValue",
-    "ratingCount": "beckn:ratingCount",
-    "reviewText": "beckn:reviewText"
+    "ratingCount": "beckn:ratingCount"
   }
 }

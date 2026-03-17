@@ -9,11 +9,9 @@
     "Descriptor": "beckn:Descriptor",
     "@context": "beckn:@context",
     "@type": "beckn:@type",
-    "longDesc": "beckn:longDesc",
-    "shortDesc": "beckn:shortDesc",
     "name": "beckn:name",
-    "thumbnailImage": "beckn:thumbnailImage",
-    "docs": "beckn:docs",
-    "mediaFile": "beckn:mediaFile"
+    "shortDesc": "beckn:shortDesc",
+    "longDesc": "beckn:longDesc",
+    "image": "beckn:image"
   }
 }

@@ -1,0 +1,55 @@
+$id: "https://schema.beckn.io/SupportInfo/v2.1"
+$schema: "https://json-schema.org/draft/2020-12/schema"
+description: Canonical support contact for an entity, mapped to schema.org ContactPoint.
+title: SupportInfo
+x-tags: [common]
+type: object
+properties:
+  '@context':
+    type: string
+    format: uri
+    default: "https://schema.beckn.io/"
+  '@type':
+    type: string
+    default: beckn:SupportInfo
+  channels:
+    description: Available support channels.
+    type: array
+    items:
+      type: string
+      enum:
+      - PHONE
+      - EMAIL
+      - WEB
+      - CHAT
+      - WHATSAPP
+      - IN_APP
+      - OTHER
+  email:
+    description: Support email address.
+    type: string
+    format: email
+  hoursAvailable:
+    description: Human-readable support hours (local time)
+    type: string
+  name:
+    description: Name of the support organization or contact.
+    type: string
+  telephone:
+    description: Telephone number.
+    type: string
+  chat:
+    description: Embeddable chat endpoint for support.
+    type: string
+    format: uri
+  url:
+    description: Generic URL to a support page.
+    type: string
+    format: uri
+  callbackStatus:
+    description: Status of a support callback request. Indicates whether a callback has been requested, scheduled, or completed.
+    type: string
+required:
+- '@context'
+- '@type'
+additionalProperties: false

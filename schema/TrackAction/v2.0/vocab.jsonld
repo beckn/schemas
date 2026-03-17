@@ -12,20 +12,20 @@
     {
       "@id": "beckn:TrackAction",
       "@type": "rdfs:Class",
-      "rdfs:label": "Track Action",
-      "rdfs:comment": "Beckn /beckn/track action envelope. Sent by a BAP to a BPP to request a real-time tracking handle for a fulfillment within an active contract."
+      "rdfs:label": "TrackAction",
+      "rdfs:comment": "Minimal schema.org TrackAction for clickable tracking."
     },
     {
-      "@id": "beckn:context",
+      "@id": "beckn:id",
       "@type": "rdf:Property",
-      "rdfs:label": "context",
-      "rdfs:comment": "TODO: Description Needed - context"
+      "rdfs:label": "id",
+      "rdfs:comment": "id property of TrackAction"
     },
     {
-      "@id": "beckn:message",
+      "@id": "beckn:url",
       "@type": "rdf:Property",
-      "rdfs:label": "message",
-      "rdfs:comment": "TODO: Description Needed - message"
+      "rdfs:label": "url",
+      "rdfs:comment": "url property of TrackAction"
     }
   ]
 }

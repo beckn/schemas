@@ -13,55 +13,37 @@
       "@id": "beckn:Descriptor",
       "@type": "rdfs:Class",
       "rdfs:label": "Descriptor",
-      "rdfs:comment": "Schema definition for Descriptor in the Beckn Protocol v2.0.1"
+      "rdfs:comment": "Schema definition for Descriptor in the Beckn Protocol"
     },
     {
-      "@id": "beckn:@context",
+      "@id": "beckn:type",
       "@type": "rdf:Property",
-      "rdfs:label": "@context",
-      "rdfs:comment": "Use case specific JSON-LD context. This can change from use case to use case, even within a domain."
-    },
-    {
-      "@id": "beckn:@type",
-      "@type": "rdf:Property",
-      "rdfs:label": "@type",
-      "rdfs:comment": "Type of the descriptor. The type can be overriden with a context-specific type"
-    },
-    {
-      "@id": "beckn:longDesc",
-      "@type": "rdf:Property",
-      "rdfs:label": "long Desc",
-      "rdfs:comment": "Detailed description of the item"
-    },
-    {
-      "@id": "beckn:shortDesc",
-      "@type": "rdf:Property",
-      "rdfs:label": "short Desc",
-      "rdfs:comment": "Short description of the item"
+      "rdfs:label": "type",
+      "rdfs:comment": "type property of Descriptor"
     },
     {
       "@id": "beckn:name",
       "@type": "rdf:Property",
       "rdfs:label": "name",
-      "rdfs:comment": "Name of the entity being described"
+      "rdfs:comment": "name property of Descriptor"
     },
     {
-      "@id": "beckn:thumbnailImage",
+      "@id": "beckn:shortDesc",
       "@type": "rdf:Property",
-      "rdfs:label": "thumbnail Image",
-      "rdfs:comment": "Name of the entity being described"
+      "rdfs:label": "shortDesc",
+      "rdfs:comment": "shortDesc property of Descriptor"
     },
     {
-      "@id": "beckn:docs",
+      "@id": "beckn:longDesc",
       "@type": "rdf:Property",
-      "rdfs:label": "docs",
-      "rdfs:comment": "Links to downloadable documents"
+      "rdfs:label": "longDesc",
+      "rdfs:comment": "longDesc property of Descriptor"
     },
     {
-      "@id": "beckn:mediaFile",
+      "@id": "beckn:image",
       "@type": "rdf:Property",
-      "rdfs:label": "media File",
-      "rdfs:comment": "Links to multimedia files and images"
+      "rdfs:label": "image",
+      "rdfs:comment": "image property of Descriptor"
     }
   ]
 }

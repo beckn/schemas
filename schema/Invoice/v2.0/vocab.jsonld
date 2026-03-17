@@ -13,67 +13,67 @@
       "@id": "beckn:Invoice",
       "@type": "rdfs:Class",
       "rdfs:label": "Invoice",
-      "rdfs:comment": "Schema definition for Invoice in the Beckn Protocol v2.0.1"
+      "rdfs:comment": "Schema definition for Invoice in the Beckn Protocol"
     },
     {
-      "@id": "beckn:@context",
+      "@id": "beckn:context",
       "@type": "rdf:Property",
-      "rdfs:label": "@context",
-      "rdfs:comment": "CPD"
+      "rdfs:label": "context",
+      "rdfs:comment": "context property of Invoice"
     },
     {
-      "@id": "beckn:@type",
+      "@id": "beckn:type",
       "@type": "rdf:Property",
-      "rdfs:label": "@type",
-      "rdfs:comment": "TPD"
-    },
-    {
-      "@id": "beckn:dueDate",
-      "@type": "rdf:Property",
-      "rdfs:label": "due Date",
-      "rdfs:comment": "TODO: Description Needed - dueDate"
+      "rdfs:label": "type",
+      "rdfs:comment": "type property of Invoice"
     },
     {
       "@id": "beckn:id",
       "@type": "rdf:Property",
       "rdfs:label": "id",
-      "rdfs:comment": "Stable invoice identifier (system id)"
-    },
-    {
-      "@id": "beckn:invoiceAttributes",
-      "@type": "rdf:Property",
-      "rdfs:label": "invoice Attributes",
-      "rdfs:comment": "Attribute Pack for tax regime (e.g., GST/VAT), e-invoice refs, legal boilerplate, etc."
-    },
-    {
-      "@id": "beckn:issueDate",
-      "@type": "rdf:Property",
-      "rdfs:label": "issue Date",
-      "rdfs:comment": "TODO: Description Needed - issueDate"
+      "rdfs:comment": "id property of Invoice"
     },
     {
       "@id": "beckn:number",
       "@type": "rdf:Property",
       "rdfs:label": "number",
-      "rdfs:comment": "Human-visible invoice number"
+      "rdfs:comment": "number property of Invoice"
+    },
+    {
+      "@id": "beckn:issueDate",
+      "@type": "rdf:Property",
+      "rdfs:label": "issueDate",
+      "rdfs:comment": "issueDate property of Invoice"
+    },
+    {
+      "@id": "beckn:dueDate",
+      "@type": "rdf:Property",
+      "rdfs:label": "dueDate",
+      "rdfs:comment": "dueDate property of Invoice"
     },
     {
       "@id": "beckn:payee",
       "@type": "rdf:Property",
       "rdfs:label": "payee",
-      "rdfs:comment": "Seller / issuer of the invoice"
+      "rdfs:comment": "payee property of Invoice"
     },
     {
       "@id": "beckn:payer",
       "@type": "rdf:Property",
       "rdfs:label": "payer",
-      "rdfs:comment": "consumer being invoiced"
+      "rdfs:comment": "payer property of Invoice"
     },
     {
-      "@id": "beckn:costBreakup",
+      "@id": "beckn:totals",
       "@type": "rdf:Property",
-      "rdfs:label": "cost Breakup",
-      "rdfs:comment": "TODO: Description Needed - costBreakup"
+      "rdfs:label": "totals",
+      "rdfs:comment": "totals property of Invoice"
+    },
+    {
+      "@id": "beckn:invoiceAttributes",
+      "@type": "rdf:Property",
+      "rdfs:label": "invoiceAttributes",
+      "rdfs:comment": "invoiceAttributes property of Invoice"
     }
   ]
 }

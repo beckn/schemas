@@ -1,38 +1,27 @@
-$id: "https://schema.beckn.io/CategoryCode/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
-description: Schema definition for CategoryCode in the Beckn Protocol v2.0.1
+$id: https://schema.beckn.io/CategoryCode/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Schema definition for CategoryCode in the Beckn Protocol
 title: CategoryCode
-x-tags: [common]
 type: object
 properties:
-  '@context':
-    description: JSON-LD context URI
-    type: string
-    format: uri
-    default: "https://schema.beckn.io/"
   '@type':
-    description: Context-specific Type of the category code
     type: string
-    default: beckn:CategoryCode
-  codeValue:
+    enum:
+    - schema:CategoryCode
+    description: Type of the category code
+    example: schema:CategoryCode
+  schema:codeValue:
+    type: string
     description: Category code value
-    type: string
     example: electronics
-    x-jsonld:
-      '@id': schema:codeValue
-  description:
-    description: Category description
+  schema:name:
     type: string
-    example: Electronic devices and equipment
-    x-jsonld:
-      '@id': schema:description
-  name:
     description: Category name
-    type: string
     example: Electronics
-    x-jsonld:
-      '@id': schema:name
+  schema:description:
+    type: string
+    description: Category description
+    example: Electronic devices and equipment
 required:
 - '@type'
-- codeValue
-additionalProperties: false
+- schema:codeValue

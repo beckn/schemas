@@ -12,38 +12,56 @@
     {
       "@id": "beckn:RatingInput",
       "@type": "rdfs:Class",
-      "rdfs:label": "Rating Input",
-      "rdfs:comment": "A form designed to capture rating and feedback from a user. This can be used by both BAP and BPP to fetch ratings and feedback of their respective users."
+      "rdfs:label": "RatingInput",
+      "rdfs:comment": "Schema definition for RatingInput in the Beckn Protocol"
     },
     {
-      "@id": "beckn:@context",
+      "@id": "beckn:context",
       "@type": "rdf:Property",
-      "rdfs:label": "@context",
-      "rdfs:comment": "TODO: Description Needed - @context"
+      "rdfs:label": "context",
+      "rdfs:comment": "context property of RatingInput"
     },
     {
-      "@id": "beckn:@type",
+      "@id": "beckn:type",
       "@type": "rdf:Property",
-      "rdfs:label": "@type",
-      "rdfs:comment": "TODO: Description Needed - @type"
+      "rdfs:label": "type",
+      "rdfs:comment": "type property of RatingInput"
     },
     {
-      "@id": "beckn:target",
+      "@id": "beckn:id",
       "@type": "rdf:Property",
-      "rdfs:label": "target",
-      "rdfs:comment": "The entity being rated"
+      "rdfs:label": "id",
+      "rdfs:comment": "id property of RatingInput"
     },
     {
-      "@id": "beckn:range",
+      "@id": "beckn:ratingValue",
       "@type": "rdf:Property",
-      "rdfs:label": "range",
-      "rdfs:comment": "TODO: Description Needed - range"
+      "rdfs:label": "ratingValue",
+      "rdfs:comment": "ratingValue property of RatingInput"
     },
     {
-      "@id": "beckn:feedbackFormSubmission",
+      "@id": "beckn:bestRating",
       "@type": "rdf:Property",
-      "rdfs:label": "feedback Form Submission",
-      "rdfs:comment": "The submission to the feedback form sent along with a rating request"
+      "rdfs:label": "bestRating",
+      "rdfs:comment": "bestRating property of RatingInput"
+    },
+    {
+      "@id": "beckn:worstRating",
+      "@type": "rdf:Property",
+      "rdfs:label": "worstRating",
+      "rdfs:comment": "worstRating property of RatingInput"
+    },
+    {
+      "@id": "beckn:category",
+      "@type": "rdf:Property",
+      "rdfs:label": "category",
+      "rdfs:comment": "category property of RatingInput"
+    },
+    {
+      "@id": "beckn:feedback",
+      "@type": "rdf:Property",
+      "rdfs:label": "feedback",
+      "rdfs:comment": "feedback property of RatingInput"
     }
   ]
 }

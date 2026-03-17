@@ -1,0 +1,25 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "beckn": "https://schema.beckn.io/",
+    "Order": "beckn:Order",
+    "@context": "beckn:@context",
+    "@type": "beckn:@type",
+    "id": "beckn:id",
+    "orderStatus": "beckn:orderStatus",
+    "orderNumber": "beckn:orderNumber",
+    "seller": "beckn:seller",
+    "buyer": "beckn:buyer",
+    "orderItems": "beckn:orderItems",
+    "acceptedOffers": "beckn:acceptedOffers",
+    "orderValue": "beckn:orderValue",
+    "invoice": "beckn:invoice",
+    "payment": "beckn:payment",
+    "fulfillment": "beckn:fulfillment",
+    "orderAttributes": "beckn:orderAttributes"
+  }
+}

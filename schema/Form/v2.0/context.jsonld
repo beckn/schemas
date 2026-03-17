@@ -9,9 +9,9 @@
     "Form": "beckn:Form",
     "@context": "beckn:@context",
     "@type": "beckn:@type",
+    "url": "beckn:url",
     "data": "beckn:data",
-    "mimeType": "beckn:mimeType",
-    "submissionId": "beckn:submissionId",
-    "url": "beckn:url"
+    "mime_type": "beckn:mime_type",
+    "submission_id": "beckn:submission_id"
   }
 }

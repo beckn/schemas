@@ -1,0 +1,96 @@
+$id: https://schema.beckn.io/Order/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Schema definition for Order in the Beckn Protocol
+title: Order
+type: object
+properties:
+  '@context':
+    type: string
+    format: uri
+    example: https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld
+  '@type':
+    type: string
+    enum:
+    - beckn:Order
+    x-jsonld:
+      '@id': schema:Order
+  beckn:id:
+    type: string
+    x-jsonld:
+      '@id': schema:identifier
+  beckn:orderStatus:
+    type: string
+    description: Order status/state
+    enum:
+    - CREATED
+    - PENDING
+    - CONFIRMED
+    - INPROGRESS
+    - PARTIALLYFULFILLED
+    - COMPLETED
+    - CANCELLED
+    - REJECTED
+    - FAILED
+    - RETURNED
+    - REFUNDED
+    - ONHOLD
+    x-jsonld:
+      '@id': beckn:orderStatus
+  beckn:orderNumber:
+    type: string
+    description: Human-visible order number
+    x-jsonld:
+      '@id': schema:orderNumber
+  beckn:seller:
+    $ref: 'https://schema.beckn.io/Provider/v2.0'
+    x-jsonld:
+      '@id': schema:seller
+  beckn:buyer:
+    $ref: 'https://schema.beckn.io/Buyer/v2.0'
+    x-jsonld:
+      '@id': schema:customer
+  beckn:orderItems:
+    type: array
+    minItems: 1
+    items:
+      $ref: 'https://schema.beckn.io/OrderItem/v2.0'
+    x-jsonld:
+      '@id': schema:orderItem
+  beckn:acceptedOffers:
+    type: array
+    items:
+      $ref: 'https://schema.beckn.io/Offer/v2.0'
+    description: Offers accepted at order-level (optional if captured per line)
+    x-jsonld:
+      '@id': schema:acceptedOffer
+  beckn:orderValue:
+    $ref: 'https://schema.beckn.io/PriceSpecification/v2.0'
+    description: Order totals snapshot (derivable from lines; optional)
+    x-jsonld:
+      '@id': schema:priceSpecification
+  beckn:invoice:
+    $ref: 'https://schema.beckn.io/Invoice/v2.0'
+    description: Invoice reference/summary
+    x-jsonld:
+      '@id': schema:Invoice
+  beckn:payment:
+    $ref: 'https://schema.beckn.io/Payment/v2.0'
+    description: Method/status; rail-specific payloads go to packs
+    x-jsonld:
+      '@id': schema:PaymentMethod|schema:PaymentStatusType
+  beckn:fulfillment:
+    $ref: 'https://schema.beckn.io/Fulfillment/v2.0'
+    description: Parcel delivery or reservation summary
+    x-jsonld:
+      '@id': schema:ParcelDelivery|schema:Reservation
+  beckn:orderAttributes:
+    $ref: 'https://schema.beckn.io/Attributes/v2.0'
+    description: Order-level Attribute Pack (vertical/regulatory specifics)
+required:
+- '@context'
+- '@type'
+- beckn:orderStatus
+- beckn:seller
+- beckn:buyer
+- beckn:orderItems
+additionalProperties: false

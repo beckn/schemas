@@ -13,73 +13,73 @@
       "@id": "beckn:Catalog",
       "@type": "rdfs:Class",
       "rdfs:label": "Catalog",
-      "rdfs:comment": "Catalog schema for Beckn Protocol v2.0.1"
+      "rdfs:comment": "Schema definition for Catalog in the Beckn Protocol"
     },
     {
-      "@id": "beckn:@context",
+      "@id": "beckn:context",
       "@type": "rdf:Property",
-      "rdfs:label": "@context",
-      "rdfs:comment": "JSON-LD context URI for the core Catalog schema"
+      "rdfs:label": "context",
+      "rdfs:comment": "context property of Catalog"
     },
     {
-      "@id": "beckn:@type",
+      "@id": "beckn:type",
       "@type": "rdf:Property",
-      "rdfs:label": "@type",
-      "rdfs:comment": "Type of the catalog"
-    },
-    {
-      "@id": "beckn:bppId",
-      "@type": "rdf:Property",
-      "rdfs:label": "bpp Id",
-      "rdfs:comment": "BPP (Beckn Protocol Provider) identifier that publishes this catalog"
-    },
-    {
-      "@id": "beckn:bppUri",
-      "@type": "rdf:Property",
-      "rdfs:label": "bpp Uri",
-      "rdfs:comment": "BPP (Beckn Protocol Provider) URI endpoint"
-    },
-    {
-      "@id": "beckn:descriptor",
-      "@type": "rdf:Property",
-      "rdfs:label": "descriptor",
-      "rdfs:comment": "A verbal summary of the catalog for humans, AI agents, etc to read and understand the context."
+      "rdfs:label": "type",
+      "rdfs:comment": "type property of Catalog"
     },
     {
       "@id": "beckn:id",
       "@type": "rdf:Property",
       "rdfs:label": "id",
-      "rdfs:comment": "Unique identifier for the catalog"
+      "rdfs:comment": "id property of Catalog"
     },
     {
-      "@id": "beckn:isActive",
+      "@id": "beckn:descriptor",
       "@type": "rdf:Property",
-      "rdfs:label": "is Active",
-      "rdfs:comment": "Whether the catalog is active"
-    },
-    {
-      "@id": "beckn:items",
-      "@type": "rdf:Property",
-      "rdfs:label": "items",
-      "rdfs:comment": "Array of beckn core Item entities in this catalog"
-    },
-    {
-      "@id": "beckn:offers",
-      "@type": "rdf:Property",
-      "rdfs:label": "offers",
-      "rdfs:comment": "TODO: Description Needed - offers"
+      "rdfs:label": "descriptor",
+      "rdfs:comment": "descriptor property of Catalog"
     },
     {
       "@id": "beckn:providerId",
       "@type": "rdf:Property",
-      "rdfs:label": "provider Id",
-      "rdfs:comment": "Reference to the provider that owns this catalog"
+      "rdfs:label": "providerId",
+      "rdfs:comment": "providerId property of Catalog"
+    },
+    {
+      "@id": "beckn:bppId",
+      "@type": "rdf:Property",
+      "rdfs:label": "bppId",
+      "rdfs:comment": "bppId property of Catalog"
+    },
+    {
+      "@id": "beckn:bppUri",
+      "@type": "rdf:Property",
+      "rdfs:label": "bppUri",
+      "rdfs:comment": "bppUri property of Catalog"
     },
     {
       "@id": "beckn:validity",
       "@type": "rdf:Property",
       "rdfs:label": "validity",
-      "rdfs:comment": "The time period during which this catalog is valid"
+      "rdfs:comment": "validity property of Catalog"
+    },
+    {
+      "@id": "beckn:isActive",
+      "@type": "rdf:Property",
+      "rdfs:label": "isActive",
+      "rdfs:comment": "isActive property of Catalog"
+    },
+    {
+      "@id": "beckn:items",
+      "@type": "rdf:Property",
+      "rdfs:label": "items",
+      "rdfs:comment": "items property of Catalog"
+    },
+    {
+      "@id": "beckn:offers",
+      "@type": "rdf:Property",
+      "rdfs:label": "offers",
+      "rdfs:comment": "offers property of Catalog"
     }
   ]
 }

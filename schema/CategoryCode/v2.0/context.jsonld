@@ -10,7 +10,7 @@
     "@context": "beckn:@context",
     "@type": "beckn:@type",
     "codeValue": "beckn:codeValue",
-    "description": "beckn:description",
-    "name": "beckn:name"
+    "name": "beckn:name",
+    "description": "beckn:description"
   }
 }

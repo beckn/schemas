@@ -1,0 +1,49 @@
+$id: "https://schema.beckn.io/Provider/v2.1"
+$schema: "https://json-schema.org/draft/2020-12/schema"
+description: Schema definition for Provider in the Beckn Protocol v2.0.1
+title: Provider
+x-tags: [common]
+type: object
+properties:
+  '@context':
+    description: CPD
+    type: string
+    format: uri
+    default: "https://schema.beckn.io/"
+  '@type':
+    description: TPD
+    type: string
+    default: beckn:Provider
+  alerts:
+    type: array
+    items:
+      $ref: "https://schema.beckn.io/Alert/v2.1"
+  descriptor:
+    $ref: "https://schema.beckn.io/Descriptor/v2.1"
+  id:
+    description: Unique identifier for the provider
+    type: string
+    example: tech-store-001
+  locations:
+    description: Physical locations where the provider operates
+    type: array
+    items:
+      $ref: "https://schema.beckn.io/Location/v2.1"
+  policies:
+    type: array
+    items:
+      $ref: "https://schema.beckn.io/Policy/v2.1"
+  providerAttributes:
+    $ref: "https://schema.beckn.io/Attributes/v2.1"
+  rateable:
+    description: Whether the provider can be rated by customers
+    type: boolean
+    example: true
+  rating:
+    $ref: "https://schema.beckn.io/Rating/v2.1"
+  validity:
+    $ref: "https://schema.beckn.io/TimePeriod/v2.1"
+required:
+- id
+- descriptor
+additionalProperties: false

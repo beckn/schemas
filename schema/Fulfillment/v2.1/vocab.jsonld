@@ -1,0 +1,85 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Fulfillment",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Fulfillment",
+      "rdfs:comment": "Schema definition for Fulfillment in the Beckn Protocol v2.0.1"
+    },
+    {
+      "@id": "beckn:@context",
+      "@type": "rdf:Property",
+      "rdfs:label": "@context",
+      "rdfs:comment": "JSON-LD context URI"
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "TODO: Description Needed - @type"
+    },
+    {
+      "@id": "beckn:agent",
+      "@type": "rdf:Property",
+      "rdfs:label": "agent",
+      "rdfs:comment": "The entity that directly performs the fulfillment"
+    },
+    {
+      "@id": "beckn:fulfillmentAttributes",
+      "@type": "rdf:Property",
+      "rdfs:label": "fulfillment Attributes",
+      "rdfs:comment": "Extensible set of domain-specific attributes describing the fulfillment"
+    },
+    {
+      "@id": "beckn:id",
+      "@type": "rdf:Property",
+      "rdfs:label": "id",
+      "rdfs:comment": "Fulfillment identifier"
+    },
+    {
+      "@id": "beckn:instructions",
+      "@type": "rdf:Property",
+      "rdfs:label": "instructions",
+      "rdfs:comment": "TODO: Description Needed - instructions"
+    },
+    {
+      "@id": "beckn:mode",
+      "@type": "rdf:Property",
+      "rdfs:label": "mode",
+      "rdfs:comment": "Extensible set of attributes describing the mode of fulfillment. Varies with Industry Use Case"
+    },
+    {
+      "@id": "beckn:participants",
+      "@type": "rdf:Property",
+      "rdfs:label": "participants",
+      "rdfs:comment": "A list of participants who are entitled to receive the fulfillment of the order. By default, it is the consumer who placed the order"
+    },
+    {
+      "@id": "beckn:state",
+      "@type": "rdf:Property",
+      "rdfs:label": "state",
+      "rdfs:comment": "The current state of fulfillment"
+    },
+    {
+      "@id": "beckn:stages",
+      "@type": "rdf:Property",
+      "rdfs:label": "stages",
+      "rdfs:comment": "The various stages of the fulfillment"
+    },
+    {
+      "@id": "beckn:trackingEnabled",
+      "@type": "rdf:Property",
+      "rdfs:label": "tracking Enabled",
+      "rdfs:comment": "Whether tracking is enabled / possible for this fulfillment"
+    }
+  ]
+}

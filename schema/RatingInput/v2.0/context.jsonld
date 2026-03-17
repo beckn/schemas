@@ -9,8 +9,11 @@
     "RatingInput": "beckn:RatingInput",
     "@context": "beckn:@context",
     "@type": "beckn:@type",
-    "target": "beckn:target",
-    "range": "beckn:range",
-    "feedbackFormSubmission": "beckn:feedbackFormSubmission"
+    "id": "beckn:id",
+    "ratingValue": "beckn:ratingValue",
+    "bestRating": "beckn:bestRating",
+    "worstRating": "beckn:worstRating",
+    "category": "beckn:category",
+    "feedback": "beckn:feedback"
   }
 }

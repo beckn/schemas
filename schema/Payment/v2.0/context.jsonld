@@ -1,0 +1,22 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "beckn": "https://schema.beckn.io/",
+    "Payment": "beckn:Payment",
+    "@context": "beckn:@context",
+    "@type": "beckn:@type",
+    "id": "beckn:id",
+    "paymentStatus": "beckn:paymentStatus",
+    "amount": "beckn:amount",
+    "paymentURL": "beckn:paymentURL",
+    "txnRef": "beckn:txnRef",
+    "paidAt": "beckn:paidAt",
+    "acceptedPaymentMethod": "beckn:acceptedPaymentMethod",
+    "beneficiary": "beckn:beneficiary",
+    "paymentAttributes": "beckn:paymentAttributes"
+  }
+}

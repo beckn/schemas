@@ -1,66 +1,66 @@
-$id: "https://schema.beckn.io/Fulfillment/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
-description: Schema definition for Fulfillment in the Beckn Protocol v2.0.1
+$id: https://schema.beckn.io/Fulfillment/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Schema definition for Fulfillment in the Beckn Protocol
 title: Fulfillment
-x-tags: [common]
 type: object
 properties:
   '@context':
-    description: JSON-LD context URI
     type: string
     format: uri
-    const: "https://schema.beckn.io/"
+    example: https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld
   '@type':
     type: string
     enum:
-    - Fulfillment
+    - beckn:Fulfillment
     x-jsonld:
       '@id': schema:Thing
-  agent:
-    description: The entity that directly performs the fulfillment
-    allOf:
-    - $ref: "https://schema.beckn.io/FulfillmentAgent/v2.0"
-  fulfillmentAttributes:
-    description: Extensible set of domain-specific attributes describing the fulfillment
-    allOf:
-    - $ref: "https://schema.beckn.io/Attributes/v2.0"
-  id:
-    description: Fulfillment identifier
+  beckn:id:
     type: string
+    description: Fulfillment identifier
     x-jsonld:
       '@id': schema:identifier
-  instructions:
-    type: array
-    items:
-      $ref: "https://schema.beckn.io/Descriptor/v2.0"
-  mode:
-    description: Extensible set of attributes describing the mode of fulfillment. Varies with Industry Use Case
-    allOf:
-    - $ref: "https://schema.beckn.io/FulfillmentMode/v2.0"
+  beckn:fulfillmentStatus:
+    type: string
+    description: Fulfillment status code (e.g., OutForDelivery, ReadyForPickup, Confirmed)
     x-jsonld:
-      '@id': beckn:FulfillmentMode
-  participants:
-    description: A list of participants who are entitled to receive the fulfillment of the order. By default, it is the consumer
-      who placed the order
-    type: array
-    items:
-      $ref: "https://schema.beckn.io/Participant/v2.0"
-    minItems: 1
-  state:
-    description: The current state of fulfillment
-    allOf:
-    - $ref: "https://schema.beckn.io/State/v2.0"
-  stages:
-    description: The various stages of the fulfillment
-    type: array
-    items:
-      $ref: "https://schema.beckn.io/FulfillmentStage/v2.0"
-    minItems: 1
-  trackingEnabled:
-    description: Whether tracking is enabled / possible for this fulfillment
-    type: boolean
+      '@id': beckn:fulfillmentStatus
+  beckn:mode:
+    type: string
+    enum:
+    - DELIVERY
+    - PICKUP
+    - RESERVATION
+    - DIGITAL
+    description: 'DELIVERY    → last-mile / parcel logistics
+
+      PICKUP      → customer collects from a place
+
+      RESERVATION → entitlement/booking is fulfilled (tickets, seats, appointments)
+
+      DIGITAL     → digital good / license access
+
+      '
+    x-jsonld:
+      '@id': beckn:mode
+  trackingAction:
+    $ref: 'https://schema.beckn.io/TrackAction/v2.0'
+    description: 'Tracking entrypoint for this fulfillment, modeled as schema.org
+      TrackAction. Use target.url for a clickable tracking URL; may also include deliveryMethod.
+
+      '
+    x-jsonld:
+      '@type': schema:TrackAction
+  beckn:deliveryAttributes:
+    $ref: 'https://schema.beckn.io/Attributes/v2.0'
+    description: 'Bundle of attributes for the chosen mode:  # DELIVERY: endpoints,
+      slot windows, route & events → map to schema:ParcelDelivery / schema:DeliveryEvent
+      # PICKUP: pickupPlace, counter codes, time windows → map to schema:Place + schema:openingHoursSpecification
+      # RESERVATION: reservationStatus, reservedTicket → map to schema:Reservation
+      # DIGITAL: contentUrl/license/expiry → map to schema:DataDownload/schema:MediaObject
+
+      '
 required:
 - '@context'
 - '@type'
-- mode
+- beckn:mode
 additionalProperties: false
