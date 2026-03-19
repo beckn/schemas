@@ -1,0 +1,132 @@
+$id: https://schema.beckn.io/FnBOffer/v2.0
+$schema: https://json-schema.org/draft/2020-12/schema
+description: |
+  A Beckn schema for food and beverage offer attributes.
+
+  FnBOffer extends beckn:RetailCoreOfferAttributes with F&B-specific offer
+  customization groups — the structured mechanism by which a food item's
+  configurable options (size, crust, toppings, add-ons) are declared and
+  priced within an offer.
+
+  A CustomizationGroup represents one dimension of configurability (e.g.
+  pizza size, crust type, topping selection). Each group has one or more
+  options with optional price deltas.
+
+  Inheritance: beckn:RetailCoreOfferAttributes ← beckn:FnBOffer
+  Use in: beckn:Offer.offerAttributes for F&B catalog items
+title: FnBOffer
+x-tags: [retail, food-and-beverages]
+allOf:
+  - $ref: 'https://schema.beckn.io/RetailCoreOfferAttributes/v2.0'
+  - type: object
+    properties:
+      '@context':
+        type: string
+        format: uri
+        const: 'https://schema.beckn.io/FnBOffer/v2.0/context.jsonld'
+        description: JSON-LD context URI for the FnBOffer schema.
+      '@type':
+        type: string
+        const: 'beckn:FnBOffer'
+        description: JSON-LD type.
+      customization:
+        type: object
+        description: >
+          Structured customization configuration for this offer.
+          Groups represent independent dimensions of configurability.
+        properties:
+          groups:
+            type: array
+            description: List of customization groups for this offer.
+            items:
+              $ref: '#/$defs/CustomizationGroup'
+        x-jsonld:
+          '@id': 'beckn:customization'
+    required:
+      - '@context'
+      - '@type'
+
+$defs:
+  CustomizationGroup:
+    type: object
+    description: >
+      A single dimension of configurability for a food item offer.
+      Examples: pizza size selection, crust type, topping selection,
+      add-on selection, sauce choice.
+    required: [code, selection, options]
+    properties:
+      code:
+        type: string
+        description: >
+          Machine-readable code for this customization group
+          (e.g. SIZE, CRUST, TOPPINGS, ADDONS, SAUCE).
+      name:
+        type: string
+        description: Human-readable name for this customization group.
+      selection:
+        type: string
+        description: >
+          Selection mode for this group.
+          - SINGLE_REQUIRED: Exactly one option must be chosen (e.g. pizza size)
+          - SINGLE_OPTIONAL: Zero or one option may be chosen
+          - MULTIPLE_OPTIONAL: Zero or more options may be chosen (e.g. toppings)
+        enum:
+          - SINGLE_REQUIRED
+          - SINGLE_OPTIONAL
+          - MULTIPLE_OPTIONAL
+      minSelections:
+        type: integer
+        description: Minimum number of options that must be selected (for MULTIPLE_OPTIONAL).
+        minimum: 0
+      maxSelections:
+        type: integer
+        description: Maximum number of options that may be selected (for MULTIPLE_OPTIONAL).
+        minimum: 1
+      options:
+        type: array
+        description: Available options within this customization group.
+        minItems: 1
+        items:
+          $ref: '#/$defs/CustomizationOption'
+
+  CustomizationOption:
+    type: object
+    description: >
+      A single selectable option within a CustomizationGroup.
+      Each option may carry a price delta (positive or negative) relative
+      to the base offer price.
+    required: [code, name]
+    properties:
+      code:
+        type: string
+        description: Machine-readable option code (e.g. MEDIUM, CHEESE_BURST, MUSHROOM).
+      name:
+        type: string
+        description: Human-readable option name (e.g. "Medium", "Cheese Burst", "Mushroom").
+      priceDelta:
+        type: object
+        description: >
+          Incremental price change relative to the base offer price when this
+          option is selected. Positive for upcharges, negative for discounts.
+        required: [type, value]
+        properties:
+          type:
+            type: string
+            description: >
+              - FIXED: Absolute price change in the offer currency
+              - PERCENTAGE: Percentage change of the base price
+            enum: [FIXED, PERCENTAGE]
+          value:
+            type: number
+            description: Amount of the price change (positive or negative).
+        additionalProperties: false
+      itemRef:
+        type: string
+        description: Optional reference to a catalog Item ID for this option.
+      offerRef:
+        type: string
+        description: Optional reference to another Offer ID (for combo sub-offers).
+      available:
+        type: boolean
+        description: Whether this option is currently available for selection.
+        default: true

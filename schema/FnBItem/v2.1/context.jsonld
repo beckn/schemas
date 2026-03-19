@@ -1,0 +1,38 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "FnBItem": {
+      "@id": "beckn:FnBItem",
+      "@type": "rdfs:Class",
+      "rdfs:subClassOf": { "@id": "beckn:RetailItem" }
+    },
+    "classification": {
+      "@id": "beckn:classification"
+    },
+    "cuisine": {
+      "@id": "beckn:cuisine"
+    },
+    "preparation": {
+      "@id": "beckn:preparation",
+      "@type": "@id"
+    },
+    "allergenInfo": {
+      "@id": "beckn:allergenInfo",
+      "@type": "@id"
+    },
+    "nutritionalInfo": {
+      "@id": "beckn:nutritionalInfo",
+      "@type": "@id"
+    },
+    "additives": {
+      "@id": "beckn:additives",
+      "@container": "@list"
+    }
+  }
+}

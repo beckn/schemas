@@ -1,0 +1,201 @@
+$id: https://schema.beckn.io/FoodAndBeverageItem/v2.1
+$schema: https://json-schema.org/draft/2020-12/schema
+description: |
+  A Beckn schema for a food and beverage item in retail F&B ordering.
+
+  FoodAndBeverageItem v2.1 extends beckn:RetailItem with comprehensive food-specific
+  attributes covering classification, allergens, additives, nutritional information,
+  cuisine, and preparation guidance.
+
+  Inheritance: beckn:RetailItem ← beckn:FoodAndBeverageItem
+  Use in: beckn:Commitment.commitmentAttributes for F&B orders
+title: FoodAndBeverageItem
+x-tags: [retail, food-and-beverages]
+allOf:
+  - $ref: 'https://schema.beckn.io/RetailItem/v2.1'
+  - type: object
+    properties:
+      '@context':
+        type: string
+        format: uri
+        const: 'https://schema.beckn.io/FoodAndBeverageItem/v2.1/context.jsonld'
+        description: JSON-LD context URI for FoodAndBeverageItem v2.1.
+      '@type':
+        type: string
+        const: 'beckn:FoodAndBeverageItem'
+        description: JSON-LD type.
+      classification:
+        type: string
+        description: >
+          Dietary classification of the food item.
+          - VEG: Suitable for vegetarians (no meat, poultry, seafood, or eggs)
+          - NON_VEG: Contains meat, poultry, or seafood
+          - EGG: Contains eggs but no meat or seafood (ovo-vegetarian)
+          - VEGAN: No animal products whatsoever
+        enum: [VEG, NON_VEG, EGG, VEGAN]
+        x-jsonld:
+          '@id': 'beckn:classification'
+      cuisine:
+        type: string
+        description: >
+          Cuisine classification for this item (e.g. Italian, Indian, Mexican,
+          American, Chinese, Mediterranean, Japanese, Thai, Middle Eastern).
+        x-jsonld:
+          '@id': 'beckn:cuisine'
+      preparation:
+        type: object
+        description: Preparation, reheating, and storage guidance for this item.
+        properties:
+          instructions:
+            type: string
+            description: >
+              Preparation or reheating instructions (e.g. "Serve hot", 
+              "Microwave for 2 minutes", "Do not freeze").
+          storage:
+            type: string
+            description: >
+              Storage requirements (e.g. "Refrigerate at 4°C",
+              "Keep frozen at -18°C", "Store at room temperature").
+          shelfLife:
+            type: string
+            description: >
+              Shelf life expressed as ISO 8601 duration (e.g. P2D for 2 days,
+              PT4H for 4 hours, P6M for 6 months).
+        x-jsonld:
+          '@id': 'beckn:preparation'
+      allergenInfo:
+        type: object
+        description: >
+          Allergen declarations for this item, structured as presence and absence
+          declarations. Follows EU Regulation 1169/2011 allergen categories.
+        properties:
+          contains:
+            type: array
+            description: >
+              Allergens confirmed to be present in this item. The consumer MUST
+              be informed of these allergens.
+            items:
+              type: string
+              enum:
+                - GLUTEN
+                - CRUSTACEANS
+                - EGGS
+                - FISH
+                - PEANUTS
+                - SOYBEANS
+                - MILK
+                - NUTS
+                - CELERY
+                - MUSTARD
+                - SESAME
+                - SULPHITES
+                - LUPIN
+                - MOLLUSCS
+          mayContain:
+            type: array
+            description: >
+              Allergens for which cross-contamination is possible (trace amounts).
+              Use when the item is prepared in a facility that handles these allergens.
+            items:
+              type: string
+              enum:
+                - GLUTEN
+                - CRUSTACEANS
+                - EGGS
+                - FISH
+                - PEANUTS
+                - SOYBEANS
+                - MILK
+                - NUTS
+                - CELERY
+                - MUSTARD
+                - SESAME
+                - SULPHITES
+                - LUPIN
+                - MOLLUSCS
+          freeFrom:
+            type: array
+            description: Allergens confirmed to be absent from this item.
+            items:
+              type: string
+        x-jsonld:
+          '@id': 'beckn:allergenInfo'
+      nutritionalInfo:
+        type: object
+        description: >
+          Nutritional information per serving or per 100g/100ml.
+          Values should be expressed per the specified servingSize.
+        properties:
+          servingSize:
+            type: string
+            description: >
+              Serving size for which nutritional values are given
+              (e.g. "1 slice (125g)", "100ml", "1 piece").
+          energyKcal:
+            type: number
+            description: Energy in kilocalories (kcal) per serving.
+          energyKj:
+            type: number
+            description: Energy in kilojoules (kJ) per serving.
+          fatG:
+            type: number
+            description: Total fat in grams per serving.
+          saturatedFatG:
+            type: number
+            description: Saturated fat in grams per serving.
+          carbohydratesG:
+            type: number
+            description: Total carbohydrates in grams per serving.
+          sugarsG:
+            type: number
+            description: Sugars in grams per serving.
+          fibreG:
+            type: number
+            description: Dietary fibre in grams per serving.
+          proteinG:
+            type: number
+            description: Protein in grams per serving.
+          saltG:
+            type: number
+            description: Salt (sodium × 2.5) in grams per serving.
+          sodiumMg:
+            type: number
+            description: Sodium in milligrams per serving.
+        x-jsonld:
+          '@id': 'beckn:nutritionalInfo'
+      additives:
+        type: array
+        description: >
+          Food additives and their presence/quantity declarations.
+          Covers artificial coloring, preservatives, flavor enhancers, etc.
+        items:
+          type: object
+          required: [type, value]
+          properties:
+            type:
+              type: string
+              description: Nature of the additive declaration.
+              enum:
+                - CONTAINS
+                - MAY_CONTAIN
+                - FREE_FROM
+                - MAX_ALLOWED
+                - PERCENTAGE
+                - CODE
+            value:
+              type: string
+              description: >
+                The additive name, E-number code, or regulatory code
+                (e.g. "E621 Monosodium Glutamate", "Sodium Benzoate E211").
+            quantity:
+              type: object
+              description: Quantity of the additive (for MAX_ALLOWED or PERCENTAGE types).
+              additionalProperties: true
+            notes:
+              type: string
+              description: Additional notes about this additive.
+        x-jsonld:
+          '@id': 'beckn:additives'
+    required:
+      - '@context'
+      - '@type'

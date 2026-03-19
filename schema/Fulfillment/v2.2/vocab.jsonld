@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Fulfillment",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Fulfillment",
+      "rdfs:comment": "A minimal Fulfillment record. v2.2 carries only identity and status; domain-specific attributes are declared via multi-typed @context and @type arrays."
+    },
+    {
+      "@id": "beckn:id",
+      "@type": "rdf:Property",
+      "rdfs:label": "id",
+      "rdfs:comment": "Unique identifier for this fulfillment record.",
+      "rdfs:domain": { "@id": "beckn:Fulfillment" }
+    },
+    {
+      "@id": "beckn:status",
+      "@type": "rdf:Property",
+      "rdfs:label": "status",
+      "rdfs:comment": "Current status of this fulfillment, expressed as a Descriptor.",
+      "rdfs:domain": { "@id": "beckn:Fulfillment" }
+    }
+  ]
+}

@@ -9,8 +9,19 @@ properties:
     format: uri
     const: https://schema.beckn.io/
   '@type':
-    type: string
-    default: beckn:Participant
+    description: >
+      One or more JSON-LD type IRIs for this participant. The first MUST be "beckn:Participant".
+      Additional types (e.g. "beckn:Restaurant", "beckn:Consumer", "beckn:Rider") encode
+      the domain role of the participant using sub-typing rather than a separate "role" field.
+    oneOf:
+      - type: string
+        const: beckn:Participant
+      - type: array
+        items:
+          type: string
+        contains:
+          const: beckn:Participant
+        minItems: 1
   credentials:
     type: array
     items:
@@ -24,9 +35,6 @@ properties:
     type: string
   rating:
     $ref: https://schema.beckn.io/Rating/v2.1
-  role:
-    description: Role of participant (consumer, recipient, rider, patient, operator, etc.)
-    type: string
   skills:
     type: array
     items:
@@ -37,7 +45,6 @@ required:
 - '@context'
 - '@type'
 - id
-- role
 additionalProperties: false
 x-tags:
 - common

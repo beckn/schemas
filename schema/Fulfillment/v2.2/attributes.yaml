@@ -1,0 +1,49 @@
+$id: "https://schema.beckn.io/Fulfillment/v2.2"
+$schema: "https://json-schema.org/draft/2020-12/schema"
+description: |
+  A minimal Fulfillment envelope. Carries identity, status, and a fulfillmentAttributes
+  bag that holds the concrete domain-specific delivery schema.
+
+  Domain-specific delivery details (pickup/delivery locations, items shipped, agent, etc.)
+  are placed inside fulfillmentAttributes using a well-known domain schema such as
+  beckn:HyperlocalDelivery. Use the generic Attributes schema when no well-known
+  domain schema exists.
+title: Fulfillment
+x-tags: [common, fulfillment]
+type: object
+properties:
+  '@context':
+    description: >
+      JSON-LD context URI. Use the Fulfillment v2.2 context URI.
+    type: string
+    format: uri
+    const: 'https://schema.beckn.io/Fulfillment/v2.2/context.jsonld'
+  '@type':
+    description: JSON-LD type.
+    type: string
+    const: 'beckn:Fulfillment'
+  id:
+    type: string
+    description: Unique identifier for this fulfillment record.
+    x-jsonld:
+      '@id': 'beckn:id'
+  status:
+    $ref: 'https://schema.beckn.io/Descriptor/v2.1'
+    description: >
+      Current status of this fulfillment, expressed as a Descriptor.
+      Use Descriptor.code for machine-readable status values.
+    x-jsonld:
+      '@id': 'beckn:status'
+  fulfillmentAttributes:
+    description: >
+      Domain-specific extension attributes for this fulfillment.
+      Use beckn:HyperlocalDelivery (aligned with schema:ParcelDelivery) for
+      hyperlocal physical delivery. Use the generic Attributes schema for
+      other fulfillment types where no well-known domain schema exists.
+    $ref: 'https://schema.beckn.io/Attributes/v2.0'
+    x-jsonld:
+      '@id': 'beckn:fulfillmentAttributes'
+required:
+  - '@context'
+  - '@type'
+additionalProperties: false
