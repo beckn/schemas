@@ -1,0 +1,17 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:RetailItem",
+      "@type": "rdfs:Class",
+      "rdfs:label": "RetailItem",
+      "rdfs:comment": "Minimal retail item schema. Extends Attributes with price, quantity, and credentials."
+    }
+  ]
+}
