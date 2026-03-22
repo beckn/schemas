@@ -1,0 +1,53 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "coa": "https://schema.beckn.io/CourseOfferAttributes#",
+    "coa:pricingType": {
+      "@id": "coa:pricingType"
+    },
+    "coa:seatsAvailable": {
+      "@id": "coa:seatsAvailable"
+    },
+    "coa:enrollmentDeadline": {
+      "@id": "schema:applicationDeadline"
+    },
+    "coa:offerValidity": {
+      "@id": "schema:validityPeriod"
+    },
+    "coa:sponsorshipBody": {
+      "@id": "coa:sponsorshipBody"
+    },
+    "coa:eligibilityConstraints": {
+      "@id": "coa:eligibilityConstraints",
+      "@container": "@list"
+    },
+    "schema:validFrom": {
+      "@id": "schema:validFrom"
+    },
+    "schema:validThrough": {
+      "@id": "schema:validThrough"
+    },
+    "pricing_type": {
+      "@id": "coa:pricingType"
+    },
+    "seats_available": {
+      "@id": "coa:seatsAvailable"
+    },
+    "enrollment_deadline": {
+      "@id": "schema:applicationDeadline"
+    },
+    "offer_validity": {
+      "@id": "schema:validityPeriod"
+    },
+    "sponsorship_body": {
+      "@id": "coa:sponsorshipBody"
+    },
+    "eligibility_constraints": {
+      "@id": "coa:eligibilityConstraints",
+      "@container": "@list"
+    },
+    "PricingType": "coa:PricingType"
+  }
+}

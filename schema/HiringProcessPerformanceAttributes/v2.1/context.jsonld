@@ -1,0 +1,79 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "hppa": "https://schema.beckn.io/HiringProcessPerformanceAttributes#",
+    "vs": "https://schema.beckn.io/VerificationSummary#",
+    "hppa:stage": {
+      "@id": "hppa:stage"
+    },
+    "hppa:interviewSchedule": {
+      "@id": "hppa:interviewSchedule",
+      "@container": "@list"
+    },
+    "hppa:interviewFormat": {
+      "@id": "hppa:interviewFormat"
+    },
+    "hppa:interviewTopic": {
+      "@id": "hppa:interviewTopic"
+    },
+    "hppa:assessmentRequired": {
+      "@id": "hppa:assessmentRequired"
+    },
+    "hppa:assessmentReference": {
+      "@id": "hppa:assessmentReference"
+    },
+    "hppa:verificationRequested": {
+      "@id": "hppa:verificationRequested"
+    },
+    "hppa:verificationSummary": {
+      "@id": "hppa:verificationSummary"
+    },
+    "schema:startDate": {
+      "@id": "schema:startDate"
+    },
+    "vs:overallResult": {
+      "@id": "vs:overallResult"
+    },
+    "vs:reasonCodes": {
+      "@id": "vs:reasonCodes",
+      "@container": "@list"
+    },
+    "vs:verifiedCategories": {
+      "@id": "vs:verifiedCategories",
+      "@container": "@list"
+    },
+    "vs:verifiedSubtypes": {
+      "@id": "vs:verifiedSubtypes",
+      "@container": "@list"
+    },
+    "vs:checkedAt": {
+      "@id": "vs:checkedAt"
+    },
+    "vs:proofMetadataHash": {
+      "@id": "vs:proofMetadataHash"
+    },
+    "stage": {
+      "@id": "hppa:stage"
+    },
+    "interview_schedule": {
+      "@id": "hppa:interviewSchedule",
+      "@container": "@list"
+    },
+    "assessment_required": {
+      "@id": "hppa:assessmentRequired"
+    },
+    "assessment_reference": {
+      "@id": "hppa:assessmentReference"
+    },
+    "verification_requested": {
+      "@id": "hppa:verificationRequested"
+    },
+    "verification_summary": {
+      "@id": "hppa:verificationSummary"
+    },
+    "HiringStage": "hppa:HiringStage",
+    "InterviewFormat": "hppa:InterviewFormat"
+  }
+}

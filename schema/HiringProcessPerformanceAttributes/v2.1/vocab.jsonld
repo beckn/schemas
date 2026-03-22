@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "hppa": "https://schema.beckn.io/HiringProcessPerformanceAttributes#"
+  },
+  "@graph": [
+    {
+      "@id": "hppa:HiringStage",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Hiring Stage",
+      "rdfs:comment": "Current stage in the employer-to-candidate hiring pipeline."
+    },
+    { "@id": "hppa:SCREENING",      "@type": "hppa:HiringStage", "rdfs:label": "Screening",      "rdfs:comment": "Initial profile screening by the employer." },
+    { "@id": "hppa:ASSESSMENT",     "@type": "hppa:HiringStage", "rdfs:label": "Assessment",     "rdfs:comment": "Technical or aptitude assessment in progress." },
+    { "@id": "hppa:INTERVIEW",      "@type": "hppa:HiringStage", "rdfs:label": "Interview",      "rdfs:comment": "Interview session scheduled or in progress." },
+    { "@id": "hppa:OFFER_EXTENDED", "@type": "hppa:HiringStage", "rdfs:label": "Offer Extended", "rdfs:comment": "Formal offer has been made to the candidate." },
+    { "@id": "hppa:OFFER_ACCEPTED", "@type": "hppa:HiringStage", "rdfs:label": "Offer Accepted", "rdfs:comment": "Candidate has accepted the offer." },
+    { "@id": "hppa:OFFER_DECLINED", "@type": "hppa:HiringStage", "rdfs:label": "Offer Declined", "rdfs:comment": "Candidate has declined the offer." },
+    { "@id": "hppa:WITHDRAWN",      "@type": "hppa:HiringStage", "rdfs:label": "Withdrawn",      "rdfs:comment": "Employer has withdrawn from the hiring process." },
+    {
+      "@id": "hppa:InterviewFormat",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Interview Format",
+      "rdfs:comment": "The modality of an interview session."
+    },
+    { "@id": "hppa:IN_PERSON", "@type": "hppa:InterviewFormat", "rdfs:label": "In Person", "rdfs:comment": "Face-to-face interview at a physical location." },
+    { "@id": "hppa:VIDEO",     "@type": "hppa:InterviewFormat", "rdfs:label": "Video",     "rdfs:comment": "Video call interview." },
+    { "@id": "hppa:PHONE",     "@type": "hppa:InterviewFormat", "rdfs:label": "Phone",     "rdfs:comment": "Telephone interview." }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "ccoa": "https://schema.beckn.io/CourseConsiderationAttributes#"
+  },
+  "@graph": [
+    { "@id": "ccoa:FeeCategory", "@type": "rdfs:Class", "rdfs:label": "Fee Category", "rdfs:comment": "How the course fee obligation is structured for a specific learner." },
+    { "@id": "ccoa:FULL_FEE",  "@type": "ccoa:FeeCategory", "rdfs:label": "Full Fee",  "rdfs:comment": "Learner pays the full fee." },
+    { "@id": "ccoa:PARTIAL_FEE","@type": "ccoa:FeeCategory","rdfs:label": "Partial Fee","rdfs:comment": "Learner pays a portion; remainder is covered." },
+    { "@id": "ccoa:SPONSORED",  "@type": "ccoa:FeeCategory", "rdfs:label": "Sponsored", "rdfs:comment": "Fee fully covered by a sponsor on behalf of this learner." },
+    { "@id": "ccoa:WAIVED",     "@type": "ccoa:FeeCategory", "rdfs:label": "Waived",    "rdfs:comment": "Fee waived (scholarship, merit, hardship, etc.)." },
+    { "@id": "ccoa:PaymentSchedule", "@type": "rdfs:Class", "rdfs:label": "Payment Schedule", "rdfs:comment": "Timing of fee payment relative to course delivery." },
+    { "@id": "ccoa:UPFRONT",         "@type": "ccoa:PaymentSchedule", "rdfs:label": "Upfront",         "rdfs:comment": "Full payment before course begins." },
+    { "@id": "ccoa:INSTALLMENT",     "@type": "ccoa:PaymentSchedule", "rdfs:label": "Installment",     "rdfs:comment": "Payment split into multiple installments." },
+    { "@id": "ccoa:POST_COMPLETION", "@type": "ccoa:PaymentSchedule", "rdfs:label": "Post Completion", "rdfs:comment": "Payment due after course completion (income share or deferred)." }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "hjra": "https://schema.beckn.io/HiringJobResourceAttributes#",
+    "hjra:jobType": {
+      "@id": "hjra:jobType"
+    },
+    "hjra:workMode": {
+      "@id": "hjra:workMode"
+    },
+    "hjra:industryType": {
+      "@id": "hjra:industryType"
+    },
+    "hjra:location": {
+      "@id": "schema:location"
+    },
+    "hjra:serviceArea": {
+      "@id": "schema:areaServed"
+    },
+    "hjra:requirements": {
+      "@id": "hjra:requirements",
+      "@container": "@list"
+    },
+    "hjra:tags": {
+      "@id": "schema:keywords",
+      "@container": "@list"
+    },
+    "schema:addressLocality": {
+      "@id": "schema:addressLocality"
+    },
+    "schema:addressRegion": {
+      "@id": "schema:addressRegion"
+    },
+    "schema:addressCountry": {
+      "@id": "schema:addressCountry"
+    },
+    "job_type": {
+      "@id": "hjra:jobType"
+    },
+    "work_mode": {
+      "@id": "hjra:workMode"
+    },
+    "industry_type": {
+      "@id": "hjra:industryType"
+    },
+    "location": {
+      "@id": "schema:location"
+    },
+    "service_area": {
+      "@id": "schema:areaServed"
+    },
+    "requirements": {
+      "@id": "hjra:requirements",
+      "@container": "@list"
+    },
+    "tags": {
+      "@id": "schema:keywords",
+      "@container": "@list"
+    },
+    "JobType": "hjra:JobType",
+    "WorkMode": "hjra:WorkMode"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "ehca": "https://schema.beckn.io/EmployerHiringContractAttributes#"
+  },
+  "@graph": [
+    {
+      "@id": "ehca:CandidateResponse",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Candidate Response",
+      "rdfs:comment": "The candidate's response state to an employer hiring offer."
+    },
+    { "@id": "ehca:PENDING",     "@type": "ehca:CandidateResponse", "rdfs:label": "Pending",     "rdfs:comment": "Offer sent; candidate has not yet responded." },
+    { "@id": "ehca:ACCEPTED",    "@type": "ehca:CandidateResponse", "rdfs:label": "Accepted",    "rdfs:comment": "Candidate has accepted the offer." },
+    { "@id": "ehca:DECLINED",    "@type": "ehca:CandidateResponse", "rdfs:label": "Declined",    "rdfs:comment": "Candidate has declined the offer." },
+    { "@id": "ehca:NEGOTIATING", "@type": "ehca:CandidateResponse", "rdfs:label": "Negotiating", "rdfs:comment": "Candidate has responded with a counter-proposal." },
+    {
+      "@id": "ehca:OfferedCompensationPeriod",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Offered Compensation Period",
+      "rdfs:comment": "The time unit for the employer's stated compensation offer."
+    },
+    { "@id": "ehca:ANNUAL",  "@type": "ehca:OfferedCompensationPeriod", "rdfs:label": "Annual",  "rdfs:comment": "Annual compensation." },
+    { "@id": "ehca:MONTHLY", "@type": "ehca:OfferedCompensationPeriod", "rdfs:label": "Monthly", "rdfs:comment": "Monthly compensation." },
+    { "@id": "ehca:DAILY",   "@type": "ehca:OfferedCompensationPeriod", "rdfs:label": "Daily",   "rdfs:comment": "Daily rate." },
+    { "@id": "ehca:HOURLY",  "@type": "ehca:OfferedCompensationPeriod", "rdfs:label": "Hourly",  "rdfs:comment": "Hourly rate." }
+  ]
+}

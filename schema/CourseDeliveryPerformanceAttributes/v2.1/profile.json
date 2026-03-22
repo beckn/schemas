@@ -1,0 +1,23 @@
+{
+  "id": "https://schema.beckn.io/CourseDeliveryPerformanceAttributes/v1",
+  "name": "CourseDeliveryPerformanceAttributes",
+  "version": "1.0.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": [
+    "CourseDeliveryPerformanceAttributes"
+  ],
+  "discovery_fields": [],
+  "indexable_paths": [
+    "beckn:performanceAttributes.cdpa:completionStatus",
+    "beckn:performanceAttributes.cdpa:attendanceTracking"
+  ],
+  "filterable_paths": [
+    "beckn:performanceAttributes.cdpa:completionStatus"
+  ],
+  "sortable_paths": [],
+  "privacy_notes": [
+    "delivery_url is a platform-level URL accessible to the enrolled learner only.",
+    "No learner-specific attendance or score data stored in protocol schema."
+  ]
+}

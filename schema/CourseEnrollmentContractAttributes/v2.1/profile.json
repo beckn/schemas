@@ -1,0 +1,29 @@
+{
+  "id": "https://schema.beckn.io/CourseEnrollmentContractAttributes/v1",
+  "name": "CourseEnrollmentContractAttributes",
+  "version": "1.0.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": [
+    "CourseEnrollmentContractAttributes",
+    "VerificationSummary"
+  ],
+  "discovery_fields": [],
+  "indexable_paths": [
+    "beckn:contractAttributes.ceca:enrollmentReference",
+    "beckn:contractAttributes.ceca:cohortId",
+    "beckn:contractAttributes.ceca:credentialIssuancePending",
+    "beckn:contractAttributes.ceca:enrolledAt"
+  ],
+  "filterable_paths": [
+    "beckn:contractAttributes.ceca:prerequisiteVerificationSummary.vs:overallResult",
+    "beckn:contractAttributes.ceca:credentialIssuancePending"
+  ],
+  "sortable_paths": [
+    "beckn:contractAttributes.ceca:enrolledAt"
+  ],
+  "privacy_notes": [
+    "No PII. Learner identity at core Contract parties[] level.",
+    "No VC/VP payloads. Verification summary only."
+  ]
+}

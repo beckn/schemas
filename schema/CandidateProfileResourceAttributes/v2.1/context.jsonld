@@ -1,0 +1,104 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "cpra": "https://schema.beckn.io/CandidateProfileResourceAttributes#",
+    "se": "https://schema.beckn.io/SkillEntry#",
+    "cpra:skills": {
+      "@id": "cpra:skills",
+      "@container": "@list"
+    },
+    "cpra:experienceLevel": {
+      "@id": "cpra:experienceLevel"
+    },
+    "cpra:experienceYears": {
+      "@id": "cpra:experienceYears"
+    },
+    "cpra:locationPreference": {
+      "@id": "cpra:locationPreference"
+    },
+    "cpra:preferredLocations": {
+      "@id": "cpra:preferredLocations",
+      "@container": "@list"
+    },
+    "cpra:workModePreference": {
+      "@id": "cpra:workModePreference"
+    },
+    "cpra:availability": {
+      "@id": "cpra:availability"
+    },
+    "cpra:openToRelocation": {
+      "@id": "cpra:openToRelocation"
+    },
+    "cpra:industryPreference": {
+      "@id": "cpra:industryPreference",
+      "@container": "@list"
+    },
+    "cpra:jobTypePreference": {
+      "@id": "cpra:jobTypePreference",
+      "@container": "@list"
+    },
+    "cpra:overallVerificationStatus": {
+      "@id": "cpra:overallVerificationStatus"
+    },
+    "se:category": {
+      "@id": "se:category"
+    },
+    "se:subtype": {
+      "@id": "se:subtype"
+    },
+    "se:level": {
+      "@id": "se:level"
+    },
+    "se:attested": {
+      "@id": "se:attested"
+    },
+    "se:proofRequestUrl": {
+      "@id": "se:proofRequestUrl",
+      "@type": "@id"
+    },
+    "schema:addressLocality": {
+      "@id": "schema:addressLocality"
+    },
+    "schema:addressRegion": {
+      "@id": "schema:addressRegion"
+    },
+    "schema:addressCountry": {
+      "@id": "schema:addressCountry"
+    },
+    "skills": {
+      "@id": "cpra:skills",
+      "@container": "@list"
+    },
+    "experience_level": {
+      "@id": "cpra:experienceLevel"
+    },
+    "experience_years": {
+      "@id": "cpra:experienceYears"
+    },
+    "location_preference": {
+      "@id": "cpra:locationPreference"
+    },
+    "availability": {
+      "@id": "cpra:availability"
+    },
+    "open_to_relocation": {
+      "@id": "cpra:openToRelocation"
+    },
+    "industry_preference": {
+      "@id": "cpra:industryPreference",
+      "@container": "@list"
+    },
+    "job_type_preference": {
+      "@id": "cpra:jobTypePreference",
+      "@container": "@list"
+    },
+    "overall_verification_status": {
+      "@id": "cpra:overallVerificationStatus"
+    },
+    "Availability": "cpra:Availability",
+    "ExperienceLevel": "cpra:ExperienceLevel",
+    "VerificationStatus": "cpra:VerificationStatus"
+  }
+}

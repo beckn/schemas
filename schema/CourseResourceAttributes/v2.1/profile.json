@@ -1,0 +1,46 @@
+{
+  "id": "https://schema.beckn.io/CourseResourceAttributes/v1",
+  "name": "CourseResourceAttributes",
+  "version": "1.0.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": [
+    "CourseResourceAttributes",
+    "CredentialRequirement",
+    "CodedValue"
+  ],
+  "discovery_fields": [
+    "beckn:descriptor.schema:name",
+    "beckn:resourceAttributes.cra:courseLevel",
+    "beckn:resourceAttributes.cra:deliveryMode",
+    "beckn:resourceAttributes.cra:courseDomain",
+    "beckn:resourceAttributes.cra:duration",
+    "beckn:resourceAttributes.cra:prerequisites",
+    "beckn:resourceAttributes.cra:outcomeCredential"
+  ],
+  "indexable_paths": [
+    "beckn:resourceAttributes.cra:courseLevel",
+    "beckn:resourceAttributes.cra:deliveryMode",
+    "beckn:resourceAttributes.cra:courseDomain.cv:code",
+    "beckn:resourceAttributes.cra:outcomeCredential.cra:credentialCategory",
+    "beckn:resourceAttributes.cra:outcomeCredential.cra:credentialName",
+    "beckn:resourceAttributes.cra:location.schema:addressCountry"
+  ],
+  "filterable_paths": [
+    "beckn:resourceAttributes.cra:courseLevel",
+    "beckn:resourceAttributes.cra:deliveryMode",
+    "beckn:resourceAttributes.cra:location.schema:addressCountry",
+    "beckn:resourceAttributes.cra:location.schema:addressRegion",
+    "beckn:resourceAttributes.cra:prerequisites[*].cr:subtype",
+    "beckn:resourceAttributes.cra:outcomeCredential.cra:credentialCategory",
+    "beckn:resourceAttributes.cra:outcomeCredential.cra:credentialName"
+  ],
+  "sortable_paths": [
+    "beckn:resourceAttributes.cra:schedule.schema:startDate",
+    "beckn:descriptor.schema:name"
+  ],
+  "privacy_notes": [
+    "No PII. Provider identity is managed at the Resource provider level.",
+    "Location is city/region granularity only."
+  ]
+}

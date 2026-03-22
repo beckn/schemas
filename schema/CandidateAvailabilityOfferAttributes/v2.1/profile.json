@@ -1,0 +1,36 @@
+{
+  "id": "https://schema.beckn.io/CandidateAvailabilityOfferAttributes/v1",
+  "name": "CandidateAvailabilityOfferAttributes",
+  "version": "1.0.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": [
+    "CandidateAvailabilityOfferAttributes"
+  ],
+  "discovery_fields": [
+    "beckn:offerAttributes.caoa:desiredCompensationMin",
+    "beckn:offerAttributes.caoa:desiredCompensationMax",
+    "beckn:offerAttributes.caoa:desiredCompensationCurrency",
+    "beckn:offerAttributes.caoa:noticePeriodDays",
+    "beckn:offerAttributes.caoa:preferredContractTypes"
+  ],
+  "indexable_paths": [
+    "beckn:offerAttributes.caoa:desiredCompensationMin",
+    "beckn:offerAttributes.caoa:desiredCompensationMax",
+    "beckn:offerAttributes.caoa:noticePeriodDays"
+  ],
+  "filterable_paths": [
+    "beckn:offerAttributes.caoa:desiredCompensationMin",
+    "beckn:offerAttributes.caoa:desiredCompensationMax",
+    "beckn:offerAttributes.caoa:noticePeriodDays",
+    "beckn:offerAttributes.caoa:preferredContractTypes"
+  ],
+  "sortable_paths": [
+    "beckn:offerAttributes.caoa:desiredCompensationMin",
+    "beckn:offerAttributes.caoa:noticePeriodDays"
+  ],
+  "privacy_notes": [
+    "No PII. Compensation is a candidate preference range, not an individual's salary record.",
+    "Availability window dates are publicly stated preferences \u2014 not personal calendar data."
+  ]
+}

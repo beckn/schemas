@@ -1,0 +1,59 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "caoa": "https://schema.beckn.io/CandidateAvailabilityOfferAttributes#",
+    "caoa:desiredCompensationCurrency": {
+      "@id": "caoa:desiredCompensationCurrency"
+    },
+    "caoa:desiredCompensationMin": {
+      "@id": "schema:minPrice"
+    },
+    "caoa:desiredCompensationMax": {
+      "@id": "schema:maxPrice"
+    },
+    "caoa:desiredCompensationPeriod": {
+      "@id": "caoa:desiredCompensationPeriod"
+    },
+    "caoa:noticePeriodDays": {
+      "@id": "caoa:noticePeriodDays"
+    },
+    "caoa:availabilityWindow": {
+      "@id": "schema:validityPeriod"
+    },
+    "caoa:preferredContractTypes": {
+      "@id": "caoa:preferredContractTypes",
+      "@container": "@list"
+    },
+    "schema:validFrom": {
+      "@id": "schema:validFrom"
+    },
+    "schema:validThrough": {
+      "@id": "schema:validThrough"
+    },
+    "desired_compensation_currency": {
+      "@id": "caoa:desiredCompensationCurrency"
+    },
+    "desired_compensation_min": {
+      "@id": "schema:minPrice"
+    },
+    "desired_compensation_max": {
+      "@id": "schema:maxPrice"
+    },
+    "desired_compensation_period": {
+      "@id": "caoa:desiredCompensationPeriod"
+    },
+    "notice_period_days": {
+      "@id": "caoa:noticePeriodDays"
+    },
+    "availability_window": {
+      "@id": "schema:validityPeriod"
+    },
+    "preferred_contract_types": {
+      "@id": "caoa:preferredContractTypes",
+      "@container": "@list"
+    },
+    "DesiredCompensationPeriod": "caoa:DesiredCompensationPeriod"
+  }
+}

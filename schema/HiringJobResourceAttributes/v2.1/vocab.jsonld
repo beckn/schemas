@@ -1,0 +1,76 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "schema": "https://schema.org/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "hjra": "https://schema.beckn.io/HiringJobResourceAttributes#"
+  },
+  "@graph": [
+    {
+      "@id": "hjra:JobType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Job Type",
+      "rdfs:comment": "Nature of the employment engagement in a job opportunity."
+    },
+    {
+      "@id": "hjra:FULL_TIME",
+      "@type": "hjra:JobType",
+      "rdfs:label": "Full Time",
+      "rdfs:comment": "Standard full-time permanent employment."
+    },
+    {
+      "@id": "hjra:PART_TIME",
+      "@type": "hjra:JobType",
+      "rdfs:label": "Part Time",
+      "rdfs:comment": "Part-time employment with reduced hours."
+    },
+    {
+      "@id": "hjra:CONTRACT",
+      "@type": "hjra:JobType",
+      "rdfs:label": "Contract",
+      "rdfs:comment": "Fixed-term or project-based contract engagement."
+    },
+    {
+      "@id": "hjra:INTERNSHIP",
+      "@type": "hjra:JobType",
+      "rdfs:label": "Internship",
+      "rdfs:comment": "Internship or structured learning engagement."
+    },
+    {
+      "@id": "hjra:GIG",
+      "@type": "hjra:JobType",
+      "rdfs:label": "Gig",
+      "rdfs:comment": "Short-term, task-based gig work."
+    },
+    {
+      "@id": "hjra:APPRENTICESHIP",
+      "@type": "hjra:JobType",
+      "rdfs:label": "Apprenticeship",
+      "rdfs:comment": "Structured apprenticeship combining work and training."
+    },
+    {
+      "@id": "hjra:WorkMode",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Work Mode",
+      "rdfs:comment": "Physical arrangement for how the role is performed."
+    },
+    {
+      "@id": "hjra:ONSITE",
+      "@type": "hjra:WorkMode",
+      "rdfs:label": "On-Site",
+      "rdfs:comment": "Work is performed at the employer's physical location."
+    },
+    {
+      "@id": "hjra:REMOTE",
+      "@type": "hjra:WorkMode",
+      "rdfs:label": "Remote",
+      "rdfs:comment": "Work is performed fully remotely."
+    },
+    {
+      "@id": "hjra:HYBRID",
+      "@type": "hjra:WorkMode",
+      "rdfs:label": "Hybrid",
+      "rdfs:comment": "Work is split between on-site and remote."
+    }
+  ]
+}

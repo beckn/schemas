@@ -1,0 +1,30 @@
+{
+  "id": "https://schema.beckn.io/JobApplicationContractAttributes/v1",
+  "name": "JobApplicationContractAttributes",
+  "version": "1.0.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": [
+    "JobApplicationContractAttributes",
+    "VerificationSummary",
+    "CredentialRequirement"
+  ],
+  "discovery_fields": [],
+  "indexable_paths": [
+    "beckn:contractAttributes.jaca:applicationReference",
+    "beckn:contractAttributes.jaca:verificationSummary.vs:overallResult",
+    "beckn:contractAttributes.jaca:submittedAt"
+  ],
+  "filterable_paths": [
+    "beckn:contractAttributes.jaca:verificationSummary.vs:overallResult",
+    "beckn:contractAttributes.jaca:reverificationRequested"
+  ],
+  "sortable_paths": [
+    "beckn:contractAttributes.jaca:submittedAt"
+  ],
+  "privacy_notes": [
+    "No VC or VP payloads stored. Only verification outcome summary.",
+    "No candidate PII. The CANDIDATE party identity is managed by the core Contract parties[] array.",
+    "proof_metadata_hash in VerificationSummary is a hash only \u2014 no credential content."
+  ]
+}

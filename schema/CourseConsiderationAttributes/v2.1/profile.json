@@ -1,0 +1,23 @@
+{
+  "id": "https://schema.beckn.io/CourseConsiderationAttributes/v1",
+  "name": "CourseConsiderationAttributes",
+  "version": "1.0.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": [
+    "CourseConsiderationAttributes"
+  ],
+  "discovery_fields": [],
+  "indexable_paths": [
+    "beckn:considerationAttributes.ccoa:feeCategory",
+    "beckn:considerationAttributes.ccoa:paymentSchedule"
+  ],
+  "filterable_paths": [
+    "beckn:considerationAttributes.ccoa:feeCategory",
+    "beckn:considerationAttributes.ccoa:paymentSchedule"
+  ],
+  "sortable_paths": [],
+  "privacy_notes": [
+    "No PII. All fields are commercial fee terms, not learner financial data."
+  ]
+}

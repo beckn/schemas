@@ -1,0 +1,28 @@
+{
+  "id": "https://schema.beckn.io/JobApplicationPerformanceAttributes/v1",
+  "name": "JobApplicationPerformanceAttributes",
+  "version": "1.0.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": [
+    "JobApplicationPerformanceAttributes"
+  ],
+  "discovery_fields": [],
+  "indexable_paths": [
+    "beckn:performanceAttributes.japa:verificationMethod",
+    "beckn:performanceAttributes.japa:routedToProvider",
+    "beckn:performanceAttributes.japa:routingTimestamp"
+  ],
+  "filterable_paths": [
+    "beckn:performanceAttributes.japa:verificationMethod",
+    "beckn:performanceAttributes.japa:routedToProvider"
+  ],
+  "sortable_paths": [
+    "beckn:performanceAttributes.japa:routingTimestamp"
+  ],
+  "privacy_notes": [
+    "No VC or VP payloads stored. proofHash is a hash reference only.",
+    "issuer_dids_verified contains DID identifiers of issuers only \u2014 not subject DIDs.",
+    "per_requirement_results contains category/subtype labels only \u2014 no credential values."
+  ]
+}

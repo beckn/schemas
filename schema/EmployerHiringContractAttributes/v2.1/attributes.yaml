@@ -1,0 +1,92 @@
+openapi: "3.1.1"
+info:
+  title: EmployerHiringContractAttributes
+  version: "2.1.0"
+  description: >
+    Beckn v2.1 extension schema for the contractAttributes container.
+    Captures the transaction-level state of an employer-initiated hiring offer
+    to a candidate. The employer (EMPLOYER party, BAP-side) discovers the
+    candidate and initiates a hiring offer contract. The candidate (CANDIDATE
+    party, BPP-side) accepts, declines, or negotiates.
+
+x-beckn-container: contractAttributes
+
+components:
+  schemas:
+    EmployerHiringContractAttributes:
+      type: object
+      description: >
+        Contract-level metadata for an employer-to-candidate hiring offer.
+        Captures the specific role details being offered, compensation amount
+        (as distinct from the candidate's desired range), proposed joining date,
+        offer expiry, and candidate response state.
+      x-beckn-container: contractAttributes
+      x-jsonld-context: "./context.jsonld"
+      required:
+        - role_title
+        - offer_expiry
+      properties:
+        role_title:
+          type: string
+          description: Title of the role being formally offered.
+          x-jsonld-id: "ehca:roleTitle"
+        role_location:
+          type: object
+          description: Location where the role will be performed.
+          x-jsonld-id: "ehca:roleLocation"
+          properties:
+            city:
+              type: string
+              x-jsonld-id: "schema:addressLocality"
+            region:
+              type: string
+              x-jsonld-id: "schema:addressRegion"
+            country:
+              type: string
+              x-jsonld-id: "schema:addressCountry"
+        role_work_mode:
+          type: string
+          description: Work arrangement for the offered role.
+          x-jsonld-id: "ehca:roleWorkMode"
+          enum:
+            - ONSITE
+            - REMOTE
+            - HYBRID
+        proposed_joining_date:
+          type: string
+          format: date
+          description: Date the employer proposes the candidate joins.
+          x-jsonld-id: "ehca:proposedJoiningDate"
+        offer_expiry:
+          type: string
+          format: date-time
+          description: Datetime after which the offer lapses if not accepted.
+          x-jsonld-id: "ehca:offerExpiry"
+        offered_compensation_currency:
+          type: string
+          description: ISO 4217 currency code for the offered compensation.
+          x-jsonld-id: "ehca:offeredCompensationCurrency"
+          pattern: "^[A-Z]{3}$"
+        offered_compensation_amount:
+          type: number
+          description: Specific compensation amount offered (not a range).
+          x-jsonld-id: "ehca:offeredCompensationAmount"
+          minimum: 0
+        offered_compensation_period:
+          type: string
+          description: Period for the offered compensation.
+          x-jsonld-id: "ehca:offeredCompensationPeriod"
+          enum:
+            - ANNUAL
+            - MONTHLY
+            - DAILY
+            - HOURLY
+        candidate_response:
+          type: string
+          description: Candidate's response to the hiring offer.
+          x-jsonld-id: "ehca:candidateResponse"
+          enum:
+            - PENDING
+            - ACCEPTED
+            - DECLINED
+            - NEGOTIATING

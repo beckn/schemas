@@ -1,0 +1,69 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "japa": "https://schema.beckn.io/JobApplicationPerformanceAttributes#"
+  },
+  "@graph": [
+    {
+      "@id": "japa:VerificationMethod",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Verification Method",
+      "rdfs:comment": "The mechanism used to verify a credential during a job application performance."
+    },
+    {
+      "@id": "japa:VC",
+      "@type": "japa:VerificationMethod",
+      "rdfs:label": "Verifiable Credential",
+      "rdfs:comment": "Verification via cryptographically signed Verifiable Credential and Verifiable Presentation."
+    },
+    {
+      "@id": "japa:MANUAL",
+      "@type": "japa:VerificationMethod",
+      "rdfs:label": "Manual",
+      "rdfs:comment": "Manual document review by the platform."
+    },
+    {
+      "@id": "japa:KYC_PROVIDER",
+      "@type": "japa:VerificationMethod",
+      "rdfs:label": "KYC Provider",
+      "rdfs:comment": "Third-party KYC provider used for identity verification."
+    },
+    {
+      "@id": "japa:API_LOOKUP",
+      "@type": "japa:VerificationMethod",
+      "rdfs:label": "API Lookup",
+      "rdfs:comment": "Direct API call to an issuing authority to verify credential status."
+    },
+    {
+      "@id": "japa:HYBRID",
+      "@type": "japa:VerificationMethod",
+      "rdfs:label": "Hybrid",
+      "rdfs:comment": "Combination of two or more verification methods for different requirements."
+    },
+    {
+      "@id": "japa:RequirementResult",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Requirement Result",
+      "rdfs:comment": "Outcome of verifying a single credential requirement."
+    },
+    {
+      "@id": "japa:PASS",
+      "@type": "japa:RequirementResult",
+      "rdfs:label": "Pass",
+      "rdfs:comment": "The requirement was successfully verified."
+    },
+    {
+      "@id": "japa:FAIL",
+      "@type": "japa:RequirementResult",
+      "rdfs:label": "Fail",
+      "rdfs:comment": "The requirement could not be verified or the credential was invalid."
+    },
+    {
+      "@id": "japa:SKIPPED",
+      "@type": "japa:RequirementResult",
+      "rdfs:label": "Skipped",
+      "rdfs:comment": "The requirement was not checked (e.g. non-mandatory and credential not presented)."
+    }
+  ]
+}

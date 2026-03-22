@@ -1,0 +1,97 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "cra": "https://schema.beckn.io/CourseResourceAttributes#",
+    "cra:courseLevel": {
+      "@id": "cra:courseLevel"
+    },
+    "cra:courseDomain": {
+      "@id": "cra:courseDomain"
+    },
+    "cra:deliveryMode": {
+      "@id": "cra:deliveryMode"
+    },
+    "cra:duration": {
+      "@id": "schema:duration"
+    },
+    "cra:location": {
+      "@id": "schema:location"
+    },
+    "cra:capacity": {
+      "@id": "cra:capacity"
+    },
+    "cra:schedule": {
+      "@id": "cra:schedule"
+    },
+    "cra:sessionPattern": {
+      "@id": "cra:sessionPattern"
+    },
+    "cra:prerequisites": {
+      "@id": "cra:prerequisites",
+      "@container": "@list"
+    },
+    "cra:outcomeCredential": {
+      "@id": "cra:outcomeCredential"
+    },
+    "cra:credentialCategory": {
+      "@id": "cra:credentialCategory"
+    },
+    "cra:credentialName": {
+      "@id": "cra:credentialName"
+    },
+    "cra:industryType": {
+      "@id": "cra:industryType"
+    },
+    "schema:addressLocality": {
+      "@id": "schema:addressLocality"
+    },
+    "schema:addressRegion": {
+      "@id": "schema:addressRegion"
+    },
+    "schema:addressCountry": {
+      "@id": "schema:addressCountry"
+    },
+    "schema:startDate": {
+      "@id": "schema:startDate"
+    },
+    "schema:endDate": {
+      "@id": "schema:endDate"
+    },
+    "course_level": {
+      "@id": "cra:courseLevel"
+    },
+    "course_domain": {
+      "@id": "cra:courseDomain"
+    },
+    "delivery_mode": {
+      "@id": "cra:deliveryMode"
+    },
+    "duration": {
+      "@id": "schema:duration"
+    },
+    "location": {
+      "@id": "schema:location"
+    },
+    "capacity": {
+      "@id": "cra:capacity"
+    },
+    "schedule": {
+      "@id": "cra:schedule"
+    },
+    "prerequisites": {
+      "@id": "cra:prerequisites",
+      "@container": "@list"
+    },
+    "outcome_credential": {
+      "@id": "cra:outcomeCredential"
+    },
+    "industry_type": {
+      "@id": "cra:industryType"
+    },
+    "CourseLevel": "cra:CourseLevel",
+    "DeliveryMode": "cra:DeliveryMode",
+    "OutcomeCredentialCategory": "cra:OutcomeCredentialCategory"
+  }
+}

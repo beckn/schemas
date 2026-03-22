@@ -1,0 +1,63 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "japa": "https://schema.beckn.io/JobApplicationPerformanceAttributes#",
+    "cr": "https://schema.beckn.io/CredentialRequirement#",
+    "japa:verificationMethod": {
+      "@id": "japa:verificationMethod"
+    },
+    "japa:perRequirementResults": {
+      "@id": "japa:perRequirementResults",
+      "@container": "@list"
+    },
+    "japa:requirementResult": {
+      "@id": "japa:requirementResult"
+    },
+    "japa:proofHash": {
+      "@id": "japa:proofHash"
+    },
+    "japa:issuerDidsVerified": {
+      "@id": "japa:issuerDidsVerified",
+      "@container": "@list"
+    },
+    "japa:routedToProvider": {
+      "@id": "japa:routedToProvider"
+    },
+    "japa:routingTimestamp": {
+      "@id": "schema:dateModified"
+    },
+    "cr:category": {
+      "@id": "cr:category"
+    },
+    "cr:subtype": {
+      "@id": "cr:subtype"
+    },
+    "cr:mandatory": {
+      "@id": "cr:mandatory"
+    },
+    "verification_method": {
+      "@id": "japa:verificationMethod"
+    },
+    "per_requirement_results": {
+      "@id": "japa:perRequirementResults",
+      "@container": "@list"
+    },
+    "proof_hash": {
+      "@id": "japa:proofHash"
+    },
+    "issuer_dids_verified": {
+      "@id": "japa:issuerDidsVerified",
+      "@container": "@list"
+    },
+    "routed_to_provider": {
+      "@id": "japa:routedToProvider"
+    },
+    "routing_timestamp": {
+      "@id": "schema:dateModified"
+    },
+    "RequirementResult": "japa:RequirementResult",
+    "VerificationMethod": "japa:VerificationMethod"
+  }
+}

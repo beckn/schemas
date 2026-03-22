@@ -1,0 +1,15 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "coa": "https://schema.beckn.io/CourseOfferAttributes#"
+  },
+  "@graph": [
+    { "@id": "coa:PricingType", "@type": "rdfs:Class", "rdfs:label": "Pricing Type", "rdfs:comment": "The commercial arrangement under which a course is offered." },
+    { "@id": "coa:FULL_FEE",         "@type": "coa:PricingType", "rdfs:label": "Full Fee",         "rdfs:comment": "Learner pays the full course fee." },
+    { "@id": "coa:SUBSIDIZED",       "@type": "coa:PricingType", "rdfs:label": "Subsidized",       "rdfs:comment": "Learner pays a reduced fee; remainder is subsidised." },
+    { "@id": "coa:SCHOLARSHIP",      "@type": "coa:PricingType", "rdfs:label": "Scholarship",      "rdfs:comment": "Fee waived for selected learners via scholarship." },
+    { "@id": "coa:GOVERNMENT_FUNDED","@type": "coa:PricingType", "rdfs:label": "Government Funded","rdfs:comment": "Fully funded by a government scheme (e.g. PMKVY)." },
+    { "@id": "coa:FREE",             "@type": "coa:PricingType", "rdfs:label": "Free",             "rdfs:comment": "No charge to the learner." }
+  ]
+}

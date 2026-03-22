@@ -1,0 +1,40 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "schema": "https://schema.org/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "cra": "https://schema.beckn.io/CourseResourceAttributes#"
+  },
+  "@graph": [
+    {
+      "@id": "cra:CourseLevel",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Course Level",
+      "rdfs:comment": "Difficulty or qualification level of a training course."
+    },
+    { "@id": "cra:BEGINNER",     "@type": "cra:CourseLevel", "rdfs:label": "Beginner",     "rdfs:comment": "No prior knowledge required." },
+    { "@id": "cra:INTERMEDIATE", "@type": "cra:CourseLevel", "rdfs:label": "Intermediate", "rdfs:comment": "Requires foundational knowledge in the domain." },
+    { "@id": "cra:ADVANCED",     "@type": "cra:CourseLevel", "rdfs:label": "Advanced",     "rdfs:comment": "Requires substantial domain experience." },
+    { "@id": "cra:EXPERT",       "@type": "cra:CourseLevel", "rdfs:label": "Expert",       "rdfs:comment": "Designed for domain specialists." },
+    {
+      "@id": "cra:DeliveryMode",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Delivery Mode",
+      "rdfs:comment": "Physical arrangement for course delivery."
+    },
+    { "@id": "cra:ONLINE",  "@type": "cra:DeliveryMode", "rdfs:label": "Online",  "rdfs:comment": "Fully online, no physical attendance required." },
+    { "@id": "cra:ONSITE",  "@type": "cra:DeliveryMode", "rdfs:label": "On-Site", "rdfs:comment": "Requires physical attendance at a training centre." },
+    { "@id": "cra:HYBRID",  "@type": "cra:DeliveryMode", "rdfs:label": "Hybrid",  "rdfs:comment": "Combination of online and on-site sessions." },
+    {
+      "@id": "cra:OutcomeCredentialCategory",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Outcome Credential Category",
+      "rdfs:comment": "Type of credential issued on successful course completion."
+    },
+    { "@id": "cra:SKILL",        "@type": "cra:OutcomeCredentialCategory", "rdfs:label": "Skill Certificate",  "rdfs:comment": "Skill-level certificate." },
+    { "@id": "cra:DEGREE",       "@type": "cra:OutcomeCredentialCategory", "rdfs:label": "Degree",             "rdfs:comment": "Academic degree." },
+    { "@id": "cra:CERTIFICATION","@type": "cra:OutcomeCredentialCategory", "rdfs:label": "Certification",      "rdfs:comment": "Professional certification." },
+    { "@id": "cra:DIPLOMA",      "@type": "cra:OutcomeCredentialCategory", "rdfs:label": "Diploma",            "rdfs:comment": "Diploma qualification." },
+    { "@id": "cra:LICENCE",      "@type": "cra:OutcomeCredentialCategory", "rdfs:label": "Licence",            "rdfs:comment": "Regulatory licence to practice." }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "jaca": "https://schema.beckn.io/JobApplicationContractAttributes#",
+    "jaca:applicationReference": {
+      "@id": "jaca:applicationReference"
+    },
+    "jaca:verificationSummary": {
+      "@id": "jaca:verificationSummary"
+    },
+    "jaca:reverificationRequested": {
+      "@id": "jaca:reverificationRequested"
+    },
+    "jaca:reverificationRequirements": {
+      "@id": "jaca:reverificationRequirements",
+      "@container": "@list"
+    },
+    "jaca:submittedAt": {
+      "@id": "schema:dateCreated"
+    },
+    "application_reference": {
+      "@id": "jaca:applicationReference"
+    },
+    "verification_summary": {
+      "@id": "jaca:verificationSummary"
+    },
+    "reverification_requested": {
+      "@id": "jaca:reverificationRequested"
+    },
+    "reverification_requirements": {
+      "@id": "jaca:reverificationRequirements",
+      "@container": "@list"
+    },
+    "submitted_at": {
+      "@id": "schema:dateCreated"
+    },
+    "ApplicationContractStatus": "jaca:ApplicationContractStatus",
+    "ReverificationStatus": "jaca:ReverificationStatus"
+  }
+}

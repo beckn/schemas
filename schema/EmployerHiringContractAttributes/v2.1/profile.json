@@ -1,0 +1,29 @@
+{
+  "id": "https://schema.beckn.io/EmployerHiringContractAttributes/v1",
+  "name": "EmployerHiringContractAttributes",
+  "version": "1.0.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": [
+    "EmployerHiringContractAttributes"
+  ],
+  "discovery_fields": [],
+  "indexable_paths": [
+    "beckn:contractAttributes.ehca:candidateResponse",
+    "beckn:contractAttributes.ehca:offerExpiry",
+    "beckn:contractAttributes.ehca:proposedJoiningDate"
+  ],
+  "filterable_paths": [
+    "beckn:contractAttributes.ehca:candidateResponse",
+    "beckn:contractAttributes.ehca:roleWorkMode"
+  ],
+  "sortable_paths": [
+    "beckn:contractAttributes.ehca:offerExpiry",
+    "beckn:contractAttributes.ehca:proposedJoiningDate"
+  ],
+  "privacy_notes": [
+    "offeredCompensationAmount is specific \u2014 handle with appropriate access control.",
+    "Employer identity is managed at the core Contract parties[] level, not in this extension.",
+    "Candidate identity is managed at the core Contract parties[] level."
+  ]
+}

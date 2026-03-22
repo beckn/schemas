@@ -1,0 +1,64 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "cdpa": "https://schema.beckn.io/CourseDeliveryPerformanceAttributes#",
+    "cdpa:deliveryUrl": {
+      "@id": "cdpa:deliveryUrl",
+      "@type": "@id"
+    },
+    "cdpa:sessionSchedule": {
+      "@id": "cdpa:sessionSchedule",
+      "@container": "@list"
+    },
+    "cdpa:sessionTopic": {
+      "@id": "cdpa:sessionTopic"
+    },
+    "cdpa:attendanceTracking": {
+      "@id": "cdpa:attendanceTracking"
+    },
+    "cdpa:completionCriteria": {
+      "@id": "cdpa:completionCriteria"
+    },
+    "cdpa:minAttendancePct": {
+      "@id": "cdpa:minAttendancePct"
+    },
+    "cdpa:assessmentRequired": {
+      "@id": "cdpa:assessmentRequired"
+    },
+    "cdpa:completionStatus": {
+      "@id": "cdpa:completionStatus"
+    },
+    "cdpa:issuedCredentialRef": {
+      "@id": "cdpa:issuedCredentialRef"
+    },
+    "schema:startDate": {
+      "@id": "schema:startDate"
+    },
+    "schema:duration": {
+      "@id": "schema:duration"
+    },
+    "delivery_url": {
+      "@id": "cdpa:deliveryUrl",
+      "@type": "@id"
+    },
+    "session_schedule": {
+      "@id": "cdpa:sessionSchedule",
+      "@container": "@list"
+    },
+    "attendance_tracking": {
+      "@id": "cdpa:attendanceTracking"
+    },
+    "completion_criteria": {
+      "@id": "cdpa:completionCriteria"
+    },
+    "completion_status": {
+      "@id": "cdpa:completionStatus"
+    },
+    "issued_credential_ref": {
+      "@id": "cdpa:issuedCredentialRef"
+    },
+    "CompletionStatus": "cdpa:CompletionStatus"
+  }
+}

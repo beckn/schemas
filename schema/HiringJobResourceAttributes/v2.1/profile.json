@@ -1,0 +1,46 @@
+{
+  "id": "https://schema.beckn.io/HiringJobResourceAttributes/v1",
+  "name": "HiringJobResourceAttributes",
+  "version": "1.0.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": [
+    "HiringJobResourceAttributes",
+    "CredentialRequirement",
+    "CodedValue"
+  ],
+  "discovery_fields": [
+    "beckn:descriptor.schema:name",
+    "beckn:resourceAttributes.hjra:jobType",
+    "beckn:resourceAttributes.hjra:workMode",
+    "beckn:resourceAttributes.hjra:location",
+    "beckn:resourceAttributes.hjra:industryType",
+    "beckn:resourceAttributes.hjra:requirements",
+    "beckn:resourceAttributes.hjra:tags"
+  ],
+  "indexable_paths": [
+    "beckn:resourceAttributes.hjra:jobType",
+    "beckn:resourceAttributes.hjra:workMode",
+    "beckn:resourceAttributes.hjra:location.schema:addressCountry",
+    "beckn:resourceAttributes.hjra:location.schema:addressRegion",
+    "beckn:resourceAttributes.hjra:industryType.cv:code",
+    "beckn:resourceAttributes.hjra:tags"
+  ],
+  "filterable_paths": [
+    "beckn:resourceAttributes.hjra:jobType",
+    "beckn:resourceAttributes.hjra:workMode",
+    "beckn:resourceAttributes.hjra:location.schema:addressCountry",
+    "beckn:resourceAttributes.hjra:location.schema:addressRegion",
+    "beckn:resourceAttributes.hjra:location.schema:addressLocality",
+    "beckn:resourceAttributes.hjra:requirements[*].cr:category",
+    "beckn:resourceAttributes.hjra:requirements[*].cr:subtype"
+  ],
+  "sortable_paths": [
+    "beckn:descriptor.schema:name"
+  ],
+  "privacy_notes": [
+    "No PII in this schema. The provider identity is masked by the BAP platform.",
+    "Location is at city/region granularity only \u2014 not street-level.",
+    "Requirements list credential categories, not holder data."
+  ]
+}

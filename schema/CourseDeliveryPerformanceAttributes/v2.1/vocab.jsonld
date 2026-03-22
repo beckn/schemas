@@ -1,0 +1,14 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "cdpa": "https://schema.beckn.io/CourseDeliveryPerformanceAttributes#"
+  },
+  "@graph": [
+    { "@id": "cdpa:CompletionStatus", "@type": "rdfs:Class", "rdfs:label": "Completion Status", "rdfs:comment": "The learner's course completion state." },
+    { "@id": "cdpa:NOT_STARTED",  "@type": "cdpa:CompletionStatus", "rdfs:label": "Not Started",  "rdfs:comment": "Learner has not yet begun the course." },
+    { "@id": "cdpa:IN_PROGRESS",  "@type": "cdpa:CompletionStatus", "rdfs:label": "In Progress",  "rdfs:comment": "Learner is actively undertaking the course." },
+    { "@id": "cdpa:COMPLETED",    "@type": "cdpa:CompletionStatus", "rdfs:label": "Completed",    "rdfs:comment": "Learner has met all completion criteria." },
+    { "@id": "cdpa:FAILED",       "@type": "cdpa:CompletionStatus", "rdfs:label": "Failed",       "rdfs:comment": "Learner did not meet completion criteria." }
+  ]
+}

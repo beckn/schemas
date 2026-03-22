@@ -1,0 +1,87 @@
+openapi: "3.1.1"
+info:
+  title: JobApplicationPerformanceAttributes
+  version: "2.1.0"
+  description: >
+    Beckn v2.1 extension schema for the performanceAttributes container.
+    Captures the execution details of the credential verification and
+    application routing service performed as part of a job application.
+    Performance mode is SERVICE.
+
+x-beckn-container: performanceAttributes
+
+components:
+  schemas:
+    JobApplicationPerformanceAttributes:
+      type: object
+      description: >
+        Execution metadata for the verification and routing service performed
+        during a job application. Includes the verification method used,
+        per-requirement results, proof integrity reference, and routing outcome.
+        No VC or VP payloads are stored.
+      x-beckn-container: performanceAttributes
+      x-jsonld-context: "./context.jsonld"
+      properties:
+        verification_method:
+          type: string
+          description: Primary method used to verify credentials in this performance unit.
+          x-jsonld-id: "japa:verificationMethod"
+          enum:
+            - VC
+            - MANUAL
+            - KYC_PROVIDER
+            - API_LOOKUP
+            - HYBRID
+        per_requirement_results:
+          type: array
+          description: >
+            Granular verification outcome per requirement. Mandatory requirements
+            that FAIL block routing to the employer.
+          x-jsonld-id: "japa:perRequirementResults"
+          items:
+            type: object
+            required:
+              - category
+              - subtype
+              - result
+              - mandatory
+            properties:
+              category:
+                type: string
+                x-jsonld-id: "cr:category"
+              subtype:
+                type: string
+                x-jsonld-id: "cr:subtype"
+              result:
+                type: string
+                x-jsonld-id: "japa:requirementResult"
+                enum:
+                  - PASS
+                  - FAIL
+                  - SKIPPED
+              mandatory:
+                type: boolean
+                x-jsonld-id: "cr:mandatory"
+        proof_hash:
+          type: string
+          description: >
+            SHA-256 hash of the Verifiable Presentation (VP) used during
+            verification. Provides integrity reference; no VP payload stored.
+          x-jsonld-id: "japa:proofHash"
+        issuer_dids_verified:
+          type: array
+          description: DIDs of credential issuers validated during this performance.
+          x-jsonld-id: "japa:issuerDidsVerified"
+          items:
+            type: string
+        routed_to_provider:
+          type: boolean
+          description: >
+            Whether the application was successfully forwarded to the employer
+            after verification. False if mandatory requirements failed.
+          x-jsonld-id: "japa:routedToProvider"
+        routing_timestamp:
+          type: string
+          format: date-time
+          description: Timestamp when the application was routed to the employer.
+          x-jsonld-id: "japa:routingTimestamp"

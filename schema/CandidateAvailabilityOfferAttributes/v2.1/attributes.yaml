@@ -1,0 +1,83 @@
+openapi: "3.1.1"
+info:
+  title: CandidateAvailabilityOfferAttributes
+  version: "2.1.0"
+  description: >
+    Beckn v2.1 extension schema for the offerAttributes container.
+    Captures the candidate's stated availability terms and compensation
+    expectations as an Offer. In the hiring-candidates topology, the
+    candidate is the BPP and the Offer represents what the candidate
+    is offering to the market: their availability, notice period, desired
+    compensation range, and preferred contract types.
+
+x-beckn-container: offerAttributes
+
+components:
+  schemas:
+    CandidateAvailabilityOfferAttributes:
+      type: object
+      description: >
+        Availability and compensation expectation terms under which a
+        candidate profile is offered to employers. The proposedConsideration
+        on the core Offer carries the candidate's headline desired salary;
+        this extension provides the full range, notice period, and
+        contract type preferences.
+      x-beckn-container: offerAttributes
+      x-jsonld-context: "./context.jsonld"
+      properties:
+        desired_compensation_currency:
+          type: string
+          description: ISO 4217 currency code for the desired compensation.
+          x-jsonld-id: "caoa:desiredCompensationCurrency"
+          pattern: "^[A-Z]{3}$"
+        desired_compensation_min:
+          type: number
+          description: Lower bound of the candidate's desired compensation range.
+          x-jsonld-id: "caoa:desiredCompensationMin"
+          minimum: 0
+        desired_compensation_max:
+          type: number
+          description: Upper bound of the candidate's desired compensation range.
+          x-jsonld-id: "caoa:desiredCompensationMax"
+          minimum: 0
+        desired_compensation_period:
+          type: string
+          description: Period against which the desired compensation is stated.
+          x-jsonld-id: "caoa:desiredCompensationPeriod"
+          enum:
+            - ANNUAL
+            - MONTHLY
+            - DAILY
+            - HOURLY
+        notice_period_days:
+          type: integer
+          description: Current notice period the candidate must serve before joining.
+          x-jsonld-id: "caoa:noticePeriodDays"
+          minimum: 0
+        availability_window:
+          type: object
+          description: Period during which the candidate is available to start.
+          x-jsonld-id: "caoa:availabilityWindow"
+          properties:
+            start:
+              type: string
+              format: date-time
+              description: Earliest available start date.
+              x-jsonld-id: "schema:validFrom"
+            end:
+              type: string
+              format: date-time
+              description: Latest date by which they want to have started.
+              x-jsonld-id: "schema:validThrough"
+        preferred_contract_types:
+          type: array
+          description: Employment types the candidate is willing to accept.
+          x-jsonld-id: "caoa:preferredContractTypes"
+          items:
+            type: string
+            enum:
+              - FULL_TIME
+              - PART_TIME
+              - CONTRACT
+              - GIG
+              - APPRENTICESHIP

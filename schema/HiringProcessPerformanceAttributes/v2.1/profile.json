@@ -1,0 +1,29 @@
+{
+  "id": "https://schema.beckn.io/HiringProcessPerformanceAttributes/v1",
+  "name": "HiringProcessPerformanceAttributes",
+  "version": "1.0.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": [
+    "HiringProcessPerformanceAttributes",
+    "VerificationSummary"
+  ],
+  "discovery_fields": [],
+  "indexable_paths": [
+    "beckn:performanceAttributes.hppa:stage",
+    "beckn:performanceAttributes.hppa:verificationRequested"
+  ],
+  "filterable_paths": [
+    "beckn:performanceAttributes.hppa:stage",
+    "beckn:performanceAttributes.hppa:assessmentRequired",
+    "beckn:performanceAttributes.hppa:verificationRequested"
+  ],
+  "sortable_paths": [
+    "beckn:performanceAttributes.hppa:interviewSchedule[0].schema:startDate"
+  ],
+  "privacy_notes": [
+    "No PII. Candidate and employer identities are at the core Contract parties[] level.",
+    "Assessment references should not include personal assessment scores in this schema.",
+    "Verification summary carries no VC/VP payloads."
+  ]
+}

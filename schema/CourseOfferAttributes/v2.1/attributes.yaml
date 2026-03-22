@@ -1,0 +1,54 @@
+openapi: "3.1.1"
+info:
+  title: CourseOfferAttributes
+  version: "2.1.0"
+  description: >
+    Beckn v2.1 extension schema for the offerAttributes container.
+    Captures commercial terms governing a course enrollment offer:
+    pricing type, seat availability, enrollment deadline, and sponsorship info.
+x-beckn-container: offerAttributes
+components:
+  schemas:
+    CourseOfferAttributes:
+      type: object
+      description: >
+        Commercial and availability terms under which a course is offered.
+        The proposedConsideration on the core Offer carries the headline fee;
+        this extension provides pricing type context and enrollment window.
+      x-beckn-container: offerAttributes
+      x-jsonld-context: "./context.jsonld"
+      properties:
+        pricing_type:
+          type: string
+          x-jsonld-id: "coa:pricingType"
+          enum: [FULL_FEE, SUBSIDIZED, SCHOLARSHIP, GOVERNMENT_FUNDED, FREE]
+        seats_available:
+          type: integer
+          x-jsonld-id: "coa:seatsAvailable"
+          minimum: 0
+        enrollment_deadline:
+          type: string
+          format: date-time
+          x-jsonld-id: "coa:enrollmentDeadline"
+        offer_validity:
+          type: object
+          x-jsonld-id: "coa:offerValidity"
+          properties:
+            start:
+              type: string
+              format: date-time
+              x-jsonld-id: "schema:validFrom"
+            end:
+              type: string
+              format: date-time
+              x-jsonld-id: "schema:validThrough"
+        sponsorship_body:
+          type: string
+          description: Name of the sponsoring body (e.g. NSDC, ministry scheme name).
+          x-jsonld-id: "coa:sponsorshipBody"
+        eligibility_constraints:
+          type: array
+          description: Additional eligibility notes beyond formal prerequisites.
+          x-jsonld-id: "coa:eligibilityConstraints"
+          items:
+            type: string

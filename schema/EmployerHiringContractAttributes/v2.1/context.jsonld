@@ -1,0 +1,73 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "ehca": "https://schema.beckn.io/EmployerHiringContractAttributes#",
+    "ehca:roleTitle": {
+      "@id": "schema:title"
+    },
+    "ehca:roleLocation": {
+      "@id": "schema:jobLocation"
+    },
+    "ehca:roleWorkMode": {
+      "@id": "ehca:roleWorkMode"
+    },
+    "ehca:proposedJoiningDate": {
+      "@id": "ehca:proposedJoiningDate"
+    },
+    "ehca:offerExpiry": {
+      "@id": "schema:validThrough"
+    },
+    "ehca:offeredCompensationCurrency": {
+      "@id": "ehca:offeredCompensationCurrency"
+    },
+    "ehca:offeredCompensationAmount": {
+      "@id": "schema:price"
+    },
+    "ehca:offeredCompensationPeriod": {
+      "@id": "ehca:offeredCompensationPeriod"
+    },
+    "ehca:candidateResponse": {
+      "@id": "ehca:candidateResponse"
+    },
+    "schema:addressLocality": {
+      "@id": "schema:addressLocality"
+    },
+    "schema:addressRegion": {
+      "@id": "schema:addressRegion"
+    },
+    "schema:addressCountry": {
+      "@id": "schema:addressCountry"
+    },
+    "role_title": {
+      "@id": "schema:title"
+    },
+    "role_location": {
+      "@id": "schema:jobLocation"
+    },
+    "role_work_mode": {
+      "@id": "ehca:roleWorkMode"
+    },
+    "proposed_joining_date": {
+      "@id": "ehca:proposedJoiningDate"
+    },
+    "offer_expiry": {
+      "@id": "schema:validThrough"
+    },
+    "offered_compensation_currency": {
+      "@id": "ehca:offeredCompensationCurrency"
+    },
+    "offered_compensation_amount": {
+      "@id": "schema:price"
+    },
+    "offered_compensation_period": {
+      "@id": "ehca:offeredCompensationPeriod"
+    },
+    "candidate_response": {
+      "@id": "ehca:candidateResponse"
+    },
+    "CandidateResponse": "ehca:CandidateResponse",
+    "OfferedCompensationPeriod": "ehca:OfferedCompensationPeriod"
+  }
+}

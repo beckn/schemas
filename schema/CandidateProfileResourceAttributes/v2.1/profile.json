@@ -1,0 +1,53 @@
+{
+  "id": "https://schema.beckn.io/CandidateProfileResourceAttributes/v1",
+  "name": "CandidateProfileResourceAttributes",
+  "version": "1.0.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": [
+    "CandidateProfileResourceAttributes",
+    "SkillEntry",
+    "CodedValue"
+  ],
+  "discovery_fields": [
+    "beckn:resourceAttributes.cpra:skills",
+    "beckn:resourceAttributes.cpra:experienceLevel",
+    "beckn:resourceAttributes.cpra:availability",
+    "beckn:resourceAttributes.cpra:locationPreference",
+    "beckn:resourceAttributes.cpra:jobTypePreference",
+    "beckn:resourceAttributes.cpra:industryPreference",
+    "beckn:resourceAttributes.cpra:overallVerificationStatus"
+  ],
+  "indexable_paths": [
+    "beckn:resourceAttributes.cpra:skills[*].se:category",
+    "beckn:resourceAttributes.cpra:skills[*].se:subtype",
+    "beckn:resourceAttributes.cpra:skills[*].se:attested",
+    "beckn:resourceAttributes.cpra:experienceLevel",
+    "beckn:resourceAttributes.cpra:availability",
+    "beckn:resourceAttributes.cpra:locationPreference.cpra:workModePreference",
+    "beckn:resourceAttributes.cpra:overallVerificationStatus"
+  ],
+  "filterable_paths": [
+    "beckn:resourceAttributes.cpra:skills[*].se:subtype",
+    "beckn:resourceAttributes.cpra:skills[*].se:attested",
+    "beckn:resourceAttributes.cpra:experienceLevel",
+    "beckn:resourceAttributes.cpra:availability",
+    "beckn:resourceAttributes.cpra:locationPreference.cpra:workModePreference",
+    "beckn:resourceAttributes.cpra:locationPreference.cpra:preferredLocations[*].schema:addressCountry",
+    "beckn:resourceAttributes.cpra:jobTypePreference",
+    "beckn:resourceAttributes.cpra:overallVerificationStatus",
+    "beckn:resourceAttributes.cpra:open_to_relocation"
+  ],
+  "sortable_paths": [
+    "beckn:resourceAttributes.cpra:experienceYears",
+    "beckn:resourceAttributes.cpra:experienceLevel",
+    "beckn:resourceAttributes.cpra:overallVerificationStatus"
+  ],
+  "privacy_notes": [
+    "No PII. No name, contact, address, or date of birth.",
+    "Candidate identity is managed via the core Resource provider field and DID \u2014 not in this extension.",
+    "proof_request_url in SkillEntry is a DeDi endpoint reference \u2014 not a VC payload.",
+    "preferred_locations are city/region granularity only \u2014 not street-level.",
+    "overall_verification_status is derived from public DeDi registry data."
+  ]
+}

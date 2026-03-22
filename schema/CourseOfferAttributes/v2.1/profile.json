@@ -1,0 +1,32 @@
+{
+  "id": "https://schema.beckn.io/CourseOfferAttributes/v1",
+  "name": "CourseOfferAttributes",
+  "version": "1.0.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": [
+    "CourseOfferAttributes"
+  ],
+  "discovery_fields": [
+    "beckn:offerAttributes.coa:pricingType",
+    "beckn:offerAttributes.coa:seatsAvailable",
+    "beckn:offerAttributes.coa:enrollmentDeadline",
+    "beckn:offerAttributes.coa:sponsorshipBody"
+  ],
+  "indexable_paths": [
+    "beckn:offerAttributes.coa:pricingType",
+    "beckn:offerAttributes.coa:seatsAvailable",
+    "beckn:offerAttributes.coa:enrollmentDeadline"
+  ],
+  "filterable_paths": [
+    "beckn:offerAttributes.coa:pricingType",
+    "beckn:offerAttributes.coa:seatsAvailable"
+  ],
+  "sortable_paths": [
+    "beckn:offerAttributes.coa:enrollmentDeadline",
+    "beckn:offerAttributes.coa:seatsAvailable"
+  ],
+  "privacy_notes": [
+    "No PII. All fields are commercial terms about the offer."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "https://schema.beckn.io/HiringJobOfferAttributes/v1",
+  "name": "HiringJobOfferAttributes",
+  "version": "1.0.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": [
+    "HiringJobOfferAttributes"
+  ],
+  "discovery_fields": [
+    "beckn:offerAttributes.hjoa:compensationMin",
+    "beckn:offerAttributes.hjoa:compensationMax",
+    "beckn:offerAttributes.hjoa:compensationCurrency",
+    "beckn:offerAttributes.hjoa:compensationPeriod",
+    "beckn:offerAttributes.hjoa:openingsCount",
+    "beckn:offerAttributes.hjoa:applicationDeadline"
+  ],
+  "indexable_paths": [
+    "beckn:offerAttributes.hjoa:compensationMin",
+    "beckn:offerAttributes.hjoa:compensationMax",
+    "beckn:offerAttributes.hjoa:compensationPeriod",
+    "beckn:offerAttributes.hjoa:applicationDeadline"
+  ],
+  "filterable_paths": [
+    "beckn:offerAttributes.hjoa:compensationMin",
+    "beckn:offerAttributes.hjoa:compensationMax",
+    "beckn:offerAttributes.hjoa:compensationCurrency",
+    "beckn:offerAttributes.hjoa:compensationPeriod",
+    "beckn:offerAttributes.hjoa:openingsCount"
+  ],
+  "sortable_paths": [
+    "beckn:offerAttributes.hjoa:compensationMin",
+    "beckn:offerAttributes.hjoa:compensationMax",
+    "beckn:offerAttributes.hjoa:applicationDeadline"
+  ],
+  "privacy_notes": [
+    "No PII. All fields are commercial metadata about the offer, not about any individual."
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "hjoa": "https://schema.beckn.io/HiringJobOfferAttributes#",
+    "hjoa:compensationCurrency": {
+      "@id": "hjoa:compensationCurrency"
+    },
+    "hjoa:compensationMin": {
+      "@id": "schema:minPrice"
+    },
+    "hjoa:compensationMax": {
+      "@id": "schema:maxPrice"
+    },
+    "hjoa:compensationPeriod": {
+      "@id": "hjoa:compensationPeriod"
+    },
+    "hjoa:openingsCount": {
+      "@id": "hjoa:openingsCount"
+    },
+    "hjoa:applicationDeadline": {
+      "@id": "schema:applicationDeadline"
+    },
+    "hjoa:postingValidity": {
+      "@id": "schema:validityPeriod"
+    },
+    "hjoa:probationPeriodMonths": {
+      "@id": "hjoa:probationPeriodMonths"
+    },
+    "schema:validFrom": {
+      "@id": "schema:validFrom"
+    },
+    "schema:validThrough": {
+      "@id": "schema:validThrough"
+    },
+    "compensation_currency": {
+      "@id": "hjoa:compensationCurrency"
+    },
+    "compensation_min": {
+      "@id": "schema:minPrice"
+    },
+    "compensation_max": {
+      "@id": "schema:maxPrice"
+    },
+    "compensation_period": {
+      "@id": "hjoa:compensationPeriod"
+    },
+    "openings_count": {
+      "@id": "hjoa:openingsCount"
+    },
+    "application_deadline": {
+      "@id": "schema:applicationDeadline"
+    },
+    "posting_validity": {
+      "@id": "schema:validityPeriod"
+    },
+    "probation_period_months": {
+      "@id": "hjoa:probationPeriodMonths"
+    },
+    "CompensationPeriod": "hjoa:CompensationPeriod"
+  }
+}

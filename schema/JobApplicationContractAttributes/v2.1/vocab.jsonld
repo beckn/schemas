@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "jaca": "https://schema.beckn.io/JobApplicationContractAttributes#"
+  },
+  "@graph": [
+    {
+      "@id": "jaca:ApplicationContractStatus",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Application Contract Status",
+      "rdfs:comment": "Lifecycle states specific to a job application contract, complementing the core beckn:Contract status values."
+    },
+    {
+      "@id": "jaca:ReverificationStatus",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Reverification Status",
+      "rdfs:comment": "State of an employer-requested reverification within a job application contract."
+    },
+    {
+      "@id": "jaca:REVERIFICATION_PENDING",
+      "@type": "jaca:ReverificationStatus",
+      "rdfs:label": "Reverification Pending",
+      "rdfs:comment": "Reverification has been requested and is awaiting candidate response."
+    },
+    {
+      "@id": "jaca:REVERIFICATION_COMPLETE",
+      "@type": "jaca:ReverificationStatus",
+      "rdfs:label": "Reverification Complete",
+      "rdfs:comment": "Reverification has been completed and a new VerificationSummary is available."
+    }
+  ]
+}

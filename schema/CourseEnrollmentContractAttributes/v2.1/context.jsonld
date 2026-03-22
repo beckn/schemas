@@ -1,0 +1,61 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "ceca": "https://schema.beckn.io/CourseEnrollmentContractAttributes#",
+    "vs": "https://schema.beckn.io/VerificationSummary#",
+    "ceca:enrollmentReference": {
+      "@id": "ceca:enrollmentReference"
+    },
+    "ceca:cohortId": {
+      "@id": "ceca:cohortId"
+    },
+    "ceca:prerequisiteVerificationSummary": {
+      "@id": "ceca:prerequisiteVerificationSummary"
+    },
+    "ceca:credentialIssuancePending": {
+      "@id": "ceca:credentialIssuancePending"
+    },
+    "ceca:enrolledAt": {
+      "@id": "schema:dateCreated"
+    },
+    "vs:overallResult": {
+      "@id": "vs:overallResult"
+    },
+    "vs:reasonCodes": {
+      "@id": "vs:reasonCodes",
+      "@container": "@list"
+    },
+    "vs:verifiedCategories": {
+      "@id": "vs:verifiedCategories",
+      "@container": "@list"
+    },
+    "vs:verifiedSubtypes": {
+      "@id": "vs:verifiedSubtypes",
+      "@container": "@list"
+    },
+    "vs:checkedAt": {
+      "@id": "vs:checkedAt"
+    },
+    "vs:proofMetadataHash": {
+      "@id": "vs:proofMetadataHash"
+    },
+    "enrollment_reference": {
+      "@id": "ceca:enrollmentReference"
+    },
+    "cohort_id": {
+      "@id": "ceca:cohortId"
+    },
+    "prerequisite_verification_summary": {
+      "@id": "ceca:prerequisiteVerificationSummary"
+    },
+    "credential_issuance_pending": {
+      "@id": "ceca:credentialIssuancePending"
+    },
+    "enrolled_at": {
+      "@id": "schema:dateCreated"
+    },
+    "EnrollmentContractStatus": "ceca:EnrollmentContractStatus"
+  }
+}
