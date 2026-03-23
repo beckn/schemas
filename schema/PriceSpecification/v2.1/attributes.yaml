@@ -36,7 +36,7 @@ properties:
           type: string
         description:
           type: string
-  x-jsonld:
-    '@id': schema:PriceSpecification
+x-jsonld:
+  '@id': schema:PriceSpecification
 x-tags:
 - common
