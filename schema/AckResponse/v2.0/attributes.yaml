@@ -29,6 +29,8 @@ allOf:
     required:
     - ack_status
   then:
+    properties:
+      error: {}
     required:
     - error
 - if:
@@ -39,5 +41,7 @@ allOf:
     - ack_status
   then:
     not:
+      properties:
+        error: {}
       required:
       - error
