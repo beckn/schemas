@@ -68,9 +68,10 @@ properties:
     x-jsonld:
       '@id': schema:transactionNumber
   beckn:paidAt:
-    type: string
+    type:
+      - string
+      - 'null'
     format: date-time
-    nullable: true
     description: When the last terminal event (capture/refund) happened
     x-jsonld:
       '@id': schema:paymentDueDate

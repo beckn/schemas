@@ -17,11 +17,12 @@ properties:
     x-jsonld:
       '@id': schema:Invoice
   dueDate:
-    type: string
+    type:
+      - string
+      - 'null'
     x-jsonld:
       '@id': schema:paymentDueDate
     format: date
-    nullable: true
   id:
     description: Stable invoice identifier (system id)
     type: string
