@@ -20,15 +20,15 @@ model are structurally correct, JSON-LD consistent, and produce valid example pa
 
 ## What it checks
 
-Each schema folder (any subdirectory of the `v2.1/` directory containing `attributes.yaml`)
-is tested across four layers:
+Each schema folder containing `attributes.yaml` is tested across four layers. Two layouts are
+supported: flat (`v2.1/SchemaName/attributes.yaml`) and versioned (`SchemaName/v2.1/attributes.yaml`).
 
 | Layer | What it checks |
 |-------|---------------|
-| L1 OpenAPI | `attributes.yaml` has required top-level fields, all `$ref` chains resolve, `x-beckn-container` is declared with a valid v2.1 container name, `x-jsonld-id` annotations are present |
+| L1 OpenAPI | `attributes.yaml` has required top-level fields, all `$ref` chains resolve, `x-beckn-container` is declared with a valid v2.1 container name, `x-jsonld-id` annotations are present as flat properties (not nested under `x-jsonld`) |
 | L2 JSON-LD | Schema-specific prefix is declared in `context.jsonld`, `@import` uses the generalised context URI, all `@id` values resolve via local prefixes, no orphan properties in example attribute blocks |
-| L3 Consistency | Every property in `attributes.yaml` has a mapping in `context.jsonld` (coverage), `x-jsonld-id` uses the correct schema-specific prefix (alignment), every class in `vocab.jsonld` is aliased in `context.jsonld` (vocab coverage) |
-| L4 Examples | Each example JSON payload is extracted and validated against the combined core + extension schema using jsonschema |
+| L3 Consistency | Every non-keyword property in `attributes.yaml` has a mapping in `context.jsonld` (coverage — `@context` and `@type` are JSON-LD keywords and are automatically skipped), `x-jsonld-id` uses the correct schema-specific prefix (alignment), every class in `vocab.jsonld` is aliased as a **string** in `context.jsonld` (vocab coverage — dict-form `{"@id": "..."}` is NOT recognized) |
+| L4 Examples | Each example JSON payload is extracted and validated against the combined core + extension schema using jsonschema, with cross-file `$ref` resolution and inheritance relaxation for `allOf` |
 
 ## Valid v2.1 Container Names
 
@@ -44,32 +44,53 @@ The following `x-beckn-container` values are valid for v2.1 generalised schemas:
 ## Step 1 — Identify paths
 
 Ask the user (or infer from context):
-- **Schema root**: the `v2.1/` directory (or its parent domain folder if `v2.1/` is a subfolder)
-- **Core directory**: the directory with `beckn.yaml` and `attributes.yaml` for core v2.1 schemas. L4 is skipped if core is not present.
+- **Schema root**: the domain folder containing either a `v2.1/` subfolder or per-schema versioned folders
+- **Core directory**: the directory with `beckn.yaml` (or `attributes.yaml`) for core v2.1 schemas. The tester tries `attributes.yaml` first, then falls back to `beckn.yaml`. L4 is skipped if core is not present.
 
-Typical structure:
+Two folder layouts are supported:
+
+**Flat layout** (all schemas under a single `v2.1/` directory):
 ```
 project/
 ├── core/                          ← core v2.1 schemas (needed for L4)
 └── driver-network/
-    └── v2.1/                      ← schema root (contains schema folders)
-        ├── DriverJobResourceAttributes/
-        ├── DriverContractAttributes/
-        ├── DriverPerformanceAttributes/
-        ├── driver-common/         ← shared types — NOT tested as top-level schemas
+    └── v2.1/                      ← schema root
+        ├── DriverJobResource/
+        ├── DriverContract/
+        ├── DriverPerformance/
+        ├── driver-common/         ← shared types — NOT tested
         │   └── CodedValue/
         │       ├── attributes.yaml
         │       └── README.md
         └── ...
 ```
 
-**`{domain}-common/` folders are intentionally excluded from testing.** Auto-discovery scans
-only *direct* subdirectories of the schema root that contain an `attributes.yaml` at their
-own level. Shared type definitions in `{domain}-common/{TypeName}/attributes.yaml` are one
-level deeper and are never picked up as testable schemas.
+**Versioned layout** (each schema has its own version subfolder):
+```
+project/
+├── core/                          ← core v2.1 schemas (needed for L4)
+└── retail/
+    ├── RetailResource/            ← schema root is the domain folder
+    │   └── v2.1/
+    │       ├── attributes.yaml
+    │       ├── context.jsonld
+    │       └── examples/
+    ├── RetailOffer/
+    │   └── v2.1/
+    ├── RetailContract/
+    │   └── v2.1/
+    ├── retail-common/
+    │   └── CodedValue/
+    └── ...
+```
 
-If the user passes the domain root (`driver-network/`) rather than the `v2.1/` subfolder,
-auto-detect the `v2.1/` subdirectory and use it as the schema root.
+**`{domain}-common/` folders are intentionally excluded from testing.** Auto-discovery scans
+direct subdirectories of the schema root. For flat layout, it picks up folders that contain
+`attributes.yaml` directly. For versioned layout, it detects `SchemaName/v2.1/attributes.yaml`
+one level deeper. Shared type definitions in `{domain}-common/` are excluded either way.
+
+If the user passes the domain root rather than the `v2.1/` subfolder, auto-detect the layout
+and use the appropriate schema root.
 
 ## Step 2 — Set up test scripts
 
@@ -113,6 +134,10 @@ Summarize results clearly:
 was placed directly in the schema root instead of inside `{domain}-common/`. Fix: move it
 one level deeper into `{domain}-common/CodedValue/`.
 
+**L1 — Nested `x-jsonld` instead of flat `x-jsonld-id`:** A property uses the nested form
+`x-jsonld: { "@id": "prefix:prop" }` instead of the flat annotation `x-jsonld-id: "prefix:prop"`.
+Fix: replace the nested `x-jsonld` with a flat `x-jsonld-id` property.
+
 **L2 — Wrong `@import` value:** `context.jsonld` imports
 `"https://schema.beckn.io/core/v2/context.jsonld"` (v2) instead of
 `"https://schema.beckn.io/core/v2/context.jsonld#generalised"` (v2.1). Fix: update the
@@ -122,21 +147,48 @@ one level deeper into `{domain}-common/CodedValue/`.
 property that has no mapping in `context.jsonld`. Fix: either add the property to
 `attributes.yaml` and `context.jsonld`, or remove it from the example.
 
+**L3 A — False positives on `@context`/`@type`:** These are JSON-LD keywords, not domain
+properties. The tester automatically skips any property starting with `@` during coverage
+checks. If you see coverage failures for `@context` or `@type`, your tester scripts may
+need updating — copy the latest scripts from this skill's `scripts/` directory.
+
 **L3 B — Prefix alignment:** `x-jsonld-id` in `attributes.yaml` uses an undeclared or
 wrong prefix. Fix: use the schema-specific prefix declared in `context.jsonld`.
 
 **L3 C — Vocab coverage:** A class defined in `vocab.jsonld` has no type alias in
-`context.jsonld`. Fix: add `"ClassName": "prefix:ClassName"` to `context.jsonld`.
+`context.jsonld`. Fix: add `"ClassName": "prefix:ClassName"` as a **string** value in
+`context.jsonld`. The tester only recognizes string-form aliases like
+`"ClassName": "prefix:ClassName"` — dict-form `"ClassName": {"@id": "prefix:ClassName"}`
+will NOT pass.
 
 **L4 — Block not found:** The test can't find the attribute block in the example payload.
+The extractor tries both plain keys and `beckn:`-prefixed keys (since `beckn.yaml` uses
+plain keys like `resources`, `offers`, `commitments` while examples may use either form).
 For v2.1:
-- `resourceAttributes` lives at `message.catalogs[].beckn:resources[].beckn:resourceAttributes`
-- `contractAttributes` lives at `message.contract.beckn:contractAttributes`
-- `performanceAttributes` lives at `message.contract.beckn:performance[].beckn:performanceAttributes`
-Check that your example uses the correct v2.1 payload structure.
+- `resourceAttributes` lives at `message.catalogs[].resources[].resourceAttributes` (or with `beckn:` prefix)
+- `offerAttributes` lives at `message.catalogs[].offers[].offerAttributes`
+- `contractAttributes` lives at `message.contract.contractAttributes`
+- `commitmentAttributes` lives at `message.contract.commitments[].commitmentAttributes`
+- `performanceAttributes` lives at `message.contract.performance[].performanceAttributes`
+- `considerationAttributes` lives at `message.contract.consideration[].considerationAttributes`
+- `settlementAttributes` lives at `message.contract.settlements[].settlementAttributes`
+Also supports `message.catalog` (singular) as a flat catalog pattern for `resourceAttributes`.
+
+**L4 — Cross-file `$ref` resolution failure:** A schema uses `allOf` with a `$ref` to
+another schema's `attributes.yaml` (e.g., `../../RetailResource/v2.1/attributes.yaml#/...`).
+The tester pre-loads these external references into its schema store. If the path is wrong
+after a folder restructure, update the `$ref` paths in your `attributes.yaml`.
+
+**L4 — `additionalProperties: false` blocking child properties:** When a child schema
+extends a parent via `allOf`, the parent's `additionalProperties: false` blocks the child's
+own properties during validation. The tester automatically relaxes this constraint, along
+with `const` values (which conflict when child overrides `@context`/`@type`). If you still
+see spurious failures, check that the parent schema reference resolves correctly.
 
 **L4 — Schema validation failure:** An example attribute block doesn't match its schema.
-Check required fields, property types, and enum values against `attributes.yaml`.
+Check required fields, property types, and enum values against `attributes.yaml`. Common
+issues: `null` values where strings are expected (use `""` instead), wrong regex patterns
+for time fields (use `^([01][0-9]|2[0-3]):[0-5][0-9]` for 24-hour time).
 
 ## Dependencies
 

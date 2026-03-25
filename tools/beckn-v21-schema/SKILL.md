@@ -144,13 +144,14 @@ Apply the canonical renames from `references/v2-to-v2.1-mapping.md`:
 For each schema, produce a v2.1 draft by:
 1. Renaming the container in `x-beckn-container`
 2. Updating `@import` to `https://schema.beckn.io/core/v2/context.jsonld#generalised`
-3. Updating the schema name (e.g., `DriverJobItemAttributes` → `DriverJobResourceAttributes`)
+3. Updating the schema name — use `{Domain}{Container}` pattern without "Core" or "Attributes"
+   (e.g., `DriverJobItemAttributes` → `DriverJobResource`)
 4. Updating the per-schema prefix abbreviation in `context.jsonld` to match the new name
 5. Adding `"protocol_version": "2.0"` and `"semantic_model": "generalised"` to `profile.json`
 6. Updating template property paths in `renderer.json` (`beckn:itemAttributes.*` → `beckn:resourceAttributes.*`, etc.)
 7. Generating `html` and `html_detail` Handlebars templates in `renderer.json` (new requirement — see FILE SPECIFICATIONS)
 8. Updating example payloads to use v2.1 payload structure (`beckn:resources[]`, `contract` object, etc.)
-9. Moving output into the `v2.1/` versioned folder level
+9. Moving output into per-schema versioned folders (`{SchemaName}/v2.1/`)
 
 Assess whether new v2.1-only containers are warranted: ask whether the existing v2 schemas
 covered `commitmentAttributes`, `considerationAttributes`, or `settlementAttributes` implicitly
@@ -316,44 +317,64 @@ Verify schema separation of concerns:
 
 ### Folder Structure
 
-Each schema that attaches directly to a v2.1 container gets its **own folder**, placed inside a
-`v2.1/` version level inside the domain use-case root. Sub-schemas referenced only from one
-parent live in that parent's `attributes.yaml`. Shared types go in `{domain}-common/`.
+Each schema that attaches directly to a v2.1 container gets its **own top-level folder** with a
+`v2.1/` version subfolder inside it. This per-schema versioning allows each schema to be upgraded
+independently. Sub-schemas referenced only from one parent live in that parent's `attributes.yaml`.
+Shared types go in `{domain}-common/`.
 
 ```
-{domain}-{use-case}/
-├── v2.1/
-│   ├── {ResourceSchemaName}/        ← attaches to resourceAttributes
-│   │   ├── attributes.yaml
-│   │   ├── context.jsonld
-│   │   ├── vocab.jsonld
-│   │   ├── profile.json
-│   │   ├── renderer.json
-│   │   ├── README.md
-│   │   └── examples/
-│   │       ├── example-resource.json   ← on_discover payload
-│   │       └── example-contract.json  ← confirm/status payload (if transactional)
-│   ├── {OfferSchemaName}/           ← attaches to offerAttributes (if needed)
-│   │   └── ... (same 7-file structure)
-│   ├── {ContractSchemaName}/        ← attaches to contractAttributes (if transactional)
-│   │   └── ...
-│   ├── {PerformanceSchemaName}/     ← attaches to performanceAttributes (if needed)
-│   │   └── ...
-│   └── {domain}-common/             ← shared type definitions used by ≥2 schemas
-│       └── {SharedTypeName}/
-│           ├── attributes.yaml      ← $ref target only
-│           └── README.md
+{domain}/
+├── {DomainResource}/                ← attaches to resourceAttributes
+│   └── v2.1/
+│       ├── attributes.yaml
+│       ├── context.jsonld
+│       ├── vocab.jsonld
+│       ├── profile.json
+│       ├── renderer.json
+│       ├── README.md
+│       └── examples/
+│           ├── example-resource.json   ← on_discover payload
+│           └── example-contract.json  ← confirm/status payload (if transactional)
+├── {DomainOffer}/                   ← attaches to offerAttributes (if needed)
+│   └── v2.1/
+│       └── ... (same 7-file structure)
+├── {DomainContract}/                ← attaches to contractAttributes (if transactional)
+│   └── v2.1/
+│       └── ...
+├── {DomainPerformance}/             ← attaches to performanceAttributes (if needed)
+│   └── v2.1/
+│       └── ...
+├── {domain}-common/                 ← shared type definitions used by ≥2 schemas
+│   └── {SharedTypeName}/
+│       ├── attributes.yaml          ← $ref target only
+│       └── README.md
 └── README.md                        ← domain pack overview
 ```
 
+**Naming convention:** Schema names use the pattern `{Domain}{Container}` — e.g., `RetailResource`,
+`RetailOffer`, `RetailContract`, `RetailPerformance`, `RetailConsideration`, `RetailCommitment`,
+`RetailSettlement`. Do NOT include "Core" or "Attributes" in the name. The `x-beckn-container`
+annotation already indicates which container the schema extends.
+
 **Rule — top-level schemas:** A schema is top-level if it attaches directly to one of the seven
-v2.1 containers. Each top-level schema gets the full 7-file folder structure under `v2.1/`.
+v2.1 containers. Each top-level schema gets the full 7-file folder structure under its own
+`{SchemaName}/v2.1/` directory.
 
 **Rule — sub-schemas (single parent):** Types referenced only from within one parent schema
 live in that parent's `attributes.yaml` under `components/schemas`. No separate folder.
 
 **Rule — shared types (multiple parents):** Types referenced by two or more top-level schemas
 live in `{domain}-common/{TypeName}/` with only `attributes.yaml` + `README.md`.
+
+**Rule — cross-schema `$ref` paths:** When a child schema extends a parent via `allOf`, the
+`$ref` path must account for the versioned folder layout. For example, a `FoodAndBeverageResource`
+extending `RetailResource` uses:
+```yaml
+allOf:
+  - $ref: '../../RetailResource/v2.1/attributes.yaml#/components/schemas/RetailResource'
+```
+Note the `../../` to go up from `FoodAndBeverageResource/v2.1/` to the domain root, then
+down into `RetailResource/v2.1/`.
 
 **CodedValue pattern:** Use for any field whose authority is external (government codes,
 commodity classification, standards bodies). Place in `{domain}-common/CodedValue/`:
@@ -378,7 +399,8 @@ All files must be **complete and production-ready**. See file specs below.
 - `info.version` must match the schema pack folder name convention: `"2.1.0"` for a `v2.1/`
   folder, `"2.2.0"` for `v2.2/`, etc. This is the schema pack's own release version —
   independent of the Beckn protocol version.
-- `x-jsonld` annotations on every property
+- `x-jsonld-id` annotation (flat form) on every property — e.g., `x-jsonld-id: "prefix:propName"`.
+  Do NOT use the nested form `x-jsonld: { "@id": "..." }`
 - `x-beckn-container` on the top-level schema (e.g., `x-beckn-container: resourceAttributes`)
 - `$ref` back to core YAML (never inline-copy core schemas)
 - No container object redefinition
@@ -387,6 +409,7 @@ All files must be **complete and production-ready**. See file specs below.
 ### `context.jsonld`
 - Map every property to a `schema.org` or domain-specific IRI
 - No orphan properties
+- Vocab class aliases MUST be string form: `"ClassName": "prefix:ClassName"` (not dict form `{"@id": "..."}`)
 - **Import generalised core context:**
   ```json
   "@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised"
@@ -395,7 +418,7 @@ All files must be **complete and production-ready**. See file specs below.
   - `"schema": "https://schema.org/"` — for schema.org terms
   - `"beckn": "https://schema.beckn.io/"` — for core Beckn protocol terms only
   - `"<abbr>": "https://schema.beckn.io/{SchemaName}#"` — one short prefix per top-level
-    schema using `#` fragment separator. Example: `"djra": "https://schema.beckn.io/DriverJobResourceAttributes#"`
+    schema using `#` fragment separator. Example: `"djr": "https://schema.beckn.io/DriverJobResource#"`
   - Never use a single flat domain prefix shared across multiple schemas
 
 ### `vocab.jsonld`
@@ -577,9 +600,12 @@ After generating the full schema pack and passing all tests, provide:
 | Execution isolation | Logistics/provisioning live in `performanceAttributes`, not `contractAttributes` |
 | Value-exchange isolation | Payment/token terms in `considerationAttributes`; discharge records in `settlementAttributes` |
 | International neutrality | Abstract country/currency assumptions unless truly domain-specific |
-| Versioned folder | Always place schema folders under `v2.1/` inside the domain root |
+| Per-schema versioned folder | Each schema gets `{SchemaName}/v2.1/` — never a single shared `v2.1/` directory |
+| Concise schema names | Use `{Domain}{Container}` (e.g., `RetailResource`) — no "Core" or "Attributes" suffix |
 | One folder per top-level schema | Each container-attached schema gets its own folder with 7 files |
 | Per-schema namespace prefix | Use `"<abbr>": "https://schema.beckn.io/{SchemaName}#"` — never a flat domain prefix |
+| Flat `x-jsonld-id` annotations | Use `x-jsonld-id: "prefix:prop"` — never the nested form `x-jsonld: { "@id": "..." }` |
+| String-form vocab aliases | In `context.jsonld`, class aliases must be strings `"Class": "prefix:Class"` — not dicts |
 | Generalised context import | Always use `"@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised"` |
 | HTML templates mandatory | renderer.json must include both `html` and `html_detail` Handlebars templates |
 | Migration is never purely mechanical | v2→v2.1 must include a paradigm fit review (STEP 1-M Phase C) before generating files |
