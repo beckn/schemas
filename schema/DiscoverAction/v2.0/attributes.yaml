@@ -15,13 +15,15 @@ properties:
           type: string
           const: beckn/discover
   message:
-    type: object
-    additionalProperties: true
-    properties:
-      intent:
-        $ref: https://schema.beckn.io/Intent/v2.0
-    required:
-    - intent
+    oneOf:
+    - type: object
+      properties:
+        intent:
+          $ref: https://schema.beckn.io/Intent/v2.0
+      required:
+      - intent
+      additionalProperties: false
+    - $ref: https://schema.beckn.io/Intent/v2.0
 required:
 - context
 - message

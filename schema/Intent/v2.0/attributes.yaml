@@ -5,6 +5,10 @@ title: Intent
 x-tags: [common]
 type: object
 properties:
+  text_search:
+    description: Free text search query for items (legacy snake_case alias)
+    type: string
+    example: gaming laptop premium tech
   textSearch:
     description: Free text search query for items
     type: string
@@ -34,6 +38,8 @@ properties:
   media_search:
     $ref: "https://schema.beckn.io/MediaSearch/v2.0"
 anyOf:
+- required:
+  - text_search
 - required:
   - textSearch
 - required:
