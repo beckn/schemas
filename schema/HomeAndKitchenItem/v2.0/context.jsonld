@@ -1,24 +1,25 @@
 {
   "@context": {
     "HomeAndKitchenItemAttributes": "beckn:HomeAndKitchenItemAttributes",
-    "careInstructions": "schema:maintenanceDetails",
+    "careInstructions": "beckn:careInstructions",
     "installation": "beckn:installation",
-    "required": "beckn:installationRequired",
-    "providedBySeller": "beckn:installationProvidedBySeller",
-    "notes": "schema:description",
+    "required": "beckn:required",
+    "providedBySeller": "beckn:providedBySeller",
+    "notes": "beckn:notes",
     "usage": "beckn:usage",
-    "indoorOnly": "schema:isIndoorOnly",
-    "outdoorOnly": "schema:isOutdoorOnly",
-    "compatibleWith": "schema:isAccessoryOrSparePartFor",
-    "warranty": "schema:warranty",
-    "duration": "schema:duration",
-    "type": "schema:warrantyScope",
-    "terms": "schema:description",
+    "indoorOnly": "beckn:indoorOnly",
+    "outdoorOnly": "beckn:outdoorOnly",
+    "compatibleWith": "beckn:compatibleWith",
+    "warranty": "beckn:warranty",
+    "duration": "beckn:duration",
+    "type": "beckn:type",
+    "terms": "beckn:terms",
     "@version": 1.1,
     "@protected": true,
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "beckn": "https://schema.beckn.io/"
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "HomeAndKitchenItem": "beckn:HomeAndKitchenItem"
   }
 }

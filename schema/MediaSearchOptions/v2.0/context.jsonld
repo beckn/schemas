@@ -5,10 +5,12 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "MediaSearchOptions": "beckn:MediaSearchOptions",
     "goals": "beckn:goals",
     "augmentTextSearch": "beckn:augmentTextSearch",
-    "restrictResultsToMediaProximity": "beckn:restrictResultsToMediaProximity"
+    "restrictResultsToMediaProximity": "beckn:restrictResultsToMediaProximity",
+    "augment_text_search": "beckn:augment_text_search",
+    "restrict_results_to_media_proximity": "beckn:restrict_results_to_media_proximity"
   }
 }

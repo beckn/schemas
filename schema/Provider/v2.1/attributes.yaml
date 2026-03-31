@@ -5,7 +5,9 @@ info:
   description: 'Schema definition for Provider in the Beckn Protocol v2.0.1
 
 
-    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.'
+    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
+    and MUST NOT be extended. Any domain-specific extension must use the property
+    of this schema which is of type Attribute.'
   license:
     name: CC-BY-NC-SA 4.0 International
   contact:
@@ -16,10 +18,7 @@ components:
   schemas:
     Provider:
       type: object
-      description: 'Schema definition for Provider in the Beckn Protocol v2.0.1
-
-
-        This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.'
+      description: Schema definition for Provider in the Beckn Protocol v2.0.1
       title: Provider
       properties:
         id:
@@ -27,16 +26,15 @@ components:
           type: string
           example: tech-store-001
         descriptor:
-          $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
+          $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor
         availableAt:
           description: Physical locations where the provider operates
           type: array
           items:
-            $ref: https://schema.beckn.io/Location/attributes.yaml#/components/schemas/Location
+            $ref: https://schema.beckn.io/Location/v2.0/attributes.yaml#/components/schemas/Location
         providerAttributes:
-          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+          $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
       required:
       - id
       - descriptor
       additionalProperties: false
-      x-lts: true

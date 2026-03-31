@@ -1,44 +1,13 @@
 {
-  "$id": "https://schema.beckn.io/OnSelectAction/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "Beckn /beckn/on_select callback envelope. Sent by a BPP to a BAP in response to a /beckn/select call, with updated contract terms.\n",
-  "title": "OnSelectAction",
-  "type": "object",
+  "title": "On Select Action",
+  "description": "Beckn /beckn/on_select message payload. Sent by a BPP to a BAP in\nresponse to a /beckn/select call, with updated contract terms.\n(Context wrapper stripped; only the message-content portion is inlined.)",
+  "additionalProperties": false,
   "properties": {
-    "context": {
-      "allOf": [
-        {
-          "$ref": "https://schema.beckn.io/Context/attributes.yaml"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "action": {
-              "type": "string",
-              "const": "beckn/on_select"
-            }
-          }
-        }
-      ]
-    },
-    "message": {
-      "type": "object",
-      "additionalProperties": true,
-      "properties": {
-        "contract": {
-          "$ref": "https://schema.beckn.io/Contract/attributes.yaml"
-        }
-      },
-      "required": [
-        "contract"
-      ]
+    "contract": {
+      "$ref": "https://schema.beckn.io/Contract/v2.0/schema.json#/components/schemas/Contract"
     }
   },
   "required": [
-    "context",
-    "message"
-  ],
-  "x-tags": [
-    "common"
+    "contract"
   ]
 }

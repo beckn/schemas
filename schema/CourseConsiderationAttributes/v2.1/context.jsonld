@@ -2,7 +2,7 @@
   "@context": {
     "@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
     "schema": "https://schema.org/",
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "ccoa": "https://schema.beckn.io/CourseConsiderationAttributes#",
     "ccoa:feeCategory": {
       "@id": "ccoa:feeCategory"
@@ -19,22 +19,13 @@
     "ccoa:refundPolicy": {
       "@id": "ccoa:refundPolicy"
     },
-    "fee_category": {
-      "@id": "ccoa:feeCategory"
-    },
-    "payment_schedule": {
-      "@id": "ccoa:paymentSchedule"
-    },
-    "installment_count": {
-      "@id": "ccoa:installmentCount"
-    },
-    "subsidy_source": {
-      "@id": "ccoa:subsidySource"
-    },
-    "refund_policy": {
-      "@id": "ccoa:refundPolicy"
-    },
+    "fee_category": "beckn:fee_category",
+    "payment_schedule": "beckn:payment_schedule",
+    "installment_count": "beckn:installment_count",
+    "subsidy_source": "beckn:subsidy_source",
+    "refund_policy": "beckn:refund_policy",
     "FeeCategory": "ccoa:FeeCategory",
-    "PaymentSchedule": "ccoa:PaymentSchedule"
+    "PaymentSchedule": "ccoa:PaymentSchedule",
+    "CourseConsiderationAttributes": "beckn:CourseConsiderationAttributes"
   }
 }

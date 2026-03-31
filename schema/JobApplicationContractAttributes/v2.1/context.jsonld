@@ -2,7 +2,7 @@
   "@context": {
     "@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
     "schema": "https://schema.org/",
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "jaca": "https://schema.beckn.io/JobApplicationContractAttributes#",
     "jaca:applicationReference": {
       "@id": "jaca:applicationReference"
@@ -20,23 +20,13 @@
     "jaca:submittedAt": {
       "@id": "schema:dateCreated"
     },
-    "application_reference": {
-      "@id": "jaca:applicationReference"
-    },
-    "verification_summary": {
-      "@id": "jaca:verificationSummary"
-    },
-    "reverification_requested": {
-      "@id": "jaca:reverificationRequested"
-    },
-    "reverification_requirements": {
-      "@id": "jaca:reverificationRequirements",
-      "@container": "@list"
-    },
-    "submitted_at": {
-      "@id": "schema:dateCreated"
-    },
+    "application_reference": "beckn:application_reference",
+    "verification_summary": "beckn:verification_summary",
+    "reverification_requested": "beckn:reverification_requested",
+    "reverification_requirements": "beckn:reverification_requirements",
+    "submitted_at": "beckn:submitted_at",
     "ApplicationContractStatus": "jaca:ApplicationContractStatus",
-    "ReverificationStatus": "jaca:ReverificationStatus"
+    "ReverificationStatus": "jaca:ReverificationStatus",
+    "JobApplicationContractAttributes": "beckn:JobApplicationContractAttributes"
   }
 }

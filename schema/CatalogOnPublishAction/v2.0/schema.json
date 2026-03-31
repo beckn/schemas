@@ -1,5 +1,5 @@
 {
-  "description": "Catalog publish processing results from CDS to BPP.\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.",
+  "description": "Catalog publish processing results from CDS to BPP.",
   "type": "object",
   "required": [
     "results"
@@ -9,12 +9,8 @@
       "type": "array",
       "description": "Per-catalog processing results",
       "items": {
-        "$ref": "https://schema.beckn.io/CatalogProcessingResult/attributes.yaml"
+        "$ref": "https://schema.beckn.io/CatalogProcessingResult/v2.0/schema.json#/components/schemas/CatalogProcessingResult"
       }
     }
-  },
-  "x-lts": true,
-  "$id": "https://schema.beckn.io/CatalogOnPublishAction/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "CatalogOnPublishAction"
+  }
 }

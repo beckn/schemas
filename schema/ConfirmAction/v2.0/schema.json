@@ -1,44 +1,12 @@
 {
-  "$id": "https://schema.beckn.io/ConfirmAction/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "Beckn /beckn/confirm action envelope. Sent by a BAP to a BPP to confirm a contract, finalising the transaction terms agreed during the select–init negotiation cycle.\n",
-  "title": "ConfirmAction",
-  "type": "object",
+  "title": "Confirm Action",
+  "description": "Beckn /beckn/confirm message payload. Sent by a BAP to a BPP to confirm\na contract, finalising the transaction terms agreed during the\nselect-init negotiation cycle.\n(Context wrapper stripped; only the message-content portion is inlined.)",
   "properties": {
-    "context": {
-      "allOf": [
-        {
-          "$ref": "https://schema.beckn.io/Context/attributes.yaml"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "action": {
-              "type": "string",
-              "const": "beckn/confirm"
-            }
-          }
-        }
-      ]
-    },
-    "message": {
-      "type": "object",
-      "additionalProperties": true,
-      "properties": {
-        "contract": {
-          "$ref": "https://schema.beckn.io/Contract/attributes.yaml"
-        }
-      },
-      "required": [
-        "contract"
-      ]
+    "contract": {
+      "$ref": "https://schema.beckn.io/Contract/v2.0/schema.json#/components/schemas/Contract"
     }
   },
   "required": [
-    "context",
-    "message"
-  ],
-  "x-tags": [
-    "common"
+    "contract"
   ]
 }

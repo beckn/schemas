@@ -1,12 +1,21 @@
 {
   "@context": {
     "@version": 1.1,
-    "beckn": "https://schema.beckn.io/",
-    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
     "owl": "http://www.w3.org/2002/07/owl#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "HyperlocalDelivery": "beckn:HyperlocalDelivery",
+    "@type": "beckn:@type",
+    "agent": "beckn:agent",
+    "deliveryLocation": "beckn:deliveryLocation",
+    "expectedArrivalFrom": "beckn:expectedArrivalFrom",
+    "expectedArrivalUntil": "beckn:expectedArrivalUntil",
+    "itemsShipped": "beckn:itemsShipped",
+    "pickupLocation": "beckn:pickupLocation",
+    "trackingUrl": "beckn:trackingUrl"
   },
   "@graph": [
     {
@@ -14,90 +23,126 @@
       "@type": "rdfs:Class",
       "rdfs:label": "HyperlocalDelivery",
       "rdfs:comment": "A Beckn schema for hyperlocal (same-city, typically sub-2-hour) physical delivery of goods or prepared food from an origin to a destination within a short radius. Equivalent to schema:ParcelDelivery.",
-      "owl:equivalentClass": { "@id": "schema:ParcelDelivery" }
+      "owl:equivalentClass": {
+        "@id": "schema:ParcelDelivery"
+      }
     },
     {
       "@id": "schema:identifier",
       "@type": "rdf:Property",
       "rdfs:label": "id",
       "rdfs:comment": "Unique identifier for this delivery record. Re-uses schema:identifier.",
-      "rdfs:domain": { "@id": "beckn:HyperlocalDelivery" }
+      "rdfs:domain": {
+        "@id": "beckn:HyperlocalDelivery"
+      }
     },
     {
       "@id": "schema:deliveryStatus",
       "@type": "rdf:Property",
       "rdfs:label": "deliveryStatus",
       "rdfs:comment": "Current delivery status. Re-uses schema:deliveryStatus from schema:ParcelDelivery.",
-      "rdfs:domain": { "@id": "beckn:HyperlocalDelivery" }
+      "rdfs:domain": {
+        "@id": "beckn:HyperlocalDelivery"
+      }
     },
     {
       "@id": "schema:originAddress",
       "@type": "rdf:Property",
       "rdfs:label": "originAddress",
       "rdfs:comment": "Address from which the item is dispatched. Re-uses schema:originAddress from schema:ParcelDelivery.",
-      "rdfs:domain": { "@id": "beckn:HyperlocalDelivery" },
-      "rdfs:range": { "@id": "schema:PostalAddress" }
+      "rdfs:domain": {
+        "@id": "beckn:HyperlocalDelivery"
+      },
+      "rdfs:range": {
+        "@id": "schema:PostalAddress"
+      }
     },
     {
       "@id": "schema:deliveryAddress",
       "@type": "rdf:Property",
       "rdfs:label": "deliveryAddress",
       "rdfs:comment": "Address to which the item is delivered. Re-uses schema:deliveryAddress from schema:ParcelDelivery.",
-      "rdfs:domain": { "@id": "beckn:HyperlocalDelivery" },
-      "rdfs:range": { "@id": "schema:PostalAddress" }
+      "rdfs:domain": {
+        "@id": "beckn:HyperlocalDelivery"
+      },
+      "rdfs:range": {
+        "@id": "schema:PostalAddress"
+      }
     },
     {
       "@id": "schema:expectedArrivalFrom",
       "@type": "rdf:Property",
       "rdfs:label": "expectedArrivalFrom",
       "rdfs:comment": "Earliest expected delivery time. Re-uses schema:expectedArrivalFrom from schema:ParcelDelivery.",
-      "rdfs:domain": { "@id": "beckn:HyperlocalDelivery" },
-      "rdfs:range": { "@id": "xsd:dateTime" }
+      "rdfs:domain": {
+        "@id": "beckn:HyperlocalDelivery"
+      },
+      "rdfs:range": {
+        "@id": "xsd:dateTime"
+      }
     },
     {
       "@id": "schema:expectedArrivalUntil",
       "@type": "rdf:Property",
       "rdfs:label": "expectedArrivalUntil",
       "rdfs:comment": "Latest expected delivery time. Re-uses schema:expectedArrivalUntil from schema:ParcelDelivery.",
-      "rdfs:domain": { "@id": "beckn:HyperlocalDelivery" },
-      "rdfs:range": { "@id": "xsd:dateTime" }
+      "rdfs:domain": {
+        "@id": "beckn:HyperlocalDelivery"
+      },
+      "rdfs:range": {
+        "@id": "xsd:dateTime"
+      }
     },
     {
       "@id": "schema:carrier",
       "@type": "rdf:Property",
       "rdfs:label": "carrier",
       "rdfs:comment": "The delivery rider or agent carrying out the delivery. Re-uses schema:carrier from schema:ParcelDelivery.",
-      "rdfs:domain": { "@id": "beckn:HyperlocalDelivery" },
-      "rdfs:range": { "@id": "schema:Person" }
+      "rdfs:domain": {
+        "@id": "beckn:HyperlocalDelivery"
+      },
+      "rdfs:range": {
+        "@id": "schema:Person"
+      }
     },
     {
       "@id": "schema:vehicle",
       "@type": "rdf:Property",
       "rdfs:label": "vehicle",
       "rdfs:comment": "The vehicle used for this delivery. Re-uses schema:vehicle.",
-      "rdfs:domain": { "@id": "beckn:HyperlocalDelivery" }
+      "rdfs:domain": {
+        "@id": "beckn:HyperlocalDelivery"
+      }
     },
     {
       "@id": "schema:trackingUrl",
       "@type": "rdf:Property",
       "rdfs:label": "trackingUrl",
       "rdfs:comment": "Live tracking URL for the rider's location. Re-uses schema:trackingUrl from schema:ParcelDelivery.",
-      "rdfs:domain": { "@id": "beckn:HyperlocalDelivery" },
-      "rdfs:range": { "@id": "xsd:anyURI" }
+      "rdfs:domain": {
+        "@id": "beckn:HyperlocalDelivery"
+      },
+      "rdfs:range": {
+        "@id": "xsd:anyURI"
+      }
     },
     {
       "@id": "beckn:deliveryRadius",
       "@type": "rdf:Property",
       "rdfs:label": "deliveryRadius",
       "rdfs:comment": "Maximum delivery radius from the origin within which this delivery is valid.",
-      "rdfs:domain": { "@id": "beckn:HyperlocalDelivery" }
+      "rdfs:domain": {
+        "@id": "beckn:HyperlocalDelivery"
+      }
     },
     {
       "@id": "beckn:instructions",
       "@type": "rdf:Property",
       "rdfs:label": "instructions",
       "rdfs:comment": "Delivery instructions for the rider.",
-      "rdfs:domain": { "@id": "beckn:HyperlocalDelivery" }
+      "rdfs:domain": {
+        "@id": "beckn:HyperlocalDelivery"
+      }
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "description": "A generalized, cross-domain Offer that captures the terms under which\none or more Resources may be committed.\n\nCore intent:\n- Support multiple terms/eligibility/constraints/price points for the same Resource(s)\n- Support dynamic / on-the-fly offers (e.g., bundling, combinational discounts,\n eligibility changes, capacity-aware pricing)\n\nThis mirrors the role of Offer in current Beckn (and schema.org patterns),\nbut keeps the shape minimal and composable via `beckn:offerAttributes`.\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.",
+  "description": "A generalized, cross-domain Offer that captures the terms under which\none or more Resources may be committed.\n\nCore intent:\n- Support multiple terms/eligibility/constraints/price points for the same Resource(s)\n- Support dynamic / on-the-fly offers (e.g., bundling, combinational discounts,\n eligibility changes, capacity-aware pricing)\n\nThis mirrors the role of Offer in current Beckn (and schema.org patterns),\nbut keeps the shape minimal and composable via `beckn:offerAttributes`.",
   "required": [
     "id"
   ],
@@ -11,37 +11,37 @@
     },
     "descriptor": {
       "description": "Human / agent-readable description of this offer.",
-      "$ref": "https://schema.beckn.io/Descriptor/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json#/components/schemas/Descriptor"
     },
     "provider": {
-      "$ref": "https://schema.beckn.io/Provider/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Provider/v2.1/schema.json#/components/schemas/Provider"
     },
     "resourceIds": {
       "type": "array",
       "description": "References (IDs) to resources covered by this offer.",
       "items": {
-        "$ref": "https://schema.beckn.io/Offer/attributes.yaml"
+        "$ref": "#/components/schemas/Resource/properties/id"
       }
     },
     "addOns": {
       "type": "array",
       "description": "IDs of optional extra Offers or Resources that can be attached.",
       "items": {
-        "$ref": "https://schema.beckn.io/AddOn/attributes.yaml"
+        "$ref": "https://schema.beckn.io/AddOn/v2.0/schema.json#/components/schemas/AddOn"
       }
     },
     "considerationIds": {
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/Offer/attributes.yaml"
+        "$ref": "#/components/schemas/Consideration/properties/id"
       }
     },
     "fulfillmentIds": {
       "description": "Details regarding the fulfillment of this offer",
-      "$ref": "https://schema.beckn.io/Consideration/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Consideration/v2.0/schema.json#/components/schemas/Consideration"
     },
     "validity": {
-      "$ref": "https://schema.beckn.io/TimePeriod/attributes.yaml"
+      "$ref": "https://schema.beckn.io/TimePeriod/v2.1/schema.json#/components/schemas/TimePeriod"
     },
     "availableTo": {
       "type": "array",
@@ -70,11 +70,14 @@
       }
     },
     "offerAttributes": {
-      "$ref": "https://schema.beckn.io/Attributes/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json#/components/schemas/Attributes"
     }
   },
-  "x-lts": true,
-  "$id": "https://schema.beckn.io/Offer/v2.1",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Offer"
+  "components": {
+    "schemas": {
+      "Offer": {
+        "$ref": "#"
+      }
+    }
+  }
 }

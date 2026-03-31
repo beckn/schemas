@@ -2,7 +2,15 @@
   "@context": {
     "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "jaca": "https://schema.beckn.io/JobApplicationContractAttributes#"
+    "jaca": "https://schema.beckn.io/JobApplicationContractAttributes#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "JobApplicationContractAttributes": "beckn:JobApplicationContractAttributes",
+    "application_reference": "beckn:application_reference",
+    "reverification_requested": "beckn:reverification_requested",
+    "reverification_requirements": "beckn:reverification_requirements",
+    "submitted_at": "beckn:submitted_at",
+    "verification_summary": "beckn:verification_summary"
   },
   "@graph": [
     {

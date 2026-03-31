@@ -5,7 +5,20 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "beckn": "https://schema.beckn.io/",
-    "LogisticsReceipt": "beckn:LogisticsReceipt"
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "LogisticsReceipt": "beckn:LogisticsReceipt",
+    "carrier": "beckn:carrier",
+    "consignee": "beckn:consignee",
+    "deliveryProof": "beckn:deliveryProof",
+    "downloadUrl": "beckn:downloadUrl",
+    "fare": "beckn:fare",
+    "id": "beckn:id",
+    "invoiceNumber": "beckn:invoiceNumber",
+    "issuedAt": "beckn:issuedAt",
+    "paidAt": "beckn:paidAt",
+    "paymentMode": "beckn:paymentMode",
+    "paymentTransactionId": "beckn:paymentTransactionId",
+    "shipmentId": "beckn:shipmentId",
+    "shipper": "beckn:shipper"
   }
 }

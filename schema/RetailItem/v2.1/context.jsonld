@@ -6,31 +6,20 @@
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "schema": "https://schema.org/",
-    "beckn": "https://schema.beckn.io/",
-    "RetailItem": {
-      "@id": "beckn:RetailItem",
-      "@type": "rdfs:Class"
-    },
-    "resourceId": {
-      "@id": "beckn:resourceId"
-    },
-    "lineId": {
-      "@id": "beckn:lineId"
-    },
-    "offerId": {
-      "@id": "beckn:offerId"
-    },
-    "price": {
-      "@id": "beckn:price",
-      "@type": "@id"
-    },
-    "quantity": {
-      "@id": "beckn:quantity",
-      "@type": "@id"
-    },
-    "credentials": {
-      "@id": "beckn:credentials",
-      "@container": "@list"
-    }
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "RetailItem": "beckn:RetailItem",
+    "resourceId": "beckn:resourceId",
+    "lineId": "beckn:lineId",
+    "offerId": "beckn:offerId",
+    "price": "beckn:price",
+    "quantity": "beckn:quantity",
+    "credentials": "beckn:credentials",
+    "@type": "beckn:@type",
+    "id": "beckn:id",
+    "issuer": "beckn:issuer",
+    "type": "beckn:type",
+    "unitCode": "beckn:unitCode",
+    "unitQuantity": "beckn:unitQuantity",
+    "uri": "beckn:uri"
   }
 }

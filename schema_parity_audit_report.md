@@ -194,3 +194,11 @@ Source of truth: `/home/ravi/www/spec_work/protocol-specifications-v2/api/v2.0.0
 - Schema file: `schema/UpdateAction/v2.0/schema.json`
 - Missing in schema (present in beckn): contract
 - Extra in schema (absent in beckn): context, message
+
+## Schema.json Unresolved `$ref` Remediation Update (Latest)
+- Scope scanned: all `schema/*/v*/schema.json`
+- Remediation rule: only unresolved `$ref` entries are rewritten to canonical absolute form `https://schema.beckn.io/{schema-name}/{version}/schema.json#/components/schemas/{schema-name}` (prefer current folder version, otherwise nearest available semver).
+- Files changed in this pass: **0**
+- `$ref` replacements in this pass: **0**
+- JSON validity after pass: **all valid**
+- Final unresolved `$ref` count across all `schema.json`: **0**

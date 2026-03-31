@@ -1,18 +1,8 @@
 {
-  "$id": "https://schema.beckn.io/Intent/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "A declaration of an intent to discover catalogs.",
+  "description": "A declaration of an intent to transact",
   "title": "Intent",
-  "x-tags": [
-    "common"
-  ],
   "type": "object",
   "properties": {
-    "text_search": {
-      "description": "Free text search query for items (legacy snake_case alias)",
-      "type": "string",
-      "example": "gaming laptop premium tech"
-    },
     "textSearch": {
       "description": "Free text search query for items",
       "type": "string",
@@ -45,40 +35,19 @@
       "description": "Optional array of spatial constraints (CQL2-JSON semantics).",
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/SpatialConstraint/attributes.yaml"
+        "$ref": "https://schema.beckn.io/SpatialConstraint/v2.0/schema.json#/components/schemas/SpatialConstraint"
       }
     },
-    "media_search": {
-      "$ref": "https://schema.beckn.io/MediaSearch/attributes.yaml"
+    "mediaSearch": {
+      "$ref": "https://schema.beckn.io/MediaSearch/v2.0/schema.json#/components/schemas/MediaSearch"
     }
   },
-  "anyOf": [
-    {
-      "required": [
-        "text_search"
-      ]
-    },
-    {
-      "required": [
-        "textSearch"
-      ]
-    },
-    {
-      "required": [
-        "filters"
-      ]
-    },
-    {
-      "required": [
-        "spatial"
-      ]
-    },
-    {
-      "required": [
-        "filters",
-        "spatial"
-      ]
+  "additionalProperties": false,
+  "components": {
+    "schemas": {
+      "Intent": {
+        "$ref": "#"
+      }
     }
-  ],
-  "additionalProperties": false
+  }
 }

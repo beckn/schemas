@@ -1,8 +1,13 @@
 {
+  "type": "object",
+  "description": "Details required to initiate real-time tracking (if relevant) for an ongoing transaction",
   "additionalProperties": false,
-  "x-lts": true,
-  "description": "This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.",
-  "$id": "https://schema.beckn.io/TrackAction/v2.1",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "TrackAction"
+  "properties": {
+    "tracking": {
+      "$ref": "https://schema.beckn.io/Tracking/v2.1/schema.json#/components/schemas/Tracking"
+    }
+  },
+  "required": [
+    "tracking"
+  ]
 }

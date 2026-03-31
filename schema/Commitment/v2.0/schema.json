@@ -15,7 +15,7 @@
         "descriptor": {
           "allOf": [
             {
-              "$ref": "https://schema.beckn.io/Descriptor/attributes.yaml"
+              "$ref": "https://schema.beckn.io/Descriptor/v2.0/schema.json#/components/schemas/Descriptor"
             },
             {
               "properties": {
@@ -35,25 +35,17 @@
     "resources": {
       "type": "array",
       "items": {
-        "required": [
-          "id",
-          "quantity"
-        ],
-        "$ref": "https://schema.beckn.io/Resource/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Resource/v2.0/schema.json#/components/schemas/Resource"
       }
     },
     "offer": {
-      "required": [
-        "id",
-        "resourceIds"
-      ],
-      "$ref": "https://schema.beckn.io/Offer/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Offer/v2.0/schema.json#/components/schemas/Offer"
     },
     "commitmentAttributes": {
       "description": "Domain-specific extension attributes for this commitment.",
       "allOf": [
         {
-          "$ref": "https://schema.beckn.io/Attributes/attributes.yaml"
+          "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json#/components/schemas/Attributes"
         },
         {
           "properties": {}
@@ -61,9 +53,11 @@
       ]
     }
   },
-  "x-lts": true,
-  "description": "This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.",
-  "$id": "https://schema.beckn.io/Commitment/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Commitment"
+  "components": {
+    "schemas": {
+      "Commitment": {
+        "$ref": "#"
+      }
+    }
+  }
 }

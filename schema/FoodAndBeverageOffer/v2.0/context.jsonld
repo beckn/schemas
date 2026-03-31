@@ -5,10 +5,10 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "FoodAndBeverageOfferAttributes": "beckn:FoodAndBeverageOfferAttributes",
     "customization": "beckn:customization",
-    "groups": "beckn:customizationGroup",
+    "groups": "beckn:groups",
     "code": "schema:identifier",
     "name": "schema:name",
     "selection": "beckn:selectionRule",
@@ -18,6 +18,7 @@
     "priceDelta": "schema:priceSpecification",
     "itemRef": "schema:itemOffered",
     "offerRef": "schema:offers",
-    "available": "schema:availability"
+    "available": "schema:availability",
+    "FoodAndBeverageOffer": "beckn:FoodAndBeverageOffer"
   }
 }

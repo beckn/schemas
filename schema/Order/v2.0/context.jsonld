@@ -5,7 +5,7 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "Order": "beckn:Order",
     "@context": "beckn:@context",
     "@type": "beckn:@type",
@@ -20,6 +20,18 @@
     "invoice": "beckn:invoice",
     "payment": "beckn:payment",
     "fulfillment": "beckn:fulfillment",
-    "orderAttributes": "beckn:orderAttributes"
+    "orderAttributes": "beckn:orderAttributes",
+    "beckn:acceptedOffers": "beckn:beckn:acceptedOffers",
+    "beckn:buyer": "beckn:beckn:buyer",
+    "beckn:fulfillment": "beckn:beckn:fulfillment",
+    "beckn:id": "beckn:beckn:id",
+    "beckn:invoice": "beckn:beckn:invoice",
+    "beckn:orderAttributes": "beckn:beckn:orderAttributes",
+    "beckn:orderItems": "beckn:beckn:orderItems",
+    "beckn:orderNumber": "beckn:beckn:orderNumber",
+    "beckn:orderStatus": "beckn:beckn:orderStatus",
+    "beckn:orderValue": "beckn:beckn:orderValue",
+    "beckn:payment": "beckn:beckn:payment",
+    "beckn:seller": "beckn:beckn:seller"
   }
 }

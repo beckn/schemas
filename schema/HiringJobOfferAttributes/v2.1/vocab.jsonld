@@ -1,9 +1,21 @@
 {
   "@context": {
     "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
-    "schema": "https://schema.org/",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "hjoa": "https://schema.beckn.io/HiringJobOfferAttributes#"
+    "hjoa": "https://schema.beckn.io/HiringJobOfferAttributes#",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "HiringJobOfferAttributes": "beckn:HiringJobOfferAttributes",
+    "application_deadline": "beckn:application_deadline",
+    "compensation_currency": "beckn:compensation_currency",
+    "compensation_max": "beckn:compensation_max",
+    "compensation_min": "beckn:compensation_min",
+    "compensation_period": "beckn:compensation_period",
+    "end": "beckn:end",
+    "openings_count": "beckn:openings_count",
+    "posting_validity": "beckn:posting_validity",
+    "probation_period_months": "beckn:probation_period_months",
+    "start": "beckn:start"
   },
   "@graph": [
     {

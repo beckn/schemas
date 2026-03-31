@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "A form designed to capture rating and feedback from a user. This can be used by both BAP and BPP to fetch ratings and feedback of their respective users.\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.",
+  "description": "A form designed to capture rating and feedback from a user. This can be used by both BAP and BPP to fetch ratings and feedback of their respective users.",
   "title": "RatingInput",
   "x-tags": [
     "common"
@@ -16,10 +16,10 @@
           "type": "string"
         },
         "descriptor": {
-          "$ref": "https://schema.beckn.io/Descriptor/attributes.yaml"
+          "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json#/components/schemas/Descriptor"
         },
         "targetAttributes": {
-          "$ref": "https://schema.beckn.io/Attributes/attributes.yaml"
+          "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json#/components/schemas/Attributes"
         }
       }
     },
@@ -27,15 +27,12 @@
       "type": "object"
     },
     "feedbackFormSubmission": {
-      "description": "The submission to the feedback form sent along with a rating request",
-      "$ref": "https://schema.beckn.io/FormSubmission/attributes.yaml"
+      "$ref": "https://schema.beckn.io/FormSubmission/v2.0/schema.json#/components/schemas/FormSubmission"
     }
   },
   "required": [
     "target",
     "range"
   ],
-  "additionalProperties": false,
-  "x-lts": true,
-  "$id": "https://schema.beckn.io/RatingInput/v2.1"
+  "additionalProperties": false
 }

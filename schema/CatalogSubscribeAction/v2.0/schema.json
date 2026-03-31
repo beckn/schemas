@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "description": "Message payload for catalog/subscription.\nAt least one of `networkIds` or `schemaTypes` must be non-empty.\nAn empty `schemaTypes` array is treated as the wildcard sentinel `\"*\"`,\nmatching all schema types for the specified networks.\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.",
+  "description": "Message payload for catalog/subscription.\nAt least one of `networkIds` or `schemaTypes` must be non-empty.\nAn empty `schemaTypes` array is treated as the wildcard sentinel `\"*\"`,\nmatching all schema types for the specified networks.\n",
   "required": [
     "subscription"
   ],
@@ -31,13 +31,9 @@
           "description": "Override callback URL (defaults to context.bapUri)"
         },
         "deliveryPolicy": {
-          "$ref": "https://schema.beckn.io/DeliveryPolicy/attributes.yaml"
+          "$ref": "https://schema.beckn.io/DeliveryPolicy/v2.0/schema.json#/components/schemas/DeliveryPolicy"
         }
       }
     }
-  },
-  "x-lts": true,
-  "$id": "https://schema.beckn.io/CatalogSubscribeAction/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "CatalogSubscribeAction"
+  }
 }

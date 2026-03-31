@@ -5,10 +5,20 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "Location": "beckn:Location",
     "@type": "beckn:@type",
     "address": "beckn:address",
-    "geo": "beckn:geo"
+    "geo": "beckn:geo",
+    "addressCountry": "beckn:addressCountry",
+    "addressLocality": "beckn:addressLocality",
+    "addressRegion": "beckn:addressRegion",
+    "bbox": "beckn:bbox",
+    "coordinates": "beckn:coordinates",
+    "extendedAddress": "beckn:extendedAddress",
+    "geometries": "beckn:geometries",
+    "postalCode": "beckn:postalCode",
+    "streetAddress": "beckn:streetAddress",
+    "type": "beckn:type"
   }
 }

@@ -1,9 +1,21 @@
 {
   "@context": {
     "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
-    "schema": "https://schema.org/",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "hjra": "https://schema.beckn.io/HiringJobResourceAttributes#"
+    "hjra": "https://schema.beckn.io/HiringJobResourceAttributes#",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "HiringJobResourceAttributes": "beckn:HiringJobResourceAttributes",
+    "city": "beckn:city",
+    "country": "beckn:country",
+    "industry_type": "beckn:industry_type",
+    "job_type": "beckn:job_type",
+    "location": "beckn:location",
+    "region": "beckn:region",
+    "requirements": "beckn:requirements",
+    "service_area": "beckn:service_area",
+    "tags": "beckn:tags",
+    "work_mode": "beckn:work_mode"
   },
   "@graph": [
     {

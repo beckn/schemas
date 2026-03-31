@@ -2,9 +2,22 @@
   "@context": {
     "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "ceca": "https://schema.beckn.io/CourseEnrollmentContractAttributes#"
+    "ceca": "https://schema.beckn.io/CourseEnrollmentContractAttributes#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "CourseEnrollmentContractAttributes": "beckn:CourseEnrollmentContractAttributes",
+    "cohort_id": "beckn:cohort_id",
+    "credential_issuance_pending": "beckn:credential_issuance_pending",
+    "enrolled_at": "beckn:enrolled_at",
+    "enrollment_reference": "beckn:enrollment_reference",
+    "prerequisite_verification_summary": "beckn:prerequisite_verification_summary"
   },
   "@graph": [
-    { "@id": "ceca:EnrollmentContractStatus", "@type": "rdfs:Class", "rdfs:label": "Enrollment Contract Status", "rdfs:comment": "Lifecycle states for a course enrollment contract." }
+    {
+      "@id": "ceca:EnrollmentContractStatus",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Enrollment Contract Status",
+      "rdfs:comment": "Lifecycle states for a course enrollment contract."
+    }
   ]
 }

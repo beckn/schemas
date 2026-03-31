@@ -1,5 +1,9 @@
 {
   "@context": {
-    "@vocab": "https://schema.beckn.io/Ack/v2.0#"
+    "@vocab": "https://schema.beckn.io/Ack/v2.0#",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "Ack": "beckn:Ack",
+    "signature": "beckn:signature",
+    "status": "beckn:status"
   }
 }

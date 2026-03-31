@@ -1,5 +1,7 @@
 {
   "@context": {
-    "@vocab": "https://schema.beckn.io/CounterSignature/v2.0#"
+    "@vocab": "https://schema.beckn.io/CounterSignature/v2.0#",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "CounterSignature": "beckn:CounterSignature"
   }
 }

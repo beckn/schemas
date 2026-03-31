@@ -2,7 +2,7 @@
   "@context": {
     "@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
     "schema": "https://schema.org/",
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "cpra": "https://schema.beckn.io/CandidateProfileResourceAttributes#",
     "se": "https://schema.beckn.io/SkillEntry#",
     "cpra:skills": {
@@ -67,38 +67,23 @@
     "schema:addressCountry": {
       "@id": "schema:addressCountry"
     },
-    "skills": {
-      "@id": "cpra:skills",
-      "@container": "@list"
-    },
-    "experience_level": {
-      "@id": "cpra:experienceLevel"
-    },
-    "experience_years": {
-      "@id": "cpra:experienceYears"
-    },
-    "location_preference": {
-      "@id": "cpra:locationPreference"
-    },
-    "availability": {
-      "@id": "cpra:availability"
-    },
-    "open_to_relocation": {
-      "@id": "cpra:openToRelocation"
-    },
-    "industry_preference": {
-      "@id": "cpra:industryPreference",
-      "@container": "@list"
-    },
-    "job_type_preference": {
-      "@id": "cpra:jobTypePreference",
-      "@container": "@list"
-    },
-    "overall_verification_status": {
-      "@id": "cpra:overallVerificationStatus"
-    },
+    "skills": "beckn:skills",
+    "experience_level": "beckn:experience_level",
+    "experience_years": "beckn:experience_years",
+    "location_preference": "beckn:location_preference",
+    "availability": "beckn:availability",
+    "open_to_relocation": "beckn:open_to_relocation",
+    "industry_preference": "beckn:industry_preference",
+    "job_type_preference": "beckn:job_type_preference",
+    "overall_verification_status": "beckn:overall_verification_status",
     "Availability": "cpra:Availability",
     "ExperienceLevel": "cpra:ExperienceLevel",
-    "VerificationStatus": "cpra:VerificationStatus"
+    "VerificationStatus": "cpra:VerificationStatus",
+    "CandidateProfileResourceAttributes": "beckn:CandidateProfileResourceAttributes",
+    "city": "beckn:city",
+    "country": "beckn:country",
+    "preferred_locations": "beckn:preferred_locations",
+    "region": "beckn:region",
+    "work_mode_preference": "beckn:work_mode_preference"
   }
 }

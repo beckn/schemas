@@ -5,7 +5,9 @@ info:
   description: 'Full subscription record
 
 
-    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.'
+    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
+    and MUST NOT be extended. Any domain-specific extension must use the property
+    of this schema which is of type Attribute.'
   license:
     name: CC-BY-NC-SA 4.0 International
   contact:
@@ -16,10 +18,7 @@ components:
   schemas:
     CatalogSubscription:
       type: object
-      description: 'Full subscription record
-
-
-        This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.'
+      description: Full subscription record
       required:
       - id
       - status
@@ -37,7 +36,8 @@ components:
           type: array
           items:
             type: string
-          description: Schema type URIs filtered by this subscription (empty = wildcard "*")
+          description: Schema type URIs filtered by this subscription (empty = wildcard
+            "*")
         callbackUrl:
           type: string
           format: uri
@@ -50,11 +50,10 @@ components:
           - DELETED
           description: Lifecycle status of the subscription
         deliveryPolicy:
-          $ref: https://schema.beckn.io/DeliveryPolicy/attributes.yaml#/components/schemas/DeliveryPolicy
+          $ref: https://schema.beckn.io/DeliveryPolicy/v2.0/attributes.yaml#/components/schemas/DeliveryPolicy
         createdAt:
           type: string
           format: date-time
         updatedAt:
           type: string
           format: date-time
-      x-lts: true

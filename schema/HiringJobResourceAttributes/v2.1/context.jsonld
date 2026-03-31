@@ -2,7 +2,7 @@
   "@context": {
     "@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
     "schema": "https://schema.org/",
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "hjra": "https://schema.beckn.io/HiringJobResourceAttributes#",
     "hjra:jobType": {
       "@id": "hjra:jobType"
@@ -36,30 +36,18 @@
     "schema:addressCountry": {
       "@id": "schema:addressCountry"
     },
-    "job_type": {
-      "@id": "hjra:jobType"
-    },
-    "work_mode": {
-      "@id": "hjra:workMode"
-    },
-    "industry_type": {
-      "@id": "hjra:industryType"
-    },
-    "location": {
-      "@id": "schema:location"
-    },
-    "service_area": {
-      "@id": "schema:areaServed"
-    },
-    "requirements": {
-      "@id": "hjra:requirements",
-      "@container": "@list"
-    },
-    "tags": {
-      "@id": "schema:keywords",
-      "@container": "@list"
-    },
+    "job_type": "beckn:job_type",
+    "work_mode": "beckn:work_mode",
+    "industry_type": "beckn:industry_type",
+    "location": "beckn:location",
+    "service_area": "beckn:service_area",
+    "requirements": "beckn:requirements",
+    "tags": "beckn:tags",
     "JobType": "hjra:JobType",
-    "WorkMode": "hjra:WorkMode"
+    "WorkMode": "hjra:WorkMode",
+    "HiringJobResourceAttributes": "beckn:HiringJobResourceAttributes",
+    "city": "beckn:city",
+    "country": "beckn:country",
+    "region": "beckn:region"
   }
 }

@@ -1,19 +1,17 @@
 {
-  "$id": "https://schema.beckn.io/CatalogProcessingResult/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "Schema definition for CatalogProcessingResult in the Beckn Protocol v2.1",
-  "title": "CatalogProcessingResult",
-  "x-tags": [
-    "common"
-  ],
+  "description": "Processing result for a single catalog submission.",
   "type": "object",
+  "required": [
+    "catalogId",
+    "status"
+  ],
   "properties": {
     "catalogId": {
-      "description": "The \"id\" of the submitted catalog",
-      "type": "string"
+      "type": "string",
+      "description": "Identifier of the submitted catalog"
     },
     "status": {
-      "description": "Final processing outcome for this catalog",
+      "description": "Processing outcome. Using oneOf [string, object] to allow domain-specific\nstatus objects (e.g. beckn:CatalogAccepted) alongside standard string codes.",
       "type": "string",
       "enum": [
         "ACCEPTED",
@@ -21,25 +19,37 @@
         "PARTIAL"
       ]
     },
-    "itemCount": {
-      "description": "Number of items indexed (when accepted/partial)",
-      "type": "integer",
-      "minimum": 0
-    },
-    "warnings": {
-      "description": "Non-fatal issues encountered",
+    "errors": {
       "type": "array",
+      "description": "Per-item or per-catalog errors (present when REJECTED or PARTIAL)",
       "items": {
-        "$ref": "https://schema.beckn.io/ProcessingNotice/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Error/v2.0/schema.json#/components/schemas/Error"
       }
     },
-    "error": {
-      "$ref": "https://schema.beckn.io/Error/attributes.yaml"
+    "stats": {
+      "type": "object",
+      "description": "Optional statistics about the processed catalog",
+      "properties": {
+        "itemCount": {
+          "type": "integer",
+          "description": "Number of items accepted"
+        },
+        "providerCount": {
+          "type": "integer",
+          "description": "Number of providers in the catalog"
+        },
+        "categoryCount": {
+          "type": "integer",
+          "description": "Number of distinct categories"
+        }
+      }
     }
   },
-  "required": [
-    "catalogId",
-    "status"
-  ],
-  "additionalProperties": false
+  "components": {
+    "schemas": {
+      "CatalogProcessingResult": {
+        "$ref": "#"
+      }
+    }
+  }
 }

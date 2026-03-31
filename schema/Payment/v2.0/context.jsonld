@@ -5,7 +5,7 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "Payment": "beckn:Payment",
     "@context": "beckn:@context",
     "@type": "beckn:@type",
@@ -17,6 +17,17 @@
     "paidAt": "beckn:paidAt",
     "acceptedPaymentMethod": "beckn:acceptedPaymentMethod",
     "beneficiary": "beckn:beneficiary",
-    "paymentAttributes": "beckn:paymentAttributes"
+    "paymentAttributes": "beckn:paymentAttributes",
+    "beckn:acceptedPaymentMethod": "beckn:beckn:acceptedPaymentMethod",
+    "beckn:amount": "beckn:beckn:amount",
+    "beckn:beneficiary": "beckn:beckn:beneficiary",
+    "beckn:id": "beckn:beckn:id",
+    "beckn:paidAt": "beckn:beckn:paidAt",
+    "beckn:paymentAttributes": "beckn:beckn:paymentAttributes",
+    "beckn:paymentStatus": "beckn:beckn:paymentStatus",
+    "beckn:paymentURL": "beckn:beckn:paymentURL",
+    "beckn:txnRef": "beckn:beckn:txnRef",
+    "currency": "beckn:currency",
+    "value": "beckn:value"
   }
 }

@@ -1,38 +1,28 @@
 {
-  "$id": "https://schema.beckn.io/Ack/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Ack",
-  "description": "Synchronous receipt acknowledgement returned for every accepted Beckn request.\nSupports both the v2.0 format (status + signature CounterSignature) and the\nv2.0-rc1 legacy format (ack_status + transaction_id + timestamp) via oneOf\nfor backward compatibility.\n",
-  "x-tags": [
-    "common"
-  ],
-  "oneOf": [
-    {
-      "title": "Ack v2.0",
-      "description": "New v2.0 Ack format carrying an HTTP Counter-Signature proving the receiver\nauthenticated, received, and processed the inbound request.\n",
-      "type": "object",
-      "properties": {
-        "status": {
-          "type": "string",
-          "enum": [
-            "ACK",
-            "NACK"
-          ],
-          "description": "ACK if the request was accepted; NACK if rejected."
-        },
-        "signature": {
-          "$ref": "https://schema.beckn.io/CounterSignature/attributes.yaml",
-          "description": "Counter-signature proving the receiver authenticated and processed\nthe inbound request.\n"
-        }
-      },
-      "required": [
-        "status",
-        "signature"
+  "description": "New v2.0 Ack format carrying an HTTP Counter-Signature proving the receiver authenticated, received, and processed the inbound request.",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "ACK",
+        "NACK"
       ],
-      "additionalProperties": false
+      "description": "ACK if the request was accepted; NACK if rejected."
     },
-    {
-      "$ref": "https://schema.beckn.io/AckResponse/attributes.yaml"
+    "signature": {
+      "$ref": "https://schema.beckn.io/CounterSignature/v2.0/schema.json#/components/schemas/CounterSignature"
     }
-  ]
+  },
+  "required": [
+    "status",
+    "signature"
+  ],
+  "components": {
+    "schemas": {
+      "Ack": {
+        "$ref": "#"
+      }
+    }
+  }
 }

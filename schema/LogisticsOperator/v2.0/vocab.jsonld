@@ -1,12 +1,28 @@
 {
   "@context": {
     "@version": 1.1,
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "owl": "http://www.w3.org/2002/07/owl#",
-    "schema": "https://schema.org/",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "LogisticsOperator": "beckn:LogisticsOperator",
+    "activeCarriers": "beckn:activeCarriers",
+    "activeDrivers": "beckn:activeDrivers",
+    "certifications": "beckn:certifications",
+    "cities": "beckn:cities",
+    "contact": "beckn:contact",
+    "countries": "beckn:countries",
+    "deliveriesPerDay": "beckn:deliveriesPerDay",
+    "id": "beckn:id",
+    "name": "beckn:name",
+    "rating": "beckn:rating",
+    "serviceCoverage": "beckn:serviceCoverage",
+    "supportEmail": "beckn:supportEmail",
+    "supportPhone": "beckn:supportPhone",
+    "type": "beckn:type",
+    "website": "beckn:website"
   },
   "@graph": [
     {

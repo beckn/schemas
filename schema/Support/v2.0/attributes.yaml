@@ -2,7 +2,9 @@ openapi: 3.1.1
 info:
   title: Support
   version: 2.0.0
-  description: 'Support request payload sent by a BAP to a BPP in the /beckn/support call. Used to request support contact information, report an issue, or open a support ticket for an existing order.
+  description: 'Support request payload sent by a BAP to a BPP in the /beckn/support
+    call. Used to request support contact information, report an issue, or open a
+    support ticket for an existing order.
 
     '
   license:
@@ -14,41 +16,21 @@ paths: {}
 components:
   schemas:
     Support:
-      $id: https://schema.beckn.io/Support/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
-      description: 'Support request payload sent by a BAP to a BPP in the /beckn/support call. Used to request support contact information, report an issue, or open a support ticket for an existing order.
-
-        '
+      description: Describes a support session info
       title: Support
-      x-tags:
-      - common
       type: object
       properties:
-        '@context':
-          type: string
-          format: uri
-          const: https://schema.beckn.io/
-        '@type':
-          type: string
-          const: Support
         orderId:
-          description: The order against which support is required.
+          description: The order against which support is required
           type: string
-        ticketIds:
-          description: IDs of existing support tickets (if open) for this order.
+        descriptor:
+          description: A description of the nature of support needed
+          $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor
+        channels:
+          description: Available support channels described in individual linked data
+            JSON objects
           type: array
+          minItems: 1
           items:
-            $ref: https://schema.beckn.io/SupportTicket/attributes.yaml#/components/schemas/SupportTicket
-        callbackPhone:
-          description: Telephone number of the user for a support callback.
-          type: string
-        issue:
-          description: Free-text description of the issue requiring support.
-          type: string
-        issueCode:
-          description: Structured issue category code (domain-defined).
-          type: string
-      required:
-      - '@context'
-      - '@type'
+            $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
       additionalProperties: false

@@ -5,7 +5,20 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "beckn": "https://schema.beckn.io/",
-    "ShippingFare": "beckn:ShippingFare"
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "ShippingFare": "beckn:ShippingFare",
+    "baseFreight": "beckn:baseFreight",
+    "breakup": "beckn:breakup",
+    "codCharge": "beckn:codCharge",
+    "currency": "beckn:currency",
+    "discount": "beckn:discount",
+    "estimatedFare": "beckn:estimatedFare",
+    "fuelSurcharge": "beckn:fuelSurcharge",
+    "gst": "beckn:gst",
+    "insuranceCharge": "beckn:insuranceCharge",
+    "odaSurcharge": "beckn:odaSurcharge",
+    "otherCharges": "beckn:otherCharges",
+    "paymentMode": "beckn:paymentMode",
+    "totalAmount": "beckn:totalAmount"
   }
 }

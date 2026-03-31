@@ -2,7 +2,7 @@
   "@context": {
     "@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
     "schema": "https://schema.org/",
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "ehca": "https://schema.beckn.io/EmployerHiringContractAttributes#",
     "ehca:roleTitle": {
       "@id": "schema:title"
@@ -40,34 +40,20 @@
     "schema:addressCountry": {
       "@id": "schema:addressCountry"
     },
-    "role_title": {
-      "@id": "schema:title"
-    },
-    "role_location": {
-      "@id": "schema:jobLocation"
-    },
-    "role_work_mode": {
-      "@id": "ehca:roleWorkMode"
-    },
-    "proposed_joining_date": {
-      "@id": "ehca:proposedJoiningDate"
-    },
-    "offer_expiry": {
-      "@id": "schema:validThrough"
-    },
-    "offered_compensation_currency": {
-      "@id": "ehca:offeredCompensationCurrency"
-    },
-    "offered_compensation_amount": {
-      "@id": "schema:price"
-    },
-    "offered_compensation_period": {
-      "@id": "ehca:offeredCompensationPeriod"
-    },
-    "candidate_response": {
-      "@id": "ehca:candidateResponse"
-    },
+    "role_title": "beckn:role_title",
+    "role_location": "beckn:role_location",
+    "role_work_mode": "beckn:role_work_mode",
+    "proposed_joining_date": "beckn:proposed_joining_date",
+    "offer_expiry": "beckn:offer_expiry",
+    "offered_compensation_currency": "beckn:offered_compensation_currency",
+    "offered_compensation_amount": "beckn:offered_compensation_amount",
+    "offered_compensation_period": "beckn:offered_compensation_period",
+    "candidate_response": "beckn:candidate_response",
     "CandidateResponse": "ehca:CandidateResponse",
-    "OfferedCompensationPeriod": "ehca:OfferedCompensationPeriod"
+    "OfferedCompensationPeriod": "ehca:OfferedCompensationPeriod",
+    "EmployerHiringContractAttributes": "beckn:EmployerHiringContractAttributes",
+    "city": "beckn:city",
+    "country": "beckn:country",
+    "region": "beckn:region"
   }
 }

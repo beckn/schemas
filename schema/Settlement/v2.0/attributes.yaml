@@ -2,7 +2,9 @@ openapi: 3.1.1
 info:
   title: Settlement
   version: 2.0.0
-  description: This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
+  description: This schema is part of the Long Term Support of Beckn Protocol V2.0
+    API specification and MUST NOT be extended. Any domain-specific extension must
+    use the property of this schema which is of type Attribute.
   license:
     name: CC-BY-NC-SA 4.0 International
   contact:
@@ -17,7 +19,7 @@ components:
         id:
           type: string
         considerationId:
-          $ref: https://schema.beckn.io/Settlement/attributes.yaml#/components/schemas/Settlement
+          $ref: '#/components/schemas/Consideration/properties/id'
         status:
           type: string
           enum:
@@ -25,6 +27,4 @@ components:
           - COMMITTED
           - COMPLETE
         settlementAttributes:
-          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
-      x-lts: true
-      description: This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
+          $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes

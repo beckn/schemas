@@ -2,7 +2,20 @@
   "@context": {
     "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "japa": "https://schema.beckn.io/JobApplicationPerformanceAttributes#"
+    "japa": "https://schema.beckn.io/JobApplicationPerformanceAttributes#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "JobApplicationPerformanceAttributes": "beckn:JobApplicationPerformanceAttributes",
+    "category": "beckn:category",
+    "issuer_dids_verified": "beckn:issuer_dids_verified",
+    "mandatory": "beckn:mandatory",
+    "per_requirement_results": "beckn:per_requirement_results",
+    "proof_hash": "beckn:proof_hash",
+    "result": "beckn:result",
+    "routed_to_provider": "beckn:routed_to_provider",
+    "routing_timestamp": "beckn:routing_timestamp",
+    "subtype": "beckn:subtype",
+    "verification_method": "beckn:verification_method"
   },
   "@graph": [
     {

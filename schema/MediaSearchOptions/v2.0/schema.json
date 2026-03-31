@@ -1,38 +1,35 @@
 {
-  "$id": "https://schema.beckn.io/MediaSearchOptions/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "How the discovery engine should use the provided media inputs.",
-  "title": "MediaSearchOptions",
   "type": "object",
   "properties": {
     "goals": {
-      "description": "Desired processing goals for the media.",
       "type": "array",
       "items": {
         "type": "string",
         "enum": [
-          "VISUAL_SIMILARITY",
-          "VISUAL_OBJECT_DETECT",
-          "TEXT_FROM_IMAGE",
-          "TEXT_FROM_AUDIO",
-          "SEMANTIC_AUDIO_MATCH",
-          "SEMANTIC_VIDEO_MATCH"
+          "visual-similarity",
+          "visual-object-detect",
+          "text-from-image",
+          "text-from-audio",
+          "semantic-audio-match",
+          "semantic-video-match"
         ]
       }
     },
-    "augmentTextSearch": {
-      "description": "Whether to append extracted text from OCR/ASR to `textSearch`.",
+    "augment_text_search": {
       "type": "boolean",
       "default": true
     },
-    "restrictResultsToMediaProximity": {
-      "description": "Restrict results to spatial proximity of media-derived coordinates (e.g., EXIF GPS tags).",
+    "restrict_results_to_media_proximity": {
       "type": "boolean",
       "default": false
     }
   },
   "additionalProperties": false,
-  "x-tags": [
-    "common"
-  ]
+  "components": {
+    "schemas": {
+      "MediaSearchOptions": {
+        "$ref": "#"
+      }
+    }
+  }
 }

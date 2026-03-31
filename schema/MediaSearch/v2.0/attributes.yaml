@@ -2,7 +2,9 @@ openapi: 3.1.1
 info:
   title: MediaSearch
   version: 2.0.0
-  description: Container for multimodal search inputs and configuration. Supports searching through **images, audio notes, and videos** alongside text, filters, and spatial predicates. For GET, this object should be JSON-encoded and URL-escaped.
+  description: Container for multimodal search inputs and configuration. Supports
+    searching through **images, audio notes, and videos** alongside text, filters,
+    and spatial predicates. For GET, this object should be JSON-encoded and URL-escaped.
   license:
     name: CC-BY-NC-SA 4.0 International
   contact:
@@ -12,25 +14,12 @@ paths: {}
 components:
   schemas:
     MediaSearch:
-      $id: https://schema.beckn.io/MediaSearch/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
-      description: Container for multimodal search inputs and configuration. Supports searching through **images, audio notes, and videos** alongside text, filters, and spatial predicates. For GET, this object should be JSON-encoded and URL-escaped.
-      title: MediaSearch
       type: object
       properties:
         media:
-          description: One or more references to **images, audio notes, or videos** supplied as part of a multimodal search. Each entry references a media resource accessible via HTTPS or data URI.
           type: array
           items:
-            $ref: https://schema.beckn.io/MediaInput/attributes.yaml#/components/schemas/MediaInput
-          example:
-          - id: snap-1
-            type: image
-            url: https://cdn.example.com/user/snaps/ccs2-cable.jpg
-            contentType: image/jpeg
+            $ref: https://schema.beckn.io/MediaInput/v2.0/attributes.yaml#/components/schemas/MediaInput
         options:
-          description: Options controlling how the discovery engine interprets the supplied media — e.g., whether to perform OCR/ASR, semantic similarity, or object detection.
-          $ref: https://schema.beckn.io/MediaSearchOptions/attributes.yaml#/components/schemas/MediaSearchOptions
+          $ref: https://schema.beckn.io/MediaSearchOptions/v2.0/attributes.yaml#/components/schemas/MediaSearchOptions
       additionalProperties: false
-      x-tags:
-      - common

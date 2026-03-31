@@ -1,12 +1,21 @@
 {
   "@context": {
     "@version": 1.1,
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "owl": "http://www.w3.org/2002/07/owl#",
-    "schema": "https://schema.org/",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Buyer": "beckn:Buyer",
+    "@type": "beckn:@type",
+    "beckn:buyerAttributes": "beckn:beckn:buyerAttributes",
+    "beckn:displayName": "beckn:beckn:displayName",
+    "beckn:email": "beckn:beckn:email",
+    "beckn:id": "beckn:beckn:id",
+    "beckn:role": "beckn:beckn:role",
+    "beckn:taxID": "beckn:beckn:taxID",
+    "beckn:telephone": "beckn:beckn:telephone"
   },
   "@graph": [
     {

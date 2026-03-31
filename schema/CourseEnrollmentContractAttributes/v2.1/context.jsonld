@@ -2,7 +2,7 @@
   "@context": {
     "@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
     "schema": "https://schema.org/",
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "ceca": "https://schema.beckn.io/CourseEnrollmentContractAttributes#",
     "vs": "https://schema.beckn.io/VerificationSummary#",
     "ceca:enrollmentReference": {
@@ -41,21 +41,12 @@
     "vs:proofMetadataHash": {
       "@id": "vs:proofMetadataHash"
     },
-    "enrollment_reference": {
-      "@id": "ceca:enrollmentReference"
-    },
-    "cohort_id": {
-      "@id": "ceca:cohortId"
-    },
-    "prerequisite_verification_summary": {
-      "@id": "ceca:prerequisiteVerificationSummary"
-    },
-    "credential_issuance_pending": {
-      "@id": "ceca:credentialIssuancePending"
-    },
-    "enrolled_at": {
-      "@id": "schema:dateCreated"
-    },
-    "EnrollmentContractStatus": "ceca:EnrollmentContractStatus"
+    "enrollment_reference": "beckn:enrollment_reference",
+    "cohort_id": "beckn:cohort_id",
+    "prerequisite_verification_summary": "beckn:prerequisite_verification_summary",
+    "credential_issuance_pending": "beckn:credential_issuance_pending",
+    "enrolled_at": "beckn:enrolled_at",
+    "EnrollmentContractStatus": "ceca:EnrollmentContractStatus",
+    "CourseEnrollmentContractAttributes": "beckn:CourseEnrollmentContractAttributes"
   }
 }

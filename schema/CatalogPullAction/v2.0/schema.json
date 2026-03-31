@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "description": "Message payload for catalog/pull\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.",
+  "description": "Message payload for catalog/pull",
   "required": [
     "mode"
   ],
@@ -57,9 +57,5 @@
       "format": "date-time",
       "description": "Inclusive upper bound for INCREMENTAL mode"
     }
-  },
-  "x-lts": true,
-  "$id": "https://schema.beckn.io/CatalogPullAction/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "CatalogPullAction"
+  }
 }

@@ -2,7 +2,9 @@ openapi: 3.1.1
 info:
   title: Location
   version: 2.0.0
-  description: A **place** represented by **GeoJSON geometry** (Point/Polygon/Multi*) and optional human-readable `address`. This unifies all Beckn location fields into a single, widely-adopted representation (GeoJSON).
+  description: A **place** represented by **GeoJSON geometry** (Point/Polygon/Multi*)
+    and optional human-readable `address`. This unifies all Beckn location fields
+    into a single, widely-adopted representation (GeoJSON).
   license:
     name: CC-BY-NC-SA 4.0 International
   contact:
@@ -12,25 +14,15 @@ paths: {}
 components:
   schemas:
     Location:
-      $id: https://schema.beckn.io/Location/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
-      description: A **place** represented by **GeoJSON geometry** (Point/Polygon/Multi*) and optional human-readable `address`. This unifies all Beckn location fields into a single, widely-adopted representation (GeoJSON).
-      title: Location
+      description: 'A place represented by GeoJSON geometry and optional address.
+
+        Source: main/schema/core/v2/attributes.yaml#Location'
       type: object
-      properties:
-        '@type':
-          type: string
-          enum:
-          - Location
-        address:
-          description: Optional human-readable address for the same place/area.
-          oneOf:
-          - type: string
-          - $ref: https://schema.beckn.io/Address/attributes.yaml#/components/schemas/Address
-        geo:
-          $ref: https://schema.beckn.io/GeoJSONGeometry/attributes.yaml#/components/schemas/GeoJSONGeometry
       required:
       - geo
       additionalProperties: false
-      x-tags:
-      - common
+      properties:
+        geo:
+          $ref: https://schema.beckn.io/GeoJSONGeometry/v2.0/attributes.yaml#/components/schemas/GeoJSONGeometry
+        address:
+          $ref: https://schema.beckn.io/Address/v2.0/attributes.yaml#/components/schemas/Address

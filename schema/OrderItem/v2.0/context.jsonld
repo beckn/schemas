@@ -5,7 +5,7 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "OrderItem": "beckn:OrderItem",
     "@context": "beckn:@context",
     "@type": "beckn:@type",
@@ -14,6 +14,12 @@
     "acceptedOffer": "beckn:acceptedOffer",
     "quantity": "beckn:quantity",
     "price": "beckn:price",
-    "orderItemAttributes": "beckn:orderItemAttributes"
+    "orderItemAttributes": "beckn:orderItemAttributes",
+    "beckn:acceptedOffer": "beckn:beckn:acceptedOffer",
+    "beckn:lineId": "beckn:beckn:lineId",
+    "beckn:orderItemAttributes": "beckn:beckn:orderItemAttributes",
+    "beckn:orderedItem": "beckn:beckn:orderedItem",
+    "beckn:price": "beckn:beckn:price",
+    "beckn:quantity": "beckn:beckn:quantity"
   }
 }

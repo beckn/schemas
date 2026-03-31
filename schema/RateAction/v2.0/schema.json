@@ -1,47 +1,17 @@
 {
-  "$id": "https://schema.beckn.io/RateAction/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "Beckn /beckn/rate action envelope. Sent by a BAP to a BPP to submit one or more rating inputs for entities in a completed contract (order, fulfillment, item, provider, agent, support).\n",
   "title": "RateAction",
+  "description": "Beckn /beckn/rate message payload. Sent by a BAP to a BPP to submit\none or more rating inputs for entities in a completed contract\n(order, fulfillment, item, provider, agent, support).\n(Context wrapper stripped; only the message-content portion is inlined.)",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
-    "context": {
-      "allOf": [
-        {
-          "$ref": "https://schema.beckn.io/Context/attributes.yaml"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "action": {
-              "type": "string",
-              "const": "beckn/rate"
-            }
-          }
-        }
-      ]
-    },
-    "message": {
-      "type": "object",
-      "additionalProperties": true,
-      "properties": {
-        "ratingInputs": {
-          "type": "array",
-          "items": {
-            "$ref": "https://schema.beckn.io/RatingInput/attributes.yaml"
-          }
-        }
-      },
-      "required": [
-        "ratingInputs"
-      ]
+    "ratingInputs": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.beckn.io/RatingInput/v2.0/schema.json#/components/schemas/RatingInput"
+      }
     }
   },
   "required": [
-    "context",
-    "message"
-  ],
-  "x-tags": [
-    "common"
+    "ratingInputs"
   ]
 }

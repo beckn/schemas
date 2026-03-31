@@ -2,13 +2,15 @@
   "@context": {
     "@version": 1.1,
     "@protected": true,
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "CatalogPullAction": "beckn:CatalogPullAction",
     "mode": "beckn:mode",
     "filters": "beckn:filters",
     "catalogIds": "beckn:catalogIds",
     "limit": "beckn:limit",
     "fromDate": "beckn:fromDate",
-    "toDate": "beckn:toDate"
+    "toDate": "beckn:toDate",
+    "networkIds": "beckn:networkIds",
+    "schemaTypes": "beckn:schemaTypes"
   }
 }

@@ -2,7 +2,7 @@
   "@context": {
     "@version": 1.1,
     "@protected": true,
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "Descriptor": "beckn:Descriptor",
     "code": "beckn:code",
     "longDesc": "beckn:longDesc",
@@ -10,6 +10,17 @@
     "name": "beckn:name",
     "thumbnailImage": "beckn:thumbnailImage",
     "docs": "beckn:docs",
-    "mediaFile": "beckn:mediaFile"
+    "mediaFile": "beckn:mediaFile",
+    "checksum": "beckn:checksum",
+    "checksumAlgorithm": "beckn:checksumAlgorithm",
+    "keyId": "beckn:keyId",
+    "label": "beckn:label",
+    "mimeType": "beckn:mimeType",
+    "security": "beckn:security",
+    "signature": "beckn:signature",
+    "signatureAlgorithm": "beckn:signatureAlgorithm",
+    "standard": "beckn:standard",
+    "uri": "beckn:uri",
+    "url": "beckn:url"
   }
 }

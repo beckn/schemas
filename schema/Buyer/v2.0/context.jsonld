@@ -5,7 +5,7 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "Buyer": "beckn:Buyer",
     "@context": "beckn:@context",
     "@type": "beckn:@type",
@@ -15,6 +15,13 @@
     "telephone": "beckn:telephone",
     "email": "beckn:email",
     "taxID": "beckn:taxID",
-    "buyerAttributes": "beckn:buyerAttributes"
+    "buyerAttributes": "beckn:buyerAttributes",
+    "beckn:buyerAttributes": "beckn:beckn:buyerAttributes",
+    "beckn:displayName": "beckn:beckn:displayName",
+    "beckn:email": "beckn:beckn:email",
+    "beckn:id": "beckn:beckn:id",
+    "beckn:role": "beckn:beckn:role",
+    "beckn:taxID": "beckn:beckn:taxID",
+    "beckn:telephone": "beckn:beckn:telephone"
   }
 }

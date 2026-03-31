@@ -2,7 +2,9 @@ openapi: 3.1.1
 info:
   title: TrackAction
   version: 2.1.0
-  description: This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
+  description: This schema is part of the Long Term Support of Beckn Protocol V2.0
+    API specification and MUST NOT be extended. Any domain-specific extension must
+    use the property of this schema which is of type Attribute.
   license:
     name: CC-BY-NC-SA 4.0 International
   contact:
@@ -12,6 +14,12 @@ paths: {}
 components:
   schemas:
     TrackAction:
+      type: object
+      description: Details required to initiate real-time tracking (if relevant) for
+        an ongoing transaction
       additionalProperties: false
-      x-lts: true
-      description: This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
+      properties:
+        tracking:
+          $ref: https://schema.beckn.io/Tracking/v2.1/attributes.yaml#/components/schemas/Tracking
+      required:
+      - tracking

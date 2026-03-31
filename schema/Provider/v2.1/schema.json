@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "description": "Schema definition for Provider in the Beckn Protocol v2.0.1\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.",
+  "description": "Schema definition for Provider in the Beckn Protocol v2.0.1",
   "title": "Provider",
   "properties": {
     "id": {
@@ -9,17 +9,17 @@
       "example": "tech-store-001"
     },
     "descriptor": {
-      "$ref": "https://schema.beckn.io/Descriptor/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json#/components/schemas/Descriptor"
     },
     "availableAt": {
       "description": "Physical locations where the provider operates",
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/Location/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Location/v2.0/schema.json#/components/schemas/Location"
       }
     },
     "providerAttributes": {
-      "$ref": "https://schema.beckn.io/Attributes/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json#/components/schemas/Attributes"
     }
   },
   "required": [
@@ -27,7 +27,11 @@
     "descriptor"
   ],
   "additionalProperties": false,
-  "x-lts": true,
-  "$id": "https://schema.beckn.io/Provider/v2.1",
-  "$schema": "https://json-schema.org/draft/2020-12/schema"
+  "components": {
+    "schemas": {
+      "Provider": {
+        "$ref": "#"
+      }
+    }
+  }
 }

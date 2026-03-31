@@ -2,7 +2,15 @@ openapi: 3.1.1
 info:
   title: Offer
   version: 2.1.0
-  description: "A generalized, cross-domain Offer that captures the terms under which\none or more Resources may be committed.\n\nCore intent:\n- Support multiple terms/eligibility/constraints/price points for the same Resource(s)\n- Support dynamic / on-the-fly offers (e.g., bundling, combinational discounts,\n eligibility changes, capacity-aware pricing)\n\nThis mirrors the role of Offer in current Beckn (and schema.org patterns),\nbut keeps the shape minimal and composable via `beckn:offerAttributes`.\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute."
+  description: "A generalized, cross-domain Offer that captures the terms under which\n\
+    one or more Resources may be committed.\n\nCore intent:\n- Support multiple terms/eligibility/constraints/price\
+    \ points for the same Resource(s)\n- Support dynamic / on-the-fly offers (e.g.,\
+    \ bundling, combinational discounts,\n eligibility changes, capacity-aware pricing)\n\
+    \nThis mirrors the role of Offer in current Beckn (and schema.org patterns),\n\
+    but keeps the shape minimal and composable via `beckn:offerAttributes`.\n\nThis\
+    \ schema is part of the Long Term Support of Beckn Protocol V2.0 API specification\
+    \ and MUST NOT be extended. Any domain-specific extension must use the property\
+    \ of this schema which is of type Attribute."
   license:
     name: CC-BY-NC-SA 4.0 International
   contact:
@@ -13,7 +21,13 @@ components:
   schemas:
     Offer:
       type: object
-      description: "A generalized, cross-domain Offer that captures the terms under which\none or more Resources may be committed.\n\nCore intent:\n- Support multiple terms/eligibility/constraints/price points for the same Resource(s)\n- Support dynamic / on-the-fly offers (e.g., bundling, combinational discounts,\n eligibility changes, capacity-aware pricing)\n\nThis mirrors the role of Offer in current Beckn (and schema.org patterns),\nbut keeps the shape minimal and composable via `beckn:offerAttributes`.\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute."
+      description: "A generalized, cross-domain Offer that captures the terms under\
+        \ which\none or more Resources may be committed.\n\nCore intent:\n- Support\
+        \ multiple terms/eligibility/constraints/price points for the same Resource(s)\n\
+        - Support dynamic / on-the-fly offers (e.g., bundling, combinational discounts,\n\
+        \ eligibility changes, capacity-aware pricing)\n\nThis mirrors the role of\
+        \ Offer in current Beckn (and schema.org patterns),\nbut keeps the shape minimal\
+        \ and composable via `beckn:offerAttributes`."
       required:
       - id
       properties:
@@ -22,28 +36,28 @@ components:
           description: Unique identifier of the offer.
         descriptor:
           description: Human / agent-readable description of this offer.
-          $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
+          $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor
         provider:
-          $ref: https://schema.beckn.io/Provider/attributes.yaml#/components/schemas/Provider
+          $ref: https://schema.beckn.io/Provider/v2.1/attributes.yaml#/components/schemas/Provider
         resourceIds:
           type: array
           description: References (IDs) to resources covered by this offer.
           items:
-            $ref: https://schema.beckn.io/Offer/attributes.yaml#/components/schemas/Offer
+            $ref: '#/components/schemas/Resource/properties/id'
         addOns:
           type: array
           description: IDs of optional extra Offers or Resources that can be attached.
           items:
-            $ref: https://schema.beckn.io/AddOn/attributes.yaml#/components/schemas/AddOn
+            $ref: https://schema.beckn.io/AddOn/v2.0/attributes.yaml#/components/schemas/AddOn
         considerationIds:
           type: array
           items:
-            $ref: https://schema.beckn.io/Offer/attributes.yaml#/components/schemas/Offer
+            $ref: '#/components/schemas/Consideration/properties/id'
         fulfillmentIds:
           description: Details regarding the fulfillment of this offer
-          $ref: https://schema.beckn.io/Consideration/attributes.yaml#/components/schemas/Consideration
+          $ref: https://schema.beckn.io/Consideration/v2.0/attributes.yaml#/components/schemas/Consideration
         validity:
-          $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod
+          $ref: https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml#/components/schemas/TimePeriod
         availableTo:
           type: array
           description: 'Optional visibility constraint indicating which network participants
@@ -73,5 +87,4 @@ components:
                 type: string
                 description: Identifier of the network, participant, or role.
         offerAttributes:
-          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
-      x-lts: true
+          $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes

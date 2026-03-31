@@ -1,31 +1,20 @@
 {
-  "$id": "https://schema.beckn.io/Error/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "Schema definition for Error in the Beckn Protocol v2.0.1",
   "title": "Error",
-  "x-tags": [
-    "common"
-  ],
+  "description": "Base error container returned in NACK responses and async error callbacks.\nDomain-specific error codes SHOULD follow the Beckn error code registry\n(see response definitions in this specification). Custom error objects may be expressed as\n`oneOf [string, object]` payloads via the `errorDetails` field.",
   "type": "object",
   "properties": {
-    "code": {
-      "description": "Error code",
-      "type": "string",
-      "example": "INVALID_SCHEMA_FIELD"
+    "errorCode": {
+      "type": "string"
     },
-    "details": {
-      "description": "Additional error details",
-      "type": "object"
-    },
-    "message": {
-      "description": "Human-readable error message",
-      "type": "string",
-      "example": "Field 'electronic:invalidField' not found in ElectronicItem schema"
+    "errorMessage": {
+      "type": "string"
     }
   },
-  "required": [
-    "code",
-    "message"
-  ],
-  "additionalProperties": false
+  "components": {
+    "schemas": {
+      "Error": {
+        "$ref": "#"
+      }
+    }
+  }
 }

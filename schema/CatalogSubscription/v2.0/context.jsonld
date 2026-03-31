@@ -2,7 +2,7 @@
   "@context": {
     "@version": 1.1,
     "@protected": true,
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "CatalogSubscription": "beckn:CatalogSubscription",
     "id": "beckn:id",
     "networkIds": "beckn:networkIds",
@@ -11,6 +11,13 @@
     "status": "beckn:status",
     "deliveryPolicy": "beckn:deliveryPolicy",
     "createdAt": "beckn:createdAt",
-    "updatedAt": "beckn:updatedAt"
+    "updatedAt": "beckn:updatedAt",
+    "backoffMultiplier": "beckn:backoffMultiplier",
+    "initialDelaySeconds": "beckn:initialDelaySeconds",
+    "maxDelaySeconds": "beckn:maxDelaySeconds",
+    "maxPayloadBytes": "beckn:maxPayloadBytes",
+    "maxRetries": "beckn:maxRetries",
+    "retryPolicy": "beckn:retryPolicy",
+    "timeoutSeconds": "beckn:timeoutSeconds"
   }
 }

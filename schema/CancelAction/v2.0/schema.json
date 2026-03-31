@@ -1,44 +1,21 @@
 {
-  "$id": "https://schema.beckn.io/CancelAction/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "Beckn /beckn/cancel action envelope. Sent by a BAP to a BPP to request cancellation of an active contract. Set context.try to true to first retrieve cancellation terms and fees before committing.\n",
-  "title": "CancelAction",
-  "type": "object",
+  "title": "Cancel Action",
+  "description": "Beckn /beckn/cancel message payload. Sent by a BAP to a BPP to request\ncancellation of an active contract. Set context.try to true to first\nretrieve cancellation terms and fees before committing.\n(Context wrapper stripped; only the message-content portion is inlined.)",
   "properties": {
-    "context": {
+    "contract": {
       "allOf": [
         {
-          "$ref": "https://schema.beckn.io/Context/attributes.yaml"
+          "$ref": "https://schema.beckn.io/Contract/v2.0/schema.json#/components/schemas/Contract"
         },
         {
-          "type": "object",
-          "properties": {
-            "action": {
-              "type": "string",
-              "const": "beckn/cancel"
-            }
-          }
+          "required": [
+            "id"
+          ]
         }
-      ]
-    },
-    "message": {
-      "type": "object",
-      "additionalProperties": true,
-      "properties": {
-        "contract": {
-          "$ref": "https://schema.beckn.io/Contract/attributes.yaml"
-        }
-      },
-      "required": [
-        "contract"
       ]
     }
   },
   "required": [
-    "context",
-    "message"
-  ],
-  "x-tags": [
-    "common"
+    "contract"
   ]
 }

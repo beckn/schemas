@@ -1,51 +1,22 @@
 {
-  "$id": "https://schema.beckn.io/DiscoverAction/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "Beckn /beckn/discover action envelope. Sent by a BAP to a BPP (or registry) to discover catalogs matching a given intent.\n",
-  "title": "DiscoverAction",
+  "title": "Discover Action (External)",
+  "description": "Beckn /beckn/discover message payload as published at schema.beckn.io.\nRequires all discover qualifiers to be nested inside an `intent`\ncontainer object.\n(Context wrapper stripped; only the message-content portion is inlined.)",
   "type": "object",
   "properties": {
-    "context": {
-      "allOf": [
-        {
-          "$ref": "https://schema.beckn.io/Context/attributes.yaml"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "action": {
-              "type": "string",
-              "const": "beckn/discover"
-            }
-          }
-        }
-      ]
+    "intent": {
+      "$ref": "https://schema.beckn.io/Intent/v2.0/schema.json#/components/schemas/Intent"
     },
-    "message": {
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "intent": {
-              "$ref": "https://schema.beckn.io/Intent/attributes.yaml"
-            }
-          },
-          "required": [
-            "intent"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "$ref": "https://schema.beckn.io/Intent/attributes.yaml"
-        }
-      ]
+    "text_search": {
+      "type": "string",
+      "description": "Legacy flat free-text discover query"
+    },
+    "textSearch": {
+      "type": "string",
+      "description": "Flat free-text discover query"
     }
   },
+  "additionalProperties": false,
   "required": [
-    "context",
-    "message"
-  ],
-  "x-tags": [
-    "common"
+    "intent"
   ]
 }

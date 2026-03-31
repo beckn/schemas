@@ -1,12 +1,31 @@
 {
   "@context": {
     "@version": 1.1,
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "owl": "http://www.w3.org/2002/07/owl#",
-    "schema": "https://schema.org/",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "LogisticsDriver": "beckn:LogisticsDriver",
+    "backgroundVerified": "beckn:backgroundVerified",
+    "currentLocation": "beckn:currentLocation",
+    "email": "beckn:email",
+    "experienceYears": "beckn:experienceYears",
+    "id": "beckn:id",
+    "languagesSpoken": "beckn:languagesSpoken",
+    "lat": "beckn:lat",
+    "licenseExpiry": "beckn:licenseExpiry",
+    "licenseNumber": "beckn:licenseNumber",
+    "lng": "beckn:lng",
+    "name": "beckn:name",
+    "operatingZones": "beckn:operatingZones",
+    "phone": "beckn:phone",
+    "profilePhoto": "beckn:profilePhoto",
+    "rating": "beckn:rating",
+    "status": "beckn:status",
+    "updatedAt": "beckn:updatedAt",
+    "vehicle": "beckn:vehicle"
   },
   "@graph": [
     {

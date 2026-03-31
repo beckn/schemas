@@ -2,7 +2,9 @@ openapi: 3.1.1
 info:
   title: CancelAction
   version: 2.0.0
-  description: 'Beckn /beckn/cancel action envelope. Sent by a BAP to a BPP to request cancellation of an active contract. Set context.try to true to first retrieve cancellation terms and fees before committing.
+  description: 'Beckn /beckn/cancel action envelope. Sent by a BAP to a BPP to request
+    cancellation of an active contract. Set context.try to true to first retrieve
+    cancellation terms and fees before committing.
 
     '
   license:
@@ -14,32 +16,20 @@ paths: {}
 components:
   schemas:
     CancelAction:
-      $id: https://schema.beckn.io/CancelAction/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
-      description: 'Beckn /beckn/cancel action envelope. Sent by a BAP to a BPP to request cancellation of an active contract. Set context.try to true to first retrieve cancellation terms and fees before committing.
+      title: Cancel Action
+      description: 'Beckn /beckn/cancel message payload. Sent by a BAP to a BPP to
+        request
 
-        '
-      title: CancelAction
-      type: object
+        cancellation of an active contract. Set context.try to true to first
+
+        retrieve cancellation terms and fees before committing.
+
+        (Context wrapper stripped; only the message-content portion is inlined.)'
       properties:
-        context:
+        contract:
           allOf:
-          - $ref: https://schema.beckn.io/Context/attributes.yaml#/components/schemas/Context
-          - type: object
-            properties:
-              action:
-                type: string
-                const: beckn/cancel
-        message:
-          type: object
-          additionalProperties: true
-          properties:
-            contract:
-              $ref: https://schema.beckn.io/Contract/attributes.yaml#/components/schemas/Contract
-          required:
-          - contract
+          - $ref: https://schema.beckn.io/Contract/v2.0/attributes.yaml#/components/schemas/Contract
+          - required:
+            - id
       required:
-      - context
-      - message
-      x-tags:
-      - common
+      - contract

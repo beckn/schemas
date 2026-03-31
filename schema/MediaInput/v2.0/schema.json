@@ -1,16 +1,14 @@
 {
-  "$id": "https://schema.beckn.io/MediaInput/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "Reference to an image, audio clip, or video used for multimodal search.",
-  "title": "MediaInput",
   "type": "object",
+  "required": [
+    "type",
+    "url"
+  ],
   "properties": {
     "id": {
-      "description": "Client-supplied identifier for this media input.",
       "type": "string"
     },
     "type": {
-      "description": "Media category.",
       "type": "string",
       "enum": [
         "image",
@@ -19,37 +17,31 @@
       ]
     },
     "url": {
-      "description": "HTTPS URL or data URI pointing to the media resource.",
       "type": "string",
       "format": "uri"
     },
     "contentType": {
-      "description": "MIME type, e.g., image/jpeg, audio/mpeg, video/mp4.",
       "type": "string"
     },
     "textHint": {
-      "description": "Optional pre-extracted text (OCR/ASR) for search augmentation.",
       "type": "string"
     },
     "language": {
-      "description": "Language code (BCP-47) of `textHint` or spoken audio.",
       "type": "string"
     },
     "startMs": {
-      "description": "Optional start offset in milliseconds (for audio/video segments).",
       "type": "integer"
     },
     "endMs": {
-      "description": "Optional end offset in milliseconds (for audio/video segments).",
       "type": "integer"
     }
   },
-  "required": [
-    "type",
-    "url"
-  ],
   "additionalProperties": false,
-  "x-tags": [
-    "common"
-  ]
+  "components": {
+    "schemas": {
+      "MediaInput": {
+        "$ref": "#"
+      }
+    }
+  }
 }

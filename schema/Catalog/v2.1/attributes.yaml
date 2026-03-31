@@ -5,7 +5,9 @@ info:
   description: 'Catalog schema for Beckn Protocol v2.0.0
 
 
-    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.'
+    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
+    and MUST NOT be extended. Any domain-specific extension must use the property
+    of this schema which is of type Attribute.'
   license:
     name: CC-BY-NC-SA 4.0 International
   contact:
@@ -18,12 +20,15 @@ components:
       description: 'Catalog schema for Beckn Protocol v2.0.0
 
 
-        This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.'
+        This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
+        and MUST NOT be extended. Any domain-specific extension must use the property
+        of this schema which is of type Attribute.'
       title: Catalog
       type: object
       properties:
         bppId:
-          description: BPP (Beckn Protocol Provider) identifier that publishes this catalog
+          description: BPP (Beckn Protocol Provider) identifier that publishes this
+            catalog
           type: string
           example: bpp.example.com
         bppUri:
@@ -32,7 +37,8 @@ components:
           format: uri
         publishDirectives:
           deprecated: true
-          description: Directives controlling publish behavior for master/regular catalog flow. Deprecated and planned for removal in a future release.
+          description: Directives controlling publish behavior for master/regular
+            catalog flow. Deprecated and planned for removal in a future release.
           type: object
           additionalProperties: false
           required:
@@ -43,14 +49,16 @@ components:
               enum:
               - master
               - regular
-              description: master = canonical source catalog; regular = seller/provider extension catalog
+              description: master = canonical source catalog; regular = seller/provider
+                extension catalog
             updateMode:
               type: string
               enum:
               - FULL
               - MERGE
               default: FULL
-              description: Used for regular updates. FULL replaces overlay; MERGE applies JSON Merge Patch semantics.
+              description: Used for regular updates. FULL replaces overlay; MERGE
+                applies JSON Merge Patch semantics.
             resourceDirectives:
               description: Optional per-resource extension mapping for regular catalogs
               type: array
@@ -76,7 +84,7 @@ components:
         descriptor:
           description: Human / Agent-readable description of this catalog
           allOf:
-          - $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
+          - $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor
         id:
           description: Unique identifier for the catalog
           type: string
@@ -89,17 +97,18 @@ components:
           description: Array of offers optionally linked to resources
           type: array
           items:
-            $ref: https://schema.beckn.io/Offer/attributes.yaml#/components/schemas/Offer
+            $ref: https://schema.beckn.io/Offer/v2.1/attributes.yaml#/components/schemas/Offer
         resources:
-          description: Array of generalized Resource entities in this catalog (new model)
+          description: Array of generalized Resource entities in this catalog (new
+            model)
           type: array
           items:
-            $ref: https://schema.beckn.io/Resource/attributes.yaml#/components/schemas/Resource
+            $ref: https://schema.beckn.io/Resource/v2.0/attributes.yaml#/components/schemas/Resource
         provider:
-          $ref: https://schema.beckn.io/Provider/attributes.yaml#/components/schemas/Provider
+          $ref: https://schema.beckn.io/Provider/v2.1/attributes.yaml#/components/schemas/Provider
         validity:
           description: The time period during which this catalog is valid
-          $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod
+          $ref: https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml#/components/schemas/TimePeriod
       required:
       - id
       - descriptor

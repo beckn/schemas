@@ -6,23 +6,15 @@
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "schema": "https://schema.org/",
-    "beckn": "https://schema.beckn.io/",
-    "FnBPriceSpecification": {
-      "@id": "beckn:FnBPriceSpecification",
-      "@type": "rdfs:Class",
-      "rdfs:subClassOf": { "@id": "beckn:PriceSpecification" },
-      "owl:equivalentClass": { "@id": "schema:PriceSpecification" }
-    },
-    "currency": {
-      "@id": "schema:priceCurrency"
-    },
-    "value": {
-      "@id": "schema:price",
-      "@type": "xsd:decimal"
-    },
-    "components": {
-      "@id": "beckn:components",
-      "@container": "@list"
-    }
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "FnBPriceSpecification": "beckn:FnBPriceSpecification",
+    "currency": "beckn:currency",
+    "value": "beckn:value",
+    "components": "beckn:components",
+    "@type": "beckn:@type",
+    "description": "beckn:description",
+    "quantity": "beckn:quantity",
+    "referenceItemId": "beckn:referenceItemId",
+    "type": "beckn:type"
   }
 }

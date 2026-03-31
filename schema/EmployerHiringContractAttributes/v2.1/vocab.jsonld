@@ -2,7 +2,22 @@
   "@context": {
     "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "ehca": "https://schema.beckn.io/EmployerHiringContractAttributes#"
+    "ehca": "https://schema.beckn.io/EmployerHiringContractAttributes#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "EmployerHiringContractAttributes": "beckn:EmployerHiringContractAttributes",
+    "candidate_response": "beckn:candidate_response",
+    "city": "beckn:city",
+    "country": "beckn:country",
+    "offer_expiry": "beckn:offer_expiry",
+    "offered_compensation_amount": "beckn:offered_compensation_amount",
+    "offered_compensation_currency": "beckn:offered_compensation_currency",
+    "offered_compensation_period": "beckn:offered_compensation_period",
+    "proposed_joining_date": "beckn:proposed_joining_date",
+    "region": "beckn:region",
+    "role_location": "beckn:role_location",
+    "role_title": "beckn:role_title",
+    "role_work_mode": "beckn:role_work_mode"
   },
   "@graph": [
     {
@@ -11,19 +26,59 @@
       "rdfs:label": "Candidate Response",
       "rdfs:comment": "The candidate's response state to an employer hiring offer."
     },
-    { "@id": "ehca:PENDING",     "@type": "ehca:CandidateResponse", "rdfs:label": "Pending",     "rdfs:comment": "Offer sent; candidate has not yet responded." },
-    { "@id": "ehca:ACCEPTED",    "@type": "ehca:CandidateResponse", "rdfs:label": "Accepted",    "rdfs:comment": "Candidate has accepted the offer." },
-    { "@id": "ehca:DECLINED",    "@type": "ehca:CandidateResponse", "rdfs:label": "Declined",    "rdfs:comment": "Candidate has declined the offer." },
-    { "@id": "ehca:NEGOTIATING", "@type": "ehca:CandidateResponse", "rdfs:label": "Negotiating", "rdfs:comment": "Candidate has responded with a counter-proposal." },
+    {
+      "@id": "ehca:PENDING",
+      "@type": "ehca:CandidateResponse",
+      "rdfs:label": "Pending",
+      "rdfs:comment": "Offer sent; candidate has not yet responded."
+    },
+    {
+      "@id": "ehca:ACCEPTED",
+      "@type": "ehca:CandidateResponse",
+      "rdfs:label": "Accepted",
+      "rdfs:comment": "Candidate has accepted the offer."
+    },
+    {
+      "@id": "ehca:DECLINED",
+      "@type": "ehca:CandidateResponse",
+      "rdfs:label": "Declined",
+      "rdfs:comment": "Candidate has declined the offer."
+    },
+    {
+      "@id": "ehca:NEGOTIATING",
+      "@type": "ehca:CandidateResponse",
+      "rdfs:label": "Negotiating",
+      "rdfs:comment": "Candidate has responded with a counter-proposal."
+    },
     {
       "@id": "ehca:OfferedCompensationPeriod",
       "@type": "rdfs:Class",
       "rdfs:label": "Offered Compensation Period",
       "rdfs:comment": "The time unit for the employer's stated compensation offer."
     },
-    { "@id": "ehca:ANNUAL",  "@type": "ehca:OfferedCompensationPeriod", "rdfs:label": "Annual",  "rdfs:comment": "Annual compensation." },
-    { "@id": "ehca:MONTHLY", "@type": "ehca:OfferedCompensationPeriod", "rdfs:label": "Monthly", "rdfs:comment": "Monthly compensation." },
-    { "@id": "ehca:DAILY",   "@type": "ehca:OfferedCompensationPeriod", "rdfs:label": "Daily",   "rdfs:comment": "Daily rate." },
-    { "@id": "ehca:HOURLY",  "@type": "ehca:OfferedCompensationPeriod", "rdfs:label": "Hourly",  "rdfs:comment": "Hourly rate." }
+    {
+      "@id": "ehca:ANNUAL",
+      "@type": "ehca:OfferedCompensationPeriod",
+      "rdfs:label": "Annual",
+      "rdfs:comment": "Annual compensation."
+    },
+    {
+      "@id": "ehca:MONTHLY",
+      "@type": "ehca:OfferedCompensationPeriod",
+      "rdfs:label": "Monthly",
+      "rdfs:comment": "Monthly compensation."
+    },
+    {
+      "@id": "ehca:DAILY",
+      "@type": "ehca:OfferedCompensationPeriod",
+      "rdfs:label": "Daily",
+      "rdfs:comment": "Daily rate."
+    },
+    {
+      "@id": "ehca:HOURLY",
+      "@type": "ehca:OfferedCompensationPeriod",
+      "rdfs:label": "Hourly",
+      "rdfs:comment": "Hourly rate."
+    }
   ]
 }

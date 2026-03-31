@@ -2,10 +2,14 @@
   "@context": {
     "@version": 1.1,
     "@protected": true,
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "DeliveryPolicy": "beckn:DeliveryPolicy",
     "timeoutSeconds": "beckn:timeoutSeconds",
     "maxPayloadBytes": "beckn:maxPayloadBytes",
-    "retryPolicy": "beckn:retryPolicy"
+    "retryPolicy": "beckn:retryPolicy",
+    "backoffMultiplier": "beckn:backoffMultiplier",
+    "initialDelaySeconds": "beckn:initialDelaySeconds",
+    "maxDelaySeconds": "beckn:maxDelaySeconds",
+    "maxRetries": "beckn:maxRetries"
   }
 }

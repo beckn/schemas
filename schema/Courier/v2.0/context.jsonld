@@ -5,7 +5,20 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "beckn": "https://schema.beckn.io/",
-    "Courier": "beckn:Courier"
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "Courier": "beckn:Courier",
+    "activeShipments": "beckn:activeShipments",
+    "currentLocation": "beckn:currentLocation",
+    "email": "beckn:email",
+    "id": "beckn:id",
+    "joiningDate": "beckn:joiningDate",
+    "kycVerified": "beckn:kycVerified",
+    "name": "beckn:name",
+    "phone": "beckn:phone",
+    "profilePhoto": "beckn:profilePhoto",
+    "rating": "beckn:rating",
+    "status": "beckn:status",
+    "vehicleNumber": "beckn:vehicleNumber",
+    "vehicleType": "beckn:vehicleType"
   }
 }

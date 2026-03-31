@@ -1,44 +1,13 @@
 {
-  "$id": "https://schema.beckn.io/OnInitAction/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "Beckn /beckn/on_init callback envelope. Sent by a BPP to a BAP in response to a /beckn/init call, with the updated contract including payment terms and billing confirmation.\n",
-  "title": "OnInitAction",
-  "type": "object",
+  "title": "On Init Action",
+  "description": "Beckn /beckn/on_init message payload. Sent by a BPP to a BAP in response\nto a /beckn/init call, with the updated contract including payment terms\nand billing confirmation.\n(Context wrapper stripped; only the message-content portion is inlined.)",
+  "additionalProperties": false,
   "properties": {
-    "context": {
-      "allOf": [
-        {
-          "$ref": "https://schema.beckn.io/Context/attributes.yaml"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "action": {
-              "type": "string",
-              "const": "beckn/on_init"
-            }
-          }
-        }
-      ]
-    },
-    "message": {
-      "type": "object",
-      "additionalProperties": true,
-      "properties": {
-        "contract": {
-          "$ref": "https://schema.beckn.io/Contract/attributes.yaml"
-        }
-      },
-      "required": [
-        "contract"
-      ]
+    "contract": {
+      "$ref": "https://schema.beckn.io/Contract/v2.0/schema.json#/components/schemas/Contract"
     }
   },
   "required": [
-    "context",
-    "message"
-  ],
-  "x-tags": [
-    "common"
+    "contract"
   ]
 }

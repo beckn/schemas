@@ -5,12 +5,17 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "Document": "beckn:Document",
     "label": "beckn:label",
     "mimeType": "beckn:mimeType",
     "standard": "beckn:standard",
     "url": "beckn:url",
-    "security": "beckn:security"
+    "security": "beckn:security",
+    "checksum": "beckn:checksum",
+    "checksumAlgorithm": "beckn:checksumAlgorithm",
+    "keyId": "beckn:keyId",
+    "signature": "beckn:signature",
+    "signatureAlgorithm": "beckn:signatureAlgorithm"
   }
 }

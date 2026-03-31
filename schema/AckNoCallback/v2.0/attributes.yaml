@@ -2,10 +2,13 @@ openapi: 3.1.1
 info:
   title: AckNoCallback
   version: 2.0.0
-  description: 'Request received but no callback will follow (e.g. agents not found, inventory unavailable, provider closed, context.try preview complete).
+  description: 'Request received but no callback will follow (e.g. agents not found,
+    inventory unavailable, provider closed, context.try preview complete).
 
 
-    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.'
+    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
+    and MUST NOT be extended. Any domain-specific extension must use the property
+    of this schema which is of type Attribute.'
   license:
     name: CC-BY-NC-SA 4.0 International
   contact:
@@ -15,18 +18,15 @@ paths: {}
 components:
   schemas:
     AckNoCallback:
-      description: 'Request received but no callback will follow (e.g. agents not found, inventory unavailable, provider closed, context.try preview complete).
-
-
-        This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.'
+      description: Request received but no callback will follow (e.g. agents not found,
+        inventory unavailable, provider closed, context.try preview complete).
       allOf:
-      - $ref: https://schema.beckn.io/Ack/attributes.yaml#/components/schemas/Ack
+      - $ref: https://schema.beckn.io/Ack/v2.0/attributes.yaml#/components/schemas/Ack
       - type: object
         properties:
           error:
-            $ref: https://schema.beckn.io/Error/attributes.yaml#/components/schemas/Error
+            $ref: https://schema.beckn.io/Error/v2.0/attributes.yaml#/components/schemas/Error
       - required:
         - status
         - signature
         - error
-      x-lts: true

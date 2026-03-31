@@ -18,7 +18,9 @@ info:
     - Compliance artifact
 
 
-    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.'
+    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
+    and MUST NOT be extended. Any domain-specific extension must use the property
+    of this schema which is of type Attribute.'
   license:
     name: CC-BY-NC-SA 4.0 International
   contact:
@@ -42,10 +44,7 @@ components:
 
         - Service exchange
 
-        - Compliance artifact
-
-
-        This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.'
+        - Compliance artifact'
       required:
       - id
       - status
@@ -55,12 +54,12 @@ components:
           type: string
         status:
           description: The status of this consideration
-          $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
+          $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor
         considerationAttributes:
-          description: 'Domain-specific attributes of this consideration. For monetary considerations,
+          description: 'Domain-specific attributes of this consideration. For monetary
+            considerations,
 
             use the PriceSpecification schema to capture total value with breakup.
 
             For other consideration types, use a generic Attributes bag.'
-          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
-      x-lts: true
+          $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes

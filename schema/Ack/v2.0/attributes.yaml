@@ -2,7 +2,8 @@ openapi: 3.1.1
 info:
   title: Ack
   version: 2.0.0
-  description: 'Synchronous receipt acknowledgement returned for every accepted Beckn request.
+  description: 'Synchronous receipt acknowledgement returned for every accepted Beckn
+    request.
 
     Supports both the v2.0 format (status + signature CounterSignature) and the
 
@@ -20,44 +21,20 @@ paths: {}
 components:
   schemas:
     Ack:
-      $id: https://schema.beckn.io/Ack/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
-      title: Ack
-      description: 'Synchronous receipt acknowledgement returned for every accepted Beckn request.
-
-        Supports both the v2.0 format (status + signature CounterSignature) and the
-
-        v2.0-rc1 legacy format (ack_status + transaction_id + timestamp) via oneOf
-
-        for backward compatibility.
-
-        '
-      x-tags:
-      - common
-      oneOf:
-      - title: Ack v2.0
-        description: 'New v2.0 Ack format carrying an HTTP Counter-Signature proving the receiver
-
-          authenticated, received, and processed the inbound request.
-
-          '
-        type: object
-        properties:
-          status:
-            type: string
-            enum:
-            - ACK
-            - NACK
-            description: ACK if the request was accepted; NACK if rejected.
-          signature:
-            $ref: https://schema.beckn.io/CounterSignature/attributes.yaml#/components/schemas/CounterSignature
-            description: 'Counter-signature proving the receiver authenticated and processed
-
-              the inbound request.
-
-              '
-        required:
-        - status
-        - signature
-        additionalProperties: false
-      - $ref: https://schema.beckn.io/AckResponse/attributes.yaml#/components/schemas/AckResponse
+      description: New v2.0 Ack format carrying an HTTP Counter-Signature proving
+        the receiver authenticated, received, and processed the inbound request.
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+          - ACK
+          - NACK
+          description: ACK if the request was accepted; NACK if rejected.
+        signature:
+          $ref: https://schema.beckn.io/CounterSignature/v2.0/attributes.yaml#/components/schemas/CounterSignature
+          description: Counter-signature proving the receiver authenticated and processed
+            the inbound request.
+      required:
+      - status
+      - signature

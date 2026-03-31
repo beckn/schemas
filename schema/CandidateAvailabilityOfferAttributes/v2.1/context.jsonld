@@ -2,7 +2,7 @@
   "@context": {
     "@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
     "schema": "https://schema.org/",
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "caoa": "https://schema.beckn.io/CandidateAvailabilityOfferAttributes#",
     "caoa:desiredCompensationCurrency": {
       "@id": "caoa:desiredCompensationCurrency"
@@ -32,28 +32,16 @@
     "schema:validThrough": {
       "@id": "schema:validThrough"
     },
-    "desired_compensation_currency": {
-      "@id": "caoa:desiredCompensationCurrency"
-    },
-    "desired_compensation_min": {
-      "@id": "schema:minPrice"
-    },
-    "desired_compensation_max": {
-      "@id": "schema:maxPrice"
-    },
-    "desired_compensation_period": {
-      "@id": "caoa:desiredCompensationPeriod"
-    },
-    "notice_period_days": {
-      "@id": "caoa:noticePeriodDays"
-    },
-    "availability_window": {
-      "@id": "schema:validityPeriod"
-    },
-    "preferred_contract_types": {
-      "@id": "caoa:preferredContractTypes",
-      "@container": "@list"
-    },
-    "DesiredCompensationPeriod": "caoa:DesiredCompensationPeriod"
+    "desired_compensation_currency": "beckn:desired_compensation_currency",
+    "desired_compensation_min": "beckn:desired_compensation_min",
+    "desired_compensation_max": "beckn:desired_compensation_max",
+    "desired_compensation_period": "beckn:desired_compensation_period",
+    "notice_period_days": "beckn:notice_period_days",
+    "availability_window": "beckn:availability_window",
+    "preferred_contract_types": "beckn:preferred_contract_types",
+    "DesiredCompensationPeriod": "caoa:DesiredCompensationPeriod",
+    "CandidateAvailabilityOfferAttributes": "beckn:CandidateAvailabilityOfferAttributes",
+    "end": "beckn:end",
+    "start": "beckn:start"
   }
 }

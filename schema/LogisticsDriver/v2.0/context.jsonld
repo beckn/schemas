@@ -5,7 +5,25 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "beckn": "https://schema.beckn.io/",
-    "LogisticsDriver": "beckn:LogisticsDriver"
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "LogisticsDriver": "beckn:LogisticsDriver",
+    "backgroundVerified": "beckn:backgroundVerified",
+    "currentLocation": "beckn:currentLocation",
+    "email": "beckn:email",
+    "experienceYears": "beckn:experienceYears",
+    "id": "beckn:id",
+    "languagesSpoken": "beckn:languagesSpoken",
+    "lat": "beckn:lat",
+    "licenseExpiry": "beckn:licenseExpiry",
+    "licenseNumber": "beckn:licenseNumber",
+    "lng": "beckn:lng",
+    "name": "beckn:name",
+    "operatingZones": "beckn:operatingZones",
+    "phone": "beckn:phone",
+    "profilePhoto": "beckn:profilePhoto",
+    "rating": "beckn:rating",
+    "status": "beckn:status",
+    "updatedAt": "beckn:updatedAt",
+    "vehicle": "beckn:vehicle"
   }
 }

@@ -1,54 +1,21 @@
 {
-  "$id": "https://schema.beckn.io/StatusAction/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "Beckn /beckn/status action envelope. Sent by a BAP to a BPP to request the current status of an existing contract/order, identified by its id.\n",
-  "title": "StatusAction",
-  "type": "object",
+  "title": "Status Action",
+  "description": "Beckn /beckn/status message payload. Sent by a BAP to a BPP to query\nthe current state of a contract/order by its identifier.\n(Context wrapper stripped; only the message-content portion is inlined.)",
   "properties": {
-    "context": {
+    "contract": {
       "allOf": [
         {
-          "$ref": "https://schema.beckn.io/Context/attributes.yaml"
+          "$ref": "https://schema.beckn.io/Contract/v2.0/schema.json#/components/schemas/Contract"
         },
         {
-          "type": "object",
-          "properties": {
-            "action": {
-              "type": "string",
-              "const": "beckn/status"
-            }
-          }
-        }
-      ]
-    },
-    "message": {
-      "type": "object",
-      "additionalProperties": true,
-      "properties": {
-        "order": {
-          "type": "object",
-          "description": "Minimal contract/order reference for the status query.",
-          "properties": {
-            "id": {
-              "description": "Identifier of the contract/order whose status is being queried.",
-              "$ref": "https://schema.beckn.io/Contract/attributes.yaml"
-            }
-          },
           "required": [
             "id"
           ]
         }
-      },
-      "required": [
-        "order"
       ]
     }
   },
   "required": [
-    "context",
-    "message"
-  ],
-  "x-tags": [
-    "common"
+    "contract"
   ]
 }

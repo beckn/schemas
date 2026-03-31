@@ -2,7 +2,7 @@
   "@context": {
     "@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
     "schema": "https://schema.org/",
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "japa": "https://schema.beckn.io/JobApplicationPerformanceAttributes#",
     "cr": "https://schema.beckn.io/CredentialRequirement#",
     "japa:verificationMethod": {
@@ -37,27 +37,18 @@
     "cr:mandatory": {
       "@id": "cr:mandatory"
     },
-    "verification_method": {
-      "@id": "japa:verificationMethod"
-    },
-    "per_requirement_results": {
-      "@id": "japa:perRequirementResults",
-      "@container": "@list"
-    },
-    "proof_hash": {
-      "@id": "japa:proofHash"
-    },
-    "issuer_dids_verified": {
-      "@id": "japa:issuerDidsVerified",
-      "@container": "@list"
-    },
-    "routed_to_provider": {
-      "@id": "japa:routedToProvider"
-    },
-    "routing_timestamp": {
-      "@id": "schema:dateModified"
-    },
+    "verification_method": "beckn:verification_method",
+    "per_requirement_results": "beckn:per_requirement_results",
+    "proof_hash": "beckn:proof_hash",
+    "issuer_dids_verified": "beckn:issuer_dids_verified",
+    "routed_to_provider": "beckn:routed_to_provider",
+    "routing_timestamp": "beckn:routing_timestamp",
     "RequirementResult": "japa:RequirementResult",
-    "VerificationMethod": "japa:VerificationMethod"
+    "VerificationMethod": "japa:VerificationMethod",
+    "JobApplicationPerformanceAttributes": "beckn:JobApplicationPerformanceAttributes",
+    "category": "beckn:category",
+    "mandatory": "beckn:mandatory",
+    "result": "beckn:result",
+    "subtype": "beckn:subtype"
   }
 }

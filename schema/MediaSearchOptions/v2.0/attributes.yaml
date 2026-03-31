@@ -24,20 +24,16 @@ components:
           items:
             type: string
             enum:
-            - VISUAL_SIMILARITY
-            - VISUAL_OBJECT_DETECT
-            - TEXT_FROM_IMAGE
-            - TEXT_FROM_AUDIO
-            - SEMANTIC_AUDIO_MATCH
-            - SEMANTIC_VIDEO_MATCH
-        augmentTextSearch:
-          description: Whether to append extracted text from OCR/ASR to `textSearch`.
+            - visual-similarity
+            - visual-object-detect
+            - text-from-image
+            - text-from-audio
+            - semantic-audio-match
+            - semantic-video-match
+        augment_text_search:
           type: boolean
-          default: true
-        restrictResultsToMediaProximity:
-          description: Restrict results to spatial proximity of media-derived coordinates (e.g., EXIF GPS tags).
+        restrict_results_to_media_proximity:
           type: boolean
-          default: false
       additionalProperties: false
       x-tags:
       - common

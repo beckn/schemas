@@ -20,18 +20,7 @@ components:
       - common
       type: object
       properties:
-        code:
-          description: Error code
+        errorCode:
           type: string
-          example: INVALID_SCHEMA_FIELD
-        details:
-          description: Additional error details
-          type: object
-        message:
-          description: Human-readable error message
+        errorMessage:
           type: string
-          example: Field 'electronic:invalidField' not found in ElectronicItem schema
-      required:
-      - code
-      - message
-      additionalProperties: false

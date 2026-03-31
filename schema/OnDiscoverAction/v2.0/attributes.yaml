@@ -2,7 +2,8 @@ openapi: 3.1.1
 info:
   title: OnDiscoverAction
   version: 2.0.0
-  description: 'Beckn /beckn/on_discover message payload. Sent by a BPP or CDS to a BAP
+  description: 'Beckn /beckn/on_discover message payload. Sent by a BPP or CDS to
+    a BAP
 
     in response to a discover request. Contains matching catalogs.
 
@@ -16,41 +17,16 @@ paths: {}
 components:
   schemas:
     OnDiscoverAction:
-      $id: https://schema.beckn.io/OnDiscoverAction/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
-      title: OnDiscoverAction
-      description: 'Beckn /beckn/on_discover message payload. Sent by a BPP or CDS to a BAP
-
-        in response to a discover request. Contains matching catalogs.
-
-        '
-      x-tags:
-      - common
+      description: The on_discover response payload containing matching catalogs.
       type: object
-      properties:
-        context:
-          allOf:
-          - $ref: https://schema.beckn.io/Context/attributes.yaml#/components/schemas/Context
-          - type: object
-            properties:
-              action:
-                type: string
-                const: beckn/on_discover
-        message:
-          type: object
-          additionalProperties: true
-          required:
-          - catalogs
-          properties:
-            catalogs:
-              type: array
-              description: 'Array of catalogs matching the discovery request.
-
-                Each catalog contains items and/or resources available from a provider.
-
-                '
-              items:
-                $ref: https://schema.beckn.io/Catalog/attributes.yaml#/components/schemas/Catalog
       required:
-      - context
-      - message
+      - catalogs
+      properties:
+        catalogs:
+          type: array
+          description: 'Array of catalogs matching the discovery request.
+
+            Array of catalogs matching the discovery request.'
+          items:
+            $ref: https://schema.beckn.io/Catalog/v2.1/attributes.yaml#/components/schemas/Catalog
+      additionalProperties: false

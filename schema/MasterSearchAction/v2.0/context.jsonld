@@ -2,9 +2,13 @@
   "@context": {
     "@version": 1.1,
     "@protected": true,
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "MasterSearchAction": "beckn:MasterSearchAction",
     "filters": "beckn:filters",
-    "pagination": "beckn:pagination"
+    "pagination": "beckn:pagination",
+    "limit": "beckn:limit",
+    "networkIds": "beckn:networkIds",
+    "offset": "beckn:offset",
+    "schemaTypes": "beckn:schemaTypes"
   }
 }

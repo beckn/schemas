@@ -1,12 +1,30 @@
 {
   "@context": {
     "@version": 1.1,
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "owl": "http://www.w3.org/2002/07/owl#",
-    "schema": "https://schema.org/",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "LogisticsPlace": "beckn:LogisticsPlace",
+    "accessInstructions": "beckn:accessInstructions",
+    "address": "beckn:address",
+    "city": "beckn:city",
+    "contact": "beckn:contact",
+    "country": "beckn:country",
+    "gps": "beckn:gps",
+    "id": "beckn:id",
+    "isVerified": "beckn:isVerified",
+    "landmark": "beckn:landmark",
+    "lat": "beckn:lat",
+    "line1": "beckn:line1",
+    "line2": "beckn:line2",
+    "lng": "beckn:lng",
+    "name": "beckn:name",
+    "pincode": "beckn:pincode",
+    "state": "beckn:state",
+    "type": "beckn:type"
   },
   "@graph": [
     {

@@ -2,7 +2,9 @@ openapi: 3.1.1
 info:
   title: OnSupportAction
   version: 2.0.0
-  description: 'Beckn /beckn/on_support callback envelope. Sent by a BPP to a BAP in response to a /beckn/support call, returning support contact details and available channels.
+  description: 'Beckn /beckn/on_support callback envelope. Sent by a BPP to a BAP
+    in response to a /beckn/support call, returning support contact details and available
+    channels.
 
     '
   license:
@@ -14,32 +16,18 @@ paths: {}
 components:
   schemas:
     OnSupportAction:
-      $id: https://schema.beckn.io/OnSupportAction/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
-      description: 'Beckn /beckn/on_support callback envelope. Sent by a BPP to a BAP in response to a /beckn/support call, returning support contact details and available channels.
+      title: On Support Action
+      description: 'Beckn /beckn/on_support message payload. Sent by a BPP to a BAP
+        in
 
-        '
-      title: OnSupportAction
-      type: object
+        response to a /beckn/support call, returning support contact details
+
+        and available channels.
+
+        (Context wrapper stripped; only the message-content portion is inlined.)'
+      additionalProperties: false
       properties:
-        context:
-          allOf:
-          - $ref: https://schema.beckn.io/Context/attributes.yaml#/components/schemas/Context
-          - type: object
-            properties:
-              action:
-                type: string
-                const: beckn/on_support
-        message:
-          type: object
-          additionalProperties: true
-          properties:
-            supportInfo:
-              $ref: https://schema.beckn.io/SupportInfo/attributes.yaml#/components/schemas/SupportInfo
-          required:
-          - supportInfo
+        support:
+          $ref: https://schema.beckn.io/Support/v2.0/attributes.yaml#/components/schemas/Support
       required:
-      - context
-      - message
-      x-tags:
-      - common
+      - support

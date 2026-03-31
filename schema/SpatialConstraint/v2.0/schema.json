@@ -1,6 +1,4 @@
 {
-  "$id": "https://schema.beckn.io/SpatialConstraint/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "**Spatial predicate** using **OGC CQL2 (JSON semantics)** applied to one or more geometry targets in an item. This is where clients express spatial intent.\nKey ideas: - `targets`: one or more **JSONPath-like** pointers that locate geometry\n\n  fields within each item document (e.g., `$['availableAt'][*]['geo']`).\n- `op`: spatial operator (CQL2). Common ones:\n\n    • `S_WITHIN`     (A is completely inside B)\n    • `S_INTERSECTS` (A intersects B)\n    • `S_CONTAINS`   (A contains B)\n    • `S_DWITHIN`    (A within distance of B)\n- `geometry`: **GeoJSON** literal used as the predicate reference geometry. - `distanceMeters`: required for `S_DWITHIN` when using a GeoJSON Point/shape. - `quantifier`: if a target resolves to an array, choose whether **ANY** (default),\n\n  **ALL**, or **NONE** of elements must satisfy the predicate.\n\nCRS: unless otherwise stated, all coordinates are **EPSG:4326**.\n",
   "title": "SpatialConstraint",
   "type": "object",
@@ -35,7 +33,7 @@
       ]
     },
     "geometry": {
-      "$ref": "https://schema.beckn.io/GeoJSONGeometry/attributes.yaml"
+      "$ref": "https://schema.beckn.io/GeoJSONGeometry/v2.0/schema.json#/components/schemas/GeoJSONGeometry"
     },
     "distanceMeters": {
       "description": "For `S_DWITHIN`: maximum distance in meters from the target geometry to `geometry` (e.g., \"within 5000 m of this Point\"). Ignored for other ops.",
@@ -65,5 +63,12 @@
   "additionalProperties": false,
   "x-tags": [
     "common"
-  ]
+  ],
+  "components": {
+    "schemas": {
+      "SpatialConstraint": {
+        "$ref": "#"
+      }
+    }
+  }
 }

@@ -5,7 +5,23 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "beckn": "https://schema.beckn.io/",
-    "Consignment": "beckn:Consignment"
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "Consignment": "beckn:Consignment",
+    "carrier": "beckn:carrier",
+    "commercialInvoiceNumber": "beckn:commercialInvoiceNumber",
+    "consignee": "beckn:consignee",
+    "createdAt": "beckn:createdAt",
+    "customsDeclaration": "beckn:customsDeclaration",
+    "estimatedDelivery": "beckn:estimatedDelivery",
+    "id": "beckn:id",
+    "paymentMode": "beckn:paymentMode",
+    "serviceType": "beckn:serviceType",
+    "shipments": "beckn:shipments",
+    "shipper": "beckn:shipper",
+    "status": "beckn:status",
+    "totalPackages": "beckn:totalPackages",
+    "totalWeight": "beckn:totalWeight",
+    "unit": "beckn:unit",
+    "value": "beckn:value"
   }
 }

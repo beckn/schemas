@@ -1,5 +1,11 @@
 {
   "@context": {
-    "@vocab": "https://schema.beckn.io/CatalogPublishResponse/v2.0#"
+    "@vocab": "https://schema.beckn.io/CatalogPublishResponse/v2.0#",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "CatalogPublishResponse": "beckn:CatalogPublishResponse",
+    "action": "beckn:action",
+    "context": "beckn:context",
+    "message": "beckn:message",
+    "results": "beckn:results"
   }
 }

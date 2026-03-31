@@ -5,7 +5,18 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "beckn": "https://schema.beckn.io/",
-    "ReturnPolicy": "beckn:ReturnPolicy"
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "ReturnPolicy": "beckn:ReturnPolicy",
+    "currency": "beckn:currency",
+    "id": "beckn:id",
+    "refundOnReturn": "beckn:refundOnReturn",
+    "returnHubAddress": "beckn:returnHubAddress",
+    "returnReason": "beckn:returnReason",
+    "returnWindow": "beckn:returnWindow",
+    "returnsAccepted": "beckn:returnsAccepted",
+    "reversePickupCharge": "beckn:reversePickupCharge",
+    "type": "beckn:type",
+    "unit": "beckn:unit",
+    "value": "beckn:value"
   }
 }

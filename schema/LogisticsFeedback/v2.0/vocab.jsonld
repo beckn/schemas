@@ -1,12 +1,22 @@
 {
   "@context": {
     "@version": 1.1,
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "owl": "http://www.w3.org/2002/07/owl#",
-    "schema": "https://schema.org/",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "LogisticsFeedback": "beckn:LogisticsFeedback",
+    "id": "beckn:id",
+    "isPublic": "beckn:isPublic",
+    "rating": "beckn:rating",
+    "review": "beckn:review",
+    "shipmentId": "beckn:shipmentId",
+    "submittedAt": "beckn:submittedAt",
+    "submittedBy": "beckn:submittedBy",
+    "tags": "beckn:tags",
+    "wouldRecommend": "beckn:wouldRecommend"
   },
   "@graph": [
     {

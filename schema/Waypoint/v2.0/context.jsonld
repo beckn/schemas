@@ -5,7 +5,19 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "beckn": "https://schema.beckn.io/",
-    "Waypoint": "beckn:Waypoint"
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "Waypoint": "beckn:Waypoint",
+    "actualArrival": "beckn:actualArrival",
+    "actualDeparture": "beckn:actualDeparture",
+    "dwellTimeMinutes": "beckn:dwellTimeMinutes",
+    "handoverRequired": "beckn:handoverRequired",
+    "id": "beckn:id",
+    "name": "beckn:name",
+    "place": "beckn:place",
+    "scheduledArrival": "beckn:scheduledArrival",
+    "scheduledDeparture": "beckn:scheduledDeparture",
+    "sequenceNumber": "beckn:sequenceNumber",
+    "status": "beckn:status",
+    "type": "beckn:type"
   }
 }

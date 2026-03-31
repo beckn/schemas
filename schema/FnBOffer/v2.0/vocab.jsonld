@@ -1,10 +1,27 @@
 {
   "@context": {
     "@version": 1.1,
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "FnBOffer": "beckn:FnBOffer",
+    "@type": "beckn:@type",
+    "available": "beckn:available",
+    "code": "beckn:code",
+    "customization": "beckn:customization",
+    "groups": "beckn:groups",
+    "itemRef": "beckn:itemRef",
+    "maxSelections": "beckn:maxSelections",
+    "minSelections": "beckn:minSelections",
+    "name": "beckn:name",
+    "offerRef": "beckn:offerRef",
+    "options": "beckn:options",
+    "priceDelta": "beckn:priceDelta",
+    "selection": "beckn:selection",
+    "type": "beckn:type",
+    "value": "beckn:value"
   },
   "@graph": [
     {

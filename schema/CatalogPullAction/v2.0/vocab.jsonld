@@ -1,8 +1,18 @@
 {
   "@context": {
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "CatalogPullAction": "beckn:CatalogPullAction",
+    "catalogIds": "beckn:catalogIds",
+    "filters": "beckn:filters",
+    "fromDate": "beckn:fromDate",
+    "limit": "beckn:limit",
+    "mode": "beckn:mode",
+    "networkIds": "beckn:networkIds",
+    "schemaTypes": "beckn:schemaTypes",
+    "toDate": "beckn:toDate"
   },
   "@graph": [
     {
@@ -15,7 +25,7 @@
       "@id": "beckn:mode",
       "@type": "rdf:Property",
       "rdfs:label": "mode",
-      "rdfs:comment": "- `FULL` \u2014 returns the latest version of each matching catalog.\n- `INCREMENTAL` \u2014 returns all catalog versions indexed between\n  `fromDate` and `toDate` (inclusive).\n"
+      "rdfs:comment": "- `FULL` — returns the latest version of each matching catalog.\n- `INCREMENTAL` — returns all catalog versions indexed between\n  `fromDate` and `toDate` (inclusive).\n"
     },
     {
       "@id": "beckn:filters",

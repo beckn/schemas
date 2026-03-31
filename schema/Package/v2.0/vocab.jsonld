@@ -1,12 +1,35 @@
 {
   "@context": {
     "@version": 1.1,
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "owl": "http://www.w3.org/2002/07/owl#",
-    "schema": "https://schema.org/",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Package": "beckn:Package",
+    "amount": "beckn:amount",
+    "barcode": "beckn:barcode",
+    "currency": "beckn:currency",
+    "declaredValue": "beckn:declaredValue",
+    "description": "beckn:description",
+    "dimensions": "beckn:dimensions",
+    "fragile": "beckn:fragile",
+    "hazardous": "beckn:hazardous",
+    "height": "beckn:height",
+    "id": "beckn:id",
+    "insuranceRequired": "beckn:insuranceRequired",
+    "length": "beckn:length",
+    "maxTemp": "beckn:maxTemp",
+    "minTemp": "beckn:minTemp",
+    "packageType": "beckn:packageType",
+    "required": "beckn:required",
+    "temperatureControl": "beckn:temperatureControl",
+    "unit": "beckn:unit",
+    "value": "beckn:value",
+    "volumetricWeight": "beckn:volumetricWeight",
+    "weight": "beckn:weight",
+    "width": "beckn:width"
   },
   "@graph": [
     {

@@ -2,7 +2,7 @@
   "@context": {
     "@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
     "schema": "https://schema.org/",
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "hppa": "https://schema.beckn.io/HiringProcessPerformanceAttributes#",
     "vs": "https://schema.beckn.io/VerificationSummary#",
     "hppa:stage": {
@@ -54,26 +54,17 @@
     "vs:proofMetadataHash": {
       "@id": "vs:proofMetadataHash"
     },
-    "stage": {
-      "@id": "hppa:stage"
-    },
-    "interview_schedule": {
-      "@id": "hppa:interviewSchedule",
-      "@container": "@list"
-    },
-    "assessment_required": {
-      "@id": "hppa:assessmentRequired"
-    },
-    "assessment_reference": {
-      "@id": "hppa:assessmentReference"
-    },
-    "verification_requested": {
-      "@id": "hppa:verificationRequested"
-    },
-    "verification_summary": {
-      "@id": "hppa:verificationSummary"
-    },
+    "stage": "beckn:stage",
+    "interview_schedule": "beckn:interview_schedule",
+    "assessment_required": "beckn:assessment_required",
+    "assessment_reference": "beckn:assessment_reference",
+    "verification_requested": "beckn:verification_requested",
+    "verification_summary": "beckn:verification_summary",
     "HiringStage": "hppa:HiringStage",
-    "InterviewFormat": "hppa:InterviewFormat"
+    "InterviewFormat": "hppa:InterviewFormat",
+    "HiringProcessPerformanceAttributes": "beckn:HiringProcessPerformanceAttributes",
+    "format": "beckn:format",
+    "session_date": "beckn:session_date",
+    "topic": "beckn:topic"
   }
 }

@@ -2,7 +2,9 @@ openapi: 3.1.1
 info:
   title: OnRateAction
   version: 2.0.0
-  description: 'Beckn /beckn/on_rate callback envelope. Sent by a BPP to a BAP in response to a /beckn/rate call, optionally returning rating forms to collect structured feedback from the consumer.
+  description: 'Beckn /beckn/on_rate callback envelope. Sent by a BPP to a BAP in
+    response to a /beckn/rate call, optionally returning rating forms to collect structured
+    feedback from the consumer.
 
     '
   license:
@@ -14,34 +16,20 @@ paths: {}
 components:
   schemas:
     OnRateAction:
-      $id: https://schema.beckn.io/OnRateAction/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
-      description: 'Beckn /beckn/on_rate callback envelope. Sent by a BPP to a BAP in response to a /beckn/rate call, optionally returning rating forms to collect structured feedback from the consumer.
+      title: On Rate Action
+      description: 'Beckn /beckn/on_rate message payload. Sent by a BPP to a BAP in
 
-        '
-      title: OnRateAction
+        response to a /beckn/rate call, optionally returning rating forms
+
+        to collect structured feedback from the consumer.
+
+        (Context wrapper stripped; only the message-content portion is inlined.)'
       type: object
+      additionalProperties: false
       properties:
-        context:
-          allOf:
-          - $ref: https://schema.beckn.io/Context/attributes.yaml#/components/schemas/Context
-          - type: object
-            properties:
-              action:
-                type: string
-                const: beckn/on_rate
-        message:
-          type: object
-          additionalProperties: true
-          properties:
-            ratingForms:
-              type: array
-              items:
-                $ref: https://schema.beckn.io/RatingForm/attributes.yaml#/components/schemas/RatingForm
-          required:
-          - ratingForms
+        ratings:
+          type: array
+          items:
+            $ref: https://schema.beckn.io/RatingInput/v2.1/attributes.yaml#/components/schemas/RatingInput
       required:
-      - context
-      - message
-      x-tags:
-      - common
+      - ratings

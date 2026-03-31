@@ -5,7 +5,9 @@ info:
   description: 'Catalog publish processing results from CDS to BPP.
 
 
-    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.'
+    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
+    and MUST NOT be extended. Any domain-specific extension must use the property
+    of this schema which is of type Attribute.'
   license:
     name: CC-BY-NC-SA 4.0 International
   contact:
@@ -15,10 +17,7 @@ paths: {}
 components:
   schemas:
     CatalogOnPublishAction:
-      description: 'Catalog publish processing results from CDS to BPP.
-
-
-        This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.'
+      description: Catalog publish processing results from CDS to BPP.
       type: object
       required:
       - results
@@ -27,5 +26,4 @@ components:
           type: array
           description: Per-catalog processing results
           items:
-            $ref: https://schema.beckn.io/CatalogProcessingResult/attributes.yaml#/components/schemas/CatalogProcessingResult
-      x-lts: true
+            $ref: https://schema.beckn.io/CatalogProcessingResult/v2.0/attributes.yaml#/components/schemas/CatalogProcessingResult

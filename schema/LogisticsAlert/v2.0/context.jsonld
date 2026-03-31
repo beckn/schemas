@@ -5,7 +5,20 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "beckn": "https://schema.beckn.io/",
-    "LogisticsAlert": "beckn:LogisticsAlert"
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "LogisticsAlert": "beckn:LogisticsAlert",
+    "actionRequired": "beckn:actionRequired",
+    "cause": "beckn:cause",
+    "id": "beckn:id",
+    "impactedETA": "beckn:impactedETA",
+    "message": "beckn:message",
+    "notificationChannels": "beckn:notificationChannels",
+    "resolvedAt": "beckn:resolvedAt",
+    "severity": "beckn:severity",
+    "shipmentId": "beckn:shipmentId",
+    "status": "beckn:status",
+    "suggestedAction": "beckn:suggestedAction",
+    "timestamp": "beckn:timestamp",
+    "type": "beckn:type"
   }
 }

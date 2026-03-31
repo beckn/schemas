@@ -2,7 +2,7 @@
   "@context": {
     "@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
     "schema": "https://schema.org/",
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "cra": "https://schema.beckn.io/CourseResourceAttributes#",
     "cra:courseLevel": {
       "@id": "cra:courseLevel"
@@ -59,39 +59,27 @@
     "schema:endDate": {
       "@id": "schema:endDate"
     },
-    "course_level": {
-      "@id": "cra:courseLevel"
-    },
-    "course_domain": {
-      "@id": "cra:courseDomain"
-    },
-    "delivery_mode": {
-      "@id": "cra:deliveryMode"
-    },
-    "duration": {
-      "@id": "schema:duration"
-    },
-    "location": {
-      "@id": "schema:location"
-    },
-    "capacity": {
-      "@id": "cra:capacity"
-    },
-    "schedule": {
-      "@id": "cra:schedule"
-    },
-    "prerequisites": {
-      "@id": "cra:prerequisites",
-      "@container": "@list"
-    },
-    "outcome_credential": {
-      "@id": "cra:outcomeCredential"
-    },
-    "industry_type": {
-      "@id": "cra:industryType"
-    },
+    "course_level": "beckn:course_level",
+    "course_domain": "beckn:course_domain",
+    "delivery_mode": "beckn:delivery_mode",
+    "duration": "beckn:duration",
+    "location": "beckn:location",
+    "capacity": "beckn:capacity",
+    "schedule": "beckn:schedule",
+    "prerequisites": "beckn:prerequisites",
+    "outcome_credential": "beckn:outcome_credential",
+    "industry_type": "beckn:industry_type",
     "CourseLevel": "cra:CourseLevel",
     "DeliveryMode": "cra:DeliveryMode",
-    "OutcomeCredentialCategory": "cra:OutcomeCredentialCategory"
+    "OutcomeCredentialCategory": "cra:OutcomeCredentialCategory",
+    "CourseResourceAttributes": "beckn:CourseResourceAttributes",
+    "category": "beckn:category",
+    "city": "beckn:city",
+    "country": "beckn:country",
+    "end_date": "beckn:end_date",
+    "name": "beckn:name",
+    "region": "beckn:region",
+    "session_pattern": "beckn:session_pattern",
+    "start_date": "beckn:start_date"
   }
 }

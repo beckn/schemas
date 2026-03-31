@@ -2,8 +2,8 @@
   "@context": {
     "GroceryItemAttributes": "beckn:GroceryItemAttributes",
     "nutrition": "beckn:nutrition",
-    "nutrient": "schema:name",
-    "value": "schema:value",
+    "nutrient": "beckn:nutrient",
+    "value": "beckn:value",
     "freshProduce": "beckn:freshProduce",
     "netQuantityDeclaration": "beckn:netQuantityDeclaration",
     "@version": 1.1,
@@ -11,6 +11,7 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "beckn": "https://schema.beckn.io/"
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "GroceryItem": "beckn:GroceryItem"
   }
 }

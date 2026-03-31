@@ -1,17 +1,14 @@
 {
   "title": "Asynchronous Error",
-  "description": "Error returned asynchronously during a callback. Wraps the base `Error` schema with JSON-LD type annotations to allow linked-data processing.\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.",
+  "description": "Error returned asynchronously during a callback. Wraps the base `Error` schema with JSON-LD type annotations to allow linked-data processing.",
   "allOf": [
     {
-      "$ref": "https://schema.beckn.io/Error/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Error/v2.0/schema.json#/components/schemas/Error"
     },
     {
       "type": "object",
       "properties": {},
       "additionalProperties": true
     }
-  ],
-  "x-lts": true,
-  "$id": "https://schema.beckn.io/AsyncError/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema"
+  ]
 }

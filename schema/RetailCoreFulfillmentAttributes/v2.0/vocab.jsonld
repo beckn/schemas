@@ -1,12 +1,33 @@
 {
   "@context": {
     "@version": 1.1,
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "owl": "http://www.w3.org/2002/07/owl#",
-    "schema": "https://schema.org/",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "RetailCoreFulfillmentAttributes": "beckn:RetailCoreFulfillmentAttributes",
+    "@type": "beckn:@type",
+    "address": "beckn:address",
+    "closures": "beckn:closures",
+    "contact": "beckn:contact",
+    "daysOfWeek": "beckn:daysOfWeek",
+    "deliveryDetails": "beckn:deliveryDetails",
+    "end": "beckn:end",
+    "endDate": "beckn:endDate",
+    "handling": "beckn:handling",
+    "max": "beckn:max",
+    "min": "beckn:min",
+    "name": "beckn:name",
+    "operatingHours": "beckn:operatingHours",
+    "phone": "beckn:phone",
+    "sla": "beckn:sla",
+    "start": "beckn:start",
+    "startDate": "beckn:startDate",
+    "supportedFulfillmentTypes": "beckn:supportedFulfillmentTypes",
+    "timeRange": "beckn:timeRange",
+    "unitBasis": "beckn:unitBasis"
   },
   "@graph": [
     {

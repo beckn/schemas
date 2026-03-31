@@ -2,7 +2,19 @@
   "@context": {
     "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "caoa": "https://schema.beckn.io/CandidateAvailabilityOfferAttributes#"
+    "caoa": "https://schema.beckn.io/CandidateAvailabilityOfferAttributes#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "CandidateAvailabilityOfferAttributes": "beckn:CandidateAvailabilityOfferAttributes",
+    "availability_window": "beckn:availability_window",
+    "desired_compensation_currency": "beckn:desired_compensation_currency",
+    "desired_compensation_max": "beckn:desired_compensation_max",
+    "desired_compensation_min": "beckn:desired_compensation_min",
+    "desired_compensation_period": "beckn:desired_compensation_period",
+    "end": "beckn:end",
+    "notice_period_days": "beckn:notice_period_days",
+    "preferred_contract_types": "beckn:preferred_contract_types",
+    "start": "beckn:start"
   },
   "@graph": [
     {
@@ -11,9 +23,29 @@
       "rdfs:label": "Desired Compensation Period",
       "rdfs:comment": "The time unit for a candidate's stated compensation expectation."
     },
-    { "@id": "caoa:ANNUAL",  "@type": "caoa:DesiredCompensationPeriod", "rdfs:label": "Annual",  "rdfs:comment": "Annual compensation expectation." },
-    { "@id": "caoa:MONTHLY", "@type": "caoa:DesiredCompensationPeriod", "rdfs:label": "Monthly", "rdfs:comment": "Monthly compensation expectation." },
-    { "@id": "caoa:DAILY",   "@type": "caoa:DesiredCompensationPeriod", "rdfs:label": "Daily",   "rdfs:comment": "Daily rate expectation." },
-    { "@id": "caoa:HOURLY",  "@type": "caoa:DesiredCompensationPeriod", "rdfs:label": "Hourly",  "rdfs:comment": "Hourly rate expectation." }
+    {
+      "@id": "caoa:ANNUAL",
+      "@type": "caoa:DesiredCompensationPeriod",
+      "rdfs:label": "Annual",
+      "rdfs:comment": "Annual compensation expectation."
+    },
+    {
+      "@id": "caoa:MONTHLY",
+      "@type": "caoa:DesiredCompensationPeriod",
+      "rdfs:label": "Monthly",
+      "rdfs:comment": "Monthly compensation expectation."
+    },
+    {
+      "@id": "caoa:DAILY",
+      "@type": "caoa:DesiredCompensationPeriod",
+      "rdfs:label": "Daily",
+      "rdfs:comment": "Daily rate expectation."
+    },
+    {
+      "@id": "caoa:HOURLY",
+      "@type": "caoa:DesiredCompensationPeriod",
+      "rdfs:label": "Hourly",
+      "rdfs:comment": "Hourly rate expectation."
+    }
   ]
 }

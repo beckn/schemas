@@ -1,44 +1,13 @@
 {
-  "$id": "https://schema.beckn.io/OnUpdateAction/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "Beckn /beckn/on_update callback envelope. Sent by a BPP to a BAP in response to a /beckn/update call (or as an unsolicited update push), returning the updated contract state.\n",
-  "title": "OnUpdateAction",
-  "type": "object",
+  "title": "On Update Action",
+  "description": "Beckn /beckn/on_update message payload. Sent by a BPP to a BAP in\nresponse to a /beckn/update call (or as an unsolicited update push),\nreturning the updated contract state.\n(Context wrapper stripped; only the message-content portion is inlined.)",
+  "additionalProperties": false,
   "properties": {
-    "context": {
-      "allOf": [
-        {
-          "$ref": "https://schema.beckn.io/Context/attributes.yaml"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "action": {
-              "type": "string",
-              "const": "beckn/on_update"
-            }
-          }
-        }
-      ]
-    },
-    "message": {
-      "type": "object",
-      "additionalProperties": true,
-      "properties": {
-        "contract": {
-          "$ref": "https://schema.beckn.io/Contract/attributes.yaml"
-        }
-      },
-      "required": [
-        "contract"
-      ]
+    "contract": {
+      "$ref": "https://schema.beckn.io/Contract/v2.0/schema.json#/components/schemas/Contract"
     }
   },
   "required": [
-    "context",
-    "message"
-  ],
-  "x-tags": [
-    "common"
+    "contract"
   ]
 }

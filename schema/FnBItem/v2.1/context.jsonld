@@ -6,33 +6,35 @@
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "schema": "https://schema.org/",
-    "beckn": "https://schema.beckn.io/",
-    "FnBItem": {
-      "@id": "beckn:FnBItem",
-      "@type": "rdfs:Class",
-      "rdfs:subClassOf": { "@id": "beckn:RetailItem" }
-    },
-    "classification": {
-      "@id": "beckn:classification"
-    },
-    "cuisine": {
-      "@id": "beckn:cuisine"
-    },
-    "preparation": {
-      "@id": "beckn:preparation",
-      "@type": "@id"
-    },
-    "allergenInfo": {
-      "@id": "beckn:allergenInfo",
-      "@type": "@id"
-    },
-    "nutritionalInfo": {
-      "@id": "beckn:nutritionalInfo",
-      "@type": "@id"
-    },
-    "additives": {
-      "@id": "beckn:additives",
-      "@container": "@list"
-    }
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "FnBItem": "beckn:FnBItem",
+    "classification": "beckn:classification",
+    "cuisine": "beckn:cuisine",
+    "preparation": "beckn:preparation",
+    "allergenInfo": "beckn:allergenInfo",
+    "nutritionalInfo": "beckn:nutritionalInfo",
+    "additives": "beckn:additives",
+    "@type": "beckn:@type",
+    "carbohydratesG": "beckn:carbohydratesG",
+    "contains": "beckn:contains",
+    "energyKcal": "beckn:energyKcal",
+    "energyKj": "beckn:energyKj",
+    "fatG": "beckn:fatG",
+    "fibreG": "beckn:fibreG",
+    "freeFrom": "beckn:freeFrom",
+    "instructions": "beckn:instructions",
+    "mayContain": "beckn:mayContain",
+    "notes": "beckn:notes",
+    "proteinG": "beckn:proteinG",
+    "quantity": "beckn:quantity",
+    "saltG": "beckn:saltG",
+    "saturatedFatG": "beckn:saturatedFatG",
+    "servingSize": "beckn:servingSize",
+    "shelfLife": "beckn:shelfLife",
+    "sodiumMg": "beckn:sodiumMg",
+    "storage": "beckn:storage",
+    "sugarsG": "beckn:sugarsG",
+    "type": "beckn:type",
+    "value": "beckn:value"
   }
 }

@@ -1,44 +1,14 @@
 {
-  "$id": "https://schema.beckn.io/OnTrackAction/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "Beckn /beckn/on_track callback envelope. Sent by a BPP to a BAP in response to a /beckn/track call, returning a Tracking handle with the URL and/or WebSocket endpoint for real-time fulfillment tracking.\n",
-  "title": "OnTrackAction",
+  "title": "On Track Action",
+  "description": "Beckn /beckn/on_track message payload. Sent by a BPP to a BAP in\nresponse to a /beckn/track call, returning a Tracking handle with\nthe URL and/or WebSocket endpoint for real-time fulfillment tracking.\n(Context wrapper stripped; only the message-content portion is inlined.)",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
-    "context": {
-      "allOf": [
-        {
-          "$ref": "https://schema.beckn.io/Context/attributes.yaml"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "action": {
-              "type": "string",
-              "const": "beckn/on_track"
-            }
-          }
-        }
-      ]
-    },
-    "message": {
-      "type": "object",
-      "additionalProperties": true,
-      "properties": {
-        "tracking": {
-          "$ref": "https://schema.beckn.io/Tracking/attributes.yaml"
-        }
-      },
-      "required": [
-        "tracking"
-      ]
+    "tracking": {
+      "$ref": "https://schema.beckn.io/Tracking/v2.0/schema.json#/components/schemas/Tracking"
     }
   },
   "required": [
-    "context",
-    "message"
-  ],
-  "x-tags": [
-    "common"
+    "tracking"
   ]
 }

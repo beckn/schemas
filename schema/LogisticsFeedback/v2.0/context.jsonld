@@ -5,7 +5,16 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "beckn": "https://schema.beckn.io/",
-    "LogisticsFeedback": "beckn:LogisticsFeedback"
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "LogisticsFeedback": "beckn:LogisticsFeedback",
+    "id": "beckn:id",
+    "isPublic": "beckn:isPublic",
+    "rating": "beckn:rating",
+    "review": "beckn:review",
+    "shipmentId": "beckn:shipmentId",
+    "submittedAt": "beckn:submittedAt",
+    "submittedBy": "beckn:submittedBy",
+    "tags": "beckn:tags",
+    "wouldRecommend": "beckn:wouldRecommend"
   }
 }

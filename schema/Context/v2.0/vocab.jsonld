@@ -1,12 +1,33 @@
 {
   "@context": {
     "@version": 1.1,
-    "beckn": "https://schema.beckn.io/",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
     "owl": "http://www.w3.org/2002/07/owl#",
-    "schema": "https://schema.org/",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Context": "beckn:Context",
+    "action": "beckn:action",
+    "bapId": "beckn:bapId",
+    "bapUri": "beckn:bapUri",
+    "bppId": "beckn:bppId",
+    "bppUri": "beckn:bppUri",
+    "city": "beckn:city",
+    "code": "beckn:code",
+    "country": "beckn:country",
+    "digest": "beckn:digest",
+    "domain": "beckn:domain",
+    "key": "beckn:key",
+    "location": "beckn:location",
+    "messageId": "beckn:messageId",
+    "networkId": "beckn:networkId",
+    "requestDigest": "beckn:requestDigest",
+    "schemaContext": "beckn:schemaContext",
+    "timestamp": "beckn:timestamp",
+    "transactionId": "beckn:transactionId",
+    "ttl": "beckn:ttl",
+    "version": "beckn:version"
   },
   "@graph": [
     {

@@ -1,11 +1,13 @@
 {
-  "$id": "https://schema.beckn.io/Signature/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Signature",
-  "description": "A digitally signed authentication credential in the HTTP `Authorization` header.\nFollows draft-cavage-http-signatures-12 as profiled by BECKN-006.\n\nFormat:\n```\nSignature keyId=\"{subscriberId}|{uniqueKeyId}|{algorithm}\",algorithm=\"{algorithm}\",created=\"{unixTimestamp}\",expires=\"{unixTimestamp}\",headers=\"{signedHeaders}\",signature=\"{base64Signature}\"\n```\n\n| Attribute | Description |\n|-----------|-------------|\n| `keyId` | `{subscriberId}\\|{uniqueKeyId}\\|{algorithm}` — FQDN, registry UUID, signing algorithm |\n| `algorithm` | MUST be `ed25519` |\n| `created` | Unix timestamp when the signature was created |\n| `expires` | Unix timestamp when the signature expires |\n| `headers` | Space-separated signed headers. MUST include `(created)`, `(expires)`, `digest` |\n| `signature` | Base64-encoded Ed25519 signature over the signing string |\n\nSigning string:\n`(created): {value}\\n(expires): {value}\\ndigest: BLAKE-512={digest}`\nwhere `digest` is a BLAKE2b-512 hash of the request body, Base64-encoded.\n",
-  "x-tags": [
-    "common"
-  ],
+  "title": "Beckn HTTP Signature",
+  "description": "A digitally signed authentication credential in the HTTP `Authorization` header.\nFollows draft-cavage-http-signatures-12 as profiled by BECKN-006.\n\nformat:\n```\nSignature keyId=\"{subscriberId}|{uniqueKeyId}|{algorithm}\",\n algorithm=\"{algorithm}\",created=\"{unixTimestamp}\",expires=\"{unixTimestamp}\",\n headers=\"{signedHeaders}\",signature=\"{base64Signature}\"\n```\n\n| Attribute | Description |\n|-----------|-------------|\n| `keyId` | `{subscriberId}|{uniqueKeyId}|{algorithm}` — FQDN, registry UUID, algorithm |\n| `algorithm` | MUST be `ed25519` |\n| `created` | Unix timestamp when the signature was created |\n| `expires` | Unix timestamp when the signature expires |\n| `headers` | Space-separated signed headers. MUST include `(created)`, `(expires)`, `digest` |\n| `signature` | Base64-encoded Ed25519 signature over the signing string |\n\nSigning string:\n`(created): {value}\\n(expires): {value}\\ndigest: BLAKE-512={digest}`\nwhere `digest` is a BLAKE2b-512 hash of the request body, Base64-encoded.",
   "type": "string",
-  "pattern": "^Signature keyId=\"[^|\"]+\\|[^|\"]+\\|[^\"]+\",algorithm=\"[^\"]+\",created=\"\\d+\",expires=\"\\d+\",headers=\"[^\"]+\",signature=\"[A-Za-z0-9+/]+=*\"$"
+  "pattern": "^Signature keyId=\"[^|\"]+\\|[^|\"]+\\|[^\"]+\",algorithm=\"[^\"]+\",created=\"\\d+\",expires=\"\\d+\",headers=\"[^\"]+\",signature=\"[A-Za-z0-9+/]+=*\"$",
+  "components": {
+    "schemas": {
+      "Signature": {
+        "$ref": "#"
+      }
+    }
+  }
 }

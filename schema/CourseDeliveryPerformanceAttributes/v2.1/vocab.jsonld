@@ -2,13 +2,52 @@
   "@context": {
     "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "cdpa": "https://schema.beckn.io/CourseDeliveryPerformanceAttributes#"
+    "cdpa": "https://schema.beckn.io/CourseDeliveryPerformanceAttributes#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "CourseDeliveryPerformanceAttributes": "beckn:CourseDeliveryPerformanceAttributes",
+    "assessment_required": "beckn:assessment_required",
+    "attendance_tracking": "beckn:attendance_tracking",
+    "completion_criteria": "beckn:completion_criteria",
+    "completion_status": "beckn:completion_status",
+    "delivery_url": "beckn:delivery_url",
+    "duration": "beckn:duration",
+    "issued_credential_ref": "beckn:issued_credential_ref",
+    "min_attendance_pct": "beckn:min_attendance_pct",
+    "session_date": "beckn:session_date",
+    "session_schedule": "beckn:session_schedule",
+    "topic": "beckn:topic"
   },
   "@graph": [
-    { "@id": "cdpa:CompletionStatus", "@type": "rdfs:Class", "rdfs:label": "Completion Status", "rdfs:comment": "The learner's course completion state." },
-    { "@id": "cdpa:NOT_STARTED",  "@type": "cdpa:CompletionStatus", "rdfs:label": "Not Started",  "rdfs:comment": "Learner has not yet begun the course." },
-    { "@id": "cdpa:IN_PROGRESS",  "@type": "cdpa:CompletionStatus", "rdfs:label": "In Progress",  "rdfs:comment": "Learner is actively undertaking the course." },
-    { "@id": "cdpa:COMPLETED",    "@type": "cdpa:CompletionStatus", "rdfs:label": "Completed",    "rdfs:comment": "Learner has met all completion criteria." },
-    { "@id": "cdpa:FAILED",       "@type": "cdpa:CompletionStatus", "rdfs:label": "Failed",       "rdfs:comment": "Learner did not meet completion criteria." }
+    {
+      "@id": "cdpa:CompletionStatus",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Completion Status",
+      "rdfs:comment": "The learner's course completion state."
+    },
+    {
+      "@id": "cdpa:NOT_STARTED",
+      "@type": "cdpa:CompletionStatus",
+      "rdfs:label": "Not Started",
+      "rdfs:comment": "Learner has not yet begun the course."
+    },
+    {
+      "@id": "cdpa:IN_PROGRESS",
+      "@type": "cdpa:CompletionStatus",
+      "rdfs:label": "In Progress",
+      "rdfs:comment": "Learner is actively undertaking the course."
+    },
+    {
+      "@id": "cdpa:COMPLETED",
+      "@type": "cdpa:CompletionStatus",
+      "rdfs:label": "Completed",
+      "rdfs:comment": "Learner has met all completion criteria."
+    },
+    {
+      "@id": "cdpa:FAILED",
+      "@type": "cdpa:CompletionStatus",
+      "rdfs:label": "Failed",
+      "rdfs:comment": "Learner did not meet completion criteria."
+    }
   ]
 }
