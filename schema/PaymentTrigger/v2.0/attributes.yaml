@@ -2,16 +2,19 @@ openapi: 3.1.1
 info:
   title: PaymentTrigger
   version: 2.0.0
-  description: Describes when in the order lifecycle a payment flow should be triggered.
-    Typically useful for initiating checkouts and settlement flows.
+  description: Describes when in the order lifecycle a payment flow should be triggered. Typically useful for initiating checkouts and settlement flows.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     PaymentTrigger:
       $id: https://schema.beckn.io/PaymentTrigger/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: Describes when in the order lifecycle a payment flow should be
-        triggered. Typically useful for initiating checkouts and settlement flows.
+      description: Describes when in the order lifecycle a payment flow should be triggered. Typically useful for initiating checkouts and settlement flows.
       title: PaymentTrigger
       type: string
       enum:

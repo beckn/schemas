@@ -3,15 +3,18 @@ info:
   title: Waypoint
   version: 2.0.0
   description: Schema definition for the Waypoint entity in the Beckn Logistics domain.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     Waypoint:
       type: object
       title: Waypoint
-      description: 'A Waypoint is an intermediate stop or checkpoint on a logistics
-        route, such as a sorting hub, relay station, or customs checkpoint. Maps to
-        beckn:Stop.
+      description: 'A Waypoint is an intermediate stop or checkpoint on a logistics route, such as a sorting hub, relay station, or customs checkpoint. Maps to beckn:Stop.
 
         '
       required:

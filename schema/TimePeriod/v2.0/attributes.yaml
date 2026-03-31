@@ -3,6 +3,11 @@ info:
   title: TimePeriod
   version: 2.0.0
   description: Time window with date-time precision for availability/validity
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:

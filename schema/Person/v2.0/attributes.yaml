@@ -3,6 +3,11 @@ info:
   title: Person
   version: 2.0.0
   description: A person (alive, deceased, or fictional). Modeled after schema.org/Person.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -81,8 +86,7 @@ components:
           x-jsonld:
             '@id': schema:hasSkill
         personAttributes:
-          description: Extensible attribute pack for jurisdictional or domain-specific
-            person properties
+          description: Extensible attribute pack for jurisdictional or domain-specific person properties
           $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
       required:
       - '@context'

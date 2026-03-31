@@ -3,14 +3,18 @@ info:
   title: Operator
   version: 2.0.0
   description: Schema for Operator in Beckn Logistics domain.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     LogisticsOperator:
       type: object
       title: Operator
-      description: Entity operating a logistics network or fleet, responsible for
-        end-to-end delivery service.
+      description: Entity operating a logistics network or fleet, responsible for end-to-end delivery service.
       required:
       - id
       - name

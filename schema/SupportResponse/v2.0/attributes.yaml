@@ -2,20 +2,21 @@ openapi: 3.1.1
 info:
   title: SupportResponse
   version: 2.0.0
-  description: 'Support response payload returned by a BPP to a BAP in the /beckn/on_support
-    callback. Contains the support ticket reference, available contact channels, SLA
-    commitment, and optional consumer acknowledgement details.
+  description: 'Support response payload returned by a BPP to a BAP in the /beckn/on_support callback. Contains the support ticket reference, available contact channels, SLA commitment, and optional consumer acknowledgement details.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     SupportResponse:
       $id: https://schema.beckn.io/SupportResponse/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: 'Support response payload returned by a BPP to a BAP in the /beckn/on_support
-        callback. Contains the support ticket reference, available contact channels,
-        SLA commitment, and optional consumer acknowledgement details.
+      description: 'Support response payload returned by a BPP to a BAP in the /beckn/on_support callback. Contains the support ticket reference, available contact channels, SLA commitment, and optional consumer acknowledgement details.
 
         '
       title: SupportResponse
@@ -31,8 +32,7 @@ components:
           type: string
           const: beckn:SupportResponse
         refId:
-          description: Reference identifier (typically the order ID) against which
-            support was requested.
+          description: Reference identifier (typically the order ID) against which support was requested.
           type: string
         ticketId:
           description: Support ticket identifier assigned by the BPP.
@@ -73,8 +73,7 @@ components:
           additionalProperties: false
           properties:
             responseTime:
-              description: Expected initial response time as ISO 8601 duration (e.g.,
-                PT2H).
+              description: Expected initial response time as ISO 8601 duration (e.g., PT2H).
               type: string
             resolutionTime:
               description: Expected resolution time as ISO 8601 duration (e.g., P1D).

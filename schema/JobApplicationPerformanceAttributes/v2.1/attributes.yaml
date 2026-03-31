@@ -2,20 +2,20 @@ openapi: 3.1.1
 info:
   title: JobApplicationPerformanceAttributes
   version: 2.1.0
-  description: 'Beckn v2.1 extension schema for the performanceAttributes container.
-    Captures the execution details of the credential verification and application
-    routing service performed as part of a job application. Performance mode is SERVICE.
+  description: 'Beckn v2.1 extension schema for the performanceAttributes container. Captures the execution details of the credential verification and application routing service performed as part of a job application. Performance mode is SERVICE.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     JobApplicationPerformanceAttributes:
       type: object
-      description: 'Execution metadata for the verification and routing service performed
-        during a job application. Includes the verification method used, per-requirement
-        results, proof integrity reference, and routing outcome. No VC or VP payloads
-        are stored.
+      description: 'Execution metadata for the verification and routing service performed during a job application. Includes the verification method used, per-requirement results, proof integrity reference, and routing outcome. No VC or VP payloads are stored.
 
         '
       x-beckn-container: performanceAttributes
@@ -23,8 +23,7 @@ components:
       properties:
         verification_method:
           type: string
-          description: Primary method used to verify credentials in this performance
-            unit.
+          description: Primary method used to verify credentials in this performance unit.
           x-jsonld-id: japa:verificationMethod
           enum:
           - VC
@@ -34,8 +33,7 @@ components:
           - HYBRID
         per_requirement_results:
           type: array
-          description: 'Granular verification outcome per requirement. Mandatory requirements
-            that FAIL block routing to the employer.
+          description: 'Granular verification outcome per requirement. Mandatory requirements that FAIL block routing to the employer.
 
             '
           x-jsonld-id: japa:perRequirementResults
@@ -65,8 +63,7 @@ components:
                 x-jsonld-id: cr:mandatory
         proof_hash:
           type: string
-          description: 'SHA-256 hash of the Verifiable Presentation (VP) used during
-            verification. Provides integrity reference; no VP payload stored.
+          description: 'SHA-256 hash of the Verifiable Presentation (VP) used during verification. Provides integrity reference; no VP payload stored.
 
             '
           x-jsonld-id: japa:proofHash
@@ -78,8 +75,7 @@ components:
             type: string
         routed_to_provider:
           type: boolean
-          description: 'Whether the application was successfully forwarded to the
-            employer after verification. False if mandatory requirements failed.
+          description: 'Whether the application was successfully forwarded to the employer after verification. False if mandatory requirements failed.
 
             '
           x-jsonld-id: japa:routedToProvider

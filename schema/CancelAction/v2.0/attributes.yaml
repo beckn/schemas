@@ -2,20 +2,21 @@ openapi: 3.1.1
 info:
   title: CancelAction
   version: 2.0.0
-  description: 'Beckn /beckn/cancel action envelope. Sent by a BAP to a BPP to request
-    cancellation of an active contract. Set context.try to true to first retrieve
-    cancellation terms and fees before committing.
+  description: 'Beckn /beckn/cancel action envelope. Sent by a BAP to a BPP to request cancellation of an active contract. Set context.try to true to first retrieve cancellation terms and fees before committing.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     CancelAction:
       $id: https://schema.beckn.io/CancelAction/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: 'Beckn /beckn/cancel action envelope. Sent by a BAP to a BPP to
-        request cancellation of an active contract. Set context.try to true to first
-        retrieve cancellation terms and fees before committing.
+      description: 'Beckn /beckn/cancel action envelope. Sent by a BAP to a BPP to request cancellation of an active contract. Set context.try to true to first retrieve cancellation terms and fees before committing.
 
         '
       title: CancelAction

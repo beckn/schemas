@@ -3,6 +3,11 @@ info:
   title: SupportInfo
   version: 2.1.0
   description: Canonical support contact for an entity, mapped to schema.org ContactPoint.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -57,8 +62,7 @@ components:
           type: string
           format: uri
         callbackStatus:
-          description: Status of a support callback request. Indicates whether a callback
-            has been requested, scheduled, or completed.
+          description: Status of a support callback request. Indicates whether a callback has been requested, scheduled, or completed.
           type: string
       required:
       - '@context'

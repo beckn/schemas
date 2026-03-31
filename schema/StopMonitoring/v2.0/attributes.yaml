@@ -2,16 +2,19 @@ openapi: 3.1.1
 info:
   title: StopMonitoring
   version: 2.0.0
-  description: Schema definition for the StopMonitoring entity in the Beckn Mobility
-    domain.
+  description: Schema definition for the StopMonitoring entity in the Beckn Mobility domain.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     StopMonitoring:
       type: object
       title: StopMonitoring
-      description: 'Attributes for the StopMonitoring entity in the Beckn Mobility
-        domain.
+      description: 'Attributes for the StopMonitoring entity in the Beckn Mobility domain.
 
         '
       properties: {}

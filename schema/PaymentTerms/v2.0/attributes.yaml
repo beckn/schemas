@@ -3,6 +3,11 @@ info:
   title: PaymentTerms
   version: 2.0.0
   description: Schema definition for PaymentTerms in the Beckn Protocol v2.0.1
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -23,9 +28,7 @@ components:
           type: string
           const: beckn:PaymentTerm
         collectedBy:
-          description: Describes the entity that first collects the payment from the
-            consumer. This is the actor who is responsible to initiate the settlement
-            process as per the terms described in the settlementTerms property.
+          description: Describes the entity that first collects the payment from the consumer. This is the actor who is responsible to initiate the settlement process as per the terms described in the settlementTerms property.
           type: string
           enum:
           - BAP
@@ -38,11 +41,9 @@ components:
           items:
             $ref: https://schema.beckn.io/SettlementTerm/attributes.yaml#/components/schemas/SettlementTerm
         checkoutTrigger:
-          description: The stage in the order lifecycle when the checkout should be
-            triggered
+          description: The stage in the order lifecycle when the checkout should be triggered
           $ref: https://schema.beckn.io/PaymentTrigger/attributes.yaml#/components/schemas/PaymentTrigger
         paymentTermsAttributes:
-          description: 'Rail-specific attribute pack (e.g., UPI: VPA/UTR; CARD: token/3DS;
-            BNPL: plan/schedule)'
+          description: 'Rail-specific attribute pack (e.g., UPI: VPA/UTR; CARD: token/3DS; BNPL: plan/schedule)'
           $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
       additionalProperties: false

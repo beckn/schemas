@@ -3,15 +3,18 @@ info:
   title: Carrier
   version: 2.0.0
   description: Schema definition for the Carrier entity in the Beckn Logistics domain.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     Carrier:
       type: object
       title: Carrier
-      description: 'A Carrier is a transport service provider responsible for moving
-        goods across distances. Carriers operate fleets of vehicles and may own/manage
-        logistics hubs. Maps to beckn:Provider.
+      description: 'A Carrier is a transport service provider responsible for moving goods across distances. Carriers operate fleets of vehicles and may own/manage logistics hubs. Maps to beckn:Provider.
 
         '
       required:

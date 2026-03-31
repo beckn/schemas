@@ -2,11 +2,12 @@ openapi: 3.1.1
 info:
   title: BecknEndpoint
   version: 2.0.0
-  description: A Beckn protocol endpoint identifier. Must start with the prefix "beckn/"
-    followed by one or more lowercase segments (letters and underscores only) separated
-    by forward slashes. Standard endpoints are listed in the oneOf below with their
-    descriptions. New actors may define extension endpoints without modifying this
-    schema — the pattern accepts any conforming beckn/ prefixed string.
+  description: A Beckn protocol endpoint identifier. Must start with the prefix "beckn/" followed by one or more lowercase segments (letters and underscores only) separated by forward slashes. Standard endpoints are listed in the oneOf below with their descriptions. New actors may define extension endpoints without modifying this schema — the pattern accepts any conforming beckn/ prefixed string.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -16,91 +17,39 @@ components:
       title: BecknEndpoint
       x-tags:
       - common
-      description: A Beckn protocol endpoint identifier. Must start with the prefix
-        "beckn/" followed by one or more lowercase segments (letters and underscores
-        only) separated by forward slashes. Standard endpoints are listed in the oneOf
-        below with their descriptions. New actors may define extension endpoints without
-        modifying this schema — the pattern accepts any conforming beckn/ prefixed
-        string.
+      description: A Beckn protocol endpoint identifier. Must start with the prefix "beckn/" followed by one or more lowercase segments (letters and underscores only) separated by forward slashes. Standard endpoints are listed in the oneOf below with their descriptions. New actors may define extension endpoints without modifying this schema — the pattern accepts any conforming beckn/ prefixed string.
       type: string
       pattern: ^beckn\/[a-z_]+(?:\/[a-z_]+)*$
       oneOf:
       - title: Discover
-        description: Search and discover catalogs on an open network. This endpoint
-          can be implemented by Catalog Discovery Services, and BPPs. Supports text
-          search, JSONPath-based filtering (RFC 9535), or both together with automatic
-          schema adaptation. Returns an ACK/NACK confirming receipt/validation. Can
-          be implemented by any entity hosting catalogs.
+        description: Search and discover catalogs on an open network. This endpoint can be implemented by Catalog Discovery Services, and BPPs. Supports text search, JSONPath-based filtering (RFC 9535), or both together with automatic schema adaptation. Returns an ACK/NACK confirming receipt/validation. Can be implemented by any entity hosting catalogs.
         const: beckn/discover
       - title: OnDiscover
-        description: Callback endpoint that contains Catalogs hosted by multiple BPPs.
-          This endpoint is called by the BPP to return the search results after processing
-          the discover request. Returns only an ACK/NACK confirming receipt and validation
-          of the catalog payload.
+        description: Callback endpoint that contains Catalogs hosted by multiple BPPs. This endpoint is called by the BPP to return the search results after processing the discover request. Returns only an ACK/NACK confirming receipt and validation of the catalog payload.
         const: beckn/on_discover
       - title: Select
-        description: The BAP selects the items, item quantities, associated offers,
-          coupon codes, sometimes a proposed bid against a specific selection, and
-          requests the BPP to provide a quote. This action is performed without sharing
-          any PII of the consumer. Particularly useful when the BAP and BPP have an
-          ongoing commercial agreement that allows special rates and entitlements.
-          Also used for placing anonymous bids during auctions.
+        description: The BAP selects the items, item quantities, associated offers, coupon codes, sometimes a proposed bid against a specific selection, and requests the BPP to provide a quote. This action is performed without sharing any PII of the consumer. Particularly useful when the BAP and BPP have an ongoing commercial agreement that allows special rates and entitlements. Also used for placing anonymous bids during auctions.
         const: beckn/select
       - title: OnSelect
-        description: The BPP calculates the total cost, evaluates offers, verifies
-          coupon codes, the proposed bid (if allowed) against a specific selection,
-          and generates a quote. At this stage, it is recommended for the BPP to check
-          the inventory for availability of items or serviceability of the order.
-          In the case of auctions, the BPP can return the value of the highest bid
-          to prompt the BAP user to match or outbid the current value. Furthermore,
-          the BPP may require additional information via links to external forms before
-          proceeding with the order.
+        description: The BPP calculates the total cost, evaluates offers, verifies coupon codes, the proposed bid (if allowed) against a specific selection, and generates a quote. At this stage, it is recommended for the BPP to check the inventory for availability of items or serviceability of the order. In the case of auctions, the BPP can return the value of the highest bid to prompt the BAP user to match or outbid the current value. Furthermore, the BPP may require additional information via links to external forms before proceeding with the order.
         const: beckn/on_select
       - title: Init
-        description: BAP initiates the final order by providing all billing, fulfillment,
-          and source payment information required for calculating the final terms
-          of the order, and also references to any form data that may have been submitted
-          outside the transaction layer in previous interactions. Upon receiving a
-          successful ACK response, the BAP should expect an on_init containing the
-          final draft order with payment terms. The BAP must ensure that any form
-          links are hosted on a trusted domain with a valid SSL certificate.
+        description: BAP initiates the final order by providing all billing, fulfillment, and source payment information required for calculating the final terms of the order, and also references to any form data that may have been submitted outside the transaction layer in previous interactions. Upon receiving a successful ACK response, the BAP should expect an on_init containing the final draft order with payment terms. The BAP must ensure that any form links are hosted on a trusted domain with a valid SSL certificate.
         const: beckn/init
       - title: OnInit
-        description: BPP provides the final draft of the order after processing the
-          billing, fulfillment, and source payment information provided by the buyer.
-          In this state, the BPP can also send a personalized quote, payment terms,
-          and freebies based on the credentials of the buyer. The BPP can also attach
-          additional form links to the Order object requesting the BAP for additional
-          information such as KYC forms, T&Cs, disclaimers, or declarations. The final
-          on_init call with the draft order MUST contain a credentialized receipt
-          of all form data the BAP user has submitted outside the Beckn API layer.
-          Only the final on_init callback SHOULD contain the payment terms of the
-          BPP.
+        description: BPP provides the final draft of the order after processing the billing, fulfillment, and source payment information provided by the buyer. In this state, the BPP can also send a personalized quote, payment terms, and freebies based on the credentials of the buyer. The BPP can also attach additional form links to the Order object requesting the BAP for additional information such as KYC forms, T&Cs, disclaimers, or declarations. The final on_init call with the draft order MUST contain a credentialized receipt of all form data the BAP user has submitted outside the Beckn API layer. Only the final on_init callback SHOULD contain the payment terms of the BPP.
         const: beckn/on_init
       - title: Confirm
-        description: BAP accepts and fulfills any terms required before order confirmation,
-          such as payment proofs/references, links to attested documents, form data
-          with submission reference, and authorization tokens; and requests the BPP
-          to confirm the order.
+        description: BAP accepts and fulfills any terms required before order confirmation, such as payment proofs/references, links to attested documents, form data with submission reference, and authorization tokens; and requests the BPP to confirm the order.
         const: beckn/confirm
       - title: OnConfirm
-        description: BPP evaluates if all the terms and conditions required for the
-          creation of the order have been accepted and fulfilled (including payment),
-          and sends a confirmed order with Order ID with the latest state of fulfillment.
+        description: BPP evaluates if all the terms and conditions required for the creation of the order have been accepted and fulfilled (including payment), and sends a confirmed order with Order ID with the latest state of fulfillment.
         const: beckn/on_confirm
       - title: Status
         description: BAP requests the latest state of the order.
         const: beckn/status
       - title: OnStatus
-        description: BPP sends the latest state of the order with fulfillment status.
-          The BPP can independently call this endpoint any number of times without
-          the BAP explicitly requesting it. However, the BPP must receive at least
-          one status request from the BAP to initiate the on_status callback stream.
-          The purpose of this endpoint is to notify the BAP users about any changes
-          in the state of fulfillment. This endpoint is NOT for real-time tracking
-          — only status updates worth notifying the user through a push notification.
-          It is strongly recommended for BAPs to NOT long poll the BPP with status
-          requests.
+        description: BPP sends the latest state of the order with fulfillment status. The BPP can independently call this endpoint any number of times without the BAP explicitly requesting it. However, the BPP must receive at least one status request from the BAP to initiate the on_status callback stream. The purpose of this endpoint is to notify the BAP users about any changes in the state of fulfillment. This endpoint is NOT for real-time tracking — only status updates worth notifying the user through a push notification. It is strongly recommended for BAPs to NOT long poll the BPP with status requests.
         const: beckn/on_status
       - title: Track
         description: Request to track an active order in real-time.
@@ -109,38 +58,25 @@ components:
         description: Send real-time tracking handles for an active order.
         const: beckn/on_track
       - title: Update
-        description: The BAP requests the BPP to update an active order and recalculate
-          the terms, including payment. The updates may involve change of items, item
-          quantities, billing information, fulfillment information, or payment information.
+        description: The BAP requests the BPP to update an active order and recalculate the terms, including payment. The updates may involve change of items, item quantities, billing information, fulfillment information, or payment information.
         const: beckn/update
       - title: OnUpdate
-        description: The BPP sends an updated order with recalculated quote and payment
-          terms. Typical scenarios include a fulfillment agent being allocated or
-          reallocated, items updated or removed from the order, or payment information
-          updated. This endpoint can be called any number of times by the BPP without
-          the BAP explicitly requesting for it. The BPP may also use the on_update
-          endpoint to request the user for additional information submitted via external
-          form links. Each on_update call with the draft order MUST contain a credentialized
-          receipt of all form data the BAP user has submitted outside the Beckn API
-          layer.
+        description: The BPP sends an updated order with recalculated quote and payment terms. Typical scenarios include a fulfillment agent being allocated or reallocated, items updated or removed from the order, or payment information updated. This endpoint can be called any number of times by the BPP without the BAP explicitly requesting for it. The BPP may also use the on_update endpoint to request the user for additional information submitted via external form links. Each on_update call with the draft order MUST contain a credentialized receipt of all form data the BAP user has submitted outside the Beckn API layer.
         const: beckn/on_update
       - title: Cancel
         description: Request to cancel an order.
         const: beckn/cancel
       - title: OnCancel
-        description: Provider returns the cancelled order, which may reflect a refund
-          or payment update via PaymentRef.
+        description: Provider returns the cancelled order, which may reflect a refund or payment update via PaymentRef.
         const: beckn/on_cancel
       - title: Rate
         description: Rate any aspect of an order.
         const: beckn/rate
       - title: OnRate
-        description: Provider acknowledges and returns a rating receipt, optionally
-          with an aggregate snapshot.
+        description: Provider acknowledges and returns a rating receipt, optionally with an aggregate snapshot.
         const: beckn/on_rate
       - title: Support
-        description: Request support details for an entity such as an order, item,
-          or provider.
+        description: Request support details for an entity such as an order, item, or provider.
         const: beckn/support
       - title: OnSupport
         description: Provider returns support details.

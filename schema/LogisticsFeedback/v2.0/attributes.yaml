@@ -3,14 +3,18 @@ info:
   title: Feedback
   version: 2.0.0
   description: Schema for Feedback in Beckn Logistics domain.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     LogisticsFeedback:
       type: object
       title: Feedback
-      description: Qualitative feedback from sender or receiver about a logistics
-        experience.
+      description: Qualitative feedback from sender or receiver about a logistics experience.
       properties:
         id:
           type: string

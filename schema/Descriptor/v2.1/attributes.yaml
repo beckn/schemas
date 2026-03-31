@@ -5,9 +5,12 @@ info:
   description: 'Schema definition for Descriptor in the Beckn Protocol v2.0.1
 
 
-    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
-    and MUST NOT be extended. Any domain-specific extension must use the property
-    of this schema which is of type Attribute.'
+    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.'
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -16,23 +19,17 @@ components:
       description: 'Schema definition for Descriptor in the Beckn Protocol v2.0.1
 
 
-        This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
-        and MUST NOT be extended. Any domain-specific extension must use the property
-        of this schema which is of type Attribute.'
+        This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.'
       title: Descriptor
       type: object
       properties:
         code:
-          description: A machine-readable code identifying the state or type of the
-            entity being described. The valid values for this field are defined by
-            the context in which the Descriptor is used (e.g. DRAFT, ACTIVE, CANCELLED,
-            COMPLETE for a Contract status).
+          description: A machine-readable code identifying the state or type of the entity being described. The valid values for this field are defined by the context in which the Descriptor is used (e.g. DRAFT, ACTIVE, CANCELLED, COMPLETE for a Contract status).
           type: string
         longDesc:
           description: Detailed description of the item
           type: string
-          example: Powerful gaming laptop with NVIDIA RTX graphics, fast SSD storage,
-            and high-refresh display
+          example: Powerful gaming laptop with NVIDIA RTX graphics, fast SSD storage, and high-refresh display
         shortDesc:
           description: Short description of the item
           type: string

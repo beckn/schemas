@@ -5,9 +5,12 @@ info:
   description: 'Message payload for catalog/pull
 
 
-    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
-    and MUST NOT be extended. Any domain-specific extension must use the property
-    of this schema which is of type Attribute.'
+    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.'
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -16,9 +19,7 @@ components:
       description: 'Message payload for catalog/pull
 
 
-        This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
-        and MUST NOT be extended. Any domain-specific extension must use the property
-        of this schema which is of type Attribute.'
+        This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.'
       required:
       - mode
       properties:
@@ -27,9 +28,7 @@ components:
           enum:
           - FULL
           - INCREMENTAL
-          description: "- `FULL` — returns the latest version of each matching catalog.\n\
-            - `INCREMENTAL` — returns all catalog versions indexed between\n  `fromDate`\
-            \ and `toDate` (inclusive).\n"
+          description: "- `FULL` — returns the latest version of each matching catalog.\n- `INCREMENTAL` — returns all catalog versions indexed between\n  `fromDate` and `toDate` (inclusive).\n"
         filters:
           type: object
           description: Optional filters narrowing which catalogs are returned
@@ -54,8 +53,7 @@ components:
         limit:
           type: integer
           minimum: 1
-          description: Maximum number of catalogs to return (server may apply its
-            own cap)
+          description: Maximum number of catalogs to return (server may apply its own cap)
         fromDate:
           type: string
           format: date-time

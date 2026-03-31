@@ -2,8 +2,7 @@ openapi: 3.1.1
 info:
   title: Signature
   version: 2.0.0
-  description: 'A digitally signed authentication credential in the HTTP `Authorization`
-    header.
+  description: 'A digitally signed authentication credential in the HTTP `Authorization` header.
 
     Follows draft-cavage-http-signatures-12 as profiled by BECKN-006.
 
@@ -21,8 +20,7 @@ info:
 
     |-----------|-------------|
 
-    | `keyId` | `{subscriberId}\|{uniqueKeyId}\|{algorithm}` — FQDN, registry UUID,
-    signing algorithm |
+    | `keyId` | `{subscriberId}\|{uniqueKeyId}\|{algorithm}` — FQDN, registry UUID, signing algorithm |
 
     | `algorithm` | MUST be `ed25519` |
 
@@ -30,8 +28,7 @@ info:
 
     | `expires` | Unix timestamp when the signature expires |
 
-    | `headers` | Space-separated signed headers. MUST include `(created)`, `(expires)`,
-    `digest` |
+    | `headers` | Space-separated signed headers. MUST include `(created)`, `(expires)`, `digest` |
 
     | `signature` | Base64-encoded Ed25519 signature over the signing string |
 
@@ -43,6 +40,11 @@ info:
     where `digest` is a BLAKE2b-512 hash of the request body, Base64-encoded.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -50,8 +52,7 @@ components:
       $id: https://schema.beckn.io/Signature/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
       title: Signature
-      description: 'A digitally signed authentication credential in the HTTP `Authorization`
-        header.
+      description: 'A digitally signed authentication credential in the HTTP `Authorization` header.
 
         Follows draft-cavage-http-signatures-12 as profiled by BECKN-006.
 
@@ -69,8 +70,7 @@ components:
 
         |-----------|-------------|
 
-        | `keyId` | `{subscriberId}\|{uniqueKeyId}\|{algorithm}` — FQDN, registry
-        UUID, signing algorithm |
+        | `keyId` | `{subscriberId}\|{uniqueKeyId}\|{algorithm}` — FQDN, registry UUID, signing algorithm |
 
         | `algorithm` | MUST be `ed25519` |
 
@@ -78,8 +78,7 @@ components:
 
         | `expires` | Unix timestamp when the signature expires |
 
-        | `headers` | Space-separated signed headers. MUST include `(created)`, `(expires)`,
-        `digest` |
+        | `headers` | Space-separated signed headers. MUST include `(created)`, `(expires)`, `digest` |
 
         | `signature` | Base64-encoded Ed25519 signature over the signing string |
 

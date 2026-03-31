@@ -2,15 +2,18 @@ openapi: 3.1.1
 info:
   title: Retail Common Schemas
   version: 1.0.0
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     RecurringSchedule:
       type: object
       additionalProperties: false
-      description: 'Defines a recurring temporal schedule such as operating hours
-        or serviceability timing windows. Supports day-based recurrence and optional
-        holiday exclusions.
+      description: 'Defines a recurring temporal schedule such as operating hours or serviceability timing windows. Supports day-based recurrence and optional holiday exclusions.
 
         '
       properties:

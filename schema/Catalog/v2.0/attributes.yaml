@@ -3,6 +3,11 @@ info:
   title: Catalog
   version: 2.0.0
   description: Schema definition for Catalog in the Beckn Protocol
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -33,8 +38,7 @@ components:
           example: tech-store-001
         beckn:bppId:
           type: string
-          description: BPP (Beckn Protocol Provider) identifier that publishes this
-            catalog
+          description: BPP (Beckn Protocol Provider) identifier that publishes this catalog
           example: bpp.example.com
         beckn:bppUri:
           type: string
@@ -49,9 +53,7 @@ components:
           default: true
         beckn:items:
           type: array
-          description: 'Array of beckn core Item entities in this catalog, returned
-            directly without ItemResult wrapper for improved performance and simplified
-            response structure
+          description: 'Array of beckn core Item entities in this catalog, returned directly without ItemResult wrapper for improved performance and simplified response structure
 
             '
           items:

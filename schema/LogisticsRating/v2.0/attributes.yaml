@@ -3,14 +3,18 @@ info:
   title: Rating
   version: 2.0.0
   description: Schema for Rating in Beckn Logistics domain.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     LogisticsRating:
       type: object
       title: Rating
-      description: A numeric score given by a user for a logistics service, driver,
-        or carrier.
+      description: A numeric score given by a user for a logistics service, driver, or carrier.
       required:
       - value
       - ratingFor

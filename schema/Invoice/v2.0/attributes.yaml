@@ -3,6 +3,11 @@ info:
   title: Invoice
   version: 2.0.0
   description: Schema definition for Invoice in the Beckn Protocol
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -61,8 +66,7 @@ components:
             '@id': schema:priceSpecification
         beckn:invoiceAttributes:
           $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
-          description: Attribute Pack for tax regime (e.g., GST/VAT), e-invoice refs,
-            legal boilerplate, etc.
+          description: Attribute Pack for tax regime (e.g., GST/VAT), e-invoice refs, legal boilerplate, etc.
       required:
       - '@context'
       - '@type'

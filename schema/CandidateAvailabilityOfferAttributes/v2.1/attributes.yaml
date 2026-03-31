@@ -2,22 +2,20 @@ openapi: 3.1.1
 info:
   title: CandidateAvailabilityOfferAttributes
   version: 2.1.0
-  description: 'Beckn v2.1 extension schema for the offerAttributes container. Captures
-    the candidate''s stated availability terms and compensation expectations as an
-    Offer. In the hiring-candidates topology, the candidate is the BPP and the Offer
-    represents what the candidate is offering to the market: their availability, notice
-    period, desired compensation range, and preferred contract types.
+  description: 'Beckn v2.1 extension schema for the offerAttributes container. Captures the candidate''s stated availability terms and compensation expectations as an Offer. In the hiring-candidates topology, the candidate is the BPP and the Offer represents what the candidate is offering to the market: their availability, notice period, desired compensation range, and preferred contract types.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     CandidateAvailabilityOfferAttributes:
       type: object
-      description: 'Availability and compensation expectation terms under which a
-        candidate profile is offered to employers. The proposedConsideration on the
-        core Offer carries the candidate''s headline desired salary; this extension
-        provides the full range, notice period, and contract type preferences.
+      description: 'Availability and compensation expectation terms under which a candidate profile is offered to employers. The proposedConsideration on the core Offer carries the candidate''s headline desired salary; this extension provides the full range, notice period, and contract type preferences.
 
         '
       x-beckn-container: offerAttributes

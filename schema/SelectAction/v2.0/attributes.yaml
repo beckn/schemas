@@ -2,18 +2,21 @@ openapi: 3.1.1
 info:
   title: SelectAction
   version: 2.0.0
-  description: 'Beckn /beckn/select action envelope. Sent by a BAP to a BPP to select
-    items and offers from a catalog, initiating the negotiation cycle.
+  description: 'Beckn /beckn/select action envelope. Sent by a BAP to a BPP to select items and offers from a catalog, initiating the negotiation cycle.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     SelectAction:
       $id: https://schema.beckn.io/SelectAction/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: 'Beckn /beckn/select action envelope. Sent by a BAP to a BPP to
-        select items and offers from a catalog, initiating the negotiation cycle.
+      description: 'Beckn /beckn/select action envelope. Sent by a BAP to a BPP to select items and offers from a catalog, initiating the negotiation cycle.
 
         '
       title: SelectAction

@@ -2,8 +2,7 @@ openapi: 3.1.1
 info:
   title: CounterSignature
   version: 2.0.0
-  description: 'A signed receipt transmitted in the synchronous `Ack` response body,
-    proving that the
+  description: 'A signed receipt transmitted in the synchronous `Ack` response body, proving that the
 
     receiver authenticated, received, and processed the inbound request.
 
@@ -12,13 +11,11 @@ info:
 
     - **Signer**: the response receiver (not the request sender)
 
-    - **Location**: transmitted in the `Ack` response body (not in the `Authorization`
-    header)
+    - **Location**: transmitted in the `Ack` response body (not in the `Authorization` header)
 
     - **`digest`**: covers the Ack response body (not the inbound request body)
 
-    - **`(request-digest)`** and **`(message-id)`** MUST be included in the signing
-    string
+    - **`(request-digest)`** and **`(message-id)`** MUST be included in the signing string
 
 
     Signing string format:
@@ -38,6 +35,11 @@ info:
     ```
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -45,8 +47,7 @@ components:
       $id: https://schema.beckn.io/CounterSignature/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
       title: CounterSignature
-      description: 'A signed receipt transmitted in the synchronous `Ack` response
-        body, proving that the
+      description: 'A signed receipt transmitted in the synchronous `Ack` response body, proving that the
 
         receiver authenticated, received, and processed the inbound request.
 
@@ -55,13 +56,11 @@ components:
 
         - **Signer**: the response receiver (not the request sender)
 
-        - **Location**: transmitted in the `Ack` response body (not in the `Authorization`
-        header)
+        - **Location**: transmitted in the `Ack` response body (not in the `Authorization` header)
 
         - **`digest`**: covers the Ack response body (not the inbound request body)
 
-        - **`(request-digest)`** and **`(message-id)`** MUST be included in the signing
-        string
+        - **`(request-digest)`** and **`(message-id)`** MUST be included in the signing string
 
 
         Signing string format:

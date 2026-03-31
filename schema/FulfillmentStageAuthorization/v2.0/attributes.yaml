@@ -2,20 +2,21 @@ openapi: 3.1.1
 info:
   title: FulfillmentStageAuthorization
   version: 2.0.0
-  description: 'A credential/document/proof relevant to authorization at a fulfillment
-    stage endpoint. This may be a token to be verified (QR/OTP/URL) or a document
-    to be inspected manually.
+  description: 'A credential/document/proof relevant to authorization at a fulfillment stage endpoint. This may be a token to be verified (QR/OTP/URL) or a document to be inspected manually.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     FulfillmentStageAuthorization:
       $id: https://schema.beckn.io/FulfillmentStageAuthorization/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: 'A credential/document/proof relevant to authorization at a fulfillment
-        stage endpoint. This may be a token to be verified (QR/OTP/URL) or a document
-        to be inspected manually.
+      description: 'A credential/document/proof relevant to authorization at a fulfillment stage endpoint. This may be a token to be verified (QR/OTP/URL) or a document to be inspected manually.
 
         '
       title: FulfillmentStageAuthorization
@@ -35,34 +36,26 @@ components:
           type: string
           default: beckn:FulfillmentStageAuthorization
         mediaFiles:
-          description: Media files required to enter or exit this fulfillment stage.
-            The could be images of delivered packages, recorded video proof of installation,
-            etc
+          description: Media files required to enter or exit this fulfillment stage. The could be images of delivered packages, recorded video proof of installation, etc
           type: array
           items:
             $ref: https://schema.beckn.io/MediaFile/attributes.yaml#/components/schemas/MediaFile
         docs:
-          description: Documents required to enter or exit this fulfillment stage.
-            The could be entry tickets, boarding passes, waybill, permits, certificates,
-            credentials, etc
+          description: Documents required to enter or exit this fulfillment stage. The could be entry tickets, boarding passes, waybill, permits, certificates, credentials, etc
           type: array
           items:
             $ref: https://schema.beckn.io/Document/attributes.yaml#/components/schemas/Document
         purpose:
-          description: The purpose of this authorization. e.g., proof of delivery,
-            entry verification, identity check
+          description: The purpose of this authorization. e.g., proof of delivery, entry verification, identity check
           type: string
         requirement:
-          description: Describes what is required to fulfill this authorization. e.g.,
-            OTP, QR code, government ID
+          description: Describes what is required to fulfill this authorization. e.g., OTP, QR code, government ID
           type: string
         status:
-          description: The current status of this authorization. e.g., valid, expired,
-            pending, used
+          description: The current status of this authorization. e.g., valid, expired, pending, used
           type: string
         authToken:
           type: string
-          description: A human readable string that needs to be provided to enter
-            or exit this fulfillment stage. Like an OTP
+          description: A human readable string that needs to be provided to enter or exit this fulfillment stage. Like an OTP
       x-tags:
       - common

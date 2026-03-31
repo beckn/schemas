@@ -2,20 +2,21 @@ openapi: 3.1.1
 info:
   title: OnInitAction
   version: 2.0.0
-  description: 'Beckn /beckn/on_init callback envelope. Sent by a BPP to a BAP in
-    response to a /beckn/init call, with the updated contract including payment terms
-    and billing confirmation.
+  description: 'Beckn /beckn/on_init callback envelope. Sent by a BPP to a BAP in response to a /beckn/init call, with the updated contract including payment terms and billing confirmation.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     OnInitAction:
       $id: https://schema.beckn.io/OnInitAction/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: 'Beckn /beckn/on_init callback envelope. Sent by a BPP to a BAP
-        in response to a /beckn/init call, with the updated contract including payment
-        terms and billing confirmation.
+      description: 'Beckn /beckn/on_init callback envelope. Sent by a BPP to a BAP in response to a /beckn/init call, with the updated contract including payment terms and billing confirmation.
 
         '
       title: OnInitAction

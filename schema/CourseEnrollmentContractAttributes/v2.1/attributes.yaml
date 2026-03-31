@@ -2,12 +2,14 @@ openapi: 3.1.1
 info:
   title: CourseEnrollmentContractAttributes
   version: 2.1.0
-  description: 'Beckn v2.1 extension schema for the contractAttributes container.
-    Represents the transaction-level state of a course enrollment: enrollment reference,
-    cohort assignment, prerequisite verification outcome, and credential issuance
-    tracking. Parties: SKILL_SEEKER and SKILL_PROVIDER.
+  description: 'Beckn v2.1 extension schema for the contractAttributes container. Represents the transaction-level state of a course enrollment: enrollment reference, cohort assignment, prerequisite verification outcome, and credential issuance tracking. Parties: SKILL_SEEKER and SKILL_PROVIDER.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -32,8 +34,7 @@ components:
           x-jsonld-id: ceca:prerequisiteVerificationSummary
         credential_issuance_pending:
           type: boolean
-          description: 'Whether the outcome credential VC is pending issuance upon
-            course completion. True after enrollment; false once the VC has been issued.
+          description: 'Whether the outcome credential VC is pending issuance upon course completion. True after enrollment; false once the VC has been issued.
 
             '
           x-jsonld-id: ceca:credentialIssuancePending

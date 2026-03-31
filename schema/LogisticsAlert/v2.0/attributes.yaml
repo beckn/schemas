@@ -3,14 +3,18 @@ info:
   title: Alert
   version: 2.0.0
   description: Schema definition for the Alert entity in the Beckn Logistics domain.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     LogisticsAlert:
       type: object
       title: Alert
-      description: 'An Alert is a notification or warning related to a shipment, such
-        as delays, exceptions, damage reports, or SLA breaches. Maps to beckn:Event.
+      description: 'An Alert is a notification or warning related to a shipment, such as delays, exceptions, damage reports, or SLA breaches. Maps to beckn:Event.
 
         '
       required:

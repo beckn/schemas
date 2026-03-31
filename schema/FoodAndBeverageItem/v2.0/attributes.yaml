@@ -2,8 +2,7 @@ openapi: 3.1.1
 info:
   title: FoodAndBeverageItem
   version: 2.0.0
-  description: 'A Beckn schema for a food and beverage item used in F&B ordering and
-    delivery.
+  description: 'A Beckn schema for a food and beverage item used in F&B ordering and delivery.
 
 
     FoodAndBeverageItem is used as the commitmentAttributes value in a
@@ -20,14 +19,18 @@ info:
     Use in: beckn:Commitment.commitmentAttributes for F&B orders
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     FoodAndBeverageItem:
       $id: https://schema.beckn.io/FoodAndBeverageItem/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: 'A Beckn schema for a food and beverage item used in F&B ordering
-        and delivery.
+      description: 'A Beckn schema for a food and beverage item used in F&B ordering and delivery.
 
 
         FoodAndBeverageItem is used as the commitmentAttributes value in a
@@ -63,16 +66,14 @@ components:
             description: JSON-LD type.
           resourceId:
             type: string
-            description: 'Identifier of the catalog item resource that this commitment
-              refers to. Corresponds to the item''s id in the Catalog.
+            description: 'Identifier of the catalog item resource that this commitment refers to. Corresponds to the item''s id in the Catalog.
 
               '
             x-jsonld:
               '@id': beckn:resourceId
           lineId:
             type: string
-            description: Line item identifier within the contract (for multi-line
-              contracts).
+            description: Line item identifier within the contract (for multi-line contracts).
             x-jsonld:
               '@id': beckn:lineId
           offerId:
@@ -101,9 +102,7 @@ components:
               '@id': beckn:price
           allergens:
             type: array
-            description: 'List of known allergens present in this item. Use standard
-              allergen codes where applicable (e.g. GLUTEN, NUTS, DAIRY, EGGS, SOY,
-              SHELLFISH, FISH, SESAME).
+            description: 'List of known allergens present in this item. Use standard allergen codes where applicable (e.g. GLUTEN, NUTS, DAIRY, EGGS, SOY, SHELLFISH, FISH, SESAME).
 
               '
             items:
@@ -112,8 +111,7 @@ components:
               '@id': beckn:allergens
           cuisine:
             type: string
-            description: 'Cuisine classification for this item (e.g. Italian, Indian,
-              Mexican, American, Chinese, Mediterranean).
+            description: 'Cuisine classification for this item (e.g. Italian, Indian, Mexican, American, Chinese, Mediterranean).
 
               '
             x-jsonld:
@@ -130,7 +128,6 @@ components:
                 description: Storage requirements (e.g. Refrigerate, Keep frozen).
               shelfLife:
                 type: string
-                description: Shelf life expressed as ISO 8601 duration (e.g. P2D for
-                  2 days).
+                description: Shelf life expressed as ISO 8601 duration (e.g. P2D for 2 days).
             x-jsonld:
               '@id': beckn:preparation

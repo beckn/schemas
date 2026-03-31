@@ -2,22 +2,20 @@ openapi: 3.1.1
 info:
   title: EmployerHiringContractAttributes
   version: 2.1.0
-  description: 'Beckn v2.1 extension schema for the contractAttributes container.
-    Captures the transaction-level state of an employer-initiated hiring offer to
-    a candidate. The employer (EMPLOYER party, BAP-side) discovers the candidate and
-    initiates a hiring offer contract. The candidate (CANDIDATE party, BPP-side) accepts,
-    declines, or negotiates.
+  description: 'Beckn v2.1 extension schema for the contractAttributes container. Captures the transaction-level state of an employer-initiated hiring offer to a candidate. The employer (EMPLOYER party, BAP-side) discovers the candidate and initiates a hiring offer contract. The candidate (CANDIDATE party, BPP-side) accepts, declines, or negotiates.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     EmployerHiringContractAttributes:
       type: object
-      description: 'Contract-level metadata for an employer-to-candidate hiring offer.
-        Captures the specific role details being offered, compensation amount (as
-        distinct from the candidate''s desired range), proposed joining date, offer
-        expiry, and candidate response state.
+      description: 'Contract-level metadata for an employer-to-candidate hiring offer. Captures the specific role details being offered, compensation amount (as distinct from the candidate''s desired range), proposed joining date, offer expiry, and candidate response state.
 
         '
       x-beckn-container: contractAttributes

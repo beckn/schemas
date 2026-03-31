@@ -3,14 +3,18 @@ info:
   title: MediaInput
   version: 2.0.0
   description: Reference to an image, audio clip, or video used for multimodal search.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     MediaInput:
       $id: https://schema.beckn.io/MediaInput/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: Reference to an image, audio clip, or video used for multimodal
-        search.
+      description: Reference to an image, audio clip, or video used for multimodal search.
       title: MediaInput
       type: object
       properties:

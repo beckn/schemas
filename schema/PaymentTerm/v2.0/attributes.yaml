@@ -2,20 +2,21 @@ openapi: 3.1.1
 info:
   title: PaymentTerm
   version: 2.0.0
-  description: 'A single payment instruction for an order. Represents one line item
-    in the paymentTerms array of an Order — e.g., a pre-order UPI payment, a cash-on-delivery
-    amount, or an instalment.
+  description: 'A single payment instruction for an order. Represents one line item in the paymentTerms array of an Order — e.g., a pre-order UPI payment, a cash-on-delivery amount, or an instalment.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     PaymentTerm:
       $id: https://schema.beckn.io/PaymentTerm/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: 'A single payment instruction for an order. Represents one line
-        item in the paymentTerms array of an Order — e.g., a pre-order UPI payment,
-        a cash-on-delivery amount, or an instalment.
+      description: 'A single payment instruction for an order. Represents one line item in the paymentTerms array of an Order — e.g., a pre-order UPI payment, a cash-on-delivery amount, or an instalment.
 
         '
       title: PaymentTerm

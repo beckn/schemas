@@ -2,20 +2,21 @@ openapi: 3.1.1
 info:
   title: RateAction
   version: 2.0.0
-  description: 'Beckn /beckn/rate action envelope. Sent by a BAP to a BPP to submit
-    one or more rating inputs for entities in a completed contract (order, fulfillment,
-    item, provider, agent, support).
+  description: 'Beckn /beckn/rate action envelope. Sent by a BAP to a BPP to submit one or more rating inputs for entities in a completed contract (order, fulfillment, item, provider, agent, support).
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     RateAction:
       $id: https://schema.beckn.io/RateAction/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: 'Beckn /beckn/rate action envelope. Sent by a BAP to a BPP to submit
-        one or more rating inputs for entities in a completed contract (order, fulfillment,
-        item, provider, agent, support).
+      description: 'Beckn /beckn/rate action envelope. Sent by a BAP to a BPP to submit one or more rating inputs for entities in a completed contract (order, fulfillment, item, provider, agent, support).
 
         '
       title: RateAction

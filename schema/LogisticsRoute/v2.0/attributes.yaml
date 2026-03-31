@@ -3,14 +3,18 @@ info:
   title: Route
   version: 2.0.0
   description: Schema definition for the Route entity in the Beckn Logistics domain.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     LogisticsRoute:
       type: object
       title: Route
-      description: 'A Route is the planned path for a shipment from origin to destination,
-        potentially passing through multiple hubs and waypoints. Maps to beckn:Journey.
+      description: 'A Route is the planned path for a shipment from origin to destination, potentially passing through multiple hubs and waypoints. Maps to beckn:Journey.
 
         '
       required:

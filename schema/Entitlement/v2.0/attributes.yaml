@@ -2,20 +2,19 @@ openapi: 3.1.1
 info:
   title: Entitlement
   version: 2.0.0
-  description: A contractually granted, policy-governed right that allows a specific
-    party to access, use, or claim a defined economic resource within stated scope
-    and validity constraints. It represents the enforceable permission created by
-    an order, independent of the credential used to exercise it.
+  description: A contractually granted, policy-governed right that allows a specific party to access, use, or claim a defined economic resource within stated scope and validity constraints. It represents the enforceable permission created by an order, independent of the credential used to exercise it.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     Entitlement:
       $id: https://schema.beckn.io/Entitlement/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: A contractually granted, policy-governed right that allows a specific
-        party to access, use, or claim a defined economic resource within stated scope
-        and validity constraints. It represents the enforceable permission created
-        by an order, independent of the credential used to exercise it.
+      description: A contractually granted, policy-governed right that allows a specific party to access, use, or claim a defined economic resource within stated scope and validity constraints. It represents the enforceable permission created by an order, independent of the credential used to exercise it.
       title: Entitlement
       type: object
       properties:
@@ -25,21 +24,17 @@ components:
           format: uri
           default: https://schema.beckn.io/
         '@type':
-          description: The domain-specific type of entitlement that allows domains
-            to extend this schema
+          description: The domain-specific type of entitlement that allows domains to extend this schema
           type: string
           default: beckn:Entitlement
         id:
-          description: A unique identifier for this entitlement within the entitlement
-            provider's namespace
+          description: A unique identifier for this entitlement within the entitlement provider's namespace
           type: string
         resource:
           description: The resource being availed or accessed against this entitlement
           $ref: https://schema.beckn.io/ContractItem/attributes.yaml#/components/schemas/ContractItem
         descriptor:
-          description: Human-readable information regarding the entitlement like QR-code
-            images, attached documents containing terms and conditions, video or audio
-            files instructing the user on how to use the entitlement
+          description: Human-readable information regarding the entitlement like QR-code images, attached documents containing terms and conditions, video or audio files instructing the user on how to use the entitlement
           $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
         credentials:
           type: array

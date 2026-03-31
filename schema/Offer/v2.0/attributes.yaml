@@ -3,6 +3,11 @@ info:
   title: Offer
   version: 2.0.0
   description: Schema definition for Offer in the Beckn Protocol
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -47,8 +52,7 @@ components:
           type: array
           items:
             $ref: https://schema.beckn.io/Offer/attributes.yaml#/components/schemas/Offer
-          description: Optional extra Offers that can be attached (e.g., warranty,
-            gift wrap)
+          description: Optional extra Offers that can be attached (e.g., warranty, gift wrap)
           x-jsonld:
             '@id': schema:addOn
         beckn:addOnItems:
@@ -81,8 +85,7 @@ components:
           $ref: https://schema.beckn.io/AcceptedPaymentMethod/attributes.yaml#/components/schemas/AcceptedPaymentMethod
         beckn:offerAttributes:
           $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
-          description: Attribute Pack attachment (pricing models, discounts, rail
-            terms, etc.)
+          description: Attribute Pack attachment (pricing models, discounts, rail terms, etc.)
       required:
       - '@context'
       - '@type'

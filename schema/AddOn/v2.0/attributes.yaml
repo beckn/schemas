@@ -5,9 +5,12 @@ info:
   description: 'Add-on to a catalog resource
 
 
-    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
-    and MUST NOT be extended. Any domain-specific extension must use the property
-    of this schema which is of type Attribute.'
+    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.'
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -15,9 +18,7 @@ components:
       description: 'Add-on to a catalog resource
 
 
-        This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
-        and MUST NOT be extended. Any domain-specific extension must use the property
-        of this schema which is of type Attribute.'
+        This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.'
       oneOf:
       - $ref: https://schema.beckn.io/Resource/attributes.yaml#/components/schemas/Resource
       - $ref: https://schema.beckn.io/Offer/attributes.yaml#/components/schemas/Offer

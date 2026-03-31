@@ -2,12 +2,14 @@ openapi: 3.1.1
 info:
   title: CourseDeliveryPerformanceAttributes
   version: 2.1.0
-  description: 'Beckn v2.1 extension schema for the performanceAttributes container.
-    Captures course delivery execution details: delivery URL (for ACCESS mode), session
-    schedule (for SERVICE mode), attendance tracking, completion criteria, completion
-    status, and issued credential reference.
+  description: 'Beckn v2.1 extension schema for the performanceAttributes container. Captures course delivery execution details: delivery URL (for ACCESS mode), session schedule (for SERVICE mode), attendance tracking, completion criteria, completion status, and issued credential reference.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -45,8 +47,7 @@ components:
           x-jsonld-id: cdpa:attendanceTracking
         completion_criteria:
           type: object
-          description: Criteria that must be met for the learner to be eligible for
-            credential issuance.
+          description: Criteria that must be met for the learner to be eligible for credential issuance.
           x-jsonld-id: cdpa:completionCriteria
           properties:
             min_attendance_pct:
@@ -70,8 +71,7 @@ components:
           - FAILED
         issued_credential_ref:
           type: string
-          description: 'Reference to the VC issued upon course completion. Only populated
-            after completion_status = COMPLETED and VC issuance succeeds.
+          description: 'Reference to the VC issued upon course completion. Only populated after completion_status = COMPLETED and VC issuance succeeds.
 
             '
           x-jsonld-id: cdpa:issuedCredentialRef

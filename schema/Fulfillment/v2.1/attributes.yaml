@@ -3,6 +3,11 @@ info:
   title: Fulfillment
   version: 2.1.0
   description: Schema definition for Fulfillment in the Beckn Protocol v2.0.1
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -30,8 +35,7 @@ components:
           description: The entity that directly performs the fulfillment
           $ref: https://schema.beckn.io/FulfillmentAgent/attributes.yaml#/components/schemas/FulfillmentAgent
         fulfillmentAttributes:
-          description: Extensible set of domain-specific attributes describing the
-            fulfillment
+          description: Extensible set of domain-specific attributes describing the fulfillment
           $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
         id:
           description: Fulfillment identifier
@@ -43,14 +47,12 @@ components:
           items:
             $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
         mode:
-          description: Extensible set of attributes describing the mode of fulfillment.
-            Varies with Industry Use Case
+          description: Extensible set of attributes describing the mode of fulfillment. Varies with Industry Use Case
           x-jsonld:
             '@id': beckn:FulfillmentMode
           $ref: https://schema.beckn.io/FulfillmentMode/attributes.yaml#/components/schemas/FulfillmentMode
         participants:
-          description: A list of participants who are entitled to receive the fulfillment
-            of the order. By default, it is the consumer who placed the order
+          description: A list of participants who are entitled to receive the fulfillment of the order. By default, it is the consumer who placed the order
           type: array
           items:
             $ref: https://schema.beckn.io/Participant/attributes.yaml#/components/schemas/Participant

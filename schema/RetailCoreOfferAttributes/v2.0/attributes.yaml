@@ -2,21 +2,21 @@ openapi: 3.1.1
 info:
   title: RetailCoreOfferAttributes
   version: 2.0.0
-  description: 'Retail-specific offer attribute pack, used as the value of Offer.offerAttributes
-    for retail domain offers. Covers return/cancellation/replacement policies, payment
-    constraints, serviceability (distance + timing), daily time window, and holidays.
+  description: 'Retail-specific offer attribute pack, used as the value of Offer.offerAttributes for retail domain offers. Covers return/cancellation/replacement policies, payment constraints, serviceability (distance + timing), daily time window, and holidays.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     RetailCoreOfferAttributes:
       $id: https://schema.beckn.io/RetailCoreOfferAttributes/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: 'Retail-specific offer attribute pack, used as the value of Offer.offerAttributes
-        for retail domain offers. Covers return/cancellation/replacement policies,
-        payment constraints, serviceability (distance + timing), daily time window,
-        and holidays.
+      description: 'Retail-specific offer attribute pack, used as the value of Offer.offerAttributes for retail domain offers. Covers return/cancellation/replacement policies, payment constraints, serviceability (distance + timing), daily time window, and holidays.
 
         '
       title: RetailCoreOfferAttributes
@@ -45,8 +45,7 @@ components:
                   type: boolean
                 window:
                   type: string
-                  description: 'Return window as ISO 8601 duration (e.g., P7D). Interpreted
-                    from order delivery unless specified otherwise by profile.
+                  description: 'Return window as ISO 8601 duration (e.g., P7D). Interpreted from order delivery unless specified otherwise by profile.
 
                     '
                 method:
@@ -70,8 +69,7 @@ components:
                       type: number
                 conditions:
                   type: string
-                  description: Optional textual conditions (e.g., unopened packaging
-                    required).
+                  description: Optional textual conditions (e.g., unopened packaging required).
             cancellation:
               type: object
               additionalProperties: false
@@ -81,8 +79,7 @@ components:
                   type: boolean
                 window:
                   type: string
-                  description: Cancellation window as ISO 8601 duration (e.g., PT30M,
-                    P1D).
+                  description: Cancellation window as ISO 8601 duration (e.g., PT30M, P1D).
                 cutoffEvent:
                   type: string
                   enum:
@@ -111,9 +108,7 @@ components:
                   type: boolean
                 window:
                   type: string
-                  description: 'Replacement window as ISO 8601 duration (e.g., P7D).
-                    Interpreted from order delivery unless specified otherwise by
-                    profile.
+                  description: 'Replacement window as ISO 8601 duration (e.g., P7D). Interpreted from order delivery unless specified otherwise by profile.
 
                     '
                 method:
@@ -125,8 +120,7 @@ components:
                   description: Replacement handling method.
                 conditions:
                   type: string
-                  description: Optional conditions (e.g., damaged item only, wrong
-                    item delivered).
+                  description: Optional conditions (e.g., damaged item only, wrong item delivered).
                 subjectToAvailability:
                   type: boolean
                   description: Whether replacement depends on stock availability.
@@ -139,8 +133,7 @@ components:
         serviceability:
           type: object
           additionalProperties: false
-          description: 'Additional serviceability constraints beyond geographic eligibility
-            (handled via core Offer.eligibleRegion).
+          description: 'Additional serviceability constraints beyond geographic eligibility (handled via core Offer.eligibleRegion).
 
             '
           properties:

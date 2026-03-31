@@ -3,14 +3,18 @@ info:
   title: CancellationReason
   version: 2.0.0
   description: Schema definition for CancellationReason in the Beckn Protocol v2.0.1
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     CancellationReason:
       $id: https://schema.beckn.io/CancellationReason/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: Schema definition for CancellationReason in the Beckn Protocol
-        v2.0.1
+      description: Schema definition for CancellationReason in the Beckn Protocol v2.0.1
       title: CancellationReason
       x-tags:
       - common

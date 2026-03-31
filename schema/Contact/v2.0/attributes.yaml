@@ -3,6 +3,11 @@ info:
   title: Contact
   version: 2.0.0
   description: Schema for Contact in Beckn Logistics domain.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:

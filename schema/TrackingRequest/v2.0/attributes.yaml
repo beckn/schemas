@@ -3,6 +3,11 @@ info:
   title: TrackingRequest
   version: 2.0.0
   description: Schema definition for TrackingRequest in the Beckn Protocol v2.0.1
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -31,8 +36,7 @@ components:
           - WEBHOOK
           - WS_HANDLE
         trackingDataSchema:
-          description: A JSON Schema (2020-12) that describes the structure of trackingData
-            payloads.
+          description: A JSON Schema (2020-12) that describes the structure of trackingData payloads.
           $schema: https://json-schema.org/draft/2020-12/schema
       required:
       - id

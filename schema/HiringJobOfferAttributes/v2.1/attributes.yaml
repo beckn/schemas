@@ -2,21 +2,20 @@ openapi: 3.1.1
 info:
   title: HiringJobOfferAttributes
   version: 2.1.0
-  description: 'Beckn v2.1 extension schema for the offerAttributes container. Captures
-    commercial terms and availability parameters governing a job opportunity offer:
-    compensation range, number of openings, application deadline, and posting validity
-    window.
+  description: 'Beckn v2.1 extension schema for the offerAttributes container. Captures commercial terms and availability parameters governing a job opportunity offer: compensation range, number of openings, application deadline, and posting validity window.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     HiringJobOfferAttributes:
       type: object
-      description: 'Commercial and availability terms under which a job opportunity
-        is offered. The proposedConsideration on the core Offer object carries the
-        midpoint or headline compensation figure; this extension provides the full
-        range and period breakdown for display and filtering.
+      description: 'Commercial and availability terms under which a job opportunity is offered. The proposedConsideration on the core Offer object carries the midpoint or headline compensation figure; this extension provides the full range and period breakdown for display and filtering.
 
         '
       x-beckn-container: offerAttributes
@@ -72,8 +71,7 @@ components:
               x-jsonld-id: schema:validThrough
         probation_period_months:
           type: integer
-          description: 'Optional probation period in months applicable to this offer.
-            Absence implies no formal probation.
+          description: 'Optional probation period in months applicable to this offer. Absence implies no formal probation.
 
             '
           x-jsonld-id: hjoa:probationPeriodMonths

@@ -9,6 +9,11 @@ info:
     The CDS indexes the catalogs and makes them discoverable.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -16,8 +21,7 @@ components:
       $id: https://schema.beckn.io/CatalogPublishAction/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
       title: CatalogPublishAction
-      description: 'Beckn /beckn/catalog_publish message payload. Sent by a BPP to
-        a CDS
+      description: 'Beckn /beckn/catalog_publish message payload. Sent by a BPP to a CDS
 
         (Catalog Discovery Service) to publish or update one or more catalogs.
 

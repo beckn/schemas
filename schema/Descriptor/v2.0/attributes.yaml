@@ -3,6 +3,11 @@ info:
   title: Descriptor
   version: 2.0.0
   description: Schema definition for Descriptor in the Beckn Protocol
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -30,8 +35,7 @@ components:
         beckn:longDesc:
           type: string
           description: Detailed description of the item
-          example: Powerful gaming laptop with NVIDIA RTX graphics, fast SSD storage,
-            and high-refresh display
+          example: Powerful gaming laptop with NVIDIA RTX graphics, fast SSD storage, and high-refresh display
         schema:image:
           type: array
           items:

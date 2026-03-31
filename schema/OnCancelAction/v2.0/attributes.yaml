@@ -2,20 +2,21 @@ openapi: 3.1.1
 info:
   title: OnCancelAction
   version: 2.0.0
-  description: 'Beckn /beckn/on_cancel callback envelope. Sent by a BPP to a BAP in
-    response to a /beckn/cancel call, returning the contract with status set to CANCELLED
-    and any applicable cancellation outcome.
+  description: 'Beckn /beckn/on_cancel callback envelope. Sent by a BPP to a BAP in response to a /beckn/cancel call, returning the contract with status set to CANCELLED and any applicable cancellation outcome.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     OnCancelAction:
       $id: https://schema.beckn.io/OnCancelAction/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: 'Beckn /beckn/on_cancel callback envelope. Sent by a BPP to a BAP
-        in response to a /beckn/cancel call, returning the contract with status set
-        to CANCELLED and any applicable cancellation outcome.
+      description: 'Beckn /beckn/on_cancel callback envelope. Sent by a BPP to a BAP in response to a /beckn/cancel call, returning the contract with status set to CANCELLED and any applicable cancellation outcome.
 
         '
       title: OnCancelAction

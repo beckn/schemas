@@ -2,16 +2,19 @@ openapi: 3.1.1
 info:
   title: TrackingUpdate
   version: 2.0.0
-  description: Schema definition for the TrackingUpdate entity in the Beckn Logistics
-    domain.
+  description: Schema definition for the TrackingUpdate entity in the Beckn Logistics domain.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     TrackingUpdate:
       type: object
       title: TrackingUpdate
-      description: 'A TrackingUpdate is a real-time or periodic update on the status
-        and location of a shipment during transit. Maps to beckn:Event.
+      description: 'A TrackingUpdate is a real-time or periodic update on the status and location of a shipment during transit. Maps to beckn:Event.
 
         '
       required:

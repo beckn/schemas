@@ -2,12 +2,16 @@ openapi: 3.1.1
 info:
   title: OnDiscoverAction
   version: 2.0.0
-  description: 'Beckn /beckn/on_discover message payload. Sent by a BPP or CDS to
-    a BAP
+  description: 'Beckn /beckn/on_discover message payload. Sent by a BPP or CDS to a BAP
 
     in response to a discover request. Contains matching catalogs.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -15,8 +19,7 @@ components:
       $id: https://schema.beckn.io/OnDiscoverAction/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
       title: OnDiscoverAction
-      description: 'Beckn /beckn/on_discover message payload. Sent by a BPP or CDS
-        to a BAP
+      description: 'Beckn /beckn/on_discover message payload. Sent by a BPP or CDS to a BAP
 
         in response to a discover request. Contains matching catalogs.
 

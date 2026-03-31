@@ -2,16 +2,19 @@ openapi: 3.1.1
 info:
   title: Rating
   version: 2.1.0
-  description: Aggregated rating information for an entity. Aligns with schema.org/AggregateRating
-    semantics.
+  description: Aggregated rating information for an entity. Aligns with schema.org/AggregateRating semantics.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     Rating:
       $id: https://schema.beckn.io/Rating/v2.1
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: Aggregated rating information for an entity. Aligns with schema.org/AggregateRating
-        semantics.
+      description: Aggregated rating information for an entity. Aligns with schema.org/AggregateRating semantics.
       title: Rating
       type: object
       properties:

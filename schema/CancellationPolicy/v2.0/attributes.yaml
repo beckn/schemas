@@ -3,14 +3,18 @@ info:
   title: CancellationPolicy
   version: 2.0.0
   description: Schema definition for CancellationPolicy in the Beckn Protocol v2.0.1
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     CancellationPolicy:
       $id: https://schema.beckn.io/CancellationPolicy/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: Schema definition for CancellationPolicy in the Beckn Protocol
-        v2.0.1
+      description: Schema definition for CancellationPolicy in the Beckn Protocol v2.0.1
       title: CancellationPolicy
       x-tags:
       - common

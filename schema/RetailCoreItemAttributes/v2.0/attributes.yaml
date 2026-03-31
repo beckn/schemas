@@ -2,20 +2,21 @@ openapi: 3.1.1
 info:
   title: RetailCoreItemAttributes
   version: 2.0.0
-  description: 'Retail-specific item attribute pack, used as the value of Item.itemAttributes
-    for retail domain items. Covers physical properties, food classification, regulatory
-    declarations, and verifiable credentials.
+  description: 'Retail-specific item attribute pack, used as the value of Item.itemAttributes for retail domain items. Covers physical properties, food classification, regulatory declarations, and verifiable credentials.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     RetailCoreItemAttributes:
       $id: https://schema.beckn.io/RetailCoreItemAttributes/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: 'Retail-specific item attribute pack, used as the value of Item.itemAttributes
-        for retail domain items. Covers physical properties, food classification,
-        regulatory declarations, and verifiable credentials.
+      description: 'Retail-specific item attribute pack, used as the value of Item.itemAttributes for retail domain items. Covers physical properties, food classification, regulatory declarations, and verifiable credentials.
 
         '
       title: RetailCoreItemAttributes

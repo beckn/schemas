@@ -2,20 +2,21 @@ openapi: 3.1.1
 info:
   title: Support
   version: 2.0.0
-  description: 'Support request payload sent by a BAP to a BPP in the /beckn/support
-    call. Used to request support contact information, report an issue, or open a
-    support ticket for an existing order.
+  description: 'Support request payload sent by a BAP to a BPP in the /beckn/support call. Used to request support contact information, report an issue, or open a support ticket for an existing order.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     Support:
       $id: https://schema.beckn.io/Support/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: 'Support request payload sent by a BAP to a BPP in the /beckn/support
-        call. Used to request support contact information, report an issue, or open
-        a support ticket for an existing order.
+      description: 'Support request payload sent by a BAP to a BPP in the /beckn/support call. Used to request support contact information, report an issue, or open a support ticket for an existing order.
 
         '
       title: Support

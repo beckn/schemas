@@ -2,36 +2,31 @@ openapi: 3.1.1
 info:
   title: RatingInput
   version: 2.1.0
-  description: 'A form designed to capture rating and feedback from a user. This can
-    be used by both BAP and BPP to fetch ratings and feedback of their respective
-    users.
+  description: 'A form designed to capture rating and feedback from a user. This can be used by both BAP and BPP to fetch ratings and feedback of their respective users.
 
 
-    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
-    and MUST NOT be extended. Any domain-specific extension must use the property
-    of this schema which is of type Attribute.'
+    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.'
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     RatingInput:
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: 'A form designed to capture rating and feedback from a user. This
-        can be used by both BAP and BPP to fetch ratings and feedback of their respective
-        users.
+      description: 'A form designed to capture rating and feedback from a user. This can be used by both BAP and BPP to fetch ratings and feedback of their respective users.
 
 
-        This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
-        and MUST NOT be extended. Any domain-specific extension must use the property
-        of this schema which is of type Attribute.'
+        This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.'
       title: RatingInput
       x-tags:
       - common
       type: object
       properties:
         target:
-          description: The thing being rated. It could be a person, an application,
-            a service, a product, an instrument used in the fulfillment of the contract,
-            or the overall experience.
+          description: The thing being rated. It could be a person, an application, a service, a product, an instrument used in the fulfillment of the contract, or the overall experience.
           type: object
           properties:
             id:
@@ -44,8 +39,7 @@ components:
         range:
           type: object
         feedbackFormSubmission:
-          description: The submission to the feedback form sent along with a rating
-            request
+          description: The submission to the feedback form sent along with a rating request
           $ref: https://schema.beckn.io/FormSubmission/attributes.yaml#/components/schemas/FormSubmission
       required:
       - target

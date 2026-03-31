@@ -3,14 +3,18 @@ info:
   title: Package
   version: 2.0.0
   description: Schema definition for the Package entity in the Beckn Logistics domain.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     Package:
       type: object
       title: Package
-      description: 'A Package is a physical unit of goods prepared for transport within
-        a shipment. Maps to beckn:Item.
+      description: 'A Package is a physical unit of goods prepared for transport within a shipment. Maps to beckn:Item.
 
         '
       required:

@@ -2,20 +2,21 @@ openapi: 3.1.1
 info:
   title: FulfillmentStageEndpoint
   version: 2.0.0
-  description: 'A stage boundary endpoint (entry or exit) within a fulfillment, such
-    as pickup, handover, warehouse in/out, border crossing, gate entry/exit, security
-    check, etc. May require one or more proofs/permits/tokens/documents.
+  description: 'A stage boundary endpoint (entry or exit) within a fulfillment, such as pickup, handover, warehouse in/out, border crossing, gate entry/exit, security check, etc. May require one or more proofs/permits/tokens/documents.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     FulfillmentStageEndpoint:
       $id: https://schema.beckn.io/FulfillmentStageEndpoint/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: 'A stage boundary endpoint (entry or exit) within a fulfillment,
-        such as pickup, handover, warehouse in/out, border crossing, gate entry/exit,
-        security check, etc. May require one or more proofs/permits/tokens/documents.
+      description: 'A stage boundary endpoint (entry or exit) within a fulfillment, such as pickup, handover, warehouse in/out, border crossing, gate entry/exit, security check, etc. May require one or more proofs/permits/tokens/documents.
 
         '
       title: FulfillmentStageEndpoint
@@ -36,9 +37,7 @@ components:
           $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod
         authorization:
           type: array
-          description: 'One or more credentials required and/or issued at this endpoint.
-            Includes machine-readable tokens (QR/URL/OTP) and manual documents (IDs,
-            permits).
+          description: 'One or more credentials required and/or issued at this endpoint. Includes machine-readable tokens (QR/URL/OTP) and manual documents (IDs, permits).
 
             '
           items:

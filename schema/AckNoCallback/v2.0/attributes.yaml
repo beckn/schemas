@@ -2,24 +2,23 @@ openapi: 3.1.1
 info:
   title: AckNoCallback
   version: 2.0.0
-  description: 'Request received but no callback will follow (e.g. agents not found,
-    inventory unavailable, provider closed, context.try preview complete).
+  description: 'Request received but no callback will follow (e.g. agents not found, inventory unavailable, provider closed, context.try preview complete).
 
 
-    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
-    and MUST NOT be extended. Any domain-specific extension must use the property
-    of this schema which is of type Attribute.'
+    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.'
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     AckNoCallback:
-      description: 'Request received but no callback will follow (e.g. agents not
-        found, inventory unavailable, provider closed, context.try preview complete).
+      description: 'Request received but no callback will follow (e.g. agents not found, inventory unavailable, provider closed, context.try preview complete).
 
 
-        This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
-        and MUST NOT be extended. Any domain-specific extension must use the property
-        of this schema which is of type Attribute.'
+        This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.'
       allOf:
       - $ref: https://schema.beckn.io/Ack/attributes.yaml#/components/schemas/Ack
       - type: object

@@ -2,16 +2,19 @@ openapi: 3.1.1
 info:
   title: DeliverySlot
   version: 2.0.0
-  description: Schema definition for the DeliverySlot entity in the Beckn Logistics
-    domain.
+  description: Schema definition for the DeliverySlot entity in the Beckn Logistics domain.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     DeliverySlot:
       type: object
       title: DeliverySlot
-      description: 'A DeliverySlot is a time window offered or agreed upon for delivery
-        of a shipment. Maps to beckn:TimeSlot.
+      description: 'A DeliverySlot is a time window offered or agreed upon for delivery of a shipment. Maps to beckn:TimeSlot.
 
         '
       required:

@@ -2,16 +2,19 @@ openapi: 3.1.1
 info:
   title: ContractItem
   version: 2.0.0
-  description: A line item within a Contract, linking an accepted Offer and ordered
-    Item with quantity and price.
+  description: A line item within a Contract, linking an accepted Offer and ordered Item with quantity and price.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     ContractItem:
       $id: https://schema.beckn.io/ContractItem/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: A line item within a Contract, linking an accepted Offer and ordered
-        Item with quantity and price.
+      description: A line item within a Contract, linking an accepted Offer and ordered Item with quantity and price.
       title: ContractItem
       x-tags:
       - common

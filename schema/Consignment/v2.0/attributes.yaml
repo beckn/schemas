@@ -2,17 +2,19 @@ openapi: 3.1.1
 info:
   title: Consignment
   version: 2.0.0
-  description: Schema definition for the Consignment entity in the Beckn Logistics
-    domain.
+  description: Schema definition for the Consignment entity in the Beckn Logistics domain.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     Consignment:
       type: object
       title: Consignment
-      description: 'A Consignment is a collection of packages or shipments grouped
-        together under a single commercial transaction between a shipper and consignee.
-        Maps to beckn:Order.
+      description: 'A Consignment is a collection of packages or shipments grouped together under a single commercial transaction between a shipper and consignee. Maps to beckn:Order.
 
         '
       required:

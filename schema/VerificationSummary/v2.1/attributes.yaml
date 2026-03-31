@@ -2,20 +2,20 @@ openapi: 3.1.1
 info:
   title: VerificationSummary — Shared Type
   version: 2.1.0
-  description: 'Shared type representing the outcome of a credential verification
-    check. Used in contract and performance schemas across hiring-jobs, hiring-candidates,
-    and skilling packs. Captures overall result, per-category outcomes, and reason
-    codes without carrying any credential payload.
+  description: 'Shared type representing the outcome of a credential verification check. Used in contract and performance schemas across hiring-jobs, hiring-candidates, and skilling packs. Captures overall result, per-category outcomes, and reason codes without carrying any credential payload.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     VerificationSummary:
       type: object
-      description: 'Summary of a credential verification check. Contains the overall
-        result, reason codes for any failures, and which credential categories were
-        successfully verified. No VC or VP payloads are included.
+      description: 'Summary of a credential verification check. Contains the overall result, reason codes for any failures, and which credential categories were successfully verified. No VC or VP payloads are included.
 
         '
       required:
@@ -33,9 +33,7 @@ components:
           - PENDING
         reason_codes:
           type: array
-          description: 'Reason codes for failures or partial results. Empty if overall_result
-            is PASS. Examples: "MANDATORY_REQUIREMENT_MISSING", "EXPIRED_CREDENTIAL",
-            "ISSUER_NOT_TRUSTED", "SIGNATURE_INVALID".
+          description: 'Reason codes for failures or partial results. Empty if overall_result is PASS. Examples: "MANDATORY_REQUIREMENT_MISSING", "EXPIRED_CREDENTIAL", "ISSUER_NOT_TRUSTED", "SIGNATURE_INVALID".
 
             '
           x-jsonld-id: vs:reasonCodes
@@ -43,8 +41,7 @@ components:
             type: string
         verified_categories:
           type: array
-          description: 'Credential categories that were successfully verified in this
-            check.
+          description: 'Credential categories that were successfully verified in this check.
 
             '
           x-jsonld-id: vs:verifiedCategories
@@ -65,8 +62,7 @@ components:
           x-jsonld-id: vs:checkedAt
         proof_metadata_hash:
           type: string
-          description: 'Optional hash of the VP used in verification. Provides integrity
-            reference without storing the VP payload.
+          description: 'Optional hash of the VP used in verification. Provides integrity reference without storing the VP payload.
 
             '
           x-jsonld-id: vs:proofMetadataHash

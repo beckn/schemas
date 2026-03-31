@@ -19,6 +19,11 @@ info:
     Use in: beckn:Commitment.commitmentAttributes for retail orders
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -60,8 +65,7 @@ components:
             description: JSON-LD type.
           resourceId:
             type: string
-            description: 'Identifier of the catalog item resource this commitment
-              refers to. Corresponds to the item''s id in the Catalog.
+            description: 'Identifier of the catalog item resource this commitment refers to. Corresponds to the item''s id in the Catalog.
 
               '
             x-jsonld:
@@ -78,9 +82,7 @@ components:
               '@id': beckn:offerId
           price:
             $ref: https://schema.beckn.io/PriceSpecification/attributes.yaml#/components/schemas/PriceSpecification
-            description: 'Unit price specification for this line item. For domain-specific
-              pricing, use domain-specific price schema (e.g. beckn:FnBPriceSpecification
-              for food & beverage).
+            description: 'Unit price specification for this line item. For domain-specific pricing, use domain-specific price schema (e.g. beckn:FnBPriceSpecification for food & beverage).
 
               '
             x-jsonld:
@@ -91,8 +93,7 @@ components:
             properties:
               unitCode:
                 type: string
-                description: 'Unit of measure code (e.g. EA for each, KG for kilograms,
-                  LTR for litres, MTR for metres).
+                description: 'Unit of measure code (e.g. EA for each, KG for kilograms, LTR for litres, MTR for metres).
 
                   '
                 example: EA
@@ -105,8 +106,7 @@ components:
               '@id': beckn:quantity
           credentials:
             type: array
-            description: 'External verifiable credentials or attestations associated
-              with this item (e.g. FSSAI license, organic certification, ISO standard).
+            description: 'External verifiable credentials or attestations associated with this item (e.g. FSSAI license, organic certification, ISO standard).
 
               '
             items:
@@ -117,8 +117,7 @@ components:
               properties:
                 type:
                   type: string
-                  description: Type or scheme of the credential (e.g. FSSAI, ISO,
-                    ORGANIC).
+                  description: Type or scheme of the credential (e.g. FSSAI, ISO, ORGANIC).
                 uri:
                   type: string
                   format: uri

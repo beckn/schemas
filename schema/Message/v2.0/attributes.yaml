@@ -2,11 +2,12 @@ openapi: 3.1.1
 info:
   title: Message
   version: 2.0.0
-  description: Open payload container for Beckn action messages. The specific content
-    of the message object is determined by the action value in the accompanying Context.
-    BecknAction constrains message content based on context.action via if/then dispatch
-    rules. Direct use of this schema provides no payload constraints — use BecknAction
-    for validated action payloads.
+  description: Open payload container for Beckn action messages. The specific content of the message object is determined by the action value in the accompanying Context. BecknAction constrains message content based on context.action via if/then dispatch rules. Direct use of this schema provides no payload constraints — use BecknAction for validated action payloads.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -16,10 +17,6 @@ components:
       title: Message
       x-tags:
       - common
-      description: Open payload container for Beckn action messages. The specific
-        content of the message object is determined by the action value in the accompanying
-        Context. BecknAction constrains message content based on context.action via
-        if/then dispatch rules. Direct use of this schema provides no payload constraints
-        — use BecknAction for validated action payloads.
+      description: Open payload container for Beckn action messages. The specific content of the message object is determined by the action value in the accompanying Context. BecknAction constrains message content based on context.action via if/then dispatch rules. Direct use of this schema provides no payload constraints — use BecknAction for validated action payloads.
       type: object
       additionalProperties: true

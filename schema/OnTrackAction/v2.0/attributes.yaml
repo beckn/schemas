@@ -2,20 +2,21 @@ openapi: 3.1.1
 info:
   title: OnTrackAction
   version: 2.0.0
-  description: 'Beckn /beckn/on_track callback envelope. Sent by a BPP to a BAP in
-    response to a /beckn/track call, returning a Tracking handle with the URL and/or
-    WebSocket endpoint for real-time fulfillment tracking.
+  description: 'Beckn /beckn/on_track callback envelope. Sent by a BPP to a BAP in response to a /beckn/track call, returning a Tracking handle with the URL and/or WebSocket endpoint for real-time fulfillment tracking.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     OnTrackAction:
       $id: https://schema.beckn.io/OnTrackAction/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: 'Beckn /beckn/on_track callback envelope. Sent by a BPP to a BAP
-        in response to a /beckn/track call, returning a Tracking handle with the URL
-        and/or WebSocket endpoint for real-time fulfillment tracking.
+      description: 'Beckn /beckn/on_track callback envelope. Sent by a BPP to a BAP in response to a /beckn/track call, returning a Tracking handle with the URL and/or WebSocket endpoint for real-time fulfillment tracking.
 
         '
       title: OnTrackAction

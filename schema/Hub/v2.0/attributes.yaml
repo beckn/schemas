@@ -3,15 +3,18 @@ info:
   title: Hub
   version: 2.0.0
   description: Schema definition for the Hub entity in the Beckn Logistics domain.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     Hub:
       type: object
       title: Hub
-      description: 'A Hub is a logistics fulfillment center, sorting facility, or
-        distribution point where goods are consolidated, sorted, and dispatched for
-        onward delivery. Maps to beckn:Location.
+      description: 'A Hub is a logistics fulfillment center, sorting facility, or distribution point where goods are consolidated, sorted, and dispatched for onward delivery. Maps to beckn:Location.
 
         '
       required:

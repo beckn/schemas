@@ -3,14 +3,18 @@ info:
   title: Proof
   version: 2.0.0
   description: Schema definition for the Proof entity in the Beckn Logistics domain.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     Proof:
       type: object
       title: Proof
-      description: 'Proof of delivery or pickup evidence, including photos, signatures,
-        OTP confirmations, or digital receipts. Maps to beckn:Document.
+      description: 'Proof of delivery or pickup evidence, including photos, signatures, OTP confirmations, or digital receipts. Maps to beckn:Document.
 
         '
       required:

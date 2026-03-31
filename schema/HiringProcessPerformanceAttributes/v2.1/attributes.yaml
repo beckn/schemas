@@ -2,22 +2,20 @@ openapi: 3.1.1
 info:
   title: HiringProcessPerformanceAttributes
   version: 2.1.0
-  description: 'Beckn v2.1 extension schema for the performanceAttributes container.
-    Captures the hiring process pipeline state in an employer-to-candidate hiring
-    transaction. Tracks the current stage (screening through offer), any interview
-    schedule, assessment requirements, and optional credential verification triggered
-    by the employer. Performance mode is SERVICE.
+  description: 'Beckn v2.1 extension schema for the performanceAttributes container. Captures the hiring process pipeline state in an employer-to-candidate hiring transaction. Tracks the current stage (screening through offer), any interview schedule, assessment requirements, and optional credential verification triggered by the employer. Performance mode is SERVICE.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     HiringProcessPerformanceAttributes:
       type: object
-      description: 'Execution state of the hiring process service. Covers the pipeline
-        from initial screening through to offer acceptance or withdrawal. Includes
-        optional credential verification triggered by the employer during the hiring
-        process.
+      description: 'Execution state of the hiring process service. Covers the pipeline from initial screening through to offer acceptance or withdrawal. Includes optional credential verification triggered by the employer during the hiring process.
 
         '
       x-beckn-container: performanceAttributes
@@ -65,21 +63,18 @@ components:
           x-jsonld-id: hppa:assessmentRequired
         assessment_reference:
           type: string
-          description: 'External reference ID for the assessment (e.g. a test platform
-            link or reference number). Only present when assessment_required = true.
+          description: 'External reference ID for the assessment (e.g. a test platform link or reference number). Only present when assessment_required = true.
 
             '
           x-jsonld-id: hppa:assessmentReference
         verification_requested:
           type: boolean
-          description: Whether the employer has triggered credential verification
-            for this candidate.
+          description: Whether the employer has triggered credential verification for this candidate.
           x-jsonld-id: hppa:verificationRequested
           default: false
         verification_summary:
           $ref: https://schema.beckn.io/VerificationSummary/attributes.yaml#/components/schemas/VerificationSummary
-          description: 'Outcome of employer-triggered credential verification. Only
-            populated when verification_requested = true.
+          description: 'Outcome of employer-triggered credential verification. Only populated when verification_requested = true.
 
             '
           x-jsonld-id: hppa:verificationSummary

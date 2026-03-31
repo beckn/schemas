@@ -3,14 +3,18 @@ info:
   title: Receipt
   version: 2.0.0
   description: Schema for Receipt in Beckn Logistics domain.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     LogisticsReceipt:
       type: object
       title: Receipt
-      description: Digital acknowledgment of payment and delivery for a logistics
-        service.
+      description: Digital acknowledgment of payment and delivery for a logistics service.
       required:
       - id
       - shipmentId

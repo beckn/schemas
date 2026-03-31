@@ -2,20 +2,21 @@ openapi: 3.1.1
 info:
   title: ConfirmAction
   version: 2.0.0
-  description: 'Beckn /beckn/confirm action envelope. Sent by a BAP to a BPP to confirm
-    a contract, finalising the transaction terms agreed during the select–init negotiation
-    cycle.
+  description: 'Beckn /beckn/confirm action envelope. Sent by a BAP to a BPP to confirm a contract, finalising the transaction terms agreed during the select–init negotiation cycle.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     ConfirmAction:
       $id: https://schema.beckn.io/ConfirmAction/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: 'Beckn /beckn/confirm action envelope. Sent by a BAP to a BPP to
-        confirm a contract, finalising the transaction terms agreed during the select–init
-        negotiation cycle.
+      description: 'Beckn /beckn/confirm action envelope. Sent by a BAP to a BPP to confirm a contract, finalising the transaction terms agreed during the select–init negotiation cycle.
 
         '
       title: ConfirmAction

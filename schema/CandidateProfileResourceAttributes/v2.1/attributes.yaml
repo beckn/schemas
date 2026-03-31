@@ -2,25 +2,20 @@ openapi: 3.1.1
 info:
   title: CandidateProfileResourceAttributes
   version: 2.1.0
-  description: 'Beckn v2.1 extension schema for the resourceAttributes container.
-    Represents a discoverable candidate profile in a talent marketplace. In this topology
-    the candidate (or their representing platform) is the BPP, and the employer is
-    the BAP. The Resource is the candidate''s discoverable profile — skills, experience
-    level, availability, and location preferences. No PII is included. Supports graceful
-    degradation: skills may be self-declared (attested=false) or VC-backed (attested=true
-    with proof_request_url).
+  description: 'Beckn v2.1 extension schema for the resourceAttributes container. Represents a discoverable candidate profile in a talent marketplace. In this topology the candidate (or their representing platform) is the BPP, and the employer is the BAP. The Resource is the candidate''s discoverable profile — skills, experience level, availability, and location preferences. No PII is included. Supports graceful degradation: skills may be self-declared (attested=false) or VC-backed (attested=true with proof_request_url).
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     CandidateProfileResourceAttributes:
       type: object
-      description: 'Discoverable profile attributes of a candidate Resource. Captures
-        what the candidate brings (skills, experience, availability) and what they
-        seek (location preference, work mode, job type). Designed for privacy: no
-        name, contact, or identity data. Credentials are referenced via SkillEntry
-        with optional VC attestation URLs.
+      description: 'Discoverable profile attributes of a candidate Resource. Captures what the candidate brings (skills, experience, availability) and what they seek (location preference, work mode, job type). Designed for privacy: no name, contact, or identity data. Credentials are referenced via SkillEntry with optional VC attestation URLs.
 
         '
       x-beckn-container: resourceAttributes
@@ -28,9 +23,7 @@ components:
       properties:
         skills:
           type: array
-          description: 'List of skills, qualifications, and credentials held by the
-            candidate. Each entry supports graceful degradation: self-declared (attested=false)
-            or VC-backed (attested=true, proof_request_url present).
+          description: 'List of skills, qualifications, and credentials held by the candidate. Each entry supports graceful degradation: self-declared (attested=false) or VC-backed (attested=true, proof_request_url present).
 
             '
           x-jsonld-id: cpra:skills
@@ -98,8 +91,7 @@ components:
           x-jsonld-id: cpra:openToRelocation
         industry_preference:
           type: array
-          description: 'Industries the candidate prefers to work in, expressed as
-            authority-governed codes for international neutrality.
+          description: 'Industries the candidate prefers to work in, expressed as authority-governed codes for international neutrality.
 
             '
           x-jsonld-id: cpra:industryPreference
@@ -119,9 +111,7 @@ components:
             - APPRENTICESHIP
         overall_verification_status:
           type: string
-          description: 'Aggregate verification status derived from the candidate''s
-            DeDi verification_index. Indicates how many of their declared skills have
-            been VC-attested. Not PII — derived from public registry data.
+          description: 'Aggregate verification status derived from the candidate''s DeDi verification_index. Indicates how many of their declared skills have been VC-attested. Not PII — derived from public registry data.
 
             '
           x-jsonld-id: cpra:overallVerificationStatus

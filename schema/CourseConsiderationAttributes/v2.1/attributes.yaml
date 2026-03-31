@@ -2,12 +2,14 @@ openapi: 3.1.1
 info:
   title: CourseConsiderationAttributes
   version: 2.1.0
-  description: 'Beckn v2.1 extension schema for the considerationAttributes container.
-    Captures value-exchange specifics for a course enrollment — fee category, payment
-    schedule, installment count, subsidy source, and refund policy. Used when course
-    pricing_type is FULL_FEE, SUBSIDIZED, or SCHOLARSHIP.
+  description: 'Beckn v2.1 extension schema for the considerationAttributes container. Captures value-exchange specifics for a course enrollment — fee category, payment schedule, installment count, subsidy source, and refund policy. Used when course pricing_type is FULL_FEE, SUBSIDIZED, or SCHOLARSHIP.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -40,8 +42,7 @@ components:
           minimum: 2
         subsidy_source:
           type: string
-          description: Name of the government scheme or sponsoring body covering the
-            subsidy.
+          description: Name of the government scheme or sponsoring body covering the subsidy.
           x-jsonld-id: ccoa:subsidySource
         refund_policy:
           type: string

@@ -2,21 +2,20 @@ openapi: 3.1.1
 info:
   title: HiringJobResourceAttributes
   version: 2.1.0
-  description: 'Beckn v2.1 extension schema for the resourceAttributes container.
-    Represents a discoverable job opportunity in a hiring marketplace. Captures intrinsic
-    metadata about the role — what it is, where it is, what mode it operates in, and
-    what credentials an applicant must hold. Pricing and commercial terms belong in
-    HiringJobOfferAttributes.
+  description: 'Beckn v2.1 extension schema for the resourceAttributes container. Represents a discoverable job opportunity in a hiring marketplace. Captures intrinsic metadata about the role — what it is, where it is, what mode it operates in, and what credentials an applicant must hold. Pricing and commercial terms belong in HiringJobOfferAttributes.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     HiringJobResourceAttributes:
       type: object
-      description: 'Intrinsic attributes of a job opportunity Resource. Domain-generic:
-        applicable to any hiring vertical (tech, construction, logistics, healthcare,
-        gig economy, etc.).
+      description: 'Intrinsic attributes of a job opportunity Resource. Domain-generic: applicable to any hiring vertical (tech, construction, logistics, healthcare, gig economy, etc.).
 
         '
       x-beckn-container: resourceAttributes
@@ -43,8 +42,7 @@ components:
           - HYBRID
         industry_type:
           $ref: https://schema.beckn.io/CodedValue/attributes.yaml#/components/schemas/CodedValue
-          description: 'Industry classification using an authority-governed code system
-            (e.g. ISIC, NIC). Provides international neutrality.
+          description: 'Industry classification using an authority-governed code system (e.g. ISIC, NIC). Provides international neutrality.
 
             '
           x-jsonld-id: hjra:industryType
@@ -65,16 +63,13 @@ components:
               x-jsonld-id: schema:addressCountry
         service_area:
           type: string
-          description: 'Free-text description of the geographic service area for roles
-            not tied to a single location (e.g. field sales, delivery routes).
+          description: 'Free-text description of the geographic service area for roles not tied to a single location (e.g. field sales, delivery routes).
 
             '
           x-jsonld-id: hjra:serviceArea
         requirements:
           type: array
-          description: 'Ordered list of credential requirements an applicant must
-            satisfy. Mandatory requirements block the application; non-mandatory are
-            advisory.
+          description: 'Ordered list of credential requirements an applicant must satisfy. Mandatory requirements block the application; non-mandatory are advisory.
 
             '
           x-jsonld-id: hjra:requirements

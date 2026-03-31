@@ -2,20 +2,21 @@ openapi: 3.1.1
 info:
   title: OnRateAction
   version: 2.0.0
-  description: 'Beckn /beckn/on_rate callback envelope. Sent by a BPP to a BAP in
-    response to a /beckn/rate call, optionally returning rating forms to collect structured
-    feedback from the consumer.
+  description: 'Beckn /beckn/on_rate callback envelope. Sent by a BPP to a BAP in response to a /beckn/rate call, optionally returning rating forms to collect structured feedback from the consumer.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     OnRateAction:
       $id: https://schema.beckn.io/OnRateAction/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: 'Beckn /beckn/on_rate callback envelope. Sent by a BPP to a BAP
-        in response to a /beckn/rate call, optionally returning rating forms to collect
-        structured feedback from the consumer.
+      description: 'Beckn /beckn/on_rate callback envelope. Sent by a BPP to a BAP in response to a /beckn/rate call, optionally returning rating forms to collect structured feedback from the consumer.
 
         '
       title: OnRateAction

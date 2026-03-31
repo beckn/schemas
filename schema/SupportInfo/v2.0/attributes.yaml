@@ -5,14 +5,18 @@ info:
   description: 'Canonical support contact for an entity, mapped to schema.org ContactPoint.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     SupportInfo:
       $id: https://schema.beckn.io/SupportInfo/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: 'Canonical support contact for an entity, mapped to schema.org
-        ContactPoint.
+      description: 'Canonical support contact for an entity, mapped to schema.org ContactPoint.
 
         '
       title: SupportInfo

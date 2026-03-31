@@ -2,20 +2,20 @@ openapi: 3.1.1
 info:
   title: JobApplicationContractAttributes
   version: 2.1.0
-  description: 'Beckn v2.1 extension schema for the contractAttributes container.
-    Represents the transaction-level state of a job application — tracking reference,
-    credential verification outcome, and reverification state. This schema covers
-    the application contract between a job seeker (CANDIDATE) and a job provider (EMPLOYER).
+  description: 'Beckn v2.1 extension schema for the contractAttributes container. Represents the transaction-level state of a job application — tracking reference, credential verification outcome, and reverification state. This schema covers the application contract between a job seeker (CANDIDATE) and a job provider (EMPLOYER).
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     JobApplicationContractAttributes:
       type: object
-      description: 'Transaction-level metadata for a job application contract. Captures
-        the application reference, aggregate verification outcome, and reverification
-        state. No credential payloads are stored here.
+      description: 'Transaction-level metadata for a job application contract. Captures the application reference, aggregate verification outcome, and reverification state. No credential payloads are stored here.
 
         '
       x-beckn-container: contractAttributes
@@ -26,30 +26,26 @@ components:
       properties:
         application_reference:
           type: string
-          description: 'BAP-generated unique reference for this application. Used
-            for tracking, status queries, and audit. Not a platform routing ID.
+          description: 'BAP-generated unique reference for this application. Used for tracking, status queries, and audit. Not a platform routing ID.
 
             '
           x-jsonld-id: jaca:applicationReference
         verification_summary:
           $ref: https://schema.beckn.io/VerificationSummary/attributes.yaml#/components/schemas/VerificationSummary
-          description: 'Aggregate outcome of credential verification performed during
-            the application submission. Populated after verification completes.
+          description: 'Aggregate outcome of credential verification performed during the application submission. Populated after verification completes.
 
             '
           x-jsonld-id: jaca:verificationSummary
         reverification_requested:
           type: boolean
-          description: 'Whether the employer (EMPLOYER party) has requested re-verification
-            of some or all credentials after the initial application submission.
+          description: 'Whether the employer (EMPLOYER party) has requested re-verification of some or all credentials after the initial application submission.
 
             '
           x-jsonld-id: jaca:reverificationRequested
           default: false
         reverification_requirements:
           type: array
-          description: 'Additional or revised requirements for which reverification
-            has been requested. Only populated when reverification_requested = true.
+          description: 'Additional or revised requirements for which reverification has been requested. Only populated when reverification_requested = true.
 
             '
           x-jsonld-id: jaca:reverificationRequirements

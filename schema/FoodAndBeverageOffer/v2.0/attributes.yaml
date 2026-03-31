@@ -2,6 +2,11 @@ openapi: 3.1.1
 info:
   title: Food & Beverage — Offer Attributes (v2)
   version: 2.0.0
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -13,8 +18,7 @@ components:
         x-jsonld:
           '@context': ./context.jsonld
           '@type': fnb:FoodAndBeverageOfferAttributes
-        description: 'Food & Beverage-specific extensions to RetailCoreOfferAttributes.
-          Covers structured customization groups for dynamic configuration.
+        description: 'Food & Beverage-specific extensions to RetailCoreOfferAttributes. Covers structured customization groups for dynamic configuration.
 
           '
         properties:

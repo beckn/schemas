@@ -2,19 +2,20 @@ openapi: 3.1.1
 info:
   title: CourseOfferAttributes
   version: 2.1.0
-  description: 'Beckn v2.1 extension schema for the offerAttributes container. Captures
-    commercial terms governing a course enrollment offer: pricing type, seat availability,
-    enrollment deadline, and sponsorship info.
+  description: 'Beckn v2.1 extension schema for the offerAttributes container. Captures commercial terms governing a course enrollment offer: pricing type, seat availability, enrollment deadline, and sponsorship info.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     CourseOfferAttributes:
       type: object
-      description: 'Commercial and availability terms under which a course is offered.
-        The proposedConsideration on the core Offer carries the headline fee; this
-        extension provides pricing type context and enrollment window.
+      description: 'Commercial and availability terms under which a course is offered. The proposedConsideration on the core Offer carries the headline fee; this extension provides pricing type context and enrollment window.
 
         '
       x-beckn-container: offerAttributes

@@ -2,22 +2,21 @@ openapi: 3.1.1
 info:
   title: RetailCoreFulfillmentAttributes
   version: 2.0.0
-  description: 'Retail-specific fulfillment attribute pack extending Beckn core Fulfillment.
-    Used as the value of Fulfillment.fulfillmentAttributes for retail domain fulfillments.
-    Covers supported fulfillment types, delivery endpoint, operating schedule, SLA
-    semantics, and handling constraints.
+  description: 'Retail-specific fulfillment attribute pack extending Beckn core Fulfillment. Used as the value of Fulfillment.fulfillmentAttributes for retail domain fulfillments. Covers supported fulfillment types, delivery endpoint, operating schedule, SLA semantics, and handling constraints.
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     RetailCoreFulfillmentAttributes:
       $id: https://schema.beckn.io/RetailCoreFulfillmentAttributes/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: 'Retail-specific fulfillment attribute pack extending Beckn core
-        Fulfillment. Used as the value of Fulfillment.fulfillmentAttributes for retail
-        domain fulfillments. Covers supported fulfillment types, delivery endpoint,
-        operating schedule, SLA semantics, and handling constraints.
+      description: 'Retail-specific fulfillment attribute pack extending Beckn core Fulfillment. Used as the value of Fulfillment.fulfillmentAttributes for retail domain fulfillments. Covers supported fulfillment types, delivery endpoint, operating schedule, SLA semantics, and handling constraints.
 
         '
       title: RetailCoreFulfillmentAttributes
@@ -48,8 +47,7 @@ components:
           additionalProperties: false
           properties:
             address:
-              description: Delivery address. Can be a structured Address or free-text
-                string.
+              description: Delivery address. Can be a structured Address or free-text string.
               oneOf:
               - type: string
               - $ref: https://schema.beckn.io/Address/attributes.yaml#/components/schemas/Address
@@ -99,8 +97,7 @@ components:
         sla:
           type: object
           additionalProperties: false
-          description: 'Service level agreement for fulfillment. Indicates expected
-            time bounds from the defined lifecycle event.
+          description: 'Service level agreement for fulfillment. Indicates expected time bounds from the defined lifecycle event.
 
             '
           properties:

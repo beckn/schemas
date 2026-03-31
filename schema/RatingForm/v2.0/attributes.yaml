@@ -2,18 +2,19 @@ openapi: 3.1.1
 info:
   title: RatingForm
   version: 2.0.0
-  description: A form designed to capture rating and feedback from a user. This can
-    be used by both BAP and BPP to fetch ratings and feedback of their respective
-    users.
+  description: A form designed to capture rating and feedback from a user. This can be used by both BAP and BPP to fetch ratings and feedback of their respective users.
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
     RatingForm:
       $id: https://schema.beckn.io/RatingForm/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: A form designed to capture rating and feedback from a user. This
-        can be used by both BAP and BPP to fetch ratings and feedback of their respective
-        users.
+      description: A form designed to capture rating and feedback from a user. This can be used by both BAP and BPP to fetch ratings and feedback of their respective users.
       title: RatingForm
       x-tags:
       - common
@@ -45,8 +46,7 @@ components:
               description: ID of the entity being rated (order/item/fulfillment/provider/agent).
               type: string
             ratingTargetType:
-              description: What is being rated. This can be any entity in the order
-                lifecycle that influenced the overall experience of the user
+              description: What is being rated. This can be any entity in the order lifecycle that influenced the overall experience of the user
               type: string
               enum:
               - Order
@@ -79,8 +79,7 @@ components:
           $ref: https://schema.beckn.io/Form/attributes.yaml#/components/schemas/Form
         feedbackRequired:
           type: boolean
-          description: Specifies whether feedback after rating is required for acceptance
-            of rating
+          description: Specifies whether feedback after rating is required for acceptance of rating
       required:
       - '@context'
       - '@type'

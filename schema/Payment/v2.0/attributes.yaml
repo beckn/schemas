@@ -3,6 +3,11 @@ info:
   title: Payment
   version: 2.0.0
   description: Schema definition for Payment in the Beckn Protocol
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -30,8 +35,7 @@ components:
             '@id': schema:identifier
         beckn:paymentStatus:
           type: string
-          description: Payment lifecycle status (Pending | Authorized | Captured |
-            Failed | Refunded | PartialRefund …)
+          description: Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)
           enum:
           - INITIATED
           - PENDING
@@ -98,8 +102,7 @@ components:
             '@id': schema:beneficiary
         beckn:paymentAttributes:
           $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
-          description: 'Rail-specific attribute pack (e.g., UPI: VPA/UTR; CARD: token/3DS;
-            BNPL: plan/schedule)
+          description: 'Rail-specific attribute pack (e.g., UPI: VPA/UTR; CARD: token/3DS; BNPL: plan/schedule)
 
             '
       required:

@@ -3,6 +3,11 @@ info:
   title: Item
   version: 2.1.0
   description: Schema definition for Item in the Beckn Protocol v2.0.1
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -52,8 +57,7 @@ components:
         itemAttributes:
           $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
         networkId:
-          description: Array of network identifiers for the BAP (Beckn App Provider)
-            that offers this item
+          description: Array of network identifiers for the BAP (Beckn App Provider) that offers this item
           type: array
           items:
             type: string

@@ -26,6 +26,11 @@ info:
     Use in: beckn:Offer.offerAttributes for F&B catalog items
 
     '
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -75,8 +80,7 @@ components:
             description: JSON-LD type.
           customization:
             type: object
-            description: 'Structured customization configuration for this offer. Groups
-              represent independent dimensions of configurability.
+            description: 'Structured customization configuration for this offer. Groups represent independent dimensions of configurability.
 
               '
             properties:
@@ -93,9 +97,7 @@ components:
       $defs:
         CustomizationGroup:
           type: object
-          description: 'A single dimension of configurability for a food item offer.
-            Examples: pizza size selection, crust type, topping selection, add-on
-            selection, sauce choice.
+          description: 'A single dimension of configurability for a food item offer. Examples: pizza size selection, crust type, topping selection, add-on selection, sauce choice.
 
             '
           required:
@@ -105,8 +107,7 @@ components:
           properties:
             code:
               type: string
-              description: 'Machine-readable code for this customization group (e.g.
-                SIZE, CRUST, TOPPINGS, ADDONS, SAUCE).
+              description: 'Machine-readable code for this customization group (e.g. SIZE, CRUST, TOPPINGS, ADDONS, SAUCE).
 
                 '
             name:
@@ -114,10 +115,7 @@ components:
               description: Human-readable name for this customization group.
             selection:
               type: string
-              description: 'Selection mode for this group. - SINGLE_REQUIRED: Exactly
-                one option must be chosen (e.g. pizza size) - SINGLE_OPTIONAL: Zero
-                or one option may be chosen - MULTIPLE_OPTIONAL: Zero or more options
-                may be chosen (e.g. toppings)
+              description: 'Selection mode for this group. - SINGLE_REQUIRED: Exactly one option must be chosen (e.g. pizza size) - SINGLE_OPTIONAL: Zero or one option may be chosen - MULTIPLE_OPTIONAL: Zero or more options may be chosen (e.g. toppings)
 
                 '
               enum:
@@ -140,9 +138,7 @@ components:
                 $ref: https://schema.beckn.io/FnBOffer/attributes.yaml#/components/schemas/FnBOffer
         CustomizationOption:
           type: object
-          description: 'A single selectable option within a CustomizationGroup. Each
-            option may carry a price delta (positive or negative) relative to the
-            base offer price.
+          description: 'A single selectable option within a CustomizationGroup. Each option may carry a price delta (positive or negative) relative to the base offer price.
 
             '
           required:
@@ -151,17 +147,13 @@ components:
           properties:
             code:
               type: string
-              description: Machine-readable option code (e.g. MEDIUM, CHEESE_BURST,
-                MUSHROOM).
+              description: Machine-readable option code (e.g. MEDIUM, CHEESE_BURST, MUSHROOM).
             name:
               type: string
-              description: Human-readable option name (e.g. "Medium", "Cheese Burst",
-                "Mushroom").
+              description: Human-readable option name (e.g. "Medium", "Cheese Burst", "Mushroom").
             priceDelta:
               type: object
-              description: 'Incremental price change relative to the base offer price
-                when this option is selected. Positive for upcharges, negative for
-                discounts.
+              description: 'Incremental price change relative to the base offer price when this option is selected. Positive for upcharges, negative for discounts.
 
                 '
               required:
@@ -170,8 +162,7 @@ components:
               properties:
                 type:
                   type: string
-                  description: '- FIXED: Absolute price change in the offer currency
-                    - PERCENTAGE: Percentage change of the base price
+                  description: '- FIXED: Absolute price change in the offer currency - PERCENTAGE: Percentage change of the base price
 
                     '
                   enum:

@@ -3,6 +3,11 @@ info:
   title: Fulfillment
   version: 2.0.0
   description: Schema definition for Fulfillment in the Beckn Protocol
+  license:
+    name: CC-BY-NC-SA-4.0
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
 paths: {}
 components:
   schemas:
@@ -30,8 +35,7 @@ components:
             '@id': schema:identifier
         beckn:fulfillmentStatus:
           type: string
-          description: Fulfillment status code (e.g., OutForDelivery, ReadyForPickup,
-            Confirmed)
+          description: Fulfillment status code (e.g., OutForDelivery, ReadyForPickup, Confirmed)
           x-jsonld:
             '@id': beckn:fulfillmentStatus
         beckn:mode:
@@ -54,21 +58,14 @@ components:
             '@id': beckn:mode
         trackingAction:
           $ref: https://schema.beckn.io/TrackAction/attributes.yaml#/components/schemas/TrackAction
-          description: 'Tracking entrypoint for this fulfillment, modeled as schema.org
-            TrackAction. Use target.url for a clickable tracking URL; may also include
-            deliveryMethod.
+          description: 'Tracking entrypoint for this fulfillment, modeled as schema.org TrackAction. Use target.url for a clickable tracking URL; may also include deliveryMethod.
 
             '
           x-jsonld:
             '@type': schema:TrackAction
         beckn:deliveryAttributes:
           $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
-          description: 'Bundle of attributes for the chosen mode:  # DELIVERY: endpoints,
-            slot windows, route & events → map to schema:ParcelDelivery / schema:DeliveryEvent
-            # PICKUP: pickupPlace, counter codes, time windows → map to schema:Place
-            + schema:openingHoursSpecification # RESERVATION: reservationStatus, reservedTicket
-            → map to schema:Reservation # DIGITAL: contentUrl/license/expiry → map
-            to schema:DataDownload/schema:MediaObject
+          description: 'Bundle of attributes for the chosen mode:  # DELIVERY: endpoints, slot windows, route & events → map to schema:ParcelDelivery / schema:DeliveryEvent # PICKUP: pickupPlace, counter codes, time windows → map to schema:Place + schema:openingHoursSpecification # RESERVATION: reservationStatus, reservedTicket → map to schema:Reservation # DIGITAL: contentUrl/license/expiry → map to schema:DataDownload/schema:MediaObject
 
             '
       required:
