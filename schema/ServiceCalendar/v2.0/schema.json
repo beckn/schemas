@@ -1,8 +1,0 @@
-{
-  "type": "object",
-  "title": "ServiceCalendar",
-  "description": "Attributes for the ServiceCalendar entity in the Beckn Mobility domain.\n",
-  "properties": {},
-  "$id": "https://schema.beckn.io/ServiceCalendar/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema"
-}

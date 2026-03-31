@@ -1,8 +1,0 @@
-{
-  "type": "object",
-  "title": "StationInformation",
-  "description": "Attributes for the StationInformation entity in the Beckn Mobility domain.\n",
-  "properties": {},
-  "$id": "https://schema.beckn.io/StationInformation/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema"
-}

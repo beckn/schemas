@@ -1,8 +1,0 @@
-{
-  "type": "object",
-  "title": "FareTransferRule",
-  "description": "Attributes for the FareTransferRule entity in the Beckn Mobility domain.\n",
-  "properties": {},
-  "$id": "https://schema.beckn.io/FareTransferRule/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema"
-}

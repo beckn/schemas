@@ -1,8 +1,0 @@
-{
-  "type": "object",
-  "title": "ServiceDelivery",
-  "description": "Attributes for the ServiceDelivery entity in the Beckn Mobility domain.\n",
-  "properties": {},
-  "$id": "https://schema.beckn.io/ServiceDelivery/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema"
-}

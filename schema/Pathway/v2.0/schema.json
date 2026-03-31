@@ -1,8 +1,0 @@
-{
-  "type": "object",
-  "title": "Pathway",
-  "description": "Attributes for the Pathway entity in the Beckn Mobility domain.\n",
-  "properties": {},
-  "$id": "https://schema.beckn.io/Pathway/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema"
-}

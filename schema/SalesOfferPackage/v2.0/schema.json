@@ -1,8 +1,0 @@
-{
-  "type": "object",
-  "title": "SalesOfferPackage",
-  "description": "Attributes for the SalesOfferPackage entity in the Beckn Mobility domain.\n",
-  "properties": {},
-  "$id": "https://schema.beckn.io/SalesOfferPackage/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema"
-}

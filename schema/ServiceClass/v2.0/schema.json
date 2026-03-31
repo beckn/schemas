@@ -1,8 +1,0 @@
-{
-  "type": "object",
-  "title": "ServiceClass",
-  "description": "Attributes for the ServiceClass entity in the Beckn Mobility domain.\n",
-  "properties": {},
-  "$id": "https://schema.beckn.io/ServiceClass/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema"
-}

@@ -1,8 +1,0 @@
-{
-  "type": "object",
-  "title": "VehicleType",
-  "description": "Attributes for the VehicleType entity in the Beckn Mobility domain.\n",
-  "properties": {},
-  "$id": "https://schema.beckn.io/VehicleType/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema"
-}

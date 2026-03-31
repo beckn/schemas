@@ -1,8 +1,0 @@
-{
-  "type": "object",
-  "title": "LostAndFoundItem",
-  "description": "Attributes for the LostAndFoundItem entity in the Beckn Mobility domain.\n",
-  "properties": {},
-  "$id": "https://schema.beckn.io/LostAndFoundItem/v2.0",
-  "$schema": "https://json-schema.org/draft/2020-12/schema"
-}
