@@ -2,30 +2,12 @@ openapi: 3.1.1
 info:
   title: RequestDigest
   version: 2.0.0
-  description: 'A cryptographic binding that explicitly ties a callback to the
-
-    specific inbound request that triggered it. Establishes bilateral non-repudiation
-
-    for the asynchronous leg of a Beckn interaction.
-
-
-    Use `lineage` (on `Context`) for cross-transaction causality.
-
-
-    Verification steps:
-
-    1. Recompute BLAKE2b-512 digest of the original request body; compare to `digest`.
-
-    2. Confirm `messageId` matches the `messageId` from the original request `Context`.
-
-
-    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.'
+  description: "Container schemas fetched from beckn.yaml. This cannot be extended as it is a reserved schema in beckn protocol. Any additional properties added to this schema can only be made using its *Attributes property"
   license:
     name: CC-BY-NC-SA 4.0 International
   contact:
     name: Beckn Labs
     url: https://beckn.io
-paths: {}
 components:
   schemas:
     RequestDigest:

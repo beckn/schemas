@@ -2,20 +2,12 @@ openapi: 3.1.1
 info:
   title: RatingInput
   version: 2.1.0
-  description: 'A form designed to capture rating and feedback from a user. This can
-    be used by both BAP and BPP to fetch ratings and feedback of their respective
-    users.
-
-
-    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
-    and MUST NOT be extended. Any domain-specific extension must use the property
-    of this schema which is of type Attribute.'
+  description: "Container schemas fetched from beckn.yaml. This cannot be extended as it is a reserved schema in beckn protocol. Any additional properties added to this schema can only be made using its *Attributes property"
   license:
     name: CC-BY-NC-SA 4.0 International
   contact:
     name: Beckn Labs
     url: https://beckn.io
-paths: {}
 components:
   schemas:
     RatingInput:

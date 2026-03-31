@@ -2,46 +2,12 @@ openapi: 3.1.1
 info:
   title: Performance
   version: 2.0.0
-  description: 'Generalized execution/performance unit. This is where downstream objects
-    bind:
-
-    - Fulfillment-like details (where/when/how)
-
-    - Tracking handles
-
-    - Support touchpoints
-
-    - Status updates
-
-
-    A minimal envelope that carries identity, status, and a performanceAttributes
-
-    bag that holds the concrete domain-specific delivery schema.
-
-
-    Domain specification authors can attach rich context and types via `performanceAttributes`.
-
-
-    For example, Hyperlocal delivery details (pickup/delivery locations, items shipped,
-    agent, etc.)
-
-    are placed inside performanceAttributes using a well-known domain schema such
-    as
-
-    HyperlocalDelivery. Use the generic Attributes schema when no well-known
-
-    domain schema exists.
-
-
-    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
-    and MUST NOT be extended. Any domain-specific extension must use the property
-    of this schema which is of type Attribute.'
+  description: "Container schemas fetched from beckn.yaml. This cannot be extended as it is a reserved schema in beckn protocol. Any additional properties added to this schema can only be made using its *Attributes property"
   license:
     name: CC-BY-NC-SA 4.0 International
   contact:
     name: Beckn Labs
     url: https://beckn.io
-paths: {}
 components:
   schemas:
     Performance:

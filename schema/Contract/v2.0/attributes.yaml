@@ -2,18 +2,12 @@ openapi: 3.1.1
 info:
   title: Contract
   version: 2.0.0
-  description: This is a JSON-LD compliant, linked-data schema that specifies a generic
-    multi-party, digitally signed Contract between a set of participants. based on
-    the vocabulary defined in the @context. By default, it is the most generic form
-    of contract i.e beckn:Contract. However, based on the mapping being used in @context,
-    it could take values like retail:Order, mobility:Reservation, healthcare:Appointment,
-    and so on, which will be defined as sub-classes of beckn:Contract.
+  description: "Container schemas fetched from beckn.yaml. This cannot be extended as it is a reserved schema in beckn protocol. Any additional properties added to this schema can only be made using its *Attributes property"
   license:
     name: CC-BY-NC-SA 4.0 International
   contact:
     name: Beckn Labs
     url: https://beckn.io
-paths: {}
 components:
   schemas:
     Contract:

@@ -2,21 +2,12 @@ openapi: 3.1.1
 info:
   title: GeoJSONGeometry
   version: 2.0.0
-  description: "**GeoJSON geometry** per RFC 7946. Coordinates are in **EPSG:4326\
-    \ (WGS-84)** and MUST follow **[longitude, latitude, (altitude?)]** order. Supported\
-    \ types: - Point, LineString, Polygon - MultiPoint, MultiLineString, MultiPolygon\
-    \ - GeometryCollection (uses `geometries` instead of `coordinates`) Notes: -\
-    \ For rectangles, use a Polygon with a single linear ring where the first   and\
-    \ last positions are identical. - Circles are **not native** to GeoJSON. For\
-    \ circular searches, use   `SpatialConstraint` with `op: s_dwithin` and a Point\
-    \ + `distanceMeters`,   or approximate the circle as a Polygon. - Optional `bbox`\
-    \ is `[west, south, east, north]` in degrees. "
+  description: "Container schemas fetched from beckn.yaml. This cannot be extended as it is a reserved schema in beckn protocol. Any additional properties added to this schema can only be made using its *Attributes property"
   license:
     name: CC-BY-NC-SA 4.0 International
   contact:
     name: Beckn Labs
     url: https://beckn.io
-paths: {}
 components:
   schemas:
     GeoJSONGeometry:

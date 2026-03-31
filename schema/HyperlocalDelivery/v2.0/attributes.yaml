@@ -22,7 +22,6 @@ info:
   contact:
     name: Beckn Labs
     url: https://beckn.io
-paths: {}
 components:
   schemas:
     HyperlocalDelivery:
