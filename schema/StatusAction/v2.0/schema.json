@@ -1,11 +1,11 @@
 {
   "title": "Status Action",
-  "description": "Beckn /beckn/status message payload. Sent by a BAP to a BPP to query\nthe current state of a contract/order by its identifier.\n(Context wrapper stripped; only the message-content portion is inlined.)",
+  "description": "Beckn /beckn/status message payload. Sent by a BAP to a BPP to query the current state of a contract/order by its identifier. (Context wrapper stripped; only the message-content portion is inlined.)",
   "properties": {
     "contract": {
       "allOf": [
         {
-          "$ref": "https://schema.beckn.io/Contract/v2.0/schema.json#/components/schemas/Contract"
+          "$ref": "https://schema.beckn.io/Contract/v2.0/schema.json"
         },
         {
           "required": [

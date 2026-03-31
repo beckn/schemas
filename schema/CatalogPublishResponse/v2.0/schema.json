@@ -2,7 +2,7 @@
   "$id": "https://schema.beckn.io/CatalogPublishResponse/v2.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "CatalogPublishResponse",
-  "description": "Beckn /beckn/on_catalog_publish message payload. Sent by a CDS back to a BPP\nafter processing a catalog publish request. Contains per-catalog processing results\nindicating success, failure, or partial indexing.\n",
+  "description": "Beckn /beckn/on_catalog_publish message payload. Sent by a CDS back to a BPP after processing a catalog publish request. Contains per-catalog processing results indicating success, failure, or partial indexing. ",
   "x-tags": [
     "common"
   ],
@@ -11,7 +11,7 @@
     "context": {
       "allOf": [
         {
-          "$ref": "https://schema.beckn.io/Context/attributes.yaml"
+          "$ref": "https://schema.beckn.io/Context/v2.0/attributes.yaml"
         },
         {
           "type": "object",
@@ -31,7 +31,7 @@
           "type": "array",
           "description": "Per-catalog processing results from the CDS.",
           "items": {
-            "$ref": "https://schema.beckn.io/CatalogProcessingResult/attributes.yaml"
+            "$ref": "https://schema.beckn.io/CatalogProcessingResult/v2.0/attributes.yaml"
           }
         }
       }

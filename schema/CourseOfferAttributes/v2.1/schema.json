@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "description": "Commercial and availability terms under which a course is offered. The proposedConsideration on the core Offer carries the headline fee; this extension provides pricing type context and enrollment window.\n",
+  "description": "Commercial and availability terms under which a course is offered. The proposedConsideration on the core Offer carries the headline fee; this extension provides pricing type context and enrollment window. ",
   "x-beckn-container": "offerAttributes",
   "x-jsonld-context": "./context.jsonld",
   "properties": {

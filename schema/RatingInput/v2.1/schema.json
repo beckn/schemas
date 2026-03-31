@@ -16,10 +16,10 @@
           "type": "string"
         },
         "descriptor": {
-          "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json#/components/schemas/Descriptor"
+          "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json"
         },
         "targetAttributes": {
-          "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json#/components/schemas/Attributes"
+          "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
         }
       }
     },
@@ -27,7 +27,7 @@
       "type": "object"
     },
     "feedbackFormSubmission": {
-      "$ref": "https://schema.beckn.io/FormSubmission/v2.0/schema.json#/components/schemas/FormSubmission"
+      "$ref": "https://schema.beckn.io/FormSubmission/v2.0/schema.json"
     }
   },
   "required": [

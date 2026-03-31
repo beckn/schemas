@@ -1,7 +1,7 @@
 {
   "type": "object",
   "title": "Consignment",
-  "description": "A Consignment is a collection of packages or shipments grouped together under a single commercial transaction between a shipper and consignee. Maps to beckn:Order.\n",
+  "description": "A Consignment is a collection of packages or shipments grouped together under a single commercial transaction between a shipper and consignee. Maps to beckn:Order. ",
   "required": [
     "id",
     "shipper",
@@ -14,20 +14,20 @@
       "example": "AWB-2024-9900123"
     },
     "shipper": {
-      "$ref": "https://schema.beckn.io/Contact/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Contact/v2.0/attributes.yaml"
     },
     "consignee": {
-      "$ref": "https://schema.beckn.io/Contact/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Contact/v2.0/attributes.yaml"
     },
     "shipments": {
       "type": "array",
       "description": "List of shipments in this consignment",
       "items": {
-        "$ref": "https://schema.beckn.io/Shipment/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Shipment/v2.0/attributes.yaml"
       }
     },
     "carrier": {
-      "$ref": "https://schema.beckn.io/Carrier/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Carrier/v2.0/attributes.yaml"
     },
     "totalWeight": {
       "type": "object",

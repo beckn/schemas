@@ -1,7 +1,7 @@
 {
   "$id": "https://schema.beckn.io/RetailCoreFulfillmentAttributes/v2.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "Retail-specific fulfillment attribute pack extending Beckn core Fulfillment. Used as the value of Fulfillment.fulfillmentAttributes for retail domain fulfillments. Covers supported fulfillment types, delivery endpoint, operating schedule, SLA semantics, and handling constraints.\n",
+  "description": "Retail-specific fulfillment attribute pack extending Beckn core Fulfillment. Used as the value of Fulfillment.fulfillmentAttributes for retail domain fulfillments. Covers supported fulfillment types, delivery endpoint, operating schedule, SLA semantics, and handling constraints. ",
   "title": "RetailCoreFulfillmentAttributes",
   "x-tags": [
     "retail"
@@ -42,7 +42,7 @@
               "type": "string"
             },
             {
-              "$ref": "https://schema.beckn.io/Address/attributes.yaml"
+              "$ref": "https://schema.beckn.io/Address/v2.0/attributes.yaml"
             }
           ]
         },
@@ -113,7 +113,7 @@
     "sla": {
       "type": "object",
       "additionalProperties": false,
-      "description": "Service level agreement for fulfillment. Indicates expected time bounds from the defined lifecycle event.\n",
+      "description": "Service level agreement for fulfillment. Indicates expected time bounds from the defined lifecycle event. ",
       "properties": {
         "min": {
           "type": "string",

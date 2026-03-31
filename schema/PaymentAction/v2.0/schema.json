@@ -83,7 +83,7 @@
       "example": "https://payments.example.com/pay?transactionId=123&amount=100"
     },
     "state": {
-      "$ref": "https://schema.beckn.io/State/attributes.yaml"
+      "$ref": "https://schema.beckn.io/State/v2.0/attributes.yaml"
     },
     "txnRef": {
       "description": "PSP/gateway/bank transaction reference",
@@ -93,7 +93,7 @@
       }
     },
     "checkoutAt": {
-      "$ref": "https://schema.beckn.io/CheckoutTerminal/attributes.yaml"
+      "$ref": "https://schema.beckn.io/CheckoutTerminal/v2.0/attributes.yaml"
     },
     "paidAt": {
       "description": "The time at which the payment was made",
@@ -102,7 +102,7 @@
     },
     "paymentActionAttributes": {
       "description": "Extensible set of attributes containing payment actions specific to each ecosystem.",
-      "$ref": "https://schema.beckn.io/Attributes/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml"
     }
   },
   "required": [

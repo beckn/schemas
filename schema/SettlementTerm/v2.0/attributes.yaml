@@ -39,14 +39,14 @@ components:
                 '@id': schema:price
         paymentTrigger:
           description: Describes the event which triggers the payment against this settlement term
-          $ref: https://schema.beckn.io/PaymentTrigger/attributes.yaml#/components/schemas/PaymentTrigger
+          $ref: https://schema.beckn.io/PaymentTrigger/v2.0/attributes.yaml#/components/schemas/PaymentTrigger
         settlementStatus:
           type: string
           enum:
           - PENDING
           - COMPLETE
         settlementSchedule:
-          $ref: https://schema.beckn.io/SettlementSchedule/attributes.yaml#/components/schemas/SettlementSchedule
+          $ref: https://schema.beckn.io/SettlementSchedule/v2.0/attributes.yaml#/components/schemas/SettlementSchedule
         payTo:
           description: Describes the details of the account where the money must be remited. It could be a bank account, a payment gateway, or a virtual payment address (like a UPI ID)
           anyOf:
@@ -80,6 +80,6 @@ components:
             additionalProperties: true
         settlementTermAttributes:
           description: Additional use case specific settlement terms that must be adhered to
-          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+          $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
       x-tags:
       - common

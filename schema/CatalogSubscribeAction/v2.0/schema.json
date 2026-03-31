@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "description": "Message payload for catalog/subscription.\nAt least one of `networkIds` or `schemaTypes` must be non-empty.\nAn empty `schemaTypes` array is treated as the wildcard sentinel `\"*\"`,\nmatching all schema types for the specified networks.\n",
+  "description": "Message payload for catalog/subscription. At least one of `networkIds` or `schemaTypes` must be non-empty. An empty `schemaTypes` array is treated as the wildcard sentinel `\"*\"`, matching all schema types for the specified networks. ",
   "required": [
     "subscription"
   ],
@@ -31,7 +31,7 @@
           "description": "Override callback URL (defaults to context.bapUri)"
         },
         "deliveryPolicy": {
-          "$ref": "https://schema.beckn.io/DeliveryPolicy/v2.0/schema.json#/components/schemas/DeliveryPolicy"
+          "$ref": "https://schema.beckn.io/DeliveryPolicy/v2.0/schema.json"
         }
       }
     }

@@ -1,7 +1,7 @@
 {
   "allOf": [
     {
-      "$ref": "https://schema.beckn.io/RetailCoreItem/attributes.yaml"
+      "$ref": "https://schema.beckn.io/RetailCoreItem/v2.0/attributes.yaml"
     },
     {
       "type": "object",
@@ -10,7 +10,7 @@
         "@context": "./context.jsonld",
         "@type": "hk:HomeAndKitchenItemAttributes"
       },
-      "description": "Home & Kitchen-specific extensions to RetailCoreItemAttributes. Covers care, installation and usage environment guidance.\n",
+      "description": "Home & Kitchen-specific extensions to RetailCoreItemAttributes. Covers care, installation and usage environment guidance. ",
       "properties": {
         "careInstructions": {
           "type": "string",

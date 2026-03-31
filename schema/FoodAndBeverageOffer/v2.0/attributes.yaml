@@ -12,7 +12,7 @@ components:
   schemas:
     FoodAndBeverageOffer:
       allOf:
-      - $ref: https://schema.beckn.io/RetailCoreOffer/attributes.yaml#/components/schemas/RetailCoreOffer
+      - $ref: https://schema.beckn.io/RetailCoreOffer/v2.0/attributes.yaml#/components/schemas/RetailCoreOffer
       - type: object
         additionalProperties: false
         x-jsonld:
@@ -29,4 +29,4 @@ components:
               groups:
                 type: array
                 items:
-                  $ref: https://schema.beckn.io/CustomizationGroup/attributes.yaml#/components/schemas/CustomizationGroup
+                  $ref: https://schema.beckn.io/CustomizationGroup/v2.0/attributes.yaml#/components/schemas/CustomizationGroup

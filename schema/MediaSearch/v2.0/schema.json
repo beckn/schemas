@@ -4,11 +4,11 @@
     "media": {
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/MediaInput/v2.0/schema.json#/components/schemas/MediaInput"
+        "$ref": "https://schema.beckn.io/MediaInput/v2.0/schema.json"
       }
     },
     "options": {
-      "$ref": "https://schema.beckn.io/MediaSearchOptions/v2.0/schema.json#/components/schemas/MediaSearchOptions"
+      "$ref": "https://schema.beckn.io/MediaSearchOptions/v2.0/schema.json"
     }
   },
   "additionalProperties": false,

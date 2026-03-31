@@ -34,7 +34,7 @@
       "x-jsonld": {
         "@id": "beckn:timeRange"
       },
-      "$ref": "https://schema.beckn.io/TimePeriod/attributes.yaml"
+      "$ref": "https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml"
     },
     "label": {
       "type": "string",

@@ -27,9 +27,9 @@ components:
           enum:
           - Skill
         category:
-          $ref: https://schema.beckn.io/CategoryCode/attributes.yaml#/components/schemas/CategoryCode
+          $ref: https://schema.beckn.io/CategoryCode/v2.1/attributes.yaml#/components/schemas/CategoryCode
         descriptor:
-          $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
+          $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor
         id:
           type: string
       required:

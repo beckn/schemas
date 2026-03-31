@@ -1,5 +1,5 @@
 {
-  "description": "**Spatial predicate** using **OGC CQL2 (JSON semantics)** applied to one or more geometry targets in an item. This is where clients express spatial intent.\nKey ideas: - `targets`: one or more **JSONPath-like** pointers that locate geometry\n\n  fields within each item document (e.g., `$['availableAt'][*]['geo']`).\n- `op`: spatial operator (CQL2). Common ones:\n\n    • `S_WITHIN`     (A is completely inside B)\n    • `S_INTERSECTS` (A intersects B)\n    • `S_CONTAINS`   (A contains B)\n    • `S_DWITHIN`    (A within distance of B)\n- `geometry`: **GeoJSON** literal used as the predicate reference geometry. - `distanceMeters`: required for `S_DWITHIN` when using a GeoJSON Point/shape. - `quantifier`: if a target resolves to an array, choose whether **ANY** (default),\n\n  **ALL**, or **NONE** of elements must satisfy the predicate.\n\nCRS: unless otherwise stated, all coordinates are **EPSG:4326**.\n",
+  "description": "**Spatial predicate** using **OGC CQL2 (JSON semantics)** applied to one or more geometry targets in an item. This is where clients express spatial intent. Key ideas: - `targets`: one or more **JSONPath-like** pointers that locate geometry    fields within each item document (e.g., `$['availableAt'][*]['geo']`). - `op`: spatial operator (CQL2). Common ones:      • `S_WITHIN`     (A is completely inside B)     • `S_INTERSECTS` (A intersects B)     • `S_CONTAINS`   (A contains B)     • `S_DWITHIN`    (A within distance of B) - `geometry`: **GeoJSON** literal used as the predicate reference geometry. - `distanceMeters`: required for `S_DWITHIN` when using a GeoJSON Point/shape. - `quantifier`: if a target resolves to an array, choose whether **ANY** (default),    **ALL**, or **NONE** of elements must satisfy the predicate.  CRS: unless otherwise stated, all coordinates are **EPSG:4326**. ",
   "title": "SpatialConstraint",
   "type": "object",
   "properties": {
@@ -19,7 +19,7 @@
       ]
     },
     "targets": {
-      "description": "'One or more JSONPath-like pointers to geometry fields within the item.  Example pointers:  - `$[''availableAt''][*][''geo'']` (array of site Points)  - `$[''itemAttributes''][''ride:dropOff''][''geo'']` (drop zone Polygon)'\n",
+      "description": "'One or more JSONPath-like pointers to geometry fields within the item.  Example pointers:  - `$[''availableAt''][*][''geo'']` (array of site Points)  - `$[''itemAttributes''][''ride:dropOff''][''geo'']` (drop zone Polygon)' ",
       "oneOf": [
         {
           "type": "string"
@@ -33,7 +33,7 @@
       ]
     },
     "geometry": {
-      "$ref": "https://schema.beckn.io/GeoJSONGeometry/v2.0/schema.json#/components/schemas/GeoJSONGeometry"
+      "$ref": "https://schema.beckn.io/GeoJSONGeometry/v2.0/schema.json"
     },
     "distanceMeters": {
       "description": "For `S_DWITHIN`: maximum distance in meters from the target geometry to `geometry` (e.g., \"within 5000 m of this Point\"). Ignored for other ops.",
@@ -41,7 +41,7 @@
       "minimum": 0
     },
     "quantifier": {
-      "description": "'How to evaluate when `targets` resolves to an array - - **any**: at least one element matches (default) - **all**: every element must match  - **none**: no element may match'\n",
+      "description": "'How to evaluate when `targets` resolves to an array - - **any**: at least one element matches (default) - **all**: every element must match  - **none**: no element may match' ",
       "type": "string",
       "enum": [
         "ANY",

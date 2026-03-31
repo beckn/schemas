@@ -1,5 +1,5 @@
 {
-  "description": "Base context schema for all Beckn API calls. Contains addressing information\n(BAP/BPP identifiers and API URLs), protocol version, the action being called,\ntransaction and message IDs, timestamp, TTL, and optional encryption key.\nThis schema defines all possible properties but imposes NO required-field\nconstraints. Endpoint-specific validation is defined inline in operation request schemas.",
+  "description": "Base context schema for all Beckn API calls. Contains addressing information (BAP/BPP identifiers and API URLs), protocol version, the action being called, transaction and message IDs, timestamp, TTL, and optional encryption key. This schema defines all possible properties but imposes NO required-field constraints. Endpoint-specific validation is defined inline in operation request schemas.",
   "type": "object",
   "title": "Context",
   "properties": {
@@ -45,7 +45,7 @@
       "type": "string"
     },
     "bapUri": {
-      "description": "The callback URL of the BAP.\n\nREQUIRED: This should necessarily contain the same domain name as verified in its namespace under dedi.global, and MUST have the same URL as registered in its subscriber registry on dedi.global",
+      "description": "The callback URL of the BAP.  REQUIRED: This should necessarily contain the same domain name as verified in its namespace under dedi.global, and MUST have the same URL as registered in its subscriber registry on dedi.global",
       "type": "string",
       "format": "uri"
     },
@@ -54,7 +54,7 @@
       "type": "string"
     },
     "bppUri": {
-      "description": "The request URL of the BPP.\n\nREQUIRED: This MUST contain the same domain name as verified in its namespace under dedi.global, and MUST have the same URL as registered in its subscriber registry on dedi.global",
+      "description": "The request URL of the BPP.  REQUIRED: This MUST contain the same domain name as verified in its namespace under dedi.global, and MUST have the same URL as registered in its subscriber registry on dedi.global",
       "type": "string",
       "format": "uri"
     },
@@ -94,7 +94,7 @@
       }
     },
     "requestDigest": {
-      "$ref": "https://schema.beckn.io/RequestDigest/v2.0/schema.json#/components/schemas/RequestDigest"
+      "$ref": "https://schema.beckn.io/RequestDigest/v2.0/schema.json"
     }
   }
 }

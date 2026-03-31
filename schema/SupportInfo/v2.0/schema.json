@@ -1,7 +1,7 @@
 {
   "$id": "https://schema.beckn.io/SupportInfo/v2.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "Canonical support contact for an entity, mapped to schema.org ContactPoint.\n",
+  "description": "Canonical support contact for an entity, mapped to schema.org ContactPoint. ",
   "title": "SupportInfo",
   "type": "object",
   "properties": {

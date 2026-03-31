@@ -50,7 +50,7 @@ components:
               description: Delivery address. Can be a structured Address or free-text string.
               oneOf:
               - type: string
-              - $ref: https://schema.beckn.io/Address/attributes.yaml#/components/schemas/Address
+              - $ref: https://schema.beckn.io/Address/v2.0/attributes.yaml#/components/schemas/Address
             contact:
               type: object
               additionalProperties: false

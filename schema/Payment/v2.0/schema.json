@@ -98,7 +98,7 @@
       }
     },
     "beckn:acceptedPaymentMethod": {
-      "$ref": "https://schema.beckn.io/AcceptedPaymentMethod/attributes.yaml"
+      "$ref": "https://schema.beckn.io/AcceptedPaymentMethod/v2.0/attributes.yaml"
     },
     "beckn:beneficiary": {
       "type": "string",
@@ -114,8 +114,8 @@
       }
     },
     "beckn:paymentAttributes": {
-      "$ref": "https://schema.beckn.io/Attributes/attributes.yaml",
-      "description": "Rail-specific attribute pack (e.g., UPI: VPA/UTR; CARD: token/3DS; BNPL: plan/schedule)\n"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml",
+      "description": "Rail-specific attribute pack (e.g., UPI: VPA/UTR; CARD: token/3DS; BNPL: plan/schedule) "
     }
   },
   "required": [

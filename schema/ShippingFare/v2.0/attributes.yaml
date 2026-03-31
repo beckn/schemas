@@ -58,7 +58,7 @@ components:
           type: array
           description: Detailed fare breakup line items
           items:
-            $ref: https://schema.beckn.io/FareBreakup/attributes.yaml#/components/schemas/FareBreakup
+            $ref: https://schema.beckn.io/FareBreakup/v2.0/attributes.yaml#/components/schemas/FareBreakup
         estimatedFare:
           type: boolean
           description: Whether this is an estimate or confirmed fare

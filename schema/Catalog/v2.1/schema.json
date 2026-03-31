@@ -76,7 +76,7 @@
       "description": "Human / Agent-readable description of this catalog",
       "allOf": [
         {
-          "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json#/components/schemas/Descriptor"
+          "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json"
         }
       ]
     },
@@ -94,22 +94,22 @@
       "description": "Array of offers optionally linked to resources",
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/Offer/v2.1/schema.json#/components/schemas/Offer"
+        "$ref": "https://schema.beckn.io/Offer/v2.1/schema.json"
       }
     },
     "resources": {
       "description": "Array of generalized Resource entities in this catalog (new model)",
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/Resource/v2.0/schema.json#/components/schemas/Resource"
+        "$ref": "https://schema.beckn.io/Resource/v2.0/schema.json"
       }
     },
     "provider": {
-      "$ref": "https://schema.beckn.io/Provider/v2.1/schema.json#/components/schemas/Provider"
+      "$ref": "https://schema.beckn.io/Provider/v2.1/schema.json"
     },
     "validity": {
       "description": "The time period during which this catalog is valid",
-      "$ref": "https://schema.beckn.io/TimePeriod/v2.1/schema.json#/components/schemas/TimePeriod"
+      "$ref": "https://schema.beckn.io/TimePeriod/v2.1/schema.json"
     }
   },
   "required": [

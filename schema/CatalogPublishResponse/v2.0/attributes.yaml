@@ -34,7 +34,7 @@ components:
       properties:
         context:
           allOf:
-          - $ref: https://schema.beckn.io/Context/attributes.yaml#/components/schemas/Context
+          - $ref: https://schema.beckn.io/Context/v2.0/attributes.yaml#/components/schemas/Context
           - type: object
             properties:
               action:
@@ -47,7 +47,7 @@ components:
               type: array
               description: Per-catalog processing results from the CDS.
               items:
-                $ref: https://schema.beckn.io/CatalogProcessingResult/attributes.yaml#/components/schemas/CatalogProcessingResult
+                $ref: https://schema.beckn.io/CatalogProcessingResult/v2.0/attributes.yaml#/components/schemas/CatalogProcessingResult
       required:
       - context
       - message

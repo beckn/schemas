@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "description": "Summary of a credential verification check. Contains the overall result, reason codes for any failures, and which credential categories were successfully verified. No VC or VP payloads are included.\n",
+  "description": "Summary of a credential verification check. Contains the overall result, reason codes for any failures, and which credential categories were successfully verified. No VC or VP payloads are included. ",
   "required": [
     "overall_result",
     "checked_at"
@@ -19,7 +19,7 @@
     },
     "reason_codes": {
       "type": "array",
-      "description": "Reason codes for failures or partial results. Empty if overall_result is PASS. Examples: \"MANDATORY_REQUIREMENT_MISSING\", \"EXPIRED_CREDENTIAL\", \"ISSUER_NOT_TRUSTED\", \"SIGNATURE_INVALID\".\n",
+      "description": "Reason codes for failures or partial results. Empty if overall_result is PASS. Examples: \"MANDATORY_REQUIREMENT_MISSING\", \"EXPIRED_CREDENTIAL\", \"ISSUER_NOT_TRUSTED\", \"SIGNATURE_INVALID\". ",
       "x-jsonld-id": "vs:reasonCodes",
       "items": {
         "type": "string"
@@ -27,7 +27,7 @@
     },
     "verified_categories": {
       "type": "array",
-      "description": "Credential categories that were successfully verified in this check.\n",
+      "description": "Credential categories that were successfully verified in this check. ",
       "x-jsonld-id": "vs:verifiedCategories",
       "items": {
         "type": "string"
@@ -35,7 +35,7 @@
     },
     "verified_subtypes": {
       "type": "array",
-      "description": "Specific credential subtypes that were successfully verified.\n",
+      "description": "Specific credential subtypes that were successfully verified. ",
       "x-jsonld-id": "vs:verifiedSubtypes",
       "items": {
         "type": "string"
@@ -49,7 +49,7 @@
     },
     "proof_metadata_hash": {
       "type": "string",
-      "description": "Optional hash of the VP used in verification. Provides integrity reference without storing the VP payload.\n",
+      "description": "Optional hash of the VP used in verification. Provides integrity reference without storing the VP payload. ",
       "x-jsonld-id": "vs:proofMetadataHash"
     }
   },

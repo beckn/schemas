@@ -27,16 +27,16 @@ components:
           description: Unique consignment identifier (e.g. AWB number)
           example: AWB-2024-9900123
         shipper:
-          $ref: https://schema.beckn.io/Contact/attributes.yaml#/components/schemas/Contact
+          $ref: https://schema.beckn.io/Contact/v2.0/attributes.yaml#/components/schemas/Contact
         consignee:
-          $ref: https://schema.beckn.io/Contact/attributes.yaml#/components/schemas/Contact
+          $ref: https://schema.beckn.io/Contact/v2.0/attributes.yaml#/components/schemas/Contact
         shipments:
           type: array
           description: List of shipments in this consignment
           items:
-            $ref: https://schema.beckn.io/Shipment/attributes.yaml#/components/schemas/Shipment
+            $ref: https://schema.beckn.io/Shipment/v2.0/attributes.yaml#/components/schemas/Shipment
         carrier:
-          $ref: https://schema.beckn.io/Carrier/attributes.yaml#/components/schemas/Carrier
+          $ref: https://schema.beckn.io/Carrier/v2.0/attributes.yaml#/components/schemas/Carrier
         totalWeight:
           type: object
           properties:

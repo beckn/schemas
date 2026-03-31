@@ -32,14 +32,14 @@
       "description": "Links to downloadable business/supporting documents",
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/Document/v2.0/schema.json#/components/schemas/Document"
+        "$ref": "https://schema.beckn.io/Document/v2.0/schema.json"
       }
     },
     "mediaFile": {
       "description": "Links to multimedia files and images",
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/MediaFile/v2.0/schema.json#/components/schemas/MediaFile"
+        "$ref": "https://schema.beckn.io/MediaFile/v2.0/schema.json"
       }
     }
   },

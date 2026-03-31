@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "description": "Generalized representation of value exchanged under a Contract.\n\nConsideration is domain-neutral and may represent:\n- Monetary value\n- Credits / tokens\n- Asset transfer\n- Service exchange\n- Compliance artifact",
+  "description": "Generalized representation of value exchanged under a Contract.  Consideration is domain-neutral and may represent: - Monetary value - Credits / tokens - Asset transfer - Service exchange - Compliance artifact",
   "required": [
     "id",
     "status"
@@ -11,10 +11,10 @@
       "type": "string"
     },
     "status": {
-      "$ref": "https://schema.beckn.io/Descriptor/v2.0/schema.json#/components/schemas/Descriptor"
+      "$ref": "https://schema.beckn.io/Descriptor/v2.0/schema.json"
     },
     "considerationAttributes": {
-      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json#/components/schemas/Attributes"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
     }
   },
   "components": {

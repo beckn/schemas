@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "description": "A generalized, cross-domain Offer that captures the terms under which\none or more Resources may be committed.\n\nCore intent:\n- Support multiple terms/eligibility/constraints/price points for the same Resource(s)\n- Support dynamic / on-the-fly offers (e.g., bundling, combinational discounts,\n eligibility changes, capacity-aware pricing)\n\nThis mirrors the role of Offer in current Beckn (and schema.org patterns),\nbut keeps the shape minimal and composable via `beckn:offerAttributes`.",
+  "description": "A generalized, cross-domain Offer that captures the terms under which one or more Resources may be committed.  Core intent: - Support multiple terms/eligibility/constraints/price points for the same Resource(s) - Support dynamic / on-the-fly offers (e.g., bundling, combinational discounts,  eligibility changes, capacity-aware pricing)  This mirrors the role of Offer in current Beckn (and schema.org patterns), but keeps the shape minimal and composable via `beckn:offerAttributes`.",
   "required": [
     "id"
   ],
@@ -11,41 +11,41 @@
     },
     "descriptor": {
       "description": "Human / agent-readable description of this offer.",
-      "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json#/components/schemas/Descriptor"
+      "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json"
     },
     "provider": {
-      "$ref": "https://schema.beckn.io/Provider/v2.1/schema.json#/components/schemas/Provider"
+      "$ref": "https://schema.beckn.io/Provider/v2.1/schema.json"
     },
     "resourceIds": {
       "type": "array",
       "description": "References (IDs) to resources covered by this offer.",
       "items": {
-        "$ref": "#/components/schemas/Resource/properties/id"
+        "$ref": "#/properties/id"
       }
     },
     "addOns": {
       "type": "array",
       "description": "IDs of optional extra Offers or Resources that can be attached.",
       "items": {
-        "$ref": "https://schema.beckn.io/AddOn/v2.0/schema.json#/components/schemas/AddOn"
+        "$ref": "https://schema.beckn.io/AddOn/v2.0/schema.json"
       }
     },
     "considerationIds": {
       "type": "array",
       "items": {
-        "$ref": "#/components/schemas/Consideration/properties/id"
+        "$ref": "#/properties/id"
       }
     },
     "fulfillmentIds": {
       "description": "Details regarding the fulfillment of this offer",
-      "$ref": "https://schema.beckn.io/Consideration/v2.0/schema.json#/components/schemas/Consideration"
+      "$ref": "https://schema.beckn.io/Consideration/v2.0/schema.json"
     },
     "validity": {
-      "$ref": "https://schema.beckn.io/TimePeriod/v2.1/schema.json#/components/schemas/TimePeriod"
+      "$ref": "https://schema.beckn.io/TimePeriod/v2.1/schema.json"
     },
     "availableTo": {
       "type": "array",
-      "description": "Optional visibility constraint indicating which network participants\n(by participantId / networkId / role) are allowed to discover or\ntransact on this entity.\n\nIf omitted, the entity is assumed to be visible to all participants\nin the addressed network(s).",
+      "description": "Optional visibility constraint indicating which network participants (by participantId / networkId / role) are allowed to discover or transact on this entity.  If omitted, the entity is assumed to be visible to all participants in the addressed network(s).",
       "items": {
         "type": "object",
         "required": [
@@ -70,7 +70,7 @@
       }
     },
     "offerAttributes": {
-      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json#/components/schemas/Attributes"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
     }
   },
   "components": {

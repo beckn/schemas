@@ -70,7 +70,7 @@
     },
     "issued_credential_ref": {
       "type": "string",
-      "description": "Reference to the VC issued upon course completion. Only populated after completion_status = COMPLETED and VC issuance succeeds.\n",
+      "description": "Reference to the VC issued upon course completion. Only populated after completion_status = COMPLETED and VC issuance succeeds. ",
       "x-jsonld-id": "cdpa:issuedCredentialRef"
     }
   },

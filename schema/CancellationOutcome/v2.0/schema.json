@@ -11,7 +11,7 @@
     "descriptor": {
       "allOf": [
         {
-          "$ref": "https://schema.beckn.io/Descriptor/attributes.yaml"
+          "$ref": "https://schema.beckn.io/Descriptor/v2.1/attributes.yaml"
         }
       ],
       "properties": {

@@ -33,7 +33,7 @@ components:
           type: string
           format: date-time
         fare:
-          $ref: https://schema.beckn.io/Fare/attributes.yaml#/components/schemas/Fare
+          $ref: https://schema.beckn.io/Fare/v2.0/attributes.yaml#/components/schemas/Fare
         paymentMode:
           type: string
           enum:
@@ -49,13 +49,13 @@ components:
           type: string
           format: date-time
         shipper:
-          $ref: https://schema.beckn.io/Contact/attributes.yaml#/components/schemas/Contact
+          $ref: https://schema.beckn.io/Contact/v2.0/attributes.yaml#/components/schemas/Contact
         consignee:
-          $ref: https://schema.beckn.io/Contact/attributes.yaml#/components/schemas/Contact
+          $ref: https://schema.beckn.io/Contact/v2.0/attributes.yaml#/components/schemas/Contact
         carrier:
-          $ref: https://schema.beckn.io/Carrier/attributes.yaml#/components/schemas/Carrier
+          $ref: https://schema.beckn.io/Carrier/v2.0/attributes.yaml#/components/schemas/Carrier
         deliveryProof:
-          $ref: https://schema.beckn.io/Proof/attributes.yaml#/components/schemas/Proof
+          $ref: https://schema.beckn.io/Proof/v2.0/attributes.yaml#/components/schemas/Proof
         downloadUrl:
           type: string
           format: uri

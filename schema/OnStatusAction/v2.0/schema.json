@@ -1,10 +1,10 @@
 {
   "title": "On Status Action",
-  "description": "Beckn /beckn/on_status message payload. Sent by a BPP to a BAP in\nresponse to a /beckn/status call (or as an unsolicited status push),\nreturning the current state of the contract.\n(Context wrapper stripped; only the message-content portion is inlined.)",
+  "description": "Beckn /beckn/on_status message payload. Sent by a BPP to a BAP in response to a /beckn/status call (or as an unsolicited status push), returning the current state of the contract. (Context wrapper stripped; only the message-content portion is inlined.)",
   "additionalProperties": false,
   "properties": {
     "contract": {
-      "$ref": "https://schema.beckn.io/Contract/v2.0/schema.json#/components/schemas/Contract"
+      "$ref": "https://schema.beckn.io/Contract/v2.0/schema.json"
     }
   },
   "required": [

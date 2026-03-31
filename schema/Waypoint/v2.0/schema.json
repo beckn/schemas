@@ -1,7 +1,7 @@
 {
   "type": "object",
   "title": "Waypoint",
-  "description": "A Waypoint is an intermediate stop or checkpoint on a logistics route, such as a sorting hub, relay station, or customs checkpoint. Maps to beckn:Stop.\n",
+  "description": "A Waypoint is an intermediate stop or checkpoint on a logistics route, such as a sorting hub, relay station, or customs checkpoint. Maps to beckn:Stop. ",
   "required": [
     "id",
     "place"
@@ -16,7 +16,7 @@
       "example": "Hyderabad Sorting Hub"
     },
     "place": {
-      "$ref": "https://schema.beckn.io/Place/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Place/v2.0/attributes.yaml"
     },
     "type": {
       "type": "string",

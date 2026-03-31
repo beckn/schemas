@@ -10,33 +10,33 @@
       "description": "Unique line id within order"
     },
     "beckn:orderedItem": {
-      "$ref": "https://schema.beckn.io/Item/attributes.yaml",
+      "$ref": "https://schema.beckn.io/Item/v2.1/attributes.yaml",
       "x-jsonld": {
         "@id": "schema:orderedItem"
       }
     },
     "beckn:acceptedOffer": {
-      "$ref": "https://schema.beckn.io/Offer/attributes.yaml",
+      "$ref": "https://schema.beckn.io/Offer/v2.1/attributes.yaml",
       "description": "Offer applied to this line (if different from order-level)",
       "x-jsonld": {
         "@id": "schema:acceptedOffer"
       }
     },
     "beckn:quantity": {
-      "$ref": "https://schema.beckn.io/Quantity/attributes.yaml",
+      "$ref": "https://schema.beckn.io/Quantity/v2.0/attributes.yaml",
       "x-jsonld": {
         "@id": "beckn:quantity"
       }
     },
     "beckn:price": {
-      "$ref": "https://schema.beckn.io/PriceSpecification/attributes.yaml",
+      "$ref": "https://schema.beckn.io/PriceSpecification/v2.1/attributes.yaml",
       "description": "Line price composition (unit/tax/delivery/discount)",
       "x-jsonld": {
         "@id": "schema:priceSpecification"
       }
     },
     "beckn:orderItemAttributes": {
-      "$ref": "https://schema.beckn.io/Attributes/attributes.yaml",
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml",
       "description": "Line-level Attribute Pack (options, substitutions, ESG, etc.)"
     }
   },

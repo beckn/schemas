@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "description": "This is a JSON-LD compliant, linked-data schema that specifies a generic multi-party, digitally signed Contract between a set of participants. based on the vocabulary defined in the @context. By default, it is the most generic form of contract i.e beckn:Contract. However, based on the mapping being used in @context, it could take values like retail:Order, mobility:Reservation, healthcare:Appointment, and so on, which will be defined as sub-classes of beckn:Contract.\nAlternate description A digitally agreed commitment between two or more participants\ngoverning the exchange of economic or non-economic value.\n\nContract is the canonical contract object in the generalized\nBeckn v2.1 protocol. It replaces the commerce-specific Order construct\nas the canonical transaction object at the API layer.\n\nA Contract binds:\n - Commitments (what is agreed)\n - Consideration (value promised)\n - Performance (how execution occurs)\n - Settlements (how consideration is discharged)\n\nThe model is domain-neutral and supports commerce, hiring,\nenergy markets, carbon exchanges, data access, mobility,\nsubscriptions, and other use cases.",
+  "description": "This is a JSON-LD compliant, linked-data schema that specifies a generic multi-party, digitally signed Contract between a set of participants. based on the vocabulary defined in the @context. By default, it is the most generic form of contract i.e beckn:Contract. However, based on the mapping being used in @context, it could take values like retail:Order, mobility:Reservation, healthcare:Appointment, and so on, which will be defined as sub-classes of beckn:Contract. Alternate description A digitally agreed commitment between two or more participants governing the exchange of economic or non-economic value.  Contract is the canonical contract object in the generalized Beckn v2.1 protocol. It replaces the commerce-specific Order construct as the canonical transaction object at the API layer.  A Contract binds:  - Commitments (what is agreed)  - Consideration (value promised)  - Performance (how execution occurs)  - Settlements (how consideration is discharged)  The model is domain-neutral and supports commerce, hiring, energy markets, carbon exchanges, data access, mobility, subscriptions, and other use cases.",
   "title": "Contract",
   "properties": {
     "id": {
@@ -9,49 +9,49 @@
       "format": "uuid"
     },
     "descriptor": {
-      "$ref": "https://schema.beckn.io/Descriptor/v2.0/schema.json#/components/schemas/Descriptor"
+      "$ref": "https://schema.beckn.io/Descriptor/v2.0/schema.json"
     },
     "commitments": {
       "type": "array",
       "description": "Structured commitments governed by this contract.",
       "minItems": 1,
       "items": {
-        "$ref": "https://schema.beckn.io/Commitment/v2.0/schema.json#/components/schemas/Commitment"
+        "$ref": "https://schema.beckn.io/Commitment/v2.0/schema.json"
       }
     },
     "consideration": {
       "type": "array",
       "description": "Value agreed to be exchanged under this contract.",
       "items": {
-        "$ref": "https://schema.beckn.io/Consideration/v2.0/schema.json#/components/schemas/Consideration"
+        "$ref": "https://schema.beckn.io/Consideration/v2.0/schema.json"
       }
     },
     "participants": {
-      "description": "The participants involved in the contract. Contracts are not always between two individuals.\n\nSeveral entities may play a specific role in the creation, fulfillment, and post-fulfillment of\nthe contract.",
+      "description": "The participants involved in the contract. Contracts are not always between two individuals.  Several entities may play a specific role in the creation, fulfillment, and post-fulfillment of the contract.",
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/Participant/v2.0/schema.json#/components/schemas/Participant"
+        "$ref": "https://schema.beckn.io/Participant/v2.0/schema.json"
       }
     },
     "performance": {
       "type": "array",
-      "description": "Execution units of the contract.\n\nPerformance is the generalized fulfillment abstraction.\nEach Performance instance represents a structured execution\nplan or delivery mechanism, including:\n\n - Physical delivery\n - Service provisioning\n - API access\n - Subscription activation\n - Carbon credit transfer\n - Capacity allocation\n - Workforce onboarding\n\nTracking and Support interactions may be linked to\nindividual Performance units.",
+      "description": "Execution units of the contract.  Performance is the generalized fulfillment abstraction. Each Performance instance represents a structured execution plan or delivery mechanism, including:   - Physical delivery  - Service provisioning  - API access  - Subscription activation  - Carbon credit transfer  - Capacity allocation  - Workforce onboarding  Tracking and Support interactions may be linked to individual Performance units.",
       "items": {
-        "$ref": "https://schema.beckn.io/Performance/v2.0/schema.json#/components/schemas/Performance"
+        "$ref": "https://schema.beckn.io/Performance/v2.0/schema.json"
       }
     },
     "settlements": {
       "type": "array",
       "description": "Records representing discharge of agreed consideration.",
       "items": {
-        "$ref": "https://schema.beckn.io/Settlement/v2.0/schema.json#/components/schemas/Settlement"
+        "$ref": "https://schema.beckn.io/Settlement/v2.0/schema.json"
       }
     },
     "status": {
       "description": "The current state of the contract expressed as a Descriptor whose code MUST be one of the standard contract state values.",
       "allOf": [
         {
-          "$ref": "https://schema.beckn.io/Descriptor/v2.0/schema.json#/components/schemas/Descriptor"
+          "$ref": "https://schema.beckn.io/Descriptor/v2.0/schema.json"
         },
         {
           "type": "object",
@@ -72,7 +72,7 @@
       "description": "Domain-specific extension attributes for this contract.",
       "allOf": [
         {
-          "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json#/components/schemas/Attributes"
+          "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
         },
         {},
         {

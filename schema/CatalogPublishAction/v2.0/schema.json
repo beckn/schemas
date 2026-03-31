@@ -9,7 +9,7 @@
       "type": "array",
       "minItems": 1,
       "items": {
-        "$ref": "https://schema.beckn.io/Catalog/v2.0/schema.json#/components/schemas/Catalog"
+        "$ref": "https://schema.beckn.io/Catalog/v2.0/schema.json"
       }
     }
   }

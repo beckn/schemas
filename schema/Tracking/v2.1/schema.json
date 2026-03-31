@@ -7,7 +7,7 @@
       "description": "Attributes of the contract for which the tracking is performed",
       "allOf": [
         {
-          "$ref": "https://schema.beckn.io/Contract/v2.0/schema.json#/components/schemas/Contract"
+          "$ref": "https://schema.beckn.io/Contract/v2.0/schema.json"
         },
         {
           "required": [
@@ -29,7 +29,7 @@
       "format": "uri"
     },
     "trackingAttributes": {
-      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json#/components/schemas/Attributes"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
     }
   },
   "required": [

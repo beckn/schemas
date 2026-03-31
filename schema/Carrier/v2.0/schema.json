@@ -1,7 +1,7 @@
 {
   "type": "object",
   "title": "Carrier",
-  "description": "A Carrier is a transport service provider responsible for moving goods across distances. Carriers operate fleets of vehicles and may own/manage logistics hubs. Maps to beckn:Provider.\n",
+  "description": "A Carrier is a transport service provider responsible for moving goods across distances. Carriers operate fleets of vehicles and may own/manage logistics hubs. Maps to beckn:Provider. ",
   "required": [
     "id",
     "name"
@@ -32,7 +32,7 @@
       "format": "uri"
     },
     "contact": {
-      "$ref": "https://schema.beckn.io/Contact/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Contact/v2.0/attributes.yaml"
     },
     "rating": {
       "type": "number",
@@ -87,7 +87,7 @@
       "type": "array",
       "description": "Logistics hubs operated by this carrier",
       "items": {
-        "$ref": "https://schema.beckn.io/Hub/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Hub/v2.0/attributes.yaml"
       }
     },
     "licenseNumber": {

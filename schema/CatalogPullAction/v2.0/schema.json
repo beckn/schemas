@@ -11,7 +11,7 @@
         "FULL",
         "INCREMENTAL"
       ],
-      "description": "- `FULL` — returns the latest version of each matching catalog.\n- `INCREMENTAL` — returns all catalog versions indexed between\n  `fromDate` and `toDate` (inclusive).\n"
+      "description": "- `FULL` — returns the latest version of each matching catalog. - `INCREMENTAL` — returns all catalog versions indexed between   `fromDate` and `toDate` (inclusive). "
     },
     "filters": {
       "type": "object",

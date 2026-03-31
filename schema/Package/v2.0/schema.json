@@ -1,7 +1,7 @@
 {
   "type": "object",
   "title": "Package",
-  "description": "A Package is a physical unit of goods prepared for transport within a shipment. Maps to beckn:Item.\n",
+  "description": "A Package is a physical unit of goods prepared for transport within a shipment. Maps to beckn:Item. ",
   "required": [
     "id",
     "weight"

@@ -35,11 +35,11 @@
       "description": "Optional array of spatial constraints (CQL2-JSON semantics).",
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/SpatialConstraint/v2.0/schema.json#/components/schemas/SpatialConstraint"
+        "$ref": "https://schema.beckn.io/SpatialConstraint/v2.0/schema.json"
       }
     },
     "mediaSearch": {
-      "$ref": "https://schema.beckn.io/MediaSearch/v2.0/schema.json#/components/schemas/MediaSearch"
+      "$ref": "https://schema.beckn.io/MediaSearch/v2.0/schema.json"
     }
   },
   "additionalProperties": false,

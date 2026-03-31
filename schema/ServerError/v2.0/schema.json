@@ -3,7 +3,7 @@
   "type": "object",
   "properties": {
     "error": {
-      "$ref": "https://schema.beckn.io/Error/v2.0/schema.json#/components/schemas/Error"
+      "$ref": "https://schema.beckn.io/Error/v2.0/schema.json"
     }
   }
 }

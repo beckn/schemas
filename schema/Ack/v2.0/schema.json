@@ -11,7 +11,7 @@
       "description": "ACK if the request was accepted; NACK if rejected."
     },
     "signature": {
-      "$ref": "https://schema.beckn.io/CounterSignature/v2.0/schema.json#/components/schemas/CounterSignature"
+      "$ref": "https://schema.beckn.io/CounterSignature/v2.0/schema.json"
     }
   },
   "required": [

@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "description": "Contract-level metadata for an employer-to-candidate hiring offer. Captures the specific role details being offered, compensation amount (as distinct from the candidate's desired range), proposed joining date, offer expiry, and candidate response state.\n",
+  "description": "Contract-level metadata for an employer-to-candidate hiring offer. Captures the specific role details being offered, compensation amount (as distinct from the candidate's desired range), proposed joining date, offer expiry, and candidate response state. ",
   "x-beckn-container": "contractAttributes",
   "x-jsonld-context": "./context.jsonld",
   "required": [

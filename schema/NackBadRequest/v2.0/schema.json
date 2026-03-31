@@ -2,7 +2,7 @@
   "description": "NACK — Bad Request: Malformed or invalid request; the server could not parse or validate the payload.",
   "allOf": [
     {
-      "$ref": "https://schema.beckn.io/Ack/v2.0/schema.json#/components/schemas/Ack"
+      "$ref": "https://schema.beckn.io/Ack/v2.0/schema.json"
     },
     {
       "type": "object",
@@ -12,7 +12,7 @@
           "const": "NACK"
         },
         "error": {
-          "$ref": "https://schema.beckn.io/Error/v2.0/schema.json#/components/schemas/Error"
+          "$ref": "https://schema.beckn.io/Error/v2.0/schema.json"
         }
       }
     }

@@ -1,10 +1,10 @@
 {
   "title": "On Update Action",
-  "description": "Beckn /beckn/on_update message payload. Sent by a BPP to a BAP in\nresponse to a /beckn/update call (or as an unsolicited update push),\nreturning the updated contract state.\n(Context wrapper stripped; only the message-content portion is inlined.)",
+  "description": "Beckn /beckn/on_update message payload. Sent by a BPP to a BAP in response to a /beckn/update call (or as an unsolicited update push), returning the updated contract state. (Context wrapper stripped; only the message-content portion is inlined.)",
   "additionalProperties": false,
   "properties": {
     "contract": {
-      "$ref": "https://schema.beckn.io/Contract/v2.0/schema.json#/components/schemas/Contract"
+      "$ref": "https://schema.beckn.io/Contract/v2.0/schema.json"
     }
   },
   "required": [

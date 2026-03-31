@@ -48,7 +48,7 @@ components:
       - retail
       - food-and-beverages
       allOf:
-      - $ref: https://schema.beckn.io/RetailItem/attributes.yaml#/components/schemas/RetailItem
+      - $ref: https://schema.beckn.io/RetailItem/v2.1/attributes.yaml#/components/schemas/RetailItem
       - type: object
         properties:
           '@context':

@@ -74,7 +74,7 @@ components:
           - OFFLINE
           example: ON_ROUTE
         vehicle:
-          $ref: https://schema.beckn.io/Vehicle/attributes.yaml#/components/schemas/Vehicle
+          $ref: https://schema.beckn.io/Vehicle/v2.0/attributes.yaml#/components/schemas/Vehicle
         experienceYears:
           type: integer
           description: Years of driving experience

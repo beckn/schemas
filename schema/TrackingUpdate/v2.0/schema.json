@@ -1,7 +1,7 @@
 {
   "type": "object",
   "title": "TrackingUpdate",
-  "description": "A TrackingUpdate is a real-time or periodic update on the status and location of a shipment during transit. Maps to beckn:Event.\n",
+  "description": "A TrackingUpdate is a real-time or periodic update on the status and location of a shipment during transit. Maps to beckn:Event. ",
   "required": [
     "id",
     "shipmentId",
@@ -60,13 +60,13 @@
       "example": "Your shipment has arrived at Hyderabad hub and is being sorted."
     },
     "hub": {
-      "$ref": "https://schema.beckn.io/Hub/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Hub/v2.0/attributes.yaml"
     },
     "driver": {
-      "$ref": "https://schema.beckn.io/Driver/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Driver/v2.0/attributes.yaml"
     },
     "vehicle": {
-      "$ref": "https://schema.beckn.io/Vehicle/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Vehicle/v2.0/attributes.yaml"
     },
     "exceptionDetails": {
       "type": "object",

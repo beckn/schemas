@@ -41,7 +41,7 @@ components:
           - REMOTE
           - HYBRID
         industry_type:
-          $ref: https://schema.beckn.io/CodedValue/attributes.yaml#/components/schemas/CodedValue
+          $ref: https://schema.beckn.io/CodedValue/v2.1/attributes.yaml#/components/schemas/CodedValue
           description: 'Industry classification using an authority-governed code system (e.g. ISIC, NIC). Provides international neutrality.
 
             '
@@ -74,7 +74,7 @@ components:
             '
           x-jsonld-id: hjra:requirements
           items:
-            $ref: https://schema.beckn.io/CredentialRequirement/attributes.yaml#/components/schemas/CredentialRequirement
+            $ref: https://schema.beckn.io/CredentialRequirement/v2.1/attributes.yaml#/components/schemas/CredentialRequirement
         tags:
           type: array
           description: Free-text tags for discovery and search indexing.

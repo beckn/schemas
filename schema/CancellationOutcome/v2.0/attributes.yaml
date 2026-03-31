@@ -22,7 +22,7 @@ components:
       properties:
         descriptor:
           allOf:
-          - $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
+          - $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor
           properties:
             '@type':
               default: beckn:CancellationOutcome

@@ -2,10 +2,10 @@
   "description": "Add-on to a catalog resource",
   "oneOf": [
     {
-      "$ref": "https://schema.beckn.io/Resource/v2.0/schema.json#/components/schemas/Resource"
+      "$ref": "https://schema.beckn.io/Resource/v2.0/schema.json"
     },
     {
-      "$ref": "https://schema.beckn.io/Offer/v2.0/schema.json#/components/schemas/Offer"
+      "$ref": "https://schema.beckn.io/Offer/v2.0/schema.json"
     }
   ],
   "components": {

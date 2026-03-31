@@ -79,7 +79,7 @@
                 "minimum": 0
               },
               "value": {
-                "$ref": "https://schema.beckn.io/Descriptor/attributes.yaml"
+                "$ref": "https://schema.beckn.io/Descriptor/v2.1/attributes.yaml"
               }
             }
           }
@@ -88,7 +88,7 @@
     },
     "feedbackForm": {
       "description": "A feedback form sent along with a rating request",
-      "$ref": "https://schema.beckn.io/Form/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Form/v2.1/attributes.yaml"
     },
     "feedbackRequired": {
       "type": "boolean",

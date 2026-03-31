@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "description": "Commercial and availability terms under which a job opportunity is offered. The proposedConsideration on the core Offer object carries the midpoint or headline compensation figure; this extension provides the full range and period breakdown for display and filtering.\n",
+  "description": "Commercial and availability terms under which a job opportunity is offered. The proposedConsideration on the core Offer object carries the midpoint or headline compensation figure; this extension provides the full range and period breakdown for display and filtering. ",
   "x-beckn-container": "offerAttributes",
   "x-jsonld-context": "./context.jsonld",
   "properties": {
@@ -65,7 +65,7 @@
     },
     "probation_period_months": {
       "type": "integer",
-      "description": "Optional probation period in months applicable to this offer. Absence implies no formal probation.\n",
+      "description": "Optional probation period in months applicable to this offer. Absence implies no formal probation. ",
       "x-jsonld-id": "hjoa:probationPeriodMonths",
       "minimum": 0
     }

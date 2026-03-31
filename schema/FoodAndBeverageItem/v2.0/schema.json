@@ -1,7 +1,7 @@
 {
   "$id": "https://schema.beckn.io/FoodAndBeverageItem/v2.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "A Beckn schema for a food and beverage item used in F&B ordering and delivery.\n\nFoodAndBeverageItem is used as the commitmentAttributes value in a\nContract.commitments[] entry for food and beverage retail transactions.\nIt extends beckn:RetailCoreItemAttributes with F&B-specific properties\nsuch as allergen declarations, cuisine classification, and preparation guidance.\n\nInheritance: beckn:RetailCoreItemAttributes ← beckn:FoodAndBeverageItem\nUse in: beckn:Commitment.commitmentAttributes for F&B orders\n",
+  "description": "A Beckn schema for a food and beverage item used in F&B ordering and delivery.  FoodAndBeverageItem is used as the commitmentAttributes value in a Contract.commitments[] entry for food and beverage retail transactions. It extends beckn:RetailCoreItemAttributes with F&B-specific properties such as allergen declarations, cuisine classification, and preparation guidance.  Inheritance: beckn:RetailCoreItemAttributes ← beckn:FoodAndBeverageItem Use in: beckn:Commitment.commitmentAttributes for F&B orders ",
   "title": "FoodAndBeverageItem",
   "x-tags": [
     "retail",
@@ -9,7 +9,7 @@
   ],
   "allOf": [
     {
-      "$ref": "https://schema.beckn.io/RetailCoreItemAttributes/attributes.yaml"
+      "$ref": "https://schema.beckn.io/RetailCoreItemAttributes/v2.0/attributes.yaml"
     },
     {
       "type": "object",
@@ -27,7 +27,7 @@
         },
         "resourceId": {
           "type": "string",
-          "description": "Identifier of the catalog item resource that this commitment refers to. Corresponds to the item's id in the Catalog.\n",
+          "description": "Identifier of the catalog item resource that this commitment refers to. Corresponds to the item's id in the Catalog. ",
           "x-jsonld": {
             "@id": "beckn:resourceId"
           }
@@ -66,7 +66,7 @@
           }
         },
         "price": {
-          "$ref": "https://schema.beckn.io/PriceSpecification/attributes.yaml",
+          "$ref": "https://schema.beckn.io/PriceSpecification/v2.1/attributes.yaml",
           "description": "Unit price breakdown for this line item.",
           "x-jsonld": {
             "@id": "beckn:price"
@@ -74,7 +74,7 @@
         },
         "allergens": {
           "type": "array",
-          "description": "List of known allergens present in this item. Use standard allergen codes where applicable (e.g. GLUTEN, NUTS, DAIRY, EGGS, SOY, SHELLFISH, FISH, SESAME).\n",
+          "description": "List of known allergens present in this item. Use standard allergen codes where applicable (e.g. GLUTEN, NUTS, DAIRY, EGGS, SOY, SHELLFISH, FISH, SESAME). ",
           "items": {
             "type": "string"
           },
@@ -84,7 +84,7 @@
         },
         "cuisine": {
           "type": "string",
-          "description": "Cuisine classification for this item (e.g. Italian, Indian, Mexican, American, Chinese, Mediterranean).\n",
+          "description": "Cuisine classification for this item (e.g. Italian, Indian, Mexican, American, Chinese, Mediterranean). ",
           "x-jsonld": {
             "@id": "beckn:cuisine"
           }

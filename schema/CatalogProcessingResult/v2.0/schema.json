@@ -11,7 +11,7 @@
       "description": "Identifier of the submitted catalog"
     },
     "status": {
-      "description": "Processing outcome. Using oneOf [string, object] to allow domain-specific\nstatus objects (e.g. beckn:CatalogAccepted) alongside standard string codes.",
+      "description": "Processing outcome. Using oneOf [string, object] to allow domain-specific status objects (e.g. beckn:CatalogAccepted) alongside standard string codes.",
       "type": "string",
       "enum": [
         "ACCEPTED",
@@ -23,7 +23,7 @@
       "type": "array",
       "description": "Per-item or per-catalog errors (present when REJECTED or PARTIAL)",
       "items": {
-        "$ref": "https://schema.beckn.io/Error/v2.0/schema.json#/components/schemas/Error"
+        "$ref": "https://schema.beckn.io/Error/v2.0/schema.json"
       }
     },
     "stats": {

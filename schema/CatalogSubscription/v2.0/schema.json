@@ -40,7 +40,7 @@
       "description": "Lifecycle status of the subscription"
     },
     "deliveryPolicy": {
-      "$ref": "https://schema.beckn.io/DeliveryPolicy/v2.0/schema.json#/components/schemas/DeliveryPolicy"
+      "$ref": "https://schema.beckn.io/DeliveryPolicy/v2.0/schema.json"
     },
     "createdAt": {
       "type": "string",

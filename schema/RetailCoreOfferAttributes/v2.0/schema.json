@@ -1,7 +1,7 @@
 {
   "$id": "https://schema.beckn.io/RetailCoreOfferAttributes/v2.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "Retail-specific offer attribute pack, used as the value of Offer.offerAttributes for retail domain offers. Covers return/cancellation/replacement policies, payment constraints, serviceability (distance + timing), daily time window, and holidays.\n",
+  "description": "Retail-specific offer attribute pack, used as the value of Offer.offerAttributes for retail domain offers. Covers return/cancellation/replacement policies, payment constraints, serviceability (distance + timing), daily time window, and holidays. ",
   "title": "RetailCoreOfferAttributes",
   "x-tags": [
     "retail"
@@ -32,7 +32,7 @@
             },
             "window": {
               "type": "string",
-              "description": "Return window as ISO 8601 duration (e.g., P7D). Interpreted from order delivery unless specified otherwise by profile.\n"
+              "description": "Return window as ISO 8601 duration (e.g., P7D). Interpreted from order delivery unless specified otherwise by profile. "
             },
             "method": {
               "type": "string",
@@ -116,7 +116,7 @@
             },
             "window": {
               "type": "string",
-              "description": "Replacement window as ISO 8601 duration (e.g., P7D). Interpreted from order delivery unless specified otherwise by profile.\n"
+              "description": "Replacement window as ISO 8601 duration (e.g., P7D). Interpreted from order delivery unless specified otherwise by profile. "
             },
             "method": {
               "type": "string",
@@ -151,7 +151,7 @@
     "serviceability": {
       "type": "object",
       "additionalProperties": false,
-      "description": "Additional serviceability constraints beyond geographic eligibility (handled via core Offer.eligibleRegion).\n",
+      "description": "Additional serviceability constraints beyond geographic eligibility (handled via core Offer.eligibleRegion). ",
       "properties": {
         "distanceConstraint": {
           "type": "object",

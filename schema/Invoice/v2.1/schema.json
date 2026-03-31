@@ -40,7 +40,7 @@
     },
     "invoiceAttributes": {
       "description": "Attribute Pack for tax regime (e.g., GST/VAT), e-invoice refs, legal boilerplate, etc.",
-      "$ref": "https://schema.beckn.io/Attributes/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml"
     },
     "issueDate": {
       "type": "string",
@@ -61,19 +61,19 @@
       "x-jsonld": {
         "@id": "schema:provider"
       },
-      "$ref": "https://schema.beckn.io/Provider/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Provider/v2.1/attributes.yaml"
     },
     "payer": {
       "description": "consumer being invoiced",
       "x-jsonld": {
         "@id": "schema:customer"
       },
-      "$ref": "https://schema.beckn.io/Consumer/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Consumer/v2.0/attributes.yaml"
     },
     "costBreakup": {
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/PriceSpecification/attributes.yaml"
+        "$ref": "https://schema.beckn.io/PriceSpecification/v2.1/attributes.yaml"
       }
     }
   },

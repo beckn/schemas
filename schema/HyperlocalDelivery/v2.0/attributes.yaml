@@ -58,14 +58,14 @@ components:
           type: string
           const: beckn:HyperlocalDelivery
         pickupLocation:
-          $ref: https://schema.beckn.io/Location/attributes.yaml#/components/schemas/Location
+          $ref: https://schema.beckn.io/Location/v2.0/attributes.yaml#/components/schemas/Location
           description: 'The pickup/origin location (restaurant, warehouse, dark store). Corresponds to schema:originAddress on schema:ParcelDelivery.
 
             '
           x-jsonld:
             '@id': schema:originAddress
         deliveryLocation:
-          $ref: https://schema.beckn.io/Location/attributes.yaml#/components/schemas/Location
+          $ref: https://schema.beckn.io/Location/v2.0/attributes.yaml#/components/schemas/Location
           description: 'The delivery destination (consumer''s address). Corresponds to schema:deliveryAddress on schema:ParcelDelivery.
 
             '
@@ -77,11 +77,11 @@ components:
 
             '
           items:
-            $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+            $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
           x-jsonld:
             '@id': schema:itemShipped
         agent:
-          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+          $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
           description: 'The delivery agent (rider) carrying out this delivery. Corresponds to schema:carrier on schema:ParcelDelivery.
 
             '

@@ -1,7 +1,7 @@
 {
   "type": "object",
   "title": "Provider",
-  "description": "Attributes for the Provider entity in the Beckn Mobility domain.\n",
+  "description": "Attributes for the Provider entity in the Beckn Mobility domain. ",
   "properties": {},
   "$id": "https://schema.beckn.io/TransportProvider/v2.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema"

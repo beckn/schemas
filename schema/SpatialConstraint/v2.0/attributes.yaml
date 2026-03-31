@@ -4,16 +4,16 @@ info:
   version: 2.0.0
   description: "**Spatial predicate** using **OGC CQL2 (JSON semantics)** applied\
     \ to one or more geometry targets in an item. This is where clients express spatial\
-    \ intent.\nKey ideas: - `targets`: one or more **JSONPath-like** pointers that\
-    \ locate geometry\n\n  fields within each item document (e.g., `$['availableAt'][*]['geo']`).\n\
-    - `op`: spatial operator (CQL2). Common ones:\n\n    • `S_WITHIN`     (A is completely\
-    \ inside B)\n    • `S_INTERSECTS` (A intersects B)\n    • `S_CONTAINS`   (A contains\
-    \ B)\n    • `S_DWITHIN`    (A within distance of B)\n- `geometry`: **GeoJSON**\
+    \ intent. Key ideas: - `targets`: one or more **JSONPath-like** pointers that\
+    \ locate geometry    fields within each item document (e.g., `$['availableAt'][*]['geo']`). \
+    - `op`: spatial operator (CQL2). Common ones:      • `S_WITHIN`     (A is completely\
+    \ inside B)     • `S_INTERSECTS` (A intersects B)     • `S_CONTAINS`   (A contains\
+    \ B)     • `S_DWITHIN`    (A within distance of B) - `geometry`: **GeoJSON**\
     \ literal used as the predicate reference geometry. - `distanceMeters`: required\
     \ for `S_DWITHIN` when using a GeoJSON Point/shape. - `quantifier`: if a target\
-    \ resolves to an array, choose whether **ANY** (default),\n\n  **ALL**, or **NONE**\
-    \ of elements must satisfy the predicate.\n\nCRS: unless otherwise stated, all\
-    \ coordinates are **EPSG:4326**.\n"
+    \ resolves to an array, choose whether **ANY** (default),    **ALL**, or **NONE**\
+    \ of elements must satisfy the predicate.  CRS: unless otherwise stated, all\
+    \ coordinates are **EPSG:4326**. "
   license:
     name: CC-BY-NC-SA 4.0 International
   contact:
@@ -27,16 +27,16 @@ components:
       $schema: https://json-schema.org/draft/2020-12/schema
       description: "**Spatial predicate** using **OGC CQL2 (JSON semantics)** applied\
         \ to one or more geometry targets in an item. This is where clients express\
-        \ spatial intent.\nKey ideas: - `targets`: one or more **JSONPath-like** pointers\
-        \ that locate geometry\n\n  fields within each item document (e.g., `$['availableAt'][*]['geo']`).\n\
-        - `op`: spatial operator (CQL2). Common ones:\n\n    • `S_WITHIN`     (A is\
-        \ completely inside B)\n    • `S_INTERSECTS` (A intersects B)\n    • `S_CONTAINS`\
-        \   (A contains B)\n    • `S_DWITHIN`    (A within distance of B)\n- `geometry`:\
+        \ spatial intent. Key ideas: - `targets`: one or more **JSONPath-like** pointers\
+        \ that locate geometry    fields within each item document (e.g., `$['availableAt'][*]['geo']`). \
+        - `op`: spatial operator (CQL2). Common ones:      • `S_WITHIN`     (A is\
+        \ completely inside B)     • `S_INTERSECTS` (A intersects B)     • `S_CONTAINS`\
+        \   (A contains B)     • `S_DWITHIN`    (A within distance of B) - `geometry`:\
         \ **GeoJSON** literal used as the predicate reference geometry. - `distanceMeters`:\
         \ required for `S_DWITHIN` when using a GeoJSON Point/shape. - `quantifier`:\
-        \ if a target resolves to an array, choose whether **ANY** (default),\n\n\
-        \  **ALL**, or **NONE** of elements must satisfy the predicate.\n\nCRS: unless\
-        \ otherwise stated, all coordinates are **EPSG:4326**.\n"
+        \ if a target resolves to an array, choose whether **ANY** (default),  \
+        \  **ALL**, or **NONE** of elements must satisfy the predicate.  CRS: unless\
+        \ otherwise stated, all coordinates are **EPSG:4326**. "
       title: SpatialConstraint
       type: object
       properties:

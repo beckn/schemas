@@ -1,7 +1,7 @@
 {
   "type": "object",
   "title": "Hub",
-  "description": "A Hub is a logistics fulfillment center, sorting facility, or distribution point where goods are consolidated, sorted, and dispatched for onward delivery. Maps to beckn:Location.\n",
+  "description": "A Hub is a logistics fulfillment center, sorting facility, or distribution point where goods are consolidated, sorted, and dispatched for onward delivery. Maps to beckn:Location. ",
   "required": [
     "id",
     "name",
@@ -22,7 +22,7 @@
       "example": "BLR-MAIN"
     },
     "place": {
-      "$ref": "https://schema.beckn.io/Place/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Place/v2.0/attributes.yaml"
     },
     "type": {
       "type": "string",
@@ -37,7 +37,7 @@
       "example": "SORTING_HUB"
     },
     "operator": {
-      "$ref": "https://schema.beckn.io/Operator/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Operator/v2.0/attributes.yaml"
     },
     "operatingHours": {
       "type": "object",

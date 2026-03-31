@@ -25,7 +25,7 @@
       "format": "date-time"
     },
     "fare": {
-      "$ref": "https://schema.beckn.io/Fare/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Fare/v2.0/attributes.yaml"
     },
     "paymentMode": {
       "type": "string",
@@ -46,16 +46,16 @@
       "format": "date-time"
     },
     "shipper": {
-      "$ref": "https://schema.beckn.io/Contact/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Contact/v2.0/attributes.yaml"
     },
     "consignee": {
-      "$ref": "https://schema.beckn.io/Contact/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Contact/v2.0/attributes.yaml"
     },
     "carrier": {
-      "$ref": "https://schema.beckn.io/Carrier/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Carrier/v2.0/attributes.yaml"
     },
     "deliveryProof": {
-      "$ref": "https://schema.beckn.io/Proof/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Proof/v2.0/attributes.yaml"
     },
     "downloadUrl": {
       "type": "string",

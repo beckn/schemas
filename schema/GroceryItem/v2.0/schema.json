@@ -1,7 +1,7 @@
 {
   "allOf": [
     {
-      "$ref": "https://schema.beckn.io/RetailCoreItem/attributes.yaml"
+      "$ref": "https://schema.beckn.io/RetailCoreItem/v2.0/attributes.yaml"
     },
     {
       "type": "object",
@@ -10,11 +10,11 @@
         "@context": "./context.jsonld",
         "@type": "groc:GroceryItemAttributes"
       },
-      "description": "Grocery-specific extensions to RetailCoreItemAttributes. Covers nutrition information and fresh produce declarations.\n",
+      "description": "Grocery-specific extensions to RetailCoreItemAttributes. Covers nutrition information and fresh produce declarations. ",
       "properties": {
         "nutrition": {
           "type": "array",
-          "description": "Nutrition facts per serving or per 100g/100ml. Context of measurement may be specified via unit.\n",
+          "description": "Nutrition facts per serving or per 100g/100ml. Context of measurement may be specified via unit. ",
           "items": {
             "type": "object",
             "additionalProperties": false,
@@ -29,7 +29,7 @@
               },
               "value": {
                 "description": "Nutrient value expressed as Beckn core Quantity.",
-                "$ref": "https://schema.beckn.io/Quantity/attributes.yaml"
+                "$ref": "https://schema.beckn.io/Quantity/v2.0/attributes.yaml"
               }
             }
           }
@@ -37,7 +37,7 @@
         "freshProduce": {
           "type": "object",
           "additionalProperties": false,
-          "description": "Additional declaration applicable for unpackaged or loose produce.\n",
+          "description": "Additional declaration applicable for unpackaged or loose produce. ",
           "properties": {
             "netQuantityDeclaration": {
               "type": "string",

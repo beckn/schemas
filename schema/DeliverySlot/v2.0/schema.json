@@ -1,7 +1,7 @@
 {
   "type": "object",
   "title": "DeliverySlot",
-  "description": "A DeliverySlot is a time window offered or agreed upon for delivery of a shipment. Maps to beckn:TimeSlot.\n",
+  "description": "A DeliverySlot is a time window offered or agreed upon for delivery of a shipment. Maps to beckn:TimeSlot. ",
   "required": [
     "id",
     "date",

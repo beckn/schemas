@@ -1,15 +1,15 @@
 {
   "type": "object",
-  "description": "Discoverable profile attributes of a candidate Resource. Captures what the candidate brings (skills, experience, availability) and what they seek (location preference, work mode, job type). Designed for privacy: no name, contact, or identity data. Credentials are referenced via SkillEntry with optional VC attestation URLs.\n",
+  "description": "Discoverable profile attributes of a candidate Resource. Captures what the candidate brings (skills, experience, availability) and what they seek (location preference, work mode, job type). Designed for privacy: no name, contact, or identity data. Credentials are referenced via SkillEntry with optional VC attestation URLs. ",
   "x-beckn-container": "resourceAttributes",
   "x-jsonld-context": "./context.jsonld",
   "properties": {
     "skills": {
       "type": "array",
-      "description": "List of skills, qualifications, and credentials held by the candidate. Each entry supports graceful degradation: self-declared (attested=false) or VC-backed (attested=true, proof_request_url present).\n",
+      "description": "List of skills, qualifications, and credentials held by the candidate. Each entry supports graceful degradation: self-declared (attested=false) or VC-backed (attested=true, proof_request_url present). ",
       "x-jsonld-id": "cpra:skills",
       "items": {
-        "$ref": "https://schema.beckn.io/SkillEntry/attributes.yaml"
+        "$ref": "https://schema.beckn.io/SkillEntry/v2.1/attributes.yaml"
       }
     },
     "experience_level": {
@@ -90,10 +90,10 @@
     },
     "industry_preference": {
       "type": "array",
-      "description": "Industries the candidate prefers to work in, expressed as authority-governed codes for international neutrality.\n",
+      "description": "Industries the candidate prefers to work in, expressed as authority-governed codes for international neutrality. ",
       "x-jsonld-id": "cpra:industryPreference",
       "items": {
-        "$ref": "https://schema.beckn.io/CodedValue/attributes.yaml"
+        "$ref": "https://schema.beckn.io/CodedValue/v2.1/attributes.yaml"
       }
     },
     "job_type_preference": {
@@ -113,7 +113,7 @@
     },
     "overall_verification_status": {
       "type": "string",
-      "description": "Aggregate verification status derived from the candidate's DeDi verification_index. Indicates how many of their declared skills have been VC-attested. Not PII — derived from public registry data.\n",
+      "description": "Aggregate verification status derived from the candidate's DeDi verification_index. Indicates how many of their declared skills have been VC-attested. Not PII — derived from public registry data. ",
       "x-jsonld-id": "cpra:overallVerificationStatus",
       "enum": [
         "UNVERIFIED",

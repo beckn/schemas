@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "description": "JSON body of `GET /catalog/pull/result/{requestId}/catalogs.json`.\nSame structure as the inline `catalog` array in the callback payload —\na list of distribution-envelope catalog objects.\n",
+  "description": "JSON body of `GET /catalog/pull/result/{requestId}/catalogs.json`. Same structure as the inline `catalog` array in the callback payload — a list of distribution-envelope catalog objects. ",
   "properties": {
     "catalogs": {
       "type": "array",

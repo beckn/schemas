@@ -34,7 +34,7 @@ components:
             description: 'Attribute Pack reference for richer identity: # agent/identity.v1 (contact details: email, phone, address) # agent/org-ids.v1 (LEI, GSTIN, ISIN, CUSIP…) # consumer/kyc.v1 (jurisdictional compliance fields) # (accessibility needs, etc.)
 
               '
-            $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+            $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
         required:
         - '@context'
         - '@type'
@@ -43,14 +43,14 @@ components:
           additionalProperties: false
           properties:
             person:
-              $ref: https://schema.beckn.io/Person/attributes.yaml#/components/schemas/Person
+              $ref: https://schema.beckn.io/Person/v2.0/attributes.yaml#/components/schemas/Person
           required:
           - person
         - type: object
           additionalProperties: false
           properties:
             organization:
-              $ref: https://schema.beckn.io/Organization/attributes.yaml#/components/schemas/Organization
+              $ref: https://schema.beckn.io/Organization/v2.0/attributes.yaml#/components/schemas/Organization
           required:
           - organization
       x-tags:

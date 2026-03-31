@@ -33,21 +33,21 @@ components:
           description: A set of instructions to follow during this stage of fulfillment
           type: array
           items:
-            $ref: https://schema.beckn.io/Instruction/attributes.yaml#/components/schemas/Instruction
+            $ref: https://schema.beckn.io/Instruction/v2.0/attributes.yaml#/components/schemas/Instruction
         preferences:
           description: A extensible set of attributes that describe the fulfillment preferences
           type: array
           items:
-            $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+            $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
         start:
           description: An extensible set of attributes that describe the criteria required to start this stage of fulfillment
-          $ref: https://schema.beckn.io/FulfillmentStageEndpoint/attributes.yaml#/components/schemas/FulfillmentStageEndpoint
+          $ref: https://schema.beckn.io/FulfillmentStageEndpoint/v2.0/attributes.yaml#/components/schemas/FulfillmentStageEndpoint
         end:
           description: An extensible set of attributes that describe the criteria required to end this stage of fulfillment
-          $ref: https://schema.beckn.io/FulfillmentStageEndpoint/attributes.yaml#/components/schemas/FulfillmentStageEndpoint
+          $ref: https://schema.beckn.io/FulfillmentStageEndpoint/v2.0/attributes.yaml#/components/schemas/FulfillmentStageEndpoint
         fulfillmentStageAttributes:
           description: An extensible set of attributes that describe this stage of fulfillment
-          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+          $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
       x-jsonld:
         '@id': beckn:fulfillmentStage
       required:

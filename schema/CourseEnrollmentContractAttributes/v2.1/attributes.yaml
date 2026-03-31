@@ -30,7 +30,7 @@ components:
           description: Identifier of the cohort or batch the learner is assigned to.
           x-jsonld-id: ceca:cohortId
         prerequisite_verification_summary:
-          $ref: https://schema.beckn.io/VerificationSummary/attributes.yaml#/components/schemas/VerificationSummary
+          $ref: https://schema.beckn.io/VerificationSummary/v2.1/attributes.yaml#/components/schemas/VerificationSummary
           x-jsonld-id: ceca:prerequisiteVerificationSummary
         credential_issuance_pending:
           type: boolean

@@ -22,27 +22,27 @@
       "description": "Time periods when the item is available",
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/TimePeriod/attributes.yaml"
+        "$ref": "https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml"
       }
     },
     "availableAt": {
       "description": "Physical locations where the item is available",
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/Location/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Location/v2.0/attributes.yaml"
       }
     },
     "category": {
-      "$ref": "https://schema.beckn.io/CategoryCode/attributes.yaml"
+      "$ref": "https://schema.beckn.io/CategoryCode/v2.1/attributes.yaml"
     },
     "constraints": {
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/Constraint/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Constraint/v2.0/attributes.yaml"
       }
     },
     "descriptor": {
-      "$ref": "https://schema.beckn.io/Descriptor/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Descriptor/v2.1/attributes.yaml"
     },
     "id": {
       "description": "Unique identifier for the item",
@@ -55,7 +55,7 @@
       "default": true
     },
     "itemAttributes": {
-      "$ref": "https://schema.beckn.io/Attributes/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml"
     },
     "networkId": {
       "description": "Array of network identifiers for the BAP (Beckn App Provider) that offers this item",
@@ -71,11 +71,11 @@
     "policies": {
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/Policy/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Policy/v2.0/attributes.yaml"
       }
     },
     "provider": {
-      "$ref": "https://schema.beckn.io/Provider/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Provider/v2.1/attributes.yaml"
     },
     "rateable": {
       "description": "Whether the item can be rated by customers",
@@ -83,7 +83,7 @@
       "example": true
     },
     "rating": {
-      "$ref": "https://schema.beckn.io/Rating/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Rating/v2.1/attributes.yaml"
     }
   },
   "required": [

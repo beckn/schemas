@@ -1,10 +1,10 @@
 {
   "title": "On Cancel Action",
-  "description": "Beckn /beckn/on_cancel message payload. Sent by a BPP to a BAP in\nresponse to a /beckn/cancel call, returning the contract with status\nset to CANCELLED and any applicable cancellation outcome.\n(Context wrapper stripped; only the message-content portion is inlined.)",
+  "description": "Beckn /beckn/on_cancel message payload. Sent by a BPP to a BAP in response to a /beckn/cancel call, returning the contract with status set to CANCELLED and any applicable cancellation outcome. (Context wrapper stripped; only the message-content portion is inlined.)",
   "additionalProperties": false,
   "properties": {
     "contract": {
-      "$ref": "https://schema.beckn.io/Contract/v2.0/schema.json#/components/schemas/Contract"
+      "$ref": "https://schema.beckn.io/Contract/v2.0/schema.json"
     }
   },
   "required": [

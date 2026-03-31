@@ -1,7 +1,7 @@
 {
   "$id": "https://schema.beckn.io/RetailCoreItemAttributes/v2.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "Retail-specific item attribute pack, used as the value of Item.itemAttributes for retail domain items. Covers physical properties, food classification, regulatory declarations, and verifiable credentials.\n",
+  "description": "Retail-specific item attribute pack, used as the value of Item.itemAttributes for retail domain items. Covers physical properties, food classification, regulatory declarations, and verifiable credentials. ",
   "title": "RetailCoreItemAttributes",
   "x-tags": [
     "retail"

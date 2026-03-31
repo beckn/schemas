@@ -33,10 +33,10 @@ components:
             '@id': schema:Thing
         agent:
           description: The entity that directly performs the fulfillment
-          $ref: https://schema.beckn.io/FulfillmentAgent/attributes.yaml#/components/schemas/FulfillmentAgent
+          $ref: https://schema.beckn.io/FulfillmentAgent/v2.0/attributes.yaml#/components/schemas/FulfillmentAgent
         fulfillmentAttributes:
           description: Extensible set of domain-specific attributes describing the fulfillment
-          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+          $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
         id:
           description: Fulfillment identifier
           type: string
@@ -45,26 +45,26 @@ components:
         instructions:
           type: array
           items:
-            $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
+            $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor
         mode:
           description: Extensible set of attributes describing the mode of fulfillment. Varies with Industry Use Case
           x-jsonld:
             '@id': beckn:FulfillmentMode
-          $ref: https://schema.beckn.io/FulfillmentMode/attributes.yaml#/components/schemas/FulfillmentMode
+          $ref: https://schema.beckn.io/FulfillmentMode/v2.0/attributes.yaml#/components/schemas/FulfillmentMode
         participants:
           description: A list of participants who are entitled to receive the fulfillment of the order. By default, it is the consumer who placed the order
           type: array
           items:
-            $ref: https://schema.beckn.io/Participant/attributes.yaml#/components/schemas/Participant
+            $ref: https://schema.beckn.io/Participant/v2.0/attributes.yaml#/components/schemas/Participant
           minItems: 1
         state:
           description: The current state of fulfillment
-          $ref: https://schema.beckn.io/State/attributes.yaml#/components/schemas/State
+          $ref: https://schema.beckn.io/State/v2.0/attributes.yaml#/components/schemas/State
         stages:
           description: The various stages of the fulfillment
           type: array
           items:
-            $ref: https://schema.beckn.io/FulfillmentStage/attributes.yaml#/components/schemas/FulfillmentStage
+            $ref: https://schema.beckn.io/FulfillmentStage/v2.0/attributes.yaml#/components/schemas/FulfillmentStage
           minItems: 1
         trackingEnabled:
           description: Whether tracking is enabled / possible for this fulfillment

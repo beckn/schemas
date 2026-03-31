@@ -4,7 +4,7 @@
   "additionalProperties": false,
   "properties": {
     "tracking": {
-      "$ref": "https://schema.beckn.io/Tracking/v2.1/schema.json#/components/schemas/Tracking"
+      "$ref": "https://schema.beckn.io/Tracking/v2.1/schema.json"
     }
   },
   "required": [

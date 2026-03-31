@@ -1,7 +1,7 @@
 {
   "type": "object",
   "title": "Proof",
-  "description": "Proof of delivery or pickup evidence, including photos, signatures, OTP confirmations, or digital receipts. Maps to beckn:Document.\n",
+  "description": "Proof of delivery or pickup evidence, including photos, signatures, OTP confirmations, or digital receipts. Maps to beckn:Document. ",
   "required": [
     "id",
     "type",

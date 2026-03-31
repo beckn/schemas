@@ -21,7 +21,7 @@ components:
       type: object
       properties:
         error:
-          $ref: https://schema.beckn.io/Error/attributes.yaml#/components/schemas/Error
+          $ref: https://schema.beckn.io/Error/v2.0/attributes.yaml#/components/schemas/Error
       required:
       - error
       additionalProperties: false

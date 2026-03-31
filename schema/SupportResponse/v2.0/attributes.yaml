@@ -39,7 +39,7 @@ components:
           type: string
         descriptor:
           description: Human-readable label for this support response.
-          $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
+          $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor
         channels:
           description: Available support channels with contact details.
           type: array
@@ -80,7 +80,7 @@ components:
               type: string
         consumer:
           description: The consumer the support response is addressed to (optional).
-          $ref: https://schema.beckn.io/Consumer/attributes.yaml#/components/schemas/Consumer
+          $ref: https://schema.beckn.io/Consumer/v2.0/attributes.yaml#/components/schemas/Consumer
       required:
       - '@context'
       - '@type'

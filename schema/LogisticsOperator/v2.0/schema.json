@@ -26,7 +26,7 @@
       "example": "3PL"
     },
     "contact": {
-      "$ref": "https://schema.beckn.io/Contact/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Contact/v2.0/attributes.yaml"
     },
     "website": {
       "type": "string",

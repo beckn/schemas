@@ -102,7 +102,7 @@
     "Carrier": {
       "type": "object",
       "title": "Carrier",
-      "description": "A Carrier is a transport service provider responsible for moving goods across distances. Carriers operate fleets of vehicles and may own/manage logistics hubs. Maps to beckn:Provider.\n",
+      "description": "A Carrier is a transport service provider responsible for moving goods across distances. Carriers operate fleets of vehicles and may own/manage logistics hubs. Maps to beckn:Provider. ",
       "required": [
         "id",
         "name"
@@ -213,7 +213,7 @@
     "Consignment": {
       "type": "object",
       "title": "Consignment",
-      "description": "A Consignment is a collection of packages or shipments grouped together under a single commercial transaction between a shipper and consignee. Maps to beckn:Order.\n",
+      "description": "A Consignment is a collection of packages or shipments grouped together under a single commercial transaction between a shipper and consignee. Maps to beckn:Order. ",
       "required": [
         "id",
         "shipper",
@@ -340,7 +340,7 @@
     "Courier": {
       "type": "object",
       "title": "Courier",
-      "description": "A Courier is an individual delivery agent responsible for last-mile pickup and delivery of packages, typically in hyperlocal or urban delivery contexts. Maps to beckn:Agent.\n",
+      "description": "A Courier is an individual delivery agent responsible for last-mile pickup and delivery of packages, typically in hyperlocal or urban delivery contexts. Maps to beckn:Agent. ",
       "required": [
         "id",
         "name"
@@ -431,7 +431,7 @@
     "DeliverySlot": {
       "type": "object",
       "title": "DeliverySlot",
-      "description": "A DeliverySlot is a time window offered or agreed upon for delivery of a shipment. Maps to beckn:TimeSlot.\n",
+      "description": "A DeliverySlot is a time window offered or agreed upon for delivery of a shipment. Maps to beckn:TimeSlot. ",
       "required": [
         "id",
         "date",
@@ -509,7 +509,7 @@
     "Hub": {
       "type": "object",
       "title": "Hub",
-      "description": "A Hub is a logistics fulfillment center, sorting facility, or distribution point where goods are consolidated, sorted, and dispatched for onward delivery. Maps to beckn:Location.\n",
+      "description": "A Hub is a logistics fulfillment center, sorting facility, or distribution point where goods are consolidated, sorted, and dispatched for onward delivery. Maps to beckn:Location. ",
       "required": [
         "id",
         "name",
@@ -615,7 +615,7 @@
     "LogisticsAlert": {
       "type": "object",
       "title": "LogisticsAlert",
-      "description": "An Alert is a notification or warning related to a shipment, such as delays, exceptions, damage reports, or SLA breaches. Maps to beckn:Event.\n",
+      "description": "An Alert is a notification or warning related to a shipment, such as delays, exceptions, damage reports, or SLA breaches. Maps to beckn:Event. ",
       "required": [
         "id",
         "type",
@@ -799,7 +799,7 @@
     "LogisticsDriver": {
       "type": "object",
       "title": "LogisticsDriver",
-      "description": "A Driver is an individual who operates a vehicle for logistics delivery. Drivers are assigned to shipments and responsible for physical transport. Maps to beckn:Agent.\n",
+      "description": "A Driver is an individual who operates a vehicle for logistics delivery. Drivers are assigned to shipments and responsible for physical transport. Maps to beckn:Agent. ",
       "required": [
         "id",
         "name",
@@ -1186,7 +1186,7 @@
     "LogisticsPlace": {
       "type": "object",
       "title": "LogisticsPlace",
-      "description": "A geographic location relevant to logistics such as origin, destination, hub, or waypoint. Includes structured address and GPS coordinates. Maps to beckn:Location and schema:Place.\n",
+      "description": "A geographic location relevant to logistics such as origin, destination, hub, or waypoint. Includes structured address and GPS coordinates. Maps to beckn:Location and schema:Place. ",
       "required": [
         "id"
       ],
@@ -1410,7 +1410,7 @@
     "LogisticsRoute": {
       "type": "object",
       "title": "LogisticsRoute",
-      "description": "A Route is the planned path for a shipment from origin to destination, potentially passing through multiple hubs and waypoints. Maps to beckn:Journey.\n",
+      "description": "A Route is the planned path for a shipment from origin to destination, potentially passing through multiple hubs and waypoints. Maps to beckn:Journey. ",
       "required": [
         "id",
         "origin",
@@ -1637,7 +1637,7 @@
     "LogisticsVehicle": {
       "type": "object",
       "title": "LogisticsVehicle",
-      "description": "A Vehicle is a transport asset used for logistics operations. Vehicle types range from bicycles for hyperlocal delivery to heavy trucks for long haul freight. Maps to beckn:Asset.\n",
+      "description": "A Vehicle is a transport asset used for logistics operations. Vehicle types range from bicycles for hyperlocal delivery to heavy trucks for long haul freight. Maps to beckn:Asset. ",
       "required": [
         "id",
         "registrationNumber",
@@ -1799,7 +1799,7 @@
     "Package": {
       "type": "object",
       "title": "Package",
-      "description": "A Package is a physical unit of goods prepared for transport within a shipment. Maps to beckn:Item.\n",
+      "description": "A Package is a physical unit of goods prepared for transport within a shipment. Maps to beckn:Item. ",
       "required": [
         "id",
         "weight"
@@ -1943,7 +1943,7 @@
     "Proof": {
       "type": "object",
       "title": "Proof",
-      "description": "Proof of delivery or pickup evidence, including photos, signatures, OTP confirmations, or digital receipts. Maps to beckn:Document.\n",
+      "description": "Proof of delivery or pickup evidence, including photos, signatures, OTP confirmations, or digital receipts. Maps to beckn:Document. ",
       "required": [
         "id",
         "type",
@@ -2104,7 +2104,7 @@
     "Shipment": {
       "type": "object",
       "title": "Shipment",
-      "description": "A Shipment represents the movement of one or more packages from an origin to a destination. It is the top-level fulfillment entity in a logistics transaction and maps to beckn:Fulfillment.\n",
+      "description": "A Shipment represents the movement of one or more packages from an origin to a destination. It is the top-level fulfillment entity in a logistics transaction and maps to beckn:Fulfillment. ",
       "required": [
         "id",
         "status",
@@ -2243,7 +2243,7 @@
     "TrackingUpdate": {
       "type": "object",
       "title": "TrackingUpdate",
-      "description": "A TrackingUpdate is a real-time or periodic update on the status and location of a shipment during transit. Maps to beckn:Event.\n",
+      "description": "A TrackingUpdate is a real-time or periodic update on the status and location of a shipment during transit. Maps to beckn:Event. ",
       "required": [
         "id",
         "shipmentId",
@@ -2346,7 +2346,7 @@
     "Waypoint": {
       "type": "object",
       "title": "Waypoint",
-      "description": "A Waypoint is an intermediate stop or checkpoint on a logistics route, such as a sorting hub, relay station, or customs checkpoint. Maps to beckn:Stop.\n",
+      "description": "A Waypoint is an intermediate stop or checkpoint on a logistics route, such as a sorting hub, relay station, or customs checkpoint. Maps to beckn:Stop. ",
       "required": [
         "id",
         "place"

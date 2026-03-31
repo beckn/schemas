@@ -18,12 +18,12 @@
       "x-jsonld-id": "ceca:cohortId"
     },
     "prerequisite_verification_summary": {
-      "$ref": "https://schema.beckn.io/VerificationSummary/attributes.yaml",
+      "$ref": "https://schema.beckn.io/VerificationSummary/v2.1/attributes.yaml",
       "x-jsonld-id": "ceca:prerequisiteVerificationSummary"
     },
     "credential_issuance_pending": {
       "type": "boolean",
-      "description": "Whether the outcome credential VC is pending issuance upon course completion. True after enrollment; false once the VC has been issued.\n",
+      "description": "Whether the outcome credential VC is pending issuance upon course completion. True after enrollment; false once the VC has been issued. ",
       "x-jsonld-id": "ceca:credentialIssuancePending",
       "default": true
     },

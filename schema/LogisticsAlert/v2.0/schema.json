@@ -1,7 +1,7 @@
 {
   "type": "object",
   "title": "Alert",
-  "description": "An Alert is a notification or warning related to a shipment, such as delays, exceptions, damage reports, or SLA breaches. Maps to beckn:Event.\n",
+  "description": "An Alert is a notification or warning related to a shipment, such as delays, exceptions, damage reports, or SLA breaches. Maps to beckn:Event. ",
   "required": [
     "id",
     "type",

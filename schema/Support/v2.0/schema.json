@@ -8,14 +8,14 @@
       "type": "string"
     },
     "descriptor": {
-      "$ref": "https://schema.beckn.io/Descriptor/v2.0/schema.json#/components/schemas/Descriptor"
+      "$ref": "https://schema.beckn.io/Descriptor/v2.0/schema.json"
     },
     "channels": {
       "description": "Available support channels described in individual linked data JSON objects",
       "type": "array",
       "minItems": 1,
       "items": {
-        "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json#/components/schemas/Attributes"
+        "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
       }
     }
   },

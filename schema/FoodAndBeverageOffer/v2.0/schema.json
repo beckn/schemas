@@ -1,7 +1,7 @@
 {
   "allOf": [
     {
-      "$ref": "https://schema.beckn.io/RetailCoreOffer/attributes.yaml"
+      "$ref": "https://schema.beckn.io/RetailCoreOffer/v2.0/attributes.yaml"
     },
     {
       "type": "object",
@@ -10,7 +10,7 @@
         "@context": "./context.jsonld",
         "@type": "fnb:FoodAndBeverageOfferAttributes"
       },
-      "description": "Food & Beverage-specific extensions to RetailCoreOfferAttributes. Covers structured customization groups for dynamic configuration.\n",
+      "description": "Food & Beverage-specific extensions to RetailCoreOfferAttributes. Covers structured customization groups for dynamic configuration. ",
       "properties": {
         "customization": {
           "type": "object",
@@ -19,7 +19,7 @@
             "groups": {
               "type": "array",
               "items": {
-                "$ref": "https://schema.beckn.io/CustomizationGroup/attributes.yaml"
+                "$ref": "https://schema.beckn.io/CustomizationGroup/v2.0/attributes.yaml"
               }
             }
           }

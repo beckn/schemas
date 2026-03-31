@@ -71,8 +71,8 @@
       }
     },
     "beckn:buyerAttributes": {
-      "$ref": "https://schema.beckn.io/Attributes/attributes.yaml",
-      "description": "Attribute Pack reference for richer identity: # buyer/identity.v1 (contact details: email, phone, address) # buyer/org-ids.v1 (LEI, GSTIN, ISIN, CUSIP…) # buyer/kyc.v1 (jurisdictional compliance fields) # buyer/preferences.v1 (delivery preferences, accessibility needs, etc.)\n"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml",
+      "description": "Attribute Pack reference for richer identity: # buyer/identity.v1 (contact details: email, phone, address) # buyer/org-ids.v1 (LEI, GSTIN, ISIN, CUSIP…) # buyer/kyc.v1 (jurisdictional compliance fields) # buyer/preferences.v1 (delivery preferences, accessibility needs, etc.) "
     }
   },
   "required": [

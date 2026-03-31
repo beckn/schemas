@@ -39,12 +39,12 @@ components:
           description: Media files required to enter or exit this fulfillment stage. The could be images of delivered packages, recorded video proof of installation, etc
           type: array
           items:
-            $ref: https://schema.beckn.io/MediaFile/attributes.yaml#/components/schemas/MediaFile
+            $ref: https://schema.beckn.io/MediaFile/v2.0/attributes.yaml#/components/schemas/MediaFile
         docs:
           description: Documents required to enter or exit this fulfillment stage. The could be entry tickets, boarding passes, waybill, permits, certificates, credentials, etc
           type: array
           items:
-            $ref: https://schema.beckn.io/Document/attributes.yaml#/components/schemas/Document
+            $ref: https://schema.beckn.io/Document/v2.0/attributes.yaml#/components/schemas/Document
         purpose:
           description: The purpose of this authorization. e.g., proof of delivery, entry verification, identity check
           type: string

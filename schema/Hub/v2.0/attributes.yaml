@@ -33,7 +33,7 @@ components:
           description: Short hub code
           example: BLR-MAIN
         place:
-          $ref: https://schema.beckn.io/Place/attributes.yaml#/components/schemas/Place
+          $ref: https://schema.beckn.io/Place/v2.0/attributes.yaml#/components/schemas/Place
         type:
           type: string
           enum:
@@ -45,7 +45,7 @@ components:
           - CUSTOMS_WAREHOUSE
           example: SORTING_HUB
         operator:
-          $ref: https://schema.beckn.io/Operator/attributes.yaml#/components/schemas/Operator
+          $ref: https://schema.beckn.io/Operator/v2.0/attributes.yaml#/components/schemas/Operator
         operatingHours:
           type: object
           properties:

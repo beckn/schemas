@@ -41,21 +41,21 @@
         "RESERVATION",
         "DIGITAL"
       ],
-      "description": "DELIVERY    → last-mile / parcel logistics\nPICKUP      → customer collects from a place\nRESERVATION → entitlement/booking is fulfilled (tickets, seats, appointments)\nDIGITAL     → digital good / license access\n",
+      "description": "DELIVERY    → last-mile / parcel logistics PICKUP      → customer collects from a place RESERVATION → entitlement/booking is fulfilled (tickets, seats, appointments) DIGITAL     → digital good / license access ",
       "x-jsonld": {
         "@id": "beckn:mode"
       }
     },
     "trackingAction": {
-      "$ref": "https://schema.beckn.io/TrackAction/attributes.yaml",
-      "description": "Tracking entrypoint for this fulfillment, modeled as schema.org TrackAction. Use target.url for a clickable tracking URL; may also include deliveryMethod.\n",
+      "$ref": "https://schema.beckn.io/TrackAction/v2.1/attributes.yaml",
+      "description": "Tracking entrypoint for this fulfillment, modeled as schema.org TrackAction. Use target.url for a clickable tracking URL; may also include deliveryMethod. ",
       "x-jsonld": {
         "@type": "schema:TrackAction"
       }
     },
     "beckn:deliveryAttributes": {
-      "$ref": "https://schema.beckn.io/Attributes/attributes.yaml",
-      "description": "Bundle of attributes for the chosen mode:  # DELIVERY: endpoints, slot windows, route & events → map to schema:ParcelDelivery / schema:DeliveryEvent # PICKUP: pickupPlace, counter codes, time windows → map to schema:Place + schema:openingHoursSpecification # RESERVATION: reservationStatus, reservedTicket → map to schema:Reservation # DIGITAL: contentUrl/license/expiry → map to schema:DataDownload/schema:MediaObject\n"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml",
+      "description": "Bundle of attributes for the chosen mode:  # DELIVERY: endpoints, slot windows, route & events → map to schema:ParcelDelivery / schema:DeliveryEvent # PICKUP: pickupPlace, counter codes, time windows → map to schema:Place + schema:openingHoursSpecification # RESERVATION: reservationStatus, reservedTicket → map to schema:Reservation # DIGITAL: contentUrl/license/expiry → map to schema:DataDownload/schema:MediaObject "
     }
   },
   "required": [

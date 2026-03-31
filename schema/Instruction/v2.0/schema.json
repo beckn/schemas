@@ -17,13 +17,13 @@
       ]
     },
     "descriptor": {
-      "$ref": "https://schema.beckn.io/Descriptor/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Descriptor/v2.1/attributes.yaml"
     },
     "id": {
       "type": "string"
     },
     "validity": {
-      "$ref": "https://schema.beckn.io/TimePeriod/attributes.yaml"
+      "$ref": "https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml"
     }
   },
   "required": [

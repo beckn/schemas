@@ -44,7 +44,7 @@ components:
             '@id': schema:identifier
         invoiceAttributes:
           description: Attribute Pack for tax regime (e.g., GST/VAT), e-invoice refs, legal boilerplate, etc.
-          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+          $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
         issueDate:
           type: string
           x-jsonld:
@@ -59,16 +59,16 @@ components:
           description: Seller / issuer of the invoice
           x-jsonld:
             '@id': schema:provider
-          $ref: https://schema.beckn.io/Provider/attributes.yaml#/components/schemas/Provider
+          $ref: https://schema.beckn.io/Provider/v2.1/attributes.yaml#/components/schemas/Provider
         payer:
           description: consumer being invoiced
           x-jsonld:
             '@id': schema:customer
-          $ref: https://schema.beckn.io/Consumer/attributes.yaml#/components/schemas/Consumer
+          $ref: https://schema.beckn.io/Consumer/v2.0/attributes.yaml#/components/schemas/Consumer
         costBreakup:
           type: array
           items:
-            $ref: https://schema.beckn.io/PriceSpecification/attributes.yaml#/components/schemas/PriceSpecification
+            $ref: https://schema.beckn.io/PriceSpecification/v2.1/attributes.yaml#/components/schemas/PriceSpecification
       required:
       - '@context'
       - '@type'

@@ -50,22 +50,22 @@ components:
           x-jsonld:
             '@id': schema:paymentDueDate
         beckn:payee:
-          $ref: https://schema.beckn.io/Provider/attributes.yaml#/components/schemas/Provider
+          $ref: https://schema.beckn.io/Provider/v2.1/attributes.yaml#/components/schemas/Provider
           description: Seller / issuer of the invoice
           x-jsonld:
             '@id': schema:provider
         beckn:payer:
-          $ref: https://schema.beckn.io/Buyer/attributes.yaml#/components/schemas/Buyer
+          $ref: https://schema.beckn.io/Buyer/v2.0/attributes.yaml#/components/schemas/Buyer
           description: Buyer being invoiced
           x-jsonld:
             '@id': schema:customer
         beckn:totals:
-          $ref: https://schema.beckn.io/PriceSpecification/attributes.yaml#/components/schemas/PriceSpecification
+          $ref: https://schema.beckn.io/PriceSpecification/v2.1/attributes.yaml#/components/schemas/PriceSpecification
           description: Invoice grand totals (tax/shipping/discount components inside)
           x-jsonld:
             '@id': schema:priceSpecification
         beckn:invoiceAttributes:
-          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+          $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
           description: Attribute Pack for tax regime (e.g., GST/VAT), e-invoice refs, legal boilerplate, etc.
       required:
       - '@context'

@@ -1,7 +1,7 @@
 {
   "type": "object",
   "title": "Alert",
-  "description": "Attributes for the Alert entity in the Beckn Mobility domain.\n",
+  "description": "Attributes for the Alert entity in the Beckn Mobility domain. ",
   "properties": {},
   "$id": "https://schema.beckn.io/TransitAlert/v2.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema"

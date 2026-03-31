@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "description": "Transaction-level metadata for a job application contract. Captures the application reference, aggregate verification outcome, and reverification state. No credential payloads are stored here.\n",
+  "description": "Transaction-level metadata for a job application contract. Captures the application reference, aggregate verification outcome, and reverification state. No credential payloads are stored here. ",
   "x-beckn-container": "contractAttributes",
   "x-jsonld-context": "./context.jsonld",
   "required": [
@@ -10,26 +10,26 @@
   "properties": {
     "application_reference": {
       "type": "string",
-      "description": "BAP-generated unique reference for this application. Used for tracking, status queries, and audit. Not a platform routing ID.\n",
+      "description": "BAP-generated unique reference for this application. Used for tracking, status queries, and audit. Not a platform routing ID. ",
       "x-jsonld-id": "jaca:applicationReference"
     },
     "verification_summary": {
-      "$ref": "https://schema.beckn.io/VerificationSummary/attributes.yaml",
-      "description": "Aggregate outcome of credential verification performed during the application submission. Populated after verification completes.\n",
+      "$ref": "https://schema.beckn.io/VerificationSummary/v2.1/attributes.yaml",
+      "description": "Aggregate outcome of credential verification performed during the application submission. Populated after verification completes. ",
       "x-jsonld-id": "jaca:verificationSummary"
     },
     "reverification_requested": {
       "type": "boolean",
-      "description": "Whether the employer (EMPLOYER party) has requested re-verification of some or all credentials after the initial application submission.\n",
+      "description": "Whether the employer (EMPLOYER party) has requested re-verification of some or all credentials after the initial application submission. ",
       "x-jsonld-id": "jaca:reverificationRequested",
       "default": false
     },
     "reverification_requirements": {
       "type": "array",
-      "description": "Additional or revised requirements for which reverification has been requested. Only populated when reverification_requested = true.\n",
+      "description": "Additional or revised requirements for which reverification has been requested. Only populated when reverification_requested = true. ",
       "x-jsonld-id": "jaca:reverificationRequirements",
       "items": {
-        "$ref": "https://schema.beckn.io/CredentialRequirement/attributes.yaml"
+        "$ref": "https://schema.beckn.io/CredentialRequirement/v2.1/attributes.yaml"
       }
     },
     "submitted_at": {

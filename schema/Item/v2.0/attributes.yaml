@@ -32,25 +32,25 @@ components:
           description: Unique identifier for the item
           example: gaming-laptop-001
         beckn:descriptor:
-          $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
+          $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor
         beckn:category:
-          $ref: https://schema.beckn.io/CategoryCode/attributes.yaml#/components/schemas/CategoryCode
+          $ref: https://schema.beckn.io/CategoryCode/v2.1/attributes.yaml#/components/schemas/CategoryCode
         beckn:availableAt:
           type: array
           items:
-            $ref: https://schema.beckn.io/Location/attributes.yaml#/components/schemas/Location
+            $ref: https://schema.beckn.io/Location/v2.0/attributes.yaml#/components/schemas/Location
           description: Physical locations where the item is available
         beckn:availabilityWindow:
           type: array
           items:
-            $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod
+            $ref: https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml#/components/schemas/TimePeriod
           description: Time periods when the item is available
         beckn:rateable:
           type: boolean
           description: Whether the item can be rated by customers
           example: true
         beckn:rating:
-          $ref: https://schema.beckn.io/Rating/attributes.yaml#/components/schemas/Rating
+          $ref: https://schema.beckn.io/Rating/v2.1/attributes.yaml#/components/schemas/Rating
         beckn:isActive:
           type: boolean
           description: Whether the item is active
@@ -64,9 +64,9 @@ components:
           - bap.net/electronics
           - bap.net/tech
         beckn:provider:
-          $ref: https://schema.beckn.io/Provider/attributes.yaml#/components/schemas/Provider
+          $ref: https://schema.beckn.io/Provider/v2.1/attributes.yaml#/components/schemas/Provider
         beckn:itemAttributes:
-          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+          $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
       required:
       - '@context'
       - '@type'

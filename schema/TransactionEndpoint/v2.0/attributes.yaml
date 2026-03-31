@@ -17,7 +17,7 @@ components:
       description: Beckn protocol transaction endpoint identifier.
       title: TransactionEndpoint
       allOf:
-      - $ref: https://schema.beckn.io/BecknEndpoint/attributes.yaml#/components/schemas/BecknEndpoint
+      - $ref: https://schema.beckn.io/BecknEndpoint/v2.0/attributes.yaml#/components/schemas/BecknEndpoint
       - type: string
         enum:
         - beckn/discover

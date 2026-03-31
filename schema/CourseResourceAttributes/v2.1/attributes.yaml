@@ -31,7 +31,7 @@ components:
           - ADVANCED
           - EXPERT
         course_domain:
-          $ref: https://schema.beckn.io/CodedValue/attributes.yaml#/components/schemas/CodedValue
+          $ref: https://schema.beckn.io/CodedValue/v2.1/attributes.yaml#/components/schemas/CodedValue
           description: 'Subject domain of the course, expressed using an authority-governed code system (e.g. UNESCO ISCED, India NSQF sector codes).
 
             '
@@ -97,7 +97,7 @@ components:
             '
           x-jsonld-id: cra:prerequisites
           items:
-            $ref: https://schema.beckn.io/CredentialRequirement/attributes.yaml#/components/schemas/CredentialRequirement
+            $ref: https://schema.beckn.io/CredentialRequirement/v2.1/attributes.yaml#/components/schemas/CredentialRequirement
         outcome_credential:
           type: object
           description: 'The credential issued to a learner on successful course completion. Placed in resourceAttributes because it is intrinsic to the course and required at discovery time (learners search by intended outcome).
@@ -123,6 +123,6 @@ components:
               description: Specific name of the credential. E.g. "AWS Solutions Architect Associate".
               x-jsonld-id: cra:credentialName
         industry_type:
-          $ref: https://schema.beckn.io/CodedValue/attributes.yaml#/components/schemas/CodedValue
+          $ref: https://schema.beckn.io/CodedValue/v2.1/attributes.yaml#/components/schemas/CodedValue
           description: Industry alignment of the course (optional).
           x-jsonld-id: cra:industryType

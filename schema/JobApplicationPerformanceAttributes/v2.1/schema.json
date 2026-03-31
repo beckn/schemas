@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "description": "Execution metadata for the verification and routing service performed during a job application. Includes the verification method used, per-requirement results, proof integrity reference, and routing outcome. No VC or VP payloads are stored.\n",
+  "description": "Execution metadata for the verification and routing service performed during a job application. Includes the verification method used, per-requirement results, proof integrity reference, and routing outcome. No VC or VP payloads are stored. ",
   "x-beckn-container": "performanceAttributes",
   "x-jsonld-context": "./context.jsonld",
   "properties": {
@@ -18,7 +18,7 @@
     },
     "per_requirement_results": {
       "type": "array",
-      "description": "Granular verification outcome per requirement. Mandatory requirements that FAIL block routing to the employer.\n",
+      "description": "Granular verification outcome per requirement. Mandatory requirements that FAIL block routing to the employer. ",
       "x-jsonld-id": "japa:perRequirementResults",
       "items": {
         "type": "object",
@@ -55,7 +55,7 @@
     },
     "proof_hash": {
       "type": "string",
-      "description": "SHA-256 hash of the Verifiable Presentation (VP) used during verification. Provides integrity reference; no VP payload stored.\n",
+      "description": "SHA-256 hash of the Verifiable Presentation (VP) used during verification. Provides integrity reference; no VP payload stored. ",
       "x-jsonld-id": "japa:proofHash"
     },
     "issuer_dids_verified": {
@@ -68,7 +68,7 @@
     },
     "routed_to_provider": {
       "type": "boolean",
-      "description": "Whether the application was successfully forwarded to the employer after verification. False if mandatory requirements failed.\n",
+      "description": "Whether the application was successfully forwarded to the employer after verification. False if mandatory requirements failed. ",
       "x-jsonld-id": "japa:routedToProvider"
     },
     "routing_timestamp": {

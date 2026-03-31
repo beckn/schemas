@@ -1,6 +1,6 @@
 {
   "title": "Error",
-  "description": "Base error container returned in NACK responses and async error callbacks.\nDomain-specific error codes SHOULD follow the Beckn error code registry\n(see response definitions in this specification). Custom error objects may be expressed as\n`oneOf [string, object]` payloads via the `errorDetails` field.",
+  "description": "Base error container returned in NACK responses and async error callbacks. Domain-specific error codes SHOULD follow the Beckn error code registry (see response definitions in this specification). Custom error objects may be expressed as `oneOf [string, object]` payloads via the `errorDetails` field.",
   "type": "object",
   "properties": {
     "errorCode": {

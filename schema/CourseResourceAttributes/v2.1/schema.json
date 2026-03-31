@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "description": "Intrinsic attributes of a training course or program Resource. Domain-generic: applicable to any skilling vertical — vocational training, professional certification, higher education, government skill schemes, etc.\n",
+  "description": "Intrinsic attributes of a training course or program Resource. Domain-generic: applicable to any skilling vertical — vocational training, professional certification, higher education, government skill schemes, etc. ",
   "x-beckn-container": "resourceAttributes",
   "x-jsonld-context": "./context.jsonld",
   "properties": {
@@ -16,8 +16,8 @@
       ]
     },
     "course_domain": {
-      "$ref": "https://schema.beckn.io/CodedValue/attributes.yaml",
-      "description": "Subject domain of the course, expressed using an authority-governed code system (e.g. UNESCO ISCED, India NSQF sector codes).\n",
+      "$ref": "https://schema.beckn.io/CodedValue/v2.1/attributes.yaml",
+      "description": "Subject domain of the course, expressed using an authority-governed code system (e.g. UNESCO ISCED, India NSQF sector codes). ",
       "x-jsonld-id": "cra:courseDomain"
     },
     "delivery_mode": {
@@ -32,7 +32,7 @@
     },
     "duration": {
       "type": "string",
-      "description": "Total course duration in ISO 8601 duration format. Examples: \"P3W\" (3 weeks), \"PT40H\" (40 hours), \"P6M\" (6 months).\n",
+      "description": "Total course duration in ISO 8601 duration format. Examples: \"P3W\" (3 weeks), \"PT40H\" (40 hours), \"P6M\" (6 months). ",
       "x-jsonld-id": "cra:duration",
       "pattern": "^P.*"
     },
@@ -79,22 +79,22 @@
         },
         "session_pattern": {
           "type": "string",
-          "description": "Human-readable schedule pattern, e.g. \"Monday & Wednesday 6–8 PM\", \"Self-paced with weekly live sessions\".\n",
+          "description": "Human-readable schedule pattern, e.g. \"Monday & Wednesday 6–8 PM\", \"Self-paced with weekly live sessions\". ",
           "x-jsonld-id": "cra:sessionPattern"
         }
       }
     },
     "prerequisites": {
       "type": "array",
-      "description": "Credential prerequisites the enrollee must satisfy. Uses the shared CredentialRequirement type.\n",
+      "description": "Credential prerequisites the enrollee must satisfy. Uses the shared CredentialRequirement type. ",
       "x-jsonld-id": "cra:prerequisites",
       "items": {
-        "$ref": "https://schema.beckn.io/CredentialRequirement/attributes.yaml"
+        "$ref": "https://schema.beckn.io/CredentialRequirement/v2.1/attributes.yaml"
       }
     },
     "outcome_credential": {
       "type": "object",
-      "description": "The credential issued to a learner on successful course completion. Placed in resourceAttributes because it is intrinsic to the course and required at discovery time (learners search by intended outcome).\n",
+      "description": "The credential issued to a learner on successful course completion. Placed in resourceAttributes because it is intrinsic to the course and required at discovery time (learners search by intended outcome). ",
       "x-jsonld-id": "cra:outcomeCredential",
       "required": [
         "category",
@@ -121,7 +121,7 @@
       }
     },
     "industry_type": {
-      "$ref": "https://schema.beckn.io/CodedValue/attributes.yaml",
+      "$ref": "https://schema.beckn.io/CodedValue/v2.1/attributes.yaml",
       "description": "Industry alignment of the course (optional).",
       "x-jsonld-id": "cra:industryType"
     }

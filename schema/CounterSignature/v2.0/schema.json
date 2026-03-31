@@ -1,9 +1,9 @@
 {
   "title": "Beckn HTTP Counter-Signature",
-  "description": "A signed receipt transmitted in the synchronous `Ack` response body, proving that the\nreceiver authenticated, received, and processed the inbound request.\n\n`CounterSignature` shares the same wire format as `Signature` but differs:\n- **Signer**: the response receiver (not the request sender)\n- **Location**: transmitted in the `Ack` response body (not in the `Authorization` header)\n- **`digest`**: covers the Ack response body (not the inbound request body)\n- **`(request-digest)`** and **`(message-id)`** MUST be included in the signing string\n\nSigning string format:\n```\n(created): {unixTimestamp}\n(expires): {unixTimestamp}\ndigest: BLAKE-512={base64DigestOfAckBody}\n(request-digest): BLAKE-512={base64DigestOfInboundRequestBody}\n(message-id): {messageId}\n```",
+  "description": "A signed receipt transmitted in the synchronous `Ack` response body, proving that the receiver authenticated, received, and processed the inbound request.  `CounterSignature` shares the same wire format as `Signature` but differs: - **Signer**: the response receiver (not the request sender) - **Location**: transmitted in the `Ack` response body (not in the `Authorization` header) - **`digest`**: covers the Ack response body (not the inbound request body) - **`(request-digest)`** and **`(message-id)`** MUST be included in the signing string  Signing string format: ``` (created): {unixTimestamp} (expires): {unixTimestamp} digest: BLAKE-512={base64DigestOfAckBody} (request-digest): BLAKE-512={base64DigestOfInboundRequestBody} (message-id): {messageId} ```",
   "allOf": [
     {
-      "$ref": "https://schema.beckn.io/Signature/v2.0/schema.json#/components/schemas/Signature"
+      "$ref": "https://schema.beckn.io/Signature/v2.0/schema.json"
     }
   ],
   "components": {

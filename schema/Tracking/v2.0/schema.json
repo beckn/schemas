@@ -1,7 +1,7 @@
 {
   "$id": "https://schema.beckn.io/Tracking/v2.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "Non-streaming tracking handle per legacy semantics (url/transport/status).\n",
+  "description": "Non-streaming tracking handle per legacy semantics (url/transport/status). ",
   "title": "Tracking",
   "type": "object",
   "properties": {

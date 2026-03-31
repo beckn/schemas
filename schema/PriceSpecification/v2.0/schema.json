@@ -14,7 +14,7 @@
       "description": "Total value for this price specification"
     },
     "applicableQuantity": {
-      "$ref": "https://schema.beckn.io/Quantity/attributes.yaml",
+      "$ref": "https://schema.beckn.io/Quantity/v2.0/attributes.yaml",
       "x-jsonld": {
         "@id": "schema:eligibleQuantity"
       }

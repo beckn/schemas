@@ -25,7 +25,7 @@ components:
           type: number
           description: Total value for this price specification
         applicableQuantity:
-          $ref: https://schema.beckn.io/Quantity/attributes.yaml#/components/schemas/Quantity
+          $ref: https://schema.beckn.io/Quantity/v2.0/attributes.yaml#/components/schemas/Quantity
           x-jsonld:
             '@id': schema:eligibleQuantity
         components:

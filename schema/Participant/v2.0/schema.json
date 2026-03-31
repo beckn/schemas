@@ -5,13 +5,13 @@
       "type": "string"
     },
     "descriptor": {
-      "$ref": "https://schema.beckn.io/Descriptor/v2.0/schema.json#/components/schemas/Descriptor"
+      "$ref": "https://schema.beckn.io/Descriptor/v2.0/schema.json"
     },
     "participantAttributes": {
-      "description": "Domain-specific extension attributes for this contract.\nUse beckn:LogisticsContract for hyperlocal physical delivery. Use the generic Attributes schema for\nother fulfillment types where no well-known domain schema exists.",
+      "description": "Domain-specific extension attributes for this contract. Use beckn:LogisticsContract for hyperlocal physical delivery. Use the generic Attributes schema for other fulfillment types where no well-known domain schema exists.",
       "allOf": [
         {
-          "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json#/components/schemas/Attributes"
+          "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
         },
         {
           "properties": {}

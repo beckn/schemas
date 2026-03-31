@@ -27,4 +27,4 @@ components:
         Use https://schema.beckn.io/BecknAction/v2.0 instead. BecknAction is the unified envelope for all Beckn actions (both request and callback directions). The request/callback distinction is encoded in context.action (e.g. beckn/discover for requests, beckn/on_discover for callbacks).
 
         This schema will be removed in a future major version.'
-      $ref: https://schema.beckn.io/BecknAction/attributes.yaml#/components/schemas/BecknAction
+      $ref: https://schema.beckn.io/BecknAction/v2.0/attributes.yaml#/components/schemas/BecknAction

@@ -1,13 +1,13 @@
 {
   "title": "On Rate Action",
-  "description": "Beckn /beckn/on_rate message payload. Sent by a BPP to a BAP in\nresponse to a /beckn/rate call, optionally returning rating forms\nto collect structured feedback from the consumer.\n(Context wrapper stripped; only the message-content portion is inlined.)",
+  "description": "Beckn /beckn/on_rate message payload. Sent by a BPP to a BAP in response to a /beckn/rate call, optionally returning rating forms to collect structured feedback from the consumer. (Context wrapper stripped; only the message-content portion is inlined.)",
   "type": "object",
   "additionalProperties": false,
   "properties": {
     "ratings": {
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/RatingInput/v2.0/schema.json#/components/schemas/RatingInput"
+        "$ref": "https://schema.beckn.io/RatingInput/v2.0/schema.json"
       }
     }
   },

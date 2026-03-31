@@ -1,7 +1,7 @@
 {
   "$id": "https://schema.beckn.io/FnBOffer/v2.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "A Beckn schema for food and beverage offer attributes.\n\nFnBOffer extends beckn:RetailCoreOfferAttributes with F&B-specific offer\ncustomization groups — the structured mechanism by which a food item's\nconfigurable options (size, crust, toppings, add-ons) are declared and\npriced within an offer.\n\nA CustomizationGroup represents one dimension of configurability (e.g.\npizza size, crust type, topping selection). Each group has one or more\noptions with optional price deltas.\n\nInheritance: beckn:RetailCoreOfferAttributes ← beckn:FnBOffer\nUse in: beckn:Offer.offerAttributes for F&B catalog items\n",
+  "description": "A Beckn schema for food and beverage offer attributes.  FnBOffer extends beckn:RetailCoreOfferAttributes with F&B-specific offer customization groups — the structured mechanism by which a food item's configurable options (size, crust, toppings, add-ons) are declared and priced within an offer.  A CustomizationGroup represents one dimension of configurability (e.g. pizza size, crust type, topping selection). Each group has one or more options with optional price deltas.  Inheritance: beckn:RetailCoreOfferAttributes ← beckn:FnBOffer Use in: beckn:Offer.offerAttributes for F&B catalog items ",
   "title": "FnBOffer",
   "x-tags": [
     "retail",
@@ -9,7 +9,7 @@
   ],
   "allOf": [
     {
-      "$ref": "https://schema.beckn.io/RetailCoreOfferAttributes/attributes.yaml"
+      "$ref": "https://schema.beckn.io/RetailCoreOfferAttributes/v2.0/attributes.yaml"
     },
     {
       "type": "object",
@@ -27,13 +27,13 @@
         },
         "customization": {
           "type": "object",
-          "description": "Structured customization configuration for this offer. Groups represent independent dimensions of configurability.\n",
+          "description": "Structured customization configuration for this offer. Groups represent independent dimensions of configurability. ",
           "properties": {
             "groups": {
               "type": "array",
               "description": "List of customization groups for this offer.",
               "items": {
-                "$ref": "https://schema.beckn.io/FnBOffer/attributes.yaml"
+                "$ref": "https://schema.beckn.io/FnBOffer/v2.0/attributes.yaml"
               }
             }
           },
@@ -51,7 +51,7 @@
   "$defs": {
     "CustomizationGroup": {
       "type": "object",
-      "description": "A single dimension of configurability for a food item offer. Examples: pizza size selection, crust type, topping selection, add-on selection, sauce choice.\n",
+      "description": "A single dimension of configurability for a food item offer. Examples: pizza size selection, crust type, topping selection, add-on selection, sauce choice. ",
       "required": [
         "code",
         "selection",
@@ -60,7 +60,7 @@
       "properties": {
         "code": {
           "type": "string",
-          "description": "Machine-readable code for this customization group (e.g. SIZE, CRUST, TOPPINGS, ADDONS, SAUCE).\n"
+          "description": "Machine-readable code for this customization group (e.g. SIZE, CRUST, TOPPINGS, ADDONS, SAUCE). "
         },
         "name": {
           "type": "string",
@@ -68,7 +68,7 @@
         },
         "selection": {
           "type": "string",
-          "description": "Selection mode for this group. - SINGLE_REQUIRED: Exactly one option must be chosen (e.g. pizza size) - SINGLE_OPTIONAL: Zero or one option may be chosen - MULTIPLE_OPTIONAL: Zero or more options may be chosen (e.g. toppings)\n",
+          "description": "Selection mode for this group. - SINGLE_REQUIRED: Exactly one option must be chosen (e.g. pizza size) - SINGLE_OPTIONAL: Zero or one option may be chosen - MULTIPLE_OPTIONAL: Zero or more options may be chosen (e.g. toppings) ",
           "enum": [
             "SINGLE_REQUIRED",
             "SINGLE_OPTIONAL",
@@ -90,14 +90,14 @@
           "description": "Available options within this customization group.",
           "minItems": 1,
           "items": {
-            "$ref": "https://schema.beckn.io/FnBOffer/attributes.yaml"
+            "$ref": "https://schema.beckn.io/FnBOffer/v2.0/attributes.yaml"
           }
         }
       }
     },
     "CustomizationOption": {
       "type": "object",
-      "description": "A single selectable option within a CustomizationGroup. Each option may carry a price delta (positive or negative) relative to the base offer price.\n",
+      "description": "A single selectable option within a CustomizationGroup. Each option may carry a price delta (positive or negative) relative to the base offer price. ",
       "required": [
         "code",
         "name"
@@ -113,7 +113,7 @@
         },
         "priceDelta": {
           "type": "object",
-          "description": "Incremental price change relative to the base offer price when this option is selected. Positive for upcharges, negative for discounts.\n",
+          "description": "Incremental price change relative to the base offer price when this option is selected. Positive for upcharges, negative for discounts. ",
           "required": [
             "type",
             "value"
@@ -121,7 +121,7 @@
           "properties": {
             "type": {
               "type": "string",
-              "description": "- FIXED: Absolute price change in the offer currency - PERCENTAGE: Percentage change of the base price\n",
+              "description": "- FIXED: Absolute price change in the offer currency - PERCENTAGE: Percentage change of the base price ",
               "enum": [
                 "FIXED",
                 "PERCENTAGE"

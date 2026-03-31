@@ -63,11 +63,11 @@ components:
           description: Human-readable status message
           example: Your shipment has arrived at Hyderabad hub and is being sorted.
         hub:
-          $ref: https://schema.beckn.io/Hub/attributes.yaml#/components/schemas/Hub
+          $ref: https://schema.beckn.io/Hub/v2.0/attributes.yaml#/components/schemas/Hub
         driver:
-          $ref: https://schema.beckn.io/Driver/attributes.yaml#/components/schemas/Driver
+          $ref: https://schema.beckn.io/Driver/v2.0/attributes.yaml#/components/schemas/Driver
         vehicle:
-          $ref: https://schema.beckn.io/Vehicle/attributes.yaml#/components/schemas/Vehicle
+          $ref: https://schema.beckn.io/Vehicle/v2.0/attributes.yaml#/components/schemas/Vehicle
         exceptionDetails:
           type: object
           description: Details if this update is an exception

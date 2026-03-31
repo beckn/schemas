@@ -32,14 +32,14 @@ components:
           type: string
         resource:
           description: The resource being availed or accessed against this entitlement
-          $ref: https://schema.beckn.io/ContractItem/attributes.yaml#/components/schemas/ContractItem
+          $ref: https://schema.beckn.io/ContractItem/v2.0/attributes.yaml#/components/schemas/ContractItem
         descriptor:
           description: Human-readable information regarding the entitlement like QR-code images, attached documents containing terms and conditions, video or audio files instructing the user on how to use the entitlement
-          $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
+          $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor
         credentials:
           type: array
           items:
-            $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
+            $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor
       additionalProperties: true
       required:
       - '@context'

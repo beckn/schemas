@@ -1,5 +1,5 @@
 {
-  "description": "A place represented by GeoJSON geometry and optional address.\nSource: main/schema/core/v2/attributes.yaml#Location",
+  "description": "A place represented by GeoJSON geometry and optional address. Source: main/schema/core/v2/attributes.yaml#Location",
   "type": "object",
   "required": [
     "geo"
@@ -7,10 +7,10 @@
   "additionalProperties": false,
   "properties": {
     "geo": {
-      "$ref": "https://schema.beckn.io/GeoJSONGeometry/v2.0/schema.json#/components/schemas/GeoJSONGeometry"
+      "$ref": "https://schema.beckn.io/GeoJSONGeometry/v2.0/schema.json"
     },
     "address": {
-      "$ref": "https://schema.beckn.io/Address/v2.0/schema.json#/components/schemas/Address"
+      "$ref": "https://schema.beckn.io/Address/v2.0/schema.json"
     }
   },
   "components": {

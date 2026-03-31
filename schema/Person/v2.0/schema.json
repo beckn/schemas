@@ -50,7 +50,7 @@
           "type": "string"
         },
         {
-          "$ref": "https://schema.beckn.io/Address/attributes.yaml"
+          "$ref": "https://schema.beckn.io/Address/v2.0/attributes.yaml"
         }
       ],
       "x-jsonld": {
@@ -80,13 +80,13 @@
       "x-jsonld": {
         "@id": "schema:worksFor"
       },
-      "$ref": "https://schema.beckn.io/Organization/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Organization/v2.0/attributes.yaml"
     },
     "credentials": {
       "type": "array",
       "description": "Credentials held by the person",
       "items": {
-        "$ref": "https://schema.beckn.io/Credential/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Credential/v2.0/attributes.yaml"
       },
       "x-jsonld": {
         "@id": "schema:hasCredential"
@@ -96,7 +96,7 @@
       "type": "array",
       "description": "Skills possessed by the person",
       "items": {
-        "$ref": "https://schema.beckn.io/Skill/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Skill/v2.0/attributes.yaml"
       },
       "x-jsonld": {
         "@id": "schema:hasSkill"
@@ -104,7 +104,7 @@
     },
     "personAttributes": {
       "description": "Extensible attribute pack for jurisdictional or domain-specific person properties",
-      "$ref": "https://schema.beckn.io/Attributes/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml"
     }
   },
   "required": [

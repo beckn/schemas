@@ -17,10 +17,10 @@
       ]
     },
     "category": {
-      "$ref": "https://schema.beckn.io/CategoryCode/attributes.yaml"
+      "$ref": "https://schema.beckn.io/CategoryCode/v2.1/attributes.yaml"
     },
     "descriptor": {
-      "$ref": "https://schema.beckn.io/Descriptor/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Descriptor/v2.1/attributes.yaml"
     },
     "id": {
       "type": "string"

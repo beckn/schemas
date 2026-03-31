@@ -29,7 +29,7 @@
         },
         "consumerAttributes": {
           "description": "Attribute Pack reference for richer identity: # consumer/identity.v1 (contact details: email, phone, address) # consumer/org-ids.v1 (LEI, GSTIN, ISIN, CUSIP…) # consumer/kyc.v1 (jurisdictional compliance fields) # consumer/preferences.v1 (delivery preferences, accessibility needs, etc.)",
-          "$ref": "https://schema.beckn.io/Attributes/attributes.yaml"
+          "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml"
         }
       },
       "required": [
@@ -43,7 +43,7 @@
           "type": "object",
           "properties": {
             "person": {
-              "$ref": "https://schema.beckn.io/Person/attributes.yaml"
+              "$ref": "https://schema.beckn.io/Person/v2.0/attributes.yaml"
             }
           },
           "required": [
@@ -54,7 +54,7 @@
           "type": "object",
           "properties": {
             "organization": {
-              "$ref": "https://schema.beckn.io/Organization/attributes.yaml"
+              "$ref": "https://schema.beckn.io/Organization/v2.0/attributes.yaml"
             }
           },
           "required": [

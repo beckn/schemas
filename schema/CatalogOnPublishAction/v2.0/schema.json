@@ -9,7 +9,7 @@
       "type": "array",
       "description": "Per-catalog processing results",
       "items": {
-        "$ref": "https://schema.beckn.io/CatalogProcessingResult/v2.0/schema.json#/components/schemas/CatalogProcessingResult"
+        "$ref": "https://schema.beckn.io/CatalogProcessingResult/v2.0/schema.json"
       }
     }
   }

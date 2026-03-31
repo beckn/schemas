@@ -1,6 +1,6 @@
 {
   "title": "Request Payload Digest",
-  "description": "A cryptographic binding that explicitly ties a callback to the\nspecific inbound request that triggered it. Establishes bilateral non-repudiation\nfor the asynchronous leg of a Beckn interaction.\n\nUse `lineage` (on `Context`) for cross-transaction causality.\n\nVerification steps:\n1. Recompute BLAKE2b-512 digest of the original request body; compare to `digest`.\n2. Confirm `messageId` matches the `messageId` from the original request `Context`.",
+  "description": "A cryptographic binding that explicitly ties a callback to the specific inbound request that triggered it. Establishes bilateral non-repudiation for the asynchronous leg of a Beckn interaction.  Use `lineage` (on `Context`) for cross-transaction causality.  Verification steps: 1. Recompute BLAKE2b-512 digest of the original request body; compare to `digest`. 2. Confirm `messageId` matches the `messageId` from the original request `Context`.",
   "type": "object",
   "required": [
     "digest"
@@ -9,7 +9,7 @@
     "digest": {
       "type": "string",
       "pattern": "^BLAKE-512=[A-Za-z0-9+/]+=*$",
-      "description": "BLAKE2b-512 hash of the parent request body, Base64-encoded with algorithm prefix.\nFormat: `BLAKE-512={base64EncodedHash}`"
+      "description": "BLAKE2b-512 hash of the parent request body, Base64-encoded with algorithm prefix. Format: `BLAKE-512={base64EncodedHash}`"
     }
   },
   "components": {

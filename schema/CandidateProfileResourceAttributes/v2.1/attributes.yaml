@@ -28,7 +28,7 @@ components:
             '
           x-jsonld-id: cpra:skills
           items:
-            $ref: https://schema.beckn.io/SkillEntry/attributes.yaml#/components/schemas/SkillEntry
+            $ref: https://schema.beckn.io/SkillEntry/v2.1/attributes.yaml#/components/schemas/SkillEntry
         experience_level:
           type: string
           description: Overall seniority level of the candidate.
@@ -96,7 +96,7 @@ components:
             '
           x-jsonld-id: cpra:industryPreference
           items:
-            $ref: https://schema.beckn.io/CodedValue/attributes.yaml#/components/schemas/CodedValue
+            $ref: https://schema.beckn.io/CodedValue/v2.1/attributes.yaml#/components/schemas/CodedValue
         job_type_preference:
           type: array
           description: Types of employment the candidate is interested in.

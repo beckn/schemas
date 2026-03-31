@@ -22,7 +22,7 @@
       "description": "IDs of support ticket if open",
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/SupportTicket/attributes.yaml"
+        "$ref": "https://schema.beckn.io/SupportTicket/v2.0/attributes.yaml"
       }
     },
     "callbackPhone": {

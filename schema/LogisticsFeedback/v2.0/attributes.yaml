@@ -22,7 +22,7 @@ components:
         shipmentId:
           type: string
         rating:
-          $ref: https://schema.beckn.io/Rating/attributes.yaml#/components/schemas/Rating
+          $ref: https://schema.beckn.io/Rating/v2.1/attributes.yaml#/components/schemas/Rating
         review:
           type: string
           description: Free text review

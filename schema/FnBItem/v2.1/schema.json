@@ -1,7 +1,7 @@
 {
   "$id": "https://schema.beckn.io/FnBItem/v2.1",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "A Beckn schema for a food and beverage item in retail F&B ordering.\n\nFnBItem v2.1 extends beckn:RetailItem with comprehensive food-specific\nattributes covering classification, allergens, additives, nutritional information,\ncuisine, and preparation guidance.\n\nInheritance: beckn:RetailItem ← beckn:FnBItem\nUse in: beckn:Commitment.commitmentAttributes for F&B orders\n",
+  "description": "A Beckn schema for a food and beverage item in retail F&B ordering.  FnBItem v2.1 extends beckn:RetailItem with comprehensive food-specific attributes covering classification, allergens, additives, nutritional information, cuisine, and preparation guidance.  Inheritance: beckn:RetailItem ← beckn:FnBItem Use in: beckn:Commitment.commitmentAttributes for F&B orders ",
   "title": "FnBItem",
   "x-tags": [
     "retail",
@@ -9,7 +9,7 @@
   ],
   "allOf": [
     {
-      "$ref": "https://schema.beckn.io/RetailItem/attributes.yaml"
+      "$ref": "https://schema.beckn.io/RetailItem/v2.1/attributes.yaml"
     },
     {
       "type": "object",
@@ -27,7 +27,7 @@
         },
         "classification": {
           "type": "string",
-          "description": "Dietary classification of the food item. - VEG: Suitable for vegetarians (no meat, poultry, seafood, or eggs) - NON_VEG: Contains meat, poultry, or seafood - EGG: Contains eggs but no meat or seafood (ovo-vegetarian) - VEGAN: No animal products whatsoever\n",
+          "description": "Dietary classification of the food item. - VEG: Suitable for vegetarians (no meat, poultry, seafood, or eggs) - NON_VEG: Contains meat, poultry, or seafood - EGG: Contains eggs but no meat or seafood (ovo-vegetarian) - VEGAN: No animal products whatsoever ",
           "enum": [
             "VEG",
             "NON_VEG",
@@ -40,7 +40,7 @@
         },
         "cuisine": {
           "type": "string",
-          "description": "Cuisine classification for this item (e.g. Italian, Indian, Mexican, American, Chinese, Mediterranean, Japanese, Thai, Middle Eastern).\n",
+          "description": "Cuisine classification for this item (e.g. Italian, Indian, Mexican, American, Chinese, Mediterranean, Japanese, Thai, Middle Eastern). ",
           "x-jsonld": {
             "@id": "beckn:cuisine"
           }
@@ -51,15 +51,15 @@
           "properties": {
             "instructions": {
               "type": "string",
-              "description": "Preparation or reheating instructions (e.g. \"Serve hot\",  \"Microwave for 2 minutes\", \"Do not freeze\").\n"
+              "description": "Preparation or reheating instructions (e.g. \"Serve hot\",  \"Microwave for 2 minutes\", \"Do not freeze\"). "
             },
             "storage": {
               "type": "string",
-              "description": "Storage requirements (e.g. \"Refrigerate at 4°C\", \"Keep frozen at -18°C\", \"Store at room temperature\").\n"
+              "description": "Storage requirements (e.g. \"Refrigerate at 4°C\", \"Keep frozen at -18°C\", \"Store at room temperature\"). "
             },
             "shelfLife": {
               "type": "string",
-              "description": "Shelf life expressed as ISO 8601 duration (e.g. P2D for 2 days, PT4H for 4 hours, P6M for 6 months).\n"
+              "description": "Shelf life expressed as ISO 8601 duration (e.g. P2D for 2 days, PT4H for 4 hours, P6M for 6 months). "
             }
           },
           "x-jsonld": {
@@ -68,11 +68,11 @@
         },
         "allergenInfo": {
           "type": "object",
-          "description": "Allergen declarations for this item, structured as presence and absence declarations. Follows EU Regulation 1169/2011 allergen categories.\n",
+          "description": "Allergen declarations for this item, structured as presence and absence declarations. Follows EU Regulation 1169/2011 allergen categories. ",
           "properties": {
             "contains": {
               "type": "array",
-              "description": "Allergens confirmed to be present in this item. The consumer MUST be informed of these allergens.\n",
+              "description": "Allergens confirmed to be present in this item. The consumer MUST be informed of these allergens. ",
               "items": {
                 "type": "string",
                 "enum": [
@@ -95,7 +95,7 @@
             },
             "mayContain": {
               "type": "array",
-              "description": "Allergens for which cross-contamination is possible (trace amounts). Use when the item is prepared in a facility that handles these allergens.\n",
+              "description": "Allergens for which cross-contamination is possible (trace amounts). Use when the item is prepared in a facility that handles these allergens. ",
               "items": {
                 "type": "string",
                 "enum": [
@@ -130,11 +130,11 @@
         },
         "nutritionalInfo": {
           "type": "object",
-          "description": "Nutritional information per serving or per 100g/100ml. Values should be expressed per the specified servingSize.\n",
+          "description": "Nutritional information per serving or per 100g/100ml. Values should be expressed per the specified servingSize. ",
           "properties": {
             "servingSize": {
               "type": "string",
-              "description": "Serving size for which nutritional values are given (e.g. \"1 slice (125g)\", \"100ml\", \"1 piece\").\n"
+              "description": "Serving size for which nutritional values are given (e.g. \"1 slice (125g)\", \"100ml\", \"1 piece\"). "
             },
             "energyKcal": {
               "type": "number",
@@ -183,7 +183,7 @@
         },
         "additives": {
           "type": "array",
-          "description": "Food additives and their presence/quantity declarations. Covers artificial coloring, preservatives, flavor enhancers, etc.\n",
+          "description": "Food additives and their presence/quantity declarations. Covers artificial coloring, preservatives, flavor enhancers, etc. ",
           "items": {
             "type": "object",
             "required": [
@@ -205,7 +205,7 @@
               },
               "value": {
                 "type": "string",
-                "description": "The additive name, E-number code, or regulatory code (e.g. \"E621 Monosodium Glutamate\", \"Sodium Benzoate E211\").\n"
+                "description": "The additive name, E-number code, or regulatory code (e.g. \"E621 Monosodium Glutamate\", \"Sodium Benzoate E211\"). "
               },
               "quantity": {
                 "type": "object",

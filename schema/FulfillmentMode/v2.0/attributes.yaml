@@ -28,10 +28,10 @@ components:
         id:
           type: string
         descriptor:
-          $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
+          $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor
         modeAttributes:
           description: Domain-specific fulfillment mode attributes (e.g., delivery, pickup, reservation, digital)
-          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+          $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
       additionalProperties: false
       x-tags:
       - common

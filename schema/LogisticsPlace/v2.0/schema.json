@@ -1,7 +1,7 @@
 {
   "type": "object",
   "title": "Place",
-  "description": "A geographic location relevant to logistics such as origin, destination, hub, or waypoint. Includes structured address and GPS coordinates. Maps to beckn:Location and schema:Place.\n",
+  "description": "A geographic location relevant to logistics such as origin, destination, hub, or waypoint. Includes structured address and GPS coordinates. Maps to beckn:Location and schema:Place. ",
   "required": [
     "id"
   ],
@@ -74,7 +74,7 @@
       }
     },
     "contact": {
-      "$ref": "https://schema.beckn.io/Contact/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Contact/v2.0/attributes.yaml"
     },
     "accessInstructions": {
       "type": "string",

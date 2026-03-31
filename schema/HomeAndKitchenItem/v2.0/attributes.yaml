@@ -12,7 +12,7 @@ components:
   schemas:
     HomeAndKitchenItem:
       allOf:
-      - $ref: https://schema.beckn.io/RetailCoreItem/attributes.yaml#/components/schemas/RetailCoreItem
+      - $ref: https://schema.beckn.io/RetailCoreItem/v2.0/attributes.yaml#/components/schemas/RetailCoreItem
       - type: object
         additionalProperties: false
         x-jsonld:

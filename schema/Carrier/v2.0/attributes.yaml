@@ -41,7 +41,7 @@ components:
           type: string
           format: uri
         contact:
-          $ref: https://schema.beckn.io/Contact/attributes.yaml#/components/schemas/Contact
+          $ref: https://schema.beckn.io/Contact/v2.0/attributes.yaml#/components/schemas/Contact
         rating:
           type: number
           minimum: 1
@@ -82,7 +82,7 @@ components:
           type: array
           description: Logistics hubs operated by this carrier
           items:
-            $ref: https://schema.beckn.io/Hub/attributes.yaml#/components/schemas/Hub
+            $ref: https://schema.beckn.io/Hub/v2.0/attributes.yaml#/components/schemas/Hub
         licenseNumber:
           type: string
           description: Transport license number

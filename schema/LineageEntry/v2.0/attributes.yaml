@@ -22,7 +22,7 @@ components:
       properties:
         action:
           description: The Beckn endpoint of the upstream message that caused this transaction to be initiated.
-          $ref: https://schema.beckn.io/BecknEndpoint/attributes.yaml#/components/schemas/BecknEndpoint
+          $ref: https://schema.beckn.io/BecknEndpoint/v2.0/attributes.yaml#/components/schemas/BecknEndpoint
         transactionId:
           description: The transactionId of the upstream Beckn transaction, taken from its Context.
           type: string

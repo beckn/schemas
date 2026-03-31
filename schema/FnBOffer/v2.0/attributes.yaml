@@ -66,7 +66,7 @@ components:
       - retail
       - food-and-beverages
       allOf:
-      - $ref: https://schema.beckn.io/RetailCoreOfferAttributes/attributes.yaml#/components/schemas/RetailCoreOfferAttributes
+      - $ref: https://schema.beckn.io/RetailCoreOfferAttributes/v2.0/attributes.yaml#/components/schemas/RetailCoreOfferAttributes
       - type: object
         properties:
           '@context':
@@ -88,7 +88,7 @@ components:
                 type: array
                 description: List of customization groups for this offer.
                 items:
-                  $ref: https://schema.beckn.io/FnBOffer/attributes.yaml#/components/schemas/FnBOffer
+                  $ref: https://schema.beckn.io/FnBOffer/v2.0/attributes.yaml#/components/schemas/FnBOffer
             x-jsonld:
               '@id': beckn:customization
         required:
@@ -135,7 +135,7 @@ components:
               description: Available options within this customization group.
               minItems: 1
               items:
-                $ref: https://schema.beckn.io/FnBOffer/attributes.yaml#/components/schemas/FnBOffer
+                $ref: https://schema.beckn.io/FnBOffer/v2.0/attributes.yaml#/components/schemas/FnBOffer
         CustomizationOption:
           type: object
           description: 'A single selectable option within a CustomizationGroup. Each option may carry a price delta (positive or negative) relative to the base offer price.

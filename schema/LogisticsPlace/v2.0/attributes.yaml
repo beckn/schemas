@@ -71,7 +71,7 @@ components:
               type: number
               example: 77.6412
         contact:
-          $ref: https://schema.beckn.io/Contact/attributes.yaml#/components/schemas/Contact
+          $ref: https://schema.beckn.io/Contact/v2.0/attributes.yaml#/components/schemas/Contact
         accessInstructions:
           type: string
           description: Instructions for courier to reach the place

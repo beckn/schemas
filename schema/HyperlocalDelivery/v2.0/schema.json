@@ -1,7 +1,7 @@
 {
   "$id": "https://schema.beckn.io/HyperlocalDelivery/v2.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "A Beckn domain schema for hyperlocal (same-city, typically sub-2-hour) physical delivery\nof goods or prepared food from an origin to a destination within a short radius.\n\nHyperlocalDelivery is a concrete, domain-specific fulfillmentAttributes value for a\nbeckn:Fulfillment entry. It is fully aligned with schema:ParcelDelivery.\n\nschema.org alignment: schema:ParcelDelivery (subtype of schema:Intangible)\nUse in: beckn:Fulfillment.fulfillmentAttributes\n",
+  "description": "A Beckn domain schema for hyperlocal (same-city, typically sub-2-hour) physical delivery of goods or prepared food from an origin to a destination within a short radius.  HyperlocalDelivery is a concrete, domain-specific fulfillmentAttributes value for a beckn:Fulfillment entry. It is fully aligned with schema:ParcelDelivery.  schema.org alignment: schema:ParcelDelivery (subtype of schema:Intangible) Use in: beckn:Fulfillment.fulfillmentAttributes ",
   "title": "HyperlocalDelivery",
   "x-tags": [
     "retail",
@@ -20,32 +20,32 @@
       "const": "beckn:HyperlocalDelivery"
     },
     "pickupLocation": {
-      "$ref": "https://schema.beckn.io/Location/attributes.yaml",
-      "description": "The pickup/origin location (restaurant, warehouse, dark store). Corresponds to schema:originAddress on schema:ParcelDelivery.\n",
+      "$ref": "https://schema.beckn.io/Location/v2.0/attributes.yaml",
+      "description": "The pickup/origin location (restaurant, warehouse, dark store). Corresponds to schema:originAddress on schema:ParcelDelivery. ",
       "x-jsonld": {
         "@id": "schema:originAddress"
       }
     },
     "deliveryLocation": {
-      "$ref": "https://schema.beckn.io/Location/attributes.yaml",
-      "description": "The delivery destination (consumer's address). Corresponds to schema:deliveryAddress on schema:ParcelDelivery.\n",
+      "$ref": "https://schema.beckn.io/Location/v2.0/attributes.yaml",
+      "description": "The delivery destination (consumer's address). Corresponds to schema:deliveryAddress on schema:ParcelDelivery. ",
       "x-jsonld": {
         "@id": "schema:deliveryAddress"
       }
     },
     "itemsShipped": {
       "type": "array",
-      "description": "The items shipped in this delivery. Corresponds to schema:itemShipped on schema:ParcelDelivery.\n",
+      "description": "The items shipped in this delivery. Corresponds to schema:itemShipped on schema:ParcelDelivery. ",
       "items": {
-        "$ref": "https://schema.beckn.io/Attributes/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml"
       },
       "x-jsonld": {
         "@id": "schema:itemShipped"
       }
     },
     "agent": {
-      "$ref": "https://schema.beckn.io/Attributes/attributes.yaml",
-      "description": "The delivery agent (rider) carrying out this delivery. Corresponds to schema:carrier on schema:ParcelDelivery.\n",
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml",
+      "description": "The delivery agent (rider) carrying out this delivery. Corresponds to schema:carrier on schema:ParcelDelivery. ",
       "x-jsonld": {
         "@id": "schema:carrier"
       }
@@ -53,7 +53,7 @@
     "trackingUrl": {
       "type": "string",
       "format": "uri",
-      "description": "Live real-time tracking URL for the rider's location during delivery. Corresponds to schema:trackingUrl on schema:ParcelDelivery.\n",
+      "description": "Live real-time tracking URL for the rider's location during delivery. Corresponds to schema:trackingUrl on schema:ParcelDelivery. ",
       "x-jsonld": {
         "@id": "schema:trackingUrl"
       }

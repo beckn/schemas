@@ -1,11 +1,11 @@
 {
   "title": "On Track Action",
-  "description": "Beckn /beckn/on_track message payload. Sent by a BPP to a BAP in\nresponse to a /beckn/track call, returning a Tracking handle with\nthe URL and/or WebSocket endpoint for real-time fulfillment tracking.\n(Context wrapper stripped; only the message-content portion is inlined.)",
+  "description": "Beckn /beckn/on_track message payload. Sent by a BPP to a BAP in response to a /beckn/track call, returning a Tracking handle with the URL and/or WebSocket endpoint for real-time fulfillment tracking. (Context wrapper stripped; only the message-content portion is inlined.)",
   "type": "object",
   "additionalProperties": false,
   "properties": {
     "tracking": {
-      "$ref": "https://schema.beckn.io/Tracking/v2.0/schema.json#/components/schemas/Tracking"
+      "$ref": "https://schema.beckn.io/Tracking/v2.0/schema.json"
     }
   },
   "required": [

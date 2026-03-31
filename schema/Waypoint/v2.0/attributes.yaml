@@ -28,7 +28,7 @@ components:
           type: string
           example: Hyderabad Sorting Hub
         place:
-          $ref: https://schema.beckn.io/Place/attributes.yaml#/components/schemas/Place
+          $ref: https://schema.beckn.io/Place/v2.0/attributes.yaml#/components/schemas/Place
         type:
           type: string
           enum:

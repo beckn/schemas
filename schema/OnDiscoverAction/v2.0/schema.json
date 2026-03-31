@@ -7,9 +7,9 @@
   "properties": {
     "catalogs": {
       "type": "array",
-      "description": "Array of catalogs matching the discovery request.\nArray of catalogs matching the discovery request.",
+      "description": "Array of catalogs matching the discovery request. Array of catalogs matching the discovery request.",
       "items": {
-        "$ref": "https://schema.beckn.io/Catalog/v2.0/schema.json#/components/schemas/Catalog"
+        "$ref": "https://schema.beckn.io/Catalog/v2.0/schema.json"
       }
     }
   },

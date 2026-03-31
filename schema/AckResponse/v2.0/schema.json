@@ -20,7 +20,7 @@
       ]
     },
     "error": {
-      "$ref": "https://schema.beckn.io/Error/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Error/v2.0/attributes.yaml"
     }
   },
   "required": [

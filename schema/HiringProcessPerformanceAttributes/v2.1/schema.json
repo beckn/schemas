@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "description": "Execution state of the hiring process service. Covers the pipeline from initial screening through to offer acceptance or withdrawal. Includes optional credential verification triggered by the employer during the hiring process.\n",
+  "description": "Execution state of the hiring process service. Covers the pipeline from initial screening through to offer acceptance or withdrawal. Includes optional credential verification triggered by the employer during the hiring process. ",
   "x-beckn-container": "performanceAttributes",
   "x-jsonld-context": "./context.jsonld",
   "required": [
@@ -57,7 +57,7 @@
     },
     "assessment_reference": {
       "type": "string",
-      "description": "External reference ID for the assessment (e.g. a test platform link or reference number). Only present when assessment_required = true.\n",
+      "description": "External reference ID for the assessment (e.g. a test platform link or reference number). Only present when assessment_required = true. ",
       "x-jsonld-id": "hppa:assessmentReference"
     },
     "verification_requested": {
@@ -67,8 +67,8 @@
       "default": false
     },
     "verification_summary": {
-      "$ref": "https://schema.beckn.io/VerificationSummary/attributes.yaml",
-      "description": "Outcome of employer-triggered credential verification. Only populated when verification_requested = true.\n",
+      "$ref": "https://schema.beckn.io/VerificationSummary/v2.1/attributes.yaml",
+      "description": "Outcome of employer-triggered credential verification. Only populated when verification_requested = true. ",
       "x-jsonld-id": "hppa:verificationSummary"
     }
   },

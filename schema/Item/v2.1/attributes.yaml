@@ -32,20 +32,20 @@ components:
           description: Time periods when the item is available
           type: array
           items:
-            $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod
+            $ref: https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml#/components/schemas/TimePeriod
         availableAt:
           description: Physical locations where the item is available
           type: array
           items:
-            $ref: https://schema.beckn.io/Location/attributes.yaml#/components/schemas/Location
+            $ref: https://schema.beckn.io/Location/v2.0/attributes.yaml#/components/schemas/Location
         category:
-          $ref: https://schema.beckn.io/CategoryCode/attributes.yaml#/components/schemas/CategoryCode
+          $ref: https://schema.beckn.io/CategoryCode/v2.1/attributes.yaml#/components/schemas/CategoryCode
         constraints:
           type: array
           items:
-            $ref: https://schema.beckn.io/Constraint/attributes.yaml#/components/schemas/Constraint
+            $ref: https://schema.beckn.io/Constraint/v2.0/attributes.yaml#/components/schemas/Constraint
         descriptor:
-          $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
+          $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor
         id:
           description: Unique identifier for the item
           type: string
@@ -55,7 +55,7 @@ components:
           type: boolean
           default: true
         itemAttributes:
-          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+          $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
         networkId:
           description: Array of network identifiers for the BAP (Beckn App Provider) that offers this item
           type: array
@@ -67,15 +67,15 @@ components:
         policies:
           type: array
           items:
-            $ref: https://schema.beckn.io/Policy/attributes.yaml#/components/schemas/Policy
+            $ref: https://schema.beckn.io/Policy/v2.0/attributes.yaml#/components/schemas/Policy
         provider:
-          $ref: https://schema.beckn.io/Provider/attributes.yaml#/components/schemas/Provider
+          $ref: https://schema.beckn.io/Provider/v2.1/attributes.yaml#/components/schemas/Provider
         rateable:
           description: Whether the item can be rated by customers
           type: boolean
           example: true
         rating:
-          $ref: https://schema.beckn.io/Rating/attributes.yaml#/components/schemas/Rating
+          $ref: https://schema.beckn.io/Rating/v2.1/attributes.yaml#/components/schemas/Rating
       required:
       - '@context'
       - '@type'

@@ -31,7 +31,7 @@ components:
             '
           x-jsonld-id: jaca:applicationReference
         verification_summary:
-          $ref: https://schema.beckn.io/VerificationSummary/attributes.yaml#/components/schemas/VerificationSummary
+          $ref: https://schema.beckn.io/VerificationSummary/v2.1/attributes.yaml#/components/schemas/VerificationSummary
           description: 'Aggregate outcome of credential verification performed during the application submission. Populated after verification completes.
 
             '
@@ -50,7 +50,7 @@ components:
             '
           x-jsonld-id: jaca:reverificationRequirements
           items:
-            $ref: https://schema.beckn.io/CredentialRequirement/attributes.yaml#/components/schemas/CredentialRequirement
+            $ref: https://schema.beckn.io/CredentialRequirement/v2.1/attributes.yaml#/components/schemas/CredentialRequirement
         submitted_at:
           type: string
           format: date-time

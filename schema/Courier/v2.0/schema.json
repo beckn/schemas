@@ -1,7 +1,7 @@
 {
   "type": "object",
   "title": "Courier",
-  "description": "A Courier is an individual delivery agent responsible for last-mile pickup and delivery of packages, typically in hyperlocal or urban delivery contexts. Maps to beckn:Agent.\n",
+  "description": "A Courier is an individual delivery agent responsible for last-mile pickup and delivery of packages, typically in hyperlocal or urban delivery contexts. Maps to beckn:Agent. ",
   "required": [
     "id",
     "name"
@@ -57,7 +57,7 @@
       "example": "KA05AB1234"
     },
     "currentLocation": {
-      "$ref": "https://schema.beckn.io/Place/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Place/v2.0/attributes.yaml"
     },
     "status": {
       "type": "string",

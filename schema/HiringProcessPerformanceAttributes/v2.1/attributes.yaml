@@ -73,7 +73,7 @@ components:
           x-jsonld-id: hppa:verificationRequested
           default: false
         verification_summary:
-          $ref: https://schema.beckn.io/VerificationSummary/attributes.yaml#/components/schemas/VerificationSummary
+          $ref: https://schema.beckn.io/VerificationSummary/v2.1/attributes.yaml#/components/schemas/VerificationSummary
           description: 'Outcome of employer-triggered credential verification. Only populated when verification_requested = true.
 
             '

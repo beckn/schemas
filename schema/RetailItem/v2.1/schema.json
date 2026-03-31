@@ -1,14 +1,14 @@
 {
   "$id": "https://schema.beckn.io/RetailItem/v2.1",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "A minimal retail item schema for use in Contract.commitments[].commitmentAttributes.\n\nRetailItem is the foundational schema for items in retail transactions.\nIt extends beckn:Resource with the core retail item properties: price, quantity,\nand verifiable credentials. Domain-specific schemas (e.g. FoodAndBeverageItem)\nextend RetailItem with additional domain-specific attributes.\n\nInheritance: beckn:Resource ← beckn:RetailItem\nUse in: beckn:Commitment.commitmentAttributes for retail orders\n",
+  "description": "A minimal retail item schema for use in Contract.commitments[].commitmentAttributes.  RetailItem is the foundational schema for items in retail transactions. It extends beckn:Resource with the core retail item properties: price, quantity, and verifiable credentials. Domain-specific schemas (e.g. FoodAndBeverageItem) extend RetailItem with additional domain-specific attributes.  Inheritance: beckn:Resource ← beckn:RetailItem Use in: beckn:Commitment.commitmentAttributes for retail orders ",
   "title": "RetailItem",
   "x-tags": [
     "retail"
   ],
   "allOf": [
     {
-      "$ref": "https://schema.beckn.io/Attributes/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml"
     },
     {
       "type": "object",
@@ -26,7 +26,7 @@
         },
         "resourceId": {
           "type": "string",
-          "description": "Identifier of the catalog item resource this commitment refers to. Corresponds to the item's id in the Catalog.\n",
+          "description": "Identifier of the catalog item resource this commitment refers to. Corresponds to the item's id in the Catalog. ",
           "x-jsonld": {
             "@id": "beckn:resourceId"
           }
@@ -46,8 +46,8 @@
           }
         },
         "price": {
-          "$ref": "https://schema.beckn.io/PriceSpecification/attributes.yaml",
-          "description": "Unit price specification for this line item. For domain-specific pricing, use domain-specific price schema (e.g. beckn:FnBPriceSpecification for food & beverage).\n",
+          "$ref": "https://schema.beckn.io/PriceSpecification/v2.1/attributes.yaml",
+          "description": "Unit price specification for this line item. For domain-specific pricing, use domain-specific price schema (e.g. beckn:FnBPriceSpecification for food & beverage). ",
           "x-jsonld": {
             "@id": "beckn:price"
           }
@@ -58,7 +58,7 @@
           "properties": {
             "unitCode": {
               "type": "string",
-              "description": "Unit of measure code (e.g. EA for each, KG for kilograms, LTR for litres, MTR for metres).\n",
+              "description": "Unit of measure code (e.g. EA for each, KG for kilograms, LTR for litres, MTR for metres). ",
               "example": "EA"
             },
             "unitQuantity": {
@@ -74,7 +74,7 @@
         },
         "credentials": {
           "type": "array",
-          "description": "External verifiable credentials or attestations associated with this item (e.g. FSSAI license, organic certification, ISO standard).\n",
+          "description": "External verifiable credentials or attestations associated with this item (e.g. FSSAI license, organic certification, ISO standard). ",
           "items": {
             "type": "object",
             "required": [

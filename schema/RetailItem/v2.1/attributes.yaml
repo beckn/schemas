@@ -51,7 +51,7 @@ components:
       x-tags:
       - retail
       allOf:
-      - $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+      - $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
       - type: object
         properties:
           '@context':
@@ -81,7 +81,7 @@ components:
             x-jsonld:
               '@id': beckn:offerId
           price:
-            $ref: https://schema.beckn.io/PriceSpecification/attributes.yaml#/components/schemas/PriceSpecification
+            $ref: https://schema.beckn.io/PriceSpecification/v2.1/attributes.yaml#/components/schemas/PriceSpecification
             description: 'Unit price specification for this line item. For domain-specific pricing, use domain-specific price schema (e.g. beckn:FnBPriceSpecification for food & beverage).
 
               '

@@ -40,7 +40,7 @@ components:
           description: A time range with start and end
           x-jsonld:
             '@id': beckn:timeRange
-          $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod
+          $ref: https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml#/components/schemas/TimePeriod
         label:
           type: string
           description: Human-readable label for this time

@@ -5,7 +5,7 @@
       "type": "string"
     },
     "considerationId": {
-      "$ref": "#/components/schemas/Consideration/properties/id"
+      "$ref": "#/properties/id"
     },
     "status": {
       "type": "string",
@@ -16,7 +16,7 @@
       ]
     },
     "settlementAttributes": {
-      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json#/components/schemas/Attributes"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
     }
   },
   "components": {

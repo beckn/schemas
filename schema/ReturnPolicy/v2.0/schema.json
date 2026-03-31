@@ -67,7 +67,7 @@
       "example": true
     },
     "returnHubAddress": {
-      "$ref": "https://schema.beckn.io/Place/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Place/v2.0/attributes.yaml"
     }
   },
   "$id": "https://schema.beckn.io/ReturnPolicy/v2.0",

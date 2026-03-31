@@ -22,8 +22,8 @@
           }
         },
         "agentAttributes": {
-          "description": "Attribute Pack reference for richer identity: # agent/identity.v1 (contact details: email, phone, address) # agent/org-ids.v1 (LEI, GSTIN, ISIN, CUSIP…) # consumer/kyc.v1 (jurisdictional compliance fields) # (accessibility needs, etc.)\n",
-          "$ref": "https://schema.beckn.io/Attributes/attributes.yaml"
+          "description": "Attribute Pack reference for richer identity: # agent/identity.v1 (contact details: email, phone, address) # agent/org-ids.v1 (LEI, GSTIN, ISIN, CUSIP…) # consumer/kyc.v1 (jurisdictional compliance fields) # (accessibility needs, etc.) ",
+          "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml"
         }
       },
       "required": [
@@ -38,7 +38,7 @@
           "additionalProperties": false,
           "properties": {
             "person": {
-              "$ref": "https://schema.beckn.io/Person/attributes.yaml"
+              "$ref": "https://schema.beckn.io/Person/v2.0/attributes.yaml"
             }
           },
           "required": [
@@ -50,7 +50,7 @@
           "additionalProperties": false,
           "properties": {
             "organization": {
-              "$ref": "https://schema.beckn.io/Organization/attributes.yaml"
+              "$ref": "https://schema.beckn.io/Organization/v2.0/attributes.yaml"
             }
           },
           "required": [

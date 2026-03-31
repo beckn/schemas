@@ -52,7 +52,7 @@ components:
       - retail
       - food-and-beverages
       allOf:
-      - $ref: https://schema.beckn.io/RetailCoreItemAttributes/attributes.yaml#/components/schemas/RetailCoreItemAttributes
+      - $ref: https://schema.beckn.io/RetailCoreItemAttributes/v2.0/attributes.yaml#/components/schemas/RetailCoreItemAttributes
       - type: object
         properties:
           '@context':
@@ -96,7 +96,7 @@ components:
             x-jsonld:
               '@id': beckn:quantity
           price:
-            $ref: https://schema.beckn.io/PriceSpecification/attributes.yaml#/components/schemas/PriceSpecification
+            $ref: https://schema.beckn.io/PriceSpecification/v2.1/attributes.yaml#/components/schemas/PriceSpecification
             description: Unit price breakdown for this line item.
             x-jsonld:
               '@id': beckn:price

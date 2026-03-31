@@ -12,7 +12,7 @@ components:
   schemas:
     GroceryItem:
       allOf:
-      - $ref: https://schema.beckn.io/RetailCoreItem/attributes.yaml#/components/schemas/RetailCoreItem
+      - $ref: https://schema.beckn.io/RetailCoreItem/v2.0/attributes.yaml#/components/schemas/RetailCoreItem
       - type: object
         additionalProperties: false
         x-jsonld:
@@ -39,7 +39,7 @@ components:
                   description: Nutrient name (e.g., Energy, Protein, Sodium).
                 value:
                   description: Nutrient value expressed as Beckn core Quantity.
-                  $ref: https://schema.beckn.io/Quantity/attributes.yaml#/components/schemas/Quantity
+                  $ref: https://schema.beckn.io/Quantity/v2.0/attributes.yaml#/components/schemas/Quantity
           freshProduce:
             type: object
             additionalProperties: false

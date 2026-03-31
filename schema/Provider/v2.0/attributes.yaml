@@ -23,22 +23,22 @@ components:
           description: Unique identifier for the provider
           example: tech-store-001
         beckn:descriptor:
-          $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
+          $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor
         beckn:validity:
-          $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod
+          $ref: https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml#/components/schemas/TimePeriod
         beckn:locations:
           type: array
           items:
-            $ref: https://schema.beckn.io/Location/attributes.yaml#/components/schemas/Location
+            $ref: https://schema.beckn.io/Location/v2.0/attributes.yaml#/components/schemas/Location
           description: Physical locations where the provider operates
         beckn:rateable:
           type: boolean
           description: Whether the provider can be rated by customers
           example: true
         beckn:rating:
-          $ref: https://schema.beckn.io/Rating/attributes.yaml#/components/schemas/Rating
+          $ref: https://schema.beckn.io/Rating/v2.1/attributes.yaml#/components/schemas/Rating
         beckn:providerAttributes:
-          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+          $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
       required:
       - beckn:id
       - beckn:descriptor

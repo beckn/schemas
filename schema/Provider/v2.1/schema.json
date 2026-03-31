@@ -9,17 +9,17 @@
       "example": "tech-store-001"
     },
     "descriptor": {
-      "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json#/components/schemas/Descriptor"
+      "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json"
     },
     "availableAt": {
       "description": "Physical locations where the provider operates",
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/Location/v2.0/schema.json#/components/schemas/Location"
+        "$ref": "https://schema.beckn.io/Location/v2.0/schema.json"
       }
     },
     "providerAttributes": {
-      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json#/components/schemas/Attributes"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
     }
   },
   "required": [
