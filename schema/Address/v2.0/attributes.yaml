@@ -4,7 +4,7 @@ info:
   version: 2.0.0
   description: '**Postal address** aligned with schema.org `PostalAddress`. Use for human-readable addresses. Geometry lives in `Location.geo` as GeoJSON.'
   license:
-    name: CC-BY-NC-SA-4.0
+    name: CC-BY-NC-SA 4.0 International
   contact:
     name: Beckn Labs
     url: https://beckn.io

@@ -121,7 +121,7 @@ info:
     name: Beckn Foundation
     url: https://beckn.org
   license:
-    name: CC-BY-NC-SA-4.0
+    name: CC-BY-NC-SA 4.0 International
     url: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 components:

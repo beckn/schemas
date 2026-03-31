@@ -4,7 +4,7 @@ info:
   version: 2.0.0
   description: The entity directly involved in fulfilling the order. It could be a person, an organization, a machine, a software application, or an AI Agent.
   license:
-    name: CC-BY-NC-SA-4.0
+    name: CC-BY-NC-SA 4.0 International
   contact:
     name: Beckn Labs
     url: https://beckn.io

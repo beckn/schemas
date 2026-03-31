@@ -4,7 +4,7 @@ info:
   version: 2.0.0
   description: A Beckn protocol endpoint identifier. Must start with the prefix "beckn/" followed by one or more lowercase segments (letters and underscores only) separated by forward slashes. Standard endpoints are listed in the oneOf below with their descriptions. New actors may define extension endpoints without modifying this schema — the pattern accepts any conforming beckn/ prefixed string.
   license:
-    name: CC-BY-NC-SA-4.0
+    name: CC-BY-NC-SA 4.0 International
   contact:
     name: Beckn Labs
     url: https://beckn.io
