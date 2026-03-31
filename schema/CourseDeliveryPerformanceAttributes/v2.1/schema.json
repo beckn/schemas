@@ -1,0 +1,80 @@
+{
+  "type": "object",
+  "x-beckn-container": "performanceAttributes",
+  "x-jsonld-context": "./context.jsonld",
+  "properties": {
+    "delivery_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "LMS or content platform URL for ACCESS mode courses.",
+      "x-jsonld-id": "cdpa:deliveryUrl"
+    },
+    "session_schedule": {
+      "type": "array",
+      "description": "Scheduled live sessions for SERVICE mode courses.",
+      "x-jsonld-id": "cdpa:sessionSchedule",
+      "items": {
+        "type": "object",
+        "properties": {
+          "session_date": {
+            "type": "string",
+            "format": "date-time",
+            "x-jsonld-id": "schema:startDate"
+          },
+          "duration": {
+            "type": "string",
+            "description": "ISO 8601 duration of the session.",
+            "x-jsonld-id": "schema:duration"
+          },
+          "topic": {
+            "type": "string",
+            "x-jsonld-id": "cdpa:sessionTopic"
+          }
+        }
+      }
+    },
+    "attendance_tracking": {
+      "type": "boolean",
+      "description": "Whether attendance is formally tracked for this course.",
+      "x-jsonld-id": "cdpa:attendanceTracking"
+    },
+    "completion_criteria": {
+      "type": "object",
+      "description": "Criteria that must be met for the learner to be eligible for credential issuance.",
+      "x-jsonld-id": "cdpa:completionCriteria",
+      "properties": {
+        "min_attendance_pct": {
+          "type": "number",
+          "description": "Minimum attendance percentage required (0–100).",
+          "x-jsonld-id": "cdpa:minAttendancePct",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "assessment_required": {
+          "type": "boolean",
+          "description": "Whether passing an assessment is required for completion.",
+          "x-jsonld-id": "cdpa:assessmentRequired"
+        }
+      }
+    },
+    "completion_status": {
+      "type": "string",
+      "description": "Current completion state for the enrolled learner.",
+      "x-jsonld-id": "cdpa:completionStatus",
+      "enum": [
+        "NOT_STARTED",
+        "IN_PROGRESS",
+        "COMPLETED",
+        "FAILED"
+      ]
+    },
+    "issued_credential_ref": {
+      "type": "string",
+      "description": "Reference to the VC issued upon course completion. Only populated after completion_status = COMPLETED and VC issuance succeeds.\n",
+      "x-jsonld-id": "cdpa:issuedCredentialRef"
+    }
+  },
+  "$id": "https://schema.beckn.io/CourseDeliveryPerformanceAttributes/v2.1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CourseDeliveryPerformanceAttributes"
+}

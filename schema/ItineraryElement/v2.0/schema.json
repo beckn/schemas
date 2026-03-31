@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "title": "ItineraryElement",
+  "description": "Attributes for the ItineraryElement entity in the Beckn Mobility domain.\n",
+  "properties": {},
+  "$id": "https://schema.beckn.io/ItineraryElement/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

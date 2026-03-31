@@ -1,36 +1,51 @@
-$id: https://schema.beckn.io/StatusAction/v2.0
-$schema: https://json-schema.org/draft/2020-12/schema
-description: 'Beckn /beckn/status action envelope. Sent by a BAP to a BPP to request the current status of an existing contract/order, identified by its id.
+openapi: 3.1.1
+info:
+  title: StatusAction
+  version: 2.0.0
+  description: 'Beckn /beckn/status action envelope. Sent by a BAP to a BPP to request
+    the current status of an existing contract/order, identified by its id.
 
-  '
-title: StatusAction
-type: object
-properties:
-  context:
-    allOf:
-    - $ref: https://schema.beckn.io/Context/v2.0
-    - type: object
+    '
+paths: {}
+components:
+  schemas:
+    StatusAction:
+      $id: https://schema.beckn.io/StatusAction/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: 'Beckn /beckn/status action envelope. Sent by a BAP to a BPP to
+        request the current status of an existing contract/order, identified by its
+        id.
+
+        '
+      title: StatusAction
+      type: object
       properties:
-        action:
-          type: string
-          const: beckn/status
-  message:
-    type: object
-    additionalProperties: true
-    properties:
-      order:
-        type: object
-        description: Minimal contract/order reference for the status query.
-        properties:
-          id:
-            description: Identifier of the contract/order whose status is being queried.
-            $ref: https://schema.beckn.io/Contract/v2.0#/properties/id
-        required:
-        - id
-    required:
-    - order
-required:
-- context
-- message
-x-tags:
-- common
+        context:
+          allOf:
+          - $ref: https://schema.beckn.io/Context/attributes.yaml#/components/schemas/Context
+          - type: object
+            properties:
+              action:
+                type: string
+                const: beckn/status
+        message:
+          type: object
+          additionalProperties: true
+          properties:
+            order:
+              type: object
+              description: Minimal contract/order reference for the status query.
+              properties:
+                id:
+                  description: Identifier of the contract/order whose status is being
+                    queried.
+                  $ref: https://schema.beckn.io/Contract/attributes.yaml#/components/schemas/Contract
+              required:
+              - id
+          required:
+          - order
+      required:
+      - context
+      - message
+      x-tags:
+      - common

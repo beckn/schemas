@@ -1,48 +1,21 @@
 # Offer
 
-> **Canonical IRI:** [`https://schema.beckn.io/Offer`](https://schema.beckn.io/Offer)
-> **Tags:** `common`
-> **Namespace:** `https://schema.beckn.io/`
-> Part of the [Beckn Protocol Core Schema](../../README.md)
+A generalized, cross-domain Offer that captures the terms under which
+one or more Resources may be committed.
 
----
+Core intent:
+- Support multiple terms/eligibility/constraints/price points for the same Resource(s)
+- Support dynamic / on-the-fly offers (e.g., bundling, combinational discounts,
+ eligibility changes, capacity-aware pricing)
 
-Schema definition for Offer in the Beckn Protocol v2.0.1
+This mirrors the role of Offer in current Beckn (and schema.org patterns),
+but keeps the shape minimal and composable via `beckn:offerAttributes`.
+
+This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
 
 ## Versions
 
-| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
-|---------|----------------|----------------|--------------|--------|
-| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
-
-## Properties (latest: v2.0)
-
-| Property | Type | Required | Description |
-|----------|------|:--------:|-------------|
-| `@context` | `string` (uri) | ✅ | JSON-LD context URI for the core offer schema |
-| `@type` | `string` | ✅ | TPD |
-| `acceptedPaymentMethod` | object | — | — |
-| `addOnItems` | [id](../id/README.md)[] | — | Optional extras modeled as items (e.g., toppings, accessories) |
-| `addOns` | [id](../id/README.md)[] | — | Optional extra Offers that can be attached (e.g., warranty, gift wrap) |
-| `constraints` | any[] | — | — |
-| `descriptor` | object | ✅ | — |
-| `eligibleRegion` | any[] | — | Regions where the offer is eligible |
-| `id` | `string` | ✅ | Unique id for this offer |
-| `isActive` | `boolean` | — | Whether the offer is active |
-| `items` | [id](../id/README.md)[] | ✅ | Base item(s) the offer applies to (single or bundle) |
-| `offerAttributes` | any | — | Attribute Pack attachment (pricing models, discounts, rail terms, etc.) |
-| `policies` | any[] | — | — |
-| `price` | any | — | Price snapshot; detailed models can live in offerAttributes |
-| `provider` | [id](../id/README.md) | ✅ | Seller / provider of this offer |
-| `validity` | any | — | Offer validity window |
-
-## Linked Data
-
-| Resource | URL |
-|----------|-----|
-| Canonical IRI | `https://schema.beckn.io/Offer` |
-| JSON Schema (latest) | `https://schema.beckn.io/Offer/2.0` |
-| context.jsonld (latest) | `https://schema.beckn.io/Offer/2.0/context.jsonld` |
-| vocab.jsonld (latest) | `https://schema.beckn.io/Offer/2.0/vocab.jsonld` |
-| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
-| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |
+| Version | attributes.yaml | attributes.jsonschema.yaml | context.jsonld | vocab.jsonld | README |
+|---|---|---|---|---|---|
+| **v2.0** | [https://schema.beckn.io/Offer/v2.0/attributes.yaml](https://schema.beckn.io/Offer/v2.0/attributes.yaml) | [https://schema.beckn.io/Offer/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/Offer/v2.0/attributes.jsonschema.yaml) | [https://schema.beckn.io/Offer/v2.0/context.jsonld](https://schema.beckn.io/Offer/v2.0/context.jsonld) | [https://schema.beckn.io/Offer/v2.0/vocab.jsonld](https://schema.beckn.io/Offer/v2.0/vocab.jsonld) | [https://schema.beckn.io/Offer/v2.0/README.md](https://schema.beckn.io/Offer/v2.0/README.md) |
+| **v2.1** | [https://schema.beckn.io/Offer/v2.1/attributes.yaml](https://schema.beckn.io/Offer/v2.1/attributes.yaml) | [https://schema.beckn.io/Offer/v2.1/attributes.jsonschema.yaml](https://schema.beckn.io/Offer/v2.1/attributes.jsonschema.yaml) | [https://schema.beckn.io/Offer/v2.1/context.jsonld](https://schema.beckn.io/Offer/v2.1/context.jsonld) | [https://schema.beckn.io/Offer/v2.1/vocab.jsonld](https://schema.beckn.io/Offer/v2.1/vocab.jsonld) | [https://schema.beckn.io/Offer/v2.1/README.md](https://schema.beckn.io/Offer/v2.1/README.md) |

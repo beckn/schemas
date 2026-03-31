@@ -1,24 +1,31 @@
-# SupportInfo — v2.0
+# SupportInfo — v2.1
 
-Support contact information. _(Deprecated — use `Support`.)_
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [SupportInfo](../README.md)
+Canonical support contact for an entity, mapped to schema.org ContactPoint.
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `SupportInfo` |
-
-## Root linked-data files
-
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/SupportInfo/attributes.yaml](https://schema.beckn.io/SupportInfo/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/SupportInfo/v2.1/attributes.yaml](https://schema.beckn.io/SupportInfo/v2.1/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/SupportInfo/attributes.jsonschema.yaml](https://schema.beckn.io/SupportInfo/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/SupportInfo/v2.1/attributes.jsonschema.yaml](https://schema.beckn.io/SupportInfo/v2.1/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/SupportInfo/context.jsonld](https://schema.beckn.io/SupportInfo/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/SupportInfo/v2.1/context.jsonld](https://schema.beckn.io/SupportInfo/v2.1/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/SupportInfo/vocab.jsonld](https://schema.beckn.io/SupportInfo/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/SupportInfo/v2.1/vocab.jsonld](https://schema.beckn.io/SupportInfo/v2.1/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-This schema has no defined top-level properties.
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `@context` | yes | string | - |
+| `@type` | yes | string | - |
+| `channels` | no | array | Available support channels. |
+| `email` | no | string | Support email address. |
+| `hoursAvailable` | no | string | Human-readable support hours (local time) |
+| `name` | no | string | Name of the support organization or contact. |
+| `telephone` | no | string | Telephone number. |
+| `chat` | no | string | Embeddable chat endpoint for support. |
+| `url` | no | string | Generic URL to a support page. |
+| `callbackStatus` | no | string | Status of a support callback request. Indicates whether a callback has been requested, scheduled, or completed. |

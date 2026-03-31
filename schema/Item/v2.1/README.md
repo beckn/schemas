@@ -1,40 +1,36 @@
-# Item — v2.0
+# Item — v2.1
 
-A product or service offered by a provider.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [Item](../README.md)
+Schema definition for Item in the Beckn Protocol v2.0.1
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `Item` |
-
-## Root linked-data files
-
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/Item/attributes.yaml](https://schema.beckn.io/Item/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/Item/v2.1/attributes.yaml](https://schema.beckn.io/Item/v2.1/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/Item/attributes.jsonschema.yaml](https://schema.beckn.io/Item/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/Item/v2.1/attributes.jsonschema.yaml](https://schema.beckn.io/Item/v2.1/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/Item/context.jsonld](https://schema.beckn.io/Item/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/Item/v2.1/context.jsonld](https://schema.beckn.io/Item/v2.1/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/Item/vocab.jsonld](https://schema.beckn.io/Item/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/Item/v2.1/vocab.jsonld](https://schema.beckn.io/Item/v2.1/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `@context` | string | JSON-LD context URI for the core Item schema |
-| `@type` | string | Type of the core item |
-| `availabilityWindow` | [TimePeriod](../../TimePeriod/README.md)[] | Time periods when the item is available |
-| `availableAt` | [Location](../../Location/README.md)[] | Physical locations where the item is available |
-| `category` | [CategoryCode](../../CategoryCode/README.md) |  |
-| `constraints` | [Constraint](../../Constraint/README.md)[] |  |
-| `descriptor` | [Descriptor](../../Descriptor/README.md) |  |
-| `id` | string | Unique identifier for the item |
-| `isActive` | boolean | Whether the item is active |
-| `itemAttributes` | [Attributes](../../Attributes/README.md) |  |
-| `networkId` | string[] | Array of network identifiers for the BAP (Beckn App Provider) that offers this item |
-| `policies` | [Policy](../../Policy/README.md)[] |  |
-| `provider` | [Provider](../../Provider/README.md) |  |
-| `rateable` | boolean | Whether the item can be rated by customers |
-| `rating` | [Rating](../../Rating/README.md) |  |
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `@context` | yes | string | JSON-LD context URI for the core Item schema |
+| `@type` | yes | string | Type of the core item |
+| `availabilityWindow` | no | array | Time periods when the item is available |
+| `availableAt` | no | array | Physical locations where the item is available |
+| `category` | no | $ref: https://schema.beckn.io/CategoryCode/attributes.yaml#/components/schemas/CategoryCode | - |
+| `constraints` | no | array | - |
+| `descriptor` | yes | $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor | - |
+| `id` | yes | string | Unique identifier for the item |
+| `isActive` | no | boolean | Whether the item is active |
+| `itemAttributes` | yes | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | - |
+| `networkId` | no | array | Array of network identifiers for the BAP (Beckn App Provider) that offers this item |
+| `policies` | no | array | - |
+| `provider` | yes | $ref: https://schema.beckn.io/Provider/attributes.yaml#/components/schemas/Provider | - |
+| `rateable` | no | boolean | Whether the item can be rated by customers |
+| `rating` | no | $ref: https://schema.beckn.io/Rating/attributes.yaml#/components/schemas/Rating | - |

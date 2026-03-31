@@ -7,7 +7,7 @@
   "extends": "beckn:Item",
   "attachAt": "beckn:itemAttributes",
 
-  "packSchema": "./attributes.yaml#/components/schemas/FoodAndBeverageItemAttributes",
+  "packSchema": "./attributes.jsonschema.yaml#/components/schemas/FoodAndBeverageItemAttributes",
 
   "indexing": {
     "indexable": [

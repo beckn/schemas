@@ -1,0 +1,11 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "beckn": "https://schema.beckn.io/",
+    "Pagination": "beckn:Pagination",
+    "count": "beckn:count",
+    "limit": "beckn:limit",
+    "offset": "beckn:offset"
+  }
+}

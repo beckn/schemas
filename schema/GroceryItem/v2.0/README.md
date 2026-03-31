@@ -1,50 +1,22 @@
-# Grocery Item Attributes (v2)
+# GroceryItem — v2.0
 
-## Overview
-
-`GroceryItemAttributes` extends `RetailCoreItemAttributes` for grocery-specific item semantics.
-
-This pack adds structured nutrition information and fresh produce declarations while inheriting all common retail constructs (identity, physical attributes, regulatory declarations, additives, credentials, etc.) from RetailCoreItem.
-
-## Attachment
-
-- Container: `beckn:Item`
-- Field: `beckn:itemAttributes`
-- Extends: `RetailCoreItemAttributes`
-
-## Covers
-
-- Nutrition facts (using Beckn core `Quantity`)
-- Fresh produce declarations (for loose/unpackaged goods)
-
-## Does NOT Duplicate
-
-The following are inherited from RetailCoreItem:
-
-- Brand and origin
-- Physical attributes (weight, dimensions, appearance)
-- Packaged goods declaration
-- Food regulatory declarations
-- Additives
-- Credentials
-
-## Design Intent
-
-- Keep grocery-specific logic minimal
-- Reuse Beckn core Quantity for measurement
-- Remain internationally neutral
-- Avoid regulatory duplication
-- Preserve composability across retail verticals
+GroceryItem schema
 
 ## Files
 
-- `attributes.yaml` – OpenAPI schema
-- `context.jsonld` – JSON-LD mapping
-- `vocab.jsonld` – Grocery vocabulary namespace
-- `profile.json` – Indexing and discovery hints
-- `renderer.json` – UI rendering templates
-- `examples/` – Example Item objects
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/GroceryItem/attributes.yaml](https://schema.beckn.io/GroceryItem/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/GroceryItem/v2.0/attributes.yaml](https://schema.beckn.io/GroceryItem/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/GroceryItem/attributes.jsonschema.yaml](https://schema.beckn.io/GroceryItem/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/GroceryItem/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/GroceryItem/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/GroceryItem/context.jsonld](https://schema.beckn.io/GroceryItem/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/GroceryItem/v2.0/context.jsonld](https://schema.beckn.io/GroceryItem/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/GroceryItem/vocab.jsonld](https://schema.beckn.io/GroceryItem/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/GroceryItem/v2.0/vocab.jsonld](https://schema.beckn.io/GroceryItem/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
 
-## Version
+## Properties
 
-v2.0.0 – Beckn Protocol v2 aligned
+| Property | Required | Type | Description |
+|---|---|---|---|
+| _none_ | - | - | - |

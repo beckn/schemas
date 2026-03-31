@@ -1,32 +1,28 @@
 # Policy — v2.0
 
-A policy applied to a transaction or item.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [Policy](../README.md)
+Schema definition for Policy in the Beckn Protocol v2.0.1
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `Policy` |
-
-## Root linked-data files
-
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/Policy/attributes.yaml](https://schema.beckn.io/Policy/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/Policy/v2.0/attributes.yaml](https://schema.beckn.io/Policy/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/Policy/attributes.jsonschema.yaml](https://schema.beckn.io/Policy/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/Policy/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/Policy/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/Policy/context.jsonld](https://schema.beckn.io/Policy/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/Policy/v2.0/context.jsonld](https://schema.beckn.io/Policy/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/Policy/vocab.jsonld](https://schema.beckn.io/Policy/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/Policy/v2.0/vocab.jsonld](https://schema.beckn.io/Policy/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `@context` | string |  |
-| `@type` | string |  |
-| `descriptor` | [Descriptor](../../Descriptor/README.md) | Validity window for this policy version |
-| `id` | string | Identifier for the policy |
-| `policyType` | string | Type/kind of policy (extensible term) |
-| `validity` | [TimePeriod](../../TimePeriod/README.md) | Validity window for this policy version |
-| `policyAttributes` | [Attributes](../../Attributes/README.md) |  |
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `@context` | yes | string | - |
+| `@type` | yes | string | - |
+| `descriptor` | yes | $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor | Validity window for this policy version |
+| `id` | yes | string | Identifier for the policy |
+| `policyType` | no | string | Type/kind of policy (extensible term) |
+| `validity` | no | $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod | Validity window for this policy version |
+| `policyAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | - |

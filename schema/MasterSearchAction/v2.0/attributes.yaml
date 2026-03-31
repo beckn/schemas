@@ -1,0 +1,51 @@
+openapi: 3.1.1
+info:
+  title: MasterSearchAction
+  version: 2.0.0
+  description: 'Message payload for catalog/master_search
+
+
+    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
+    and MUST NOT be extended. Any domain-specific extension must use the property
+    of this schema which is of type Attribute.'
+paths: {}
+components:
+  schemas:
+    MasterSearchAction:
+      type: object
+      description: 'Message payload for catalog/master_search
+
+
+        This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
+        and MUST NOT be extended. Any domain-specific extension must use the property
+        of this schema which is of type Attribute.'
+      properties:
+        filters:
+          type: object
+          description: Search filters (empty lists match all)
+          properties:
+            networkIds:
+              type: array
+              items:
+                type: string
+              description: Filter by network IDs (empty = all networks)
+            schemaTypes:
+              type: array
+              items:
+                type: string
+              description: Filter by schema type URIs (empty = all types)
+        pagination:
+          type: object
+          properties:
+            limit:
+              type: integer
+              minimum: 1
+              maximum: 100
+              default: 20
+              description: Maximum items per page (clamped to [1, 100])
+            offset:
+              type: integer
+              minimum: 0
+              default: 0
+              description: Zero-based result offset
+      x-lts: true

@@ -1,24 +1,22 @@
 # CheckoutTerminal — v2.0
 
-Enumeration of checkout terminal types (BAP, BPP, POS, etc.).
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [CheckoutTerminal](../README.md)
+The checkout terminal where the consumer makes the payment
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `CheckoutTerminal` |
-
-## Root linked-data files
-
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/CheckoutTerminal/attributes.yaml](https://schema.beckn.io/CheckoutTerminal/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/CheckoutTerminal/v2.0/attributes.yaml](https://schema.beckn.io/CheckoutTerminal/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/CheckoutTerminal/attributes.jsonschema.yaml](https://schema.beckn.io/CheckoutTerminal/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/CheckoutTerminal/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/CheckoutTerminal/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/CheckoutTerminal/context.jsonld](https://schema.beckn.io/CheckoutTerminal/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/CheckoutTerminal/v2.0/context.jsonld](https://schema.beckn.io/CheckoutTerminal/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/CheckoutTerminal/vocab.jsonld](https://schema.beckn.io/CheckoutTerminal/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/CheckoutTerminal/v2.0/vocab.jsonld](https://schema.beckn.io/CheckoutTerminal/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-This schema has no defined top-level properties.
+| Property | Required | Type | Description |
+|---|---|---|---|
+| _none_ | - | - | - |

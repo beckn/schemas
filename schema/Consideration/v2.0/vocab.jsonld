@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Consideration",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Consideration",
+      "rdfs:comment": "Generalized representation of value exchanged under a Contract.\n\nConsideration is domain-neutral and may represent:\n- Monetary value\n- Credits / tokens\n- Asset transfer\n- Service exchange\n- Compliance artifact\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute."
+    },
+    {
+      "@id": "beckn:id",
+      "@type": "rdf:Property",
+      "rdfs:label": "id",
+      "rdfs:comment": "Identifier of this consideration"
+    },
+    {
+      "@id": "beckn:status",
+      "@type": "rdf:Property",
+      "rdfs:label": "status",
+      "rdfs:comment": "The status of this consideration"
+    },
+    {
+      "@id": "beckn:considerationAttributes",
+      "@type": "rdf:Property",
+      "rdfs:label": "considerationAttributes",
+      "rdfs:comment": "Domain-specific attributes of this consideration. For monetary considerations,\nuse the PriceSpecification schema to capture total value with breakup.\nFor other consideration types, use a generic Attributes bag."
+    }
+  ]
+}

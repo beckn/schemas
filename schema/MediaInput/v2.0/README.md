@@ -1,33 +1,29 @@
 # MediaInput — v2.0
 
-Media input for visual or audio search.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [MediaInput](../README.md)
+Reference to an image, audio clip, or video used for multimodal search.
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `MediaInput` |
-
-## Root linked-data files
-
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/MediaInput/attributes.yaml](https://schema.beckn.io/MediaInput/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/MediaInput/v2.0/attributes.yaml](https://schema.beckn.io/MediaInput/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/MediaInput/attributes.jsonschema.yaml](https://schema.beckn.io/MediaInput/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/MediaInput/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/MediaInput/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/MediaInput/context.jsonld](https://schema.beckn.io/MediaInput/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/MediaInput/v2.0/context.jsonld](https://schema.beckn.io/MediaInput/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/MediaInput/vocab.jsonld](https://schema.beckn.io/MediaInput/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/MediaInput/v2.0/vocab.jsonld](https://schema.beckn.io/MediaInput/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `id` | string | Client-supplied identifier for this media input. |
-| `type` | string | Media category. |
-| `url` | string | HTTPS URL or data URI pointing to the media resource. |
-| `contentType` | string | MIME type, e.g., image/jpeg, audio/mpeg, video/mp4. |
-| `textHint` | string | Optional pre-extracted text (OCR/ASR) for search augmentation. |
-| `language` | string | Language code (BCP-47) of `textHint` or spoken audio. |
-| `startMs` | integer | Optional start offset in milliseconds (for audio/video segments). |
-| `endMs` | integer | Optional end offset in milliseconds (for audio/video segments). |
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `id` | no | string | Client-supplied identifier for this media input. |
+| `type` | yes | string | Media category. |
+| `url` | yes | string | HTTPS URL or data URI pointing to the media resource. |
+| `contentType` | no | string | MIME type, e.g., image/jpeg, audio/mpeg, video/mp4. |
+| `textHint` | no | string | Optional pre-extracted text (OCR/ASR) for search augmentation. |
+| `language` | no | string | Language code (BCP-47) of `textHint` or spoken audio. |
+| `startMs` | no | integer | Optional start offset in milliseconds (for audio/video segments). |
+| `endMs` | no | integer | Optional end offset in milliseconds (for audio/video segments). |

@@ -1,22 +1,17 @@
-openapi: 3.1.0
+openapi: 3.1.1
 info:
   title: Shipment
   version: 2.0.0
   description: Schema definition for the Shipment entity in the Beckn Logistics domain.
-  contact:
-    name: Beckn Foundation
-    url: https://beckn.org
-  license:
-    name: MIT
-    url: https://opensource.org/licenses/MIT
 paths: {}
 components:
   schemas:
     Shipment:
       type: object
       title: Shipment
-      description: 'A Shipment represents the movement of one or more packages from an origin to a destination.
-        It is the top-level fulfillment entity in a logistics transaction and maps to beckn:Fulfillment.
+      description: 'A Shipment represents the movement of one or more packages from
+        an origin to a destination. It is the top-level fulfillment entity in a logistics
+        transaction and maps to beckn:Fulfillment.
 
         '
       required:
@@ -49,22 +44,22 @@ components:
           - CANCELLED
           example: IN_TRANSIT
         origin:
-          $ref: '#/components/schemas/Place'
+          $ref: https://schema.beckn.io/Place/attributes.yaml#/components/schemas/Place
         destination:
-          $ref: '#/components/schemas/Place'
+          $ref: https://schema.beckn.io/Place/attributes.yaml#/components/schemas/Place
         packages:
           type: array
           description: List of packages in this shipment
           items:
-            $ref: '#/components/schemas/Package'
+            $ref: https://schema.beckn.io/Package/attributes.yaml#/components/schemas/Package
         carrier:
-          $ref: '#/components/schemas/Carrier'
+          $ref: https://schema.beckn.io/Carrier/attributes.yaml#/components/schemas/Carrier
         driver:
-          $ref: '#/components/schemas/Driver'
+          $ref: https://schema.beckn.io/Driver/attributes.yaml#/components/schemas/Driver
         vehicle:
-          $ref: '#/components/schemas/Vehicle'
+          $ref: https://schema.beckn.io/Vehicle/attributes.yaml#/components/schemas/Vehicle
         route:
-          $ref: '#/components/schemas/Route'
+          $ref: https://schema.beckn.io/Route/attributes.yaml#/components/schemas/Route
         scheduledPickup:
           type: string
           format: date-time
@@ -78,7 +73,7 @@ components:
           format: date-time
           description: Actual delivery date and time
         deliverySlot:
-          $ref: '#/components/schemas/DeliverySlot'
+          $ref: https://schema.beckn.io/DeliverySlot/attributes.yaml#/components/schemas/DeliverySlot
         serviceType:
           type: string
           description: Type of logistics service
@@ -94,25 +89,25 @@ components:
           description: Special handling instructions for the shipment
           example: Handle with care. Do not tilt.
         proof:
-          $ref: '#/components/schemas/Proof'
+          $ref: https://schema.beckn.io/Proof/attributes.yaml#/components/schemas/Proof
         fare:
-          $ref: '#/components/schemas/Fare'
+          $ref: https://schema.beckn.io/Fare/attributes.yaml#/components/schemas/Fare
         receipt:
-          $ref: '#/components/schemas/Receipt'
+          $ref: https://schema.beckn.io/Receipt/attributes.yaml#/components/schemas/Receipt
         cancellationPolicy:
-          $ref: '#/components/schemas/CancellationPolicy'
+          $ref: https://schema.beckn.io/CancellationPolicy/attributes.yaml#/components/schemas/CancellationPolicy
         returnPolicy:
-          $ref: '#/components/schemas/ReturnPolicy'
+          $ref: https://schema.beckn.io/ReturnPolicy/attributes.yaml#/components/schemas/ReturnPolicy
         alerts:
           type: array
           description: Alerts raised for this shipment
           items:
-            $ref: '#/components/schemas/Alert'
+            $ref: https://schema.beckn.io/Alert/attributes.yaml#/components/schemas/Alert
         trackingUpdates:
           type: array
           description: History of tracking updates
           items:
-            $ref: '#/components/schemas/TrackingUpdate'
+            $ref: https://schema.beckn.io/TrackingUpdate/attributes.yaml#/components/schemas/TrackingUpdate
         createdAt:
           type: string
           format: date-time
@@ -121,6 +116,3 @@ components:
           type: string
           format: date-time
           description: Timestamp of last update
-$id: https://schema.beckn.io/Shipment/v2.0
-x-tags:
-- logistics

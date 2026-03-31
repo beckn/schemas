@@ -1,36 +1,32 @@
 # PaymentAction — v2.0
 
-A payment action record.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [PaymentAction](../README.md)
+Schema definition for PaymentAction in the Beckn Protocol v2.0.1
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `PaymentAction` |
-
-## Root linked-data files
-
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/PaymentAction/attributes.yaml](https://schema.beckn.io/PaymentAction/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/PaymentAction/v2.0/attributes.yaml](https://schema.beckn.io/PaymentAction/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/PaymentAction/attributes.jsonschema.yaml](https://schema.beckn.io/PaymentAction/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/PaymentAction/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/PaymentAction/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/PaymentAction/context.jsonld](https://schema.beckn.io/PaymentAction/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/PaymentAction/v2.0/context.jsonld](https://schema.beckn.io/PaymentAction/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/PaymentAction/vocab.jsonld](https://schema.beckn.io/PaymentAction/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/PaymentAction/v2.0/vocab.jsonld](https://schema.beckn.io/PaymentAction/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `@context` | string |  |
-| `@type` | string |  |
-| `amount` | object | Amount associated with this payment action |
-| `paymentStatus` | string | Payment lifecycle status (Pending \| Authorized \| Captured \| Failed \| Refunded \| PartialRefund …) |
-| `paymentMethod` | object |  |
-| `paymentUrl` | string | URL for payment processing/redirection |
-| `state` | [State](../../State/README.md) |  |
-| `txnRef` | string | PSP/gateway/bank transaction reference |
-| `checkoutAt` | [CheckoutTerminal](../../CheckoutTerminal/README.md) |  |
-| `paidAt` | string | The time at which the payment was made |
-| `paymentActionAttributes` | [Attributes](../../Attributes/README.md) | Extensible set of attributes containing payment actions specific to each ecosystem. |
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `@context` | yes | string | - |
+| `@type` | yes | string | - |
+| `amount` | no | object | Amount associated with this payment action |
+| `paymentStatus` | yes | string | Payment lifecycle status (Pending \| Authorized \| Captured \| Failed \| Refunded \| PartialRefund …) |
+| `paymentMethod` | no | object | - |
+| `paymentUrl` | no | string | URL for payment processing/redirection |
+| `state` | no | $ref: https://schema.beckn.io/State/attributes.yaml#/components/schemas/State | - |
+| `txnRef` | no | string | PSP/gateway/bank transaction reference |
+| `checkoutAt` | no | $ref: https://schema.beckn.io/CheckoutTerminal/attributes.yaml#/components/schemas/CheckoutTerminal | - |
+| `paidAt` | no | string | The time at which the payment was made |
+| `paymentActionAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | Extensible set of attributes containing payment actions specific to each ecosystem. |

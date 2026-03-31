@@ -1,0 +1,31 @@
+{
+  "description": "Information regarding live tracking of the fufillment of a contract\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.",
+  "title": "Tracking",
+  "type": "object",
+  "properties": {
+    "refId": {
+      "description": "Tracking reference ID for the tracking session. Could be the Order ID, Fulfillment ID, Fulfillment Stage ID, or any other unique tracking identifier",
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ACTIVE",
+        "INACTIVE",
+        "NOT-SUPPORTED"
+      ]
+    },
+    "url": {
+      "description": "Link/handle to off-network tracking UI or endpoint.",
+      "type": "string",
+      "format": "uri"
+    }
+  },
+  "required": [
+    "url",
+    "status"
+  ],
+  "x-lts": true,
+  "$id": "https://schema.beckn.io/Tracking/v2.1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

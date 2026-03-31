@@ -1,0 +1,11 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "beckn": "https://schema.beckn.io/",
+    "Consideration": "beckn:Consideration",
+    "id": "beckn:id",
+    "status": "beckn:status",
+    "considerationAttributes": "beckn:considerationAttributes"
+  }
+}

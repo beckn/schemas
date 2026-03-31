@@ -1,43 +1,27 @@
 {
   "@context": {
-    "@version": 1.1,
     "beckn": "https://schema.beckn.io/",
-    "owl": "http://www.w3.org/2002/07/owl#",
-    "schema": "https://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
   },
   "@graph": [
     {
       "@id": "beckn:Tracking",
       "@type": "rdfs:Class",
       "rdfs:label": "Tracking",
-      "rdfs:comment": "Non-streaming tracking handle per legacy semantics (url/transport/status)."
+      "rdfs:comment": "Information regarding live tracking of the fufillment of a contract\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute."
     },
     {
-      "@id": "beckn:@context",
+      "@id": "beckn:refId",
       "@type": "rdf:Property",
-      "rdfs:label": "@context",
-      "rdfs:comment": "TBD"
+      "rdfs:label": "refId",
+      "rdfs:comment": "Tracking reference ID for the tracking session. Could be the Order ID, Fulfillment ID, Fulfillment Stage ID, or any other unique tracking identifier"
     },
     {
-      "@id": "beckn:@type",
+      "@id": "beckn:status",
       "@type": "rdf:Property",
-      "rdfs:label": "@type",
-      "rdfs:comment": "TBD"
-    },
-    {
-      "@id": "beckn:expiresAt",
-      "@type": "rdf:Property",
-      "rdfs:label": "expires At",
-      "rdfs:comment": "ISO 8601 expiry timestamp for the tracking handle."
-    },
-    {
-      "@id": "beckn:trackingStatus",
-      "@type": "rdf:Property",
-      "rdfs:label": "tracking Status",
-      "rdfs:comment": "TODO: Description Needed - trackingStatus"
+      "rdfs:label": "status",
+      "rdfs:comment": "Property status"
     },
     {
       "@id": "beckn:url",

@@ -1,28 +1,37 @@
-$id: https://schema.beckn.io/Skill/v2.0
-$schema: https://json-schema.org/draft/2020-12/schema
-description: Schema definition for Skill in the Beckn Protocol v2.0.1
-title: Skill
-type: object
-properties:
-  '@context':
-    type: string
-    format: uri
-    const: https://schema.beckn.io/
-  '@type':
-    type: string
-    enum:
-    - Skill
-  category:
-    $ref: https://schema.beckn.io/CategoryCode/v2.1
-  descriptor:
-    $ref: https://schema.beckn.io/Descriptor/v2.1
-  id:
-    type: string
-required:
-- '@context'
-- '@type'
-- id
-- descriptor
-additionalProperties: false
-x-tags:
-- common
+openapi: 3.1.1
+info:
+  title: Skill
+  version: 2.0.0
+  description: Schema definition for Skill in the Beckn Protocol v2.0.1
+paths: {}
+components:
+  schemas:
+    Skill:
+      $id: https://schema.beckn.io/Skill/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: Schema definition for Skill in the Beckn Protocol v2.0.1
+      title: Skill
+      type: object
+      properties:
+        '@context':
+          type: string
+          format: uri
+          const: https://schema.beckn.io/
+        '@type':
+          type: string
+          enum:
+          - Skill
+        category:
+          $ref: https://schema.beckn.io/CategoryCode/attributes.yaml#/components/schemas/CategoryCode
+        descriptor:
+          $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
+        id:
+          type: string
+      required:
+      - '@context'
+      - '@type'
+      - id
+      - descriptor
+      additionalProperties: false
+      x-tags:
+      - common

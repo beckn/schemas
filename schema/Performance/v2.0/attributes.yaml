@@ -1,0 +1,101 @@
+openapi: 3.1.1
+info:
+  title: Performance
+  version: 2.0.0
+  description: 'Generalized execution/performance unit. This is where downstream objects
+    bind:
+
+    - Fulfillment-like details (where/when/how)
+
+    - Tracking handles
+
+    - Support touchpoints
+
+    - Status updates
+
+
+    A minimal envelope that carries identity, status, and a performanceAttributes
+
+    bag that holds the concrete domain-specific delivery schema.
+
+
+    Domain specification authors can attach rich context and types via `performanceAttributes`.
+
+
+    For example, Hyperlocal delivery details (pickup/delivery locations, items shipped,
+    agent, etc.)
+
+    are placed inside performanceAttributes using a well-known domain schema such
+    as
+
+    HyperlocalDelivery. Use the generic Attributes schema when no well-known
+
+    domain schema exists.
+
+
+    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
+    and MUST NOT be extended. Any domain-specific extension must use the property
+    of this schema which is of type Attribute.'
+paths: {}
+components:
+  schemas:
+    Performance:
+      description: 'Generalized execution/performance unit. This is where downstream
+        objects bind:
+
+        - Fulfillment-like details (where/when/how)
+
+        - Tracking handles
+
+        - Support touchpoints
+
+        - Status updates
+
+
+        A minimal envelope that carries identity, status, and a performanceAttributes
+
+        bag that holds the concrete domain-specific delivery schema.
+
+
+        Domain specification authors can attach rich context and types via `performanceAttributes`.
+
+
+        For example, Hyperlocal delivery details (pickup/delivery locations, items
+        shipped, agent, etc.)
+
+        are placed inside performanceAttributes using a well-known domain schema such
+        as
+
+        HyperlocalDelivery. Use the generic Attributes schema when no well-known
+
+        domain schema exists.
+
+
+        This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
+        and MUST NOT be extended. Any domain-specific extension must use the property
+        of this schema which is of type Attribute.'
+      title: Fulfillment
+      x-tags:
+      - common
+      - fulfillment
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for this fulfillment record.
+        status:
+          $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
+          description: Current status of this fulfillment, expressed as a Descriptor.
+            Use Descriptor.code for machine-readable status values.
+        commitmentIds:
+          type: array
+          items:
+            $ref: https://schema.beckn.io/Performance/attributes.yaml#/components/schemas/Performance
+        performanceAttributes:
+          description: Domain-specific extension attributes for this fulfillment.
+            Use beckn:HyperlocalDelivery (aligned with schema:ParcelDelivery) for
+            hyperlocal physical delivery. Use the generic Attributes schema for other
+            fulfillment types where no well-known domain schema exists.
+          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+      additionalProperties: false
+      x-lts: true

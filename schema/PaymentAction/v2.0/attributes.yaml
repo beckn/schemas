@@ -1,89 +1,100 @@
-$id: https://schema.beckn.io/PaymentAction/v2.0
-$schema: https://json-schema.org/draft/2020-12/schema
-description: Schema definition for PaymentAction in the Beckn Protocol v2.0.1
-title: PaymentAction
-type: object
-properties:
-  '@context':
-    type: string
-    format: uri
-    const: https://schema.beckn.io/
-  '@type':
-    type: string
-    const: beckn:PaymentAction
-  amount:
-    description: Amount associated with this payment action
-    type: object
-    properties:
-      currency:
-        type: string
-        x-jsonld:
-          '@id': schema:priceCurrency
-      value:
-        type: number
-        x-jsonld:
-          '@id': schema:price
-  paymentStatus:
-    description: Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)
-    type: string
-    enum:
-    - INITIATED
-    - PENDING
-    - AUTHORIZED
-    - CAPTURED
-    - COMPLETED
-    - FAILED
-    - CANCELLED
-    - REFUNDED
-    - PARTIALLY_REFUNDED
-    - CHARGEBACK
-    - DISPUTED
-    - EXPIRED
-    - REVERSED
-    - VOIDED
-    - SETTLED
-    - ON_HOLD
-    - ADJUSTED
-    x-jsonld:
-      '@id': beckn:paymentStatus
-  paymentMethod:
-    type: object
-    '@context':
-      type: string
-      format: uri
-      const: https://schema.beckn.io/
-    '@type':
-      type: string
-      const: PaymentMethod
-    method:
-      type: string
-  paymentUrl:
-    description: URL for payment processing/redirection
-    type: string
-    x-jsonld:
-      '@id': schema:url
-    format: uri
-    example: https://payments.example.com/pay?transactionId=123&amount=100
-  state:
-    $ref: https://schema.beckn.io/State/v2.0
-  txnRef:
-    description: PSP/gateway/bank transaction reference
-    type: string
-    x-jsonld:
-      '@id': schema:transactionNumber
-  checkoutAt:
-    $ref: https://schema.beckn.io/CheckoutTerminal/v2.0
-  paidAt:
-    description: The time at which the payment was made
-    type: string
-    format: date-time
-  paymentActionAttributes:
-    description: Extensible set of attributes containing payment actions specific to each ecosystem.
-    $ref: https://schema.beckn.io/Attributes/v2.0
-required:
-- '@context'
-- '@type'
-- paymentStatus
-additionalProperties: false
-x-tags:
-- common
+openapi: 3.1.1
+info:
+  title: PaymentAction
+  version: 2.0.0
+  description: Schema definition for PaymentAction in the Beckn Protocol v2.0.1
+paths: {}
+components:
+  schemas:
+    PaymentAction:
+      $id: https://schema.beckn.io/PaymentAction/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: Schema definition for PaymentAction in the Beckn Protocol v2.0.1
+      title: PaymentAction
+      type: object
+      properties:
+        '@context':
+          type: string
+          format: uri
+          const: https://schema.beckn.io/
+        '@type':
+          type: string
+          const: beckn:PaymentAction
+        amount:
+          description: Amount associated with this payment action
+          type: object
+          properties:
+            currency:
+              type: string
+              x-jsonld:
+                '@id': schema:priceCurrency
+            value:
+              type: number
+              x-jsonld:
+                '@id': schema:price
+        paymentStatus:
+          description: Payment lifecycle status (Pending | Authorized | Captured |
+            Failed | Refunded | PartialRefund …)
+          type: string
+          enum:
+          - INITIATED
+          - PENDING
+          - AUTHORIZED
+          - CAPTURED
+          - COMPLETED
+          - FAILED
+          - CANCELLED
+          - REFUNDED
+          - PARTIALLY_REFUNDED
+          - CHARGEBACK
+          - DISPUTED
+          - EXPIRED
+          - REVERSED
+          - VOIDED
+          - SETTLED
+          - ON_HOLD
+          - ADJUSTED
+          x-jsonld:
+            '@id': beckn:paymentStatus
+        paymentMethod:
+          type: object
+          '@context':
+            type: string
+            format: uri
+            const: https://schema.beckn.io/
+          '@type':
+            type: string
+            const: PaymentMethod
+          method:
+            type: string
+        paymentUrl:
+          description: URL for payment processing/redirection
+          type: string
+          x-jsonld:
+            '@id': schema:url
+          format: uri
+          example: https://payments.example.com/pay?transactionId=123&amount=100
+        state:
+          $ref: https://schema.beckn.io/State/attributes.yaml#/components/schemas/State
+        txnRef:
+          description: PSP/gateway/bank transaction reference
+          type: string
+          x-jsonld:
+            '@id': schema:transactionNumber
+        checkoutAt:
+          $ref: https://schema.beckn.io/CheckoutTerminal/attributes.yaml#/components/schemas/CheckoutTerminal
+        paidAt:
+          description: The time at which the payment was made
+          type: string
+          format: date-time
+        paymentActionAttributes:
+          description: Extensible set of attributes containing payment actions specific
+            to each ecosystem.
+          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+      required:
+      - '@context'
+      - '@type'
+      - paymentStatus
+      additionalProperties: false
+      x-tags:
+      - common

@@ -1,35 +1,31 @@
 # Organization — v2.0
 
-An organisation entity.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [Organization](../README.md)
+An organization such as a company, non-profit, or governmental institution. Modeled after schema.org/Organization.
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `Organization` |
-
-## Root linked-data files
-
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/Organization/attributes.yaml](https://schema.beckn.io/Organization/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/Organization/v2.0/attributes.yaml](https://schema.beckn.io/Organization/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/Organization/attributes.jsonschema.yaml](https://schema.beckn.io/Organization/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/Organization/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/Organization/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/Organization/context.jsonld](https://schema.beckn.io/Organization/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/Organization/v2.0/context.jsonld](https://schema.beckn.io/Organization/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/Organization/vocab.jsonld](https://schema.beckn.io/Organization/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/Organization/v2.0/vocab.jsonld](https://schema.beckn.io/Organization/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `@context` | string |  |
-| `@type` | string |  |
-| `id` | string | Unique identifier for the organization |
-| `name` | string | Name of the organization |
-| `email` | string | Email address |
-| `telephone` | string | Telephone number |
-| `address` |  | Physical address |
-| `credentials` | [Credential](../../Credential/README.md)[] | Credentials held by the organization |
-| `skills` | [Skill](../../Skill/README.md)[] | Skills or capabilities of the organization |
-| `organizationAttributes` | [Attributes](../../Attributes/README.md) | Extensible attribute pack for jurisdictional or domain-specific organization properties |
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `@context` | yes | string | - |
+| `@type` | yes | string | - |
+| `id` | yes | string | Unique identifier for the organization |
+| `name` | no | string | Name of the organization |
+| `email` | no | string | Email address |
+| `telephone` | no | string | Telephone number |
+| `address` | no | any | Physical address |
+| `credentials` | no | array | Credentials held by the organization |
+| `skills` | no | array | Skills or capabilities of the organization |
+| `organizationAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | Extensible attribute pack for jurisdictional or domain-specific organization properties |

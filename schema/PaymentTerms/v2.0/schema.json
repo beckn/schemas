@@ -1,0 +1,48 @@
+{
+  "$id": "https://schema.beckn.io/PaymentTerms/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Schema definition for PaymentTerms in the Beckn Protocol v2.0.1",
+  "title": "PaymentTerms",
+  "x-tags": [
+    "common"
+  ],
+  "type": "object",
+  "properties": {
+    "@context": {
+      "type": "string",
+      "format": "uri",
+      "const": "https://schema.beckn.io/"
+    },
+    "@type": {
+      "type": "string",
+      "const": "beckn:PaymentTerm"
+    },
+    "collectedBy": {
+      "description": "Describes the entity that first collects the payment from the consumer. This is the actor who is responsible to initiate the settlement process as per the terms described in the settlementTerms property.",
+      "type": "string",
+      "enum": [
+        "BAP",
+        "BPP",
+        "ESCROW_AGENT"
+      ]
+    },
+    "checkoutAt": {
+      "$ref": "https://schema.beckn.io/CheckoutTerminal/attributes.yaml"
+    },
+    "settlementTerms": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.beckn.io/SettlementTerm/attributes.yaml"
+      }
+    },
+    "checkoutTrigger": {
+      "description": "The stage in the order lifecycle when the checkout should be triggered",
+      "$ref": "https://schema.beckn.io/PaymentTrigger/attributes.yaml"
+    },
+    "paymentTermsAttributes": {
+      "description": "Rail-specific attribute pack (e.g., UPI: VPA/UTR; CARD: token/3DS; BNPL: plan/schedule)",
+      "$ref": "https://schema.beckn.io/Attributes/attributes.yaml"
+    }
+  },
+  "additionalProperties": false
+}

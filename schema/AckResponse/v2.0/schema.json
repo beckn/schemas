@@ -1,0 +1,76 @@
+{
+  "$id": "https://schema.beckn.io/AckResponse/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Schema definition for AckResponse in the Beckn Protocol",
+  "title": "AckResponse",
+  "type": "object",
+  "properties": {
+    "transaction_id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ack_status": {
+      "type": "string",
+      "enum": [
+        "ACK",
+        "NACK"
+      ]
+    },
+    "error": {
+      "$ref": "https://schema.beckn.io/Error/attributes.yaml"
+    }
+  },
+  "required": [
+    "transaction_id",
+    "timestamp",
+    "ack_status"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "ack_status": {
+            "const": "NACK"
+          }
+        },
+        "required": [
+          "ack_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "error": {}
+        },
+        "required": [
+          "error"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "ack_status": {
+            "const": "ACK"
+          }
+        },
+        "required": [
+          "ack_status"
+        ]
+      },
+      "then": {
+        "not": {
+          "properties": {
+            "error": {}
+          },
+          "required": [
+            "error"
+          ]
+        }
+      }
+    }
+  ]
+}

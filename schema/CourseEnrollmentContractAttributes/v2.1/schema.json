@@ -1,0 +1,40 @@
+{
+  "type": "object",
+  "x-beckn-container": "contractAttributes",
+  "x-jsonld-context": "./context.jsonld",
+  "required": [
+    "enrollment_reference",
+    "enrolled_at"
+  ],
+  "properties": {
+    "enrollment_reference": {
+      "type": "string",
+      "description": "BAP-generated unique reference for this enrollment.",
+      "x-jsonld-id": "ceca:enrollmentReference"
+    },
+    "cohort_id": {
+      "type": "string",
+      "description": "Identifier of the cohort or batch the learner is assigned to.",
+      "x-jsonld-id": "ceca:cohortId"
+    },
+    "prerequisite_verification_summary": {
+      "$ref": "https://schema.beckn.io/VerificationSummary/attributes.yaml",
+      "x-jsonld-id": "ceca:prerequisiteVerificationSummary"
+    },
+    "credential_issuance_pending": {
+      "type": "boolean",
+      "description": "Whether the outcome credential VC is pending issuance upon course completion. True after enrollment; false once the VC has been issued.\n",
+      "x-jsonld-id": "ceca:credentialIssuancePending",
+      "default": true
+    },
+    "enrolled_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when enrollment was confirmed.",
+      "x-jsonld-id": "ceca:enrolledAt"
+    }
+  },
+  "$id": "https://schema.beckn.io/CourseEnrollmentContractAttributes/v2.1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CourseEnrollmentContractAttributes"
+}

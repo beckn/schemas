@@ -1,49 +1,26 @@
-# SkillEntry — Shared Type
+# SkillEntry — v2.1
 
-**Type:** Shared sub-schema
-**Protocol Version:** 2.1
-**Semantic Model:** generalised
-**Version:** 1.0.0
-**Used By:** `CandidateProfileResourceAttributes`
+A single skill, qualification, or credential held by a candidate. The attested flag and proof_request_url are optional — allowing the schema to function in early-stage ecosystems where VC infrastructure is not yet universal. As VCs become available for specific skills, the proof_request_url can be populated without any schema change.
 
-## Overview
+## Files
 
-`SkillEntry` represents a single skill, qualification, or credential held by a candidate
-and published as part of their discoverable profile. It is the supply-side counterpart to
-`CredentialRequirement` — where `CredentialRequirement` specifies what is needed,
-`SkillEntry` specifies what is held.
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/SkillEntry/attributes.yaml](https://schema.beckn.io/SkillEntry/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/SkillEntry/v2.1/attributes.yaml](https://schema.beckn.io/SkillEntry/v2.1/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/SkillEntry/attributes.jsonschema.yaml](https://schema.beckn.io/SkillEntry/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/SkillEntry/v2.1/attributes.jsonschema.yaml](https://schema.beckn.io/SkillEntry/v2.1/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/SkillEntry/context.jsonld](https://schema.beckn.io/SkillEntry/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/SkillEntry/v2.1/context.jsonld](https://schema.beckn.io/SkillEntry/v2.1/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/SkillEntry/vocab.jsonld](https://schema.beckn.io/SkillEntry/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/SkillEntry/v2.1/vocab.jsonld](https://schema.beckn.io/SkillEntry/v2.1/vocab.jsonld) | RDF vocabulary (versioned path) |
 
-## Graceful Degradation Design
+## Properties
 
-The type is intentionally designed to support early-stage ecosystems where VC infrastructure
-is not yet universal:
-
-- **Self-declared** (`attested: false`, no `proof_request_url`): The candidate declares the
-  skill. It is discoverable but marked as unverified. Employers can still see it.
-- **VC-backed** (`attested: true`, `proof_request_url` present): The skill is backed by a
-  verifiable credential. Employers can trigger VP verification via the proof_request_url.
-
-As more skills get VC-backed over time, individual entries enrich progressively. No schema
-version bump is required — the same `SkillEntry` structure handles both phases.
-
-## Privacy Model
-
-The `proof_request_url` points to the DeDi proof-request endpoint for this specific
-credential. It does NOT expose the VC payload or any PII. The VC payload remains in the
-holder's wallet. Only a signed verification summary is returned to the verifier by the
-orchestrating platform.
-
-## Fields
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `category` | enum | Yes | Broad credential class |
-| `subtype` | string | Yes | Specific skill or credential name |
-| `level` | string | No | Proficiency or qualification level |
-| `attested` | boolean | Yes | Whether VC-backed (true) or self-declared (false) |
-| `proof_request_url` | uri | No | DeDi VP request endpoint; only when attested = true |
-
-## Upstream Candidate
-
-The `attested` + `proof_request_url` pattern is generalisable beyond hiring — it applies
-wherever credentials need to be discoverable before verification. Candidate for Beckn core.
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `category` | yes | string | Broad class of the credential or skill held. |
+| `subtype` | yes | string | Specific skill or credential. Examples: "AWS_SAA", "BTECH_CS", "LMV_LICENSE", "Java_SE_11", "CNC_Operator_Level2".  |
+| `level` | no | string | Optional proficiency or qualification level. Examples: "BEGINNER", "PROFESSIONAL", "ADVANCED", "3_YEARS_EXP", "NQF_Level_4".  |
+| `attested` | yes | boolean | Whether this skill entry is backed by a verifiable credential (VC). false = self-declared (no VC yet); true = VC exists and is resolvable via proof_request_url. Employers can discover self-declared skills but know they are unverified.  |
+| `proof_request_url` | no | string | URL of the DeDi proof-request endpoint scoped to this specific credential. Only present when attested = true. An employer BAP can call this endpoint to trigger a Verifiable Presentation (VP) request. The VC payload itself never leaves the holder's wallet — only a signed verification response is returned by the orchestrator. Example: "https://dedi.example.net/proof-request/did:ex:123/skill/AWS_SAA"  |

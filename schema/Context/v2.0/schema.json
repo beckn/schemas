@@ -1,0 +1,85 @@
+{
+  "$id": "https://schema.beckn.io/Context/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Every API call in Beckn protocol has a context. It provides a high-level overview to the receiver about the nature of the intended transaction. Typically, it is the BAP that sets the transaction context based on the consumer's location and action on their UI. The context object contains four types of fields: (1) demographic information about the transaction using fields like domain, country, and region; (2) addressing details like the sending and receiving platform's ID and API URL; (3) interoperability information like the protocol version implemented by the sender; and (4) transaction details like the method being called at the receiver's endpoint, the transaction_id that represents an end-to-end user session at the BAP, a message ID to pair requests with callbacks, a timestamp to capture sending times, a ttl to specify the validity of the request, and a key to encrypt information if necessary.",
+  "title": "Context",
+  "x-tags": [
+    "common"
+  ],
+  "type": "object",
+  "properties": {
+    "action": {
+      "description": "The Beckn endpoint being called. Must conform to BecknEndpoint format.",
+      "$ref": "https://schema.beckn.io/BecknEndpoint/attributes.yaml"
+    },
+    "bapId": {
+      "description": "A globally unique identifier of the BAP. Typically the fully qualified domain name (FQDN) of the BAP.",
+      "type": "string"
+    },
+    "bapUri": {
+      "description": "API URL of the BAP for accepting callbacks from BPPs.",
+      "type": "string",
+      "format": "uri"
+    },
+    "bppId": {
+      "description": "A globally unique identifier of the BPP. Typically the fully qualified domain name (FQDN) of the BPP.",
+      "type": "string"
+    },
+    "bppUri": {
+      "description": "API URL of the BPP for accepting calls from BAPs.",
+      "type": "string",
+      "format": "uri"
+    },
+    "messageId": {
+      "description": "A unique value which persists during a request/callback cycle. BAPs use this value to match an incoming callback from a BPP to an earlier call. Generate a fresh message_id for every new interaction.",
+      "type": "string",
+      "format": "uuid"
+    },
+    "networkId": {
+      "description": "A unique identifier representing a group of platforms. By default, the URL of the network registry on the Beckn network.",
+      "type": "string"
+    },
+    "timestamp": {
+      "description": "Time of request generation in RFC3339 format.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "transactionId": {
+      "description": "A unique value which persists across all API calls from discover through confirm. Used to indicate an active user session across multiple requests.",
+      "type": "string",
+      "format": "uuid"
+    },
+    "try": {
+      "description": "A flag to indicate that this request is intended to try an operation. Set to false by default. Set to true when negotiating terms, updating, or cancelling an active contract. When true, the receiver responds with the expected consequences per the terms of service agreed during init/on_init.",
+      "type": "boolean",
+      "default": false
+    },
+    "ttl": {
+      "description": "The duration in ISO8601 format after timestamp for which this message holds valid.",
+      "type": "string"
+    },
+    "version": {
+      "description": "Version of Beckn protocol being used by the sender.",
+      "type": "string",
+      "default": "2.0.0"
+    },
+    "lineage": {
+      "description": "An optional array of causal attribution records asserting that this Beckn transaction was triggered by one or more upstream Beckn interactions. Present only at transaction boundaries. MUST NOT be populated within subsequent steps of the same transaction. Per current Beckn profiles, this array MUST contain at most one entry when present.",
+      "type": "array",
+      "maxItems": 1,
+      "items": {
+        "$ref": "https://schema.beckn.io/LineageEntry/attributes.yaml"
+      }
+    }
+  },
+  "required": [
+    "action",
+    "bapId",
+    "bapUri",
+    "messageId",
+    "timestamp",
+    "transactionId",
+    "version"
+  ],
+  "additionalProperties": false
+}

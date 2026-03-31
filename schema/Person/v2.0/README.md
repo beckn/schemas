@@ -1,38 +1,34 @@
 # Person — v2.0
 
-A person entity.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [Person](../README.md)
+A person (alive, deceased, or fictional). Modeled after schema.org/Person.
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `Person` |
-
-## Root linked-data files
-
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/Person/attributes.yaml](https://schema.beckn.io/Person/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/Person/v2.0/attributes.yaml](https://schema.beckn.io/Person/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/Person/attributes.jsonschema.yaml](https://schema.beckn.io/Person/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/Person/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/Person/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/Person/context.jsonld](https://schema.beckn.io/Person/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/Person/v2.0/context.jsonld](https://schema.beckn.io/Person/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/Person/vocab.jsonld](https://schema.beckn.io/Person/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/Person/v2.0/vocab.jsonld](https://schema.beckn.io/Person/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `@context` | string |  |
-| `@type` | string |  |
-| `id` | string | Unique identifier for the person |
-| `name` | string | Full name of the person |
-| `email` | string | Email address |
-| `telephone` | string | Telephone number |
-| `address` |  | Physical address |
-| `age` | integer | Age in years |
-| `knowsLanguage` | string[] | Languages known by the person (BCP-47 codes or language names) |
-| `worksFor` | [Organization](../../Organization/README.md) | Organization the person works for |
-| `credentials` | [Credential](../../Credential/README.md)[] | Credentials held by the person |
-| `skills` | [Skill](../../Skill/README.md)[] | Skills possessed by the person |
-| `personAttributes` | [Attributes](../../Attributes/README.md) | Extensible attribute pack for jurisdictional or domain-specific person properties |
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `@context` | yes | string | - |
+| `@type` | yes | string | - |
+| `id` | yes | string | Unique identifier for the person |
+| `name` | no | string | Full name of the person |
+| `email` | no | string | Email address |
+| `telephone` | no | string | Telephone number |
+| `address` | no | any | Physical address |
+| `age` | no | integer | Age in years |
+| `knowsLanguage` | no | array | Languages known by the person (BCP-47 codes or language names) |
+| `worksFor` | no | $ref: https://schema.beckn.io/Organization/attributes.yaml#/components/schemas/Organization | Organization the person works for |
+| `credentials` | no | array | Credentials held by the person |
+| `skills` | no | array | Skills possessed by the person |
+| `personAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | Extensible attribute pack for jurisdictional or domain-specific person properties |

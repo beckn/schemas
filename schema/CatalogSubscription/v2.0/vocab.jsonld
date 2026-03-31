@@ -1,0 +1,63 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:CatalogSubscription",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CatalogSubscription",
+      "rdfs:comment": "Full subscription record\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute."
+    },
+    {
+      "@id": "beckn:id",
+      "@type": "rdf:Property",
+      "rdfs:label": "id",
+      "rdfs:comment": "Subscription UUID"
+    },
+    {
+      "@id": "beckn:networkIds",
+      "@type": "rdf:Property",
+      "rdfs:label": "networkIds",
+      "rdfs:comment": "Network IDs covered by this subscription"
+    },
+    {
+      "@id": "beckn:schemaTypes",
+      "@type": "rdf:Property",
+      "rdfs:label": "schemaTypes",
+      "rdfs:comment": "Schema type URIs filtered by this subscription (empty = wildcard \"*\")"
+    },
+    {
+      "@id": "beckn:callbackUrl",
+      "@type": "rdf:Property",
+      "rdfs:label": "callbackUrl",
+      "rdfs:comment": "Delivery callback URL"
+    },
+    {
+      "@id": "beckn:status",
+      "@type": "rdf:Property",
+      "rdfs:label": "status",
+      "rdfs:comment": "Lifecycle status of the subscription"
+    },
+    {
+      "@id": "beckn:deliveryPolicy",
+      "@type": "rdf:Property",
+      "rdfs:label": "deliveryPolicy",
+      "rdfs:comment": "Property deliveryPolicy"
+    },
+    {
+      "@id": "beckn:createdAt",
+      "@type": "rdf:Property",
+      "rdfs:label": "createdAt",
+      "rdfs:comment": "Property createdAt"
+    },
+    {
+      "@id": "beckn:updatedAt",
+      "@type": "rdf:Property",
+      "rdfs:label": "updatedAt",
+      "rdfs:comment": "Property updatedAt"
+    }
+  ]
+}

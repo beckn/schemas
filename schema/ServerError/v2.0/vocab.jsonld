@@ -1,0 +1,21 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:ServerError",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ServerError",
+      "rdfs:comment": "Internal failure on the network participant's application; the request could not be processed. The response body MAY contain an `error` object with additional details.\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute."
+    },
+    {
+      "@id": "beckn:error",
+      "@type": "rdf:Property",
+      "rdfs:label": "error",
+      "rdfs:comment": "Property error"
+    }
+  ]
+}

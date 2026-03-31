@@ -1,0 +1,33 @@
+{
+  "description": "Generalized execution/performance unit. This is where downstream objects bind:\n- Fulfillment-like details (where/when/how)\n- Tracking handles\n- Support touchpoints\n- Status updates\n\nA minimal envelope that carries identity, status, and a performanceAttributes\nbag that holds the concrete domain-specific delivery schema.\n\nDomain specification authors can attach rich context and types via `performanceAttributes`.\n\nFor example, Hyperlocal delivery details (pickup/delivery locations, items shipped, agent, etc.)\nare placed inside performanceAttributes using a well-known domain schema such as\nHyperlocalDelivery. Use the generic Attributes schema when no well-known\ndomain schema exists.\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.",
+  "title": "Fulfillment",
+  "x-tags": [
+    "common",
+    "fulfillment"
+  ],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for this fulfillment record."
+    },
+    "status": {
+      "$ref": "https://schema.beckn.io/Descriptor/attributes.yaml",
+      "description": "Current status of this fulfillment, expressed as a Descriptor. Use Descriptor.code for machine-readable status values."
+    },
+    "commitmentIds": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.beckn.io/Performance/attributes.yaml"
+      }
+    },
+    "performanceAttributes": {
+      "description": "Domain-specific extension attributes for this fulfillment. Use beckn:HyperlocalDelivery (aligned with schema:ParcelDelivery) for hyperlocal physical delivery. Use the generic Attributes schema for other fulfillment types where no well-known domain schema exists.",
+      "$ref": "https://schema.beckn.io/Attributes/attributes.yaml"
+    }
+  },
+  "additionalProperties": false,
+  "x-lts": true,
+  "$id": "https://schema.beckn.io/Performance/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

@@ -1,29 +1,44 @@
-$id: https://schema.beckn.io/OnStatusAction/v2.0
-$schema: https://json-schema.org/draft/2020-12/schema
-description: 'Beckn /beckn/on_status callback envelope. Sent by a BPP to a BAP in response to a /beckn/status call (or as an unsolicited status push), returning the current state of the contract.
+openapi: 3.1.1
+info:
+  title: OnStatusAction
+  version: 2.0.0
+  description: 'Beckn /beckn/on_status callback envelope. Sent by a BPP to a BAP in
+    response to a /beckn/status call (or as an unsolicited status push), returning
+    the current state of the contract.
 
-  '
-title: OnStatusAction
-type: object
-properties:
-  context:
-    allOf:
-    - $ref: https://schema.beckn.io/Context/v2.0
-    - type: object
+    '
+paths: {}
+components:
+  schemas:
+    OnStatusAction:
+      $id: https://schema.beckn.io/OnStatusAction/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: 'Beckn /beckn/on_status callback envelope. Sent by a BPP to a BAP
+        in response to a /beckn/status call (or as an unsolicited status push), returning
+        the current state of the contract.
+
+        '
+      title: OnStatusAction
+      type: object
       properties:
-        action:
-          type: string
-          const: beckn/on_status
-  message:
-    type: object
-    additionalProperties: true
-    properties:
-      contract:
-        $ref: https://schema.beckn.io/Contract/v2.0
-    required:
-    - contract
-required:
-- context
-- message
-x-tags:
-- common
+        context:
+          allOf:
+          - $ref: https://schema.beckn.io/Context/attributes.yaml#/components/schemas/Context
+          - type: object
+            properties:
+              action:
+                type: string
+                const: beckn/on_status
+        message:
+          type: object
+          additionalProperties: true
+          properties:
+            contract:
+              $ref: https://schema.beckn.io/Contract/attributes.yaml#/components/schemas/Contract
+          required:
+          - contract
+      required:
+      - context
+      - message
+      x-tags:
+      - common

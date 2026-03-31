@@ -1,0 +1,36 @@
+{
+  "$id": "https://schema.beckn.io/Location/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A **place** represented by **GeoJSON geometry** (Point/Polygon/Multi*) and optional human-readable `address`. This unifies all Beckn location fields into a single, widely-adopted representation (GeoJSON).",
+  "title": "Location",
+  "type": "object",
+  "properties": {
+    "@type": {
+      "type": "string",
+      "enum": [
+        "Location"
+      ]
+    },
+    "address": {
+      "description": "Optional human-readable address for the same place/area.",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.beckn.io/Address/attributes.yaml"
+        }
+      ]
+    },
+    "geo": {
+      "$ref": "https://schema.beckn.io/GeoJSONGeometry/attributes.yaml"
+    }
+  },
+  "required": [
+    "geo"
+  ],
+  "additionalProperties": false,
+  "x-tags": [
+    "common"
+  ]
+}

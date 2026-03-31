@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "title": "CancellationPolicy",
+  "description": "Attributes for the CancellationPolicy entity in the Beckn Mobility domain.\n",
+  "properties": {},
+  "$id": "https://schema.beckn.io/MobilityCancellationPolicy/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

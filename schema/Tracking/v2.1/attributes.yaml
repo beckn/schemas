@@ -1,41 +1,42 @@
-$id: https://schema.beckn.io/Tracking/v2.1
-$schema: https://json-schema.org/draft/2020-12/schema
-description: Non-streaming tracking handle per legacy semantics (url/transport/status).
-title: Tracking
-type: object
-properties:
-  '@context':
-    description: TBD
-    type: string
-    format: uri
-    default: https://schema.beckn.io/
-  '@type':
-    description: TBD
-    type: string
-    default: beckn:Tracking
-  expiresAt:
-    description: ISO 8601 expiry timestamp for the tracking handle.
-    type: string
-    format: date-time
-  trackingStatus:
-    type: string
-    enum:
-    - ACTIVE
-    - DISABLED
-    - COMPLETED
-  url:
-    description: Link/handle to off-network tracking UI or endpoint.
-    type: string
-    format: uri
-required:
-- '@context'
-- '@type'
-- url
-- trackingStatus
-x-jsonld:
-  '@type': schema:TrackAction
-  trackingStatus: $.trackingStatus
-  schema:target: $.url
-additionalProperties: false
-x-tags:
-- common
+openapi: 3.1.1
+info:
+  title: Tracking
+  version: 2.1.0
+  description: 'Information regarding live tracking of the fufillment of a contract
+
+
+    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
+    and MUST NOT be extended. Any domain-specific extension must use the property
+    of this schema which is of type Attribute.'
+paths: {}
+components:
+  schemas:
+    Tracking:
+      description: 'Information regarding live tracking of the fufillment of a contract
+
+
+        This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
+        and MUST NOT be extended. Any domain-specific extension must use the property
+        of this schema which is of type Attribute.'
+      title: Tracking
+      type: object
+      properties:
+        refId:
+          description: Tracking reference ID for the tracking session. Could be the
+            Order ID, Fulfillment ID, Fulfillment Stage ID, or any other unique tracking
+            identifier
+          type: string
+        status:
+          type: string
+          enum:
+          - ACTIVE
+          - INACTIVE
+          - NOT-SUPPORTED
+        url:
+          description: Link/handle to off-network tracking UI or endpoint.
+          type: string
+          format: uri
+      required:
+      - url
+      - status
+      x-lts: true

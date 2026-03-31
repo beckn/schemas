@@ -1,19 +1,29 @@
-$id: "https://schema.beckn.io/Eligibility/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
-description: Schema definition for Eligibility in the Beckn Protocol v2.0.1
-title: Eligibility
-x-tags: [common]
-type: object
-properties:
-  eligibleQuantity:
-    type: object
-    properties:
-      max:
-        type: number
-      min:
-        type: number
-  eligibleRegion:
-    type: string
-x-jsonld:
-  '@id': schema:DefinedRegion|schema:QuantitativeValue
-additionalProperties: false
+openapi: 3.1.1
+info:
+  title: Eligibility
+  version: 2.0.0
+  description: Schema definition for Eligibility in the Beckn Protocol v2.0.1
+paths: {}
+components:
+  schemas:
+    Eligibility:
+      $id: https://schema.beckn.io/Eligibility/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: Schema definition for Eligibility in the Beckn Protocol v2.0.1
+      title: Eligibility
+      x-tags:
+      - common
+      type: object
+      properties:
+        eligibleQuantity:
+          type: object
+          properties:
+            max:
+              type: number
+            min:
+              type: number
+        eligibleRegion:
+          type: string
+      x-jsonld:
+        '@id': schema:DefinedRegion|schema:QuantitativeValue
+      additionalProperties: false

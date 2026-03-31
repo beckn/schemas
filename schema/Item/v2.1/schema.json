@@ -1,0 +1,101 @@
+{
+  "$id": "https://schema.beckn.io/Item/v2.1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Schema definition for Item in the Beckn Protocol v2.0.1",
+  "title": "Item",
+  "type": "object",
+  "properties": {
+    "@context": {
+      "description": "JSON-LD context URI for the core Item schema",
+      "type": "string",
+      "format": "uri",
+      "const": "https://schema.beckn.io/"
+    },
+    "@type": {
+      "description": "Type of the core item",
+      "type": "string",
+      "enum": [
+        "Item"
+      ]
+    },
+    "availabilityWindow": {
+      "description": "Time periods when the item is available",
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.beckn.io/TimePeriod/attributes.yaml"
+      }
+    },
+    "availableAt": {
+      "description": "Physical locations where the item is available",
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.beckn.io/Location/attributes.yaml"
+      }
+    },
+    "category": {
+      "$ref": "https://schema.beckn.io/CategoryCode/attributes.yaml"
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.beckn.io/Constraint/attributes.yaml"
+      }
+    },
+    "descriptor": {
+      "$ref": "https://schema.beckn.io/Descriptor/attributes.yaml"
+    },
+    "id": {
+      "description": "Unique identifier for the item",
+      "type": "string",
+      "example": "gaming-laptop-001"
+    },
+    "isActive": {
+      "description": "Whether the item is active",
+      "type": "boolean",
+      "default": true
+    },
+    "itemAttributes": {
+      "$ref": "https://schema.beckn.io/Attributes/attributes.yaml"
+    },
+    "networkId": {
+      "description": "Array of network identifiers for the BAP (Beckn App Provider) that offers this item",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "example": [
+        "bap.net/electronics",
+        "bap.net/tech"
+      ]
+    },
+    "policies": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.beckn.io/Policy/attributes.yaml"
+      }
+    },
+    "provider": {
+      "$ref": "https://schema.beckn.io/Provider/attributes.yaml"
+    },
+    "rateable": {
+      "description": "Whether the item can be rated by customers",
+      "type": "boolean",
+      "example": true
+    },
+    "rating": {
+      "$ref": "https://schema.beckn.io/Rating/attributes.yaml"
+    }
+  },
+  "required": [
+    "@context",
+    "@type",
+    "id",
+    "descriptor",
+    "provider",
+    "itemAttributes"
+  ],
+  "additionalProperties": false,
+  "x-tags": [
+    "common"
+  ]
+}

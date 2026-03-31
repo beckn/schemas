@@ -1,13 +1,22 @@
 # Driver — v2.0
 
-The `Driver` schema object.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [Driver](../README.md)
+Attributes for the Driver entity in the Beckn Mobility domain.
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | JSON Schema 2020-12 definition for `Driver` |
-| [context.jsonld](./context.jsonld) | JSON-LD context for `Driver` v2.0 |
-| [vocab.jsonld](./vocab.jsonld) | RDF vocabulary for `Driver` v2.0 |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/Driver/attributes.yaml](https://schema.beckn.io/Driver/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/Driver/v2.0/attributes.yaml](https://schema.beckn.io/Driver/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/Driver/attributes.jsonschema.yaml](https://schema.beckn.io/Driver/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/Driver/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/Driver/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/Driver/context.jsonld](https://schema.beckn.io/Driver/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/Driver/v2.0/context.jsonld](https://schema.beckn.io/Driver/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/Driver/vocab.jsonld](https://schema.beckn.io/Driver/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/Driver/v2.0/vocab.jsonld](https://schema.beckn.io/Driver/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
+
+## Properties
+
+| Property | Required | Type | Description |
+|---|---|---|---|
+| _none_ | - | - | - |

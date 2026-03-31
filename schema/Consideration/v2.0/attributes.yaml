@@ -1,0 +1,66 @@
+openapi: 3.1.1
+info:
+  title: Consideration
+  version: 2.0.0
+  description: 'Generalized representation of value exchanged under a Contract.
+
+
+    Consideration is domain-neutral and may represent:
+
+    - Monetary value
+
+    - Credits / tokens
+
+    - Asset transfer
+
+    - Service exchange
+
+    - Compliance artifact
+
+
+    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
+    and MUST NOT be extended. Any domain-specific extension must use the property
+    of this schema which is of type Attribute.'
+paths: {}
+components:
+  schemas:
+    Consideration:
+      type: object
+      description: 'Generalized representation of value exchanged under a Contract.
+
+
+        Consideration is domain-neutral and may represent:
+
+        - Monetary value
+
+        - Credits / tokens
+
+        - Asset transfer
+
+        - Service exchange
+
+        - Compliance artifact
+
+
+        This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
+        and MUST NOT be extended. Any domain-specific extension must use the property
+        of this schema which is of type Attribute.'
+      required:
+      - id
+      - status
+      properties:
+        id:
+          description: Identifier of this consideration
+          type: string
+        status:
+          description: The status of this consideration
+          $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
+        considerationAttributes:
+          description: 'Domain-specific attributes of this consideration. For monetary
+            considerations,
+
+            use the PriceSpecification schema to capture total value with breakup.
+
+            For other consideration types, use a generic Attributes bag.'
+          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+      x-lts: true

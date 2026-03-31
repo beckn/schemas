@@ -91,7 +91,7 @@ schema/{SchemaName}/v2.0/
 
 Use the exact PascalCase name from your approved proposal.
 
-### 4.2 Author `attributes.yaml`
+### 4.2 Author `attributes.jsonschema.yaml`
 
 Copy the template from [CONTRIBUTING.md § 4.1](../CONTRIBUTING.md) and fill in:
 
@@ -146,7 +146,7 @@ components:
 
 ### 4.3 Author `context.jsonld`
 
-Map every attribute from `attributes.yaml` to a `beckn:` IRI.
+Map every attribute from `attributes.jsonschema.yaml` to a `beckn:` IRI.
 
 For a new schema, all IRIs will be new — they are minted by placing the attribute name after the `beckn:` prefix.
 
@@ -231,7 +231,7 @@ Add a line under `### Added` in the current version entry:
 
 To add an optional attribute to an existing schema:
 
-1. Add the attribute to `attributes.yaml` (do NOT add it to `required`)
+1. Add the attribute to `attributes.jsonschema.yaml` (do NOT add it to `required`)
 2. Add the term to the per-schema `context.jsonld`
 3. Add the property declaration to the per-schema `vocab.jsonld`
 4. Add the term to the root `schema/context.jsonld`

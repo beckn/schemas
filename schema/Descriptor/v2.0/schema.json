@@ -1,0 +1,42 @@
+{
+  "$id": "https://schema.beckn.io/Descriptor/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Schema definition for Descriptor in the Beckn Protocol",
+  "title": "Descriptor",
+  "type": "object",
+  "properties": {
+    "@type": {
+      "type": "string",
+      "enum": [
+        "beckn:Descriptor"
+      ],
+      "description": "Type of the descriptor",
+      "example": "beckn:Descriptor"
+    },
+    "schema:name": {
+      "type": "string",
+      "description": "Name of the item",
+      "example": "Premium Gaming Laptop Pro"
+    },
+    "beckn:shortDesc": {
+      "type": "string",
+      "description": "Short description of the item",
+      "example": "High-performance gaming laptop with RTX graphics"
+    },
+    "beckn:longDesc": {
+      "type": "string",
+      "description": "Detailed description of the item",
+      "example": "Powerful gaming laptop with NVIDIA RTX graphics, fast SSD storage, and high-refresh display"
+    },
+    "schema:image": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    }
+  },
+  "required": [
+    "@type"
+  ]
+}

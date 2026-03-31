@@ -1,47 +1,27 @@
-# JobApplicationPerformanceAttributes Schema
+# JobApplicationPerformanceAttributes — v2.1
 
-**Container:** `Performance.performanceAttributes`
-**Protocol Version:** 2.0
-**Semantic Model:** generalised
-**Version:** 1.0.0
-**Use Cases:** Credential verification execution tracking in job application workflows
-**Tag:** hiring employment verification performance service
+Execution metadata for the verification and routing service performed during a job application. Includes the verification method used, per-requirement results, proof integrity reference, and routing outcome. No VC or VP payloads are stored.
 
-## Overview
+## Files
 
-`JobApplicationPerformanceAttributes` extends the v2.1 `Performance` container with
-execution metadata for the credential verification and application routing service.
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/JobApplicationPerformanceAttributes/attributes.yaml](https://schema.beckn.io/JobApplicationPerformanceAttributes/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/JobApplicationPerformanceAttributes/v2.1/attributes.yaml](https://schema.beckn.io/JobApplicationPerformanceAttributes/v2.1/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/JobApplicationPerformanceAttributes/attributes.jsonschema.yaml](https://schema.beckn.io/JobApplicationPerformanceAttributes/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/JobApplicationPerformanceAttributes/v2.1/attributes.jsonschema.yaml](https://schema.beckn.io/JobApplicationPerformanceAttributes/v2.1/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/JobApplicationPerformanceAttributes/context.jsonld](https://schema.beckn.io/JobApplicationPerformanceAttributes/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/JobApplicationPerformanceAttributes/v2.1/context.jsonld](https://schema.beckn.io/JobApplicationPerformanceAttributes/v2.1/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/JobApplicationPerformanceAttributes/vocab.jsonld](https://schema.beckn.io/JobApplicationPerformanceAttributes/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/JobApplicationPerformanceAttributes/v2.1/vocab.jsonld](https://schema.beckn.io/JobApplicationPerformanceAttributes/v2.1/vocab.jsonld) | RDF vocabulary (versioned path) |
 
-In the hiring-jobs use case, the Beckn transaction's "performance" is the service of
-verifying an applicant's credentials and routing the application to the employer. This
-schema captures how that service was executed: which method was used, what the per-
-requirement outcomes were, and whether the application was forwarded.
+## Properties
 
-## Performance Mode: SERVICE
-
-The performance mode is `SERVICE` — the BPP-side platform (e.g. SkillNet) performs a
-verification and routing service on behalf of both parties. There is no physical delivery
-and no digital access grant — it is a pure service execution.
-
-## Attachment Points
-
-| Container | Schema | Reason |
-|-----------|--------|--------|
-| `beckn:performanceAttributes` | `JobApplicationPerformanceAttributes` | Execution details of the verification service |
-
-## Design Rationale
-
-**Granular per-requirement results.** Rather than just an aggregate PASS/FAIL, this schema
-captures outcomes at the individual requirement level. This is essential for the employer to
-understand which specific credentials were verified and which were not — enabling informed
-reverification decisions.
-
-**Privacy-preserving.** The `proof_hash` is a SHA-256 hash of the VP — not the VP itself.
-`issuer_dids_verified` contains issuer DIDs only — not the subject's DID or any credential
-content.
-
-## Non-Goals
-
-- Does not store VC, VP, or any credential payload
-- Does not model the employment contract outcome (outside Beckn boundary)
-- Does not model physical delivery or digital access
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `verification_method` | no | string | Primary method used to verify credentials in this performance unit. |
+| `per_requirement_results` | no | array | Granular verification outcome per requirement. Mandatory requirements that FAIL block routing to the employer.  |
+| `proof_hash` | no | string | SHA-256 hash of the Verifiable Presentation (VP) used during verification. Provides integrity reference; no VP payload stored.  |
+| `issuer_dids_verified` | no | array | DIDs of credential issuers validated during this performance. |
+| `routed_to_provider` | no | boolean | Whether the application was successfully forwarded to the employer after verification. False if mandatory requirements failed.  |
+| `routing_timestamp` | no | string | Timestamp when the application was routed to the employer. |

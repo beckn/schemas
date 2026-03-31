@@ -1,0 +1,11 @@
+{
+  "$id": "https://schema.beckn.io/RequestAction/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RequestAction",
+  "x-tags": [
+    "common"
+  ],
+  "deprecated": true,
+  "description": "DEPRECATED. This schema is structurally invalid and does not validate any payloads — the oneOf keyword was incorrectly nested inside properties, which is not valid JSON Schema.\nUse https://schema.beckn.io/BecknAction/v2.0 instead. BecknAction is the unified envelope for all Beckn actions (both request and callback directions). The request/callback distinction is encoded in context.action (e.g. beckn/discover for requests, beckn/on_discover for callbacks).\nThis schema will be removed in a future major version.",
+  "$ref": "https://schema.beckn.io/BecknAction/attributes.yaml"
+}

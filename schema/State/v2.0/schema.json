@@ -1,0 +1,32 @@
+{
+  "$id": "https://schema.beckn.io/State/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Schema definition for State in the Beckn Protocol v2.0.1",
+  "title": "State",
+  "type": "object",
+  "properties": {
+    "@context": {
+      "description": "CPD",
+      "type": "string",
+      "format": "uri",
+      "const": "https://schema.beckn.io/"
+    },
+    "@type": {
+      "description": "TPD",
+      "type": "string",
+      "default": "beckn:State"
+    },
+    "descriptor": {
+      "$ref": "https://schema.beckn.io/Descriptor/attributes.yaml"
+    }
+  },
+  "required": [
+    "@context",
+    "@type",
+    "descriptor"
+  ],
+  "additionalProperties": false,
+  "x-tags": [
+    "common"
+  ]
+}

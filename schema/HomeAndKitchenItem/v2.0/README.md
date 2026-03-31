@@ -1,49 +1,22 @@
-# Home & Kitchen Item Attributes (v2)
+# HomeAndKitchenItem — v2.0
 
-## Overview
-
-`HomeAndKitchenItemAttributes` extends `RetailCoreItemAttributes` for home, furniture, appliances, and kitchen product use cases.
-
-This pack captures care instructions, installation requirements, usage constraints, and warranty information while inheriting all common retail constructs from RetailCoreItem.
-
-## Attachment
-
-- Container: `beckn:Item`
-- Field: `beckn:itemAttributes`
-- Extends: `RetailCoreItemAttributes`
-
-## Covers
-
-- Care and maintenance instructions
-- Installation requirements and support
-- Usage constraints (indoor/outdoor compatibility)
-- Warranty information (if item-level and generic)
-
-## Does NOT Duplicate
-
-Inherited from RetailCoreItem:
-
-- Identity (brand, origin)
-- Physical attributes (weight, dimensions, appearance)
-- Packaged goods declarations
-- Regulatory information
-- Additives and credentials
-
-## Design Intent
-
-- Keep home & kitchen extensions domain-specific
-- Avoid duplication of common retail semantics
-- Preserve composability across retail verticals
+HomeAndKitchenItem schema
 
 ## Files
 
-- `attributes.yaml` – OpenAPI schema
-- `context.jsonld` – JSON-LD mapping
-- `vocab.jsonld` – Domain vocabulary namespace
-- `profile.json` – Indexing and discovery hints
-- `renderer.json` – UI rendering templates
-- `examples/` – Example Item objects
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/HomeAndKitchenItem/attributes.yaml](https://schema.beckn.io/HomeAndKitchenItem/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/HomeAndKitchenItem/v2.0/attributes.yaml](https://schema.beckn.io/HomeAndKitchenItem/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/HomeAndKitchenItem/attributes.jsonschema.yaml](https://schema.beckn.io/HomeAndKitchenItem/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/HomeAndKitchenItem/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/HomeAndKitchenItem/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/HomeAndKitchenItem/context.jsonld](https://schema.beckn.io/HomeAndKitchenItem/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/HomeAndKitchenItem/v2.0/context.jsonld](https://schema.beckn.io/HomeAndKitchenItem/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/HomeAndKitchenItem/vocab.jsonld](https://schema.beckn.io/HomeAndKitchenItem/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/HomeAndKitchenItem/v2.0/vocab.jsonld](https://schema.beckn.io/HomeAndKitchenItem/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
 
-## Version
+## Properties
 
-v2.0.0 – Beckn Protocol v2 aligned
+| Property | Required | Type | Description |
+|---|---|---|---|
+| _none_ | - | - | - |

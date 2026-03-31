@@ -1,0 +1,45 @@
+{
+  "type": "object",
+  "description": "Transaction-level metadata for a job application contract. Captures the application reference, aggregate verification outcome, and reverification state. No credential payloads are stored here.\n",
+  "x-beckn-container": "contractAttributes",
+  "x-jsonld-context": "./context.jsonld",
+  "required": [
+    "application_reference",
+    "submitted_at"
+  ],
+  "properties": {
+    "application_reference": {
+      "type": "string",
+      "description": "BAP-generated unique reference for this application. Used for tracking, status queries, and audit. Not a platform routing ID.\n",
+      "x-jsonld-id": "jaca:applicationReference"
+    },
+    "verification_summary": {
+      "$ref": "https://schema.beckn.io/VerificationSummary/attributes.yaml",
+      "description": "Aggregate outcome of credential verification performed during the application submission. Populated after verification completes.\n",
+      "x-jsonld-id": "jaca:verificationSummary"
+    },
+    "reverification_requested": {
+      "type": "boolean",
+      "description": "Whether the employer (EMPLOYER party) has requested re-verification of some or all credentials after the initial application submission.\n",
+      "x-jsonld-id": "jaca:reverificationRequested",
+      "default": false
+    },
+    "reverification_requirements": {
+      "type": "array",
+      "description": "Additional or revised requirements for which reverification has been requested. Only populated when reverification_requested = true.\n",
+      "x-jsonld-id": "jaca:reverificationRequirements",
+      "items": {
+        "$ref": "https://schema.beckn.io/CredentialRequirement/attributes.yaml"
+      }
+    },
+    "submitted_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the application was submitted.",
+      "x-jsonld-id": "jaca:submittedAt"
+    }
+  },
+  "$id": "https://schema.beckn.io/JobApplicationContractAttributes/v2.1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "JobApplicationContractAttributes"
+}

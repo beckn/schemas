@@ -1,29 +1,16 @@
-$id: https://schema.beckn.io/TrackAction/v2.1
-$schema: https://json-schema.org/draft/2020-12/schema
-description: 'Beckn /beckn/track action envelope. Sent by a BAP to a BPP to request a real-time tracking handle for a fulfillment within an active contract.
-
-  '
-title: TrackAction
-type: object
-properties:
-  context:
-    allOf:
-    - $ref: https://schema.beckn.io/Context/v2.0
-    - type: object
-      properties:
-        action:
-          type: string
-          const: beckn/track
-  message:
-    type: object
-    additionalProperties: true
-    properties:
-      tracking:
-        $ref: https://schema.beckn.io/TrackingRequest/v2.0
-    required:
-    - tracking
-required:
-- context
-- message
-x-tags:
-- common
+openapi: 3.1.1
+info:
+  title: TrackAction
+  version: 2.1.0
+  description: This schema is part of the Long Term Support of Beckn Protocol V2.0
+    API specification and MUST NOT be extended. Any domain-specific extension must
+    use the property of this schema which is of type Attribute.
+paths: {}
+components:
+  schemas:
+    TrackAction:
+      additionalProperties: false
+      x-lts: true
+      description: This schema is part of the Long Term Support of Beckn Protocol
+        V2.0 API specification and MUST NOT be extended. Any domain-specific extension
+        must use the property of this schema which is of type Attribute.

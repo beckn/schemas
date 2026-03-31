@@ -1,0 +1,39 @@
+{
+  "$id": "https://schema.beckn.io/LineageEntry/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LineageEntry",
+  "x-tags": [
+    "common"
+  ],
+  "description": "A causal attribution record asserting that the Beckn transaction in which this entry appears was triggered by a specific upstream Beckn interaction. Used in Context.lineage at transaction boundaries — when a new transaction is initiated as a direct consequence of an upstream interaction. MUST NOT be included within subsequent steps of the same transaction, and MUST NOT be propagated by downstream responses.",
+  "type": "object",
+  "properties": {
+    "action": {
+      "description": "The Beckn endpoint of the upstream message that caused this transaction to be initiated.",
+      "$ref": "https://schema.beckn.io/BecknEndpoint/attributes.yaml"
+    },
+    "transactionId": {
+      "description": "The transactionId of the upstream Beckn transaction, taken from its Context.",
+      "type": "string",
+      "format": "uuid"
+    },
+    "messageId": {
+      "description": "The messageId of the specific upstream message that directly triggered the creation of this transaction.",
+      "type": "string",
+      "format": "uuid"
+    },
+    "digest": {
+      "description": "BLAKE2b-512 hash of the upstream message body bytes, encoded in Base64 and prefixed with the algorithm identifier. Format: BLAKE-512={base64EncodedHash}",
+      "type": "string",
+      "pattern": "^BLAKE-512=[A-Za-z0-9+/]+=*$",
+      "example": "BLAKE-512=b6lf6lRgOweajukcvcLsagQ2T60+85kRh/Rd2bdS+TG/5ALebOEgDJfyCrre/1+BMu5nA94o4DT3pTFXuUg7sw=="
+    }
+  },
+  "required": [
+    "action",
+    "transactionId",
+    "messageId",
+    "digest"
+  ],
+  "additionalProperties": false
+}

@@ -1,35 +1,31 @@
-# Invoice — v2.0
+# Invoice — v2.1
 
-An invoice issued for a transaction.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [Invoice](../README.md)
+Schema definition for Invoice in the Beckn Protocol v2.0.1
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `Invoice` |
-
-## Root linked-data files
-
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/Invoice/attributes.yaml](https://schema.beckn.io/Invoice/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/Invoice/v2.1/attributes.yaml](https://schema.beckn.io/Invoice/v2.1/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/Invoice/attributes.jsonschema.yaml](https://schema.beckn.io/Invoice/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/Invoice/v2.1/attributes.jsonschema.yaml](https://schema.beckn.io/Invoice/v2.1/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/Invoice/context.jsonld](https://schema.beckn.io/Invoice/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/Invoice/v2.1/context.jsonld](https://schema.beckn.io/Invoice/v2.1/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/Invoice/vocab.jsonld](https://schema.beckn.io/Invoice/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/Invoice/v2.1/vocab.jsonld](https://schema.beckn.io/Invoice/v2.1/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `@context` | string | CPD |
-| `@type` | string | TPD |
-| `dueDate` | string |  |
-| `id` | string | Stable invoice identifier (system id) |
-| `invoiceAttributes` | [Attributes](../../Attributes/README.md) | Attribute Pack for tax regime (e.g., GST/VAT), e-invoice refs, legal boilerplate, etc. |
-| `issueDate` | string |  |
-| `number` | string | Human-visible invoice number |
-| `payee` | [Provider](../../Provider/README.md) | Seller / issuer of the invoice |
-| `payer` | [Consumer](../../Consumer/README.md) | consumer being invoiced |
-| `costBreakup` | [PriceSpecification](../../PriceSpecification/README.md)[] |  |
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `@context` | yes | string | CPD |
+| `@type` | yes | string | TPD |
+| `dueDate` | no | ['string', 'null'] | - |
+| `id` | yes | string | Stable invoice identifier (system id) |
+| `invoiceAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | Attribute Pack for tax regime (e.g., GST/VAT), e-invoice refs, legal boilerplate, etc. |
+| `issueDate` | yes | string | - |
+| `number` | yes | string | Human-visible invoice number |
+| `payee` | yes | $ref: https://schema.beckn.io/Provider/attributes.yaml#/components/schemas/Provider | Seller / issuer of the invoice |
+| `payer` | yes | $ref: https://schema.beckn.io/Consumer/attributes.yaml#/components/schemas/Consumer | consumer being invoiced |
+| `costBreakup` | no | array | - |

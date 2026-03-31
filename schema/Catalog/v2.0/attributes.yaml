@@ -1,61 +1,71 @@
-$id: https://schema.beckn.io/Catalog/v2.0
-$schema: https://json-schema.org/draft/2020-12/schema
-description: Schema definition for Catalog in the Beckn Protocol
-title: Catalog
-type: object
-properties:
-  '@context':
-    type: string
-    format: uri
-    description: JSON-LD context URI for the core Catalog schema
-  '@type':
-    type: string
-    description: Type of the catalog
-    example: beckn:Catalog
-  beckn:id:
-    type: string
-    description: Unique identifier for the catalog
-    example: catalog-electronics-001
-  beckn:descriptor:
-    $ref: 'https://schema.beckn.io/Descriptor/v2.1'
-  beckn:providerId:
-    type: string
-    description: Reference to the provider that owns this catalog
-    example: tech-store-001
-  beckn:bppId:
-    type: string
-    description: BPP (Beckn Protocol Provider) identifier that publishes this catalog
-    example: bpp.example.com
-  beckn:bppUri:
-    type: string
-    format: uri
-    description: BPP (Beckn Protocol Provider) URI endpoint
-    example: https://bpp.example.com
-  beckn:validity:
-    $ref: 'https://schema.beckn.io/TimePeriod/v2.1'
-  beckn:isActive:
-    type: boolean
-    description: Whether the catalog is active
-    default: true
-  beckn:items:
-    type: array
-    description: 'Array of beckn core Item entities in this catalog, returned directly
-      without ItemResult wrapper for improved performance and simplified response
-      structure
+openapi: 3.1.1
+info:
+  title: Catalog
+  version: 2.0.0
+  description: Schema definition for Catalog in the Beckn Protocol
+paths: {}
+components:
+  schemas:
+    Catalog:
+      $id: https://schema.beckn.io/Catalog/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: Schema definition for Catalog in the Beckn Protocol
+      title: Catalog
+      type: object
+      properties:
+        '@context':
+          type: string
+          format: uri
+          description: JSON-LD context URI for the core Catalog schema
+        '@type':
+          type: string
+          description: Type of the catalog
+          example: beckn:Catalog
+        beckn:id:
+          type: string
+          description: Unique identifier for the catalog
+          example: catalog-electronics-001
+        beckn:descriptor:
+          $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
+        beckn:providerId:
+          type: string
+          description: Reference to the provider that owns this catalog
+          example: tech-store-001
+        beckn:bppId:
+          type: string
+          description: BPP (Beckn Protocol Provider) identifier that publishes this
+            catalog
+          example: bpp.example.com
+        beckn:bppUri:
+          type: string
+          format: uri
+          description: BPP (Beckn Protocol Provider) URI endpoint
+          example: https://bpp.example.com
+        beckn:validity:
+          $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod
+        beckn:isActive:
+          type: boolean
+          description: Whether the catalog is active
+          default: true
+        beckn:items:
+          type: array
+          description: 'Array of beckn core Item entities in this catalog, returned
+            directly without ItemResult wrapper for improved performance and simplified
+            response structure
 
-      '
-    items:
-      $ref: 'https://schema.beckn.io/Item/v2.1'
-  beckn:offers:
-    type: array
-    items:
-      $ref: 'https://schema.beckn.io/Offer/v2.1'
-required:
-- '@context'
-- '@type'
-- beckn:id
-- beckn:descriptor
-- beckn:bppId
-- beckn:bppUri
-- beckn:items
-additionalProperties: false
+            '
+          items:
+            $ref: https://schema.beckn.io/Item/attributes.yaml#/components/schemas/Item
+        beckn:offers:
+          type: array
+          items:
+            $ref: https://schema.beckn.io/Offer/attributes.yaml#/components/schemas/Offer
+      required:
+      - '@context'
+      - '@type'
+      - beckn:id
+      - beckn:descriptor
+      - beckn:bppId
+      - beckn:bppUri
+      - beckn:items
+      additionalProperties: false

@@ -1,23 +1,34 @@
-$id: https://schema.beckn.io/Attributes/v2.0
-$schema: https://json-schema.org/draft/2020-12/schema
-description: JSON-LD aware container for domain-specific attributes of an Item. MUST include @context
-  (URI) and @type (compact or full IRI). Any additional properties are allowed and interpreted per the
-  provided JSON-LD context.
-title: Attributes
-type: object
-properties:
-  '@context':
-    description: Use case specific JSON-LD context URI
-    type: string
-    format: uri
-    example: https://example.org/schema/items/v1/ElectronicItem/schema-context.jsonld
-  '@type':
-    description: JSON-LD type defined within the context
-    type: string
-    example: ElectronicItem
-required:
-- '@context'
-- '@type'
-additionalProperties: true
-x-tags:
-- common
+openapi: 3.1.1
+info:
+  title: Attributes
+  version: 2.0.0
+  description: JSON-LD aware container for domain-specific attributes of an Item.
+    MUST include @context (URI) and @type (compact or full IRI). Any additional properties
+    are allowed and interpreted per the provided JSON-LD context.
+paths: {}
+components:
+  schemas:
+    Attributes:
+      $id: https://schema.beckn.io/Attributes/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: JSON-LD aware container for domain-specific attributes of an Item.
+        MUST include @context (URI) and @type (compact or full IRI). Any additional
+        properties are allowed and interpreted per the provided JSON-LD context.
+      title: Attributes
+      type: object
+      properties:
+        '@context':
+          description: Use case specific JSON-LD context URI
+          type: string
+          format: uri
+          example: https://example.org/schema/items/v1/ElectronicItem/schema-context.jsonld
+        '@type':
+          description: JSON-LD type defined within the context
+          type: string
+          example: ElectronicItem
+      required:
+      - '@context'
+      - '@type'
+      additionalProperties: true
+      x-tags:
+      - common

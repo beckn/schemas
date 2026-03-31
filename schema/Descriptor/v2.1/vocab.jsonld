@@ -1,42 +1,32 @@
 {
   "@context": {
-    "@version": 1.1,
     "beckn": "https://schema.beckn.io/",
-    "owl": "http://www.w3.org/2002/07/owl#",
-    "schema": "https://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
   },
   "@graph": [
     {
       "@id": "beckn:Descriptor",
       "@type": "rdfs:Class",
       "rdfs:label": "Descriptor",
-      "rdfs:comment": "Schema definition for Descriptor in the Beckn Protocol v2.0.1"
+      "rdfs:comment": "Schema definition for Descriptor in the Beckn Protocol v2.0.1\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute."
     },
     {
-      "@id": "beckn:@context",
+      "@id": "beckn:code",
       "@type": "rdf:Property",
-      "rdfs:label": "@context",
-      "rdfs:comment": "Use case specific JSON-LD context. This can change from use case to use case, even within a domain."
-    },
-    {
-      "@id": "beckn:@type",
-      "@type": "rdf:Property",
-      "rdfs:label": "@type",
-      "rdfs:comment": "Type of the descriptor. The type can be overriden with a context-specific type"
+      "rdfs:label": "code",
+      "rdfs:comment": "A machine-readable code identifying the state or type of the entity being described. The valid values for this field are defined by the context in which the Descriptor is used (e.g. DRAFT, ACTIVE, CANCELLED, COMPLETE for a Contract status)."
     },
     {
       "@id": "beckn:longDesc",
       "@type": "rdf:Property",
-      "rdfs:label": "long Desc",
+      "rdfs:label": "longDesc",
       "rdfs:comment": "Detailed description of the item"
     },
     {
       "@id": "beckn:shortDesc",
       "@type": "rdf:Property",
-      "rdfs:label": "short Desc",
+      "rdfs:label": "shortDesc",
       "rdfs:comment": "Short description of the item"
     },
     {
@@ -48,7 +38,7 @@
     {
       "@id": "beckn:thumbnailImage",
       "@type": "rdf:Property",
-      "rdfs:label": "thumbnail Image",
+      "rdfs:label": "thumbnailImage",
       "rdfs:comment": "Name of the entity being described"
     },
     {
@@ -60,7 +50,7 @@
     {
       "@id": "beckn:mediaFile",
       "@type": "rdf:Property",
-      "rdfs:label": "media File",
+      "rdfs:label": "mediaFile",
       "rdfs:comment": "Links to multimedia files and images"
     }
   ]

@@ -1,19 +1,27 @@
-# CourseOfferAttributes Schema
+# CourseOfferAttributes — v2.1
 
-**Container:** `Offer.offerAttributes`
-**Protocol Version:** 2.0
-**Semantic Model:** generalised
-**Version:** 1.0.0
-**Use Cases:** Course fee display and filtering; enrollment window management; government-funded scheme discovery
-**Tag:** skilling education courses offer pricing enrollment
+Commercial and availability terms under which a course is offered. The proposedConsideration on the core Offer carries the headline fee; this extension provides pricing type context and enrollment window.
 
-## Overview
+## Files
 
-`CourseOfferAttributes` extends the v2.1 `Offer` container with commercial and availability
-terms for a training course. Captures whether a course is free, subsidised, government-funded
-or paid; how many seats remain; and when enrollment closes.
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/CourseOfferAttributes/attributes.yaml](https://schema.beckn.io/CourseOfferAttributes/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/CourseOfferAttributes/v2.1/attributes.yaml](https://schema.beckn.io/CourseOfferAttributes/v2.1/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/CourseOfferAttributes/attributes.jsonschema.yaml](https://schema.beckn.io/CourseOfferAttributes/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/CourseOfferAttributes/v2.1/attributes.jsonschema.yaml](https://schema.beckn.io/CourseOfferAttributes/v2.1/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/CourseOfferAttributes/context.jsonld](https://schema.beckn.io/CourseOfferAttributes/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/CourseOfferAttributes/v2.1/context.jsonld](https://schema.beckn.io/CourseOfferAttributes/v2.1/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/CourseOfferAttributes/vocab.jsonld](https://schema.beckn.io/CourseOfferAttributes/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/CourseOfferAttributes/v2.1/vocab.jsonld](https://schema.beckn.io/CourseOfferAttributes/v2.1/vocab.jsonld) | RDF vocabulary (versioned path) |
 
-## Non-Goals
-- Does not capture course content or prerequisites (→ `CourseResourceAttributes`)
-- Does not capture payment schedule or fee structure details (→ `CourseConsiderationAttributes`)
-- Does not capture enrollment status (→ `CourseEnrollmentContractAttributes`)
+## Properties
+
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `pricing_type` | no | string | - |
+| `seats_available` | no | integer | - |
+| `enrollment_deadline` | no | string | - |
+| `offer_validity` | no | object | - |
+| `sponsorship_body` | no | string | Name of the sponsoring body (e.g. NSDC, ministry scheme name). |
+| `eligibility_constraints` | no | array | Additional eligibility notes beyond formal prerequisites. |

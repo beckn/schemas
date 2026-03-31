@@ -1,0 +1,43 @@
+{
+  "$id": "https://schema.beckn.io/Provider/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Schema definition for Provider in the Beckn Protocol",
+  "title": "Provider",
+  "type": "object",
+  "properties": {
+    "beckn:id": {
+      "type": "string",
+      "description": "Unique identifier for the provider",
+      "example": "tech-store-001"
+    },
+    "beckn:descriptor": {
+      "$ref": "https://schema.beckn.io/Descriptor/attributes.yaml"
+    },
+    "beckn:validity": {
+      "$ref": "https://schema.beckn.io/TimePeriod/attributes.yaml"
+    },
+    "beckn:locations": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.beckn.io/Location/attributes.yaml"
+      },
+      "description": "Physical locations where the provider operates"
+    },
+    "beckn:rateable": {
+      "type": "boolean",
+      "description": "Whether the provider can be rated by customers",
+      "example": true
+    },
+    "beckn:rating": {
+      "$ref": "https://schema.beckn.io/Rating/attributes.yaml"
+    },
+    "beckn:providerAttributes": {
+      "$ref": "https://schema.beckn.io/Attributes/attributes.yaml"
+    }
+  },
+  "required": [
+    "beckn:id",
+    "beckn:descriptor"
+  ],
+  "additionalProperties": false
+}

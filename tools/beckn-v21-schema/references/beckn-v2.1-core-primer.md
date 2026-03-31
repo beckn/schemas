@@ -125,7 +125,7 @@ the `Context` envelope is the discriminator: v2 contexts resolve legacy objects;
 ## Composability Pattern
 
 ```yaml
-# attributes.yaml (your v2.1 extension)
+# attributes.jsonschema.yaml (your v2.1 extension)
 components:
   schemas:
     MyDomainResourceAttributes:

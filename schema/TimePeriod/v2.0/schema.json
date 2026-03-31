@@ -1,0 +1,59 @@
+{
+  "$id": "https://schema.beckn.io/TimePeriod/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Time window with date-time precision for availability/validity",
+  "title": "TimePeriod",
+  "type": "object",
+  "properties": {
+    "@type": {
+      "type": "string",
+      "description": "JSON-LD type for a date-time period",
+      "example": "beckn:TimePeriod"
+    },
+    "schema:startDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Start instant (inclusive)",
+      "example": "2025-01-27T09:00:00Z"
+    },
+    "schema:endDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "End instant (exclusive or inclusive per domain semantics)",
+      "example": "2025-12-31T23:59:59Z"
+    },
+    "schema:startTime": {
+      "type": "string",
+      "format": "time",
+      "description": "Start time of the time period",
+      "example": "09:00:00"
+    },
+    "schema:endTime": {
+      "type": "string",
+      "format": "time",
+      "description": "End time of the time period",
+      "example": "22:00:00"
+    }
+  },
+  "required": [
+    "@type"
+  ],
+  "anyOf": [
+    {
+      "required": [
+        "schema:startDate"
+      ]
+    },
+    {
+      "required": [
+        "schema:endDate"
+      ]
+    },
+    {
+      "required": [
+        "schema:startTime",
+        "schema:endTime"
+      ]
+    }
+  ]
+}

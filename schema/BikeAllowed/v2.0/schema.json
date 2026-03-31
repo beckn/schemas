@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "title": "BikeAllowed",
+  "description": "Attributes for the BikeAllowed entity in the Beckn Mobility domain.\n",
+  "properties": {},
+  "$id": "https://schema.beckn.io/BikeAllowed/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

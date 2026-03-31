@@ -1,50 +1,61 @@
-$id: https://schema.beckn.io/Participant/v2.0
-$schema: https://json-schema.org/draft/2020-12/schema
-description: Schema definition for Participant in the Beckn Protocol v2.0.1
-title: Participant
-type: object
-properties:
-  '@context':
-    type: string
-    format: uri
-    const: https://schema.beckn.io/
-  '@type':
-    description: >
-      One or more JSON-LD type IRIs for this participant. The first MUST be "beckn:Participant".
-      Additional types (e.g. "beckn:Restaurant", "beckn:Consumer", "beckn:Rider") encode
-      the domain role of the participant using sub-typing rather than a separate "role" field.
-    oneOf:
-      - type: string
-        const: beckn:Participant
-      - type: array
-        items:
+openapi: 3.1.1
+info:
+  title: Participant
+  version: 2.0.0
+  description: Schema definition for Participant in the Beckn Protocol v2.0.1
+paths: {}
+components:
+  schemas:
+    Participant:
+      $id: https://schema.beckn.io/Participant/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: Schema definition for Participant in the Beckn Protocol v2.0.1
+      title: Participant
+      type: object
+      properties:
+        '@context':
           type: string
-        contains:
-          const: beckn:Participant
-        minItems: 1
-  credentials:
-    type: array
-    items:
-      $ref: https://schema.beckn.io/Credential/v2.0
-  displayName:
-    type: string
-  email:
-    type: string
-    format: email
-  id:
-    type: string
-  rating:
-    $ref: https://schema.beckn.io/Rating/v2.1
-  skills:
-    type: array
-    items:
-      $ref: https://schema.beckn.io/Skill/v2.0
-  telephone:
-    type: string
-required:
-- '@context'
-- '@type'
-- id
-additionalProperties: false
-x-tags:
-- common
+          format: uri
+          const: https://schema.beckn.io/
+        '@type':
+          description: 'One or more JSON-LD type IRIs for this participant. The first
+            MUST be "beckn:Participant". Additional types (e.g. "beckn:Restaurant",
+            "beckn:Consumer", "beckn:Rider") encode the domain role of the participant
+            using sub-typing rather than a separate "role" field.
+
+            '
+          oneOf:
+          - type: string
+            const: beckn:Participant
+          - type: array
+            items:
+              type: string
+            contains:
+              const: beckn:Participant
+            minItems: 1
+        credentials:
+          type: array
+          items:
+            $ref: https://schema.beckn.io/Credential/attributes.yaml#/components/schemas/Credential
+        displayName:
+          type: string
+        email:
+          type: string
+          format: email
+        id:
+          type: string
+        rating:
+          $ref: https://schema.beckn.io/Rating/attributes.yaml#/components/schemas/Rating
+        skills:
+          type: array
+          items:
+            $ref: https://schema.beckn.io/Skill/attributes.yaml#/components/schemas/Skill
+        telephone:
+          type: string
+      required:
+      - '@context'
+      - '@type'
+      - id
+      additionalProperties: false
+      x-tags:
+      - common

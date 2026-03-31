@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "title": "Transfer",
+  "description": "Attributes for the Transfer entity in the Beckn Mobility domain.\n",
+  "properties": {},
+  "$id": "https://schema.beckn.io/Transfer/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

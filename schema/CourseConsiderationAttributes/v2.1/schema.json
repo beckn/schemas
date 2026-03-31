@@ -1,0 +1,47 @@
+{
+  "type": "object",
+  "x-beckn-container": "considerationAttributes",
+  "x-jsonld-context": "./context.jsonld",
+  "properties": {
+    "fee_category": {
+      "type": "string",
+      "description": "How the fee obligation is structured for this learner.",
+      "x-jsonld-id": "ccoa:feeCategory",
+      "enum": [
+        "FULL_FEE",
+        "PARTIAL_FEE",
+        "SPONSORED",
+        "WAIVED"
+      ]
+    },
+    "payment_schedule": {
+      "type": "string",
+      "description": "When payment is expected relative to course delivery.",
+      "x-jsonld-id": "ccoa:paymentSchedule",
+      "enum": [
+        "UPFRONT",
+        "INSTALLMENT",
+        "POST_COMPLETION"
+      ]
+    },
+    "installment_count": {
+      "type": "integer",
+      "description": "Number of installments, if payment_schedule is INSTALLMENT.",
+      "x-jsonld-id": "ccoa:installmentCount",
+      "minimum": 2
+    },
+    "subsidy_source": {
+      "type": "string",
+      "description": "Name of the government scheme or sponsoring body covering the subsidy.",
+      "x-jsonld-id": "ccoa:subsidySource"
+    },
+    "refund_policy": {
+      "type": "string",
+      "description": "Brief statement of the refund terms applicable to this enrollment.",
+      "x-jsonld-id": "ccoa:refundPolicy"
+    }
+  },
+  "$id": "https://schema.beckn.io/CourseConsiderationAttributes/v2.1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CourseConsiderationAttributes"
+}

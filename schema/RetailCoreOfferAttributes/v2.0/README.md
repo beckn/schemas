@@ -1,25 +1,28 @@
 # RetailCoreOfferAttributes — v2.0
 
-> **Canonical IRI:** [`https://schema.beckn.io/RetailCoreOfferAttributes/v2.0`](https://schema.beckn.io/RetailCoreOfferAttributes/v2.0)
+Retail-specific offer attribute pack, used as the value of Offer.offerAttributes for retail domain offers. Covers return/cancellation/replacement policies, payment constraints, serviceability (distance + timing), daily time window, and holidays.
 
-Schema definition for RetailCoreOfferAttributes v2.0.
+## Files
+
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/RetailCoreOfferAttributes/attributes.yaml](https://schema.beckn.io/RetailCoreOfferAttributes/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/RetailCoreOfferAttributes/v2.0/attributes.yaml](https://schema.beckn.io/RetailCoreOfferAttributes/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/RetailCoreOfferAttributes/attributes.jsonschema.yaml](https://schema.beckn.io/RetailCoreOfferAttributes/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/RetailCoreOfferAttributes/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/RetailCoreOfferAttributes/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/RetailCoreOfferAttributes/context.jsonld](https://schema.beckn.io/RetailCoreOfferAttributes/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/RetailCoreOfferAttributes/v2.0/context.jsonld](https://schema.beckn.io/RetailCoreOfferAttributes/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/RetailCoreOfferAttributes/vocab.jsonld](https://schema.beckn.io/RetailCoreOfferAttributes/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/RetailCoreOfferAttributes/v2.0/vocab.jsonld](https://schema.beckn.io/RetailCoreOfferAttributes/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-| Property | Type | Required | Description |
-|----------|------|:--------:|-------------|
-| `@context` | `string` (uri) | ✅ | JSON-LD context URI for the retail offer schema. |
-| `@type` | `string` | ✅ | Must be `beckn:RetailCoreOfferAttributes`. |
-| `policies` | `object` | — | Coupon-level policies such as single-use, stacking, and minimum order value. |
-| `paymentConstraints` | `object` | — | Eligible payment methods and instruments for this offer. |
-| `serviceability` | `object` | — | Geographic or delivery-mode serviceability constraints for the offer. |
-| `timeRange` | `object` | — | Validity window for the offer. |
-| `holidays` | `array` | — | Dates on which the offer is not valid. |
-
-## Linked Data
-
-| Resource | URL |
-|----------|-----|
-| JSON Schema | `https://schema.beckn.io/RetailCoreOfferAttributes/v2.0` |
-| context.jsonld | `https://schema.beckn.io/RetailCoreOfferAttributes/v2.0/context.jsonld` |
-| vocab.jsonld | `https://schema.beckn.io/RetailCoreOfferAttributes/v2.0/vocab.jsonld` |
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `@context` | yes | string | JSON-LD context URI for the retail offer schema. |
+| `@type` | yes | string | JSON-LD type for this attribute pack. |
+| `policies` | no | object | - |
+| `paymentConstraints` | no | object | - |
+| `serviceability` | no | object | Additional serviceability constraints beyond geographic eligibility (handled via core Offer.eligibleRegion).  |
+| `timeRange` | no | object | Daily time window applicable on the specified days. |
+| `holidays` | no | array | Specific dates excluded from this offer's availability. |

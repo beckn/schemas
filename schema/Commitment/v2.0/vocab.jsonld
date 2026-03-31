@@ -1,0 +1,45 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Commitment",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Commitment",
+      "rdfs:comment": "This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute."
+    },
+    {
+      "@id": "beckn:id",
+      "@type": "rdf:Property",
+      "rdfs:label": "id",
+      "rdfs:comment": "Property id"
+    },
+    {
+      "@id": "beckn:status",
+      "@type": "rdf:Property",
+      "rdfs:label": "status",
+      "rdfs:comment": "Property status"
+    },
+    {
+      "@id": "beckn:resources",
+      "@type": "rdf:Property",
+      "rdfs:label": "resources",
+      "rdfs:comment": "Property resources"
+    },
+    {
+      "@id": "beckn:offer",
+      "@type": "rdf:Property",
+      "rdfs:label": "offer",
+      "rdfs:comment": "Property offer"
+    },
+    {
+      "@id": "beckn:commitmentAttributes",
+      "@type": "rdf:Property",
+      "rdfs:label": "commitmentAttributes",
+      "rdfs:comment": "Domain-specific extension attributes for this commitment."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Settlement",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Settlement",
+      "rdfs:comment": "This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute."
+    },
+    {
+      "@id": "beckn:id",
+      "@type": "rdf:Property",
+      "rdfs:label": "id",
+      "rdfs:comment": "Property id"
+    },
+    {
+      "@id": "beckn:considerationId",
+      "@type": "rdf:Property",
+      "rdfs:label": "considerationId",
+      "rdfs:comment": "Property considerationId"
+    },
+    {
+      "@id": "beckn:status",
+      "@type": "rdf:Property",
+      "rdfs:label": "status",
+      "rdfs:comment": "Property status"
+    },
+    {
+      "@id": "beckn:settlementAttributes",
+      "@type": "rdf:Property",
+      "rdfs:label": "settlementAttributes",
+      "rdfs:comment": "Property settlementAttributes"
+    }
+  ]
+}

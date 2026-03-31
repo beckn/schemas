@@ -1,0 +1,50 @@
+{
+  "$id": "https://schema.beckn.io/ContractItem/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A line item within a Contract, linking an accepted Offer and ordered Item with quantity and price.",
+  "title": "ContractItem",
+  "x-tags": [
+    "common"
+  ],
+  "type": "object",
+  "properties": {
+    "acceptedOffer": {
+      "description": "Offer applied to this line (if different from contract-level)",
+      "x-jsonld": {
+        "@id": "schema:acceptedOffer"
+      },
+      "$ref": "https://schema.beckn.io/Offer/attributes.yaml"
+    },
+    "itemId": {
+      "x-jsonld": {
+        "@id": "schema:orderedItem"
+      },
+      "$ref": "https://schema.beckn.io/Item/attributes.yaml"
+    },
+    "lineId": {
+      "description": "Unique line id within contract",
+      "type": "string"
+    },
+    "contractItemAttributes": {
+      "description": "Line-level Attribute Pack (options, substitutions, ESG, etc.)",
+      "$ref": "https://schema.beckn.io/Attributes/attributes.yaml"
+    },
+    "price": {
+      "description": "Line price composition (unit/tax/delivery/discount)",
+      "x-jsonld": {
+        "@id": "schema:priceSpecification"
+      },
+      "$ref": "https://schema.beckn.io/PriceSpecification/attributes.yaml"
+    },
+    "quantity": {
+      "x-jsonld": {
+        "@id": "beckn:quantity"
+      },
+      "$ref": "https://schema.beckn.io/Quantity/attributes.yaml"
+    }
+  },
+  "required": [
+    "itemId"
+  ],
+  "additionalProperties": false
+}

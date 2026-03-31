@@ -1,0 +1,56 @@
+{
+  "description": "Time window with date-time precision for availability/validity\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.",
+  "title": "TimePeriod",
+  "x-tags": [
+    "common"
+  ],
+  "type": "object",
+  "properties": {
+    "startDate": {
+      "description": "Start instant (inclusive)",
+      "type": "string",
+      "format": "date-time",
+      "example": "2025-01-27T09:00:00Z"
+    },
+    "endDate": {
+      "description": "End instant (exclusive or inclusive per domain semantics)",
+      "type": "string",
+      "format": "date-time",
+      "example": "2025-12-31T23:59:59Z"
+    },
+    "startTime": {
+      "description": "Start time of the time period",
+      "type": "string",
+      "format": "time",
+      "example": "09:00:00"
+    },
+    "endTime": {
+      "description": "End time of the time period",
+      "type": "string",
+      "format": "time",
+      "example": "22:00:00"
+    }
+  },
+  "anyOf": [
+    {
+      "required": [
+        "startDate"
+      ]
+    },
+    {
+      "required": [
+        "endDate"
+      ]
+    },
+    {
+      "required": [
+        "startTime",
+        "endTime"
+      ]
+    }
+  ],
+  "additionalProperties": false,
+  "x-lts": true,
+  "$id": "https://schema.beckn.io/TimePeriod/v2.1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

@@ -1,77 +1,22 @@
-# Food & Beverage Offer Attributes (v2)
+# FoodAndBeverageOffer — v2.0
 
-## Overview
-
-`FoodAndBeverageOfferAttributes` extends `RetailCoreOfferAttributes` to support structured customization for restaurant and prepared food use cases.
-
-This pack enables dynamic configuration of an offer (e.g., pizza size, toppings, crust type) without introducing SKU hierarchy or cart semantics into the protocol layer.
-
-## Attachment
-
-- Container: `beckn:Offer`
-- Field: `beckn:offerAttributes`
-- Extends: `RetailCoreOfferAttributes`
-
-## Covers
-
-- Structured customization groups
-- Selection rules (single required, optional, multiple)
-- Price deltas per option
-- Optional references to Items or Offers
-- Availability flags for options
-
-## Customization Model
-
-Customization is modeled as:
-
-Offer
-  └── customization
-        └── groups[]
-              ├── code
-              ├── selection rule
-              └── options[]
-                    ├── code
-                    ├── name
-                    ├── priceDelta
-                    ├── itemRef (optional)
-                    └── offerRef (optional)
-
-This allows:
-
-- Size selection
-- Toppings
-- Spice level
-- Crust type
-- Combo upgrades
-- Optional beverage additions (though addOn/addOnItems remain core constructs)
-
-## Does NOT Duplicate
-
-Inherited from RetailCoreOffer:
-
-- Returns / cancellation / replacement policies
-- Payment constraints
-- Serviceability
-- Core price snapshot (PriceSpecification)
-- Add-ons and bundles (core Offer semantics)
-
-## Design Intent
-
-- Keep Item atomic (no parent-child SKU hierarchy)
-- Keep customization logic at Offer level
-- Support dynamic pricing via priceDelta
-- Allow BAP-side UI flexibility
-- Remain composable with addOn and addOnItems
-- Avoid embedding cart or order-state logic
+FoodAndBeverageOffer schema
 
 ## Files
 
-- `attributes.yaml` – OpenAPI schema
-- `context.jsonld` – JSON-LD mapping
-- `profile.json` – Indexing and discovery hints
-- `renderer.json` – UI rendering templates
-- `examples/` – Example Offer objects
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/FoodAndBeverageOffer/attributes.yaml](https://schema.beckn.io/FoodAndBeverageOffer/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/FoodAndBeverageOffer/v2.0/attributes.yaml](https://schema.beckn.io/FoodAndBeverageOffer/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/FoodAndBeverageOffer/attributes.jsonschema.yaml](https://schema.beckn.io/FoodAndBeverageOffer/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/FoodAndBeverageOffer/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/FoodAndBeverageOffer/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/FoodAndBeverageOffer/context.jsonld](https://schema.beckn.io/FoodAndBeverageOffer/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/FoodAndBeverageOffer/v2.0/context.jsonld](https://schema.beckn.io/FoodAndBeverageOffer/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/FoodAndBeverageOffer/vocab.jsonld](https://schema.beckn.io/FoodAndBeverageOffer/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/FoodAndBeverageOffer/v2.0/vocab.jsonld](https://schema.beckn.io/FoodAndBeverageOffer/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
 
-## Version
+## Properties
 
-v2.0.0 – Beckn Protocol v2 aligned
+| Property | Required | Type | Description |
+|---|---|---|---|
+| _none_ | - | - | - |

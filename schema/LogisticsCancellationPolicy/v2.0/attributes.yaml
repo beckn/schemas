@@ -1,18 +1,12 @@
-openapi: 3.1.0
+openapi: 3.1.1
 info:
   title: CancellationPolicy
   version: 2.0.0
   description: Schema for CancellationPolicy in Beckn Logistics domain.
-  contact:
-    name: Beckn Foundation
-    url: https://beckn.org
-  license:
-    name: MIT
-    url: https://opensource.org/licenses/MIT
 paths: {}
 components:
   schemas:
-    CancellationPolicy:
+    LogisticsCancellationPolicy:
       type: object
       title: CancellationPolicy
       description: Defines terms under which a shipment booking can be cancelled.
@@ -71,6 +65,3 @@ components:
           example:
           - EXPRESS
           - COURIER
-$id: https://schema.beckn.io/LogisticsCancellationPolicy/v2.0
-x-tags:
-- logistics

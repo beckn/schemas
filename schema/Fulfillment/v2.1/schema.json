@@ -1,0 +1,85 @@
+{
+  "$id": "https://schema.beckn.io/Fulfillment/v2.1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Schema definition for Fulfillment in the Beckn Protocol v2.0.1",
+  "title": "Fulfillment",
+  "x-tags": [
+    "common"
+  ],
+  "type": "object",
+  "properties": {
+    "@context": {
+      "description": "JSON-LD context URI",
+      "type": "string",
+      "format": "uri",
+      "const": "https://schema.beckn.io/"
+    },
+    "@type": {
+      "type": "string",
+      "enum": [
+        "Fulfillment"
+      ],
+      "x-jsonld": {
+        "@id": "schema:Thing"
+      }
+    },
+    "agent": {
+      "description": "The entity that directly performs the fulfillment",
+      "$ref": "https://schema.beckn.io/FulfillmentAgent/attributes.yaml"
+    },
+    "fulfillmentAttributes": {
+      "description": "Extensible set of domain-specific attributes describing the fulfillment",
+      "$ref": "https://schema.beckn.io/Attributes/attributes.yaml"
+    },
+    "id": {
+      "description": "Fulfillment identifier",
+      "type": "string",
+      "x-jsonld": {
+        "@id": "schema:identifier"
+      }
+    },
+    "instructions": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.beckn.io/Descriptor/attributes.yaml"
+      }
+    },
+    "mode": {
+      "description": "Extensible set of attributes describing the mode of fulfillment. Varies with Industry Use Case",
+      "x-jsonld": {
+        "@id": "beckn:FulfillmentMode"
+      },
+      "$ref": "https://schema.beckn.io/FulfillmentMode/attributes.yaml"
+    },
+    "participants": {
+      "description": "A list of participants who are entitled to receive the fulfillment of the order. By default, it is the consumer who placed the order",
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.beckn.io/Participant/attributes.yaml"
+      },
+      "minItems": 1
+    },
+    "state": {
+      "description": "The current state of fulfillment",
+      "$ref": "https://schema.beckn.io/State/attributes.yaml"
+    },
+    "stages": {
+      "description": "The various stages of the fulfillment",
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.beckn.io/FulfillmentStage/attributes.yaml"
+      },
+      "minItems": 1
+    },
+    "trackingEnabled": {
+      "description": "Whether tracking is enabled / possible for this fulfillment",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "@context",
+    "@type",
+    "mode"
+  ],
+  "additionalProperties": false
+}

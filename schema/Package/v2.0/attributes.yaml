@@ -1,22 +1,16 @@
-openapi: 3.1.0
+openapi: 3.1.1
 info:
   title: Package
   version: 2.0.0
   description: Schema definition for the Package entity in the Beckn Logistics domain.
-  contact:
-    name: Beckn Foundation
-    url: https://beckn.org
-  license:
-    name: MIT
-    url: https://opensource.org/licenses/MIT
 paths: {}
 components:
   schemas:
     Package:
       type: object
       title: Package
-      description: 'A Package is a physical unit of goods prepared for transport within a shipment. Maps
-        to beckn:Item.
+      description: 'A Package is a physical unit of goods prepared for transport within
+        a shipment. Maps to beckn:Item.
 
         '
       required:
@@ -124,6 +118,3 @@ components:
           type: boolean
           description: Whether insurance is required for this package
           example: false
-$id: https://schema.beckn.io/Package/v2.0
-x-tags:
-- logistics

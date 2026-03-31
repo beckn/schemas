@@ -1,31 +1,40 @@
-$id: https://schema.beckn.io/Provider/v2.0
-$schema: https://json-schema.org/draft/2020-12/schema
-description: Schema definition for Provider in the Beckn Protocol
-title: Provider
-type: object
-properties:
-  beckn:id:
-    type: string
-    description: Unique identifier for the provider
-    example: tech-store-001
-  beckn:descriptor:
-    $ref: 'https://schema.beckn.io/Descriptor/v2.1'
-  beckn:validity:
-    $ref: 'https://schema.beckn.io/TimePeriod/v2.1'
-  beckn:locations:
-    type: array
-    items:
-      $ref: 'https://schema.beckn.io/Location/v2.0'
-    description: Physical locations where the provider operates
-  beckn:rateable:
-    type: boolean
-    description: Whether the provider can be rated by customers
-    example: true
-  beckn:rating:
-    $ref: 'https://schema.beckn.io/Rating/v2.1'
-  beckn:providerAttributes:
-    $ref: 'https://schema.beckn.io/Attributes/v2.0'
-required:
-- beckn:id
-- beckn:descriptor
-additionalProperties: false
+openapi: 3.1.1
+info:
+  title: Provider
+  version: 2.0.0
+  description: Schema definition for Provider in the Beckn Protocol
+paths: {}
+components:
+  schemas:
+    Provider:
+      $id: https://schema.beckn.io/Provider/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: Schema definition for Provider in the Beckn Protocol
+      title: Provider
+      type: object
+      properties:
+        beckn:id:
+          type: string
+          description: Unique identifier for the provider
+          example: tech-store-001
+        beckn:descriptor:
+          $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
+        beckn:validity:
+          $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod
+        beckn:locations:
+          type: array
+          items:
+            $ref: https://schema.beckn.io/Location/attributes.yaml#/components/schemas/Location
+          description: Physical locations where the provider operates
+        beckn:rateable:
+          type: boolean
+          description: Whether the provider can be rated by customers
+          example: true
+        beckn:rating:
+          $ref: https://schema.beckn.io/Rating/attributes.yaml#/components/schemas/Rating
+        beckn:providerAttributes:
+          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+      required:
+      - beckn:id
+      - beckn:descriptor
+      additionalProperties: false

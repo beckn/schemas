@@ -1,13 +1,34 @@
-# Logistics Receipt — v2.0
+# LogisticsReceipt — v2.0
 
-The `LogisticsReceipt` schema object.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [LogisticsReceipt](../README.md)
+Digital acknowledgment of payment and delivery for a logistics service.
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | JSON Schema 2020-12 definition for `LogisticsReceipt` |
-| [context.jsonld](./context.jsonld) | JSON-LD context for `LogisticsReceipt` v2.0 |
-| [vocab.jsonld](./vocab.jsonld) | RDF vocabulary for `LogisticsReceipt` v2.0 |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/LogisticsReceipt/attributes.yaml](https://schema.beckn.io/LogisticsReceipt/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/LogisticsReceipt/v2.0/attributes.yaml](https://schema.beckn.io/LogisticsReceipt/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/LogisticsReceipt/attributes.jsonschema.yaml](https://schema.beckn.io/LogisticsReceipt/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/LogisticsReceipt/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/LogisticsReceipt/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/LogisticsReceipt/context.jsonld](https://schema.beckn.io/LogisticsReceipt/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/LogisticsReceipt/v2.0/context.jsonld](https://schema.beckn.io/LogisticsReceipt/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/LogisticsReceipt/vocab.jsonld](https://schema.beckn.io/LogisticsReceipt/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/LogisticsReceipt/v2.0/vocab.jsonld](https://schema.beckn.io/LogisticsReceipt/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
+
+## Properties
+
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `id` | yes | string | - |
+| `shipmentId` | yes | string | - |
+| `invoiceNumber` | no | string | - |
+| `issuedAt` | no | string | - |
+| `fare` | yes | $ref: https://schema.beckn.io/Fare/attributes.yaml#/components/schemas/Fare | - |
+| `paymentMode` | no | string | - |
+| `paymentTransactionId` | no | string | - |
+| `paidAt` | no | string | - |
+| `shipper` | no | $ref: https://schema.beckn.io/Contact/attributes.yaml#/components/schemas/Contact | - |
+| `consignee` | no | $ref: https://schema.beckn.io/Contact/attributes.yaml#/components/schemas/Contact | - |
+| `carrier` | no | $ref: https://schema.beckn.io/Carrier/attributes.yaml#/components/schemas/Carrier | - |
+| `deliveryProof` | no | $ref: https://schema.beckn.io/Proof/attributes.yaml#/components/schemas/Proof | - |
+| `downloadUrl` | no | string | URL to download PDF receipt |

@@ -1,0 +1,39 @@
+{
+  "$id": "https://schema.beckn.io/Instruction/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Schema definition for Instruction in the Beckn Protocol v2.0.1",
+  "title": "Instruction",
+  "type": "object",
+  "properties": {
+    "@context": {
+      "type": "string",
+      "format": "uri",
+      "const": "https://schema.beckn.io/"
+    },
+    "@type": {
+      "type": "string",
+      "enum": [
+        "Instruction"
+      ]
+    },
+    "descriptor": {
+      "$ref": "https://schema.beckn.io/Descriptor/attributes.yaml"
+    },
+    "id": {
+      "type": "string"
+    },
+    "validity": {
+      "$ref": "https://schema.beckn.io/TimePeriod/attributes.yaml"
+    }
+  },
+  "required": [
+    "@context",
+    "@type",
+    "id",
+    "descriptor"
+  ],
+  "additionalProperties": false,
+  "x-tags": [
+    "common"
+  ]
+}

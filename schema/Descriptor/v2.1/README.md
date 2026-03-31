@@ -1,33 +1,30 @@
-# Descriptor — v2.0
+# Descriptor — v2.1
 
-Reusable descriptor for display text, images, and tags.
+Schema definition for Descriptor in the Beckn Protocol v2.0.1
 
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [Descriptor](../README.md)
+This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `Descriptor` |
-
-## Root linked-data files
-
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/Descriptor/attributes.yaml](https://schema.beckn.io/Descriptor/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/Descriptor/v2.1/attributes.yaml](https://schema.beckn.io/Descriptor/v2.1/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/Descriptor/attributes.jsonschema.yaml](https://schema.beckn.io/Descriptor/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/Descriptor/v2.1/attributes.jsonschema.yaml](https://schema.beckn.io/Descriptor/v2.1/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/Descriptor/context.jsonld](https://schema.beckn.io/Descriptor/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/Descriptor/v2.1/context.jsonld](https://schema.beckn.io/Descriptor/v2.1/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/Descriptor/vocab.jsonld](https://schema.beckn.io/Descriptor/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/Descriptor/v2.1/vocab.jsonld](https://schema.beckn.io/Descriptor/v2.1/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `@context` | string | Use case specific JSON-LD context. This can change from use case to use case, even within a domain. |
-| `@type` | string | Type of the descriptor. The type can be overriden with a context-specific type |
-| `longDesc` | string | Detailed description of the item |
-| `shortDesc` | string | Short description of the item |
-| `name` | string | Name of the entity being described |
-| `thumbnailImage` | string | Name of the entity being described |
-| `docs` | [Document](../../Document/README.md)[] | Links to downloadable documents |
-| `mediaFile` | [MediaFile](../../MediaFile/README.md)[] | Links to multimedia files and images |
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `code` | no | string | A machine-readable code identifying the state or type of the entity being described. The valid values for this field are defined by the context in which the Descriptor is used (e.g. DRAFT, ACTIVE, CANCELLED, COMPLETE for a Contract status). |
+| `longDesc` | no | string | Detailed description of the item |
+| `shortDesc` | no | string | Short description of the item |
+| `name` | no | string | Name of the entity being described |
+| `thumbnailImage` | no | string | Name of the entity being described |
+| `docs` | no | array | Links to downloadable documents |
+| `mediaFile` | no | array | Links to multimedia files and images |

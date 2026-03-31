@@ -1,13 +1,22 @@
-# Occupancy Status — v2.0
+# OccupancyStatus — v2.0
 
-The `OccupancyStatus` schema object.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [OccupancyStatus](../README.md)
+Attributes for the OccupancyStatus entity in the Beckn Mobility domain.
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | JSON Schema 2020-12 definition for `OccupancyStatus` |
-| [context.jsonld](./context.jsonld) | JSON-LD context for `OccupancyStatus` v2.0 |
-| [vocab.jsonld](./vocab.jsonld) | RDF vocabulary for `OccupancyStatus` v2.0 |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/OccupancyStatus/attributes.yaml](https://schema.beckn.io/OccupancyStatus/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/OccupancyStatus/v2.0/attributes.yaml](https://schema.beckn.io/OccupancyStatus/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/OccupancyStatus/attributes.jsonschema.yaml](https://schema.beckn.io/OccupancyStatus/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/OccupancyStatus/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/OccupancyStatus/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/OccupancyStatus/context.jsonld](https://schema.beckn.io/OccupancyStatus/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/OccupancyStatus/v2.0/context.jsonld](https://schema.beckn.io/OccupancyStatus/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/OccupancyStatus/vocab.jsonld](https://schema.beckn.io/OccupancyStatus/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/OccupancyStatus/v2.0/vocab.jsonld](https://schema.beckn.io/OccupancyStatus/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
+
+## Properties
+
+| Property | Required | Type | Description |
+|---|---|---|---|
+| _none_ | - | - | - |

@@ -1,66 +1,78 @@
-$id: https://schema.beckn.io/Fulfillment/v2.0
-$schema: https://json-schema.org/draft/2020-12/schema
-description: Schema definition for Fulfillment in the Beckn Protocol
-title: Fulfillment
-type: object
-properties:
-  '@context':
-    type: string
-    format: uri
-    example: https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld
-  '@type':
-    type: string
-    enum:
-    - beckn:Fulfillment
-    x-jsonld:
-      '@id': schema:Thing
-  beckn:id:
-    type: string
-    description: Fulfillment identifier
-    x-jsonld:
-      '@id': schema:identifier
-  beckn:fulfillmentStatus:
-    type: string
-    description: Fulfillment status code (e.g., OutForDelivery, ReadyForPickup, Confirmed)
-    x-jsonld:
-      '@id': beckn:fulfillmentStatus
-  beckn:mode:
-    type: string
-    enum:
-    - DELIVERY
-    - PICKUP
-    - RESERVATION
-    - DIGITAL
-    description: 'DELIVERY    → last-mile / parcel logistics
+openapi: 3.1.1
+info:
+  title: Fulfillment
+  version: 2.0.0
+  description: Schema definition for Fulfillment in the Beckn Protocol
+paths: {}
+components:
+  schemas:
+    Fulfillment:
+      $id: https://schema.beckn.io/Fulfillment/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: Schema definition for Fulfillment in the Beckn Protocol
+      title: Fulfillment
+      type: object
+      properties:
+        '@context':
+          type: string
+          format: uri
+          example: https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld
+        '@type':
+          type: string
+          enum:
+          - beckn:Fulfillment
+          x-jsonld:
+            '@id': schema:Thing
+        beckn:id:
+          type: string
+          description: Fulfillment identifier
+          x-jsonld:
+            '@id': schema:identifier
+        beckn:fulfillmentStatus:
+          type: string
+          description: Fulfillment status code (e.g., OutForDelivery, ReadyForPickup,
+            Confirmed)
+          x-jsonld:
+            '@id': beckn:fulfillmentStatus
+        beckn:mode:
+          type: string
+          enum:
+          - DELIVERY
+          - PICKUP
+          - RESERVATION
+          - DIGITAL
+          description: 'DELIVERY    → last-mile / parcel logistics
 
-      PICKUP      → customer collects from a place
+            PICKUP      → customer collects from a place
 
-      RESERVATION → entitlement/booking is fulfilled (tickets, seats, appointments)
+            RESERVATION → entitlement/booking is fulfilled (tickets, seats, appointments)
 
-      DIGITAL     → digital good / license access
+            DIGITAL     → digital good / license access
 
-      '
-    x-jsonld:
-      '@id': beckn:mode
-  trackingAction:
-    $ref: 'https://schema.beckn.io/TrackAction/v2.1'
-    description: 'Tracking entrypoint for this fulfillment, modeled as schema.org
-      TrackAction. Use target.url for a clickable tracking URL; may also include deliveryMethod.
+            '
+          x-jsonld:
+            '@id': beckn:mode
+        trackingAction:
+          $ref: https://schema.beckn.io/TrackAction/attributes.yaml#/components/schemas/TrackAction
+          description: 'Tracking entrypoint for this fulfillment, modeled as schema.org
+            TrackAction. Use target.url for a clickable tracking URL; may also include
+            deliveryMethod.
 
-      '
-    x-jsonld:
-      '@type': schema:TrackAction
-  beckn:deliveryAttributes:
-    $ref: 'https://schema.beckn.io/Attributes/v2.0'
-    description: 'Bundle of attributes for the chosen mode:  # DELIVERY: endpoints,
-      slot windows, route & events → map to schema:ParcelDelivery / schema:DeliveryEvent
-      # PICKUP: pickupPlace, counter codes, time windows → map to schema:Place + schema:openingHoursSpecification
-      # RESERVATION: reservationStatus, reservedTicket → map to schema:Reservation
-      # DIGITAL: contentUrl/license/expiry → map to schema:DataDownload/schema:MediaObject
+            '
+          x-jsonld:
+            '@type': schema:TrackAction
+        beckn:deliveryAttributes:
+          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+          description: 'Bundle of attributes for the chosen mode:  # DELIVERY: endpoints,
+            slot windows, route & events → map to schema:ParcelDelivery / schema:DeliveryEvent
+            # PICKUP: pickupPlace, counter codes, time windows → map to schema:Place
+            + schema:openingHoursSpecification # RESERVATION: reservationStatus, reservedTicket
+            → map to schema:Reservation # DIGITAL: contentUrl/license/expiry → map
+            to schema:DataDownload/schema:MediaObject
 
-      '
-required:
-- '@context'
-- '@type'
-- beckn:mode
-additionalProperties: false
+            '
+      required:
+      - '@context'
+      - '@type'
+      - beckn:mode
+      additionalProperties: false

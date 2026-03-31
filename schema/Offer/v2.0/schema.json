@@ -1,0 +1,113 @@
+{
+  "$id": "https://schema.beckn.io/Offer/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Schema definition for Offer in the Beckn Protocol",
+  "title": "Offer",
+  "type": "object",
+  "properties": {
+    "@context": {
+      "type": "string",
+      "format": "uri",
+      "example": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"
+    },
+    "@type": {
+      "type": "string",
+      "enum": [
+        "beckn:Offer"
+      ],
+      "x-jsonld": {
+        "@id": "schema:Offer"
+      }
+    },
+    "beckn:id": {
+      "type": "string",
+      "description": "Unique id for this offer",
+      "x-jsonld": {
+        "@id": "schema:identifier"
+      }
+    },
+    "beckn:descriptor": {
+      "$ref": "https://schema.beckn.io/Descriptor/attributes.yaml"
+    },
+    "beckn:provider": {
+      "$ref": "https://schema.beckn.io/Provider/attributes.yaml",
+      "description": "Seller / provider of this offer",
+      "x-jsonld": {
+        "@id": "schema:seller"
+      }
+    },
+    "beckn:items": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "https://schema.beckn.io/Item/attributes.yaml"
+      },
+      "description": "Base item(s) the offer applies to (single or bundle)",
+      "x-jsonld": {
+        "@id": "schema:itemOffered"
+      }
+    },
+    "beckn:addOns": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.beckn.io/Offer/attributes.yaml"
+      },
+      "description": "Optional extra Offers that can be attached (e.g., warranty, gift wrap)",
+      "x-jsonld": {
+        "@id": "schema:addOn"
+      }
+    },
+    "beckn:addOnItems": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.beckn.io/Item/attributes.yaml"
+      },
+      "description": "Optional extras modeled as items (e.g., toppings, accessories)",
+      "x-jsonld": {
+        "@id": "schema:addOn"
+      }
+    },
+    "beckn:isActive": {
+      "type": "boolean",
+      "description": "Whether the offer is active",
+      "default": true
+    },
+    "beckn:validity": {
+      "$ref": "https://schema.beckn.io/TimePeriod/attributes.yaml",
+      "description": "Offer validity window",
+      "x-jsonld": {
+        "@id": "schema:availabilityStarts|schema:availabilityEnds"
+      }
+    },
+    "beckn:price": {
+      "$ref": "https://schema.beckn.io/PriceSpecification/attributes.yaml",
+      "description": "Price snapshot; detailed models can live in offerAttributes",
+      "x-jsonld": {
+        "@id": "schema:priceSpecification"
+      }
+    },
+    "beckn:eligibleRegion": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.beckn.io/Location/attributes.yaml"
+      },
+      "description": "Regions where the offer is eligible"
+    },
+    "beckn:acceptedPaymentMethod": {
+      "$ref": "https://schema.beckn.io/AcceptedPaymentMethod/attributes.yaml"
+    },
+    "beckn:offerAttributes": {
+      "$ref": "https://schema.beckn.io/Attributes/attributes.yaml",
+      "description": "Attribute Pack attachment (pricing models, discounts, rail terms, etc.)"
+    }
+  },
+  "required": [
+    "@context",
+    "@type",
+    "beckn:id",
+    "beckn:descriptor",
+    "beckn:provider",
+    "beckn:items"
+  ],
+  "additionalProperties": false
+}

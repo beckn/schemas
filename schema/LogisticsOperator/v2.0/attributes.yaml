@@ -1,22 +1,16 @@
-openapi: 3.1.0
+openapi: 3.1.1
 info:
   title: Operator
   version: 2.0.0
   description: Schema for Operator in Beckn Logistics domain.
-  contact:
-    name: Beckn Foundation
-    url: https://beckn.org
-  license:
-    name: MIT
-    url: https://opensource.org/licenses/MIT
 paths: {}
 components:
   schemas:
-    Operator:
+    LogisticsOperator:
       type: object
       title: Operator
-      description: Entity operating a logistics network or fleet, responsible for end-to-end delivery
-        service.
+      description: Entity operating a logistics network or fleet, responsible for
+        end-to-end delivery service.
       required:
       - id
       - name
@@ -36,7 +30,7 @@ components:
           - POSTAL
           example: 3PL
         contact:
-          $ref: '#/components/schemas/Contact'
+          $ref: https://schema.beckn.io/Contact/attributes.yaml#/components/schemas/Contact
         website:
           type: string
           format: uri
@@ -74,6 +68,3 @@ components:
           example:
           - ISO9001
           - GDPR_COMPLIANT
-$id: https://schema.beckn.io/LogisticsOperator/v2.0
-x-tags:
-- logistics

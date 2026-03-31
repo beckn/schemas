@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "title": "Network",
+  "description": "Attributes for the Network entity in the Beckn Mobility domain.\n",
+  "properties": {},
+  "$id": "https://schema.beckn.io/Network/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

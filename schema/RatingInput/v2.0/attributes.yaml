@@ -1,61 +1,70 @@
-$id: https://schema.beckn.io/RatingInput/v2.0
-$schema: https://json-schema.org/draft/2020-12/schema
-description: Schema definition for RatingInput in the Beckn Protocol
-title: RatingInput
-type: object
-properties:
-  '@context':
-    type: string
-    format: uri
-    example: https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld
-  '@type':
-    type: string
-    enum:
-    - beckn:RatingInput
-    x-jsonld:
-      '@id': beckn:RatingInput
-  id:
-    type: string
-    description: Target entity ID being rated (order/item/fulfillment/provider/agent).
-  ratingValue:
-    type: number
-    description: Numeric rating value (legacy usually 1–5).
-    minimum: 0
-  bestRating:
-    type: number
-    description: Maximum of the rating scale (default 5 if omitted).
-  worstRating:
-    type: number
-    description: Minimum of the rating scale (default 1 or 0 if omitted).
-  category:
-    type: string
-    description: What is being rated.
-    enum:
-    - ORDER
-    - FULFILLMENT
-    - ITEM
-    - PROVIDER
-    - AGENT
-    - OTHER
-  feedback:
-    type: object
-    additionalProperties: false
-    properties:
-      comments:
-        type: string
-      tags:
-        type: array
-        items:
+openapi: 3.1.1
+info:
+  title: RatingInput
+  version: 2.0.0
+  description: Schema definition for RatingInput in the Beckn Protocol
+paths: {}
+components:
+  schemas:
+    RatingInput:
+      $id: https://schema.beckn.io/RatingInput/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: Schema definition for RatingInput in the Beckn Protocol
+      title: RatingInput
+      type: object
+      properties:
+        '@context':
           type: string
-required:
-- '@context'
-- '@type'
-- id
-- ratingValue
-additionalProperties: false
-x-jsonld:
-  '@type': schema:Rating
-  schema:itemReviewed: $.id
-  schema:ratingValue: $.value
-  schema:bestRating: $.best
-  schema:worstRating: $.worst
+          format: uri
+          example: https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld
+        '@type':
+          type: string
+          enum:
+          - beckn:RatingInput
+          x-jsonld:
+            '@id': beckn:RatingInput
+        id:
+          type: string
+          description: Target entity ID being rated (order/item/fulfillment/provider/agent).
+        ratingValue:
+          type: number
+          description: Numeric rating value (legacy usually 1–5).
+          minimum: 0
+        bestRating:
+          type: number
+          description: Maximum of the rating scale (default 5 if omitted).
+        worstRating:
+          type: number
+          description: Minimum of the rating scale (default 1 or 0 if omitted).
+        category:
+          type: string
+          description: What is being rated.
+          enum:
+          - ORDER
+          - FULFILLMENT
+          - ITEM
+          - PROVIDER
+          - AGENT
+          - OTHER
+        feedback:
+          type: object
+          additionalProperties: false
+          properties:
+            comments:
+              type: string
+            tags:
+              type: array
+              items:
+                type: string
+      required:
+      - '@context'
+      - '@type'
+      - id
+      - ratingValue
+      additionalProperties: false
+      x-jsonld:
+        '@type': schema:Rating
+        schema:itemReviewed: $.id
+        schema:ratingValue: $.value
+        schema:bestRating: $.best
+        schema:worstRating: $.worst

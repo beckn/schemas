@@ -1,0 +1,76 @@
+{
+  "type": "object",
+  "description": "Commercial and availability terms under which a job opportunity is offered. The proposedConsideration on the core Offer object carries the midpoint or headline compensation figure; this extension provides the full range and period breakdown for display and filtering.\n",
+  "x-beckn-container": "offerAttributes",
+  "x-jsonld-context": "./context.jsonld",
+  "properties": {
+    "compensation_currency": {
+      "type": "string",
+      "description": "ISO 4217 currency code for the compensation.",
+      "x-jsonld-id": "hjoa:compensationCurrency",
+      "pattern": "^[A-Z]{3}$"
+    },
+    "compensation_min": {
+      "type": "number",
+      "description": "Lower bound of the compensation range.",
+      "x-jsonld-id": "hjoa:compensationMin",
+      "minimum": 0
+    },
+    "compensation_max": {
+      "type": "number",
+      "description": "Upper bound of the compensation range.",
+      "x-jsonld-id": "hjoa:compensationMax",
+      "minimum": 0
+    },
+    "compensation_period": {
+      "type": "string",
+      "description": "Pay period for the stated compensation figures.",
+      "x-jsonld-id": "hjoa:compensationPeriod",
+      "enum": [
+        "ANNUAL",
+        "MONTHLY",
+        "DAILY",
+        "HOURLY",
+        "GIG_UNIT"
+      ]
+    },
+    "openings_count": {
+      "type": "integer",
+      "description": "Number of positions available under this offer.",
+      "x-jsonld-id": "hjoa:openingsCount",
+      "minimum": 1
+    },
+    "application_deadline": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Latest datetime by which applications will be accepted.",
+      "x-jsonld-id": "hjoa:applicationDeadline"
+    },
+    "posting_validity": {
+      "type": "object",
+      "description": "Publication window for this offer (start and end datetimes).",
+      "x-jsonld-id": "hjoa:postingValidity",
+      "properties": {
+        "start": {
+          "type": "string",
+          "format": "date-time",
+          "x-jsonld-id": "schema:validFrom"
+        },
+        "end": {
+          "type": "string",
+          "format": "date-time",
+          "x-jsonld-id": "schema:validThrough"
+        }
+      }
+    },
+    "probation_period_months": {
+      "type": "integer",
+      "description": "Optional probation period in months applicable to this offer. Absence implies no formal probation.\n",
+      "x-jsonld-id": "hjoa:probationPeriodMonths",
+      "minimum": 0
+    }
+  },
+  "$id": "https://schema.beckn.io/HiringJobOfferAttributes/v2.1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HiringJobOfferAttributes"
+}

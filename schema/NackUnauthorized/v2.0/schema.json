@@ -1,0 +1,24 @@
+{
+  "description": "Invalid or missing authentication credentials; signature could not be verified.\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.",
+  "allOf": [
+    {
+      "$ref": "https://schema.beckn.io/Ack/attributes.yaml"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "const": "NACK"
+        },
+        "error": {
+          "$ref": "https://schema.beckn.io/Error/attributes.yaml"
+        }
+      }
+    }
+  ],
+  "x-lts": true,
+  "$id": "https://schema.beckn.io/NackUnauthorized/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NackUnauthorized"
+}

@@ -1,0 +1,21 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:CatalogOnPublishAction",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CatalogOnPublishAction",
+      "rdfs:comment": "Catalog publish processing results from CDS to BPP.\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute."
+    },
+    {
+      "@id": "beckn:results",
+      "@type": "rdf:Property",
+      "rdfs:label": "results",
+      "rdfs:comment": "Per-catalog processing results"
+    }
+  ]
+}

@@ -1,49 +1,53 @@
-openapi: "3.1.1"
+openapi: 3.1.1
 info:
   title: CredentialRequirement — Shared Type
-  version: "2.1.0"
-  description: >
-    Shared type representing a single credential requirement or prerequisite.
-    Used by hiring-jobs (job requirements) and skilling (course prerequisites).
-    A requirement specifies the category of credential, the specific subtype,
-    and whether it is mandatory for the transaction.
+  version: 2.1.0
+  description: 'Shared type representing a single credential requirement or prerequisite.
+    Used by hiring-jobs (job requirements) and skilling (course prerequisites). A
+    requirement specifies the category of credential, the specific subtype, and whether
+    it is mandatory for the transaction.
 
+    '
+paths: {}
 components:
   schemas:
     CredentialRequirement:
       type: object
-      description: >
-        A single credential requirement or prerequisite. Specifies what a
-        candidate or enrollee must hold. Category is a broad class; subtype
-        is the specific credential within that class.
+      description: 'A single credential requirement or prerequisite. Specifies what
+        a candidate or enrollee must hold. Category is a broad class; subtype is the
+        specific credential within that class.
+
+        '
       required:
-        - category
-        - subtype
-        - mandatory
+      - category
+      - subtype
+      - mandatory
       properties:
         category:
           type: string
           description: Broad class of the required credential.
-          x-jsonld-id: "cr:category"
+          x-jsonld-id: cr:category
           enum:
-            - SKILL
-            - DEGREE
-            - EXPERIENCE
-            - LICENSE
-            - CERTIFICATION
-            - ACCREDITATION
-            - AFFILIATION
-            - KYC
-            - OTHER
+          - SKILL
+          - DEGREE
+          - EXPERIENCE
+          - LICENSE
+          - CERTIFICATION
+          - ACCREDITATION
+          - AFFILIATION
+          - KYC
+          - OTHER
         subtype:
           type: string
-          description: >
-            Specific credential within the category. Examples: "AWS_SAA",
+          description: 'Specific credential within the category. Examples: "AWS_SAA",
             "BTECH_CS", "LMV_LICENSE", "Aadhaar", "Java_SE_11".
-          x-jsonld-id: "cr:subtype"
+
+            '
+          x-jsonld-id: cr:subtype
         mandatory:
           type: boolean
-          description: >
-            Whether this requirement is mandatory. If true, failure to satisfy
-            it blocks the transaction. If false, it is advisory / preferred.
-          x-jsonld-id: "cr:mandatory"
+          description: 'Whether this requirement is mandatory. If true, failure to
+            satisfy it blocks the transaction. If false, it is advisory / preferred.
+
+            '
+          x-jsonld-id: cr:mandatory

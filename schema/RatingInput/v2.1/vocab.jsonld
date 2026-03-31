@@ -1,48 +1,32 @@
 {
   "@context": {
-    "@version": 1.1,
     "beckn": "https://schema.beckn.io/",
-    "owl": "http://www.w3.org/2002/07/owl#",
-    "schema": "https://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
   },
   "@graph": [
     {
       "@id": "beckn:RatingInput",
       "@type": "rdfs:Class",
-      "rdfs:label": "Rating Input",
-      "rdfs:comment": "A form designed to capture rating and feedback from a user. This can be used by both BAP and BPP to fetch ratings and feedback of their respective users."
-    },
-    {
-      "@id": "beckn:@context",
-      "@type": "rdf:Property",
-      "rdfs:label": "@context",
-      "rdfs:comment": "TODO: Description Needed - @context"
-    },
-    {
-      "@id": "beckn:@type",
-      "@type": "rdf:Property",
-      "rdfs:label": "@type",
-      "rdfs:comment": "TODO: Description Needed - @type"
+      "rdfs:label": "RatingInput",
+      "rdfs:comment": "A form designed to capture rating and feedback from a user. This can be used by both BAP and BPP to fetch ratings and feedback of their respective users.\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute."
     },
     {
       "@id": "beckn:target",
       "@type": "rdf:Property",
       "rdfs:label": "target",
-      "rdfs:comment": "The entity being rated"
+      "rdfs:comment": "The thing being rated. It could be a person, an application, a service, a product, an instrument used in the fulfillment of the contract, or the overall experience."
     },
     {
       "@id": "beckn:range",
       "@type": "rdf:Property",
       "rdfs:label": "range",
-      "rdfs:comment": "TODO: Description Needed - range"
+      "rdfs:comment": "Property range"
     },
     {
       "@id": "beckn:feedbackFormSubmission",
       "@type": "rdf:Property",
-      "rdfs:label": "feedback Form Submission",
+      "rdfs:label": "feedbackFormSubmission",
       "rdfs:comment": "The submission to the feedback form sent along with a rating request"
     }
   ]

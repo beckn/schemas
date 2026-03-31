@@ -1,0 +1,47 @@
+{
+  "$id": "https://schema.beckn.io/OnRateAction/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Beckn /beckn/on_rate callback envelope. Sent by a BPP to a BAP in response to a /beckn/rate call, optionally returning rating forms to collect structured feedback from the consumer.\n",
+  "title": "OnRateAction",
+  "type": "object",
+  "properties": {
+    "context": {
+      "allOf": [
+        {
+          "$ref": "https://schema.beckn.io/Context/attributes.yaml"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "action": {
+              "type": "string",
+              "const": "beckn/on_rate"
+            }
+          }
+        }
+      ]
+    },
+    "message": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "ratingForms": {
+          "type": "array",
+          "items": {
+            "$ref": "https://schema.beckn.io/RatingForm/attributes.yaml"
+          }
+        }
+      },
+      "required": [
+        "ratingForms"
+      ]
+    }
+  },
+  "required": [
+    "context",
+    "message"
+  ],
+  "x-tags": [
+    "common"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "title": "Quay",
+  "description": "Attributes for the Quay entity in the Beckn Mobility domain.\n",
+  "properties": {},
+  "$id": "https://schema.beckn.io/Quay/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

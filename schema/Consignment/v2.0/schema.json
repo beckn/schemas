@@ -1,0 +1,98 @@
+{
+  "type": "object",
+  "title": "Consignment",
+  "description": "A Consignment is a collection of packages or shipments grouped together under a single commercial transaction between a shipper and consignee. Maps to beckn:Order.\n",
+  "required": [
+    "id",
+    "shipper",
+    "consignee"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique consignment identifier (e.g. AWB number)",
+      "example": "AWB-2024-9900123"
+    },
+    "shipper": {
+      "$ref": "https://schema.beckn.io/Contact/attributes.yaml"
+    },
+    "consignee": {
+      "$ref": "https://schema.beckn.io/Contact/attributes.yaml"
+    },
+    "shipments": {
+      "type": "array",
+      "description": "List of shipments in this consignment",
+      "items": {
+        "$ref": "https://schema.beckn.io/Shipment/attributes.yaml"
+      }
+    },
+    "carrier": {
+      "$ref": "https://schema.beckn.io/Carrier/attributes.yaml"
+    },
+    "totalWeight": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "unit": {
+          "type": "string",
+          "enum": [
+            "kg",
+            "ton"
+          ]
+        }
+      }
+    },
+    "totalPackages": {
+      "type": "integer",
+      "description": "Total number of packages in this consignment"
+    },
+    "serviceType": {
+      "type": "string",
+      "enum": [
+        "COURIER",
+        "INTERSTATE",
+        "LONG_HAUL",
+        "EXPRESS"
+      ]
+    },
+    "paymentMode": {
+      "type": "string",
+      "enum": [
+        "PREPAID",
+        "TO_PAY",
+        "COD"
+      ],
+      "description": "Payment responsibility"
+    },
+    "commercialInvoiceNumber": {
+      "type": "string",
+      "description": "Commercial invoice number for customs"
+    },
+    "customsDeclaration": {
+      "type": "boolean",
+      "description": "Whether customs declaration is required"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "CREATED",
+        "BOOKED",
+        "IN_TRANSIT",
+        "DELIVERED",
+        "CANCELLED"
+      ]
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "estimatedDelivery": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$id": "https://schema.beckn.io/Consignment/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

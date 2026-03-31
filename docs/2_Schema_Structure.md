@@ -58,7 +58,7 @@ Each schema directory MUST contain at least one version subdirectory.
 schema/
 └── {SchemaName}/
     └── v{MAJOR}.{MINOR}/
-        ├── attributes.yaml    ← OpenAPI 3.1 component definition (REQUIRED)
+        ├── attributes.jsonschema.yaml    ← OpenAPI 3.1 component definition (REQUIRED)
         ├── context.jsonld     ← Per-schema JSON-LD context (REQUIRED)
         └── vocab.jsonld       ← Per-schema RDF vocabulary (REQUIRED)
 ```
@@ -69,7 +69,7 @@ schema/
 schema/
 └── Address/
     └── v2.0/
-        ├── attributes.yaml
+        ├── attributes.jsonschema.yaml
         ├── context.jsonld
         └── vocab.jsonld
 ```
@@ -82,7 +82,7 @@ schema/
 
 Schema directory names MUST:
 - Use **PascalCase** (e.g., `FulfillmentStage`, not `fulfillment_stage` or `fulfillmentstage`)
-- Match exactly the schema name used in `components.schemas.{SchemaName}` in `attributes.yaml`
+- Match exactly the schema name used in `components.schemas.{SchemaName}` in `attributes.jsonschema.yaml`
 - Match exactly the term used in `schema/context.jsonld`
 
 ### 3.2 Version Directory Names
@@ -97,7 +97,7 @@ A Patch-level change (documentation correction, no structural change) MUST NOT c
 ### 3.3 File Names
 
 The three files within each version directory MUST be named exactly:
-- `attributes.yaml`
+- `attributes.jsonschema.yaml`
 - `context.jsonld`
 - `vocab.jsonld`
 
@@ -105,11 +105,11 @@ No other file names are permitted. Additional files (e.g., examples) MAY be plac
 
 ---
 
-## 4. File: `attributes.yaml`
+## 4. File: `attributes.jsonschema.yaml`
 
 ### 4.1 Purpose
 
-`attributes.yaml` is the OpenAPI 3.1 component definition for the schema. It is the primary machine-readable source of truth for the schema's attribute structure, types, and constraints.
+`attributes.jsonschema.yaml` is the OpenAPI 3.1 component definition for the schema. It is the primary machine-readable source of truth for the schema's attribute structure, types, and constraints.
 
 ### 4.2 Required Structure
 
@@ -153,7 +153,7 @@ A schema MAY reference other core schemas via relative `$ref` paths:
 
 ```yaml
 address:
-  $ref: '../../Address/v2.0/attributes.yaml#/components/schemas/Address'
+  $ref: '../../Address/v2.0/attributes.jsonschema.yaml#/components/schemas/Address'
 ```
 
 ---
@@ -183,7 +183,7 @@ address:
 ### 5.3 Constraints
 
 - The `beckn` prefix MUST resolve to `https://schema.beckn.io/core/v2.0/`.
-- Every attribute defined in `attributes.yaml` MUST have a corresponding entry in `context.jsonld`.
+- Every attribute defined in `attributes.jsonschema.yaml` MUST have a corresponding entry in `context.jsonld`.
 - Attributes with `@type: @id` (i.e., enumeration values that are IRIs) MUST define their enumeration members in a nested `@context`.
 - Deprecated term aliases MUST be preserved with an `@comment` noting the deprecation and the replacement IRI.
 
@@ -251,8 +251,8 @@ address:
 
 ### 6.3 Constraints
 
-- Every class defined in `attributes.yaml` MUST be declared as `rdfs:Class`.
-- Every attribute defined in `attributes.yaml` MUST be declared as `rdf:Property` with an appropriate `rdfs:range`.
+- Every class defined in `attributes.jsonschema.yaml` MUST be declared as `rdfs:Class`.
+- Every attribute defined in `attributes.jsonschema.yaml` MUST be declared as `rdf:Property` with an appropriate `rdfs:range`.
 - Deprecated properties MUST be annotated with `owl:deprecated: true`.
 
 ---
@@ -282,9 +282,9 @@ The root vocabulary is the union of all per-schema vocabularies. It MUST contain
 |---|---|---|
 | STR-01 | Each schema MUST have its own directory under `schema/` named in PascalCase | MUST |
 | STR-02 | Each schema version MUST have a directory named `v{MAJOR}.{MINOR}` | MUST |
-| STR-03 | Each version directory MUST contain `attributes.yaml`, `context.jsonld`, and `vocab.jsonld` | MUST |
-| STR-04 | `attributes.yaml` MUST include a valid `openapi: 3.1.1` header | MUST |
-| STR-05 | `attributes.yaml` MUST declare the schema under `components.schemas.{SchemaName}` | MUST |
+| STR-03 | Each version directory MUST contain `attributes.jsonschema.yaml`, `context.jsonld`, and `vocab.jsonld` | MUST |
+| STR-04 | `attributes.jsonschema.yaml` MUST include a valid `openapi: 3.1.1` header | MUST |
+| STR-05 | `attributes.jsonschema.yaml` MUST declare the schema under `components.schemas.{SchemaName}` | MUST |
 | STR-06 | `context.jsonld` MUST map every attribute to a `beckn:` IRI | MUST |
 | STR-07 | `vocab.jsonld` MUST declare the schema as `rdfs:Class` | MUST |
 | STR-08 | The root `schema/context.jsonld` MUST be updated for any added or modified term | MUST |

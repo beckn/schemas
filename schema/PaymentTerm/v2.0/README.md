@@ -1,30 +1,31 @@
 # PaymentTerm — v2.0
 
-A single payment instruction for an order. Represents one line item in the
-`paymentTerms` array of an Order — e.g., a pre-order UPI payment, a cash-on-delivery
-amount, or an instalment.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [PaymentTerm](../README.md)
+A single payment instruction for an order. Represents one line item in the paymentTerms array of an Order — e.g., a pre-order UPI payment, a cash-on-delivery amount, or an instalment.
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `PaymentTerm` |
-| [context.jsonld](./context.jsonld) | JSON-LD context mapping properties to beckn IRIs |
-| [vocab.jsonld](./vocab.jsonld) | RDF vocabulary declaration for this schema |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/PaymentTerm/attributes.yaml](https://schema.beckn.io/PaymentTerm/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/PaymentTerm/v2.0/attributes.yaml](https://schema.beckn.io/PaymentTerm/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/PaymentTerm/attributes.jsonschema.yaml](https://schema.beckn.io/PaymentTerm/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/PaymentTerm/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/PaymentTerm/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/PaymentTerm/context.jsonld](https://schema.beckn.io/PaymentTerm/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/PaymentTerm/v2.0/context.jsonld](https://schema.beckn.io/PaymentTerm/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/PaymentTerm/vocab.jsonld](https://schema.beckn.io/PaymentTerm/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/PaymentTerm/v2.0/vocab.jsonld](https://schema.beckn.io/PaymentTerm/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-| Property | Type | Required | Description |
-|----------|------|:--------:|-------------|
-| `@context` | `string` (uri) | ✅ | JSON-LD context URI. |
-| `@type` | `string` | ✅ | Must be `beckn:PaymentTerm`. |
-| `id` | `string` | — | Unique identifier for this payment term within the order. |
-| `type` | `string` (enum) | — | Payment lifecycle stage. |
-| `method` | `string` (enum) | — | Payment instrument or rail to use. |
-| `amount` | `object` | — | Amount due under this payment term. |
-| `due` | `string` (date-time) | — | ISO 8601 date-time by which this payment is due. |
-| `payTo` | `object` | — | Payee details for this payment term. |
-| `status` | `string` (enum) | — | Payment status. |
-| `transactionId` | `string` | — | Payment gateway or bank transaction reference ID. |
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `@context` | yes | string | - |
+| `@type` | yes | string | - |
+| `id` | no | string | Unique identifier for this payment term within the order. |
+| `type` | no | string | Payment lifecycle stage. |
+| `method` | no | string | Payment instrument or rail to use. |
+| `amount` | no | object | Amount due under this payment term. |
+| `due` | no | string | ISO 8601 date-time by which this payment is due. |
+| `payTo` | no | object | Payee details for this payment term. |
+| `status` | no | string | Payment status. |
+| `transactionId` | no | string | Payment gateway or bank transaction reference ID. |

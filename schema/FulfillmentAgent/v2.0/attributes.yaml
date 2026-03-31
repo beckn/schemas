@@ -1,46 +1,58 @@
-$id: https://schema.beckn.io/FulfillmentAgent/v2.0
-$schema: https://json-schema.org/draft/2020-12/schema
-description: The entity directly involved in fulfilling the order. It could be a person, an organization,
-  a machine, a software application, or an AI Agent.
-title: FulfillmentAgent
-allOf:
-- type: object
-  additionalProperties: false
-  properties:
-    '@context':
-      description: CPD
-      type: string
-      format: uri
-      const: https://schema.beckn.io/
-    '@type':
-      type: string
-      const: beckn:Agent
-      x-jsonld:
-        '@id': schema:Thing
-    agentAttributes:
-      description: 'Attribute Pack reference for richer identity: # agent/identity.v1 (contact details:
-        email, phone, address) # agent/org-ids.v1 (LEI, GSTIN, ISIN, CUSIP…) # consumer/kyc.v1 (jurisdictional
-        compliance fields) # (accessibility needs, etc.)
+openapi: 3.1.1
+info:
+  title: FulfillmentAgent
+  version: 2.0.0
+  description: The entity directly involved in fulfilling the order. It could be a
+    person, an organization, a machine, a software application, or an AI Agent.
+paths: {}
+components:
+  schemas:
+    FulfillmentAgent:
+      $id: https://schema.beckn.io/FulfillmentAgent/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: The entity directly involved in fulfilling the order. It could
+        be a person, an organization, a machine, a software application, or an AI
+        Agent.
+      title: FulfillmentAgent
+      allOf:
+      - type: object
+        additionalProperties: false
+        properties:
+          '@context':
+            description: CPD
+            type: string
+            format: uri
+            const: https://schema.beckn.io/
+          '@type':
+            type: string
+            const: beckn:Agent
+            x-jsonld:
+              '@id': schema:Thing
+          agentAttributes:
+            description: 'Attribute Pack reference for richer identity: # agent/identity.v1
+              (contact details: email, phone, address) # agent/org-ids.v1 (LEI, GSTIN,
+              ISIN, CUSIP…) # consumer/kyc.v1 (jurisdictional compliance fields) #
+              (accessibility needs, etc.)
 
-        '
-      $ref: https://schema.beckn.io/Attributes/v2.0
-  required:
-  - '@context'
-  - '@type'
-- oneOf:
-  - type: object
-    additionalProperties: false
-    properties:
-      person:
-        $ref: https://schema.beckn.io/Person/v2.0
-    required:
-    - person
-  - type: object
-    additionalProperties: false
-    properties:
-      organization:
-        $ref: https://schema.beckn.io/Organization/v2.0
-    required:
-    - organization
-x-tags:
-- common
+              '
+            $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+        required:
+        - '@context'
+        - '@type'
+      - oneOf:
+        - type: object
+          additionalProperties: false
+          properties:
+            person:
+              $ref: https://schema.beckn.io/Person/attributes.yaml#/components/schemas/Person
+          required:
+          - person
+        - type: object
+          additionalProperties: false
+          properties:
+            organization:
+              $ref: https://schema.beckn.io/Organization/attributes.yaml#/components/schemas/Organization
+          required:
+          - organization
+      x-tags:
+      - common

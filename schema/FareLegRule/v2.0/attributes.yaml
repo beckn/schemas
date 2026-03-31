@@ -1,14 +1,9 @@
-openapi: 3.1.0
+openapi: 3.1.1
 info:
   title: FareLegRule
   version: 2.0.0
-  description: Schema definition for the FareLegRule entity in the Beckn Mobility domain.
-  contact:
-    name: Beckn Foundation
-    url: https://beckn.org
-  license:
-    name: MIT
-    url: https://opensource.org/licenses/MIT
+  description: Schema definition for the FareLegRule entity in the Beckn Mobility
+    domain.
 paths: {}
 components:
   schemas:
@@ -19,6 +14,3 @@ components:
 
         '
       properties: {}
-$id: https://schema.beckn.io/FareLegRule/v2.0
-x-tags:
-- mobility

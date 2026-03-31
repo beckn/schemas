@@ -1,0 +1,74 @@
+{
+  "$id": "https://schema.beckn.io/Catalog/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Schema definition for Catalog in the Beckn Protocol",
+  "title": "Catalog",
+  "type": "object",
+  "properties": {
+    "@context": {
+      "type": "string",
+      "format": "uri",
+      "description": "JSON-LD context URI for the core Catalog schema"
+    },
+    "@type": {
+      "type": "string",
+      "description": "Type of the catalog",
+      "example": "beckn:Catalog"
+    },
+    "beckn:id": {
+      "type": "string",
+      "description": "Unique identifier for the catalog",
+      "example": "catalog-electronics-001"
+    },
+    "beckn:descriptor": {
+      "$ref": "https://schema.beckn.io/Descriptor/attributes.yaml"
+    },
+    "beckn:providerId": {
+      "type": "string",
+      "description": "Reference to the provider that owns this catalog",
+      "example": "tech-store-001"
+    },
+    "beckn:bppId": {
+      "type": "string",
+      "description": "BPP (Beckn Protocol Provider) identifier that publishes this catalog",
+      "example": "bpp.example.com"
+    },
+    "beckn:bppUri": {
+      "type": "string",
+      "format": "uri",
+      "description": "BPP (Beckn Protocol Provider) URI endpoint",
+      "example": "https://bpp.example.com"
+    },
+    "beckn:validity": {
+      "$ref": "https://schema.beckn.io/TimePeriod/attributes.yaml"
+    },
+    "beckn:isActive": {
+      "type": "boolean",
+      "description": "Whether the catalog is active",
+      "default": true
+    },
+    "beckn:items": {
+      "type": "array",
+      "description": "Array of beckn core Item entities in this catalog, returned directly without ItemResult wrapper for improved performance and simplified response structure\n",
+      "items": {
+        "$ref": "https://schema.beckn.io/Item/attributes.yaml"
+      }
+    },
+    "beckn:offers": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.beckn.io/Offer/attributes.yaml"
+      }
+    }
+  },
+  "required": [
+    "@context",
+    "@type",
+    "beckn:id",
+    "beckn:descriptor",
+    "beckn:bppId",
+    "beckn:bppUri",
+    "beckn:items"
+  ],
+  "additionalProperties": false
+}

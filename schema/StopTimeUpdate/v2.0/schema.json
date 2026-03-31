@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "title": "StopTimeUpdate",
+  "description": "Attributes for the StopTimeUpdate entity in the Beckn Mobility domain.\n",
+  "properties": {},
+  "$id": "https://schema.beckn.io/StopTimeUpdate/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

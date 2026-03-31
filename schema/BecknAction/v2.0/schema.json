@@ -1,0 +1,586 @@
+{
+  "$id": "https://schema.beckn.io/BecknAction/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BecknAction",
+  "x-tags": [
+    "common"
+  ],
+  "description": "Unified Beckn action envelope. All Beckn API requests and callbacks conform to this schema. The context identifies the action being performed; the message carries the action-specific payload. Message content is validated via if/then dispatch based on context.action. For unknown or extension endpoints, no if/then branch applies and message remains unconstrained.\nThis schema supersedes RequestAction and CallbackAction, both of which were structurally invalid. The request/callback distinction is encoded in the context.action value (e.g. beckn/discover vs beckn/on_discover), not in a separate schema type.",
+  "type": "object",
+  "properties": {
+    "context": {
+      "description": "Transaction context identifying the action, sender, receiver, and correlation IDs.",
+      "$ref": "https://schema.beckn.io/Context/attributes.yaml"
+    },
+    "message": {
+      "description": "Action-specific payload. Content constraints applied via if/then dispatch below.",
+      "$ref": "https://schema.beckn.io/Message/attributes.yaml"
+    }
+  },
+  "required": [
+    "context",
+    "message"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "context": {
+            "properties": {
+              "action": {
+                "const": "beckn/discover"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "message": {
+            "properties": {
+              "intent": {
+                "$ref": "https://schema.beckn.io/Intent/attributes.yaml"
+              }
+            },
+            "required": [
+              "intent"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "context": {
+            "properties": {
+              "action": {
+                "const": "beckn/on_discover"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "message": {
+            "properties": {
+              "catalogs": {
+                "type": "array",
+                "items": {
+                  "$ref": "https://schema.beckn.io/Catalog/attributes.yaml"
+                }
+              }
+            },
+            "required": [
+              "catalogs"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "context": {
+            "properties": {
+              "action": {
+                "const": "beckn/select"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "message": {
+            "properties": {
+              "contract": {
+                "$ref": "https://schema.beckn.io/Contract/attributes.yaml"
+              }
+            },
+            "required": [
+              "contract"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "context": {
+            "properties": {
+              "action": {
+                "const": "beckn/on_select"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "message": {
+            "properties": {
+              "contract": {
+                "$ref": "https://schema.beckn.io/Contract/attributes.yaml"
+              }
+            },
+            "required": [
+              "contract"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "context": {
+            "properties": {
+              "action": {
+                "const": "beckn/init"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "message": {
+            "properties": {
+              "contract": {
+                "$ref": "https://schema.beckn.io/Contract/attributes.yaml"
+              }
+            },
+            "required": [
+              "contract"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "context": {
+            "properties": {
+              "action": {
+                "const": "beckn/on_init"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "message": {
+            "properties": {
+              "contract": {
+                "$ref": "https://schema.beckn.io/Contract/attributes.yaml"
+              }
+            },
+            "required": [
+              "contract"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "context": {
+            "properties": {
+              "action": {
+                "const": "beckn/confirm"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "message": {
+            "properties": {
+              "contract": {
+                "$ref": "https://schema.beckn.io/Contract/attributes.yaml"
+              }
+            },
+            "required": [
+              "contract"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "context": {
+            "properties": {
+              "action": {
+                "const": "beckn/on_confirm"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "message": {
+            "properties": {
+              "contract": {
+                "$ref": "https://schema.beckn.io/Contract/attributes.yaml"
+              }
+            },
+            "required": [
+              "contract"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "context": {
+            "properties": {
+              "action": {
+                "const": "beckn/status"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "message": {
+            "properties": {
+              "order": {
+                "type": "object",
+                "description": "Minimal contract/order reference for the status query.",
+                "properties": {
+                  "id": {
+                    "description": "Identifier of the contract/order whose status is being queried.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id"
+                ]
+              }
+            },
+            "required": [
+              "order"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "context": {
+            "properties": {
+              "action": {
+                "const": "beckn/on_status"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "message": {
+            "properties": {
+              "contract": {
+                "$ref": "https://schema.beckn.io/Contract/attributes.yaml"
+              }
+            },
+            "required": [
+              "contract"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "context": {
+            "properties": {
+              "action": {
+                "const": "beckn/track"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "message": {
+            "properties": {
+              "tracking": {
+                "$ref": "https://schema.beckn.io/TrackingRequest/attributes.yaml"
+              }
+            },
+            "required": [
+              "tracking"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "context": {
+            "properties": {
+              "action": {
+                "const": "beckn/on_track"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "message": {
+            "properties": {
+              "tracking": {
+                "$ref": "https://schema.beckn.io/Tracking/attributes.yaml"
+              }
+            },
+            "required": [
+              "tracking"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "context": {
+            "properties": {
+              "action": {
+                "const": "beckn/update"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "message": {
+            "properties": {
+              "contract": {
+                "$ref": "https://schema.beckn.io/Contract/attributes.yaml"
+              }
+            },
+            "required": [
+              "contract"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "context": {
+            "properties": {
+              "action": {
+                "const": "beckn/on_update"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "message": {
+            "properties": {
+              "contract": {
+                "$ref": "https://schema.beckn.io/Contract/attributes.yaml"
+              }
+            },
+            "required": [
+              "contract"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "context": {
+            "properties": {
+              "action": {
+                "const": "beckn/cancel"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "message": {
+            "properties": {
+              "contract": {
+                "$ref": "https://schema.beckn.io/Contract/attributes.yaml"
+              }
+            },
+            "required": [
+              "contract"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "context": {
+            "properties": {
+              "action": {
+                "const": "beckn/on_cancel"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "message": {
+            "properties": {
+              "contract": {
+                "$ref": "https://schema.beckn.io/Contract/attributes.yaml"
+              }
+            },
+            "required": [
+              "contract"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "context": {
+            "properties": {
+              "action": {
+                "const": "beckn/rate"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "message": {
+            "properties": {
+              "ratingInputs": {
+                "type": "array",
+                "items": {
+                  "$ref": "https://schema.beckn.io/RatingInput/attributes.yaml"
+                }
+              }
+            },
+            "required": [
+              "ratingInputs"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "context": {
+            "properties": {
+              "action": {
+                "const": "beckn/on_rate"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "message": {
+            "properties": {
+              "ratingForms": {
+                "type": "array",
+                "items": {
+                  "$ref": "https://schema.beckn.io/RatingForm/attributes.yaml"
+                }
+              }
+            },
+            "required": [
+              "ratingForms"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "context": {
+            "properties": {
+              "action": {
+                "const": "beckn/support"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "message": {
+            "properties": {
+              "supportRequest": {
+                "$ref": "https://schema.beckn.io/SupportRequest/attributes.yaml"
+              }
+            },
+            "required": [
+              "supportRequest"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "context": {
+            "properties": {
+              "action": {
+                "const": "beckn/on_support"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "message": {
+            "properties": {
+              "supportInfo": {
+                "$ref": "https://schema.beckn.io/SupportInfo/attributes.yaml"
+              }
+            },
+            "required": [
+              "supportInfo"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

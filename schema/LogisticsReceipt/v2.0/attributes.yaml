@@ -1,21 +1,16 @@
-openapi: 3.1.0
+openapi: 3.1.1
 info:
   title: Receipt
   version: 2.0.0
   description: Schema for Receipt in Beckn Logistics domain.
-  contact:
-    name: Beckn Foundation
-    url: https://beckn.org
-  license:
-    name: MIT
-    url: https://opensource.org/licenses/MIT
 paths: {}
 components:
   schemas:
-    Receipt:
+    LogisticsReceipt:
       type: object
       title: Receipt
-      description: Digital acknowledgment of payment and delivery for a logistics service.
+      description: Digital acknowledgment of payment and delivery for a logistics
+        service.
       required:
       - id
       - shipmentId
@@ -34,7 +29,7 @@ components:
           type: string
           format: date-time
         fare:
-          $ref: '#/components/schemas/Fare'
+          $ref: https://schema.beckn.io/Fare/attributes.yaml#/components/schemas/Fare
         paymentMode:
           type: string
           enum:
@@ -50,17 +45,14 @@ components:
           type: string
           format: date-time
         shipper:
-          $ref: '#/components/schemas/Contact'
+          $ref: https://schema.beckn.io/Contact/attributes.yaml#/components/schemas/Contact
         consignee:
-          $ref: '#/components/schemas/Contact'
+          $ref: https://schema.beckn.io/Contact/attributes.yaml#/components/schemas/Contact
         carrier:
-          $ref: '#/components/schemas/Carrier'
+          $ref: https://schema.beckn.io/Carrier/attributes.yaml#/components/schemas/Carrier
         deliveryProof:
-          $ref: '#/components/schemas/Proof'
+          $ref: https://schema.beckn.io/Proof/attributes.yaml#/components/schemas/Proof
         downloadUrl:
           type: string
           format: uri
           description: URL to download PDF receipt
-$id: https://schema.beckn.io/LogisticsReceipt/v2.0
-x-tags:
-- logistics

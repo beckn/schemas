@@ -1,32 +1,31 @@
-# CourseResourceAttributes Schema
+# CourseResourceAttributes — v2.1
 
-**Container:** `Resource.resourceAttributes`
-**Protocol Version:** 2.0
-**Semantic Model:** generalised
-**Version:** 1.0.0
-**Use Cases:** Course discovery in any skilling ecosystem (vocational, professional, academic, government schemes)
-**Tag:** skilling education training courses credentials
+Intrinsic attributes of a training course or program Resource. Domain-generic: applicable to any skilling vertical — vocational training, professional certification, higher education, government skill schemes, etc.
 
-## Overview
+## Files
 
-`CourseResourceAttributes` extends the v2.1 `Resource` container with intrinsic metadata
-about a training course or program. It is domain-generic — applicable to any skilling
-vertical without modification.
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/CourseResourceAttributes/attributes.yaml](https://schema.beckn.io/CourseResourceAttributes/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/CourseResourceAttributes/v2.1/attributes.yaml](https://schema.beckn.io/CourseResourceAttributes/v2.1/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/CourseResourceAttributes/attributes.jsonschema.yaml](https://schema.beckn.io/CourseResourceAttributes/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/CourseResourceAttributes/v2.1/attributes.jsonschema.yaml](https://schema.beckn.io/CourseResourceAttributes/v2.1/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/CourseResourceAttributes/context.jsonld](https://schema.beckn.io/CourseResourceAttributes/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/CourseResourceAttributes/v2.1/context.jsonld](https://schema.beckn.io/CourseResourceAttributes/v2.1/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/CourseResourceAttributes/vocab.jsonld](https://schema.beckn.io/CourseResourceAttributes/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/CourseResourceAttributes/v2.1/vocab.jsonld](https://schema.beckn.io/CourseResourceAttributes/v2.1/vocab.jsonld) | RDF vocabulary (versioned path) |
 
-The schema captures what a course *is*: its level, delivery mode, duration, domain,
-location, capacity, prerequisites, schedule, and the credential issued on completion.
-Pricing and enrollment terms belong in `CourseOfferAttributes`.
+## Properties
 
-## Key Design Decision: `outcome_credential` in resourceAttributes
-
-The credential issued on course completion (`outcome_credential`) is placed in
-`resourceAttributes` — not in `contractAttributes` — because learners search by intended
-outcome ("find courses that give me an AWS SAA cert"). This is discovery-time data.
-The actual issuance tracking (`credential_issuance_pending`, `issued_credential_ref`)
-belongs in the contract and performance schemas.
-
-## Non-Goals
-
-- Does not capture pricing, seats availability, or enrollment deadlines (→ `CourseOfferAttributes`)
-- Does not capture enrollment tracking or prerequisite verification outcome (→ `CourseEnrollmentContractAttributes`)
-- Does not capture delivery execution, completion status, or actual VC issuance ref (→ `CourseDeliveryPerformanceAttributes`)
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `course_level` | no | string | Difficulty or qualification level of the course. |
+| `course_domain` | no | $ref: ../../../CodedValue/attributes.jsonschema.yaml#/components/schemas/CodedValue | Subject domain of the course, expressed using an authority-governed code system (e.g. UNESCO ISCED, India NSQF sector codes).  |
+| `delivery_mode` | no | string | How the course is delivered. |
+| `duration` | no | string | Total course duration in ISO 8601 duration format. Examples: "P3W" (3 weeks), "PT40H" (40 hours), "P6M" (6 months).  |
+| `location` | no | object | Physical location for ONSITE or HYBRID courses. |
+| `capacity` | no | integer | Maximum number of learners per cohort or batch. |
+| `schedule` | no | object | Cohort or batch schedule details. |
+| `prerequisites` | no | array | Credential prerequisites the enrollee must satisfy. Uses the shared CredentialRequirement type.  |
+| `outcome_credential` | no | object | The credential issued to a learner on successful course completion. Placed in resourceAttributes because it is intrinsic to the course and required at discovery time (learners search by intended outcome).  |
+| `industry_type` | no | $ref: ../../../CodedValue/attributes.jsonschema.yaml#/components/schemas/CodedValue | Industry alignment of the course (optional). |

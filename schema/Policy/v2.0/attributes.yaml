@@ -1,36 +1,45 @@
-$id: https://schema.beckn.io/Policy/v2.0
-$schema: https://json-schema.org/draft/2020-12/schema
-description: Schema definition for Policy in the Beckn Protocol v2.0.1
-title: Policy
-type: object
-properties:
-  '@context':
-    type: string
-    format: uri
-    const: https://schema.beckn.io/
-  '@type':
-    type: string
-    enum:
-    - Policy
-  descriptor:
-    description: Validity window for this policy version
-    $ref: https://schema.beckn.io/Descriptor/v2.1
-  id:
-    description: Identifier for the policy
-    type: string
-  policyType:
-    description: Type/kind of policy (extensible term)
-    type: string
-  validity:
-    description: Validity window for this policy version
-    $ref: https://schema.beckn.io/TimePeriod/v2.1
-  policyAttributes:
-    $ref: https://schema.beckn.io/Attributes/v2.0
-required:
-- '@context'
-- '@type'
-- id
-- descriptor
-additionalProperties: false
-x-tags:
-- common
+openapi: 3.1.1
+info:
+  title: Policy
+  version: 2.0.0
+  description: Schema definition for Policy in the Beckn Protocol v2.0.1
+paths: {}
+components:
+  schemas:
+    Policy:
+      $id: https://schema.beckn.io/Policy/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: Schema definition for Policy in the Beckn Protocol v2.0.1
+      title: Policy
+      type: object
+      properties:
+        '@context':
+          type: string
+          format: uri
+          const: https://schema.beckn.io/
+        '@type':
+          type: string
+          enum:
+          - Policy
+        descriptor:
+          description: Validity window for this policy version
+          $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
+        id:
+          description: Identifier for the policy
+          type: string
+        policyType:
+          description: Type/kind of policy (extensible term)
+          type: string
+        validity:
+          description: Validity window for this policy version
+          $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod
+        policyAttributes:
+          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+      required:
+      - '@context'
+      - '@type'
+      - id
+      - descriptor
+      additionalProperties: false
+      x-tags:
+      - common

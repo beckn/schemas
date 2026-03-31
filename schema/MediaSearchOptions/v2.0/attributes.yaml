@@ -1,29 +1,39 @@
-$id: https://schema.beckn.io/MediaSearchOptions/v2.0
-$schema: https://json-schema.org/draft/2020-12/schema
-description: How the discovery engine should use the provided media inputs.
-title: MediaSearchOptions
-type: object
-properties:
-  goals:
-    description: Desired processing goals for the media.
-    type: array
-    items:
-      type: string
-      enum:
-      - VISUAL_SIMILARITY
-      - VISUAL_OBJECT_DETECT
-      - TEXT_FROM_IMAGE
-      - TEXT_FROM_AUDIO
-      - SEMANTIC_AUDIO_MATCH
-      - SEMANTIC_VIDEO_MATCH
-  augmentTextSearch:
-    description: Whether to append extracted text from OCR/ASR to `textSearch`.
-    type: boolean
-    default: true
-  restrictResultsToMediaProximity:
-    description: Restrict results to spatial proximity of media-derived coordinates (e.g., EXIF GPS tags).
-    type: boolean
-    default: false
-additionalProperties: false
-x-tags:
-- common
+openapi: 3.1.1
+info:
+  title: MediaSearchOptions
+  version: 2.0.0
+  description: How the discovery engine should use the provided media inputs.
+paths: {}
+components:
+  schemas:
+    MediaSearchOptions:
+      $id: https://schema.beckn.io/MediaSearchOptions/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: How the discovery engine should use the provided media inputs.
+      title: MediaSearchOptions
+      type: object
+      properties:
+        goals:
+          description: Desired processing goals for the media.
+          type: array
+          items:
+            type: string
+            enum:
+            - VISUAL_SIMILARITY
+            - VISUAL_OBJECT_DETECT
+            - TEXT_FROM_IMAGE
+            - TEXT_FROM_AUDIO
+            - SEMANTIC_AUDIO_MATCH
+            - SEMANTIC_VIDEO_MATCH
+        augmentTextSearch:
+          description: Whether to append extracted text from OCR/ASR to `textSearch`.
+          type: boolean
+          default: true
+        restrictResultsToMediaProximity:
+          description: Restrict results to spatial proximity of media-derived coordinates
+            (e.g., EXIF GPS tags).
+          type: boolean
+          default: false
+      additionalProperties: false
+      x-tags:
+      - common

@@ -1,0 +1,9 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "beckn": "https://schema.beckn.io/",
+    "ServerError": "beckn:ServerError",
+    "error": "beckn:error"
+  }
+}

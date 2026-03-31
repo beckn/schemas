@@ -1,55 +1,26 @@
-# JobApplicationContractAttributes Schema
+# JobApplicationContractAttributes — v2.1
 
-**Container:** `Contract.contractAttributes`
-**Protocol Version:** 2.0
-**Semantic Model:** generalised
-**Version:** 1.0.0
-**Use Cases:** Job application transaction tracking; credential verification outcome recording
-**Tag:** hiring employment application contract verification
+Transaction-level metadata for a job application contract. Captures the application reference, aggregate verification outcome, and reverification state. No credential payloads are stored here.
 
-## Overview
+## Files
 
-`JobApplicationContractAttributes` extends the v2.1 `Contract` container with metadata
-specific to a job application transaction. The contract binds two parties — the job seeker
-(`CANDIDATE`) and the job provider (`EMPLOYER`) — in an application commitment.
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/JobApplicationContractAttributes/attributes.yaml](https://schema.beckn.io/JobApplicationContractAttributes/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/JobApplicationContractAttributes/v2.1/attributes.yaml](https://schema.beckn.io/JobApplicationContractAttributes/v2.1/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/JobApplicationContractAttributes/attributes.jsonschema.yaml](https://schema.beckn.io/JobApplicationContractAttributes/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/JobApplicationContractAttributes/v2.1/attributes.jsonschema.yaml](https://schema.beckn.io/JobApplicationContractAttributes/v2.1/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/JobApplicationContractAttributes/context.jsonld](https://schema.beckn.io/JobApplicationContractAttributes/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/JobApplicationContractAttributes/v2.1/context.jsonld](https://schema.beckn.io/JobApplicationContractAttributes/v2.1/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/JobApplicationContractAttributes/vocab.jsonld](https://schema.beckn.io/JobApplicationContractAttributes/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/JobApplicationContractAttributes/v2.1/vocab.jsonld](https://schema.beckn.io/JobApplicationContractAttributes/v2.1/vocab.jsonld) | RDF vocabulary (versioned path) |
 
-This schema captures the application reference, the aggregate credential verification
-outcome, and the reverification state. It deliberately excludes VC and VP payloads to
-preserve privacy.
+## Properties
 
-## Attachment Points
-
-| Container | Schema | Reason |
-|-----------|--------|--------|
-| `beckn:contractAttributes` | `JobApplicationContractAttributes` | Application tracking and verification outcome at transaction level |
-
-## Contract Structure
-
-```
-Contract {
-  parties:     [ { role: "CANDIDATE" }, { role: "EMPLOYER" } ]
-  commitments: [ { refType: "RESOURCE", ref: "<job-resource-id>" } ]
-  performance: [ { mode: "SERVICE", performanceAttributes: {...} } ]
-  contractAttributes: { application_reference, verification_summary, ... }
-}
-```
-
-## Design Rationale
-
-**No platform routing IDs.** Fields like `cds_listing_id` or internal platform mapping
-identifiers are intentionally absent. Platform routing is application-layer plumbing,
-not a Beckn protocol concern.
-
-**Reverification as a first-class state.** The employer's right to request re-verification
-(documented in the SkillNet design) is modelled as `reverification_requested` +
-`reverification_requirements[]`. This enables the Contract status to remain CONFIRMED while
-a reverification cycle is in progress, rather than regressing to PENDING.
-
-**No consideration.** There is no monetary transaction within the application contract.
-Compensation agreed between the parties is outside the Beckn protocol boundary.
-
-## Non-Goals
-
-- Does not store VC or VP payloads
-- Does not model the employment contract itself (that is a post-Beckn relationship)
-- Does not carry platform-internal routing identifiers
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `application_reference` | yes | string | BAP-generated unique reference for this application. Used for tracking, status queries, and audit. Not a platform routing ID.  |
+| `verification_summary` | no | $ref: ../../../VerificationSummary/attributes.jsonschema.yaml#/components/schemas/VerificationSummary | Aggregate outcome of credential verification performed during the application submission. Populated after verification completes.  |
+| `reverification_requested` | no | boolean | Whether the employer (EMPLOYER party) has requested re-verification of some or all credentials after the initial application submission.  |
+| `reverification_requirements` | no | array | Additional or revised requirements for which reverification has been requested. Only populated when reverification_requested = true.  |
+| `submitted_at` | yes | string | Timestamp when the application was submitted. |

@@ -1,30 +1,26 @@
 # Quantity — v2.0
 
-A quantity specification.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [Quantity](../README.md)
+Schema definition for Quantity in the Beckn Protocol v2.0.1
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `Quantity` |
-
-## Root linked-data files
-
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/Quantity/attributes.yaml](https://schema.beckn.io/Quantity/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/Quantity/v2.0/attributes.yaml](https://schema.beckn.io/Quantity/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/Quantity/attributes.jsonschema.yaml](https://schema.beckn.io/Quantity/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/Quantity/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/Quantity/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/Quantity/context.jsonld](https://schema.beckn.io/Quantity/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/Quantity/v2.0/context.jsonld](https://schema.beckn.io/Quantity/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/Quantity/vocab.jsonld](https://schema.beckn.io/Quantity/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/Quantity/v2.0/vocab.jsonld](https://schema.beckn.io/Quantity/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `maxQuantity` | number | Maximum quantity for this price |
-| `minQuantity` | number | Minimum quantity for this price |
-| `unitCode` | string | Unit code for the quoted price (e.g., KWH, MIN, H, MON) |
-| `unitQuantity` | number | Quantity of the unit |
-| `unitText` | string | Unit for the quoted price (e.g., kWh, minute, hour, month) |
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `maxQuantity` | no | number | Maximum quantity for this price |
+| `minQuantity` | no | number | Minimum quantity for this price |
+| `unitCode` | no | string | Unit code for the quoted price (e.g., KWH, MIN, H, MON) |
+| `unitQuantity` | no | number | Quantity of the unit |
+| `unitText` | no | string | Unit for the quoted price (e.g., kWh, minute, hour, month) |

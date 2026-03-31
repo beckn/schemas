@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "title": "Stop",
+  "description": "Attributes for the Stop entity in the Beckn Mobility domain.\n",
+  "properties": {},
+  "$id": "https://schema.beckn.io/Stop/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

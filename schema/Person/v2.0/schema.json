@@ -1,0 +1,119 @@
+{
+  "$id": "https://schema.beckn.io/Person/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A person (alive, deceased, or fictional). Modeled after schema.org/Person.",
+  "title": "Person",
+  "type": "object",
+  "properties": {
+    "@context": {
+      "type": "string",
+      "format": "uri",
+      "const": "https://schema.beckn.io/"
+    },
+    "@type": {
+      "type": "string",
+      "default": "beckn:Person"
+    },
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the person",
+      "x-jsonld": {
+        "@id": "schema:identifier"
+      }
+    },
+    "name": {
+      "type": "string",
+      "description": "Full name of the person",
+      "x-jsonld": {
+        "@id": "schema:name"
+      }
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email address",
+      "x-jsonld": {
+        "@id": "schema:email"
+      }
+    },
+    "telephone": {
+      "type": "string",
+      "description": "Telephone number",
+      "x-jsonld": {
+        "@id": "schema:telephone"
+      }
+    },
+    "address": {
+      "description": "Physical address",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.beckn.io/Address/attributes.yaml"
+        }
+      ],
+      "x-jsonld": {
+        "@id": "schema:address"
+      }
+    },
+    "age": {
+      "type": "integer",
+      "description": "Age in years",
+      "minimum": 0,
+      "x-jsonld": {
+        "@id": "schema:age"
+      }
+    },
+    "knowsLanguage": {
+      "type": "array",
+      "description": "Languages known by the person (BCP-47 codes or language names)",
+      "items": {
+        "type": "string"
+      },
+      "x-jsonld": {
+        "@id": "schema:knowsLanguage"
+      }
+    },
+    "worksFor": {
+      "description": "Organization the person works for",
+      "x-jsonld": {
+        "@id": "schema:worksFor"
+      },
+      "$ref": "https://schema.beckn.io/Organization/attributes.yaml"
+    },
+    "credentials": {
+      "type": "array",
+      "description": "Credentials held by the person",
+      "items": {
+        "$ref": "https://schema.beckn.io/Credential/attributes.yaml"
+      },
+      "x-jsonld": {
+        "@id": "schema:hasCredential"
+      }
+    },
+    "skills": {
+      "type": "array",
+      "description": "Skills possessed by the person",
+      "items": {
+        "$ref": "https://schema.beckn.io/Skill/attributes.yaml"
+      },
+      "x-jsonld": {
+        "@id": "schema:hasSkill"
+      }
+    },
+    "personAttributes": {
+      "description": "Extensible attribute pack for jurisdictional or domain-specific person properties",
+      "$ref": "https://schema.beckn.io/Attributes/attributes.yaml"
+    }
+  },
+  "required": [
+    "@context",
+    "@type",
+    "id"
+  ],
+  "additionalProperties": false,
+  "x-tags": [
+    "common"
+  ]
+}

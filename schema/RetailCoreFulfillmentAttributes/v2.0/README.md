@@ -1,26 +1,29 @@
 # RetailCoreFulfillmentAttributes — v2.0
 
-> **Canonical IRI:** [`https://schema.beckn.io/RetailCoreFulfillmentAttributes/v2.0`](https://schema.beckn.io/RetailCoreFulfillmentAttributes/v2.0)
+Retail-specific fulfillment attribute pack extending Beckn core Fulfillment. Used as the value of Fulfillment.fulfillmentAttributes for retail domain fulfillments. Covers supported fulfillment types, delivery endpoint, operating schedule, SLA semantics, and handling constraints.
 
-Schema definition for RetailCoreFulfillmentAttributes v2.0.
+## Files
+
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/RetailCoreFulfillmentAttributes/attributes.yaml](https://schema.beckn.io/RetailCoreFulfillmentAttributes/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/RetailCoreFulfillmentAttributes/v2.0/attributes.yaml](https://schema.beckn.io/RetailCoreFulfillmentAttributes/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/RetailCoreFulfillmentAttributes/attributes.jsonschema.yaml](https://schema.beckn.io/RetailCoreFulfillmentAttributes/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/RetailCoreFulfillmentAttributes/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/RetailCoreFulfillmentAttributes/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/RetailCoreFulfillmentAttributes/context.jsonld](https://schema.beckn.io/RetailCoreFulfillmentAttributes/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/RetailCoreFulfillmentAttributes/v2.0/context.jsonld](https://schema.beckn.io/RetailCoreFulfillmentAttributes/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/RetailCoreFulfillmentAttributes/vocab.jsonld](https://schema.beckn.io/RetailCoreFulfillmentAttributes/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/RetailCoreFulfillmentAttributes/v2.0/vocab.jsonld](https://schema.beckn.io/RetailCoreFulfillmentAttributes/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-| Property | Type | Required | Description |
-|----------|------|:--------:|-------------|
-| `@context` | `string` (uri) | ✅ | JSON-LD context URI for the retail fulfillment schema. |
-| `@type` | `string` | ✅ | Must be `beckn:RetailCoreFulfillmentAttributes`. |
-| `supportedFulfillmentTypes` | `array` | — | Fulfillment types supported by the provider (e.g. HOME_DELIVERY, STORE_PICKUP). |
-| `deliveryDetails` | `object` | — | Details about delivery logistics such as radius, charges, and partner. |
-| `operatingHours` | `array` | — | Operating hours windows during which fulfillment is available. |
-| `closures` | `array` | — | Scheduled closure dates or holidays. |
-| `sla` | `object` | — | Service level agreement for fulfillment, including preparation and delivery time. |
-| `handling` | `object` | — | Special handling instructions (e.g. fragile, temperature-controlled). |
-
-## Linked Data
-
-| Resource | URL |
-|----------|-----|
-| JSON Schema | `https://schema.beckn.io/RetailCoreFulfillmentAttributes/v2.0` |
-| context.jsonld | `https://schema.beckn.io/RetailCoreFulfillmentAttributes/v2.0/context.jsonld` |
-| vocab.jsonld | `https://schema.beckn.io/RetailCoreFulfillmentAttributes/v2.0/vocab.jsonld` |
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `@context` | yes | string | JSON-LD context URI for the retail fulfillment schema. |
+| `@type` | yes | string | JSON-LD type for this attribute pack. |
+| `supportedFulfillmentTypes` | no | array | Fulfillment modes supported by this provider for this offer. |
+| `deliveryDetails` | no | object | Delivery endpoint details for DELIVERY fulfillment type. |
+| `operatingHours` | no | array | Recurring store operating schedule. |
+| `closures` | no | array | Explicit closure periods overriding operatingHours. |
+| `sla` | no | object | Service level agreement for fulfillment. Indicates expected time bounds from the defined lifecycle event.  |
+| `handling` | no | array | Special handling requirements for this fulfillment. |

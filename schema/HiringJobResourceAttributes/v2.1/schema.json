@@ -1,0 +1,80 @@
+{
+  "type": "object",
+  "description": "Intrinsic attributes of a job opportunity Resource. Domain-generic: applicable to any hiring vertical (tech, construction, logistics, healthcare, gig economy, etc.).\n",
+  "x-beckn-container": "resourceAttributes",
+  "x-jsonld-context": "./context.jsonld",
+  "properties": {
+    "job_type": {
+      "type": "string",
+      "description": "Nature of the employment engagement.",
+      "x-jsonld-id": "hjra:jobType",
+      "enum": [
+        "FULL_TIME",
+        "PART_TIME",
+        "CONTRACT",
+        "INTERNSHIP",
+        "GIG",
+        "APPRENTICESHIP"
+      ]
+    },
+    "work_mode": {
+      "type": "string",
+      "description": "Physical arrangement for the role.",
+      "x-jsonld-id": "hjra:workMode",
+      "enum": [
+        "ONSITE",
+        "REMOTE",
+        "HYBRID"
+      ]
+    },
+    "industry_type": {
+      "$ref": "https://schema.beckn.io/CodedValue/attributes.yaml",
+      "description": "Industry classification using an authority-governed code system (e.g. ISIC, NIC). Provides international neutrality.\n",
+      "x-jsonld-id": "hjra:industryType"
+    },
+    "location": {
+      "type": "object",
+      "description": "Primary location of the role.",
+      "x-jsonld-id": "hjra:location",
+      "properties": {
+        "city": {
+          "type": "string",
+          "x-jsonld-id": "schema:addressLocality"
+        },
+        "region": {
+          "type": "string",
+          "x-jsonld-id": "schema:addressRegion"
+        },
+        "country": {
+          "type": "string",
+          "description": "ISO 3166-1 alpha-2 country code.",
+          "x-jsonld-id": "schema:addressCountry"
+        }
+      }
+    },
+    "service_area": {
+      "type": "string",
+      "description": "Free-text description of the geographic service area for roles not tied to a single location (e.g. field sales, delivery routes).\n",
+      "x-jsonld-id": "hjra:serviceArea"
+    },
+    "requirements": {
+      "type": "array",
+      "description": "Ordered list of credential requirements an applicant must satisfy. Mandatory requirements block the application; non-mandatory are advisory.\n",
+      "x-jsonld-id": "hjra:requirements",
+      "items": {
+        "$ref": "https://schema.beckn.io/CredentialRequirement/attributes.yaml"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "description": "Free-text tags for discovery and search indexing.",
+      "x-jsonld-id": "hjra:tags",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$id": "https://schema.beckn.io/HiringJobResourceAttributes/v2.1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HiringJobResourceAttributes"
+}

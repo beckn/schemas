@@ -56,9 +56,9 @@ Each schema's version directory uses the `v{MAJOR}.{MINOR}` path scheme (without
 
 **Patch changes do not create new directories.** They are applied in place to the existing version directory, and the change is recorded in `CHANGELOG.md`.
 
-### 2.3 Version in `attributes.yaml`
+### 2.3 Version in `attributes.jsonschema.yaml`
 
-The `info.version` field in `attributes.yaml` MUST use three-part semver (`MAJOR.MINOR.PATCH`) and MUST be updated on every change (including Patch changes).
+The `info.version` field in `attributes.jsonschema.yaml` MUST use three-part semver (`MAJOR.MINOR.PATCH`) and MUST be updated on every change (including Patch changes).
 
 ---
 
@@ -76,7 +76,7 @@ A Patch change:
 **Effect on versioning:**
 - Repository version: `PATCH` increment (e.g., `v2.0.0` → `v2.0.1`)
 - Schema directory: unchanged (no new directory)
-- `info.version` in `attributes.yaml`: `PATCH` increment
+- `info.version` in `attributes.jsonschema.yaml`: `PATCH` increment
 
 ### 3.2 Minor Change
 
@@ -126,7 +126,7 @@ Any of the following MAY be deprecated:
 A deprecation MUST follow this sequence:
 
 **Step 1 — Announce (Minor release):**
-- Add `deprecated: true` to the relevant attribute or schema in `attributes.yaml`
+- Add `deprecated: true` to the relevant attribute or schema in `attributes.jsonschema.yaml`
 - Add a `description` note citing the replacement (e.g., `"Deprecated. Use Contract instead."`)
 - Add an `@comment` to the relevant entry in `schema/context.jsonld`
 - Add an `owl:deprecated` annotation to the relevant entry in `schema/vocab.jsonld`
@@ -138,7 +138,7 @@ A deprecation MUST follow this sequence:
 - The per-schema `context.jsonld` and `vocab.jsonld` files MUST NOT be deleted
 
 **Step 3 — Remove (Major release only):**
-- The deprecated term MAY be removed from `attributes.yaml` and `vocab.jsonld` in a Major release
+- The deprecated term MAY be removed from `attributes.jsonschema.yaml` and `vocab.jsonld` in a Major release
 - The deprecated term's IRI MUST be retained in `schema/context.jsonld` indefinitely (for Linked Data backward compatibility)
 - The version directory containing the deprecated schema MUST be retained (frozen, read-only)
 

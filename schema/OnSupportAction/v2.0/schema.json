@@ -1,0 +1,44 @@
+{
+  "$id": "https://schema.beckn.io/OnSupportAction/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Beckn /beckn/on_support callback envelope. Sent by a BPP to a BAP in response to a /beckn/support call, returning support contact details and available channels.\n",
+  "title": "OnSupportAction",
+  "type": "object",
+  "properties": {
+    "context": {
+      "allOf": [
+        {
+          "$ref": "https://schema.beckn.io/Context/attributes.yaml"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "action": {
+              "type": "string",
+              "const": "beckn/on_support"
+            }
+          }
+        }
+      ]
+    },
+    "message": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "supportInfo": {
+          "$ref": "https://schema.beckn.io/SupportInfo/attributes.yaml"
+        }
+      },
+      "required": [
+        "supportInfo"
+      ]
+    }
+  },
+  "required": [
+    "context",
+    "message"
+  ],
+  "x-tags": [
+    "common"
+  ]
+}

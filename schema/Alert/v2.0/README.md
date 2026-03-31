@@ -1,32 +1,28 @@
 # Alert — v2.0
 
-Notification or alert associated with an entity.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [Alert](../README.md)
+Schema definition for Alert in the Beckn Protocol v2.0.1
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `Alert` |
-
-## Root linked-data files
-
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/Alert/attributes.yaml](https://schema.beckn.io/Alert/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/Alert/v2.0/attributes.yaml](https://schema.beckn.io/Alert/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/Alert/attributes.jsonschema.yaml](https://schema.beckn.io/Alert/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/Alert/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/Alert/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/Alert/context.jsonld](https://schema.beckn.io/Alert/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/Alert/v2.0/context.jsonld](https://schema.beckn.io/Alert/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/Alert/vocab.jsonld](https://schema.beckn.io/Alert/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/Alert/v2.0/vocab.jsonld](https://schema.beckn.io/Alert/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `@context` | string |  |
-| `@type` | string |  |
-| `affectedEntities` | string[] | IDs of entities affected (route/order/fulfillment/etc.) |
-| `descriptor` | [Descriptor](../../Descriptor/README.md) |  |
-| `id` | string |  |
-| `severity` | string |  |
-| `validity` | [TimePeriod](../../TimePeriod/README.md) |  |
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `@context` | yes | string | - |
+| `@type` | yes | string | - |
+| `affectedEntities` | no | array | IDs of entities affected (route/order/fulfillment/etc.) |
+| `descriptor` | yes | $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor | - |
+| `id` | yes | string | - |
+| `severity` | no | string | - |
+| `validity` | no | $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod | - |

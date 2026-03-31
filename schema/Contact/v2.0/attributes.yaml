@@ -1,14 +1,8 @@
-openapi: 3.1.0
+openapi: 3.1.1
 info:
   title: Contact
   version: 2.0.0
   description: Schema for Contact in Beckn Logistics domain.
-  contact:
-    name: Beckn Foundation
-    url: https://beckn.org
-  license:
-    name: MIT
-    url: https://opensource.org/licenses/MIT
 paths: {}
 components:
   schemas:
@@ -35,6 +29,3 @@ components:
         gstNumber:
           type: string
           description: GST number for B2B invoicing
-$id: https://schema.beckn.io/Contact/v2.0
-x-tags:
-- logistics

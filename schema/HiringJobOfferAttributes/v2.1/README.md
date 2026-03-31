@@ -1,41 +1,29 @@
-# HiringJobOfferAttributes Schema
+# HiringJobOfferAttributes — v2.1
 
-**Container:** `Offer.offerAttributes`
-**Protocol Version:** 2.0
-**Semantic Model:** generalised
-**Version:** 1.0.0
-**Use Cases:** Compensation display and filtering in job discovery; application deadline management
-**Tag:** hiring employment compensation offer
+Commercial and availability terms under which a job opportunity is offered. The proposedConsideration on the core Offer object carries the midpoint or headline compensation figure; this extension provides the full range and period breakdown for display and filtering.
 
-## Overview
+## Files
 
-`HiringJobOfferAttributes` extends the v2.1 `Offer` container with commercial terms specific
-to a job opportunity. It captures the compensation range, pay period, available openings count,
-application deadline, and offer validity window.
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/HiringJobOfferAttributes/attributes.yaml](https://schema.beckn.io/HiringJobOfferAttributes/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/HiringJobOfferAttributes/v2.1/attributes.yaml](https://schema.beckn.io/HiringJobOfferAttributes/v2.1/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/HiringJobOfferAttributes/attributes.jsonschema.yaml](https://schema.beckn.io/HiringJobOfferAttributes/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/HiringJobOfferAttributes/v2.1/attributes.jsonschema.yaml](https://schema.beckn.io/HiringJobOfferAttributes/v2.1/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/HiringJobOfferAttributes/context.jsonld](https://schema.beckn.io/HiringJobOfferAttributes/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/HiringJobOfferAttributes/v2.1/context.jsonld](https://schema.beckn.io/HiringJobOfferAttributes/v2.1/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/HiringJobOfferAttributes/vocab.jsonld](https://schema.beckn.io/HiringJobOfferAttributes/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/HiringJobOfferAttributes/v2.1/vocab.jsonld](https://schema.beckn.io/HiringJobOfferAttributes/v2.1/vocab.jsonld) | RDF vocabulary (versioned path) |
 
-The core `Offer` object's `beckn:proposedConsideration` carries the headline compensation figure
-(used in search rankings and generic display). This extension provides the full min/max range
-and period breakdown required for filtering and detailed display.
+## Properties
 
-## Attachment Points
-
-| Container | Schema | Reason |
-|-----------|--------|--------|
-| `beckn:offerAttributes` | `HiringJobOfferAttributes` | Commercial terms; needed at selection time |
-
-## Design Rationale
-
-**Range over single figure.** Compensation is expressed as a min/max range rather than a
-single value, reflecting the reality of hiring. The core `proposedConsideration` carries the
-midpoint or maximum for generic discovery display.
-
-**No eligibility constraints here.** Eligibility (credential requirements) belongs in
-`HiringJobResourceAttributes.requirements[]` because it is intrinsic to the role, not to
-a commercial offer. This keeps Offer focused on terms and Resource focused on what the role
-requires.
-
-## Non-Goals
-
-- Does not capture eligibility or credential requirements (→ `HiringJobResourceAttributes`)
-- Does not capture application state (→ `JobApplicationContractAttributes`)
-- Does not capture employment benefits beyond base compensation
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `compensation_currency` | no | string | ISO 4217 currency code for the compensation. |
+| `compensation_min` | no | number | Lower bound of the compensation range. |
+| `compensation_max` | no | number | Upper bound of the compensation range. |
+| `compensation_period` | no | string | Pay period for the stated compensation figures. |
+| `openings_count` | no | integer | Number of positions available under this offer. |
+| `application_deadline` | no | string | Latest datetime by which applications will be accepted. |
+| `posting_validity` | no | object | Publication window for this offer (start and end datetimes). |
+| `probation_period_months` | no | integer | Optional probation period in months applicable to this offer. Absence implies no formal probation.  |

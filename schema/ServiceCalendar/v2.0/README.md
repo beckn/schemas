@@ -1,13 +1,22 @@
-# Service Calendar — v2.0
+# ServiceCalendar — v2.0
 
-The `ServiceCalendar` schema object.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [ServiceCalendar](../README.md)
+Attributes for the ServiceCalendar entity in the Beckn Mobility domain.
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | JSON Schema 2020-12 definition for `ServiceCalendar` |
-| [context.jsonld](./context.jsonld) | JSON-LD context for `ServiceCalendar` v2.0 |
-| [vocab.jsonld](./vocab.jsonld) | RDF vocabulary for `ServiceCalendar` v2.0 |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/ServiceCalendar/attributes.yaml](https://schema.beckn.io/ServiceCalendar/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/ServiceCalendar/v2.0/attributes.yaml](https://schema.beckn.io/ServiceCalendar/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/ServiceCalendar/attributes.jsonschema.yaml](https://schema.beckn.io/ServiceCalendar/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/ServiceCalendar/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/ServiceCalendar/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/ServiceCalendar/context.jsonld](https://schema.beckn.io/ServiceCalendar/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/ServiceCalendar/v2.0/context.jsonld](https://schema.beckn.io/ServiceCalendar/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/ServiceCalendar/vocab.jsonld](https://schema.beckn.io/ServiceCalendar/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/ServiceCalendar/v2.0/vocab.jsonld](https://schema.beckn.io/ServiceCalendar/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
+
+## Properties
+
+| Property | Required | Type | Description |
+|---|---|---|---|
+| _none_ | - | - | - |

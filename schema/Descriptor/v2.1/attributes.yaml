@@ -1,45 +1,59 @@
-$id: "https://schema.beckn.io/Descriptor/v2.1"
-$schema: "https://json-schema.org/draft/2020-12/schema"
-description: Schema definition for Descriptor in the Beckn Protocol v2.0.1
-title: Descriptor
-x-tags: [common]
-type: object
-properties:
-  '@context':
-    description: Use case specific JSON-LD context. This can change from use case to use case, even within a domain.
-    type: string
-    format: uri
-    default: "https://schema.beckn.io/"
-  '@type':
-    description: Type of the descriptor. The type can be overriden with a context-specific type
-    type: string
-    default: beckn:Descriptor
-  longDesc:
-    description: Detailed description of the item
-    type: string
-    example: Powerful gaming laptop with NVIDIA RTX graphics, fast SSD storage, and high-refresh display
-  shortDesc:
-    description: Short description of the item
-    type: string
-    example: High-performance gaming laptop with RTX graphics
-  name:
-    description: Name of the entity being described
-    type: string
-    example: Premium Gaming Laptop Pro
-  thumbnailImage:
-    description: Name of the entity being described
-    type: string
-    format: uri
-  docs:
-    description: Links to downloadable documents
-    type: array
-    items:
-      $ref: "https://schema.beckn.io/Document/v2.0"
-  mediaFile:
-    description: Links to multimedia files and images
-    type: array
-    items:
-      $ref: "https://schema.beckn.io/MediaFile/v2.0"
-required:
-- '@type'
-additionalProperties: false
+openapi: 3.1.1
+info:
+  title: Descriptor
+  version: 2.1.0
+  description: 'Schema definition for Descriptor in the Beckn Protocol v2.0.1
+
+
+    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
+    and MUST NOT be extended. Any domain-specific extension must use the property
+    of this schema which is of type Attribute.'
+paths: {}
+components:
+  schemas:
+    Descriptor:
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: 'Schema definition for Descriptor in the Beckn Protocol v2.0.1
+
+
+        This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
+        and MUST NOT be extended. Any domain-specific extension must use the property
+        of this schema which is of type Attribute.'
+      title: Descriptor
+      type: object
+      properties:
+        code:
+          description: A machine-readable code identifying the state or type of the
+            entity being described. The valid values for this field are defined by
+            the context in which the Descriptor is used (e.g. DRAFT, ACTIVE, CANCELLED,
+            COMPLETE for a Contract status).
+          type: string
+        longDesc:
+          description: Detailed description of the item
+          type: string
+          example: Powerful gaming laptop with NVIDIA RTX graphics, fast SSD storage,
+            and high-refresh display
+        shortDesc:
+          description: Short description of the item
+          type: string
+          example: High-performance gaming laptop with RTX graphics
+        name:
+          description: Name of the entity being described
+          type: string
+          example: Premium Gaming Laptop Pro
+        thumbnailImage:
+          description: Name of the entity being described
+          type: string
+          format: uri
+        docs:
+          description: Links to downloadable documents
+          type: array
+          items:
+            $ref: https://schema.beckn.io/Document/attributes.yaml#/components/schemas/Document
+        mediaFile:
+          description: Links to multimedia files and images
+          type: array
+          items:
+            $ref: https://schema.beckn.io/MediaFile/attributes.yaml#/components/schemas/MediaFile
+      additionalProperties: false
+      x-lts: true

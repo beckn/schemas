@@ -92,7 +92,7 @@ This repository (`beckn/common_schema`) contains:
 |---|---|
 | `schema/context.jsonld` | The unified JSON-LD context mapping all core schema terms to `beckn:` IRIs |
 | `schema/vocab.jsonld` | The RDF vocabulary defining all classes and properties |
-| `schema/{SchemaName}/v2.0/attributes.yaml` | OpenAPI 3.1 component definition for the schema |
+| `schema/{SchemaName}/v2.0/attributes.jsonschema.yaml` | OpenAPI 3.1 component definition for the schema |
 | `schema/{SchemaName}/v2.0/context.jsonld` | Per-schema JSON-LD context |
 | `schema/{SchemaName}/v2.0/vocab.jsonld` | Per-schema RDF vocabulary |
 | `docs/` | This documentation |

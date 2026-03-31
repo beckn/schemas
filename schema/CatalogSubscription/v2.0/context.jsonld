@@ -1,0 +1,16 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "beckn": "https://schema.beckn.io/",
+    "CatalogSubscription": "beckn:CatalogSubscription",
+    "id": "beckn:id",
+    "networkIds": "beckn:networkIds",
+    "schemaTypes": "beckn:schemaTypes",
+    "callbackUrl": "beckn:callbackUrl",
+    "status": "beckn:status",
+    "deliveryPolicy": "beckn:deliveryPolicy",
+    "createdAt": "beckn:createdAt",
+    "updatedAt": "beckn:updatedAt"
+  }
+}

@@ -1,31 +1,27 @@
 # Time — v2.0
 
-A time value.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [Time](../README.md)
+Represents a moment or duration in time. Can express a timestamp, a duration, or a time range.
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `Time` |
-
-## Root linked-data files
-
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/Time/attributes.yaml](https://schema.beckn.io/Time/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/Time/v2.0/attributes.yaml](https://schema.beckn.io/Time/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/Time/attributes.jsonschema.yaml](https://schema.beckn.io/Time/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/Time/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/Time/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/Time/context.jsonld](https://schema.beckn.io/Time/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/Time/v2.0/context.jsonld](https://schema.beckn.io/Time/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/Time/vocab.jsonld](https://schema.beckn.io/Time/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/Time/v2.0/vocab.jsonld](https://schema.beckn.io/Time/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `@context` | string |  |
-| `@type` | string |  |
-| `timestamp` | string | A specific instant in time (ISO 8601) |
-| `duration` | string | ISO 8601 duration (e.g., PT30M for 30 minutes) |
-| `range` | [TimePeriod](../../TimePeriod/README.md) | A time range with start and end |
-| `label` | string | Human-readable label for this time |
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `@context` | no | string | - |
+| `@type` | no | string | - |
+| `timestamp` | no | string | A specific instant in time (ISO 8601) |
+| `duration` | no | string | ISO 8601 duration (e.g., PT30M for 30 minutes) |
+| `range` | no | $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod | A time range with start and end |
+| `label` | no | string | Human-readable label for this time |

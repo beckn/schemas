@@ -1,35 +1,44 @@
-$id: https://schema.beckn.io/Alert/v2.0
-$schema: https://json-schema.org/draft/2020-12/schema
-description: Schema definition for Alert in the Beckn Protocol v2.0.1
-title: Alert
-type: object
-properties:
-  '@context':
-    type: string
-    format: uri
-    const: https://schema.beckn.io/
-  '@type':
-    type: string
-    enum:
-    - Alert
-  affectedEntities:
-    description: IDs of entities affected (route/order/fulfillment/etc.)
-    type: array
-    items:
-      type: string
-  descriptor:
-    $ref: https://schema.beckn.io/Descriptor/v2.1
-  id:
-    type: string
-  severity:
-    type: string
-  validity:
-    $ref: https://schema.beckn.io/TimePeriod/v2.1
-required:
-- '@context'
-- '@type'
-- id
-- descriptor
-additionalProperties: false
-x-tags:
-- common
+openapi: 3.1.1
+info:
+  title: Alert
+  version: 2.0.0
+  description: Schema definition for Alert in the Beckn Protocol v2.0.1
+paths: {}
+components:
+  schemas:
+    Alert:
+      $id: https://schema.beckn.io/Alert/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: Schema definition for Alert in the Beckn Protocol v2.0.1
+      title: Alert
+      type: object
+      properties:
+        '@context':
+          type: string
+          format: uri
+          const: https://schema.beckn.io/
+        '@type':
+          type: string
+          enum:
+          - Alert
+        affectedEntities:
+          description: IDs of entities affected (route/order/fulfillment/etc.)
+          type: array
+          items:
+            type: string
+        descriptor:
+          $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
+        id:
+          type: string
+        severity:
+          type: string
+        validity:
+          $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod
+      required:
+      - '@context'
+      - '@type'
+      - id
+      - descriptor
+      additionalProperties: false
+      x-tags:
+      - common

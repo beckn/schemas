@@ -1,0 +1,41 @@
+{
+  "$id": "https://schema.beckn.io/SupportRequest/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Support request by a user. If no field is set, the user can expect a public support contact info",
+  "title": "SupportRequest",
+  "type": "object",
+  "properties": {
+    "@context": {
+      "type": "string",
+      "format": "uri",
+      "default": "https://schema.beckn.io/"
+    },
+    "@type": {
+      "type": "string",
+      "const": "Support"
+    },
+    "orderId": {
+      "description": "The order against which support is required",
+      "type": "string"
+    },
+    "ticketIds": {
+      "description": "IDs of support ticket if open",
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.beckn.io/SupportTicket/attributes.yaml"
+      }
+    },
+    "callbackPhone": {
+      "description": "Telephone number of the user for callback.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "@context",
+    "@type"
+  ],
+  "additionalProperties": false,
+  "x-tags": [
+    "common"
+  ]
+}

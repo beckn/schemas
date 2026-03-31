@@ -1,0 +1,46 @@
+{
+  "$id": "https://schema.beckn.io/Rating/v2.1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Aggregated rating information for an entity. Aligns with schema.org/AggregateRating semantics.",
+  "title": "Rating",
+  "type": "object",
+  "properties": {
+    "@context": {
+      "type": "string",
+      "format": "uri",
+      "const": "https://schema.beckn.io/"
+    },
+    "@type": {
+      "type": "string",
+      "default": "beckn:Rating"
+    },
+    "ratingValue": {
+      "description": "Rating value (typically 0-5)",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 5,
+      "x-jsonld": {
+        "@id": "schema:ratingValue"
+      }
+    },
+    "ratingCount": {
+      "description": "Number of ratings",
+      "type": "integer",
+      "minimum": 0,
+      "x-jsonld": {
+        "@id": "schema:ratingCount"
+      }
+    },
+    "reviewText": {
+      "description": "Optional textual review or comment",
+      "type": "string",
+      "x-jsonld": {
+        "@id": "schema:reviewBody"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "x-tags": [
+    "common"
+  ]
+}

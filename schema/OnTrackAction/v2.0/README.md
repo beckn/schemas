@@ -1,27 +1,23 @@
 # OnTrackAction — v2.0
 
-Callback action for tracking.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [OnTrackAction](../README.md)
+Beckn /beckn/on_track callback envelope. Sent by a BPP to a BAP in response to a /beckn/track call, returning a Tracking handle with the URL and/or WebSocket endpoint for real-time fulfillment tracking.
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `OnTrackAction` |
-
-## Root linked-data files
-
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/OnTrackAction/attributes.yaml](https://schema.beckn.io/OnTrackAction/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/OnTrackAction/v2.0/attributes.yaml](https://schema.beckn.io/OnTrackAction/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/OnTrackAction/attributes.jsonschema.yaml](https://schema.beckn.io/OnTrackAction/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/OnTrackAction/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/OnTrackAction/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/OnTrackAction/context.jsonld](https://schema.beckn.io/OnTrackAction/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/OnTrackAction/v2.0/context.jsonld](https://schema.beckn.io/OnTrackAction/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/OnTrackAction/vocab.jsonld](https://schema.beckn.io/OnTrackAction/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/OnTrackAction/v2.0/vocab.jsonld](https://schema.beckn.io/OnTrackAction/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `context` | [Context](../../Context/README.md) |  |
-| `message` | object |  |
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `context` | yes | allOf | - |
+| `message` | yes | object | - |

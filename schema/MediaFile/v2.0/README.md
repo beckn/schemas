@@ -1,28 +1,24 @@
 # MediaFile — v2.0
 
-A media file attachment.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [MediaFile](../README.md)
+A image, audio, or video typically intended for display purposes
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `MediaFile` |
-
-## Root linked-data files
-
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/MediaFile/attributes.yaml](https://schema.beckn.io/MediaFile/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/MediaFile/v2.0/attributes.yaml](https://schema.beckn.io/MediaFile/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/MediaFile/attributes.jsonschema.yaml](https://schema.beckn.io/MediaFile/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/MediaFile/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/MediaFile/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/MediaFile/context.jsonld](https://schema.beckn.io/MediaFile/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/MediaFile/v2.0/context.jsonld](https://schema.beckn.io/MediaFile/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/MediaFile/vocab.jsonld](https://schema.beckn.io/MediaFile/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/MediaFile/v2.0/vocab.jsonld](https://schema.beckn.io/MediaFile/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `label` | string | The display name of the media file |
-| `mimeType` | | MIME type if 'data' is provided (application/pdf, image/png). |
-| `uri` | string | URL to the document |
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `label` | no | string | The display name of the media file |
+| `mimeType` | no | string | MIME type if 'data' is provided (application/pdf, image/png). |
+| `uri` | no | string | URL to the document |

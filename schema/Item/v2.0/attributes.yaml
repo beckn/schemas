@@ -1,64 +1,73 @@
-$id: https://schema.beckn.io/Item/v2.0
-$schema: https://json-schema.org/draft/2020-12/schema
-description: Schema definition for Item in the Beckn Protocol
-title: Item
-type: object
-properties:
-  '@context':
-    type: string
-    format: uri
-    description: JSON-LD context URI for the core Item schema
-  '@type':
-    type: string
-    description: Type of the core item
-    enum:
-    - beckn:Item
-  beckn:id:
-    type: string
-    description: Unique identifier for the item
-    example: gaming-laptop-001
-  beckn:descriptor:
-    $ref: 'https://schema.beckn.io/Descriptor/v2.1'
-  beckn:category:
-    $ref: 'https://schema.beckn.io/CategoryCode/v2.1'
-  beckn:availableAt:
-    type: array
-    items:
-      $ref: 'https://schema.beckn.io/Location/v2.0'
-    description: Physical locations where the item is available
-  beckn:availabilityWindow:
-    type: array
-    items:
-      $ref: 'https://schema.beckn.io/TimePeriod/v2.1'
-    description: Time periods when the item is available
-  beckn:rateable:
-    type: boolean
-    description: Whether the item can be rated by customers
-    example: true
-  beckn:rating:
-    $ref: 'https://schema.beckn.io/Rating/v2.1'
-  beckn:isActive:
-    type: boolean
-    description: Whether the item is active
-    default: true
-  beckn:networkId:
-    type: array
-    items:
-      type: string
-    description: Array of network identifiers for the BAP (Beckn App Provider) that
-      offers this item
-    example:
-    - bap.net/electronics
-    - bap.net/tech
-  beckn:provider:
-    $ref: 'https://schema.beckn.io/Provider/v2.1'
-  beckn:itemAttributes:
-    $ref: 'https://schema.beckn.io/Attributes/v2.0'
-required:
-- '@context'
-- '@type'
-- beckn:id
-- beckn:descriptor
-- beckn:provider
-- beckn:itemAttributes
-additionalProperties: false
+openapi: 3.1.1
+info:
+  title: Item
+  version: 2.0.0
+  description: Schema definition for Item in the Beckn Protocol
+paths: {}
+components:
+  schemas:
+    Item:
+      $id: https://schema.beckn.io/Item/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: Schema definition for Item in the Beckn Protocol
+      title: Item
+      type: object
+      properties:
+        '@context':
+          type: string
+          format: uri
+          description: JSON-LD context URI for the core Item schema
+        '@type':
+          type: string
+          description: Type of the core item
+          enum:
+          - beckn:Item
+        beckn:id:
+          type: string
+          description: Unique identifier for the item
+          example: gaming-laptop-001
+        beckn:descriptor:
+          $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
+        beckn:category:
+          $ref: https://schema.beckn.io/CategoryCode/attributes.yaml#/components/schemas/CategoryCode
+        beckn:availableAt:
+          type: array
+          items:
+            $ref: https://schema.beckn.io/Location/attributes.yaml#/components/schemas/Location
+          description: Physical locations where the item is available
+        beckn:availabilityWindow:
+          type: array
+          items:
+            $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod
+          description: Time periods when the item is available
+        beckn:rateable:
+          type: boolean
+          description: Whether the item can be rated by customers
+          example: true
+        beckn:rating:
+          $ref: https://schema.beckn.io/Rating/attributes.yaml#/components/schemas/Rating
+        beckn:isActive:
+          type: boolean
+          description: Whether the item is active
+          default: true
+        beckn:networkId:
+          type: array
+          items:
+            type: string
+          description: Array of network identifiers for the BAP (Beckn App Provider)
+            that offers this item
+          example:
+          - bap.net/electronics
+          - bap.net/tech
+        beckn:provider:
+          $ref: https://schema.beckn.io/Provider/attributes.yaml#/components/schemas/Provider
+        beckn:itemAttributes:
+          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+      required:
+      - '@context'
+      - '@type'
+      - beckn:id
+      - beckn:descriptor
+      - beckn:provider
+      - beckn:itemAttributes
+      additionalProperties: false

@@ -1,13 +1,22 @@
 # Telemetry — v2.0
 
-The `Telemetry` schema object.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [Telemetry](../README.md)
+Attributes for the Telemetry entity in the Beckn Mobility domain.
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | JSON Schema 2020-12 definition for `Telemetry` |
-| [context.jsonld](./context.jsonld) | JSON-LD context for `Telemetry` v2.0 |
-| [vocab.jsonld](./vocab.jsonld) | RDF vocabulary for `Telemetry` v2.0 |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/Telemetry/attributes.yaml](https://schema.beckn.io/Telemetry/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/Telemetry/v2.0/attributes.yaml](https://schema.beckn.io/Telemetry/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/Telemetry/attributes.jsonschema.yaml](https://schema.beckn.io/Telemetry/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/Telemetry/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/Telemetry/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/Telemetry/context.jsonld](https://schema.beckn.io/Telemetry/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/Telemetry/v2.0/context.jsonld](https://schema.beckn.io/Telemetry/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/Telemetry/vocab.jsonld](https://schema.beckn.io/Telemetry/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/Telemetry/v2.0/vocab.jsonld](https://schema.beckn.io/Telemetry/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
+
+## Properties
+
+| Property | Required | Type | Description |
+|---|---|---|---|
+| _none_ | - | - | - |

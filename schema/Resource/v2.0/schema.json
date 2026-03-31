@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "description": "A minimal, domain-neutral abstraction representing any discoverable,\nreferenceable, or committable unit of value, capability, service,\nentitlement, or asset within the network.\n\nExamples:\n- A retail product SKU, a mobility ride, a job role, a carbon credit unit,\n a dataset/API entitlement, a training course, a clinic service slot.\n\nDesigned for composability through `resourceAttributes` where\ndomain packs can plug in their specific fields without changing the core.\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.",
+  "required": [
+    "id"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Globally unique identifier of the resource."
+    },
+    "descriptor": {
+      "$ref": "https://schema.beckn.io/Descriptor/attributes.yaml"
+    },
+    "resourceAttributes": {
+      "description": "All the properties of a resource that describe its value, its terms of usage, fulfillment, and consideration",
+      "$ref": "https://schema.beckn.io/Attributes/attributes.yaml"
+    }
+  },
+  "x-lts": true,
+  "$id": "https://schema.beckn.io/Resource/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Resource"
+}

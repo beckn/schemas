@@ -1,12 +1,22 @@
-$id: "https://schema.beckn.io/ErrorResponse/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
-description: Schema definition for ErrorResponse in the Beckn Protocol v2.0.1
-title: ErrorResponse
-x-tags: [common]
-type: object
-properties:
-  error:
-    $ref: "https://schema.beckn.io/Error/v2.0"
-required:
-- error
-additionalProperties: false
+openapi: 3.1.1
+info:
+  title: ErrorResponse
+  version: 2.0.0
+  description: Schema definition for ErrorResponse in the Beckn Protocol v2.0.1
+paths: {}
+components:
+  schemas:
+    ErrorResponse:
+      $id: https://schema.beckn.io/ErrorResponse/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: Schema definition for ErrorResponse in the Beckn Protocol v2.0.1
+      title: ErrorResponse
+      x-tags:
+      - common
+      type: object
+      properties:
+        error:
+          $ref: https://schema.beckn.io/Error/attributes.yaml#/components/schemas/Error
+      required:
+      - error
+      additionalProperties: false

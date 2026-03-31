@@ -1,0 +1,13 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "beckn": "https://schema.beckn.io/",
+    "Commitment": "beckn:Commitment",
+    "id": "beckn:id",
+    "status": "beckn:status",
+    "resources": "beckn:resources",
+    "offer": "beckn:offer",
+    "commitmentAttributes": "beckn:commitmentAttributes"
+  }
+}

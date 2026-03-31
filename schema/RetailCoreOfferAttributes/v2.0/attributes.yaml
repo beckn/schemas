@@ -1,172 +1,203 @@
-$id: https://schema.beckn.io/RetailCoreOfferAttributes/v2.0
-$schema: https://json-schema.org/draft/2020-12/schema
-description: >
-  Retail-specific offer attribute pack, used as the value of Offer.offerAttributes
-  for retail domain offers. Covers return/cancellation/replacement policies,
-  payment constraints, serviceability (distance + timing), daily time window,
-  and holidays.
-title: RetailCoreOfferAttributes
-x-tags: [retail]
-type: object
-properties:
-  '@context':
-    description: JSON-LD context URI for the retail offer schema.
-    type: string
-    format: uri
-  '@type':
-    description: JSON-LD type for this attribute pack.
-    type: string
-    const: beckn:RetailCoreOfferAttributes
+openapi: 3.1.1
+info:
+  title: RetailCoreOfferAttributes
+  version: 2.0.0
+  description: 'Retail-specific offer attribute pack, used as the value of Offer.offerAttributes
+    for retail domain offers. Covers return/cancellation/replacement policies, payment
+    constraints, serviceability (distance + timing), daily time window, and holidays.
 
-  policies:
-    type: object
-    additionalProperties: false
-    properties:
+    '
+paths: {}
+components:
+  schemas:
+    RetailCoreOfferAttributes:
+      $id: https://schema.beckn.io/RetailCoreOfferAttributes/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: 'Retail-specific offer attribute pack, used as the value of Offer.offerAttributes
+        for retail domain offers. Covers return/cancellation/replacement policies,
+        payment constraints, serviceability (distance + timing), daily time window,
+        and holidays.
 
-      returns:
-        type: object
-        additionalProperties: false
-        description: Return policy applicable to the offer.
-        properties:
-          allowed:
-            type: boolean
-          window:
-            type: string
-            description: >
-              Return window as ISO 8601 duration (e.g., P7D). Interpreted from
-              order delivery unless specified otherwise by profile.
-          method:
-            type: string
-            enum: [SELLER_PICKUP, BUYER_SHIP, DROP_OFF]
-            description: Return handling method.
-          restockingFee:
-            type: object
-            additionalProperties: false
-            description: Optional restocking fee applicable on return.
-            properties:
-              type:
-                type: string
-                enum: [PERCENTAGE, FIXED]
-              value:
-                type: number
-          conditions:
-            type: string
-            description: Optional textual conditions (e.g., unopened packaging required).
-
-      cancellation:
-        type: object
-        additionalProperties: false
-        description: Cancellation policy applicable to the offer.
-        properties:
-          allowed:
-            type: boolean
-          window:
-            type: string
-            description: Cancellation window as ISO 8601 duration (e.g., PT30M, P1D).
-          cutoffEvent:
-            type: string
-            enum: [BEFORE_CONFIRMATION, BEFORE_PACKING, BEFORE_SHIPMENT]
-            description: Optional lifecycle cutoff for cancellation eligibility.
-          fee:
-            type: object
-            additionalProperties: false
-            description: Optional cancellation fee.
-            properties:
-              type:
-                type: string
-                enum: [PERCENTAGE, FIXED]
-              value:
-                type: number
-
-      replacement:
-        type: object
-        additionalProperties: false
-        description: Replacement policy applicable to the offer.
-        properties:
-          allowed:
-            type: boolean
-          window:
-            type: string
-            description: >
-              Replacement window as ISO 8601 duration (e.g., P7D). Interpreted
-              from order delivery unless specified otherwise by profile.
-          method:
-            type: string
-            enum: [SELLER_PICKUP, BUYER_SHIP, DROP_OFF]
-            description: Replacement handling method.
-          conditions:
-            type: string
-            description: Optional conditions (e.g., damaged item only, wrong item delivered).
-          subjectToAvailability:
-            type: boolean
-            description: Whether replacement depends on stock availability.
-
-  paymentConstraints:
-    type: object
-    additionalProperties: false
-    properties:
-      codAvailable:
-        type: boolean
-
-  serviceability:
-    type: object
-    additionalProperties: false
-    description: >
-      Additional serviceability constraints beyond geographic eligibility
-      (handled via core Offer.eligibleRegion).
-    properties:
-      distanceConstraint:
-        type: object
-        additionalProperties: false
-        description: Circular distance constraint from provider location.
-        properties:
-          maxDistance:
-            type: number
-          unit:
-            type: string
-            enum: [KM]
-      timing:
-        type: array
-        description: Recurring schedule constraints for accepting orders.
-        items:
+        '
+      title: RetailCoreOfferAttributes
+      x-tags:
+      - retail
+      type: object
+      properties:
+        '@context':
+          description: JSON-LD context URI for the retail offer schema.
+          type: string
+          format: uri
+        '@type':
+          description: JSON-LD type for this attribute pack.
+          type: string
+          const: beckn:RetailCoreOfferAttributes
+        policies:
           type: object
           additionalProperties: false
           properties:
-            daysOfWeek:
-              type: array
-              items:
-                type: string
-            timeRange:
+            returns:
               type: object
               additionalProperties: false
-              required: [start, end]
+              description: Return policy applicable to the offer.
               properties:
-                start:
+                allowed:
+                  type: boolean
+                window:
                   type: string
-                end:
+                  description: 'Return window as ISO 8601 duration (e.g., P7D). Interpreted
+                    from order delivery unless specified otherwise by profile.
+
+                    '
+                method:
                   type: string
+                  enum:
+                  - SELLER_PICKUP
+                  - BUYER_SHIP
+                  - DROP_OFF
+                  description: Return handling method.
+                restockingFee:
+                  type: object
+                  additionalProperties: false
+                  description: Optional restocking fee applicable on return.
+                  properties:
+                    type:
+                      type: string
+                      enum:
+                      - PERCENTAGE
+                      - FIXED
+                    value:
+                      type: number
+                conditions:
+                  type: string
+                  description: Optional textual conditions (e.g., unopened packaging
+                    required).
+            cancellation:
+              type: object
+              additionalProperties: false
+              description: Cancellation policy applicable to the offer.
+              properties:
+                allowed:
+                  type: boolean
+                window:
+                  type: string
+                  description: Cancellation window as ISO 8601 duration (e.g., PT30M,
+                    P1D).
+                cutoffEvent:
+                  type: string
+                  enum:
+                  - BEFORE_CONFIRMATION
+                  - BEFORE_PACKING
+                  - BEFORE_SHIPMENT
+                  description: Optional lifecycle cutoff for cancellation eligibility.
+                fee:
+                  type: object
+                  additionalProperties: false
+                  description: Optional cancellation fee.
+                  properties:
+                    type:
+                      type: string
+                      enum:
+                      - PERCENTAGE
+                      - FIXED
+                    value:
+                      type: number
+            replacement:
+              type: object
+              additionalProperties: false
+              description: Replacement policy applicable to the offer.
+              properties:
+                allowed:
+                  type: boolean
+                window:
+                  type: string
+                  description: 'Replacement window as ISO 8601 duration (e.g., P7D).
+                    Interpreted from order delivery unless specified otherwise by
+                    profile.
 
-  timeRange:
-    type: object
-    additionalProperties: false
-    description: Daily time window applicable on the specified days.
-    required: [start, end]
-    properties:
-      start:
-        type: string
-        description: Start time (HH:MM format).
-      end:
-        type: string
-        description: End time (HH:MM format).
+                    '
+                method:
+                  type: string
+                  enum:
+                  - SELLER_PICKUP
+                  - BUYER_SHIP
+                  - DROP_OFF
+                  description: Replacement handling method.
+                conditions:
+                  type: string
+                  description: Optional conditions (e.g., damaged item only, wrong
+                    item delivered).
+                subjectToAvailability:
+                  type: boolean
+                  description: Whether replacement depends on stock availability.
+        paymentConstraints:
+          type: object
+          additionalProperties: false
+          properties:
+            codAvailable:
+              type: boolean
+        serviceability:
+          type: object
+          additionalProperties: false
+          description: 'Additional serviceability constraints beyond geographic eligibility
+            (handled via core Offer.eligibleRegion).
 
-  holidays:
-    type: array
-    description: Specific dates excluded from this offer's availability.
-    items:
-      type: string
-      format: date
-
-required:
-- '@context'
-- '@type'
-additionalProperties: true
+            '
+          properties:
+            distanceConstraint:
+              type: object
+              additionalProperties: false
+              description: Circular distance constraint from provider location.
+              properties:
+                maxDistance:
+                  type: number
+                unit:
+                  type: string
+                  enum:
+                  - KM
+            timing:
+              type: array
+              description: Recurring schedule constraints for accepting orders.
+              items:
+                type: object
+                additionalProperties: false
+                properties:
+                  daysOfWeek:
+                    type: array
+                    items:
+                      type: string
+                  timeRange:
+                    type: object
+                    additionalProperties: false
+                    required:
+                    - start
+                    - end
+                    properties:
+                      start:
+                        type: string
+                      end:
+                        type: string
+        timeRange:
+          type: object
+          additionalProperties: false
+          description: Daily time window applicable on the specified days.
+          required:
+          - start
+          - end
+          properties:
+            start:
+              type: string
+              description: Start time (HH:MM format).
+            end:
+              type: string
+              description: End time (HH:MM format).
+        holidays:
+          type: array
+          description: Specific dates excluded from this offer's availability.
+          items:
+            type: string
+            format: date
+      required:
+      - '@context'
+      - '@type'
+      additionalProperties: true

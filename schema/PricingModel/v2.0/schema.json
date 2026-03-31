@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "title": "PricingModel",
+  "description": "Attributes for the PricingModel entity in the Beckn Mobility domain.\n",
+  "properties": {},
+  "$id": "https://schema.beckn.io/PricingModel/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "title": "VehicleDescriptor",
+  "description": "Attributes for the VehicleDescriptor entity in the Beckn Mobility domain.\n",
+  "properties": {},
+  "$id": "https://schema.beckn.io/VehicleDescriptor/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

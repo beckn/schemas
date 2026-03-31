@@ -1,13 +1,22 @@
-# Ancillary Service — v2.0
+# AncillaryService — v2.0
 
-The `AncillaryService` schema object.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [AncillaryService](../README.md)
+Attributes for the AncillaryService entity in the Beckn Mobility domain.
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | JSON Schema 2020-12 definition for `AncillaryService` |
-| [context.jsonld](./context.jsonld) | JSON-LD context for `AncillaryService` v2.0 |
-| [vocab.jsonld](./vocab.jsonld) | RDF vocabulary for `AncillaryService` v2.0 |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/AncillaryService/attributes.yaml](https://schema.beckn.io/AncillaryService/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/AncillaryService/v2.0/attributes.yaml](https://schema.beckn.io/AncillaryService/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/AncillaryService/attributes.jsonschema.yaml](https://schema.beckn.io/AncillaryService/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/AncillaryService/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/AncillaryService/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/AncillaryService/context.jsonld](https://schema.beckn.io/AncillaryService/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/AncillaryService/v2.0/context.jsonld](https://schema.beckn.io/AncillaryService/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/AncillaryService/vocab.jsonld](https://schema.beckn.io/AncillaryService/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/AncillaryService/v2.0/vocab.jsonld](https://schema.beckn.io/AncillaryService/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
+
+## Properties
+
+| Property | Required | Type | Description |
+|---|---|---|---|
+| _none_ | - | - | - |

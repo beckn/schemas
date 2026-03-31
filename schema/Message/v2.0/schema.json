@@ -1,0 +1,11 @@
+{
+  "$id": "https://schema.beckn.io/Message/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Message",
+  "x-tags": [
+    "common"
+  ],
+  "description": "Open payload container for Beckn action messages. The specific content of the message object is determined by the action value in the accompanying Context. BecknAction constrains message content based on context.action via if/then dispatch rules. Direct use of this schema provides no payload constraints — use BecknAction for validated action payloads.",
+  "type": "object",
+  "additionalProperties": true
+}

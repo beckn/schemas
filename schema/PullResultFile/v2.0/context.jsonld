@@ -1,0 +1,9 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "beckn": "https://schema.beckn.io/",
+    "PullResultFile": "beckn:PullResultFile",
+    "catalogs": "beckn:catalogs"
+  }
+}

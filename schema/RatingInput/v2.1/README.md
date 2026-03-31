@@ -1,30 +1,26 @@
-# RatingInput — v2.0
+# RatingInput — v2.1
 
-Input for a rating submission.
+A form designed to capture rating and feedback from a user. This can be used by both BAP and BPP to fetch ratings and feedback of their respective users.
 
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [RatingInput](../README.md)
+This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `RatingInput` |
-
-## Root linked-data files
-
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/RatingInput/attributes.yaml](https://schema.beckn.io/RatingInput/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/RatingInput/v2.1/attributes.yaml](https://schema.beckn.io/RatingInput/v2.1/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/RatingInput/attributes.jsonschema.yaml](https://schema.beckn.io/RatingInput/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/RatingInput/v2.1/attributes.jsonschema.yaml](https://schema.beckn.io/RatingInput/v2.1/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/RatingInput/context.jsonld](https://schema.beckn.io/RatingInput/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/RatingInput/v2.1/context.jsonld](https://schema.beckn.io/RatingInput/v2.1/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/RatingInput/vocab.jsonld](https://schema.beckn.io/RatingInput/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/RatingInput/v2.1/vocab.jsonld](https://schema.beckn.io/RatingInput/v2.1/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `@context` | string |  |
-| `@type` | string |  |
-| `target` | object | The entity being rated |
-| `range` |  |  |
-| `feedbackFormSubmission` | FormSubmission | The submission to the feedback form sent along with a rating request |
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `target` | yes | object | The thing being rated. It could be a person, an application, a service, a product, an instrument used in the fulfillment of the contract, or the overall experience. |
+| `range` | yes | object | - |
+| `feedbackFormSubmission` | no | $ref: https://schema.beckn.io/FormSubmission/attributes.yaml#/components/schemas/FormSubmission | The submission to the feedback form sent along with a rating request |

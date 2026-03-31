@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "title": "Prognosis",
+  "description": "Attributes for the Prognosis entity in the Beckn Mobility domain.\n",
+  "properties": {},
+  "$id": "https://schema.beckn.io/Prognosis/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

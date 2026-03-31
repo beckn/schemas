@@ -1,13 +1,22 @@
 # Segment — v2.0
 
-The `Segment` schema object.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [Segment](../README.md)
+Attributes for the Segment entity in the Beckn Mobility domain.
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | JSON Schema 2020-12 definition for `Segment` |
-| [context.jsonld](./context.jsonld) | JSON-LD context for `Segment` v2.0 |
-| [vocab.jsonld](./vocab.jsonld) | RDF vocabulary for `Segment` v2.0 |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/Segment/attributes.yaml](https://schema.beckn.io/Segment/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/Segment/v2.0/attributes.yaml](https://schema.beckn.io/Segment/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/Segment/attributes.jsonschema.yaml](https://schema.beckn.io/Segment/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/Segment/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/Segment/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/Segment/context.jsonld](https://schema.beckn.io/Segment/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/Segment/v2.0/context.jsonld](https://schema.beckn.io/Segment/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/Segment/vocab.jsonld](https://schema.beckn.io/Segment/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/Segment/v2.0/vocab.jsonld](https://schema.beckn.io/Segment/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
+
+## Properties
+
+| Property | Required | Type | Description |
+|---|---|---|---|
+| _none_ | - | - | - |

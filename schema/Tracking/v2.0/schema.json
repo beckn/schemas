@@ -1,0 +1,66 @@
+{
+  "$id": "https://schema.beckn.io/Tracking/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Non-streaming tracking handle per legacy semantics (url/transport/status).\n",
+  "title": "Tracking",
+  "type": "object",
+  "properties": {
+    "@context": {
+      "type": "string",
+      "format": "uri",
+      "example": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"
+    },
+    "@type": {
+      "type": "string",
+      "enum": [
+        "beckn:Tracking"
+      ],
+      "x-jsonld": {
+        "@id": "beckn:Tracking"
+      }
+    },
+    "tl_method": {
+      "type": "string",
+      "enum": [
+        "http/get",
+        "http/post",
+        "http/redirect",
+        "ws/handle",
+        "custom"
+      ],
+      "description": "Transport/method used to access the tracking handle."
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Link/handle to off-network tracking UI or endpoint."
+    },
+    "trackingStatus": {
+      "type": "string",
+      "enum": [
+        "ACTIVE",
+        "DISABLED",
+        "COMPLETED"
+      ]
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 expiry timestamp for the tracking handle."
+    }
+  },
+  "required": [
+    "@context",
+    "@type",
+    "tl_method",
+    "url",
+    "trackingStatus"
+  ],
+  "additionalProperties": false,
+  "x-jsonld": {
+    "@type": "schema:TrackAction",
+    "schema:target": "$.url",
+    "schema:deliveryMethod": "$.tl_method",
+    "beckn:trackingStatus": "$.trackingStatus"
+  }
+}

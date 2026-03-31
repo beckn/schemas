@@ -1,43 +1,15 @@
 {
   "@context": {
-    "@version": 1.1,
     "beckn": "https://schema.beckn.io/",
-    "owl": "http://www.w3.org/2002/07/owl#",
-    "schema": "https://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
   },
   "@graph": [
     {
       "@id": "beckn:Provider",
       "@type": "rdfs:Class",
       "rdfs:label": "Provider",
-      "rdfs:comment": "Schema definition for Provider in the Beckn Protocol v2.0.1"
-    },
-    {
-      "@id": "beckn:@context",
-      "@type": "rdf:Property",
-      "rdfs:label": "@context",
-      "rdfs:comment": "CPD"
-    },
-    {
-      "@id": "beckn:@type",
-      "@type": "rdf:Property",
-      "rdfs:label": "@type",
-      "rdfs:comment": "TPD"
-    },
-    {
-      "@id": "beckn:alerts",
-      "@type": "rdf:Property",
-      "rdfs:label": "alerts",
-      "rdfs:comment": "TODO: Description Needed - alerts"
-    },
-    {
-      "@id": "beckn:descriptor",
-      "@type": "rdf:Property",
-      "rdfs:label": "descriptor",
-      "rdfs:comment": "TODO: Description Needed - descriptor"
+      "rdfs:comment": "Schema definition for Provider in the Beckn Protocol v2.0.1\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute."
     },
     {
       "@id": "beckn:id",
@@ -46,40 +18,22 @@
       "rdfs:comment": "Unique identifier for the provider"
     },
     {
-      "@id": "beckn:locations",
+      "@id": "beckn:descriptor",
       "@type": "rdf:Property",
-      "rdfs:label": "locations",
-      "rdfs:comment": "Physical locations where the provider operates"
+      "rdfs:label": "descriptor",
+      "rdfs:comment": "Property descriptor"
     },
     {
-      "@id": "beckn:policies",
+      "@id": "beckn:availableAt",
       "@type": "rdf:Property",
-      "rdfs:label": "policies",
-      "rdfs:comment": "TODO: Description Needed - policies"
+      "rdfs:label": "availableAt",
+      "rdfs:comment": "Physical locations where the provider operates"
     },
     {
       "@id": "beckn:providerAttributes",
       "@type": "rdf:Property",
-      "rdfs:label": "provider Attributes",
-      "rdfs:comment": "TODO: Description Needed - providerAttributes"
-    },
-    {
-      "@id": "beckn:rateable",
-      "@type": "rdf:Property",
-      "rdfs:label": "rateable",
-      "rdfs:comment": "Whether the provider can be rated by customers"
-    },
-    {
-      "@id": "beckn:rating",
-      "@type": "rdf:Property",
-      "rdfs:label": "rating",
-      "rdfs:comment": "TODO: Description Needed - rating"
-    },
-    {
-      "@id": "beckn:validity",
-      "@type": "rdf:Property",
-      "rdfs:label": "validity",
-      "rdfs:comment": "TODO: Description Needed - validity"
+      "rdfs:label": "providerAttributes",
+      "rdfs:comment": "Property providerAttributes"
     }
   ]
 }

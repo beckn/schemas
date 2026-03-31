@@ -1,18 +1,12 @@
-openapi: 3.1.0
+openapi: 3.1.1
 info:
   title: FareBreakup
   version: 2.0.0
   description: Schema for FareBreakup in Beckn Logistics domain.
-  contact:
-    name: Beckn Foundation
-    url: https://beckn.org
-  license:
-    name: MIT
-    url: https://opensource.org/licenses/MIT
 paths: {}
 components:
   schemas:
-    FareBreakup:
+    ShippingFareBreakup:
       type: object
       title: FareBreakup
       description: A single line item in the fare breakup for a logistics service.
@@ -58,6 +52,3 @@ components:
           type: boolean
           description: Whether this component was waived
           example: false
-$id: https://schema.beckn.io/ShippingFareBreakup/v2.0
-x-tags:
-- logistics

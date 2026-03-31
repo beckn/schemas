@@ -1,13 +1,22 @@
-# Mobility Cancellation Policy — v2.0
+# MobilityCancellationPolicy — v2.0
 
-The `MobilityCancellationPolicy` schema object.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [MobilityCancellationPolicy](../README.md)
+Attributes for the CancellationPolicy entity in the Beckn Mobility domain.
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | JSON Schema 2020-12 definition for `MobilityCancellationPolicy` |
-| [context.jsonld](./context.jsonld) | JSON-LD context for `MobilityCancellationPolicy` v2.0 |
-| [vocab.jsonld](./vocab.jsonld) | RDF vocabulary for `MobilityCancellationPolicy` v2.0 |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/MobilityCancellationPolicy/attributes.yaml](https://schema.beckn.io/MobilityCancellationPolicy/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/MobilityCancellationPolicy/v2.0/attributes.yaml](https://schema.beckn.io/MobilityCancellationPolicy/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/MobilityCancellationPolicy/attributes.jsonschema.yaml](https://schema.beckn.io/MobilityCancellationPolicy/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/MobilityCancellationPolicy/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/MobilityCancellationPolicy/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/MobilityCancellationPolicy/context.jsonld](https://schema.beckn.io/MobilityCancellationPolicy/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/MobilityCancellationPolicy/v2.0/context.jsonld](https://schema.beckn.io/MobilityCancellationPolicy/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/MobilityCancellationPolicy/vocab.jsonld](https://schema.beckn.io/MobilityCancellationPolicy/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/MobilityCancellationPolicy/v2.0/vocab.jsonld](https://schema.beckn.io/MobilityCancellationPolicy/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
+
+## Properties
+
+| Property | Required | Type | Description |
+|---|---|---|---|
+| _none_ | - | - | - |

@@ -1,32 +1,46 @@
-$id: https://schema.beckn.io/RateAction/v2.0
-$schema: https://json-schema.org/draft/2020-12/schema
-description: 'Beckn /beckn/rate action envelope. Sent by a BAP to a BPP to submit one or more rating inputs
-  for entities in a completed contract (order, fulfillment, item, provider, agent, support).
+openapi: 3.1.1
+info:
+  title: RateAction
+  version: 2.0.0
+  description: 'Beckn /beckn/rate action envelope. Sent by a BAP to a BPP to submit
+    one or more rating inputs for entities in a completed contract (order, fulfillment,
+    item, provider, agent, support).
 
-  '
-title: RateAction
-type: object
-properties:
-  context:
-    allOf:
-    - $ref: https://schema.beckn.io/Context/v2.0
-    - type: object
+    '
+paths: {}
+components:
+  schemas:
+    RateAction:
+      $id: https://schema.beckn.io/RateAction/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: 'Beckn /beckn/rate action envelope. Sent by a BAP to a BPP to submit
+        one or more rating inputs for entities in a completed contract (order, fulfillment,
+        item, provider, agent, support).
+
+        '
+      title: RateAction
+      type: object
       properties:
-        action:
-          type: string
-          const: beckn/rate
-  message:
-    type: object
-    additionalProperties: true
-    properties:
-      ratingInputs:
-        type: array
-        items:
-          $ref: https://schema.beckn.io/RatingInput/v2.1
-    required:
-    - ratingInputs
-required:
-- context
-- message
-x-tags:
-- common
+        context:
+          allOf:
+          - $ref: https://schema.beckn.io/Context/attributes.yaml#/components/schemas/Context
+          - type: object
+            properties:
+              action:
+                type: string
+                const: beckn/rate
+        message:
+          type: object
+          additionalProperties: true
+          properties:
+            ratingInputs:
+              type: array
+              items:
+                $ref: https://schema.beckn.io/RatingInput/attributes.yaml#/components/schemas/RatingInput
+          required:
+          - ratingInputs
+      required:
+      - context
+      - message
+      x-tags:
+      - common

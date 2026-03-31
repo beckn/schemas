@@ -1,13 +1,22 @@
-# Transport Object — v2.0
+# TransportObject — v2.0
 
-The `TransportObject` schema object.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [TransportObject](../README.md)
+Attributes for the TransportObject entity in the Beckn Mobility domain.
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | JSON Schema 2020-12 definition for `TransportObject` |
-| [context.jsonld](./context.jsonld) | JSON-LD context for `TransportObject` v2.0 |
-| [vocab.jsonld](./vocab.jsonld) | RDF vocabulary for `TransportObject` v2.0 |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/TransportObject/attributes.yaml](https://schema.beckn.io/TransportObject/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/TransportObject/v2.0/attributes.yaml](https://schema.beckn.io/TransportObject/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/TransportObject/attributes.jsonschema.yaml](https://schema.beckn.io/TransportObject/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/TransportObject/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/TransportObject/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/TransportObject/context.jsonld](https://schema.beckn.io/TransportObject/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/TransportObject/v2.0/context.jsonld](https://schema.beckn.io/TransportObject/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/TransportObject/vocab.jsonld](https://schema.beckn.io/TransportObject/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/TransportObject/v2.0/vocab.jsonld](https://schema.beckn.io/TransportObject/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
+
+## Properties
+
+| Property | Required | Type | Description |
+|---|---|---|---|
+| _none_ | - | - | - |

@@ -1,38 +1,24 @@
-# CredentialRequirement — Shared Type
+# CredentialRequirement — v2.1
 
-**Type:** Shared sub-schema (referenced by multiple top-level schemas)
-**Protocol Version:** 2.1
-**Semantic Model:** generalised
-**Version:** 1.0.0
-**Used By:** `HiringJobResourceAttributes`, `CourseResourceAttributes`
+A single credential requirement or prerequisite. Specifies what a candidate or enrollee must hold. Category is a broad class; subtype is the specific credential within that class.
 
-## Overview
+## Files
 
-`CredentialRequirement` represents a single credential requirement or prerequisite entry.
-It is used wherever a Beckn participant specifies what a counterparty must hold in order
-to be eligible — whether for a job application or a course enrollment.
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/CredentialRequirement/attributes.yaml](https://schema.beckn.io/CredentialRequirement/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/CredentialRequirement/v2.1/attributes.yaml](https://schema.beckn.io/CredentialRequirement/v2.1/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/CredentialRequirement/attributes.jsonschema.yaml](https://schema.beckn.io/CredentialRequirement/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/CredentialRequirement/v2.1/attributes.jsonschema.yaml](https://schema.beckn.io/CredentialRequirement/v2.1/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/CredentialRequirement/context.jsonld](https://schema.beckn.io/CredentialRequirement/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/CredentialRequirement/v2.1/context.jsonld](https://schema.beckn.io/CredentialRequirement/v2.1/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/CredentialRequirement/vocab.jsonld](https://schema.beckn.io/CredentialRequirement/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/CredentialRequirement/v2.1/vocab.jsonld](https://schema.beckn.io/CredentialRequirement/v2.1/vocab.jsonld) | RDF vocabulary (versioned path) |
 
-The type follows a category + subtype pattern, where `category` is a broad credential class
-(SKILL, DEGREE, LICENSE, etc.) and `subtype` is the specific credential within that class.
-This mirrors the `verification_index` structure in DeDi registries, enabling direct mapping
-between what is required and what is attested.
+## Properties
 
-## Fields
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `category` | enum | Yes | Broad credential class |
-| `subtype` | string | Yes | Specific credential name or code |
-| `mandatory` | boolean | Yes | Whether failure blocks the transaction |
-
-## Upstream Candidate
-
-This type is generic enough to apply across hiring, skilling, healthcare credentialing,
-driver licensing, financial compliance, and more. It is a strong candidate for promotion
-into the Beckn v2.1 core schema as a reusable primitive.
-
-## Non-Goals
-
-- Does not carry the credential value or payload (that belongs in the wallet/DeDi layer)
-- Does not specify the verification method (that belongs in `performanceAttributes`)
-- Does not track verification outcome (that belongs in `VerificationSummary`)
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `category` | yes | string | Broad class of the required credential. |
+| `subtype` | yes | string | Specific credential within the category. Examples: "AWS_SAA", "BTECH_CS", "LMV_LICENSE", "Aadhaar", "Java_SE_11".  |
+| `mandatory` | yes | boolean | Whether this requirement is mandatory. If true, failure to satisfy it blocks the transaction. If false, it is advisory / preferred.  |

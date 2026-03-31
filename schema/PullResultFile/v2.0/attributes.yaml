@@ -1,0 +1,37 @@
+openapi: 3.1.1
+info:
+  title: PullResultFile
+  version: 2.0.0
+  description: 'JSON body of `GET /catalog/pull/result/{requestId}/catalogs.json`.
+
+    Same structure as the inline `catalog` array in the callback payload —
+
+    a list of distribution-envelope catalog objects.
+
+
+    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
+    and MUST NOT be extended. Any domain-specific extension must use the property
+    of this schema which is of type Attribute.'
+paths: {}
+components:
+  schemas:
+    PullResultFile:
+      type: object
+      description: 'JSON body of `GET /catalog/pull/result/{requestId}/catalogs.json`.
+
+        Same structure as the inline `catalog` array in the callback payload —
+
+        a list of distribution-envelope catalog objects.
+
+
+        This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
+        and MUST NOT be extended. Any domain-specific extension must use the property
+        of this schema which is of type Attribute.'
+      properties:
+        catalogs:
+          type: array
+          items:
+            type: object
+            description: Full catalog distribution envelope (context + message + meta)
+            additionalProperties: true
+      x-lts: true

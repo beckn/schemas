@@ -1,24 +1,22 @@
 # Consumer — v2.0
 
-The consumer participant in a transaction.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [Consumer](../README.md)
+Schema definition for Consumer in the Beckn Protocol v2.0.1
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `Consumer` |
-
-## Root linked-data files
-
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/Consumer/attributes.yaml](https://schema.beckn.io/Consumer/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/Consumer/v2.0/attributes.yaml](https://schema.beckn.io/Consumer/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/Consumer/attributes.jsonschema.yaml](https://schema.beckn.io/Consumer/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/Consumer/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/Consumer/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/Consumer/context.jsonld](https://schema.beckn.io/Consumer/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/Consumer/v2.0/context.jsonld](https://schema.beckn.io/Consumer/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/Consumer/vocab.jsonld](https://schema.beckn.io/Consumer/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/Consumer/v2.0/vocab.jsonld](https://schema.beckn.io/Consumer/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-This schema has no defined top-level properties.
+| Property | Required | Type | Description |
+|---|---|---|---|
+| _none_ | - | - | - |

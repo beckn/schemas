@@ -7,7 +7,7 @@
   "extends": "beckn:Offer",
   "attachAt": "beckn:offerAttributes",
 
-  "packSchema": "./attributes.yaml#/components/schemas/FoodAndBeverageOfferAttributes",
+  "packSchema": "./attributes.jsonschema.yaml#/components/schemas/FoodAndBeverageOfferAttributes",
 
   "indexing": {
     "indexable": [

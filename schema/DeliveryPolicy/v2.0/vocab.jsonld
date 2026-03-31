@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:DeliveryPolicy",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DeliveryPolicy",
+      "rdfs:comment": "Callback delivery retry configuration\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute."
+    },
+    {
+      "@id": "beckn:timeoutSeconds",
+      "@type": "rdf:Property",
+      "rdfs:label": "timeoutSeconds",
+      "rdfs:comment": "Per-request HTTP timeout in seconds"
+    },
+    {
+      "@id": "beckn:maxPayloadBytes",
+      "@type": "rdf:Property",
+      "rdfs:label": "maxPayloadBytes",
+      "rdfs:comment": "Maximum callback payload size in bytes"
+    },
+    {
+      "@id": "beckn:retryPolicy",
+      "@type": "rdf:Property",
+      "rdfs:label": "retryPolicy",
+      "rdfs:comment": "Property retryPolicy"
+    }
+  ]
+}

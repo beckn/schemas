@@ -1,13 +1,22 @@
 # Ticket — v2.0
 
-The `Ticket` schema object.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [Ticket](../README.md)
+Attributes for the Ticket entity in the Beckn Mobility domain.
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | JSON Schema 2020-12 definition for `Ticket` |
-| [context.jsonld](./context.jsonld) | JSON-LD context for `Ticket` v2.0 |
-| [vocab.jsonld](./vocab.jsonld) | RDF vocabulary for `Ticket` v2.0 |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/Ticket/attributes.yaml](https://schema.beckn.io/Ticket/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/Ticket/v2.0/attributes.yaml](https://schema.beckn.io/Ticket/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/Ticket/attributes.jsonschema.yaml](https://schema.beckn.io/Ticket/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/Ticket/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/Ticket/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/Ticket/context.jsonld](https://schema.beckn.io/Ticket/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/Ticket/v2.0/context.jsonld](https://schema.beckn.io/Ticket/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/Ticket/vocab.jsonld](https://schema.beckn.io/Ticket/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/Ticket/v2.0/vocab.jsonld](https://schema.beckn.io/Ticket/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
+
+## Properties
+
+| Property | Required | Type | Description |
+|---|---|---|---|
+| _none_ | - | - | - |

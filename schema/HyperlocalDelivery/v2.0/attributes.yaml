@@ -1,76 +1,117 @@
-$id: https://schema.beckn.io/HyperlocalDelivery/v2.0
-$schema: https://json-schema.org/draft/2020-12/schema
-description: |
-  A Beckn domain schema for hyperlocal (same-city, typically sub-2-hour) physical delivery
-  of goods or prepared food from an origin to a destination within a short radius.
+openapi: 3.1.1
+info:
+  title: HyperlocalDelivery
+  version: 2.0.0
+  description: 'A Beckn domain schema for hyperlocal (same-city, typically sub-2-hour)
+    physical delivery
 
-  HyperlocalDelivery is a concrete, domain-specific fulfillmentAttributes value for a
-  beckn:Fulfillment entry. It is fully aligned with schema:ParcelDelivery.
+    of goods or prepared food from an origin to a destination within a short radius.
 
-  schema.org alignment: schema:ParcelDelivery (subtype of schema:Intangible)
-  Use in: beckn:Fulfillment.fulfillmentAttributes
-title: HyperlocalDelivery
-x-tags: [retail, logistics, fulfillment]
-type: object
-properties:
-  '@context':
-    type: string
-    format: uri
-    const: 'https://schema.beckn.io/HyperlocalDelivery/v2.0/context.jsonld'
-  '@type':
-    type: string
-    const: 'beckn:HyperlocalDelivery'
-  pickupLocation:
-    $ref: 'https://schema.beckn.io/Location/v2.0'
-    description: >
-      The pickup/origin location (restaurant, warehouse, dark store).
-      Corresponds to schema:originAddress on schema:ParcelDelivery.
-    x-jsonld:
-      '@id': 'schema:originAddress'
-  deliveryLocation:
-    $ref: 'https://schema.beckn.io/Location/v2.0'
-    description: >
-      The delivery destination (consumer's address).
-      Corresponds to schema:deliveryAddress on schema:ParcelDelivery.
-    x-jsonld:
-      '@id': 'schema:deliveryAddress'
-  itemsShipped:
-    type: array
-    description: >
-      The items shipped in this delivery.
-      Corresponds to schema:itemShipped on schema:ParcelDelivery.
-    items:
-      $ref: 'https://schema.beckn.io/Attributes/v2.0'
-    x-jsonld:
-      '@id': 'schema:itemShipped'
-  agent:
-    $ref: 'https://schema.beckn.io/Attributes/v2.0'
-    description: >
-      The delivery agent (rider) carrying out this delivery.
-      Corresponds to schema:carrier on schema:ParcelDelivery.
-    x-jsonld:
-      '@id': 'schema:carrier'
-  trackingUrl:
-    type: string
-    format: uri
-    description: >
-      Live real-time tracking URL for the rider's location during delivery.
-      Corresponds to schema:trackingUrl on schema:ParcelDelivery.
-    x-jsonld:
-      '@id': 'schema:trackingUrl'
-  expectedArrivalFrom:
-    type: string
-    format: date-time
-    description: Earliest expected delivery time (ISO 8601). Maps to schema:expectedArrivalFrom.
-    x-jsonld:
-      '@id': 'schema:expectedArrivalFrom'
-  expectedArrivalUntil:
-    type: string
-    format: date-time
-    description: Latest expected delivery time (ISO 8601). Maps to schema:expectedArrivalUntil.
-    x-jsonld:
-      '@id': 'schema:expectedArrivalUntil'
-required:
-  - '@context'
-  - '@type'
-additionalProperties: false
+
+    HyperlocalDelivery is a concrete, domain-specific fulfillmentAttributes value
+    for a
+
+    beckn:Fulfillment entry. It is fully aligned with schema:ParcelDelivery.
+
+
+    schema.org alignment: schema:ParcelDelivery (subtype of schema:Intangible)
+
+    Use in: beckn:Fulfillment.fulfillmentAttributes
+
+    '
+paths: {}
+components:
+  schemas:
+    HyperlocalDelivery:
+      $id: https://schema.beckn.io/HyperlocalDelivery/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: 'A Beckn domain schema for hyperlocal (same-city, typically sub-2-hour)
+        physical delivery
+
+        of goods or prepared food from an origin to a destination within a short radius.
+
+
+        HyperlocalDelivery is a concrete, domain-specific fulfillmentAttributes value
+        for a
+
+        beckn:Fulfillment entry. It is fully aligned with schema:ParcelDelivery.
+
+
+        schema.org alignment: schema:ParcelDelivery (subtype of schema:Intangible)
+
+        Use in: beckn:Fulfillment.fulfillmentAttributes
+
+        '
+      title: HyperlocalDelivery
+      x-tags:
+      - retail
+      - logistics
+      - fulfillment
+      type: object
+      properties:
+        '@context':
+          type: string
+          format: uri
+          const: https://schema.beckn.io/HyperlocalDelivery/v2.0/context.jsonld
+        '@type':
+          type: string
+          const: beckn:HyperlocalDelivery
+        pickupLocation:
+          $ref: https://schema.beckn.io/Location/attributes.yaml#/components/schemas/Location
+          description: 'The pickup/origin location (restaurant, warehouse, dark store).
+            Corresponds to schema:originAddress on schema:ParcelDelivery.
+
+            '
+          x-jsonld:
+            '@id': schema:originAddress
+        deliveryLocation:
+          $ref: https://schema.beckn.io/Location/attributes.yaml#/components/schemas/Location
+          description: 'The delivery destination (consumer''s address). Corresponds
+            to schema:deliveryAddress on schema:ParcelDelivery.
+
+            '
+          x-jsonld:
+            '@id': schema:deliveryAddress
+        itemsShipped:
+          type: array
+          description: 'The items shipped in this delivery. Corresponds to schema:itemShipped
+            on schema:ParcelDelivery.
+
+            '
+          items:
+            $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+          x-jsonld:
+            '@id': schema:itemShipped
+        agent:
+          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+          description: 'The delivery agent (rider) carrying out this delivery. Corresponds
+            to schema:carrier on schema:ParcelDelivery.
+
+            '
+          x-jsonld:
+            '@id': schema:carrier
+        trackingUrl:
+          type: string
+          format: uri
+          description: 'Live real-time tracking URL for the rider''s location during
+            delivery. Corresponds to schema:trackingUrl on schema:ParcelDelivery.
+
+            '
+          x-jsonld:
+            '@id': schema:trackingUrl
+        expectedArrivalFrom:
+          type: string
+          format: date-time
+          description: Earliest expected delivery time (ISO 8601). Maps to schema:expectedArrivalFrom.
+          x-jsonld:
+            '@id': schema:expectedArrivalFrom
+        expectedArrivalUntil:
+          type: string
+          format: date-time
+          description: Latest expected delivery time (ISO 8601). Maps to schema:expectedArrivalUntil.
+          x-jsonld:
+            '@id': schema:expectedArrivalUntil
+      required:
+      - '@context'
+      - '@type'
+      additionalProperties: false

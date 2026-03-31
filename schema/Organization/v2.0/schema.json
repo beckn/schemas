@@ -1,0 +1,94 @@
+{
+  "$id": "https://schema.beckn.io/Organization/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "An organization such as a company, non-profit, or governmental institution. Modeled after schema.org/Organization.",
+  "title": "Organization",
+  "type": "object",
+  "properties": {
+    "@context": {
+      "type": "string",
+      "format": "uri",
+      "const": "https://schema.beckn.io/"
+    },
+    "@type": {
+      "type": "string",
+      "default": "beckn:Organization"
+    },
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the organization",
+      "x-jsonld": {
+        "@id": "schema:identifier"
+      }
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the organization",
+      "x-jsonld": {
+        "@id": "schema:name"
+      }
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email address",
+      "x-jsonld": {
+        "@id": "schema:email"
+      }
+    },
+    "telephone": {
+      "type": "string",
+      "description": "Telephone number",
+      "x-jsonld": {
+        "@id": "schema:telephone"
+      }
+    },
+    "address": {
+      "description": "Physical address",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.beckn.io/Address/attributes.yaml"
+        }
+      ],
+      "x-jsonld": {
+        "@id": "schema:address"
+      }
+    },
+    "credentials": {
+      "type": "array",
+      "description": "Credentials held by the organization",
+      "items": {
+        "$ref": "https://schema.beckn.io/Credential/attributes.yaml"
+      },
+      "x-jsonld": {
+        "@id": "schema:hasCredential"
+      }
+    },
+    "skills": {
+      "type": "array",
+      "description": "Skills or capabilities of the organization",
+      "items": {
+        "$ref": "https://schema.beckn.io/Skill/attributes.yaml"
+      },
+      "x-jsonld": {
+        "@id": "schema:hasSkill"
+      }
+    },
+    "organizationAttributes": {
+      "description": "Extensible attribute pack for jurisdictional or domain-specific organization properties",
+      "$ref": "https://schema.beckn.io/Attributes/attributes.yaml"
+    }
+  },
+  "required": [
+    "@context",
+    "@type",
+    "id"
+  ],
+  "additionalProperties": false,
+  "x-tags": [
+    "common"
+  ]
+}

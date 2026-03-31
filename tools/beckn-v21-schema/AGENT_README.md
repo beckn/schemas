@@ -17,7 +17,7 @@ The skill operates in two distinct modes:
 | Mode | When to use |
 |------|-------------|
 | **Greenfield** | User provides a use case description, business flow, or domain document and wants new schemas created |
-| **Migration** | User provides existing Beckn v2 schema folders (`attributes.yaml`, `context.jsonld`, etc.) and wants them upgraded to v2.1 |
+| **Migration** | User provides existing Beckn v2 schema folders (`attributes.jsonschema.yaml`, `context.jsonld`, etc.) and wants them upgraded to v2.1 |
 
 > **Important scope boundary:** This skill ONLY targets the v2.1 generalised model. If the
 > domain is commerce-oriented and must stay on `Item / Order / Fulfillment` semantics, use
@@ -82,7 +82,7 @@ Collect:
 
 | Input | Format | Notes |
 |-------|--------|-------|
-| Existing v2 schema folder(s) | Files or ZIP | Must include `attributes.yaml`, `context.jsonld`, `vocab.jsonld`, `profile.json`, `renderer.json`, `README.md`, and `examples/` |
+| Existing v2 schema folder(s) | Files or ZIP | Must include `attributes.jsonschema.yaml`, `context.jsonld`, `vocab.jsonld`, `profile.json`, `renderer.json`, `README.md`, and `examples/` |
 | v2 Implementation Guide (optional) | Word / PDF / Markdown | Helps the skill reconstruct design rationale |
 
 **Minimum required:** At least one complete v2 schema folder.
@@ -127,7 +127,7 @@ to provide these unless the remote URLs are unavailable:
 | File | URL |
 |------|-----|
 | Core API spec (v2.1 draft) | `https://raw.githubusercontent.com/beckn/protocol-specifications-v2/refs/heads/proposal/v2.1-generalized-core/api/beckn.yaml` |
-| Core schema (`attributes.yaml`) | `https://raw.githubusercontent.com/beckn/protocol-specifications-v2/refs/heads/proposal/v2.1-generalized-core/schema/core/v2/attributes.yaml` |
+| Core schema (`attributes.jsonschema.yaml`) | `https://raw.githubusercontent.com/beckn/protocol-specifications-v2/refs/heads/proposal/v2.1-generalized-core/schema/core/v2/attributes.jsonschema.yaml` |
 | Core `context.jsonld` | `https://schema.beckn.io/core/v2/context.jsonld` |
 | Core `vocab.jsonld` | `https://schema.beckn.io/core/v2/vocab.jsonld` |
 
@@ -205,7 +205,7 @@ For each top-level schema (one per container attachment), the skill generates:
 
 | File | Contents |
 |------|----------|
-| `attributes.yaml` | OpenAPI 3.1.1 schema with `x-jsonld`, `x-beckn-container` annotations |
+| `attributes.jsonschema.yaml` | OpenAPI 3.1.1 schema with `x-jsonld`, `x-beckn-container` annotations |
 | `context.jsonld` | JSON-LD context mapping every property to a schema.org or domain IRI |
 | `vocab.jsonld` | Enum class definitions with `rdfs:label` and `rdfs:comment` |
 | `profile.json` | Discovery fields, filterable paths, privacy notes, `semantic_model: "generalised"` |
@@ -267,7 +267,7 @@ detect when a domain might need a different skill.
 
 | Situation | What to do |
 |-----------|-----------|
-| Core reference URLs unreachable | Ask user to upload local copies (`beckn-generalise-draft.yaml`, `attributes.yaml`) |
+| Core reference URLs unreachable | Ask user to upload local copies (`beckn-generalise-draft.yaml`, `attributes.jsonschema.yaml`) |
 | User provides v1 IG | Stop. Instruct them to run `beckn-v2-schema` first to get a v2 pack, then come back |
 | User wants `Item / Order` semantics (commerce) | Switch to `beckn-v2-schema` skill |
 | Migration fit review returns `NEEDS-DISCUSSION` | Pause, explain the specific concerns to the user, get direction before continuing |
@@ -355,7 +355,7 @@ Agent: "I'll use the beckn-v21-schema skill to generate your schema pack.
 User: "I have our v2 driver job schemas. Can you migrate them to v2.1?"
 
 Agent: "Sure. Please upload your v2 schema folder(s) — specifically the
-        attributes.yaml, context.jsonld, vocab.jsonld, profile.json,
+        attributes.jsonschema.yaml, context.jsonld, vocab.jsonld, profile.json,
         renderer.json, README.md, and examples/ files.
 
         If you have a v2 Implementation Guide for this domain, upload that too —

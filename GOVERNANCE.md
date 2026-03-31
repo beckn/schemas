@@ -131,7 +131,7 @@ The core schemas use a **path-based versioning scheme** aligned with the Beckn P
 
 A schema or attribute that is deprecated MUST:
 
-1. Be annotated with a deprecation notice in its `attributes.yaml` (`deprecated: true` and a `description` citing the replacement)
+1. Be annotated with a deprecation notice in its `attributes.jsonschema.yaml` (`deprecated: true` and a `description` citing the replacement)
 2. Have its JSON-LD context entry updated with an `@comment` indicating the deprecated status and the replacement IRI
 3. Remain in the repository for a minimum of **one Major version cycle** after deprecation before removal
 4. Be listed in the `CHANGELOG.md` deprecation section for the relevant release

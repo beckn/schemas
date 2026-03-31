@@ -1,21 +1,16 @@
-openapi: 3.1.0
+openapi: 3.1.1
 info:
   title: Fare
   version: 2.0.0
   description: Schema for Fare in Beckn Logistics domain.
-  contact:
-    name: Beckn Foundation
-    url: https://beckn.org
-  license:
-    name: MIT
-    url: https://opensource.org/licenses/MIT
 paths: {}
 components:
   schemas:
-    Fare:
+    ShippingFare:
       type: object
       title: Fare
-      description: Total cost charged for a logistics service including base freight, surcharges, taxes.
+      description: Total cost charged for a logistics service including base freight,
+        surcharges, taxes.
       required:
       - currency
       - totalAmount
@@ -59,7 +54,7 @@ components:
           type: array
           description: Detailed fare breakup line items
           items:
-            $ref: '#/components/schemas/FareBreakup'
+            $ref: https://schema.beckn.io/FareBreakup/attributes.yaml#/components/schemas/FareBreakup
         estimatedFare:
           type: boolean
           description: Whether this is an estimate or confirmed fare
@@ -72,6 +67,3 @@ components:
           - TO_PAY
           - CREDIT
           example: PREPAID
-$id: https://schema.beckn.io/ShippingFare/v2.0
-x-tags:
-- logistics

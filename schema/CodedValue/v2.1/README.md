@@ -1,31 +1,25 @@
-# CodedValue — Shared Type
+# CodedValue — v2.1
 
-**Type:** Shared sub-schema
-**Protocol Version:** 2.1
-**Semantic Model:** generalised
-**Version:** 1.0.0
-**Used By:** `HiringJobResourceAttributes`, `CourseResourceAttributes`, `CandidateProfileResourceAttributes`
+An authority-governed code value. The @context URI identifies the code system authority (e.g. UN ISIC, UNESCO ISCED, India NSQF). The @type identifies the class of code within that system. The code is the actual value. This pattern avoids hardcoding country-specific enumerations into the schema.
 
-## Overview
+## Files
 
-`CodedValue` is the standard pattern for any field whose valid values are defined by an
-external authority (government classification systems, standards bodies, industry registries).
-Using `CodedValue` instead of a hardcoded enum provides international neutrality — any
-country's classification system can be expressed without a schema change.
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/CodedValue/attributes.yaml](https://schema.beckn.io/CodedValue/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/CodedValue/v2.1/attributes.yaml](https://schema.beckn.io/CodedValue/v2.1/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/CodedValue/attributes.jsonschema.yaml](https://schema.beckn.io/CodedValue/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/CodedValue/v2.1/attributes.jsonschema.yaml](https://schema.beckn.io/CodedValue/v2.1/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/CodedValue/context.jsonld](https://schema.beckn.io/CodedValue/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/CodedValue/v2.1/context.jsonld](https://schema.beckn.io/CodedValue/v2.1/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/CodedValue/vocab.jsonld](https://schema.beckn.io/CodedValue/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/CodedValue/v2.1/vocab.jsonld](https://schema.beckn.io/CodedValue/v2.1/vocab.jsonld) | RDF vocabulary (versioned path) |
 
-## Example Uses
+## Properties
 
-| Field | Context URI | Type | Code Example |
-|-------|-------------|------|--------------|
-| `industry_type` | ISIC URI | IndustryCode | "8299" |
-| `course_domain` | ISCED URI | FieldOfEducationCode | "0613" |
-| `qualification_level` | NSQF URI | QualificationLevel | "4" |
-
-## Fields
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `@context` | uri | Yes | Code system authority URI |
-| `@type` | string | Yes | Code class within the system |
-| `code` | string | Yes | The actual code value |
-| `label` | string | No | Human-readable display label |
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `@context` | yes | string | URI of the canonical code system authority. Examples: "https://unstats.un.org/unsd/classifications/Econ/isic" (ISIC), "https://uis.unesco.org/en/topic/international-standard-classification-education-isced" (ISCED), "https://www.nqfindia.org/" (India NSQF).  |
+| `@type` | yes | string | Code class within the identified context. Examples: "IndustryCode", "FieldOfEducationCode", "QualificationLevel".  |
+| `code` | yes | string | The actual code value as defined by the authority. Examples: "8299" (ISIC: other business support), "0613" (ISCED: software), "4" (NSQF Level 4).  |
+| `label` | no | string | Human-readable label for the code (optional, for display). |

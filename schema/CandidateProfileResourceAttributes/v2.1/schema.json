@@ -1,0 +1,128 @@
+{
+  "type": "object",
+  "description": "Discoverable profile attributes of a candidate Resource. Captures what the candidate brings (skills, experience, availability) and what they seek (location preference, work mode, job type). Designed for privacy: no name, contact, or identity data. Credentials are referenced via SkillEntry with optional VC attestation URLs.\n",
+  "x-beckn-container": "resourceAttributes",
+  "x-jsonld-context": "./context.jsonld",
+  "properties": {
+    "skills": {
+      "type": "array",
+      "description": "List of skills, qualifications, and credentials held by the candidate. Each entry supports graceful degradation: self-declared (attested=false) or VC-backed (attested=true, proof_request_url present).\n",
+      "x-jsonld-id": "cpra:skills",
+      "items": {
+        "$ref": "https://schema.beckn.io/SkillEntry/attributes.yaml"
+      }
+    },
+    "experience_level": {
+      "type": "string",
+      "description": "Overall seniority level of the candidate.",
+      "x-jsonld-id": "cpra:experienceLevel",
+      "enum": [
+        "ENTRY",
+        "JUNIOR",
+        "MID",
+        "SENIOR",
+        "EXPERT"
+      ]
+    },
+    "experience_years": {
+      "type": "integer",
+      "description": "Approximate total years of relevant work experience.",
+      "x-jsonld-id": "cpra:experienceYears",
+      "minimum": 0
+    },
+    "location_preference": {
+      "type": "object",
+      "description": "Geographic and work-mode preferences of the candidate.",
+      "x-jsonld-id": "cpra:locationPreference",
+      "properties": {
+        "preferred_locations": {
+          "type": "array",
+          "description": "List of preferred city/region/country combinations.",
+          "x-jsonld-id": "cpra:preferredLocations",
+          "items": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string",
+                "x-jsonld-id": "schema:addressLocality"
+              },
+              "region": {
+                "type": "string",
+                "x-jsonld-id": "schema:addressRegion"
+              },
+              "country": {
+                "type": "string",
+                "description": "ISO 3166-1 alpha-2 country code.",
+                "x-jsonld-id": "schema:addressCountry"
+              }
+            }
+          }
+        },
+        "work_mode_preference": {
+          "type": "string",
+          "description": "Preferred physical work arrangement.",
+          "x-jsonld-id": "cpra:workModePreference",
+          "enum": [
+            "ONSITE",
+            "REMOTE",
+            "HYBRID",
+            "ANY"
+          ]
+        }
+      }
+    },
+    "availability": {
+      "type": "string",
+      "description": "How soon the candidate is available to start.",
+      "x-jsonld-id": "cpra:availability",
+      "enum": [
+        "IMMEDIATE",
+        "WITHIN_30_DAYS",
+        "WITHIN_60_DAYS",
+        "WITHIN_90_DAYS",
+        "NOT_AVAILABLE"
+      ]
+    },
+    "open_to_relocation": {
+      "type": "boolean",
+      "description": "Whether the candidate is open to relocating.",
+      "x-jsonld-id": "cpra:openToRelocation"
+    },
+    "industry_preference": {
+      "type": "array",
+      "description": "Industries the candidate prefers to work in, expressed as authority-governed codes for international neutrality.\n",
+      "x-jsonld-id": "cpra:industryPreference",
+      "items": {
+        "$ref": "https://schema.beckn.io/CodedValue/attributes.yaml"
+      }
+    },
+    "job_type_preference": {
+      "type": "array",
+      "description": "Types of employment the candidate is interested in.",
+      "x-jsonld-id": "cpra:jobTypePreference",
+      "items": {
+        "type": "string",
+        "enum": [
+          "FULL_TIME",
+          "PART_TIME",
+          "CONTRACT",
+          "GIG",
+          "APPRENTICESHIP"
+        ]
+      }
+    },
+    "overall_verification_status": {
+      "type": "string",
+      "description": "Aggregate verification status derived from the candidate's DeDi verification_index. Indicates how many of their declared skills have been VC-attested. Not PII — derived from public registry data.\n",
+      "x-jsonld-id": "cpra:overallVerificationStatus",
+      "enum": [
+        "UNVERIFIED",
+        "PARTIALLY_VERIFIED",
+        "FULLY_VERIFIED"
+      ]
+    }
+  },
+  "$id": "https://schema.beckn.io/CandidateProfileResourceAttributes/v2.1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CandidateProfileResourceAttributes"
+}

@@ -1,20 +1,29 @@
-$id: https://schema.beckn.io/TrackAction/v2.0
-$schema: https://json-schema.org/draft/2020-12/schema
-description: Minimal schema.org TrackAction for clickable tracking.
-title: TrackAction
-type: object
-properties:
-  id:
-    type: string
-    description: Tracking action identifier
-    x-jsonld:
-      '@id': schema:identifier
-  url:
-    type: string
-    format: uri
-    description: Tracking page URL
-    x-jsonld:
-      '@id': schema:url
-additionalProperties: true
-x-jsonld:
-  '@type': schema:TrackAction
+openapi: 3.1.1
+info:
+  title: TrackAction
+  version: 2.0.0
+  description: Minimal schema.org TrackAction for clickable tracking.
+paths: {}
+components:
+  schemas:
+    TrackAction:
+      $id: https://schema.beckn.io/TrackAction/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: Minimal schema.org TrackAction for clickable tracking.
+      title: TrackAction
+      type: object
+      properties:
+        id:
+          type: string
+          description: Tracking action identifier
+          x-jsonld:
+            '@id': schema:identifier
+        url:
+          type: string
+          format: uri
+          description: Tracking page URL
+          x-jsonld:
+            '@id': schema:url
+      additionalProperties: true
+      x-jsonld:
+        '@type': schema:TrackAction

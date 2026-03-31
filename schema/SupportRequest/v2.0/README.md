@@ -1,30 +1,26 @@
 # SupportRequest — v2.0
 
-A support request raised by a participant.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [SupportRequest](../README.md)
+Support request by a user. If no field is set, the user can expect a public support contact info
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `SupportRequest` |
-
-## Root linked-data files
-
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/SupportRequest/attributes.yaml](https://schema.beckn.io/SupportRequest/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/SupportRequest/v2.0/attributes.yaml](https://schema.beckn.io/SupportRequest/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/SupportRequest/attributes.jsonschema.yaml](https://schema.beckn.io/SupportRequest/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/SupportRequest/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/SupportRequest/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/SupportRequest/context.jsonld](https://schema.beckn.io/SupportRequest/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/SupportRequest/v2.0/context.jsonld](https://schema.beckn.io/SupportRequest/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/SupportRequest/vocab.jsonld](https://schema.beckn.io/SupportRequest/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/SupportRequest/v2.0/vocab.jsonld](https://schema.beckn.io/SupportRequest/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `@context` | string |  |
-| `@type` | string |  |
-| `orderId` | string | The order against which support is required |
-| `ticketIds` | id[] | IDs of support ticket if open |
-| `callbackPhone` | string | Telephone number of the user for callback. |
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `@context` | yes | string | - |
+| `@type` | yes | string | - |
+| `orderId` | no | string | The order against which support is required |
+| `ticketIds` | no | array | IDs of support ticket if open |
+| `callbackPhone` | no | string | Telephone number of the user for callback. |

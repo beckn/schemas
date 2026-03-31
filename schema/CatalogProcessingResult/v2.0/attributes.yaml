@@ -1,32 +1,44 @@
-$id: "https://schema.beckn.io/CatalogProcessingResult/v2.0"
-$schema: "https://json-schema.org/draft/2020-12/schema"
-description: Schema definition for CatalogProcessingResult in the Beckn Protocol v2.1
-title: CatalogProcessingResult
-x-tags: [common]
-type: object
-properties:
-  catalogId:
-    description: The "id" of the submitted catalog
-    type: string
-  status:
-    description: Final processing outcome for this catalog
-    type: string
-    enum:
-    - ACCEPTED
-    - REJECTED
-    - PARTIAL
-  itemCount:
-    description: Number of items indexed (when accepted/partial)
-    type: integer
-    minimum: 0
-  warnings:
-    description: Non-fatal issues encountered
-    type: array
-    items:
-      $ref: "https://schema.beckn.io/ProcessingNotice/v2.0"
-  error:
-    $ref: "https://schema.beckn.io/Error/v2.0"
-required:
-- catalogId
-- status
-additionalProperties: false
+openapi: 3.1.1
+info:
+  title: CatalogProcessingResult
+  version: 2.0.0
+  description: Schema definition for CatalogProcessingResult in the Beckn Protocol
+    v2.1
+paths: {}
+components:
+  schemas:
+    CatalogProcessingResult:
+      $id: https://schema.beckn.io/CatalogProcessingResult/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: Schema definition for CatalogProcessingResult in the Beckn Protocol
+        v2.1
+      title: CatalogProcessingResult
+      x-tags:
+      - common
+      type: object
+      properties:
+        catalogId:
+          description: The "id" of the submitted catalog
+          type: string
+        status:
+          description: Final processing outcome for this catalog
+          type: string
+          enum:
+          - ACCEPTED
+          - REJECTED
+          - PARTIAL
+        itemCount:
+          description: Number of items indexed (when accepted/partial)
+          type: integer
+          minimum: 0
+        warnings:
+          description: Non-fatal issues encountered
+          type: array
+          items:
+            $ref: https://schema.beckn.io/ProcessingNotice/attributes.yaml#/components/schemas/ProcessingNotice
+        error:
+          $ref: https://schema.beckn.io/Error/attributes.yaml#/components/schemas/Error
+      required:
+      - catalogId
+      - status
+      additionalProperties: false

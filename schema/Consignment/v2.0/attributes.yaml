@@ -1,22 +1,18 @@
-openapi: 3.1.0
+openapi: 3.1.1
 info:
   title: Consignment
   version: 2.0.0
-  description: Schema definition for the Consignment entity in the Beckn Logistics domain.
-  contact:
-    name: Beckn Foundation
-    url: https://beckn.org
-  license:
-    name: MIT
-    url: https://opensource.org/licenses/MIT
+  description: Schema definition for the Consignment entity in the Beckn Logistics
+    domain.
 paths: {}
 components:
   schemas:
     Consignment:
       type: object
       title: Consignment
-      description: 'A Consignment is a collection of packages or shipments grouped together under a single
-        commercial transaction between a shipper and consignee. Maps to beckn:Order.
+      description: 'A Consignment is a collection of packages or shipments grouped
+        together under a single commercial transaction between a shipper and consignee.
+        Maps to beckn:Order.
 
         '
       required:
@@ -29,16 +25,16 @@ components:
           description: Unique consignment identifier (e.g. AWB number)
           example: AWB-2024-9900123
         shipper:
-          $ref: '#/components/schemas/Contact'
+          $ref: https://schema.beckn.io/Contact/attributes.yaml#/components/schemas/Contact
         consignee:
-          $ref: '#/components/schemas/Contact'
+          $ref: https://schema.beckn.io/Contact/attributes.yaml#/components/schemas/Contact
         shipments:
           type: array
           description: List of shipments in this consignment
           items:
-            $ref: '#/components/schemas/Shipment'
+            $ref: https://schema.beckn.io/Shipment/attributes.yaml#/components/schemas/Shipment
         carrier:
-          $ref: '#/components/schemas/Carrier'
+          $ref: https://schema.beckn.io/Carrier/attributes.yaml#/components/schemas/Carrier
         totalWeight:
           type: object
           properties:
@@ -86,6 +82,3 @@ components:
         estimatedDelivery:
           type: string
           format: date-time
-$id: https://schema.beckn.io/Consignment/v2.0
-x-tags:
-- logistics

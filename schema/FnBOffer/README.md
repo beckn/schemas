@@ -1,16 +1,21 @@
 # FnBOffer
 
-> **Canonical IRI:** [`https://schema.beckn.io/FnBOffer`](https://schema.beckn.io/FnBOffer)
-> **Tags:** `retail, food-and-beverages`
-> **Namespace:** `https://schema.beckn.io/`
-> Part of the [Beckn Protocol Core Schema](../../README.md)
+A Beckn schema for food and beverage offer attributes.
 
----
+FnBOffer extends beckn:RetailCoreOfferAttributes with F&B-specific offer
+customization groups — the structured mechanism by which a food item's
+configurable options (size, crust, toppings, add-ons) are declared and
+priced within an offer.
 
-A Beckn schema for food and beverage offer attributes with customization groups.
+A CustomizationGroup represents one dimension of configurability (e.g.
+pizza size, crust type, topping selection). Each group has one or more
+options with optional price deltas.
+
+Inheritance: beckn:RetailCoreOfferAttributes ← beckn:FnBOffer
+Use in: beckn:Offer.offerAttributes for F&B catalog items
 
 ## Versions
 
-| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
-|---------|----------------|----------------|--------------|--------|
-| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
+| Version | attributes.yaml | attributes.jsonschema.yaml | context.jsonld | vocab.jsonld | README |
+|---|---|---|---|---|---|
+| **v2.0** | [https://schema.beckn.io/FnBOffer/v2.0/attributes.yaml](https://schema.beckn.io/FnBOffer/v2.0/attributes.yaml) | [https://schema.beckn.io/FnBOffer/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/FnBOffer/v2.0/attributes.jsonschema.yaml) | [https://schema.beckn.io/FnBOffer/v2.0/context.jsonld](https://schema.beckn.io/FnBOffer/v2.0/context.jsonld) | [https://schema.beckn.io/FnBOffer/v2.0/vocab.jsonld](https://schema.beckn.io/FnBOffer/v2.0/vocab.jsonld) | [https://schema.beckn.io/FnBOffer/v2.0/README.md](https://schema.beckn.io/FnBOffer/v2.0/README.md) |

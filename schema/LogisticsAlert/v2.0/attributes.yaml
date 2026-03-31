@@ -1,22 +1,16 @@
-openapi: 3.1.0
+openapi: 3.1.1
 info:
   title: Alert
   version: 2.0.0
   description: Schema definition for the Alert entity in the Beckn Logistics domain.
-  contact:
-    name: Beckn Foundation
-    url: https://beckn.org
-  license:
-    name: MIT
-    url: https://opensource.org/licenses/MIT
 paths: {}
 components:
   schemas:
-    Alert:
+    LogisticsAlert:
       type: object
       title: Alert
-      description: 'An Alert is a notification or warning related to a shipment, such as delays, exceptions,
-        damage reports, or SLA breaches. Maps to beckn:Event.
+      description: 'An Alert is a notification or warning related to a shipment, such
+        as delays, exceptions, damage reports, or SLA breaches. Maps to beckn:Event.
 
         '
       required:
@@ -96,6 +90,3 @@ components:
         suggestedAction:
           type: string
           example: Please reschedule delivery for tomorrow.
-$id: https://schema.beckn.io/LogisticsAlert/v2.0
-x-tags:
-- logistics

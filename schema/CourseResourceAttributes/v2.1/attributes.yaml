@@ -1,130 +1,136 @@
-openapi: "3.1.1"
+openapi: 3.1.1
 info:
   title: CourseResourceAttributes
-  version: "2.1.0"
-  description: >
-    Beckn v2.1 extension schema for the resourceAttributes container.
+  version: 2.1.0
+  description: 'Beckn v2.1 extension schema for the resourceAttributes container.
     Represents a discoverable training course or program in a skilling ecosystem.
     Captures intrinsic course metadata: delivery mode, domain, duration, capacity,
-    prerequisites, schedule, and the credential issued on successful completion.
-    Pricing belongs in CourseOfferAttributes.
+    prerequisites, schedule, and the credential issued on successful completion. Pricing
+    belongs in CourseOfferAttributes.
 
-x-beckn-container: resourceAttributes
-
+    '
+paths: {}
 components:
   schemas:
     CourseResourceAttributes:
       type: object
-      description: >
-        Intrinsic attributes of a training course or program Resource.
+      description: 'Intrinsic attributes of a training course or program Resource.
         Domain-generic: applicable to any skilling vertical — vocational training,
         professional certification, higher education, government skill schemes, etc.
+
+        '
       x-beckn-container: resourceAttributes
-      x-jsonld-context: "./context.jsonld"
+      x-jsonld-context: ./context.jsonld
       properties:
         course_level:
           type: string
           description: Difficulty or qualification level of the course.
-          x-jsonld-id: "cra:courseLevel"
+          x-jsonld-id: cra:courseLevel
           enum:
-            - BEGINNER
-            - INTERMEDIATE
-            - ADVANCED
-            - EXPERT
+          - BEGINNER
+          - INTERMEDIATE
+          - ADVANCED
+          - EXPERT
         course_domain:
-          $ref: "../../../CodedValue/attributes.yaml#/components/schemas/CodedValue"
-          description: >
-            Subject domain of the course, expressed using an authority-governed
+          $ref: https://schema.beckn.io/CodedValue/attributes.yaml#/components/schemas/CodedValue
+          description: 'Subject domain of the course, expressed using an authority-governed
             code system (e.g. UNESCO ISCED, India NSQF sector codes).
-          x-jsonld-id: "cra:courseDomain"
+
+            '
+          x-jsonld-id: cra:courseDomain
         delivery_mode:
           type: string
           description: How the course is delivered.
-          x-jsonld-id: "cra:deliveryMode"
+          x-jsonld-id: cra:deliveryMode
           enum:
-            - ONLINE
-            - ONSITE
-            - HYBRID
+          - ONLINE
+          - ONSITE
+          - HYBRID
         duration:
           type: string
-          description: >
-            Total course duration in ISO 8601 duration format.
-            Examples: "P3W" (3 weeks), "PT40H" (40 hours), "P6M" (6 months).
-          x-jsonld-id: "cra:duration"
-          pattern: "^P.*"
+          description: 'Total course duration in ISO 8601 duration format. Examples:
+            "P3W" (3 weeks), "PT40H" (40 hours), "P6M" (6 months).
+
+            '
+          x-jsonld-id: cra:duration
+          pattern: ^P.*
         location:
           type: object
           description: Physical location for ONSITE or HYBRID courses.
-          x-jsonld-id: "cra:location"
+          x-jsonld-id: cra:location
           properties:
             city:
               type: string
-              x-jsonld-id: "schema:addressLocality"
+              x-jsonld-id: schema:addressLocality
             region:
               type: string
-              x-jsonld-id: "schema:addressRegion"
+              x-jsonld-id: schema:addressRegion
             country:
               type: string
               description: ISO 3166-1 alpha-2 country code.
-              x-jsonld-id: "schema:addressCountry"
+              x-jsonld-id: schema:addressCountry
         capacity:
           type: integer
           description: Maximum number of learners per cohort or batch.
-          x-jsonld-id: "cra:capacity"
+          x-jsonld-id: cra:capacity
           minimum: 1
         schedule:
           type: object
           description: Cohort or batch schedule details.
-          x-jsonld-id: "cra:schedule"
+          x-jsonld-id: cra:schedule
           properties:
             start_date:
               type: string
               format: date
-              x-jsonld-id: "schema:startDate"
+              x-jsonld-id: schema:startDate
             end_date:
               type: string
               format: date
-              x-jsonld-id: "schema:endDate"
+              x-jsonld-id: schema:endDate
             session_pattern:
               type: string
-              description: >
-                Human-readable schedule pattern, e.g. "Monday & Wednesday 6–8 PM",
-                "Self-paced with weekly live sessions".
-              x-jsonld-id: "cra:sessionPattern"
+              description: 'Human-readable schedule pattern, e.g. "Monday & Wednesday
+                6–8 PM", "Self-paced with weekly live sessions".
+
+                '
+              x-jsonld-id: cra:sessionPattern
         prerequisites:
           type: array
-          description: >
-            Credential prerequisites the enrollee must satisfy.
-            Uses the shared CredentialRequirement type.
-          x-jsonld-id: "cra:prerequisites"
+          description: 'Credential prerequisites the enrollee must satisfy. Uses the
+            shared CredentialRequirement type.
+
+            '
+          x-jsonld-id: cra:prerequisites
           items:
-            $ref: "../../../CredentialRequirement/attributes.yaml#/components/schemas/CredentialRequirement"
+            $ref: https://schema.beckn.io/CredentialRequirement/attributes.yaml#/components/schemas/CredentialRequirement
         outcome_credential:
           type: object
-          description: >
-            The credential issued to a learner on successful course completion.
-            Placed in resourceAttributes because it is intrinsic to the course
-            and required at discovery time (learners search by intended outcome).
-          x-jsonld-id: "cra:outcomeCredential"
+          description: 'The credential issued to a learner on successful course completion.
+            Placed in resourceAttributes because it is intrinsic to the course and
+            required at discovery time (learners search by intended outcome).
+
+            '
+          x-jsonld-id: cra:outcomeCredential
           required:
-            - category
-            - name
+          - category
+          - name
           properties:
             category:
               type: string
               description: Broad credential class issued on completion.
-              x-jsonld-id: "cra:credentialCategory"
+              x-jsonld-id: cra:credentialCategory
               enum:
-                - SKILL
-                - DEGREE
-                - CERTIFICATION
-                - DIPLOMA
-                - LICENCE
+              - SKILL
+              - DEGREE
+              - CERTIFICATION
+              - DIPLOMA
+              - LICENCE
             name:
               type: string
-              description: Specific name of the credential. E.g. "AWS Solutions Architect Associate".
-              x-jsonld-id: "cra:credentialName"
+              description: Specific name of the credential. E.g. "AWS Solutions Architect
+                Associate".
+              x-jsonld-id: cra:credentialName
         industry_type:
-          $ref: "../../../CodedValue/attributes.yaml#/components/schemas/CodedValue"
+          $ref: https://schema.beckn.io/CodedValue/attributes.yaml#/components/schemas/CodedValue
           description: Industry alignment of the course (optional).
-          x-jsonld-id: "cra:industryType"
+          x-jsonld-id: cra:industryType

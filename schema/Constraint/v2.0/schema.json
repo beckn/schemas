@@ -1,0 +1,53 @@
+{
+  "$id": "https://schema.beckn.io/Constraint/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Schema definition for Constraint in the Beckn Protocol v2.0.1",
+  "title": "Constraint",
+  "type": "object",
+  "properties": {
+    "@context": {
+      "description": "CPD",
+      "type": "string",
+      "format": "uri",
+      "const": "https://schema.beckn.io/"
+    },
+    "@type": {
+      "type": "string",
+      "enum": [
+        "Constraint"
+      ]
+    },
+    "constraintType": {
+      "description": "Type of constraint (extensible term)",
+      "type": "string"
+    },
+    "id": {
+      "description": "Identifier for the constraint",
+      "type": "string"
+    },
+    "operator": {
+      "description": "Comparator/operator (<=, >=, =, etc.)",
+      "type": "string"
+    },
+    "unitCode": {
+      "description": "Unit code (e.g., km, min)",
+      "type": "string"
+    },
+    "validity": {
+      "$ref": "https://schema.beckn.io/TimePeriod/attributes.yaml"
+    },
+    "value": {
+      "description": "Constraint value",
+      "type": "number"
+    }
+  },
+  "required": [
+    "@context",
+    "@type",
+    "id"
+  ],
+  "additionalProperties": false,
+  "x-tags": [
+    "common"
+  ]
+}

@@ -102,10 +102,10 @@ Every schema is available as a standalone OpenAPI 3.1 component, referenceable b
 components:
   schemas:
     Address:
-      $ref: 'https://raw.githubusercontent.com/beckn/core_schema/main/schema/Address/v2.0/attributes.yaml#/components/schemas/Address'
+      $ref: 'https://raw.githubusercontent.com/beckn/core_schema/main/schema/Address/v2.0/attributes.jsonschema.yaml#/components/schemas/Address'
 
     Catalog:
-      $ref: 'https://raw.githubusercontent.com/beckn/core_schema/main/schema/Catalog/v2.0/attributes.yaml#/components/schemas/Catalog'
+      $ref: 'https://raw.githubusercontent.com/beckn/core_schema/main/schema/Catalog/v2.0/attributes.jsonschema.yaml#/components/schemas/Catalog'
 ```
 
 The Tier 1 transport envelope (`protocol-specifications-v2`) uses exactly this mechanism — it `$ref`-references the core schemas from this repository to define the payload body of each API action.
@@ -151,12 +151,12 @@ Domain schema packs (Tier 3) extend core schemas for specific industry verticals
 A domain pack adds industry-specific attributes by extending a core schema:
 
 ```yaml
-# In beckn/mobility — schema/RideService/v1.0/attributes.yaml
+# In beckn/mobility — schema/RideService/v1.0/attributes.jsonschema.yaml
 components:
   schemas:
     RideService:
       allOf:
-        - $ref: 'https://raw.githubusercontent.com/beckn/core_schema/main/schema/Item/v2.0/attributes.yaml#/components/schemas/Item'
+        - $ref: 'https://raw.githubusercontent.com/beckn/core_schema/main/schema/Item/v2.0/attributes.jsonschema.yaml#/components/schemas/Item'
         - type: object
           properties:
             vehicleType:
@@ -229,7 +229,7 @@ The [`draft`](../../tree/draft) branch contains the complete v2.0 content curren
 | Document | Contents |
 |----------|---------|
 | `1_Introduction.md` | Three-tier model, design rationale, relationship to `protocol-specifications-v2` |
-| `2_Schema_Structure.md` | Normative directory layout, file naming conventions, `attributes.yaml` structure |
+| `2_Schema_Structure.md` | Normative directory layout, file naming conventions, `attributes.jsonschema.yaml` structure |
 | `3_JSON_LD_Context_and_Vocabulary.md` | `beckn:` namespace, `@protected` contexts, term mapping patterns, enum handling |
 | `4_Versioning_and_Deprecation.md` | Semver rules, what triggers Minor vs Major, deprecation lifecycle, IRI retention |
 | `5_Contributing_Schemas.md` | Step-by-step guide: proposal → authoring → PR, with templates and worked examples |
@@ -254,7 +254,7 @@ core_schema/
 │   ├── README.md               ← Alphabetical schema index with descriptions
 │   └── {SchemaName}/
 │       └── v2.0/
-│           ├── attributes.yaml ← OpenAPI 3.1 component definition
+│           ├── attributes.jsonschema.yaml ← OpenAPI 3.1 component definition
 │           ├── context.jsonld  ← Per-schema JSON-LD context
 │           └── vocab.jsonld    ← Per-schema RDF vocabulary
 ├── docs/

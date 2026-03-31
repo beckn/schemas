@@ -1,37 +1,12 @@
 # Tracking
 
-> **Canonical IRI:** [`https://schema.beckn.io/Tracking`](https://schema.beckn.io/Tracking)
-> **Tags:** `common`
-> **Namespace:** `https://schema.beckn.io/`
-> Part of the [Beckn Protocol Core Schema](../../README.md)
+Information regarding live tracking of the fufillment of a contract
 
----
-
-Non-streaming tracking handle per legacy semantics (url/transport/status).
+This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
 
 ## Versions
 
-| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
-|---------|----------------|----------------|--------------|--------|
-| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
-
-## Properties (latest: v2.0)
-
-| Property | Type | Required | Description |
-|----------|------|:--------:|-------------|
-| `@context` | `string` (uri) | ✅ | TBD |
-| `@type` | `string` | ✅ | TBD |
-| `expiresAt` | `string` (date-time) | — | ISO 8601 expiry timestamp for the tracking handle. |
-| `trackingStatus` | `string` | ✅ | — |
-| `url` | `string` (uri) | ✅ | Link/handle to off-network tracking UI or endpoint. |
-
-## Linked Data
-
-| Resource | URL |
-|----------|-----|
-| Canonical IRI | `https://schema.beckn.io/Tracking` |
-| JSON Schema (latest) | `https://schema.beckn.io/Tracking/2.0` |
-| context.jsonld (latest) | `https://schema.beckn.io/Tracking/2.0/context.jsonld` |
-| vocab.jsonld (latest) | `https://schema.beckn.io/Tracking/2.0/vocab.jsonld` |
-| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
-| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |
+| Version | attributes.yaml | attributes.jsonschema.yaml | context.jsonld | vocab.jsonld | README |
+|---|---|---|---|---|---|
+| **v2.0** | [https://schema.beckn.io/Tracking/v2.0/attributes.yaml](https://schema.beckn.io/Tracking/v2.0/attributes.yaml) | [https://schema.beckn.io/Tracking/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/Tracking/v2.0/attributes.jsonschema.yaml) | [https://schema.beckn.io/Tracking/v2.0/context.jsonld](https://schema.beckn.io/Tracking/v2.0/context.jsonld) | [https://schema.beckn.io/Tracking/v2.0/vocab.jsonld](https://schema.beckn.io/Tracking/v2.0/vocab.jsonld) | [https://schema.beckn.io/Tracking/v2.0/README.md](https://schema.beckn.io/Tracking/v2.0/README.md) |
+| **v2.1** | [https://schema.beckn.io/Tracking/v2.1/attributes.yaml](https://schema.beckn.io/Tracking/v2.1/attributes.yaml) | [https://schema.beckn.io/Tracking/v2.1/attributes.jsonschema.yaml](https://schema.beckn.io/Tracking/v2.1/attributes.jsonschema.yaml) | [https://schema.beckn.io/Tracking/v2.1/context.jsonld](https://schema.beckn.io/Tracking/v2.1/context.jsonld) | [https://schema.beckn.io/Tracking/v2.1/vocab.jsonld](https://schema.beckn.io/Tracking/v2.1/vocab.jsonld) | [https://schema.beckn.io/Tracking/v2.1/README.md](https://schema.beckn.io/Tracking/v2.1/README.md) |

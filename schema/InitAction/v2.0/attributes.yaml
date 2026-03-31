@@ -1,29 +1,43 @@
-$id: https://schema.beckn.io/InitAction/v2.0
-$schema: https://json-schema.org/draft/2020-12/schema
-description: 'Beckn /beckn/init action envelope. Sent by a BAP to a BPP to initialise a contract with consumer details (billing address, fulfillment preferences, etc.).
+openapi: 3.1.1
+info:
+  title: InitAction
+  version: 2.0.0
+  description: 'Beckn /beckn/init action envelope. Sent by a BAP to a BPP to initialise
+    a contract with consumer details (billing address, fulfillment preferences, etc.).
 
-  '
-title: InitAction
-type: object
-properties:
-  context:
-    allOf:
-    - $ref: https://schema.beckn.io/Context/v2.0
-    - type: object
+    '
+paths: {}
+components:
+  schemas:
+    InitAction:
+      $id: https://schema.beckn.io/InitAction/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: 'Beckn /beckn/init action envelope. Sent by a BAP to a BPP to initialise
+        a contract with consumer details (billing address, fulfillment preferences,
+        etc.).
+
+        '
+      title: InitAction
+      type: object
       properties:
-        action:
-          type: string
-          const: beckn/init
-  message:
-    type: object
-    additionalProperties: true
-    properties:
-      contract:
-        $ref: https://schema.beckn.io/Contract/v2.0
-    required:
-    - contract
-required:
-- context
-- message
-x-tags:
-- common
+        context:
+          allOf:
+          - $ref: https://schema.beckn.io/Context/attributes.yaml#/components/schemas/Context
+          - type: object
+            properties:
+              action:
+                type: string
+                const: beckn/init
+        message:
+          type: object
+          additionalProperties: true
+          properties:
+            contract:
+              $ref: https://schema.beckn.io/Contract/attributes.yaml#/components/schemas/Contract
+          required:
+          - contract
+      required:
+      - context
+      - message
+      x-tags:
+      - common

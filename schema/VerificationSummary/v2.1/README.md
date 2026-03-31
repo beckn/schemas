@@ -1,36 +1,27 @@
-# VerificationSummary — Shared Type
+# VerificationSummary — v2.1
 
-**Type:** Shared sub-schema
-**Protocol Version:** 2.1
-**Semantic Model:** generalised
-**Version:** 1.0.0
-**Used By:** `JobApplicationContractAttributes`, `HiringProcessPerformanceAttributes`, `CourseEnrollmentContractAttributes`
+Summary of a credential verification check. Contains the overall result, reason codes for any failures, and which credential categories were successfully verified. No VC or VP payloads are included.
 
-## Overview
+## Files
 
-`VerificationSummary` is the outcome record of a credential verification check. It is
-designed to be shared across hiring-jobs, hiring-candidates, and skilling packs — and is
-general enough to apply to any Beckn domain that requires credential gating.
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/VerificationSummary/attributes.yaml](https://schema.beckn.io/VerificationSummary/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/VerificationSummary/v2.1/attributes.yaml](https://schema.beckn.io/VerificationSummary/v2.1/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/VerificationSummary/attributes.jsonschema.yaml](https://schema.beckn.io/VerificationSummary/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/VerificationSummary/v2.1/attributes.jsonschema.yaml](https://schema.beckn.io/VerificationSummary/v2.1/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/VerificationSummary/context.jsonld](https://schema.beckn.io/VerificationSummary/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/VerificationSummary/v2.1/context.jsonld](https://schema.beckn.io/VerificationSummary/v2.1/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/VerificationSummary/vocab.jsonld](https://schema.beckn.io/VerificationSummary/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/VerificationSummary/v2.1/vocab.jsonld](https://schema.beckn.io/VerificationSummary/v2.1/vocab.jsonld) | RDF vocabulary (versioned path) |
 
-## Privacy Principles
+## Properties
 
-- No VC payloads are included
-- No VP payloads are included
-- No PII is included
-- `proof_metadata_hash` provides integrity reference only
-
-## Fields
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `overall_result` | enum | Yes | PASS / FAIL / PARTIAL / PENDING |
-| `reason_codes` | array of string | No | Failure reason codes |
-| `verified_categories` | array of string | No | Successfully verified credential classes |
-| `verified_subtypes` | array of string | No | Successfully verified specific credentials |
-| `checked_at` | date-time | Yes | Verification timestamp |
-| `proof_metadata_hash` | string | No | Hash of VP used (integrity only) |
-
-## Upstream Candidate
-
-Verification summary is domain-agnostic — relevant to healthcare (license verification),
-financial services (KYC), logistics (driver license), and more. Strong upstream candidate.
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `overall_result` | yes | string | Aggregate outcome of the verification check. |
+| `reason_codes` | no | array | Reason codes for failures or partial results. Empty if overall_result is PASS. Examples: "MANDATORY_REQUIREMENT_MISSING", "EXPIRED_CREDENTIAL", "ISSUER_NOT_TRUSTED", "SIGNATURE_INVALID".  |
+| `verified_categories` | no | array | Credential categories that were successfully verified in this check.  |
+| `verified_subtypes` | no | array | Specific credential subtypes that were successfully verified.  |
+| `checked_at` | yes | string | Timestamp when verification was performed. |
+| `proof_metadata_hash` | no | string | Optional hash of the VP used in verification. Provides integrity reference without storing the VP payload.  |

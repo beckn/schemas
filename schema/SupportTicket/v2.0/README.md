@@ -1,27 +1,23 @@
 # SupportTicket — v2.0
 
-A support ticket.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [SupportTicket](../README.md)
+A support ticket raised against an order
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `SupportTicket` |
-
-## Root linked-data files
-
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/SupportTicket/attributes.yaml](https://schema.beckn.io/SupportTicket/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/SupportTicket/v2.0/attributes.yaml](https://schema.beckn.io/SupportTicket/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/SupportTicket/attributes.jsonschema.yaml](https://schema.beckn.io/SupportTicket/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/SupportTicket/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/SupportTicket/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/SupportTicket/context.jsonld](https://schema.beckn.io/SupportTicket/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/SupportTicket/v2.0/context.jsonld](https://schema.beckn.io/SupportTicket/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/SupportTicket/vocab.jsonld](https://schema.beckn.io/SupportTicket/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/SupportTicket/v2.0/vocab.jsonld](https://schema.beckn.io/SupportTicket/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `id` | string | Ticket ID |
-| `supportTicketAttributes` | [Attributes](../../Attributes/README.md) |  |
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `id` | no | string | Ticket ID |
+| `supportTicketAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | - |

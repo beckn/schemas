@@ -1,84 +1,93 @@
-$id: https://schema.beckn.io/Offer/v2.0
-$schema: https://json-schema.org/draft/2020-12/schema
-description: Schema definition for Offer in the Beckn Protocol
-title: Offer
-type: object
-properties:
-  '@context':
-    type: string
-    format: uri
-    example: https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld
-  '@type':
-    type: string
-    enum:
-    - beckn:Offer
-    x-jsonld:
-      '@id': schema:Offer
-  beckn:id:
-    type: string
-    description: Unique id for this offer
-    x-jsonld:
-      '@id': schema:identifier
-  beckn:descriptor:
-    $ref: 'https://schema.beckn.io/Descriptor/v2.1'
-  beckn:provider:
-    $ref: 'https://schema.beckn.io/Provider/v2.1'
-    description: Seller / provider of this offer
-    x-jsonld:
-      '@id': schema:seller
-  beckn:items:
-    type: array
-    minItems: 1
-    items:
-      $ref: 'https://schema.beckn.io/Item/v2.1'
-    description: Base item(s) the offer applies to (single or bundle)
-    x-jsonld:
-      '@id': schema:itemOffered
-  beckn:addOns:
-    type: array
-    items:
-      $ref: 'https://schema.beckn.io/Offer/v2.1'
-    description: Optional extra Offers that can be attached (e.g., warranty, gift
-      wrap)
-    x-jsonld:
-      '@id': schema:addOn
-  beckn:addOnItems:
-    type: array
-    items:
-      $ref: 'https://schema.beckn.io/Item/v2.1'
-    description: Optional extras modeled as items (e.g., toppings, accessories)
-    x-jsonld:
-      '@id': schema:addOn
-  beckn:isActive:
-    type: boolean
-    description: Whether the offer is active
-    default: true
-  beckn:validity:
-    $ref: 'https://schema.beckn.io/TimePeriod/v2.1'
-    description: Offer validity window
-    x-jsonld:
-      '@id': schema:availabilityStarts|schema:availabilityEnds
-  beckn:price:
-    $ref: 'https://schema.beckn.io/PriceSpecification/v2.1'
-    description: Price snapshot; detailed models can live in offerAttributes
-    x-jsonld:
-      '@id': schema:priceSpecification
-  beckn:eligibleRegion:
-    type: array
-    items:
-      $ref: 'https://schema.beckn.io/Location/v2.0'
-    description: Regions where the offer is eligible
-  beckn:acceptedPaymentMethod:
-    $ref: 'https://schema.beckn.io/AcceptedPaymentMethod/v2.0'
-  beckn:offerAttributes:
-    $ref: 'https://schema.beckn.io/Attributes/v2.0'
-    description: Attribute Pack attachment (pricing models, discounts, rail terms,
-      etc.)
-required:
-- '@context'
-- '@type'
-- beckn:id
-- beckn:descriptor
-- beckn:provider
-- beckn:items
-additionalProperties: false
+openapi: 3.1.1
+info:
+  title: Offer
+  version: 2.0.0
+  description: Schema definition for Offer in the Beckn Protocol
+paths: {}
+components:
+  schemas:
+    Offer:
+      $id: https://schema.beckn.io/Offer/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: Schema definition for Offer in the Beckn Protocol
+      title: Offer
+      type: object
+      properties:
+        '@context':
+          type: string
+          format: uri
+          example: https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld
+        '@type':
+          type: string
+          enum:
+          - beckn:Offer
+          x-jsonld:
+            '@id': schema:Offer
+        beckn:id:
+          type: string
+          description: Unique id for this offer
+          x-jsonld:
+            '@id': schema:identifier
+        beckn:descriptor:
+          $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
+        beckn:provider:
+          $ref: https://schema.beckn.io/Provider/attributes.yaml#/components/schemas/Provider
+          description: Seller / provider of this offer
+          x-jsonld:
+            '@id': schema:seller
+        beckn:items:
+          type: array
+          minItems: 1
+          items:
+            $ref: https://schema.beckn.io/Item/attributes.yaml#/components/schemas/Item
+          description: Base item(s) the offer applies to (single or bundle)
+          x-jsonld:
+            '@id': schema:itemOffered
+        beckn:addOns:
+          type: array
+          items:
+            $ref: https://schema.beckn.io/Offer/attributes.yaml#/components/schemas/Offer
+          description: Optional extra Offers that can be attached (e.g., warranty,
+            gift wrap)
+          x-jsonld:
+            '@id': schema:addOn
+        beckn:addOnItems:
+          type: array
+          items:
+            $ref: https://schema.beckn.io/Item/attributes.yaml#/components/schemas/Item
+          description: Optional extras modeled as items (e.g., toppings, accessories)
+          x-jsonld:
+            '@id': schema:addOn
+        beckn:isActive:
+          type: boolean
+          description: Whether the offer is active
+          default: true
+        beckn:validity:
+          $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod
+          description: Offer validity window
+          x-jsonld:
+            '@id': schema:availabilityStarts|schema:availabilityEnds
+        beckn:price:
+          $ref: https://schema.beckn.io/PriceSpecification/attributes.yaml#/components/schemas/PriceSpecification
+          description: Price snapshot; detailed models can live in offerAttributes
+          x-jsonld:
+            '@id': schema:priceSpecification
+        beckn:eligibleRegion:
+          type: array
+          items:
+            $ref: https://schema.beckn.io/Location/attributes.yaml#/components/schemas/Location
+          description: Regions where the offer is eligible
+        beckn:acceptedPaymentMethod:
+          $ref: https://schema.beckn.io/AcceptedPaymentMethod/attributes.yaml#/components/schemas/AcceptedPaymentMethod
+        beckn:offerAttributes:
+          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+          description: Attribute Pack attachment (pricing models, discounts, rail
+            terms, etc.)
+      required:
+      - '@context'
+      - '@type'
+      - beckn:id
+      - beckn:descriptor
+      - beckn:provider
+      - beckn:items
+      additionalProperties: false

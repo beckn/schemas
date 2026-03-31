@@ -1,0 +1,59 @@
+{
+  "$id": "https://schema.beckn.io/PriceSpecification/v2.1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Schema definition for PriceSpecification in the Beckn Protocol v2.0.1",
+  "title": "PriceSpecification",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "currency": {
+      "type": "string",
+      "description": "ISO 4217 code"
+    },
+    "value": {
+      "type": "number",
+      "description": "Total value for this price specification"
+    },
+    "applicableQuantity": {
+      "$ref": "https://schema.beckn.io/Quantity/attributes.yaml",
+      "x-jsonld": {
+        "@id": "schema:eligibleQuantity"
+      }
+    },
+    "components": {
+      "type": "array",
+      "description": "Optional components (tax, shipping, discount, fee, surcharge)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "UNIT",
+              "TAX",
+              "DELIVERY",
+              "DISCOUNT",
+              "FEE",
+              "SURCHARGE"
+            ]
+          },
+          "value": {
+            "type": "number"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "x-jsonld": {
+    "@id": "schema:PriceSpecification"
+  },
+  "x-tags": [
+    "common"
+  ]
+}

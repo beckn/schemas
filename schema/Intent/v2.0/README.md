@@ -1,29 +1,26 @@
 # Intent — v2.0
 
-The search intent expressed by a consumer.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [Intent](../README.md)
+A declaration of an intent to discover catalogs.
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `Intent` |
-
-## Root linked-data files
-
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/Intent/attributes.yaml](https://schema.beckn.io/Intent/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/Intent/v2.0/attributes.yaml](https://schema.beckn.io/Intent/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/Intent/attributes.jsonschema.yaml](https://schema.beckn.io/Intent/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/Intent/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/Intent/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/Intent/context.jsonld](https://schema.beckn.io/Intent/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/Intent/v2.0/context.jsonld](https://schema.beckn.io/Intent/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/Intent/vocab.jsonld](https://schema.beckn.io/Intent/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/Intent/v2.0/vocab.jsonld](https://schema.beckn.io/Intent/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `textSearch` | string | Free text search query for items |
-| `filters` | object | Filter criteria for items |
-| `spatial` | [SpatialConstraint](../../SpatialConstraint/README.md)[] | Optional array of spatial constraints (CQL2-JSON semantics). |
-| `media_search` | [MediaSearch](../../MediaSearch/README.md) |  |
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `text_search` | no | string | Free text search query for items (legacy snake_case alias) |
+| `textSearch` | no | string | Free text search query for items |
+| `filters` | no | object | Filter criteria for items |
+| `spatial` | no | array | Optional array of spatial constraints (CQL2-JSON semantics). |
+| `media_search` | no | $ref: https://schema.beckn.io/MediaSearch/attributes.yaml#/components/schemas/MediaSearch | - |

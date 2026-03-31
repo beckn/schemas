@@ -7,7 +7,7 @@
   "extends": "beckn:Item",
   "attachAt": "beckn:itemAttributes",
 
-  "packSchema": "./attributes.yaml#/components/schemas/HomeAndKitchenItemAttributes",
+  "packSchema": "./attributes.jsonschema.yaml#/components/schemas/HomeAndKitchenItemAttributes",
 
   "indexing": {
     "indexable": [

@@ -1,0 +1,280 @@
+{
+  "$id": "https://schema.beckn.io/RetailCoreItemAttributes/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Retail-specific item attribute pack, used as the value of Item.itemAttributes for retail domain items. Covers physical properties, food classification, regulatory declarations, and verifiable credentials.\n",
+  "title": "RetailCoreItemAttributes",
+  "x-tags": [
+    "retail"
+  ],
+  "type": "object",
+  "properties": {
+    "@context": {
+      "description": "JSON-LD context URI for the retail item schema.",
+      "type": "string",
+      "format": "uri"
+    },
+    "@type": {
+      "description": "JSON-LD type for this attribute pack.",
+      "type": "string",
+      "const": "beckn:RetailCoreItemAttributes"
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "brand": {
+          "type": "string",
+          "description": "Brand or manufacturer name."
+        },
+        "originCountry": {
+          "type": "string",
+          "description": "Country of origin. ISO 3166-1 alpha-2 recommended."
+        }
+      }
+    },
+    "physical": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "weight": {
+          "description": "Item weight expressed using a Quantity.",
+          "type": "object",
+          "additionalProperties": true
+        },
+        "volume": {
+          "description": "Item volume (e.g., ML, L, CUBIC_CM).",
+          "type": "object",
+          "additionalProperties": true
+        },
+        "dimensions": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Physical dimensions expressed using a single unit.",
+          "required": [
+            "unit",
+            "length",
+            "breadth",
+            "height"
+          ],
+          "properties": {
+            "unit": {
+              "type": "string",
+              "enum": [
+                "MM",
+                "CM",
+                "M",
+                "IN",
+                "FT"
+              ]
+            },
+            "length": {
+              "type": "number"
+            },
+            "breadth": {
+              "type": "number"
+            },
+            "height": {
+              "type": "number"
+            }
+          }
+        },
+        "appearance": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "color": {
+              "type": "string"
+            },
+            "material": {
+              "type": "string"
+            },
+            "finish": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "food": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "classification": {
+          "type": "string",
+          "enum": [
+            "VEG",
+            "NON_VEG",
+            "EGG"
+          ]
+        }
+      }
+    },
+    "packagedGoodsDeclaration": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Jurisdiction-neutral packaged goods declaration.",
+      "properties": {
+        "manufacturerOrPacker": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "name"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "MANUFACTURER",
+                "PACKER"
+              ]
+            },
+            "name": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            }
+          }
+        },
+        "commonOrGenericName": {
+          "type": "string"
+        },
+        "netQuantity": {
+          "description": "Net quantity expressed as a Quantity object.",
+          "type": "object",
+          "additionalProperties": true
+        },
+        "manufacturePackingImportDate": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "month",
+            "year"
+          ],
+          "properties": {
+            "month": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 12
+            },
+            "year": {
+              "type": "integer",
+              "minimum": 1900
+            }
+          }
+        }
+      }
+    },
+    "foodRegulatoryDeclaration": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Jurisdiction-neutral food regulatory declarations.",
+      "properties": {
+        "registrations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "scheme",
+              "id"
+            ],
+            "properties": {
+              "scheme": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string",
+                "enum": [
+                  "BRAND_OWNER",
+                  "SELLER",
+                  "IMPORTER",
+                  "MANUFACTURER",
+                  "PACKER"
+                ]
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          }
+        },
+        "additives": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "value"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "CONTAINS",
+                  "MAY_CONTAIN",
+                  "FREE_FROM",
+                  "MAX_ALLOWED",
+                  "PERCENTAGE",
+                  "CODE"
+                ]
+              },
+              "value": {
+                "type": "string"
+              },
+              "quantity": {
+                "description": "Quantity of the additive.",
+                "type": "object",
+                "additionalProperties": true
+              },
+              "notes": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "credentials": {
+      "type": "array",
+      "description": "External verifiable credentials or attestations.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "uri"
+        ],
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "uri": {
+            "type": "string",
+            "format": "uri"
+          },
+          "issuer": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "@context",
+    "@type"
+  ],
+  "additionalProperties": true
+}

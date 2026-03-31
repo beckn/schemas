@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "title": "Contact",
+  "description": "Contact information for sender, receiver, driver, or operator.",
+  "properties": {
+    "name": {
+      "type": "string",
+      "example": "Priya Mehta"
+    },
+    "phone": {
+      "type": "string",
+      "example": "+919876543210"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "example": "priya.mehta@email.com"
+    },
+    "alternatePhone": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string",
+      "description": "Company name if B2B contact"
+    },
+    "gstNumber": {
+      "type": "string",
+      "description": "GST number for B2B invoicing"
+    }
+  },
+  "$id": "https://schema.beckn.io/Contact/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

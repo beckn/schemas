@@ -67,11 +67,11 @@ A new core schema MUST satisfy all of the following before being accepted:
 2. **Minimal** — it SHOULD contain only attributes required for interoperability. Avoid speculative attributes.
 3. **Named in PascalCase** — e.g., `FulfillmentStage`, not `fulfillment_stage` or `fulfillmentstage`.
 4. **Placed in the correct directory** — `schema/{SchemaName}/v2.0/`
-5. **Three files provided** — `attributes.yaml`, `context.jsonld`, and `vocab.jsonld` (see [`docs/2_Schema_Structure.md`](./docs/2_Schema_Structure.md))
+5. **Three files provided** — `attributes.jsonschema.yaml`, `context.jsonld`, and `vocab.jsonld` (see [`docs/2_Schema_Structure.md`](./docs/2_Schema_Structure.md))
 6. **JSON-LD context updated** — the new schema's term MUST be added to `schema/context.jsonld`
 7. **`schema/README.md` updated** — the schema list MUST include the new schema
 
-### 4.1 `attributes.yaml` Template
+### 4.1 `attributes.jsonschema.yaml` Template
 
 ```yaml
 openapi: 3.1.1
@@ -140,7 +140,7 @@ components:
 Before modifying an existing schema, classify your change using the table in [GOVERNANCE.md § 5.1](./GOVERNANCE.md).
 
 - **Patch** changes (e.g., correcting a `description` field) MAY be submitted as a direct PR.
-- **Minor** changes (e.g., adding an optional attribute) MUST update all three files (`attributes.yaml`, `context.jsonld`, `vocab.jsonld`) and the root `schema/context.jsonld`.
+- **Minor** changes (e.g., adding an optional attribute) MUST update all three files (`attributes.jsonschema.yaml`, `context.jsonld`, `vocab.jsonld`) and the root `schema/context.jsonld`.
 - **Major** changes (e.g., renaming a term or removing a required attribute) MUST follow the deprecation process in [GOVERNANCE.md § 6.1](./GOVERNANCE.md) and MUST include a migration guide.
 
 ---
@@ -149,7 +149,7 @@ Before modifying an existing schema, classify your change using the table in [GO
 
 To deprecate a schema or attribute:
 
-1. Add `deprecated: true` to the relevant property or schema in `attributes.yaml`, with a `description` noting the replacement.
+1. Add `deprecated: true` to the relevant property or schema in `attributes.jsonschema.yaml`, with a `description` noting the replacement.
 2. Add an `@comment` in the relevant entry in `schema/context.jsonld` noting the deprecated status and the replacement IRI.
 3. Retain the per-schema `context.jsonld` and `vocab.jsonld` files unchanged (for backward compatibility).
 4. Add a deprecation entry to `CHANGELOG.md`.
@@ -164,7 +164,7 @@ Deprecated schemas MUST NOT be removed until a subsequent Major version release.
 Before requesting review, verify that your PR satisfies all of the following:
 
 - [ ] Schema directory structure follows [`docs/2_Schema_Structure.md`](./docs/2_Schema_Structure.md)
-- [ ] All three schema files are present and consistent (`attributes.yaml`, `context.jsonld`, `vocab.jsonld`)
+- [ ] All three schema files are present and consistent (`attributes.jsonschema.yaml`, `context.jsonld`, `vocab.jsonld`)
 - [ ] `schema/context.jsonld` has been updated for any added, renamed, or deprecated terms
 - [ ] `schema/README.md` schema list has been updated
 - [ ] `CHANGELOG.md` has been updated with the appropriate entry

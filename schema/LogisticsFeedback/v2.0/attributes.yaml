@@ -1,21 +1,16 @@
-openapi: 3.1.0
+openapi: 3.1.1
 info:
   title: Feedback
   version: 2.0.0
   description: Schema for Feedback in Beckn Logistics domain.
-  contact:
-    name: Beckn Foundation
-    url: https://beckn.org
-  license:
-    name: MIT
-    url: https://opensource.org/licenses/MIT
 paths: {}
 components:
   schemas:
-    Feedback:
+    LogisticsFeedback:
       type: object
       title: Feedback
-      description: Qualitative feedback from sender or receiver about a logistics experience.
+      description: Qualitative feedback from sender or receiver about a logistics
+        experience.
       properties:
         id:
           type: string
@@ -23,7 +18,7 @@ components:
         shipmentId:
           type: string
         rating:
-          $ref: '#/components/schemas/Rating'
+          $ref: https://schema.beckn.io/Rating/attributes.yaml#/components/schemas/Rating
         review:
           type: string
           description: Free text review
@@ -50,6 +45,3 @@ components:
           type: boolean
           description: Whether feedback is publicly visible
           example: true
-$id: https://schema.beckn.io/LogisticsFeedback/v2.0
-x-tags:
-- logistics

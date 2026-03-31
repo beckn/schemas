@@ -1,0 +1,15 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:AckNoCallback",
+      "@type": "rdfs:Class",
+      "rdfs:label": "AckNoCallback",
+      "rdfs:comment": "Request received but no callback will follow (e.g. agents not found, inventory unavailable, provider closed, context.try preview complete).\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute."
+    }
+  ]
+}

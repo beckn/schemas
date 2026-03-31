@@ -1,41 +1,42 @@
-# Offer — v2.0
+# Offer — v2.1
 
-A promotional offer.
+A generalized, cross-domain Offer that captures the terms under which
+one or more Resources may be committed.
 
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [Offer](../README.md)
+Core intent:
+- Support multiple terms/eligibility/constraints/price points for the same Resource(s)
+- Support dynamic / on-the-fly offers (e.g., bundling, combinational discounts,
+ eligibility changes, capacity-aware pricing)
+
+This mirrors the role of Offer in current Beckn (and schema.org patterns),
+but keeps the shape minimal and composable via `beckn:offerAttributes`.
+
+This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `Offer` |
-
-## Root linked-data files
-
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/Offer/attributes.yaml](https://schema.beckn.io/Offer/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/Offer/v2.1/attributes.yaml](https://schema.beckn.io/Offer/v2.1/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/Offer/attributes.jsonschema.yaml](https://schema.beckn.io/Offer/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/Offer/v2.1/attributes.jsonschema.yaml](https://schema.beckn.io/Offer/v2.1/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/Offer/context.jsonld](https://schema.beckn.io/Offer/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/Offer/v2.1/context.jsonld](https://schema.beckn.io/Offer/v2.1/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/Offer/vocab.jsonld](https://schema.beckn.io/Offer/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/Offer/v2.1/vocab.jsonld](https://schema.beckn.io/Offer/v2.1/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `@context` | string | JSON-LD context URI for the core offer schema |
-| `@type` | string | TPD |
-| `acceptedPaymentMethod` | [AcceptedPaymentMethod](../../AcceptedPaymentMethod/README.md) |  |
-| `addOnItems` | id[] | Optional extras modeled as items (e.g., toppings, accessories) |
-| `addOns` | id[] | Optional extra Offers that can be attached (e.g., warranty, gift wrap) |
-| `constraints` | [Constraint](../../Constraint/README.md)[] |  |
-| `descriptor` | [Descriptor](../../Descriptor/README.md) |  |
-| `eligibleRegion` | [Location](../../Location/README.md)[] | Regions where the offer is eligible |
-| `id` | string | Unique id for this offer |
-| `isActive` | boolean | Whether the offer is active |
-| `items` | id[] | Base item(s) the offer applies to (single or bundle) |
-| `offerAttributes` | [Attributes](../../Attributes/README.md) | Attribute Pack attachment (pricing models, discounts, rail terms, etc.) |
-| `policies` | [Policy](../../Policy/README.md)[] |  |
-| `price` | [PriceSpecification](../../PriceSpecification/README.md) | Price snapshot; detailed models can live in offerAttributes |
-| `provider` | id | Seller / provider of this offer |
-| `validity` | [TimePeriod](../../TimePeriod/README.md) | Offer validity window |
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `id` | yes | string | Unique identifier of the offer. |
+| `descriptor` | no | $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor | Human / agent-readable description of this offer. |
+| `provider` | no | $ref: https://schema.beckn.io/Provider/attributes.yaml#/components/schemas/Provider | - |
+| `resourceIds` | no | array | References (IDs) to resources covered by this offer. |
+| `addOns` | no | array | IDs of optional extra Offers or Resources that can be attached. |
+| `considerationIds` | no | array | - |
+| `fulfillmentIds` | no | $ref: https://schema.beckn.io/Consideration/attributes.yaml#/components/schemas/Consideration | Details regarding the fulfillment of this offer |
+| `validity` | no | $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod | - |
+| `availableTo` | no | array | Optional visibility constraint indicating which network participants (by participantId / networkId / role) are allowed to discover or transact on this entity.  If omitted, the entity is assumed to be visible to all participants in the addressed network(s). |
+| `offerAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | - |

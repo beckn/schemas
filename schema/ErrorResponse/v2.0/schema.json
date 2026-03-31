@@ -1,0 +1,19 @@
+{
+  "$id": "https://schema.beckn.io/ErrorResponse/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Schema definition for ErrorResponse in the Beckn Protocol v2.0.1",
+  "title": "ErrorResponse",
+  "x-tags": [
+    "common"
+  ],
+  "type": "object",
+  "properties": {
+    "error": {
+      "$ref": "https://schema.beckn.io/Error/attributes.yaml"
+    }
+  },
+  "required": [
+    "error"
+  ],
+  "additionalProperties": false
+}

@@ -1,35 +1,30 @@
 # Participant — v2.0
 
-A participant in the Beckn network.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [Participant](../README.md)
+Schema definition for Participant in the Beckn Protocol v2.0.1
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `Participant` |
-
-## Root linked-data files
-
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/Participant/attributes.yaml](https://schema.beckn.io/Participant/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/Participant/v2.0/attributes.yaml](https://schema.beckn.io/Participant/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/Participant/attributes.jsonschema.yaml](https://schema.beckn.io/Participant/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/Participant/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/Participant/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/Participant/context.jsonld](https://schema.beckn.io/Participant/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/Participant/v2.0/context.jsonld](https://schema.beckn.io/Participant/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/Participant/vocab.jsonld](https://schema.beckn.io/Participant/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/Participant/v2.0/vocab.jsonld](https://schema.beckn.io/Participant/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `@context` | string |  |
-| `@type` | string |  |
-| `credentials` | [Credential](../../Credential/README.md)[] |  |
-| `displayName` | string |  |
-| `email` | string |  |
-| `id` | string |  |
-| `rating` | [Rating](../../Rating/README.md) |  |
-| `role` | string | Role of participant (consumer, recipient, rider, patient, operator, etc.) |
-| `skills` | [Skill](../../Skill/README.md)[] |  |
-| `telephone` | string |  |
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `@context` | yes | string | - |
+| `@type` | yes | any | One or more JSON-LD type IRIs for this participant. The first MUST be "beckn:Participant". Additional types (e.g. "beckn:Restaurant", "beckn:Consumer", "beckn:Rider") encode the domain role of the participant using sub-typing rather than a separate "role" field.  |
+| `credentials` | no | array | - |
+| `displayName` | no | string | - |
+| `email` | no | string | - |
+| `id` | yes | string | - |
+| `rating` | no | $ref: https://schema.beckn.io/Rating/attributes.yaml#/components/schemas/Rating | - |
+| `skills` | no | array | - |
+| `telephone` | no | string | - |

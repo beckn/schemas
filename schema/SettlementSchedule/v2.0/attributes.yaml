@@ -1,49 +1,59 @@
-$id: https://schema.beckn.io/SettlementSchedule/v2.0
-$schema: https://json-schema.org/draft/2020-12/schema
-description: Schema definition for SettlementSchedule in the Beckn Protocol v2.0.1
-title: SettlementSchedule
-type: object
-additionalProperties: false
-oneOf:
-- type: object
-  additionalProperties: false
-  required:
-  - tPlusX
-  properties:
-    tPlusX:
+openapi: 3.1.1
+info:
+  title: SettlementSchedule
+  version: 2.0.0
+  description: Schema definition for SettlementSchedule in the Beckn Protocol v2.0.1
+paths: {}
+components:
+  schemas:
+    SettlementSchedule:
+      $id: https://schema.beckn.io/SettlementSchedule/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: Schema definition for SettlementSchedule in the Beckn Protocol
+        v2.0.1
+      title: SettlementSchedule
       type: object
       additionalProperties: false
-      required:
-      - value
-      - unit
-      properties:
-        value:
-          type: integer
-          minimum: 0
-          description: X in T+X
-        unit:
-          type: string
-          enum:
-          - DAY
-          - BUSINESS_DAY
-- type: object
-  additionalProperties: false
-  required:
-  - settleByDateTime
-  properties:
-    settleByDateTime:
-      type: string
-      format: date-time
-      description: Latest timestamp by which settlement must complete
-- type: object
-  additionalProperties: false
-  required:
-  - settleByEndOf
-  properties:
-    settleByEndOf:
-      type: string
-      enum:
-      - END_OF_DAY
-      - END_OF_MONTH
-x-tags:
-- common
+      oneOf:
+      - type: object
+        additionalProperties: false
+        required:
+        - tPlusX
+        properties:
+          tPlusX:
+            type: object
+            additionalProperties: false
+            required:
+            - value
+            - unit
+            properties:
+              value:
+                type: integer
+                minimum: 0
+                description: X in T+X
+              unit:
+                type: string
+                enum:
+                - DAY
+                - BUSINESS_DAY
+      - type: object
+        additionalProperties: false
+        required:
+        - settleByDateTime
+        properties:
+          settleByDateTime:
+            type: string
+            format: date-time
+            description: Latest timestamp by which settlement must complete
+      - type: object
+        additionalProperties: false
+        required:
+        - settleByEndOf
+        properties:
+          settleByEndOf:
+            type: string
+            enum:
+            - END_OF_DAY
+            - END_OF_MONTH
+      x-tags:
+      - common

@@ -1,28 +1,24 @@
 # Error — v2.0
 
-An error payload.
-
-Part of the [Beckn Protocol Core Schema](../../../README.md) · [Error](../README.md)
+Schema definition for Error in the Beckn Protocol v2.0.1
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| [attributes.yaml](./attributes.yaml) | OpenAPI 3.1.1 component definition for `Error` |
-
-## Root linked-data files
-
-The JSON-LD context and RDF vocabulary for this schema are consolidated at the schema root:
-
-| File | Description |
-|------|-------------|
-| [schema/context.jsonld](../../context.jsonld) | Root JSON-LD context (all schemas, namespace: `https://schema.beckn.io/core/v2.0/`) |
-| [schema/vocab.jsonld](../../vocab.jsonld) | Root RDF vocabulary (all schemas) |
+| File | Purpose |
+|---|---|
+| [https://schema.beckn.io/Error/attributes.yaml](https://schema.beckn.io/Error/attributes.yaml) | OpenAPI schema envelope (latest path) |
+| [https://schema.beckn.io/Error/v2.0/attributes.yaml](https://schema.beckn.io/Error/v2.0/attributes.yaml) | OpenAPI schema envelope (versioned path) |
+| [https://schema.beckn.io/Error/attributes.jsonschema.yaml](https://schema.beckn.io/Error/attributes.jsonschema.yaml) | JSON Schema document (latest path) |
+| [https://schema.beckn.io/Error/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/Error/v2.0/attributes.jsonschema.yaml) | JSON Schema document (versioned path) |
+| [https://schema.beckn.io/Error/context.jsonld](https://schema.beckn.io/Error/context.jsonld) | JSON-LD context (latest path) |
+| [https://schema.beckn.io/Error/v2.0/context.jsonld](https://schema.beckn.io/Error/v2.0/context.jsonld) | JSON-LD context (versioned path) |
+| [https://schema.beckn.io/Error/vocab.jsonld](https://schema.beckn.io/Error/vocab.jsonld) | RDF vocabulary (latest path) |
+| [https://schema.beckn.io/Error/v2.0/vocab.jsonld](https://schema.beckn.io/Error/v2.0/vocab.jsonld) | RDF vocabulary (versioned path) |
 
 ## Properties
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `code` | string | Error code |
-| `details` | object | Additional error details |
-| `message` | string | Human-readable error message |
+| Property | Required | Type | Description |
+|---|---|---|---|
+| `code` | yes | string | Error code |
+| `details` | no | object | Additional error details |
+| `message` | yes | string | Human-readable error message |

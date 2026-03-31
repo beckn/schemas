@@ -1,37 +1,12 @@
-# Rating Input
-
-> **Canonical IRI:** [`https://schema.beckn.io/RatingInput`](https://schema.beckn.io/RatingInput)
-> **Tags:** `common`
-> **Namespace:** `https://schema.beckn.io/`
-> Part of the [Beckn Protocol Core Schema](../../README.md)
-
----
+# RatingInput
 
 A form designed to capture rating and feedback from a user. This can be used by both BAP and BPP to fetch ratings and feedback of their respective users.
 
+This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
+
 ## Versions
 
-| Version | attributes.yaml | context.jsonld | vocab.jsonld | README |
-|---------|----------------|----------------|--------------|--------|
-| **v2.0** | [attributes.yaml](./v2.0/attributes.yaml) | [context.jsonld](./v2.0/context.jsonld) | [vocab.jsonld](./v2.0/vocab.jsonld) | [README](./v2.0/README.md) |
-
-## Properties (latest: v2.0)
-
-| Property | Type | Required | Description |
-|----------|------|:--------:|-------------|
-| `@context` | `string` (uri) | ✅ | — |
-| `@type` | `string` | ✅ | — |
-| `target` | object | ✅ | The entity being rated |
-| `range` | `object` \| `array` | ✅ | — |
-| `feedbackFormSubmission` | any | — | The submission to the feedback form sent along with a rating request |
-
-## Linked Data
-
-| Resource | URL |
-|----------|-----|
-| Canonical IRI | `https://schema.beckn.io/RatingInput` |
-| JSON Schema (latest) | `https://schema.beckn.io/RatingInput/2.0` |
-| context.jsonld (latest) | `https://schema.beckn.io/RatingInput/2.0/context.jsonld` |
-| vocab.jsonld (latest) | `https://schema.beckn.io/RatingInput/2.0/vocab.jsonld` |
-| Root context.jsonld | `https://schema.beckn.io/context.jsonld` |
-| Root vocab.jsonld | `https://schema.beckn.io/vocab.jsonld` |
+| Version | attributes.yaml | attributes.jsonschema.yaml | context.jsonld | vocab.jsonld | README |
+|---|---|---|---|---|---|
+| **v2.0** | [https://schema.beckn.io/RatingInput/v2.0/attributes.yaml](https://schema.beckn.io/RatingInput/v2.0/attributes.yaml) | [https://schema.beckn.io/RatingInput/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/RatingInput/v2.0/attributes.jsonschema.yaml) | [https://schema.beckn.io/RatingInput/v2.0/context.jsonld](https://schema.beckn.io/RatingInput/v2.0/context.jsonld) | [https://schema.beckn.io/RatingInput/v2.0/vocab.jsonld](https://schema.beckn.io/RatingInput/v2.0/vocab.jsonld) | [https://schema.beckn.io/RatingInput/v2.0/README.md](https://schema.beckn.io/RatingInput/v2.0/README.md) |
+| **v2.1** | [https://schema.beckn.io/RatingInput/v2.1/attributes.yaml](https://schema.beckn.io/RatingInput/v2.1/attributes.yaml) | [https://schema.beckn.io/RatingInput/v2.1/attributes.jsonschema.yaml](https://schema.beckn.io/RatingInput/v2.1/attributes.jsonschema.yaml) | [https://schema.beckn.io/RatingInput/v2.1/context.jsonld](https://schema.beckn.io/RatingInput/v2.1/context.jsonld) | [https://schema.beckn.io/RatingInput/v2.1/vocab.jsonld](https://schema.beckn.io/RatingInput/v2.1/vocab.jsonld) | [https://schema.beckn.io/RatingInput/v2.1/README.md](https://schema.beckn.io/RatingInput/v2.1/README.md) |

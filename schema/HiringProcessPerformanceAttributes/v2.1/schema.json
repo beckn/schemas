@@ -1,0 +1,78 @@
+{
+  "type": "object",
+  "description": "Execution state of the hiring process service. Covers the pipeline from initial screening through to offer acceptance or withdrawal. Includes optional credential verification triggered by the employer during the hiring process.\n",
+  "x-beckn-container": "performanceAttributes",
+  "x-jsonld-context": "./context.jsonld",
+  "required": [
+    "stage"
+  ],
+  "properties": {
+    "stage": {
+      "type": "string",
+      "description": "Current stage of the hiring pipeline.",
+      "x-jsonld-id": "hppa:stage",
+      "enum": [
+        "SCREENING",
+        "ASSESSMENT",
+        "INTERVIEW",
+        "OFFER_EXTENDED",
+        "OFFER_ACCEPTED",
+        "OFFER_DECLINED",
+        "WITHDRAWN"
+      ]
+    },
+    "interview_schedule": {
+      "type": "array",
+      "description": "Scheduled interview sessions, if applicable.",
+      "x-jsonld-id": "hppa:interviewSchedule",
+      "items": {
+        "type": "object",
+        "properties": {
+          "session_date": {
+            "type": "string",
+            "format": "date-time",
+            "x-jsonld-id": "schema:startDate"
+          },
+          "format": {
+            "type": "string",
+            "x-jsonld-id": "hppa:interviewFormat",
+            "enum": [
+              "IN_PERSON",
+              "VIDEO",
+              "PHONE"
+            ]
+          },
+          "topic": {
+            "type": "string",
+            "description": "Subject or focus of the interview session.",
+            "x-jsonld-id": "hppa:interviewTopic"
+          }
+        }
+      }
+    },
+    "assessment_required": {
+      "type": "boolean",
+      "description": "Whether a formal technical or aptitude assessment is required.",
+      "x-jsonld-id": "hppa:assessmentRequired"
+    },
+    "assessment_reference": {
+      "type": "string",
+      "description": "External reference ID for the assessment (e.g. a test platform link or reference number). Only present when assessment_required = true.\n",
+      "x-jsonld-id": "hppa:assessmentReference"
+    },
+    "verification_requested": {
+      "type": "boolean",
+      "description": "Whether the employer has triggered credential verification for this candidate.",
+      "x-jsonld-id": "hppa:verificationRequested",
+      "default": false
+    },
+    "verification_summary": {
+      "$ref": "https://schema.beckn.io/VerificationSummary/attributes.yaml",
+      "description": "Outcome of employer-triggered credential verification. Only populated when verification_requested = true.\n",
+      "x-jsonld-id": "hppa:verificationSummary"
+    }
+  },
+  "$id": "https://schema.beckn.io/HiringProcessPerformanceAttributes/v2.1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HiringProcessPerformanceAttributes"
+}

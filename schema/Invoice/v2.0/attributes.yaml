@@ -1,66 +1,75 @@
-$id: https://schema.beckn.io/Invoice/v2.0
-$schema: https://json-schema.org/draft/2020-12/schema
-description: Schema definition for Invoice in the Beckn Protocol
-title: Invoice
-type: object
-properties:
-  '@context':
-    type: string
-    format: uri
-    example: https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld
-  '@type':
-    type: string
-    enum:
-    - beckn:Invoice
-    x-jsonld:
-      '@id': schema:Invoice
-  beckn:id:
-    type: string
-    description: Stable invoice identifier (system id)
-    x-jsonld:
-      '@id': schema:identifier
-  beckn:number:
-    type: string
-    description: Human-visible invoice number
-    x-jsonld:
-      '@id': schema:confirmationNumber
-  beckn:issueDate:
-    type: string
-    format: date
-    x-jsonld:
-      '@id': schema:dateIssued
-  beckn:dueDate:
-    type: string
-    format: date
-    nullable: true
-    x-jsonld:
-      '@id': schema:paymentDueDate
-  beckn:payee:
-    $ref: 'https://schema.beckn.io/Provider/v2.1'
-    description: Seller / issuer of the invoice
-    x-jsonld:
-      '@id': schema:provider
-  beckn:payer:
-    $ref: 'https://schema.beckn.io/Buyer/v2.0'
-    description: Buyer being invoiced
-    x-jsonld:
-      '@id': schema:customer
-  beckn:totals:
-    $ref: 'https://schema.beckn.io/PriceSpecification/v2.1'
-    description: Invoice grand totals (tax/shipping/discount components inside)
-    x-jsonld:
-      '@id': schema:priceSpecification
-  beckn:invoiceAttributes:
-    $ref: 'https://schema.beckn.io/Attributes/v2.0'
-    description: Attribute Pack for tax regime (e.g., GST/VAT), e-invoice refs, legal
-      boilerplate, etc.
-required:
-- '@context'
-- '@type'
-- beckn:id
-- beckn:number
-- beckn:issueDate
-- beckn:totals
-- beckn:payee
-- beckn:payer
-additionalProperties: false
+openapi: 3.1.1
+info:
+  title: Invoice
+  version: 2.0.0
+  description: Schema definition for Invoice in the Beckn Protocol
+paths: {}
+components:
+  schemas:
+    Invoice:
+      $id: https://schema.beckn.io/Invoice/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      description: Schema definition for Invoice in the Beckn Protocol
+      title: Invoice
+      type: object
+      properties:
+        '@context':
+          type: string
+          format: uri
+          example: https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld
+        '@type':
+          type: string
+          enum:
+          - beckn:Invoice
+          x-jsonld:
+            '@id': schema:Invoice
+        beckn:id:
+          type: string
+          description: Stable invoice identifier (system id)
+          x-jsonld:
+            '@id': schema:identifier
+        beckn:number:
+          type: string
+          description: Human-visible invoice number
+          x-jsonld:
+            '@id': schema:confirmationNumber
+        beckn:issueDate:
+          type: string
+          format: date
+          x-jsonld:
+            '@id': schema:dateIssued
+        beckn:dueDate:
+          type: string
+          format: date
+          nullable: true
+          x-jsonld:
+            '@id': schema:paymentDueDate
+        beckn:payee:
+          $ref: https://schema.beckn.io/Provider/attributes.yaml#/components/schemas/Provider
+          description: Seller / issuer of the invoice
+          x-jsonld:
+            '@id': schema:provider
+        beckn:payer:
+          $ref: https://schema.beckn.io/Buyer/attributes.yaml#/components/schemas/Buyer
+          description: Buyer being invoiced
+          x-jsonld:
+            '@id': schema:customer
+        beckn:totals:
+          $ref: https://schema.beckn.io/PriceSpecification/attributes.yaml#/components/schemas/PriceSpecification
+          description: Invoice grand totals (tax/shipping/discount components inside)
+          x-jsonld:
+            '@id': schema:priceSpecification
+        beckn:invoiceAttributes:
+          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+          description: Attribute Pack for tax regime (e.g., GST/VAT), e-invoice refs,
+            legal boilerplate, etc.
+      required:
+      - '@context'
+      - '@type'
+      - beckn:id
+      - beckn:number
+      - beckn:issueDate
+      - beckn:totals
+      - beckn:payee
+      - beckn:payer
+      additionalProperties: false

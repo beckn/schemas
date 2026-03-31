@@ -1,49 +1,39 @@
 {
   "@context": {
-    "@version": 1.1,
     "beckn": "https://schema.beckn.io/",
-    "owl": "http://www.w3.org/2002/07/owl#",
-    "schema": "https://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
   },
   "@graph": [
     {
       "@id": "beckn:Catalog",
       "@type": "rdfs:Class",
       "rdfs:label": "Catalog",
-      "rdfs:comment": "Catalog schema for Beckn Protocol v2.0.1"
-    },
-    {
-      "@id": "beckn:@context",
-      "@type": "rdf:Property",
-      "rdfs:label": "@context",
-      "rdfs:comment": "JSON-LD context URI for the core Catalog schema"
-    },
-    {
-      "@id": "beckn:@type",
-      "@type": "rdf:Property",
-      "rdfs:label": "@type",
-      "rdfs:comment": "Type of the catalog"
+      "rdfs:comment": "Catalog schema for Beckn Protocol v2.0.0\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute."
     },
     {
       "@id": "beckn:bppId",
       "@type": "rdf:Property",
-      "rdfs:label": "bpp Id",
+      "rdfs:label": "bppId",
       "rdfs:comment": "BPP (Beckn Protocol Provider) identifier that publishes this catalog"
     },
     {
       "@id": "beckn:bppUri",
       "@type": "rdf:Property",
-      "rdfs:label": "bpp Uri",
-      "rdfs:comment": "BPP (Beckn Protocol Provider) URI endpoint"
+      "rdfs:label": "bppUri",
+      "rdfs:comment": "Beckn Protocol API base URL of the BPP"
+    },
+    {
+      "@id": "beckn:publishDirectives",
+      "@type": "rdf:Property",
+      "rdfs:label": "publishDirectives",
+      "rdfs:comment": "Directives controlling publish behavior for master/regular catalog flow. Deprecated and planned for removal in a future release."
     },
     {
       "@id": "beckn:descriptor",
       "@type": "rdf:Property",
       "rdfs:label": "descriptor",
-      "rdfs:comment": "A verbal summary of the catalog for humans, AI agents, etc to read and understand the context."
+      "rdfs:comment": "Human / Agent-readable description of this catalog"
     },
     {
       "@id": "beckn:id",
@@ -54,26 +44,26 @@
     {
       "@id": "beckn:isActive",
       "@type": "rdf:Property",
-      "rdfs:label": "is Active",
+      "rdfs:label": "isActive",
       "rdfs:comment": "Whether the catalog is active"
-    },
-    {
-      "@id": "beckn:items",
-      "@type": "rdf:Property",
-      "rdfs:label": "items",
-      "rdfs:comment": "Array of beckn core Item entities in this catalog"
     },
     {
       "@id": "beckn:offers",
       "@type": "rdf:Property",
       "rdfs:label": "offers",
-      "rdfs:comment": "TODO: Description Needed - offers"
+      "rdfs:comment": "Array of offers optionally linked to resources"
     },
     {
-      "@id": "beckn:providerId",
+      "@id": "beckn:resources",
       "@type": "rdf:Property",
-      "rdfs:label": "provider Id",
-      "rdfs:comment": "Reference to the provider that owns this catalog"
+      "rdfs:label": "resources",
+      "rdfs:comment": "Array of generalized Resource entities in this catalog (new model)"
+    },
+    {
+      "@id": "beckn:provider",
+      "@type": "rdf:Property",
+      "rdfs:label": "provider",
+      "rdfs:comment": "Property provider"
     },
     {
       "@id": "beckn:validity",

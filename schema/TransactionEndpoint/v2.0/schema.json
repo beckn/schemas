@@ -1,0 +1,41 @@
+{
+  "$id": "https://schema.beckn.io/TransactionEndpoint/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Beckn protocol transaction endpoint identifier.",
+  "title": "TransactionEndpoint",
+  "allOf": [
+    {
+      "$ref": "https://schema.beckn.io/BecknEndpoint/attributes.yaml"
+    },
+    {
+      "type": "string",
+      "enum": [
+        "beckn/discover",
+        "beckn/on_discover",
+        "beckn/catalog/publish",
+        "beckn/catalog/on_publish",
+        "beckn/select",
+        "beckn/on_select",
+        "beckn/init",
+        "beckn/on_init",
+        "beckn/confirm",
+        "beckn/on_confirm",
+        "beckn/status",
+        "beckn/on_status",
+        "beckn/update",
+        "beckn/on_update",
+        "beckn/cancel",
+        "beckn/on_cancel",
+        "beckn/track",
+        "beckn/on_track",
+        "beckn/rate",
+        "beckn/on_rate",
+        "beckn/support",
+        "beckn/on_support"
+      ]
+    }
+  ],
+  "x-tags": [
+    "common"
+  ]
+}

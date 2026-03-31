@@ -33,7 +33,7 @@ Before generating **anything**, fetch and parse the v2.1 core spec:
 | File | URL / Path |
 |------|-----------|
 | Core API spec (v2.1 draft) | `https://raw.githubusercontent.com/beckn/protocol-specifications-v2/refs/heads/proposal/v2.1-generalized-core/api/beckn.yaml` (or user-uploaded `beckn-generalise-draft.yaml`) |
-| Core Schemas (attributes.yaml) | `https://raw.githubusercontent.com/beckn/protocol-specifications-v2/refs/heads/proposal/v2.1-generalized-core/schema/core/v2/attributes.yaml` |
+| Core Schemas (attributes.jsonschema.yaml) | `https://raw.githubusercontent.com/beckn/protocol-specifications-v2/refs/heads/proposal/v2.1-generalized-core/schema/core/v2/attributes.jsonschema.yaml` |
 | Core context.jsonld | `https://schema.beckn.io/core/v2/context.jsonld` |
 | Core vocab.jsonld | `https://schema.beckn.io/core/v2/vocab.jsonld` |
 
@@ -65,7 +65,7 @@ One or more of:
   skill in migration mode on that output.
 
 **Detect the mode before doing anything else:**
-- If the user provides v2 `attributes.yaml` files or a v2 schema folder, enter **Migration mode** (STEP 1-M below).
+- If the user provides v2 `attributes.jsonschema.yaml` files or a v2 schema folder, enter **Migration mode** (STEP 1-M below).
 - Otherwise enter **Greenfield mode** (STEP 1-G below).
 
 ---
@@ -119,7 +119,7 @@ For each v2 schema folder provided, read and extract:
 
 | What to read | What to extract |
 |-------------|----------------|
-| `attributes.yaml` | Top-level schema name, `x-beckn-container` value, all property names and types, sub-schema names, external `$ref` targets |
+| `attributes.jsonschema.yaml` | Top-level schema name, `x-beckn-container` value, all property names and types, sub-schema names, external `$ref` targets |
 | `context.jsonld` | `@import` URI, schema-specific prefix, all `@id` mappings |
 | `vocab.jsonld` | All enum class names and their values |
 | `profile.json` | `discovery_fields`, `filterable_paths`, `indexable_paths`, `privacy_notes` |
@@ -319,14 +319,14 @@ Verify schema separation of concerns:
 
 Each schema that attaches directly to a v2.1 container gets its **own top-level folder** with a
 `v2.1/` version subfolder inside it. This per-schema versioning allows each schema to be upgraded
-independently. Sub-schemas referenced only from one parent live in that parent's `attributes.yaml`.
+independently. Sub-schemas referenced only from one parent live in that parent's `attributes.jsonschema.yaml`.
 Shared types go in `{domain}-common/`.
 
 ```
 {domain}/
 ├── {DomainResource}/                ← attaches to resourceAttributes
 │   └── v2.1/
-│       ├── attributes.yaml
+│       ├── attributes.jsonschema.yaml
 │       ├── context.jsonld
 │       ├── vocab.jsonld
 │       ├── profile.json
@@ -346,7 +346,7 @@ Shared types go in `{domain}-common/`.
 │       └── ...
 ├── {domain}-common/                 ← shared type definitions used by ≥2 schemas
 │   └── {SharedTypeName}/
-│       ├── attributes.yaml          ← $ref target only
+│       ├── attributes.jsonschema.yaml          ← $ref target only
 │       └── README.md
 └── README.md                        ← domain pack overview
 ```
@@ -361,17 +361,17 @@ v2.1 containers. Each top-level schema gets the full 7-file folder structure und
 `{SchemaName}/v2.1/` directory.
 
 **Rule — sub-schemas (single parent):** Types referenced only from within one parent schema
-live in that parent's `attributes.yaml` under `components/schemas`. No separate folder.
+live in that parent's `attributes.jsonschema.yaml` under `components/schemas`. No separate folder.
 
 **Rule — shared types (multiple parents):** Types referenced by two or more top-level schemas
-live in `{domain}-common/{TypeName}/` with only `attributes.yaml` + `README.md`.
+live in `{domain}-common/{TypeName}/` with only `attributes.jsonschema.yaml` + `README.md`.
 
 **Rule — cross-schema `$ref` paths:** When a child schema extends a parent via `allOf`, the
 `$ref` path must account for the versioned folder layout. For example, a `FoodAndBeverageResource`
 extending `RetailResource` uses:
 ```yaml
 allOf:
-  - $ref: '../../RetailResource/v2.1/attributes.yaml#/components/schemas/RetailResource'
+  - $ref: '../../RetailResource/v2.1/attributes.jsonschema.yaml#/components/schemas/RetailResource'
 ```
 Note the `../../` to go up from `FoodAndBeverageResource/v2.1/` to the domain root, then
 down into `RetailResource/v2.1/`.
@@ -394,7 +394,7 @@ All files must be **complete and production-ready**. See file specs below.
 
 ## FILE SPECIFICATIONS
 
-### `attributes.yaml`
+### `attributes.jsonschema.yaml`
 - OpenAPI **3.1.1** format
 - `info.version` must match the schema pack folder name convention: `"2.1.0"` for a `v2.1/`
   folder, `"2.2.0"` for `v2.2/`, etc. This is the schema pack's own release version —
@@ -485,7 +485,7 @@ Core + attribute bindings for UI rendering. Must include **four** template prope
   <span class="rating-value-text">{{beckn:rating.beckn:ratingValue}}</span>
   <span class="rating-count">({{beckn:rating.beckn:ratingCount}} ratings)</span>
   ```
-- All `{{placeholder}}` values must map to real paths in `attributes.yaml` or core
+- All `{{placeholder}}` values must map to real paths in `attributes.jsonschema.yaml` or core
 
 ### `README.md`
 Header block (required):

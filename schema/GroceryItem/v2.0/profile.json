@@ -7,7 +7,7 @@
   "extends": "beckn:Item",
   "attachAt": "beckn:itemAttributes",
 
-  "packSchema": "./attributes.yaml#/components/schemas/GroceryItemAttributes",
+  "packSchema": "./attributes.jsonschema.yaml#/components/schemas/GroceryItemAttributes",
 
   "indexing": {
     "indexable": [

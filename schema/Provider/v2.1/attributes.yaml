@@ -1,49 +1,41 @@
-$id: "https://schema.beckn.io/Provider/v2.1"
-$schema: "https://json-schema.org/draft/2020-12/schema"
-description: Schema definition for Provider in the Beckn Protocol v2.0.1
-title: Provider
-x-tags: [common]
-type: object
-properties:
-  '@context':
-    description: CPD
-    type: string
-    format: uri
-    default: "https://schema.beckn.io/"
-  '@type':
-    description: TPD
-    type: string
-    default: beckn:Provider
-  alerts:
-    type: array
-    items:
-      $ref: "https://schema.beckn.io/Alert/v2.0"
-  descriptor:
-    $ref: "https://schema.beckn.io/Descriptor/v2.1"
-  id:
-    description: Unique identifier for the provider
-    type: string
-    example: tech-store-001
-  locations:
-    description: Physical locations where the provider operates
-    type: array
-    items:
-      $ref: "https://schema.beckn.io/Location/v2.0"
-  policies:
-    type: array
-    items:
-      $ref: "https://schema.beckn.io/Policy/v2.0"
-  providerAttributes:
-    $ref: "https://schema.beckn.io/Attributes/v2.0"
-  rateable:
-    description: Whether the provider can be rated by customers
-    type: boolean
-    example: true
-  rating:
-    $ref: "https://schema.beckn.io/Rating/v2.1"
-  validity:
-    $ref: "https://schema.beckn.io/TimePeriod/v2.1"
-required:
-- id
-- descriptor
-additionalProperties: false
+openapi: 3.1.1
+info:
+  title: Provider
+  version: 2.1.0
+  description: 'Schema definition for Provider in the Beckn Protocol v2.0.1
+
+
+    This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
+    and MUST NOT be extended. Any domain-specific extension must use the property
+    of this schema which is of type Attribute.'
+paths: {}
+components:
+  schemas:
+    Provider:
+      type: object
+      description: 'Schema definition for Provider in the Beckn Protocol v2.0.1
+
+
+        This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification
+        and MUST NOT be extended. Any domain-specific extension must use the property
+        of this schema which is of type Attribute.'
+      title: Provider
+      properties:
+        id:
+          description: Unique identifier for the provider
+          type: string
+          example: tech-store-001
+        descriptor:
+          $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor
+        availableAt:
+          description: Physical locations where the provider operates
+          type: array
+          items:
+            $ref: https://schema.beckn.io/Location/attributes.yaml#/components/schemas/Location
+        providerAttributes:
+          $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes
+      required:
+      - id
+      - descriptor
+      additionalProperties: false
+      x-lts: true

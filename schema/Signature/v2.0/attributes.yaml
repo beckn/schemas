@@ -1,27 +1,97 @@
-$id: https://schema.beckn.io/Signature/v2.0
-$schema: https://json-schema.org/draft/2020-12/schema
-title: Signature
-description: |
-  A digitally signed authentication credential in the HTTP `Authorization` header.
-  Follows draft-cavage-http-signatures-12 as profiled by BECKN-006.
+openapi: 3.1.1
+info:
+  title: Signature
+  version: 2.0.0
+  description: 'A digitally signed authentication credential in the HTTP `Authorization`
+    header.
 
-  Format:
-  ```
-  Signature keyId="{subscriberId}|{uniqueKeyId}|{algorithm}",algorithm="{algorithm}",created="{unixTimestamp}",expires="{unixTimestamp}",headers="{signedHeaders}",signature="{base64Signature}"
-  ```
+    Follows draft-cavage-http-signatures-12 as profiled by BECKN-006.
 
-  | Attribute | Description |
-  |-----------|-------------|
-  | `keyId` | `{subscriberId}\|{uniqueKeyId}\|{algorithm}` — FQDN, registry UUID, signing algorithm |
-  | `algorithm` | MUST be `ed25519` |
-  | `created` | Unix timestamp when the signature was created |
-  | `expires` | Unix timestamp when the signature expires |
-  | `headers` | Space-separated signed headers. MUST include `(created)`, `(expires)`, `digest` |
-  | `signature` | Base64-encoded Ed25519 signature over the signing string |
 
-  Signing string:
-  `(created): {value}\n(expires): {value}\ndigest: BLAKE-512={digest}`
-  where `digest` is a BLAKE2b-512 hash of the request body, Base64-encoded.
-x-tags: [common]
-type: string
-pattern: '^Signature keyId="[^|"]+\|[^|"]+\|[^"]+",algorithm="[^"]+",created="\d+",expires="\d+",headers="[^"]+",signature="[A-Za-z0-9+/]+=*"$'
+    Format:
+
+    ```
+
+    Signature keyId="{subscriberId}|{uniqueKeyId}|{algorithm}",algorithm="{algorithm}",created="{unixTimestamp}",expires="{unixTimestamp}",headers="{signedHeaders}",signature="{base64Signature}"
+
+    ```
+
+
+    | Attribute | Description |
+
+    |-----------|-------------|
+
+    | `keyId` | `{subscriberId}\|{uniqueKeyId}\|{algorithm}` — FQDN, registry UUID,
+    signing algorithm |
+
+    | `algorithm` | MUST be `ed25519` |
+
+    | `created` | Unix timestamp when the signature was created |
+
+    | `expires` | Unix timestamp when the signature expires |
+
+    | `headers` | Space-separated signed headers. MUST include `(created)`, `(expires)`,
+    `digest` |
+
+    | `signature` | Base64-encoded Ed25519 signature over the signing string |
+
+
+    Signing string:
+
+    `(created): {value}\n(expires): {value}\ndigest: BLAKE-512={digest}`
+
+    where `digest` is a BLAKE2b-512 hash of the request body, Base64-encoded.
+
+    '
+paths: {}
+components:
+  schemas:
+    Signature:
+      $id: https://schema.beckn.io/Signature/v2.0
+      $schema: https://json-schema.org/draft/2020-12/schema
+      title: Signature
+      description: 'A digitally signed authentication credential in the HTTP `Authorization`
+        header.
+
+        Follows draft-cavage-http-signatures-12 as profiled by BECKN-006.
+
+
+        Format:
+
+        ```
+
+        Signature keyId="{subscriberId}|{uniqueKeyId}|{algorithm}",algorithm="{algorithm}",created="{unixTimestamp}",expires="{unixTimestamp}",headers="{signedHeaders}",signature="{base64Signature}"
+
+        ```
+
+
+        | Attribute | Description |
+
+        |-----------|-------------|
+
+        | `keyId` | `{subscriberId}\|{uniqueKeyId}\|{algorithm}` — FQDN, registry
+        UUID, signing algorithm |
+
+        | `algorithm` | MUST be `ed25519` |
+
+        | `created` | Unix timestamp when the signature was created |
+
+        | `expires` | Unix timestamp when the signature expires |
+
+        | `headers` | Space-separated signed headers. MUST include `(created)`, `(expires)`,
+        `digest` |
+
+        | `signature` | Base64-encoded Ed25519 signature over the signing string |
+
+
+        Signing string:
+
+        `(created): {value}\n(expires): {value}\ndigest: BLAKE-512={digest}`
+
+        where `digest` is a BLAKE2b-512 hash of the request body, Base64-encoded.
+
+        '
+      x-tags:
+      - common
+      type: string
+      pattern: ^Signature keyId="[^|"]+\|[^|"]+\|[^"]+",algorithm="[^"]+",created="\d+",expires="\d+",headers="[^"]+",signature="[A-Za-z0-9+/]+=*"$

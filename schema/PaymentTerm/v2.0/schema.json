@@ -1,0 +1,125 @@
+{
+  "$id": "https://schema.beckn.io/PaymentTerm/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A single payment instruction for an order. Represents one line item in the paymentTerms array of an Order — e.g., a pre-order UPI payment, a cash-on-delivery amount, or an instalment.\n",
+  "title": "PaymentTerm",
+  "x-tags": [
+    "common"
+  ],
+  "type": "object",
+  "properties": {
+    "@context": {
+      "type": "string",
+      "format": "uri",
+      "const": "https://schema.beckn.io/"
+    },
+    "@type": {
+      "type": "string",
+      "const": "beckn:PaymentTerm"
+    },
+    "id": {
+      "description": "Unique identifier for this payment term within the order.",
+      "type": "string",
+      "x-jsonld": {
+        "@id": "schema:identifier"
+      }
+    },
+    "type": {
+      "description": "Payment lifecycle stage.",
+      "type": "string",
+      "enum": [
+        "PRE_ORDER",
+        "ON_FULFILLMENT",
+        "POST_FULFILLMENT",
+        "INSTALLMENT"
+      ]
+    },
+    "method": {
+      "description": "Payment instrument or rail to use.",
+      "type": "string",
+      "enum": [
+        "UPI",
+        "CREDIT_CARD",
+        "DEBIT_CARD",
+        "WALLET",
+        "BANK_TRANSFER",
+        "CASH",
+        "APPLE_PAY",
+        "BNPL",
+        "OTHER"
+      ]
+    },
+    "amount": {
+      "description": "Amount due under this payment term.",
+      "type": "object",
+      "properties": {
+        "currency": {
+          "type": "string",
+          "description": "ISO 4217 currency code."
+        },
+        "value": {
+          "type": "number",
+          "description": "Monetary amount."
+        }
+      },
+      "required": [
+        "currency",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "due": {
+      "description": "ISO 8601 date-time by which this payment is due.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "payTo": {
+      "description": "Payee details for this payment term.",
+      "type": "object",
+      "properties": {
+        "upiId": {
+          "type": "string",
+          "description": "UPI Virtual Payment Address of the payee."
+        },
+        "accountName": {
+          "type": "string",
+          "description": "Legal name of the payee account holder."
+        },
+        "bankAccount": {
+          "type": "string",
+          "description": "Bank account number (masked if required)."
+        },
+        "ifsc": {
+          "type": "string",
+          "description": "IFSC code of the payee bank branch (India)."
+        },
+        "walletId": {
+          "type": "string",
+          "description": "Wallet identifier of the payee."
+        }
+      },
+      "additionalProperties": true
+    },
+    "status": {
+      "description": "Payment status.",
+      "type": "string",
+      "enum": [
+        "NOT_PAID",
+        "PAID",
+        "PENDING",
+        "FAILED",
+        "REFUNDED",
+        "PARTIALLY_PAID"
+      ]
+    },
+    "transactionId": {
+      "description": "Payment gateway or bank transaction reference ID.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "@context",
+    "@type"
+  ],
+  "additionalProperties": false
+}
