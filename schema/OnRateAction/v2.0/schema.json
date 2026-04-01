@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/OnRateAction/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "On Rate Action",
   "description": "Beckn /beckn/on_rate message payload. Sent by a BPP to a BAP in response to a /beckn/rate call, optionally returning rating forms to collect structured feedback from the consumer. (Context wrapper stripped; only the message-content portion is inlined.)",
   "type": "object",

@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/ServerError/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "Internal failure on the network participant's application; the request could not be processed. The response body MAY contain an `error` object with additional details.",
   "type": "object",
   "properties": {

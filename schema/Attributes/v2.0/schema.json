@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/Attributes/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "JSON-LD aware container for domain-specific attributes of an Item. MUST include @context (URI) and @type (compact or full IRI). Any additional properties are allowed and interpreted per the provided JSON-LD context.",
   "title": "Attributes",
   "type": "object",
@@ -18,12 +20,5 @@
     "@context",
     "@type"
   ],
-  "additionalProperties": true,
-  "components": {
-    "schemas": {
-      "Attributes": {
-        "$ref": "#"
-      }
-    }
-  }
+  "additionalProperties": true
 }

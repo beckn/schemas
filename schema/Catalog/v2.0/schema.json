@@ -70,12 +70,5 @@
     "beckn:bppUri",
     "beckn:items"
   ],
-  "additionalProperties": false,
-  "components": {
-    "schemas": {
-      "Catalog": {
-        "$ref": "#"
-      }
-    }
-  }
+  "additionalProperties": false
 }

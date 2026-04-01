@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/AckNoCallback/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "Request received but no callback will follow (e.g. agents not found, inventory unavailable, provider closed, context.try preview complete).",
   "allOf": [
     {

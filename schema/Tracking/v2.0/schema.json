@@ -62,12 +62,5 @@
     "schema:target": "$.url",
     "schema:deliveryMethod": "$.tl_method",
     "beckn:trackingStatus": "$.trackingStatus"
-  },
-  "components": {
-    "schemas": {
-      "Tracking": {
-        "$ref": "#"
-      }
-    }
   }
 }

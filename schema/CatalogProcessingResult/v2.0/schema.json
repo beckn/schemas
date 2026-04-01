@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/CatalogProcessingResult/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "Processing result for a single catalog submission.",
   "type": "object",
   "required": [
@@ -42,13 +44,6 @@
           "type": "integer",
           "description": "Number of distinct categories"
         }
-      }
-    }
-  },
-  "components": {
-    "schemas": {
-      "CatalogProcessingResult": {
-        "$ref": "#"
       }
     }
   }

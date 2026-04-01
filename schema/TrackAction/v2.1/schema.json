@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/TrackAction/v2.1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "description": "Details required to initiate real-time tracking (if relevant) for an ongoing transaction",
   "additionalProperties": false,

@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/Intent/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "A declaration of an intent to transact",
   "title": "Intent",
   "type": "object",
@@ -42,12 +44,5 @@
       "$ref": "https://schema.beckn.io/MediaSearch/v2.0/schema.json"
     }
   },
-  "additionalProperties": false,
-  "components": {
-    "schemas": {
-      "Intent": {
-        "$ref": "#"
-      }
-    }
-  }
+  "additionalProperties": false
 }

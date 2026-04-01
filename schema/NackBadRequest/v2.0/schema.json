@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/NackBadRequest/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "NACK — Bad Request: Malformed or invalid request; the server could not parse or validate the payload.",
   "allOf": [
     {

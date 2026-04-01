@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/OnDiscoverAction/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "The on_discover response payload containing matching catalogs.",
   "type": "object",
   "required": [

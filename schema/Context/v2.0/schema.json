@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/Context/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "Base context schema for all Beckn API calls. Contains addressing information (BAP/BPP identifiers and API URLs), protocol version, the action being called, transaction and message IDs, timestamp, TTL, and optional encryption key. This schema defines all possible properties but imposes NO required-field constraints. Endpoint-specific validation is defined inline in operation request schemas.",
   "type": "object",
   "title": "Context",

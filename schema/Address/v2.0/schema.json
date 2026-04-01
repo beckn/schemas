@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/Address/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "**Postal address** aligned with schema.org `PostalAddress`. Use for human-readable addresses. Geometry lives in `Location.geo` as GeoJSON.",
   "title": "Address",
   "type": "object",
@@ -34,12 +36,5 @@
       "example": "123 Tech Street"
     }
   },
-  "additionalProperties": false,
-  "components": {
-    "schemas": {
-      "Address": {
-        "$ref": "#"
-      }
-    }
-  }
+  "additionalProperties": false
 }

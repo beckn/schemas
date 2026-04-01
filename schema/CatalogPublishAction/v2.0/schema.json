@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/CatalogPublishAction/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "Catalog publish request payload.",
   "required": [
     "catalogs"

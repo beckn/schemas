@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/OnUpdateAction/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "On Update Action",
   "description": "Beckn /beckn/on_update message payload. Sent by a BPP to a BAP in response to a /beckn/update call (or as an unsolicited update push), returning the updated contract state. (Context wrapper stripped; only the message-content portion is inlined.)",
   "additionalProperties": false,

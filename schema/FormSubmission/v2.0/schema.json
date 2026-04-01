@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/FormSubmission/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "FormSubmission",
   "x-tags": [
     "common"
@@ -32,12 +34,5 @@
   "required": [
     "data"
   ],
-  "additionalProperties": false,
-  "components": {
-    "schemas": {
-      "FormSubmission": {
-        "$ref": "#"
-      }
-    }
-  }
+  "additionalProperties": false
 }

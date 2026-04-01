@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/MediaInput/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "required": [
     "type",
@@ -36,12 +38,5 @@
       "type": "integer"
     }
   },
-  "additionalProperties": false,
-  "components": {
-    "schemas": {
-      "MediaInput": {
-        "$ref": "#"
-      }
-    }
-  }
+  "additionalProperties": false
 }

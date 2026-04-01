@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/PullResultFile/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "description": "JSON body of `GET /catalog/pull/result/{requestId}/catalogs.json`. Same structure as the inline `catalog` array in the callback payload — a list of distribution-envelope catalog objects. ",
   "properties": {

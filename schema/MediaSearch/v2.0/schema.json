@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/MediaSearch/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
     "media": {
@@ -11,12 +13,5 @@
       "$ref": "https://schema.beckn.io/MediaSearchOptions/v2.0/schema.json"
     }
   },
-  "additionalProperties": false,
-  "components": {
-    "schemas": {
-      "MediaSearch": {
-        "$ref": "#"
-      }
-    }
-  }
+  "additionalProperties": false
 }

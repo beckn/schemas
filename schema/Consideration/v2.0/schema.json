@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/Consideration/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "description": "Generalized representation of value exchanged under a Contract.  Consideration is domain-neutral and may represent: - Monetary value - Credits / tokens - Asset transfer - Service exchange - Compliance artifact",
   "required": [
@@ -15,13 +17,6 @@
     },
     "considerationAttributes": {
       "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
-    }
-  },
-  "components": {
-    "schemas": {
-      "Consideration": {
-        "$ref": "#"
-      }
     }
   }
 }

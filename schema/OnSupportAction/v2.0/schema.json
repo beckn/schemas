@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/OnSupportAction/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "On Support Action",
   "description": "Beckn /beckn/on_support message payload. Sent by a BPP to a BAP in response to a /beckn/support call, returning support contact details and available channels. (Context wrapper stripped; only the message-content portion is inlined.)",
   "additionalProperties": false,

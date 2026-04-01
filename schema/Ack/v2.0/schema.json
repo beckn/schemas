@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/Ack/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "New v2.0 Ack format carrying an HTTP Counter-Signature proving the receiver authenticated, received, and processed the inbound request.",
   "type": "object",
   "properties": {
@@ -17,12 +19,5 @@
   "required": [
     "status",
     "signature"
-  ],
-  "components": {
-    "schemas": {
-      "Ack": {
-        "$ref": "#"
-      }
-    }
-  }
+  ]
 }

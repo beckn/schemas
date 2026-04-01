@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/TimePeriod/v2.1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "Time window with date-time precision for availability/validity",
   "title": "TimePeriod",
   "x-tags": [
@@ -46,12 +48,5 @@
       ]
     }
   ],
-  "additionalProperties": false,
-  "components": {
-    "schemas": {
-      "TimePeriod": {
-        "$ref": "#"
-      }
-    }
-  }
+  "additionalProperties": false
 }

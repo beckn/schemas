@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/DiscoverAction/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Discover Action (External)",
   "description": "Beckn /beckn/discover message payload as published at schema.beckn.io. Requires all discover qualifiers to be nested inside an `intent` container object. (Context wrapper stripped; only the message-content portion is inlined.)",
   "type": "object",

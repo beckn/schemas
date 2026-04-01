@@ -1,13 +1,8 @@
 {
+  "$id": "https://schema.beckn.io/Signature/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Beckn HTTP Signature",
   "description": "A digitally signed authentication credential in the HTTP `Authorization` header. Follows draft-cavage-http-signatures-12 as profiled by BECKN-006.  format: ``` Signature keyId=\"{subscriberId}|{uniqueKeyId}|{algorithm}\",  algorithm=\"{algorithm}\",created=\"{unixTimestamp}\",expires=\"{unixTimestamp}\",  headers=\"{signedHeaders}\",signature=\"{base64Signature}\" ```  | Attribute | Description | |-----------|-------------| | `keyId` | `{subscriberId}|{uniqueKeyId}|{algorithm}` — FQDN, registry UUID, algorithm | | `algorithm` | MUST be `ed25519` | | `created` | Unix timestamp when the signature was created | | `expires` | Unix timestamp when the signature expires | | `headers` | Space-separated signed headers. MUST include `(created)`, `(expires)`, `digest` | | `signature` | Base64-encoded Ed25519 signature over the signing string |  Signing string: `(created): {value}\ (expires): {value}\ digest: BLAKE-512={digest}` where `digest` is a BLAKE2b-512 hash of the request body, Base64-encoded.",
   "type": "string",
-  "pattern": "^Signature keyId=\"[^|\"]+\\|[^|\"]+\\|[^\"]+\",algorithm=\"[^\"]+\",created=\"\\d+\",expires=\"\\d+\",headers=\"[^\"]+\",signature=\"[A-Za-z0-9+/]+=*\"$",
-  "components": {
-    "schemas": {
-      "Signature": {
-        "$ref": "#"
-      }
-    }
-  }
+  "pattern": "^Signature keyId=\"[^|\"]+\\|[^|\"]+\\|[^\"]+\",algorithm=\"[^\"]+\",created=\"\\d+\",expires=\"\\d+\",headers=\"[^\"]+\",signature=\"[A-Za-z0-9+/]+=*\"$"
 }

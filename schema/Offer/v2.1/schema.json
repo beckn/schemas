@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/Offer/v2.1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "description": "A generalized, cross-domain Offer that captures the terms under which one or more Resources may be committed.  Core intent: - Support multiple terms/eligibility/constraints/price points for the same Resource(s) - Support dynamic / on-the-fly offers (e.g., bundling, combinational discounts,  eligibility changes, capacity-aware pricing)  This mirrors the role of Offer in current Beckn (and schema.org patterns), but keeps the shape minimal and composable via `beckn:offerAttributes`.",
   "required": [
@@ -71,13 +73,6 @@
     },
     "offerAttributes": {
       "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
-    }
-  },
-  "components": {
-    "schemas": {
-      "Offer": {
-        "$ref": "#"
-      }
     }
   }
 }

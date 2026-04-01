@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/AddOn/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "Add-on to a catalog resource",
   "oneOf": [
     {
@@ -7,12 +9,5 @@
     {
       "$ref": "https://schema.beckn.io/Offer/v2.0/schema.json"
     }
-  ],
-  "components": {
-    "schemas": {
-      "AddOn": {
-        "$ref": "#"
-      }
-    }
-  }
+  ]
 }

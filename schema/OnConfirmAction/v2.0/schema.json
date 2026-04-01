@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/OnConfirmAction/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "OnConfirmAction",
   "description": "Beckn /beckn/on_confirm message payload. Sent by a BPP to a BAP in response to a /beckn/confirm call, returning the confirmed contract with status set to CONFIRMED. (Context wrapper stripped; only the message-content portion is inlined.)",
   "additionalProperties": false,

@@ -38,12 +38,5 @@
   },
   "required": [
     "@type"
-  ],
-  "components": {
-    "schemas": {
-      "Descriptor": {
-        "$ref": "#"
-      }
-    }
-  }
+  ]
 }

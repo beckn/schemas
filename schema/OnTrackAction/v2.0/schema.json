@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/OnTrackAction/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "On Track Action",
   "description": "Beckn /beckn/on_track message payload. Sent by a BPP to a BAP in response to a /beckn/track call, returning a Tracking handle with the URL and/or WebSocket endpoint for real-time fulfillment tracking. (Context wrapper stripped; only the message-content portion is inlined.)",
   "type": "object",

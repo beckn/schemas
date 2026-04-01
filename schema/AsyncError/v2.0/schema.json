@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/AsyncError/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Asynchronous Error",
   "description": "Error returned asynchronously during a callback. Wraps the base `Error` schema with JSON-LD type annotations to allow linked-data processing.",
   "allOf": [

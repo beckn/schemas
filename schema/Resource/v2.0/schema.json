@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/Resource/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "description": "A minimal, domain-neutral abstraction representing any discoverable, referenceable, or committable unit of value, capability, service, entitlement, or asset within the network.  Examples: - A retail product SKU, a mobility ride, a job role, a carbon credit unit,  a dataset/API entitlement, a training course, a clinic service slot.  Designed for composability through `resourceAttributes` where domain packs can plug in their specific fields without changing the core.",
   "required": [
@@ -14,13 +16,6 @@
     },
     "resourceAttributes": {
       "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
-    }
-  },
-  "components": {
-    "schemas": {
-      "Resource": {
-        "$ref": "#"
-      }
     }
   }
 }

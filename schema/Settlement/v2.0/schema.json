@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/Settlement/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
     "id": {
@@ -17,13 +19,6 @@
     },
     "settlementAttributes": {
       "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
-    }
-  },
-  "components": {
-    "schemas": {
-      "Settlement": {
-        "$ref": "#"
-      }
     }
   }
 }

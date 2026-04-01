@@ -109,12 +109,5 @@
     "beckn:provider",
     "beckn:items"
   ],
-  "additionalProperties": false,
-  "components": {
-    "schemas": {
-      "Offer": {
-        "$ref": "#"
-      }
-    }
-  }
+  "additionalProperties": false
 }

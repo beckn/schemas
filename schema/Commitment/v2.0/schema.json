@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/Commitment/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "required": [
     "status",
@@ -51,13 +53,6 @@
           "properties": {}
         }
       ]
-    }
-  },
-  "components": {
-    "schemas": {
-      "Commitment": {
-        "$ref": "#"
-      }
     }
   }
 }

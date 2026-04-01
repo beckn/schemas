@@ -77,12 +77,5 @@
     "schema:ratingValue": "$.value",
     "schema:bestRating": "$.best",
     "schema:worstRating": "$.worst"
-  },
-  "components": {
-    "schemas": {
-      "RatingInput": {
-        "$ref": "#"
-      }
-    }
   }
 }

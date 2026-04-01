@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/Support/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "Describes a support session info",
   "title": "Support",
   "type": "object",
@@ -19,12 +21,5 @@
       }
     }
   },
-  "additionalProperties": false,
-  "components": {
-    "schemas": {
-      "Support": {
-        "$ref": "#"
-      }
-    }
-  }
+  "additionalProperties": false
 }

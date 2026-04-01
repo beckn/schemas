@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/Error/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Error",
   "description": "Base error container returned in NACK responses and async error callbacks. Domain-specific error codes SHOULD follow the Beckn error code registry (see response definitions in this specification). Custom error objects may be expressed as `oneOf [string, object]` payloads via the `errorDetails` field.",
   "type": "object",
@@ -8,13 +10,6 @@
     },
     "errorMessage": {
       "type": "string"
-    }
-  },
-  "components": {
-    "schemas": {
-      "Error": {
-        "$ref": "#"
-      }
     }
   }
 }

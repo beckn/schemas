@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/StatusAction/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Status Action",
   "description": "Beckn /beckn/status message payload. Sent by a BAP to a BPP to query the current state of a contract/order by its identifier. (Context wrapper stripped; only the message-content portion is inlined.)",
   "properties": {

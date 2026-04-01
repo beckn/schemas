@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/Tracking/v2.1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "Information regarding live tracking of the fufillment of a contract",
   "title": "Tracking",
   "type": "object",
@@ -35,12 +37,5 @@
   "required": [
     "url",
     "status"
-  ],
-  "components": {
-    "schemas": {
-      "Tracking": {
-        "$ref": "#"
-      }
-    }
-  }
+  ]
 }

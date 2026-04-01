@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/Location/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "A place represented by GeoJSON geometry and optional address. Source: main/schema/core/v2/attributes.yaml#Location",
   "type": "object",
   "required": [
@@ -11,13 +13,6 @@
     },
     "address": {
       "$ref": "https://schema.beckn.io/Address/v2.0/schema.json"
-    }
-  },
-  "components": {
-    "schemas": {
-      "Location": {
-        "$ref": "#"
-      }
     }
   }
 }

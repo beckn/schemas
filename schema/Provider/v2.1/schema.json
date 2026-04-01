@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/Provider/v2.1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "description": "Schema definition for Provider in the Beckn Protocol v2.0.1",
   "title": "Provider",
@@ -26,12 +28,5 @@
     "id",
     "descriptor"
   ],
-  "additionalProperties": false,
-  "components": {
-    "schemas": {
-      "Provider": {
-        "$ref": "#"
-      }
-    }
-  }
+  "additionalProperties": false
 }

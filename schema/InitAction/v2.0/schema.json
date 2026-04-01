@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/InitAction/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Init Action",
   "description": "Beckn /beckn/init message payload. Sent by a BAP to a BPP to initialise a contract with consumer details (billing address, fulfillment preferences, etc.). (Context wrapper stripped; only the message-content portion is inlined.)",
   "additionalProperties": false,

@@ -1,4 +1,6 @@
 {
+  "$id": "https://schema.beckn.io/DeliveryPolicy/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "description": "Callback delivery retry configuration",
   "properties": {
@@ -34,13 +36,6 @@
           "default": 2.0,
           "description": "Delay multiplied by this after each retry"
         }
-      }
-    }
-  },
-  "components": {
-    "schemas": {
-      "DeliveryPolicy": {
-        "$ref": "#"
       }
     }
   }
