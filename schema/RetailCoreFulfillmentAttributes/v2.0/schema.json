@@ -11,12 +11,13 @@
     "@context": {
       "description": "JSON-LD context URI for the retail fulfillment schema.",
       "type": "string",
-      "format": "uri"
+      "format": "uri",
+      "default": "https://schema.beckn.io/RetailCoreFulfillmentAttributes/v2.0/context.jsonld"
     },
     "@type": {
       "description": "JSON-LD type for this attribute pack.",
       "type": "string",
-      "const": "beckn:RetailCoreFulfillmentAttributes"
+      "default": "RetailCoreFulfillmentAttributes"
     },
     "supportedFulfillmentTypes": {
       "type": "array",

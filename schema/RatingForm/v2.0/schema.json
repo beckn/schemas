@@ -11,7 +11,7 @@
     "@context": {
       "type": "string",
       "format": "uri",
-      "const": "https://schema.beckn.io/"
+      "default": "https://schema.beckn.io/RatingForm/v2.0/context.jsonld"
     },
     "@type": {
       "type": "string",

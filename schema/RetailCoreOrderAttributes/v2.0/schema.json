@@ -11,12 +11,13 @@
     "@context": {
       "description": "JSON-LD context URI for the retail order schema.",
       "type": "string",
-      "format": "uri"
+      "format": "uri",
+      "default": "https://schema.beckn.io/RetailCoreOrderAttributes/v2.0/context.jsonld"
     },
     "@type": {
       "description": "JSON-LD type for this attribute pack.",
       "type": "string",
-      "const": "beckn:RetailCoreOrderAttributes"
+      "default": "RetailCoreOrderAttributes"
     },
     "buyerInstructions": {
       "type": "string",

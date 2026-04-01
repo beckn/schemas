@@ -13,11 +13,11 @@
     "@context": {
       "type": "string",
       "format": "uri",
-      "const": "https://schema.beckn.io/HyperlocalDelivery/v2.0/context.jsonld"
+      "default": "https://schema.beckn.io/HyperlocalDelivery/v2.0/context.jsonld"
     },
     "@type": {
       "type": "string",
-      "const": "beckn:HyperlocalDelivery"
+      "default": "HyperlocalDelivery"
     },
     "pickupLocation": {
       "$ref": "https://schema.beckn.io/Location/v2.0/attributes.yaml",

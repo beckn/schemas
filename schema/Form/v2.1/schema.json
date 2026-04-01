@@ -9,11 +9,11 @@
       "description": "CPD",
       "type": "string",
       "format": "uri",
-      "default": "https://schema.beckn.io/"
+      "default": "https://schema.beckn.io/Form/v2.1/context.jsonld"
     },
     "@type": {
       "type": "string",
-      "default": "beckn:Form"
+      "default": "Form"
     },
     "data": {
       "description": "The form submission data",

@@ -8,13 +8,14 @@
     "@context": {
       "type": "string",
       "format": "uri",
-      "const": "https://schema.beckn.io/"
+      "default": "https://schema.beckn.io/Policy/v2.0/context.jsonld"
     },
     "@type": {
       "type": "string",
       "enum": [
         "Policy"
-      ]
+      ],
+      "default": "Policy"
     },
     "descriptor": {
       "description": "Validity window for this policy version",

@@ -8,11 +8,11 @@
     "@context": {
       "type": "string",
       "format": "uri",
-      "const": "https://schema.beckn.io/"
+      "default": "https://schema.beckn.io/Organization/v2.0/context.jsonld"
     },
     "@type": {
       "type": "string",
-      "default": "beckn:Organization"
+      "default": "Organization"
     },
     "id": {
       "type": "string",

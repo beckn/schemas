@@ -8,11 +8,11 @@
     "@context": {
       "type": "string",
       "format": "uri",
-      "default": "https://schema.beckn.io/"
+      "default": "https://schema.beckn.io/SettlementTerm/v2.0/context.jsonld"
     },
     "@type": {
       "type": "string",
-      "default": "beckn:SettlementTerm"
+      "default": "SettlementTerm"
     },
     "amount": {
       "description": "Amount associated with this settlement action",

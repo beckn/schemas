@@ -12,7 +12,7 @@
       "description": "JSON-LD context URI",
       "type": "string",
       "format": "uri",
-      "const": "https://schema.beckn.io/"
+      "default": "https://schema.beckn.io/Fulfillment/v2.1/context.jsonld"
     },
     "@type": {
       "type": "string",
@@ -21,7 +21,8 @@
       ],
       "x-jsonld": {
         "@id": "schema:Thing"
-      }
+      },
+      "default": "Fulfillment"
     },
     "agent": {
       "description": "The entity that directly performs the fulfillment",

@@ -5,11 +5,13 @@
   "properties": {
     "@context": {
       "description": "Use case specific JSON-LD context URI",
-      "type": "string"
+      "type": "string",
+      "default": "https://schema.beckn.io/Attributes/v2.0/context.jsonld"
     },
     "@type": {
       "description": "JSON-LD type defined within the context",
-      "type": "string"
+      "type": "string",
+      "default": "Attributes"
     }
   },
   "required": [

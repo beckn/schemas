@@ -8,11 +8,11 @@
     "@context": {
       "type": "string",
       "format": "uri",
-      "default": "https://schema.beckn.io/"
+      "default": "https://schema.beckn.io/SupportRequest/v2.0/context.jsonld"
     },
     "@type": {
       "type": "string",
-      "const": "Support"
+      "default": "SupportRequest"
     },
     "orderId": {
       "description": "The order against which support is required",

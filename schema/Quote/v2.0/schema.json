@@ -11,11 +11,11 @@
     "@context": {
       "type": "string",
       "format": "uri",
-      "const": "https://schema.beckn.io/"
+      "default": "https://schema.beckn.io/Quote/v2.0/context.jsonld"
     },
     "@type": {
       "type": "string",
-      "const": "beckn:Quote"
+      "default": "Quote"
     },
     "id": {
       "description": "Unique identifier for this quote.",

@@ -8,13 +8,14 @@
     "@context": {
       "type": "string",
       "format": "uri",
-      "const": "https://schema.beckn.io/"
+      "default": "https://schema.beckn.io/Instruction/v2.0/context.jsonld"
     },
     "@type": {
       "type": "string",
       "enum": [
         "Instruction"
-      ]
+      ],
+      "default": "Instruction"
     },
     "descriptor": {
       "$ref": "https://schema.beckn.io/Descriptor/v2.1/attributes.yaml"

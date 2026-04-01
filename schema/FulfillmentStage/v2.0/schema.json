@@ -9,11 +9,11 @@
       "description": "CPD",
       "type": "string",
       "format": "uri",
-      "const": "https://schema.beckn.io/"
+      "default": "https://schema.beckn.io/FulfillmentStage/v2.0/context.jsonld"
     },
     "@type": {
       "type": "string",
-      "default": "beckn:FulfillmentStage"
+      "default": "FulfillmentStage"
     },
     "id": {
       "description": "A unique identifier for this stage of fulfillment",

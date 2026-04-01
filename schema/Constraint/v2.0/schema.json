@@ -9,13 +9,14 @@
       "description": "CPD",
       "type": "string",
       "format": "uri",
-      "const": "https://schema.beckn.io/"
+      "default": "https://schema.beckn.io/Constraint/v2.0/context.jsonld"
     },
     "@type": {
       "type": "string",
       "enum": [
         "Constraint"
-      ]
+      ],
+      "default": "Constraint"
     },
     "constraintType": {
       "description": "Type of constraint (extensible term)",

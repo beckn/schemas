@@ -12,12 +12,12 @@
       "description": "JSON-LD context URI",
       "type": "string",
       "format": "uri",
-      "default": "https://schema.beckn.io/"
+      "default": "https://schema.beckn.io/CategoryCode/v2.1/context.jsonld"
     },
     "@type": {
       "description": "Context-specific Type of the category code",
       "type": "string",
-      "default": "beckn:CategoryCode"
+      "default": "CategoryCode"
     },
     "codeValue": {
       "description": "Category code value",

@@ -15,11 +15,11 @@
       "description": "CPD",
       "type": "string",
       "format": "uri",
-      "const": "https://schema.beckn.io/"
+      "default": "https://schema.beckn.io/FulfillmentStageAuthorization/v2.0/context.jsonld"
     },
     "@type": {
       "type": "string",
-      "default": "beckn:FulfillmentStageAuthorization"
+      "default": "FulfillmentStageAuthorization"
     },
     "mediaFiles": {
       "description": "Media files required to enter or exit this fulfillment stage. The could be images of delivered packages, recorded video proof of installation, etc",

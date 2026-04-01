@@ -11,12 +11,14 @@
       "type": "string",
       "format": "uri",
       "description": "URI of the canonical code system authority. Examples: \"https://unstats.un.org/unsd/classifications/Econ/isic\" (ISIC), \"https://uis.unesco.org/en/topic/international-standard-classification-education-isced\" (ISCED), \"https://www.nqfindia.org/\" (India NSQF). ",
-      "x-jsonld-id": "@context"
+      "x-jsonld-id": "@context",
+      "default": "https://schema.beckn.io/CodedValue/v2.1/context.jsonld"
     },
     "@type": {
       "type": "string",
       "description": "Code class within the identified context. Examples: \"IndustryCode\", \"FieldOfEducationCode\", \"QualificationLevel\". ",
-      "x-jsonld-id": "@type"
+      "x-jsonld-id": "@type",
+      "default": "CodedValue"
     },
     "code": {
       "type": "string",

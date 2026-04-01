@@ -11,11 +11,11 @@
     "@context": {
       "type": "string",
       "format": "uri",
-      "const": "https://schema.beckn.io/"
+      "default": "https://schema.beckn.io/PaymentTerm/v2.0/context.jsonld"
     },
     "@type": {
       "type": "string",
-      "const": "beckn:PaymentTerm"
+      "default": "PaymentTerm"
     },
     "id": {
       "description": "Unique identifier for this payment term within the order.",

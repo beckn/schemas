@@ -11,11 +11,11 @@
     "@context": {
       "type": "string",
       "format": "uri",
-      "default": "https://schema.beckn.io/"
+      "default": "https://schema.beckn.io/SupportInfo/v2.1/context.jsonld"
     },
     "@type": {
       "type": "string",
-      "default": "beckn:SupportInfo"
+      "default": "SupportInfo"
     },
     "channels": {
       "description": "Available support channels.",

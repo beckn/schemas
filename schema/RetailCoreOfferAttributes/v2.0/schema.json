@@ -11,12 +11,13 @@
     "@context": {
       "description": "JSON-LD context URI for the retail offer schema.",
       "type": "string",
-      "format": "uri"
+      "format": "uri",
+      "default": "https://schema.beckn.io/RetailCoreOfferAttributes/v2.0/context.jsonld"
     },
     "@type": {
       "description": "JSON-LD type for this attribute pack.",
       "type": "string",
-      "const": "beckn:RetailCoreOfferAttributes"
+      "default": "RetailCoreOfferAttributes"
     },
     "policies": {
       "type": "object",

@@ -8,7 +8,8 @@
     "@context": {
       "type": "string",
       "format": "uri",
-      "example": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld"
+      "example": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
+      "default": "https://schema.beckn.io/Payment/v2.0/context.jsonld"
     },
     "@type": {
       "type": "string",
@@ -17,7 +18,8 @@
       ],
       "x-jsonld": {
         "@id": "schema:Thing"
-      }
+      },
+      "default": "Payment"
     },
     "beckn:id": {
       "type": "string",

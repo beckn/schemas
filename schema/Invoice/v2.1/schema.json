@@ -9,7 +9,7 @@
       "description": "CPD",
       "type": "string",
       "format": "uri",
-      "const": "https://schema.beckn.io/"
+      "default": "https://schema.beckn.io/Invoice/v2.1/context.jsonld"
     },
     "@type": {
       "description": "TPD",
@@ -19,7 +19,8 @@
       ],
       "x-jsonld": {
         "@id": "schema:Invoice"
-      }
+      },
+      "default": "Invoice"
     },
     "dueDate": {
       "type": [
