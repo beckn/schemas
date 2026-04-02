@@ -1,6 +1,6 @@
 # Support
 
-Support request payload sent by a BAP to a BPP in the /beckn/support call. Used to request support contact information, report an issue, or open a support ticket for an existing order.
+Describes a support session info
 
 ## Versions
 

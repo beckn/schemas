@@ -25,5 +25,5 @@ Schema definition for Constraint in the Beckn Protocol v2.0.1
 | `id` | yes | string | Identifier for the constraint |
 | `operator` | no | string | Comparator/operator (<=, >=, =, etc.) |
 | `unitCode` | no | string | Unit code (e.g., km, min) |
-| `validity` | no | $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod | - |
+| `validity` | no | $ref: https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml#/components/schemas/TimePeriod | - |
 | `value` | no | number | Constraint value |

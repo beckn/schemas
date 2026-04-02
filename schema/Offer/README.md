@@ -1,17 +1,6 @@
 # Offer
 
-A generalized, cross-domain Offer that captures the terms under which
-one or more Resources may be committed.
-
-Core intent:
-- Support multiple terms/eligibility/constraints/price points for the same Resource(s)
-- Support dynamic / on-the-fly offers (e.g., bundling, combinational discounts,
- eligibility changes, capacity-aware pricing)
-
-This mirrors the role of Offer in current Beckn (and schema.org patterns),
-but keeps the shape minimal and composable via `beckn:offerAttributes`.
-
-This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
+A generalized, cross-domain Offer that captures the terms under which one or more Resources may be committed.  Core intent: - Support multiple terms/eligibility/constraints/price points for the same Resource(s) - Support dynamic / on-the-fly offers (e.g., bundling, combinational discounts,  eligibility changes, capacity-aware pricing)  This mirrors the role of Offer in current Beckn (and schema.org patterns), but keeps the shape minimal and composable via `beckn:offerAttributes`.
 
 ## Versions
 

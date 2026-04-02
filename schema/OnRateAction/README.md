@@ -1,6 +1,9 @@
 # OnRateAction
 
-Beckn /beckn/on_rate callback envelope. Sent by a BPP to a BAP in response to a /beckn/rate call, optionally returning rating forms to collect structured feedback from the consumer.
+Beckn /beckn/on_rate message payload. Sent by a BPP to a BAP in
+response to a /beckn/rate call, optionally returning rating forms
+to collect structured feedback from the consumer.
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Versions
 

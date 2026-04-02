@@ -1,6 +1,6 @@
 # Support — v2.0
 
-Support request payload sent by a BAP to a BPP in the /beckn/support call. Used to request support contact information, report an issue, or open a support ticket for an existing order.
+Describes a support session info
 
 ## Files
 
@@ -19,10 +19,6 @@ Support request payload sent by a BAP to a BPP in the /beckn/support call. Used 
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `@context` | yes | string | - |
-| `@type` | yes | string | - |
-| `orderId` | no | string | The order against which support is required. |
-| `ticketIds` | no | array | IDs of existing support tickets (if open) for this order. |
-| `callbackPhone` | no | string | Telephone number of the user for a support callback. |
-| `issue` | no | string | Free-text description of the issue requiring support. |
-| `issueCode` | no | string | Structured issue category code (domain-defined). |
+| `orderId` | no | string | The order against which support is required |
+| `descriptor` | no | $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor | A description of the nature of support needed |
+| `channels` | no | array | Available support channels described in individual linked data JSON objects |

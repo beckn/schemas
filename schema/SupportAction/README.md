@@ -1,6 +1,9 @@
 # SupportAction
 
-Beckn /beckn/support action envelope. Sent by a BAP to a BPP to request support contact information or to open a support ticket for an existing order/contract.
+Beckn /beckn/support message payload. Sent by a BAP to a BPP to request
+support contact information or to open a support ticket for an existing
+order/contract.
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Versions
 

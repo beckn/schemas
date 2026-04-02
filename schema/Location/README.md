@@ -1,6 +1,7 @@
 # Location
 
-A **place** represented by **GeoJSON geometry** (Point/Polygon/Multi*) and optional human-readable `address`. This unifies all Beckn location fields into a single, widely-adopted representation (GeoJSON).
+A place represented by GeoJSON geometry and optional address.
+Source: main/schema/core/v2/attributes.yaml#Location
 
 ## Versions
 

@@ -25,8 +25,8 @@ Schema definition for PaymentAction in the Beckn Protocol v2.0.1
 | `paymentStatus` | yes | string | Payment lifecycle status (Pending \| Authorized \| Captured \| Failed \| Refunded \| PartialRefund …) |
 | `paymentMethod` | no | object | - |
 | `paymentUrl` | no | string | URL for payment processing/redirection |
-| `state` | no | $ref: https://schema.beckn.io/State/attributes.yaml#/components/schemas/State | - |
+| `state` | no | $ref: https://schema.beckn.io/State/v2.0/attributes.yaml#/components/schemas/State | - |
 | `txnRef` | no | string | PSP/gateway/bank transaction reference |
-| `checkoutAt` | no | $ref: https://schema.beckn.io/CheckoutTerminal/attributes.yaml#/components/schemas/CheckoutTerminal | - |
+| `checkoutAt` | no | $ref: https://schema.beckn.io/CheckoutTerminal/v2.0/attributes.yaml#/components/schemas/CheckoutTerminal | - |
 | `paidAt` | no | string | The time at which the payment was made |
-| `paymentActionAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | Extensible set of attributes containing payment actions specific to each ecosystem. |
+| `paymentActionAttributes` | no | $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes | Extensible set of attributes containing payment actions specific to each ecosystem. |

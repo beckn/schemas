@@ -1,17 +1,6 @@
 # Resource
 
-A minimal, domain-neutral abstraction representing any discoverable,
-referenceable, or committable unit of value, capability, service,
-entitlement, or asset within the network.
-
-Examples:
-- A retail product SKU, a mobility ride, a job role, a carbon credit unit,
- a dataset/API entitlement, a training course, a clinic service slot.
-
-Designed for composability through `resourceAttributes` where
-domain packs can plug in their specific fields without changing the core.
-
-This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
+A minimal, domain-neutral abstraction representing any discoverable, referenceable, or committable unit of value, capability, service, entitlement, or asset within the network.  Examples: - A retail product SKU, a mobility ride, a job role, a carbon credit unit,  a dataset/API entitlement, a training course, a clinic service slot.  Designed for composability through `resourceAttributes` where domain packs can plug in their specific fields without changing the core.
 
 ## Versions
 

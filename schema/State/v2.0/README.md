@@ -21,4 +21,4 @@ Schema definition for State in the Beckn Protocol v2.0.1
 |---|---|---|---|
 | `@context` | yes | string | CPD |
 | `@type` | yes | string | TPD |
-| `descriptor` | yes | $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor | - |
+| `descriptor` | yes | $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor | - |

@@ -24,6 +24,6 @@ A geographic location relevant to logistics such as origin, destination, hub, or
 | `type` | no | string | - |
 | `address` | no | object | - |
 | `gps` | no | object | - |
-| `contact` | no | $ref: https://schema.beckn.io/Contact/attributes.yaml#/components/schemas/Contact | - |
+| `contact` | no | $ref: https://schema.beckn.io/Contact/v2.0/attributes.yaml#/components/schemas/Contact | - |
 | `accessInstructions` | no | string | Instructions for courier to reach the place |
 | `isVerified` | no | boolean | Whether the address has been geocode-verified |

@@ -19,6 +19,5 @@ Schema definition for Error in the Beckn Protocol v2.0.1
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `code` | yes | string | Error code |
-| `details` | no | object | Additional error details |
-| `message` | yes | string | Human-readable error message |
+| `errorCode` | no | string | - |
+| `errorMessage` | no | string | - |

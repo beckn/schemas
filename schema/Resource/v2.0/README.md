@@ -1,17 +1,6 @@
 # Resource — v2.0
 
-A minimal, domain-neutral abstraction representing any discoverable,
-referenceable, or committable unit of value, capability, service,
-entitlement, or asset within the network.
-
-Examples:
-- A retail product SKU, a mobility ride, a job role, a carbon credit unit,
- a dataset/API entitlement, a training course, a clinic service slot.
-
-Designed for composability through `resourceAttributes` where
-domain packs can plug in their specific fields without changing the core.
-
-This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
+A minimal, domain-neutral abstraction representing any discoverable, referenceable, or committable unit of value, capability, service, entitlement, or asset within the network.  Examples: - A retail product SKU, a mobility ride, a job role, a carbon credit unit,  a dataset/API entitlement, a training course, a clinic service slot.  Designed for composability through `resourceAttributes` where domain packs can plug in their specific fields without changing the core.
 
 ## Files
 
@@ -31,5 +20,5 @@ This schema is part of the Long Term Support of Beckn Protocol V2.0 API specific
 | Property | Required | Type | Description |
 |---|---|---|---|
 | `id` | yes | string | Globally unique identifier of the resource. |
-| `descriptor` | no | $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor | - |
-| `resourceAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | All the properties of a resource that describe its value, its terms of usage, fulfillment, and consideration |
+| `descriptor` | no | $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor | - |
+| `resourceAttributes` | no | $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes | All the properties of a resource that describe its value, its terms of usage, fulfillment, and consideration |

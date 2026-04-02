@@ -1,6 +1,8 @@
 # SelectAction
 
-Beckn /beckn/select action envelope. Sent by a BAP to a BPP to select items and offers from a catalog, initiating the negotiation cycle.
+Beckn /beckn/select message payload. Sent by a BAP to a BPP to select
+items and offers from a catalog, initiating the negotiation cycle.
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Versions
 

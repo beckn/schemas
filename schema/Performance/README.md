@@ -16,8 +16,6 @@ are placed inside performanceAttributes using a well-known domain schema such as
 HyperlocalDelivery. Use the generic Attributes schema when no well-known
 domain schema exists.
 
-This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
-
 ## Versions
 
 | Version | attributes.yaml | attributes.jsonschema.yaml | context.jsonld | vocab.jsonld | README |

@@ -22,5 +22,5 @@ Describes the mode of fulfillment. This is an extensible container allowing doma
 | `@context` | no | string | - |
 | `@type` | no | string | - |
 | `id` | no | string | - |
-| `descriptor` | no | $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor | - |
-| `modeAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | Domain-specific fulfillment mode attributes (e.g., delivery, pickup, reservation, digital) |
+| `descriptor` | no | $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor | - |
+| `modeAttributes` | no | $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes | Domain-specific fulfillment mode attributes (e.g., delivery, pickup, reservation, digital) |

@@ -1,6 +1,8 @@
 # StatusAction — v2.0
 
-Beckn /beckn/status action envelope. Sent by a BAP to a BPP to request the current status of an existing contract/order, identified by its id.
+Beckn /beckn/status message payload. Sent by a BAP to a BPP to query
+the current state of a contract/order by its identifier.
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Files
 
@@ -19,5 +21,4 @@ Beckn /beckn/status action envelope. Sent by a BAP to a BPP to request the curre
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `context` | yes | allOf | - |
-| `message` | yes | object | - |
+| `contract` | yes | allOf | - |

@@ -1,6 +1,9 @@
 # RateAction — v2.0
 
-Beckn /beckn/rate action envelope. Sent by a BAP to a BPP to submit one or more rating inputs for entities in a completed contract (order, fulfillment, item, provider, agent, support).
+Beckn /beckn/rate message payload. Sent by a BAP to a BPP to submit
+one or more rating inputs for entities in a completed contract
+(order, fulfillment, item, provider, agent, support).
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Files
 
@@ -19,5 +22,4 @@ Beckn /beckn/rate action envelope. Sent by a BAP to a BPP to submit one or more 
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `context` | yes | allOf | - |
-| `message` | yes | object | - |
+| `ratingInputs` | yes | array | - |

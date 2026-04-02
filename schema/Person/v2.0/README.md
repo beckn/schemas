@@ -28,7 +28,7 @@ A person (alive, deceased, or fictional). Modeled after schema.org/Person.
 | `address` | no | any | Physical address |
 | `age` | no | integer | Age in years |
 | `knowsLanguage` | no | array | Languages known by the person (BCP-47 codes or language names) |
-| `worksFor` | no | $ref: https://schema.beckn.io/Organization/attributes.yaml#/components/schemas/Organization | Organization the person works for |
+| `worksFor` | no | $ref: https://schema.beckn.io/Organization/v2.0/attributes.yaml#/components/schemas/Organization | Organization the person works for |
 | `credentials` | no | array | Credentials held by the person |
 | `skills` | no | array | Skills possessed by the person |
-| `personAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | Extensible attribute pack for jurisdictional or domain-specific person properties |
+| `personAttributes` | no | $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes | Extensible attribute pack for jurisdictional or domain-specific person properties |

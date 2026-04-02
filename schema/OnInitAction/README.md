@@ -1,6 +1,9 @@
 # OnInitAction
 
-Beckn /beckn/on_init callback envelope. Sent by a BPP to a BAP in response to a /beckn/init call, with the updated contract including payment terms and billing confirmation.
+Beckn /beckn/on_init message payload. Sent by a BPP to a BAP in response
+to a /beckn/init call, with the updated contract including payment terms
+and billing confirmation.
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Versions
 

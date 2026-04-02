@@ -1,21 +1,9 @@
 # Mobility
 
-A schema.beckn.io Type
+Attributes for the Mobility entity in the Beckn Mobility domain.
 
-Master schema package for Beckn Mobility v2.0 containing consolidated OpenAPI attributes, JSON Schema attributes, JSON-LD vocabulary, and JSON-LD context across all mobility schemas.
+## Versions
 
-**Canonical IRI :** `mobility:Mobility`
-
-**Canonical URL:** https://schema.beckn.io/mobility/Mobility
-
-## Versioned Artifacts (v2.0)
-
-- `attributes.yaml`
-- `attributes.jsonschema.yaml`
-- `vocab.jsonld`
-- `context.jsonld`
-
-## Open Issues
-
-[Open issues](https://github.com/beckn/mobility/issues)
-
+| Version | attributes.yaml | attributes.jsonschema.yaml | context.jsonld | vocab.jsonld | README |
+|---|---|---|---|---|---|
+| **v2.0** | [https://schema.beckn.io/Mobility/v2.0/attributes.yaml](https://schema.beckn.io/Mobility/v2.0/attributes.yaml) | [https://schema.beckn.io/Mobility/v2.0/attributes.jsonschema.yaml](https://schema.beckn.io/Mobility/v2.0/attributes.jsonschema.yaml) | [https://schema.beckn.io/Mobility/v2.0/context.jsonld](https://schema.beckn.io/Mobility/v2.0/context.jsonld) | [https://schema.beckn.io/Mobility/v2.0/vocab.jsonld](https://schema.beckn.io/Mobility/v2.0/vocab.jsonld) | [https://schema.beckn.io/Mobility/v2.0/README.md](https://schema.beckn.io/Mobility/v2.0/README.md) |

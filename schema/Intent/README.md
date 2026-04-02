@@ -1,6 +1,6 @@
 # Intent
 
-A declaration of an intent to discover catalogs.
+A declaration of an intent to transact
 
 ## Versions
 

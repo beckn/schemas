@@ -21,6 +21,6 @@ A stage boundary endpoint (entry or exit) within a fulfillment, such as pickup, 
 |---|---|---|---|
 | `@context` | no | string | CPD |
 | `@type` | no | string | - |
-| `location` | no | $ref: https://schema.beckn.io/Location/attributes.yaml#/components/schemas/Location | - |
-| `time` | no | $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod | - |
+| `location` | no | $ref: https://schema.beckn.io/Location/v2.0/attributes.yaml#/components/schemas/Location | - |
+| `time` | no | $ref: https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml#/components/schemas/TimePeriod | - |
 | `authorization` | no | array | One or more credentials required and/or issued at this endpoint. Includes machine-readable tokens (QR/URL/OTP) and manual documents (IDs, permits).  |

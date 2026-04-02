@@ -23,7 +23,7 @@ Support response payload returned by a BPP to a BAP in the /beckn/on_support cal
 | `@type` | yes | string | - |
 | `refId` | no | string | Reference identifier (typically the order ID) against which support was requested. |
 | `ticketId` | no | string | Support ticket identifier assigned by the BPP. |
-| `descriptor` | no | $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor | Human-readable label for this support response. |
+| `descriptor` | no | $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor | Human-readable label for this support response. |
 | `channels` | no | array | Available support channels with contact details. |
 | `sla` | no | object | Service level agreement for this support response. |
-| `consumer` | no | $ref: https://schema.beckn.io/Consumer/attributes.yaml#/components/schemas/Consumer | The consumer the support response is addressed to (optional). |
+| `consumer` | no | $ref: https://schema.beckn.io/Consumer/v2.0/attributes.yaml#/components/schemas/Consumer | The consumer the support response is addressed to (optional). |

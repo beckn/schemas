@@ -2,8 +2,6 @@
 
 A form designed to capture rating and feedback from a user. This can be used by both BAP and BPP to fetch ratings and feedback of their respective users.
 
-This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
-
 ## Files
 
 | File | Purpose |
@@ -23,4 +21,4 @@ This schema is part of the Long Term Support of Beckn Protocol V2.0 API specific
 |---|---|---|---|
 | `target` | yes | object | The thing being rated. It could be a person, an application, a service, a product, an instrument used in the fulfillment of the contract, or the overall experience. |
 | `range` | yes | object | - |
-| `feedbackFormSubmission` | no | $ref: https://schema.beckn.io/FormSubmission/attributes.yaml#/components/schemas/FormSubmission | The submission to the feedback form sent along with a rating request |
+| `feedbackFormSubmission` | no | $ref: https://schema.beckn.io/FormSubmission/v2.0/attributes.yaml#/components/schemas/FormSubmission | The submission to the feedback form sent along with a rating request |

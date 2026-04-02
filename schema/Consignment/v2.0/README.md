@@ -20,10 +20,10 @@ A Consignment is a collection of packages or shipments grouped together under a 
 | Property | Required | Type | Description |
 |---|---|---|---|
 | `id` | yes | string | Unique consignment identifier (e.g. AWB number) |
-| `shipper` | yes | $ref: https://schema.beckn.io/Contact/attributes.yaml#/components/schemas/Contact | - |
-| `consignee` | yes | $ref: https://schema.beckn.io/Contact/attributes.yaml#/components/schemas/Contact | - |
+| `shipper` | yes | $ref: https://schema.beckn.io/Contact/v2.0/attributes.yaml#/components/schemas/Contact | - |
+| `consignee` | yes | $ref: https://schema.beckn.io/Contact/v2.0/attributes.yaml#/components/schemas/Contact | - |
 | `shipments` | no | array | List of shipments in this consignment |
-| `carrier` | no | $ref: https://schema.beckn.io/Carrier/attributes.yaml#/components/schemas/Carrier | - |
+| `carrier` | no | $ref: https://schema.beckn.io/Carrier/v2.0/attributes.yaml#/components/schemas/Carrier | - |
 | `totalWeight` | no | object | - |
 | `totalPackages` | no | integer | Total number of packages in this consignment |
 | `serviceType` | no | string | - |

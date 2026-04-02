@@ -21,8 +21,8 @@ Schema definition for Policy in the Beckn Protocol v2.0.1
 |---|---|---|---|
 | `@context` | yes | string | - |
 | `@type` | yes | string | - |
-| `descriptor` | yes | $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor | Validity window for this policy version |
+| `descriptor` | yes | $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor | Validity window for this policy version |
 | `id` | yes | string | Identifier for the policy |
 | `policyType` | no | string | Type/kind of policy (extensible term) |
-| `validity` | no | $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod | Validity window for this policy version |
-| `policyAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | - |
+| `validity` | no | $ref: https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml#/components/schemas/TimePeriod | Validity window for this policy version |
+| `policyAttributes` | no | $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes | - |

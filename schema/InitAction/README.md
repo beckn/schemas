@@ -1,6 +1,8 @@
 # InitAction
 
-Beckn /beckn/init action envelope. Sent by a BAP to a BPP to initialise a contract with consumer details (billing address, fulfillment preferences, etc.).
+Beckn /beckn/init message payload. Sent by a BAP to a BPP to initialise
+a contract with consumer details (billing address, fulfillment preferences, etc.).
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Versions
 

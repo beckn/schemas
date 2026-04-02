@@ -2,8 +2,6 @@
 
 A form designed to capture rating and feedback from a user. This can be used by both BAP and BPP to fetch ratings and feedback of their respective users.
 
-This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
-
 ## Versions
 
 | Version | attributes.yaml | attributes.jsonschema.yaml | context.jsonld | vocab.jsonld | README |

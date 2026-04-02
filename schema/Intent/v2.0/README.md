@@ -1,6 +1,6 @@
 # Intent — v2.0
 
-A declaration of an intent to discover catalogs.
+A declaration of an intent to transact
 
 ## Files
 
@@ -19,8 +19,7 @@ A declaration of an intent to discover catalogs.
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `text_search` | no | string | Free text search query for items (legacy snake_case alias) |
 | `textSearch` | no | string | Free text search query for items |
 | `filters` | no | object | Filter criteria for items |
 | `spatial` | no | array | Optional array of spatial constraints (CQL2-JSON semantics). |
-| `media_search` | no | $ref: https://schema.beckn.io/MediaSearch/attributes.yaml#/components/schemas/MediaSearch | - |
+| `mediaSearch` | no | $ref: https://schema.beckn.io/MediaSearch/v2.0/attributes.yaml#/components/schemas/MediaSearch | - |

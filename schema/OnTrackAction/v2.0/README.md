@@ -1,6 +1,9 @@
 # OnTrackAction — v2.0
 
-Beckn /beckn/on_track callback envelope. Sent by a BPP to a BAP in response to a /beckn/track call, returning a Tracking handle with the URL and/or WebSocket endpoint for real-time fulfillment tracking.
+Beckn /beckn/on_track message payload. Sent by a BPP to a BAP in
+response to a /beckn/track call, returning a Tracking handle with
+the URL and/or WebSocket endpoint for real-time fulfillment tracking.
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Files
 
@@ -19,5 +22,4 @@ Beckn /beckn/on_track callback envelope. Sent by a BPP to a BAP in response to a
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `context` | yes | allOf | - |
-| `message` | yes | object | - |
+| `tracking` | yes | $ref: https://schema.beckn.io/Tracking/v2.1/attributes.yaml#/components/schemas/Tracking | - |

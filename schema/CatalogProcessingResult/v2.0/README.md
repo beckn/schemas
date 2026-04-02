@@ -1,6 +1,6 @@
 # CatalogProcessingResult — v2.0
 
-Schema definition for CatalogProcessingResult in the Beckn Protocol v2.1
+Processing result for a single catalog submission.
 
 ## Files
 
@@ -19,8 +19,7 @@ Schema definition for CatalogProcessingResult in the Beckn Protocol v2.1
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `catalogId` | yes | string | The "id" of the submitted catalog |
-| `status` | yes | string | Final processing outcome for this catalog |
-| `itemCount` | no | integer | Number of items indexed (when accepted/partial) |
-| `warnings` | no | array | Non-fatal issues encountered |
-| `error` | no | $ref: https://schema.beckn.io/Error/attributes.yaml#/components/schemas/Error | - |
+| `catalogId` | yes | string | Identifier of the submitted catalog |
+| `status` | yes | string | Processing outcome. Using oneOf [string, object] to allow domain-specific status objects (e.g. beckn:CatalogAccepted) alongside standard string codes. |
+| `errors` | no | array | Per-item or per-catalog errors (present when REJECTED or PARTIAL) |
+| `stats` | no | object | Optional statistics about the processed catalog |

@@ -1,6 +1,6 @@
 # Participant — v2.0
 
-Schema definition for Participant in the Beckn Protocol v2.0.1
+Container schemas fetched from beckn.yaml. This cannot be extended as it is a reserved schema in beckn protocol. Any additional properties added to this schema can only be made using its *Attributes property
 
 ## Files
 
@@ -19,12 +19,6 @@ Schema definition for Participant in the Beckn Protocol v2.0.1
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `@context` | yes | string | - |
-| `@type` | yes | any | One or more JSON-LD type IRIs for this participant. The first MUST be "beckn:Participant". Additional types (e.g. "beckn:Restaurant", "beckn:Consumer", "beckn:Rider") encode the domain role of the participant using sub-typing rather than a separate "role" field.  |
-| `credentials` | no | array | - |
-| `displayName` | no | string | - |
-| `email` | no | string | - |
-| `id` | yes | string | - |
-| `rating` | no | $ref: https://schema.beckn.io/Rating/attributes.yaml#/components/schemas/Rating | - |
-| `skills` | no | array | - |
-| `telephone` | no | string | - |
+| `id` | no | string | - |
+| `descriptor` | no | $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor | - |
+| `participantAttributes` | no | allOf | Domain-specific extension attributes for this contract. Use beckn:LogisticsContract for hyperlocal physical delivery. Use the generic Attributes schema for other fulfillment types where no well-known domain schema exists. |

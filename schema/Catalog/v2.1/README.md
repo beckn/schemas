@@ -29,5 +29,5 @@ This schema is part of the Long Term Support of Beckn Protocol V2.0 API specific
 | `isActive` | no | boolean | Whether the catalog is active |
 | `offers` | no | array | Array of offers optionally linked to resources |
 | `resources` | no | array | Array of generalized Resource entities in this catalog (new model) |
-| `provider` | yes | $ref: https://schema.beckn.io/Provider/attributes.yaml#/components/schemas/Provider | - |
-| `validity` | no | $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod | The time period during which this catalog is valid |
+| `provider` | yes | $ref: https://schema.beckn.io/Provider/v2.1/attributes.yaml#/components/schemas/Provider | - |
+| `validity` | no | $ref: https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml#/components/schemas/TimePeriod | The time period during which this catalog is valid |

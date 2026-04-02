@@ -22,9 +22,9 @@ Describes the terms of settlement associated with a given transaction. This is n
 | `@context` | no | string | - |
 | `@type` | no | string | - |
 | `amount` | no | object | Amount associated with this settlement action |
-| `paymentTrigger` | no | $ref: https://schema.beckn.io/PaymentTrigger/attributes.yaml#/components/schemas/PaymentTrigger | Describes the event which triggers the payment against this settlement term |
+| `paymentTrigger` | no | $ref: https://schema.beckn.io/PaymentTrigger/v2.0/attributes.yaml#/components/schemas/PaymentTrigger | Describes the event which triggers the payment against this settlement term |
 | `settlementStatus` | no | string | - |
-| `settlementSchedule` | no | $ref: https://schema.beckn.io/SettlementSchedule/attributes.yaml#/components/schemas/SettlementSchedule | - |
+| `settlementSchedule` | no | $ref: https://schema.beckn.io/SettlementSchedule/v2.0/attributes.yaml#/components/schemas/SettlementSchedule | - |
 | `payTo` | no | any | Describes the details of the account where the money must be remited. It could be a bank account, a payment gateway, or a virtual payment address (like a UPI ID) |
 | `acceptedPaymentMethods` | no | array | Describes the methods or mechanisms accepted by the payee (described in the payTo property) for the purpose of this settlement. |
-| `settlementTermAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | Additional use case specific settlement terms that must be adhered to |
+| `settlementTermAttributes` | no | $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes | Additional use case specific settlement terms that must be adhered to |

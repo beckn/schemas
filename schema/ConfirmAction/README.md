@@ -1,6 +1,9 @@
 # ConfirmAction
 
-Beckn /beckn/confirm action envelope. Sent by a BAP to a BPP to confirm a contract, finalising the transaction terms agreed during the select–init negotiation cycle.
+Beckn /beckn/confirm message payload. Sent by a BAP to a BPP to confirm
+a contract, finalising the transaction terms agreed during the
+select-init negotiation cycle.
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Versions
 

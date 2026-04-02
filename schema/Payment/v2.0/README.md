@@ -27,6 +27,6 @@ Schema definition for Payment in the Beckn Protocol
 | `beckn:paymentURL` | no | string | URL for payment processing/redirection |
 | `beckn:txnRef` | no | string | PSP/gateway/bank transaction reference |
 | `beckn:paidAt` | no | ['string', 'null'] | When the last terminal event (capture/refund) happened |
-| `beckn:acceptedPaymentMethod` | no | $ref: https://schema.beckn.io/AcceptedPaymentMethod/attributes.yaml#/components/schemas/AcceptedPaymentMethod | - |
+| `beckn:acceptedPaymentMethod` | no | $ref: https://schema.beckn.io/AcceptedPaymentMethod/v2.0/attributes.yaml#/components/schemas/AcceptedPaymentMethod | - |
 | `beckn:beneficiary` | no | string | Who will be the beneficiary or recipient of the payment |
-| `beckn:paymentAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | Rail-specific attribute pack (e.g., UPI: VPA/UTR; CARD: token/3DS; BNPL: plan/schedule)  |
+| `beckn:paymentAttributes` | no | $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes | Rail-specific attribute pack (e.g., UPI: VPA/UTR; CARD: token/3DS; BNPL: plan/schedule)  |

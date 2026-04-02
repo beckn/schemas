@@ -2,8 +2,6 @@
 
 Internal failure on the network participant's application; the request could not be processed. The response body MAY contain an `error` object with additional details.
 
-This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
-
 ## Files
 
 | File | Purpose |
@@ -21,4 +19,4 @@ This schema is part of the Long Term Support of Beckn Protocol V2.0 API specific
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `error` | no | $ref: https://schema.beckn.io/Error/attributes.yaml#/components/schemas/Error | - |
+| `error` | no | $ref: https://schema.beckn.io/Error/v2.0/attributes.yaml#/components/schemas/Error | - |

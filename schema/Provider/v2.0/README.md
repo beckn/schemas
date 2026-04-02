@@ -20,9 +20,9 @@ Schema definition for Provider in the Beckn Protocol
 | Property | Required | Type | Description |
 |---|---|---|---|
 | `beckn:id` | yes | string | Unique identifier for the provider |
-| `beckn:descriptor` | yes | $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor | - |
-| `beckn:validity` | no | $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod | - |
+| `beckn:descriptor` | yes | $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor | - |
+| `beckn:validity` | no | $ref: https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml#/components/schemas/TimePeriod | - |
 | `beckn:locations` | no | array | Physical locations where the provider operates |
 | `beckn:rateable` | no | boolean | Whether the provider can be rated by customers |
-| `beckn:rating` | no | $ref: https://schema.beckn.io/Rating/attributes.yaml#/components/schemas/Rating | - |
-| `beckn:providerAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | - |
+| `beckn:rating` | no | $ref: https://schema.beckn.io/Rating/v2.1/attributes.yaml#/components/schemas/Rating | - |
+| `beckn:providerAttributes` | no | $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes | - |

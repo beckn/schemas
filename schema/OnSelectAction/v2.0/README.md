@@ -1,6 +1,8 @@
 # OnSelectAction — v2.0
 
-Beckn /beckn/on_select callback envelope. Sent by a BPP to a BAP in response to a /beckn/select call, with updated contract terms.
+Beckn /beckn/on_select message payload. Sent by a BPP to a BAP in
+response to a /beckn/select call, with updated contract terms.
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Files
 
@@ -19,5 +21,4 @@ Beckn /beckn/on_select callback envelope. Sent by a BPP to a BAP in response to 
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `context` | yes | allOf | - |
-| `message` | yes | object | - |
+| `contract` | yes | $ref: https://schema.beckn.io/Contract/v2.0/attributes.yaml#/components/schemas/Contract | - |

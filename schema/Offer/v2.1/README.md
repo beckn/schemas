@@ -1,17 +1,6 @@
 # Offer — v2.1
 
-A generalized, cross-domain Offer that captures the terms under which
-one or more Resources may be committed.
-
-Core intent:
-- Support multiple terms/eligibility/constraints/price points for the same Resource(s)
-- Support dynamic / on-the-fly offers (e.g., bundling, combinational discounts,
- eligibility changes, capacity-aware pricing)
-
-This mirrors the role of Offer in current Beckn (and schema.org patterns),
-but keeps the shape minimal and composable via `beckn:offerAttributes`.
-
-This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
+A generalized, cross-domain Offer that captures the terms under which one or more Resources may be committed.  Core intent: - Support multiple terms/eligibility/constraints/price points for the same Resource(s) - Support dynamic / on-the-fly offers (e.g., bundling, combinational discounts,  eligibility changes, capacity-aware pricing)  This mirrors the role of Offer in current Beckn (and schema.org patterns), but keeps the shape minimal and composable via `beckn:offerAttributes`.
 
 ## Files
 
@@ -31,12 +20,12 @@ This schema is part of the Long Term Support of Beckn Protocol V2.0 API specific
 | Property | Required | Type | Description |
 |---|---|---|---|
 | `id` | yes | string | Unique identifier of the offer. |
-| `descriptor` | no | $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor | Human / agent-readable description of this offer. |
-| `provider` | no | $ref: https://schema.beckn.io/Provider/attributes.yaml#/components/schemas/Provider | - |
+| `descriptor` | no | $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor | Human / agent-readable description of this offer. |
+| `provider` | no | $ref: https://schema.beckn.io/Provider/v2.1/attributes.yaml#/components/schemas/Provider | - |
 | `resourceIds` | no | array | References (IDs) to resources covered by this offer. |
 | `addOns` | no | array | IDs of optional extra Offers or Resources that can be attached. |
 | `considerationIds` | no | array | - |
-| `fulfillmentIds` | no | $ref: https://schema.beckn.io/Consideration/attributes.yaml#/components/schemas/Consideration | Details regarding the fulfillment of this offer |
-| `validity` | no | $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod | - |
+| `fulfillmentIds` | no | $ref: https://schema.beckn.io/Consideration/v2.0/attributes.yaml#/components/schemas/Consideration | Details regarding the fulfillment of this offer |
+| `validity` | no | $ref: https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml#/components/schemas/TimePeriod | - |
 | `availableTo` | no | array | Optional visibility constraint indicating which network participants (by participantId / networkId / role) are allowed to discover or transact on this entity.  If omitted, the entity is assumed to be visible to all participants in the addressed network(s). |
-| `offerAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | - |
+| `offerAttributes` | no | $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes | - |

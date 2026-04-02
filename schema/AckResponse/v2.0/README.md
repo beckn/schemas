@@ -22,4 +22,4 @@ Schema definition for AckResponse in the Beckn Protocol
 | `transaction_id` | yes | string | - |
 | `timestamp` | yes | string | - |
 | `ack_status` | yes | string | - |
-| `error` | no | $ref: https://schema.beckn.io/Error/attributes.yaml#/components/schemas/Error | - |
+| `error` | no | $ref: https://schema.beckn.io/Error/v2.0/attributes.yaml#/components/schemas/Error | - |

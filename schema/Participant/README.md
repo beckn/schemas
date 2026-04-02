@@ -1,6 +1,6 @@
 # Participant
 
-Schema definition for Participant in the Beckn Protocol v2.0.1
+Container schemas fetched from beckn.yaml. This cannot be extended as it is a reserved schema in beckn protocol. Any additional properties added to this schema can only be made using its *Attributes property
 
 ## Versions
 

@@ -23,12 +23,12 @@ Digital acknowledgment of payment and delivery for a logistics service.
 | `shipmentId` | yes | string | - |
 | `invoiceNumber` | no | string | - |
 | `issuedAt` | no | string | - |
-| `fare` | yes | $ref: https://schema.beckn.io/Fare/attributes.yaml#/components/schemas/Fare | - |
+| `fare` | yes | $ref: https://schema.beckn.io/Fare/v2.0/attributes.yaml#/components/schemas/Fare | - |
 | `paymentMode` | no | string | - |
 | `paymentTransactionId` | no | string | - |
 | `paidAt` | no | string | - |
-| `shipper` | no | $ref: https://schema.beckn.io/Contact/attributes.yaml#/components/schemas/Contact | - |
-| `consignee` | no | $ref: https://schema.beckn.io/Contact/attributes.yaml#/components/schemas/Contact | - |
-| `carrier` | no | $ref: https://schema.beckn.io/Carrier/attributes.yaml#/components/schemas/Carrier | - |
-| `deliveryProof` | no | $ref: https://schema.beckn.io/Proof/attributes.yaml#/components/schemas/Proof | - |
+| `shipper` | no | $ref: https://schema.beckn.io/Contact/v2.0/attributes.yaml#/components/schemas/Contact | - |
+| `consignee` | no | $ref: https://schema.beckn.io/Contact/v2.0/attributes.yaml#/components/schemas/Contact | - |
+| `carrier` | no | $ref: https://schema.beckn.io/Carrier/v2.0/attributes.yaml#/components/schemas/Carrier | - |
+| `deliveryProof` | no | $ref: https://schema.beckn.io/Proof/v2.0/attributes.yaml#/components/schemas/Proof | - |
 | `downloadUrl` | no | string | URL to download PDF receipt |

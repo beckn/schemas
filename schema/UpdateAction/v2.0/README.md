@@ -1,6 +1,9 @@
 # UpdateAction — v2.0
 
-Beckn /beckn/update action envelope. Sent by a BAP to a BPP to request changes to an active contract (e.g., update fulfillment address, add items, change quantities). The context.try flag must be true during negotiation.
+Beckn /beckn/update message payload. Sent by a BAP to a BPP to request
+changes to an active contract (e.g., update fulfillment address, add items,
+change quantities). The context.try flag must be true during negotiation.
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Files
 
@@ -19,5 +22,4 @@ Beckn /beckn/update action envelope. Sent by a BAP to a BPP to request changes t
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `context` | yes | allOf | - |
-| `message` | yes | object | - |
+| `contract` | yes | $ref: https://schema.beckn.io/Contract/v2.0/attributes.yaml#/components/schemas/Contract | - |

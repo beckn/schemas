@@ -25,4 +25,4 @@ Defines conditions for returning goods and reverse logistics workflows.
 | `returnReason` | no | array | - |
 | `reversePickupCharge` | no | object | - |
 | `refundOnReturn` | no | boolean | - |
-| `returnHubAddress` | no | $ref: https://schema.beckn.io/Place/attributes.yaml#/components/schemas/Place | - |
+| `returnHubAddress` | no | $ref: https://schema.beckn.io/Place/v2.0/attributes.yaml#/components/schemas/Place | - |

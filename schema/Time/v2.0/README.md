@@ -23,5 +23,5 @@ Represents a moment or duration in time. Can express a timestamp, a duration, or
 | `@type` | no | string | - |
 | `timestamp` | no | string | A specific instant in time (ISO 8601) |
 | `duration` | no | string | ISO 8601 duration (e.g., PT30M for 30 minutes) |
-| `range` | no | $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod | A time range with start and end |
+| `range` | no | $ref: https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml#/components/schemas/TimePeriod | A time range with start and end |
 | `label` | no | string | Human-readable label for this time |

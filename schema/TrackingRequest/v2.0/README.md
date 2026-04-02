@@ -22,4 +22,4 @@ Schema definition for TrackingRequest in the Beckn Protocol v2.0.1
 | `id` | yes | string | Tracking reference identifier |
 | `callbackUrl` | no | string | Optional callback URL for streaming tracking coordinates/updates |
 | `modeHint` | no | string | Optional delivery mode for the tracking handle. |
-| `trackingDataSchema` | no | $ref: https://json-schema.org/draft/2020-12/schema | A JSON Schema (2020-12) that describes the structure of trackingData payloads. |
+| `trackingDataSchema` | no | any | A JSON Schema (2020-12) that describes the structure of trackingData payloads. |

@@ -28,4 +28,4 @@ An organization such as a company, non-profit, or governmental institution. Mode
 | `address` | no | any | Physical address |
 | `credentials` | no | array | Credentials held by the organization |
 | `skills` | no | array | Skills or capabilities of the organization |
-| `organizationAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | Extensible attribute pack for jurisdictional or domain-specific organization properties |
+| `organizationAttributes` | no | $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes | Extensible attribute pack for jurisdictional or domain-specific organization properties |

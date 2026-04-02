@@ -22,11 +22,11 @@ Schema definition for Catalog in the Beckn Protocol
 | `@context` | yes | string | JSON-LD context URI for the core Catalog schema |
 | `@type` | yes | string | Type of the catalog |
 | `beckn:id` | yes | string | Unique identifier for the catalog |
-| `beckn:descriptor` | yes | $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor | - |
+| `beckn:descriptor` | yes | $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor | - |
 | `beckn:providerId` | no | string | Reference to the provider that owns this catalog |
 | `beckn:bppId` | yes | string | BPP (Beckn Protocol Provider) identifier that publishes this catalog |
 | `beckn:bppUri` | yes | string | BPP (Beckn Protocol Provider) URI endpoint |
-| `beckn:validity` | no | $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod | - |
+| `beckn:validity` | no | $ref: https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml#/components/schemas/TimePeriod | - |
 | `beckn:isActive` | no | boolean | Whether the catalog is active |
 | `beckn:items` | yes | array | Array of beckn core Item entities in this catalog, returned directly without ItemResult wrapper for improved performance and simplified response structure  |
 | `beckn:offers` | no | array | - |

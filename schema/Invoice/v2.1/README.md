@@ -23,9 +23,9 @@ Schema definition for Invoice in the Beckn Protocol v2.0.1
 | `@type` | yes | string | TPD |
 | `dueDate` | no | ['string', 'null'] | - |
 | `id` | yes | string | Stable invoice identifier (system id) |
-| `invoiceAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | Attribute Pack for tax regime (e.g., GST/VAT), e-invoice refs, legal boilerplate, etc. |
+| `invoiceAttributes` | no | $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes | Attribute Pack for tax regime (e.g., GST/VAT), e-invoice refs, legal boilerplate, etc. |
 | `issueDate` | yes | string | - |
 | `number` | yes | string | Human-visible invoice number |
-| `payee` | yes | $ref: https://schema.beckn.io/Provider/attributes.yaml#/components/schemas/Provider | Seller / issuer of the invoice |
-| `payer` | yes | $ref: https://schema.beckn.io/Consumer/attributes.yaml#/components/schemas/Consumer | consumer being invoiced |
+| `payee` | yes | $ref: https://schema.beckn.io/Provider/v2.1/attributes.yaml#/components/schemas/Provider | Seller / issuer of the invoice |
+| `payer` | yes | $ref: https://schema.beckn.io/Consumer/v2.0/attributes.yaml#/components/schemas/Consumer | consumer being invoiced |
 | `costBreakup` | no | array | - |

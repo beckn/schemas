@@ -1,6 +1,9 @@
 # ConfirmAction — v2.0
 
-Beckn /beckn/confirm action envelope. Sent by a BAP to a BPP to confirm a contract, finalising the transaction terms agreed during the select–init negotiation cycle.
+Beckn /beckn/confirm message payload. Sent by a BAP to a BPP to confirm
+a contract, finalising the transaction terms agreed during the
+select-init negotiation cycle.
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Files
 
@@ -19,5 +22,4 @@ Beckn /beckn/confirm action envelope. Sent by a BAP to a BPP to confirm a contra
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `context` | yes | allOf | - |
-| `message` | yes | object | - |
+| `contract` | yes | $ref: https://schema.beckn.io/Contract/v2.0/attributes.yaml#/components/schemas/Contract | - |

@@ -21,5 +21,5 @@ Schema definition for PriceSpecification in the Beckn Protocol
 |---|---|---|---|
 | `currency` | no | string | ISO 4217 code |
 | `value` | no | number | Total value for this price specification |
-| `applicableQuantity` | no | $ref: https://schema.beckn.io/Quantity/attributes.yaml#/components/schemas/Quantity | - |
+| `applicableQuantity` | no | $ref: https://schema.beckn.io/Quantity/v2.0/attributes.yaml#/components/schemas/Quantity | - |
 | `components` | no | array | Optional components (tax, shipping, discount, fee, surcharge) |

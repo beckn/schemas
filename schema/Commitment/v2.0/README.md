@@ -1,6 +1,6 @@
 # Commitment — v2.0
 
-This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
+Container schemas fetched from beckn.yaml. This cannot be extended as it is a reserved schema in beckn protocol. Any additional properties added to this schema can only be made using its *Attributes property
 
 ## Files
 
@@ -22,5 +22,5 @@ This schema is part of the Long Term Support of Beckn Protocol V2.0 API specific
 | `id` | no | string | - |
 | `status` | yes | object | - |
 | `resources` | yes | array | - |
-| `offer` | yes | $ref: https://schema.beckn.io/Offer/attributes.yaml#/components/schemas/Offer | - |
+| `offer` | yes | $ref: https://schema.beckn.io/Offer/v2.1/attributes.yaml#/components/schemas/Offer | - |
 | `commitmentAttributes` | no | allOf | Domain-specific extension attributes for this commitment. |

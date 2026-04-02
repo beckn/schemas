@@ -21,7 +21,7 @@ A Waypoint is an intermediate stop or checkpoint on a logistics route, such as a
 |---|---|---|---|
 | `id` | yes | string | - |
 | `name` | no | string | - |
-| `place` | yes | $ref: https://schema.beckn.io/Place/attributes.yaml#/components/schemas/Place | - |
+| `place` | yes | $ref: https://schema.beckn.io/Place/v2.0/attributes.yaml#/components/schemas/Place | - |
 | `type` | no | string | - |
 | `sequenceNumber` | no | integer | Order of this waypoint in the route |
 | `scheduledArrival` | no | string | - |

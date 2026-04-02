@@ -2,8 +2,6 @@
 
 Schema definition for Descriptor in the Beckn Protocol v2.0.1
 
-This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
-
 ## Files
 
 | File | Purpose |
@@ -26,5 +24,5 @@ This schema is part of the Long Term Support of Beckn Protocol V2.0 API specific
 | `shortDesc` | no | string | Short description of the item |
 | `name` | no | string | Name of the entity being described |
 | `thumbnailImage` | no | string | Name of the entity being described |
-| `docs` | no | array | Links to downloadable documents |
+| `docs` | no | array | Links to downloadable business/supporting documents |
 | `mediaFile` | no | array | Links to multimedia files and images |

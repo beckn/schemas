@@ -1,6 +1,10 @@
 # Context — v2.0
 
-Every API call in Beckn protocol has a context. It provides a high-level overview to the receiver about the nature of the intended transaction. Typically, it is the BAP that sets the transaction context based on the consumer's location and action on their UI. The context object contains four types of fields: (1) demographic information about the transaction using fields like domain, country, and region; (2) addressing details like the sending and receiving platform's ID and API URL; (3) interoperability information like the protocol version implemented by the sender; and (4) transaction details like the method being called at the receiver's endpoint, the transaction_id that represents an end-to-end user session at the BAP, a message ID to pair requests with callbacks, a timestamp to capture sending times, a ttl to specify the validity of the request, and a key to encrypt information if necessary.
+Base context schema for all Beckn API calls. Contains addressing information
+(BAP/BPP identifiers and API URLs), protocol version, the action being called,
+transaction and message IDs, timestamp, TTL, and optional encryption key.
+This schema defines all possible properties but imposes NO required-field
+constraints. Endpoint-specific validation is defined inline in operation request schemas.
 
 ## Files
 
@@ -19,16 +23,19 @@ Every API call in Beckn protocol has a context. It provides a high-level overvie
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `action` | yes | $ref: https://schema.beckn.io/BecknEndpoint/attributes.yaml#/components/schemas/BecknEndpoint | The Beckn endpoint being called. Must conform to BecknEndpoint format. |
-| `bapId` | yes | string | A globally unique identifier of the BAP. Typically the fully qualified domain name (FQDN) of the BAP. |
-| `bapUri` | yes | string | API URL of the BAP for accepting callbacks from BPPs. |
-| `bppId` | no | string | A globally unique identifier of the BPP. Typically the fully qualified domain name (FQDN) of the BPP. |
-| `bppUri` | no | string | API URL of the BPP for accepting calls from BAPs. |
-| `messageId` | yes | string | A unique value which persists during a request/callback cycle. BAPs use this value to match an incoming callback from a BPP to an earlier call. Generate a fresh message_id for every new interaction. |
-| `networkId` | no | string | A unique identifier representing a group of platforms. By default, the URL of the network registry on the Beckn network. |
-| `timestamp` | yes | string | Time of request generation in RFC3339 format. |
-| `transactionId` | yes | string | A unique value which persists across all API calls from discover through confirm. Used to indicate an active user session across multiple requests. |
-| `try` | no | boolean | A flag to indicate that this request is intended to try an operation. Set to false by default. Set to true when negotiating terms, updating, or cancelling an active contract. When true, the receiver responds with the expected consequences per the terms of service agreed during init/on_init. |
-| `ttl` | no | string | The duration in ISO8601 format after timestamp for which this message holds valid. |
-| `version` | yes | string | Version of Beckn protocol being used by the sender. |
-| `lineage` | no | array | An optional array of causal attribution records asserting that this Beckn transaction was triggered by one or more upstream Beckn interactions. Present only at transaction boundaries. MUST NOT be populated within subsequent steps of the same transaction. Per current Beckn profiles, this array MUST contain at most one entry when present. |
+| `domain` | no | string | Domain code that is relevant to this transaction context |
+| `location` | no | object | The location where the transaction is intended to be fulfilled. |
+| `action` | no | string | The Beckn protocol method being called by the sender and executed at the receiver. |
+| `version` | no | string | Version of transaction protocol being used by the sender. |
+| `bapId` | no | string | Subscriber ID of the BAP as registered on dedi.global |
+| `bapUri` | no | string | The callback URL of the BAP.  REQUIRED: This should necessarily contain the same domain name as verified in its namespace under dedi.global, and MUST have the same URL as registered in its subscriber registry on dedi.global |
+| `bppId` | no | string | Subscriber ID of the BPP as registered on dedi.global |
+| `bppUri` | no | string | The request URL of the BPP.  REQUIRED: This MUST contain the same domain name as verified in its namespace under dedi.global, and MUST have the same URL as registered in its subscriber registry on dedi.global |
+| `transactionId` | no | string | This is a unique value which persists across all API calls from `search` through `confirm`. This is done to indicate an active user session across multiple requests. The BPPs can use this value to push personalized recommendations, and dynamic offerings related to an ongoing transaction despite being unaware of the user active on the BAP. |
+| `messageId` | no | string | This is a unique value which persists during a request / callback cycle. Since beckn protocol APIs are asynchronous, BAPs need a common value to match an incoming callback from a BPP to an earlier call. This value can also be used to ignore duplicate messages coming from the BPP. It is recommended to generate a fresh message_id for every new interaction. When sending unsolicited callbacks, BPPs must generate a new message_id. |
+| `networkId` | no | string | Unique identifier of a network. This identifier ALWAYS represents a specific beckn registry in a specific namespace on dedi.global. Format : `{namespace_id}/{registry_id}@{dedi-host}`. The `@{dedi-host}` suffix is optional. If it is not present, the network is assumed to be registered on dedi.glounique Example: Assuming acmenet.org is the namespace, and registry_name = charge-net, so networkId should be `acmenet.org/charge-net` |
+| `timestamp` | no | string | Time of request generation in RFC3339 format |
+| `key` | no | string | The encryption public key of the sender |
+| `ttl` | no | string | The duration in ISO8601 format after timestamp for which this message holds valid |
+| `schemaContext` | no | array | Array of JSON-LD context urls representing the schemas relevant to the request in which this context object is transported. |
+| `requestDigest` | no | $ref: https://schema.beckn.io/RequestDigest/v2.0/attributes.yaml#/components/schemas/RequestDigest | - |

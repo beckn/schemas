@@ -21,6 +21,6 @@ Schema definition for Skill in the Beckn Protocol v2.0.1
 |---|---|---|---|
 | `@context` | yes | string | - |
 | `@type` | yes | string | - |
-| `category` | no | $ref: https://schema.beckn.io/CategoryCode/attributes.yaml#/components/schemas/CategoryCode | - |
-| `descriptor` | yes | $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor | - |
+| `category` | no | $ref: https://schema.beckn.io/CategoryCode/v2.1/attributes.yaml#/components/schemas/CategoryCode | - |
+| `descriptor` | yes | $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor | - |
 | `id` | yes | string | - |

@@ -22,6 +22,6 @@ A contractually granted, policy-governed right that allows a specific party to a
 | `@context` | yes | string | CPD |
 | `@type` | yes | string | The domain-specific type of entitlement that allows domains to extend this schema |
 | `id` | yes | string | A unique identifier for this entitlement within the entitlement provider's namespace |
-| `resource` | no | $ref: https://schema.beckn.io/ContractItem/attributes.yaml#/components/schemas/ContractItem | The resource being availed or accessed against this entitlement |
-| `descriptor` | yes | $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor | Human-readable information regarding the entitlement like QR-code images, attached documents containing terms and conditions, video or audio files instructing the user on how to use the entitlement |
+| `resource` | no | $ref: https://schema.beckn.io/ContractItem/v2.0/attributes.yaml#/components/schemas/ContractItem | The resource being availed or accessed against this entitlement |
+| `descriptor` | yes | $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor | Human-readable information regarding the entitlement like QR-code images, attached documents containing terms and conditions, video or audio files instructing the user on how to use the entitlement |
 | `credentials` | no | array | - |

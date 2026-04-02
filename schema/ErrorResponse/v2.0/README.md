@@ -19,4 +19,4 @@ Schema definition for ErrorResponse in the Beckn Protocol v2.0.1
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `error` | yes | $ref: https://schema.beckn.io/Error/attributes.yaml#/components/schemas/Error | - |
+| `error` | yes | $ref: https://schema.beckn.io/Error/v2.0/attributes.yaml#/components/schemas/Error | - |

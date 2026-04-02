@@ -21,7 +21,7 @@ Intrinsic attributes of a job opportunity Resource. Domain-generic: applicable t
 |---|---|---|---|
 | `job_type` | no | string | Nature of the employment engagement. |
 | `work_mode` | no | string | Physical arrangement for the role. |
-| `industry_type` | no | $ref: ../../../CodedValue/attributes.jsonschema.yaml#/components/schemas/CodedValue | Industry classification using an authority-governed code system (e.g. ISIC, NIC). Provides international neutrality.  |
+| `industry_type` | no | $ref: https://schema.beckn.io/CodedValue/v2.1/attributes.yaml#/components/schemas/CodedValue | Industry classification using an authority-governed code system (e.g. ISIC, NIC). Provides international neutrality.  |
 | `location` | no | object | Primary location of the role. |
 | `service_area` | no | string | Free-text description of the geographic service area for roles not tied to a single location (e.g. field sales, delivery routes).  |
 | `requirements` | no | array | Ordered list of credential requirements an applicant must satisfy. Mandatory requirements block the application; non-mandatory are advisory.  |

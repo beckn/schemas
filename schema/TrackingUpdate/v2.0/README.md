@@ -25,9 +25,9 @@ A TrackingUpdate is a real-time or periodic update on the status and location of
 | `location` | no | object | - |
 | `timestamp` | yes | string | - |
 | `message` | no | string | Human-readable status message |
-| `hub` | no | $ref: https://schema.beckn.io/Hub/attributes.yaml#/components/schemas/Hub | - |
-| `driver` | no | $ref: https://schema.beckn.io/Driver/attributes.yaml#/components/schemas/Driver | - |
-| `vehicle` | no | $ref: https://schema.beckn.io/Vehicle/attributes.yaml#/components/schemas/Vehicle | - |
+| `hub` | no | $ref: https://schema.beckn.io/Hub/v2.0/attributes.yaml#/components/schemas/Hub | - |
+| `driver` | no | $ref: https://schema.beckn.io/Driver/v2.0/attributes.yaml#/components/schemas/Driver | - |
+| `vehicle` | no | $ref: https://schema.beckn.io/Vehicle/v2.0/attributes.yaml#/components/schemas/Vehicle | - |
 | `exceptionDetails` | no | object | Details if this update is an exception |
 | `nextAction` | no | string | Next planned action |
 | `notificationSent` | no | boolean | Whether customer was notified of this update |

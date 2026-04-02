@@ -28,10 +28,10 @@ Use in: beckn:Fulfillment.fulfillmentAttributes
 |---|---|---|---|
 | `@context` | yes | string | - |
 | `@type` | yes | string | - |
-| `pickupLocation` | no | $ref: https://schema.beckn.io/Location/attributes.yaml#/components/schemas/Location | The pickup/origin location (restaurant, warehouse, dark store). Corresponds to schema:originAddress on schema:ParcelDelivery.  |
-| `deliveryLocation` | no | $ref: https://schema.beckn.io/Location/attributes.yaml#/components/schemas/Location | The delivery destination (consumer's address). Corresponds to schema:deliveryAddress on schema:ParcelDelivery.  |
+| `pickupLocation` | no | $ref: https://schema.beckn.io/Location/v2.0/attributes.yaml#/components/schemas/Location | The pickup/origin location (restaurant, warehouse, dark store). Corresponds to schema:originAddress on schema:ParcelDelivery.  |
+| `deliveryLocation` | no | $ref: https://schema.beckn.io/Location/v2.0/attributes.yaml#/components/schemas/Location | The delivery destination (consumer's address). Corresponds to schema:deliveryAddress on schema:ParcelDelivery.  |
 | `itemsShipped` | no | array | The items shipped in this delivery. Corresponds to schema:itemShipped on schema:ParcelDelivery.  |
-| `agent` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | The delivery agent (rider) carrying out this delivery. Corresponds to schema:carrier on schema:ParcelDelivery.  |
+| `agent` | no | $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes | The delivery agent (rider) carrying out this delivery. Corresponds to schema:carrier on schema:ParcelDelivery.  |
 | `trackingUrl` | no | string | Live real-time tracking URL for the rider's location during delivery. Corresponds to schema:trackingUrl on schema:ParcelDelivery.  |
 | `expectedArrivalFrom` | no | string | Earliest expected delivery time (ISO 8601). Maps to schema:expectedArrivalFrom. |
 | `expectedArrivalUntil` | no | string | Latest expected delivery time (ISO 8601). Maps to schema:expectedArrivalUntil. |

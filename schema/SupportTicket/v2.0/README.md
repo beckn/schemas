@@ -20,4 +20,4 @@ A support ticket raised against an order
 | Property | Required | Type | Description |
 |---|---|---|---|
 | `id` | no | string | Ticket ID |
-| `supportTicketAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | - |
+| `supportTicketAttributes` | no | $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes | - |

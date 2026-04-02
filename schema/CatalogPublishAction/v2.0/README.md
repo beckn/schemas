@@ -1,8 +1,6 @@
 # CatalogPublishAction — v2.0
 
-Beckn /beckn/catalog_publish message payload. Sent by a BPP to a CDS
-(Catalog Discovery Service) to publish or update one or more catalogs.
-The CDS indexes the catalogs and makes them discoverable.
+Catalog publish request payload.
 
 ## Files
 
@@ -21,5 +19,4 @@ The CDS indexes the catalogs and makes them discoverable.
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `context` | yes | allOf | - |
-| `message` | yes | object | - |
+| `catalogs` | yes | array | - |

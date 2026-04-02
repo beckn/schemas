@@ -1,9 +1,6 @@
 # Ack
 
-Synchronous receipt acknowledgement returned for every accepted Beckn request.
-Supports both the v2.0 format (status + signature CounterSignature) and the
-v2.0-rc1 legacy format (ack_status + transaction_id + timestamp) via oneOf
-for backward compatibility.
+New v2.0 Ack format carrying an HTTP Counter-Signature proving the receiver authenticated, received, and processed the inbound request.
 
 ## Versions
 

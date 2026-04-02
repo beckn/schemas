@@ -19,7 +19,7 @@ A causal attribution record asserting that the Beckn transaction in which this e
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `action` | yes | $ref: https://schema.beckn.io/BecknEndpoint/attributes.yaml#/components/schemas/BecknEndpoint | The Beckn endpoint of the upstream message that caused this transaction to be initiated. |
+| `action` | yes | $ref: https://schema.beckn.io/BecknEndpoint/v2.0/attributes.yaml#/components/schemas/BecknEndpoint | The Beckn endpoint of the upstream message that caused this transaction to be initiated. |
 | `transactionId` | yes | string | The transactionId of the upstream Beckn transaction, taken from its Context. |
 | `messageId` | yes | string | The messageId of the specific upstream message that directly triggered the creation of this transaction. |
 | `digest` | yes | string | BLAKE2b-512 hash of the upstream message body bytes, encoded in Base64 and prefixed with the algorithm identifier. Format: BLAKE-512={base64EncodedHash} |

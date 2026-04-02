@@ -22,7 +22,7 @@ Entity operating a logistics network or fleet, responsible for end-to-end delive
 | `id` | yes | string | - |
 | `name` | yes | string | - |
 | `type` | no | string | - |
-| `contact` | no | $ref: https://schema.beckn.io/Contact/attributes.yaml#/components/schemas/Contact | - |
+| `contact` | no | $ref: https://schema.beckn.io/Contact/v2.0/attributes.yaml#/components/schemas/Contact | - |
 | `website` | no | string | - |
 | `supportEmail` | no | string | - |
 | `supportPhone` | no | string | - |

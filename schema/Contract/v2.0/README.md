@@ -1,6 +1,6 @@
 # Contract — v2.0
 
-This is a JSON-LD compliant, linked-data schema that specifies a generic multi-party, digitally signed Contract between a set of participants. based on the vocabulary defined in the @context. By default, it is the most generic form of contract i.e beckn:Contract. However, based on the mapping being used in @context, it could take values like retail:Order, mobility:Reservation, healthcare:Appointment, and so on, which will be defined as sub-classes of beckn:Contract.
+This is a JSON-LD compliant, linked-data schema that specifies a generic multi-party, digitally signed Contract between a set of participants. based on the vocabulary defined in the @context. By default, it is the most generic form of contract i.e beckn:Contract. However, based on the mapping being used in @context, it could take values like retail:Order, mobility:Reservation, healthcare:Appointment, and so on, which will be defined as sub-classes of beckn:Contract. Alternate description A digitally agreed commitment between two or more participants governing the exchange of economic or non-economic value.  Contract is the canonical contract object in the generalized Beckn v2.1 protocol. It replaces the commerce-specific Order construct as the canonical transaction object at the API layer.  A Contract binds:  - Commitments (what is agreed)  - Consideration (value promised)  - Performance (how execution occurs)  - Settlements (how consideration is discharged)  The model is domain-neutral and supports commerce, hiring, energy markets, carbon exchanges, data access, mobility, subscriptions, and other use cases.
 
 ## Files
 
@@ -19,13 +19,12 @@ This is a JSON-LD compliant, linked-data schema that specifies a generic multi-p
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `@context` | no | string | A URL to the reference vocabulary where this schema has been defined. If missing, this field defaults to `https://schema.beckn.io/`. It allows applications to fetch the mapping between the simple JSON keys of this class and absolute Beckn IRIs (Internationalized Resource Identifiers), allowing conversion of standard Beckn JSON payload into linked data. |
-| `@type` | yes | string | A Beckn IRI on the vocabulary defined in the @context. Must start with "beckn:" followed by URL-safe identifier characters. |
 | `id` | no | string | A UUID string generated at the BPP endpoint at any stage before the confirmation of the order i.e before `/on_confirm` callback. This value is intended typically for indexing or filtering. While the chances of a UUID collision are rare, it is recommended to use a combination of `bppId`, `providerId` and `id` to allow for global uniqueness. |
-| `displayId` | no | string | A human-readable / Agent-readable identifier of the contract intended for display or printing. This value may or may not be different from `id` which is intended purely for machine-readability. Typically, this value is generated after the confirmation of the order at the BPP's end. |
-| `items` | yes | array | The items of value i.e resources, specified in this contract. Depending upon the context, these resources could be a combination physical objects, virtual objects, services, time slots, distance travelled, alloted space, and many more. |
-| `status` | no | any | The current state of the contract. Depending on the context, it could be just a code or a detailed description of state. |
-| `contractValue` | no | any | An object that captures the total value of the contract including a breakup of the items, discounts, fulfillment charges, and any other additional charges relevant to that context. |
-| `participants` | yes | array | The participants involved in the contract. Contracts are not always between two individuals. Several entities may play a specific role in the creation, fulfillment, and post-fulfillment of the contract. |
-| `entitlements` | no | array | - |
-| `fulfillments` | no | array | Describes the acts performed by each participant to fulfill the contract |
+| `descriptor` | no | $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor | Describes the nature of the contract in human / agent readable terms |
+| `commitments` | yes | array | Structured commitments governed by this contract. |
+| `consideration` | no | array | Value agreed to be exchanged under this contract. |
+| `participants` | no | array | The participants involved in the contract. Contracts are not always between two individuals.  Several entities may play a specific role in the creation, fulfillment, and post-fulfillment of the contract. |
+| `performance` | no | array | Execution units of the contract.  Performance is the generalized fulfillment abstraction. Each Performance instance represents a structured execution plan or delivery mechanism, including:   - Physical delivery  - Service provisioning  - API access  - Subscription activation  - Carbon credit transfer  - Capacity allocation  - Workforce onboarding Tracking and Support interactions may be linked to individual Performance units. |
+| `settlements` | no | array | Records representing discharge of agreed consideration. |
+| `status` | no | allOf | The current state of the contract expressed as a Descriptor whose code MUST be one of the standard contract state values. |
+| `contractAttributes` | no | allOf | Domain-specific extension attributes for this contract. |

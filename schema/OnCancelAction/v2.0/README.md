@@ -1,6 +1,9 @@
 # OnCancelAction — v2.0
 
-Beckn /beckn/on_cancel callback envelope. Sent by a BPP to a BAP in response to a /beckn/cancel call, returning the contract with status set to CANCELLED and any applicable cancellation outcome.
+Beckn /beckn/on_cancel message payload. Sent by a BPP to a BAP in
+response to a /beckn/cancel call, returning the contract with status
+set to CANCELLED and any applicable cancellation outcome.
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Files
 
@@ -19,5 +22,4 @@ Beckn /beckn/on_cancel callback envelope. Sent by a BPP to a BAP in response to 
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `context` | yes | allOf | - |
-| `message` | yes | object | - |
+| `contract` | yes | $ref: https://schema.beckn.io/Contract/v2.0/attributes.yaml#/components/schemas/Contract | - |

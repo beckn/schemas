@@ -21,7 +21,7 @@ Qualitative feedback from sender or receiver about a logistics experience.
 |---|---|---|---|
 | `id` | no | string | - |
 | `shipmentId` | no | string | - |
-| `rating` | no | $ref: https://schema.beckn.io/Rating/attributes.yaml#/components/schemas/Rating | - |
+| `rating` | no | $ref: https://schema.beckn.io/Rating/v2.1/attributes.yaml#/components/schemas/Rating | - |
 | `review` | no | string | Free text review |
 | `tags` | no | array | Structured feedback tags |
 | `wouldRecommend` | no | boolean | - |

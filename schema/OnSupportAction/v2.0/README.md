@@ -1,6 +1,9 @@
 # OnSupportAction — v2.0
 
-Beckn /beckn/on_support callback envelope. Sent by a BPP to a BAP in response to a /beckn/support call, returning support contact details and available channels.
+Beckn /beckn/on_support message payload. Sent by a BPP to a BAP in
+response to a /beckn/support call, returning support contact details
+and available channels.
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Files
 
@@ -19,5 +22,4 @@ Beckn /beckn/on_support callback envelope. Sent by a BPP to a BAP in response to
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `context` | yes | allOf | - |
-| `message` | yes | object | - |
+| `support` | yes | $ref: https://schema.beckn.io/Support/v2.0/attributes.yaml#/components/schemas/Support | - |

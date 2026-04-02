@@ -1,6 +1,9 @@
 # OnUpdateAction
 
-Beckn /beckn/on_update callback envelope. Sent by a BPP to a BAP in response to a /beckn/update call (or as an unsolicited update push), returning the updated contract state.
+Beckn /beckn/on_update message payload. Sent by a BPP to a BAP in
+response to a /beckn/update call (or as an unsolicited update push),
+returning the updated contract state.
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Versions
 

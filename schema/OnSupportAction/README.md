@@ -1,6 +1,9 @@
 # OnSupportAction
 
-Beckn /beckn/on_support callback envelope. Sent by a BPP to a BAP in response to a /beckn/support call, returning support contact details and available channels.
+Beckn /beckn/on_support message payload. Sent by a BPP to a BAP in
+response to a /beckn/support call, returning support contact details
+and available channels.
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Versions
 

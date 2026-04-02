@@ -1,6 +1,8 @@
 # OnSelectAction
 
-Beckn /beckn/on_select callback envelope. Sent by a BPP to a BAP in response to a /beckn/select call, with updated contract terms.
+Beckn /beckn/on_select message payload. Sent by a BPP to a BAP in
+response to a /beckn/select call, with updated contract terms.
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Versions
 

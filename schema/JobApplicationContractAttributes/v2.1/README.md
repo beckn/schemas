@@ -20,7 +20,7 @@ Transaction-level metadata for a job application contract. Captures the applicat
 | Property | Required | Type | Description |
 |---|---|---|---|
 | `application_reference` | yes | string | BAP-generated unique reference for this application. Used for tracking, status queries, and audit. Not a platform routing ID.  |
-| `verification_summary` | no | $ref: ../../../VerificationSummary/attributes.jsonschema.yaml#/components/schemas/VerificationSummary | Aggregate outcome of credential verification performed during the application submission. Populated after verification completes.  |
+| `verification_summary` | no | $ref: https://schema.beckn.io/VerificationSummary/v2.1/attributes.yaml#/components/schemas/VerificationSummary | Aggregate outcome of credential verification performed during the application submission. Populated after verification completes.  |
 | `reverification_requested` | no | boolean | Whether the employer (EMPLOYER party) has requested re-verification of some or all credentials after the initial application submission.  |
 | `reverification_requirements` | no | array | Additional or revised requirements for which reverification has been requested. Only populated when reverification_requested = true.  |
 | `submitted_at` | yes | string | Timestamp when the application was submitted. |

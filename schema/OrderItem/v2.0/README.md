@@ -20,8 +20,8 @@ Schema definition for OrderItem in the Beckn Protocol
 | Property | Required | Type | Description |
 |---|---|---|---|
 | `beckn:lineId` | no | string | Unique line id within order |
-| `beckn:orderedItem` | yes | $ref: https://schema.beckn.io/Item/attributes.yaml#/components/schemas/Item | - |
-| `beckn:acceptedOffer` | no | $ref: https://schema.beckn.io/Offer/attributes.yaml#/components/schemas/Offer | Offer applied to this line (if different from order-level) |
-| `beckn:quantity` | no | $ref: https://schema.beckn.io/Quantity/attributes.yaml#/components/schemas/Quantity | - |
-| `beckn:price` | no | $ref: https://schema.beckn.io/PriceSpecification/attributes.yaml#/components/schemas/PriceSpecification | Line price composition (unit/tax/delivery/discount) |
-| `beckn:orderItemAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | Line-level Attribute Pack (options, substitutions, ESG, etc.) |
+| `beckn:orderedItem` | yes | $ref: https://schema.beckn.io/Item/v2.1/attributes.yaml#/components/schemas/Item | - |
+| `beckn:acceptedOffer` | no | $ref: https://schema.beckn.io/Offer/v2.1/attributes.yaml#/components/schemas/Offer | Offer applied to this line (if different from order-level) |
+| `beckn:quantity` | no | $ref: https://schema.beckn.io/Quantity/v2.0/attributes.yaml#/components/schemas/Quantity | - |
+| `beckn:price` | no | $ref: https://schema.beckn.io/PriceSpecification/v2.1/attributes.yaml#/components/schemas/PriceSpecification | Line price composition (unit/tax/delivery/discount) |
+| `beckn:orderItemAttributes` | no | $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes | Line-level Attribute Pack (options, substitutions, ESG, etc.) |

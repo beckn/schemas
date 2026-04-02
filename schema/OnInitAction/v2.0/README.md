@@ -1,6 +1,9 @@
 # OnInitAction — v2.0
 
-Beckn /beckn/on_init callback envelope. Sent by a BPP to a BAP in response to a /beckn/init call, with the updated contract including payment terms and billing confirmation.
+Beckn /beckn/on_init message payload. Sent by a BPP to a BAP in response
+to a /beckn/init call, with the updated contract including payment terms
+and billing confirmation.
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Files
 
@@ -19,5 +22,4 @@ Beckn /beckn/on_init callback envelope. Sent by a BPP to a BAP in response to a 
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `context` | yes | allOf | - |
-| `message` | yes | object | - |
+| `contract` | yes | $ref: https://schema.beckn.io/Contract/v2.0/attributes.yaml#/components/schemas/Contract | - |

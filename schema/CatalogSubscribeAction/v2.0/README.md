@@ -5,8 +5,6 @@ At least one of `networkIds` or `schemaTypes` must be non-empty.
 An empty `schemaTypes` array is treated as the wildcard sentinel `"*"`,
 matching all schema types for the specified networks.
 
-This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
-
 ## Files
 
 | File | Purpose |

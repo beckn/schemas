@@ -1,6 +1,8 @@
 # InitAction — v2.0
 
-Beckn /beckn/init action envelope. Sent by a BAP to a BPP to initialise a contract with consumer details (billing address, fulfillment preferences, etc.).
+Beckn /beckn/init message payload. Sent by a BAP to a BPP to initialise
+a contract with consumer details (billing address, fulfillment preferences, etc.).
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Files
 
@@ -19,5 +21,4 @@ Beckn /beckn/init action envelope. Sent by a BAP to a BPP to initialise a contra
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `context` | yes | allOf | - |
-| `message` | yes | object | - |
+| `contract` | yes | $ref: https://schema.beckn.io/Contract/v2.0/attributes.yaml#/components/schemas/Contract | - |

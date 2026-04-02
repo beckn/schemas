@@ -1,6 +1,9 @@
 # CancelAction
 
-Beckn /beckn/cancel action envelope. Sent by a BAP to a BPP to request cancellation of an active contract. Set context.try to true to first retrieve cancellation terms and fees before committing.
+Beckn /beckn/cancel message payload. Sent by a BAP to a BPP to request
+cancellation of an active contract. Set context.try to true to first
+retrieve cancellation terms and fees before committing.
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Versions
 

@@ -1,6 +1,9 @@
 # OnConfirmAction — v2.0
 
-Beckn /beckn/on_confirm callback envelope. Sent by a BPP to a BAP in response to a /beckn/confirm call, returning the confirmed contract with status set to CONFIRMED.
+Beckn /beckn/on_confirm message payload. Sent by a BPP to a BAP in
+response to a /beckn/confirm call, returning the confirmed contract
+with status set to CONFIRMED.
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Files
 
@@ -19,5 +22,4 @@ Beckn /beckn/on_confirm callback envelope. Sent by a BPP to a BAP in response to
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `context` | yes | allOf | - |
-| `message` | yes | object | - |
+| `contract` | yes | $ref: https://schema.beckn.io/Contract/v2.0/attributes.yaml#/components/schemas/Contract | - |

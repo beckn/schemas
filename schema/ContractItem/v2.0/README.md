@@ -19,9 +19,9 @@ A line item within a Contract, linking an accepted Offer and ordered Item with q
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `acceptedOffer` | no | $ref: https://schema.beckn.io/Offer/attributes.yaml#/components/schemas/Offer | Offer applied to this line (if different from contract-level) |
-| `itemId` | yes | $ref: https://schema.beckn.io/Item/attributes.yaml#/components/schemas/Item | - |
+| `acceptedOffer` | no | $ref: https://schema.beckn.io/Offer/v2.1/attributes.yaml#/components/schemas/Offer | Offer applied to this line (if different from contract-level) |
+| `itemId` | yes | $ref: https://schema.beckn.io/Item/v2.1/attributes.yaml#/components/schemas/Item | - |
 | `lineId` | no | string | Unique line id within contract |
-| `contractItemAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | Line-level Attribute Pack (options, substitutions, ESG, etc.) |
-| `price` | no | $ref: https://schema.beckn.io/PriceSpecification/attributes.yaml#/components/schemas/PriceSpecification | Line price composition (unit/tax/delivery/discount) |
-| `quantity` | no | $ref: https://schema.beckn.io/Quantity/attributes.yaml#/components/schemas/Quantity | - |
+| `contractItemAttributes` | no | $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes | Line-level Attribute Pack (options, substitutions, ESG, etc.) |
+| `price` | no | $ref: https://schema.beckn.io/PriceSpecification/v2.1/attributes.yaml#/components/schemas/PriceSpecification | Line price composition (unit/tax/delivery/discount) |
+| `quantity` | no | $ref: https://schema.beckn.io/Quantity/v2.0/attributes.yaml#/components/schemas/Quantity | - |

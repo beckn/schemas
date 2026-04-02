@@ -20,5 +20,5 @@ How the discovery engine should use the provided media inputs.
 | Property | Required | Type | Description |
 |---|---|---|---|
 | `goals` | no | array | Desired processing goals for the media. |
-| `augmentTextSearch` | no | boolean | Whether to append extracted text from OCR/ASR to `textSearch`. |
-| `restrictResultsToMediaProximity` | no | boolean | Restrict results to spatial proximity of media-derived coordinates (e.g., EXIF GPS tags). |
+| `augment_text_search` | no | boolean | - |
+| `restrict_results_to_media_proximity` | no | boolean | - |

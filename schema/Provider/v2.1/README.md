@@ -2,8 +2,6 @@
 
 Schema definition for Provider in the Beckn Protocol v2.0.1
 
-This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
-
 ## Files
 
 | File | Purpose |
@@ -22,6 +20,6 @@ This schema is part of the Long Term Support of Beckn Protocol V2.0 API specific
 | Property | Required | Type | Description |
 |---|---|---|---|
 | `id` | yes | string | Unique identifier for the provider |
-| `descriptor` | yes | $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor | - |
+| `descriptor` | yes | $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor | - |
 | `availableAt` | no | array | Physical locations where the provider operates |
-| `providerAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | - |
+| `providerAttributes` | no | $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes | - |

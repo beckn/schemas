@@ -27,7 +27,7 @@ A Courier is an individual delivery agent responsible for last-mile pickup and d
 | `rating` | no | number | Average rating (1-5) |
 | `vehicleType` | no | string | Type of vehicle used |
 | `vehicleNumber` | no | string | Vehicle registration number |
-| `currentLocation` | no | $ref: https://schema.beckn.io/Place/attributes.yaml#/components/schemas/Place | - |
+| `currentLocation` | no | $ref: https://schema.beckn.io/Place/v2.0/attributes.yaml#/components/schemas/Place | - |
 | `status` | no | string | - |
 | `activeShipments` | no | array | Currently assigned shipments |
 | `kycVerified` | no | boolean | Whether courier has completed KYC verification |

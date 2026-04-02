@@ -1,7 +1,6 @@
 # OnDiscoverAction
 
-Beckn /beckn/on_discover message payload. Sent by a BPP or CDS to a BAP
-in response to a discover request. Contains matching catalogs.
+The on_discover response payload containing matching catalogs.
 
 ## Versions
 

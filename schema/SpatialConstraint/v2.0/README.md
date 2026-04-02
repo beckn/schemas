@@ -1,20 +1,6 @@
 # SpatialConstraint — v2.0
 
-**Spatial predicate** using **OGC CQL2 (JSON semantics)** applied to one or more geometry targets in an item. This is where clients express spatial intent.
-Key ideas: - `targets`: one or more **JSONPath-like** pointers that locate geometry
-
-  fields within each item document (e.g., `$['availableAt'][*]['geo']`).
-- `op`: spatial operator (CQL2). Common ones:
-
-    • `S_WITHIN`     (A is completely inside B)
-    • `S_INTERSECTS` (A intersects B)
-    • `S_CONTAINS`   (A contains B)
-    • `S_DWITHIN`    (A within distance of B)
-- `geometry`: **GeoJSON** literal used as the predicate reference geometry. - `distanceMeters`: required for `S_DWITHIN` when using a GeoJSON Point/shape. - `quantifier`: if a target resolves to an array, choose whether **ANY** (default),
-
-  **ALL**, or **NONE** of elements must satisfy the predicate.
-
-CRS: unless otherwise stated, all coordinates are **EPSG:4326**.
+**Spatial predicate** using **OGC CQL2 (JSON semantics)** applied to one or more geometry targets in an item. This is where clients express spatial intent. Key ideas: - `targets`: one or more **JSONPath-like** pointers that locate geometry    fields within each item document (e.g., `$['availableAt'][*]['geo']`). - `op`: spatial operator (CQL2). Common ones:      • `S_WITHIN`     (A is completely inside B)     • `S_INTERSECTS` (A intersects B)     • `S_CONTAINS`   (A contains B)     • `S_DWITHIN`    (A within distance of B) - `geometry`: **GeoJSON** literal used as the predicate reference geometry. - `distanceMeters`: required for `S_DWITHIN` when using a GeoJSON Point/shape. - `quantifier`: if a target resolves to an array, choose whether **ANY** (default),    **ALL**, or **NONE** of elements must satisfy the predicate.  CRS: unless otherwise stated, all coordinates are **EPSG:4326**.
 
 ## Files
 
@@ -35,7 +21,7 @@ CRS: unless otherwise stated, all coordinates are **EPSG:4326**.
 |---|---|---|---|
 | `op` | yes | string | OGC CQL2 spatial operator. |
 | `targets` | yes | any | 'One or more JSONPath-like pointers to geometry fields within the item.  Example pointers:  - `$[''availableAt''][*][''geo'']` (array of site Points)  - `$[''itemAttributes''][''ride:dropOff''][''geo'']` (drop zone Polygon)'  |
-| `geometry` | no | $ref: https://schema.beckn.io/GeoJSONGeometry/attributes.yaml#/components/schemas/GeoJSONGeometry | - |
+| `geometry` | no | object | - |
 | `distanceMeters` | no | number | For `S_DWITHIN`: maximum distance in meters from the target geometry to `geometry` (e.g., "within 5000 m of this Point"). Ignored for other ops. |
 | `quantifier` | no | string | 'How to evaluate when `targets` resolves to an array - - **any**: at least one element matches (default) - **all**: every element must match  - **none**: no element may match'  |
 | `srid` | no | string | Coordinate Reference System identifier for `geometry`. Default is `"EPSG:4326"`. If provided, servers MAY reproject to EPSG:4326 internally. |

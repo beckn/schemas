@@ -1,6 +1,8 @@
 # SelectAction — v2.0
 
-Beckn /beckn/select action envelope. Sent by a BAP to a BPP to select items and offers from a catalog, initiating the negotiation cycle.
+Beckn /beckn/select message payload. Sent by a BAP to a BPP to select
+items and offers from a catalog, initiating the negotiation cycle.
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Files
 
@@ -19,5 +21,4 @@ Beckn /beckn/select action envelope. Sent by a BAP to a BPP to select items and 
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `context` | yes | allOf | - |
-| `message` | yes | object | - |
+| `contract` | yes | $ref: https://schema.beckn.io/Contract/v2.0/attributes.yaml#/components/schemas/Contract | - |

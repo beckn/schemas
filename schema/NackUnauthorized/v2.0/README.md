@@ -2,8 +2,6 @@
 
 Invalid or missing authentication credentials; signature could not be verified.
 
-This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
-
 ## Files
 
 | File | Purpose |

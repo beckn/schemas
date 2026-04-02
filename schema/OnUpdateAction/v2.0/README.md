@@ -1,6 +1,9 @@
 # OnUpdateAction — v2.0
 
-Beckn /beckn/on_update callback envelope. Sent by a BPP to a BAP in response to a /beckn/update call (or as an unsolicited update push), returning the updated contract state.
+Beckn /beckn/on_update message payload. Sent by a BPP to a BAP in
+response to a /beckn/update call (or as an unsolicited update push),
+returning the updated contract state.
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Files
 
@@ -19,5 +22,4 @@ Beckn /beckn/on_update callback envelope. Sent by a BPP to a BAP in response to 
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `context` | yes | allOf | - |
-| `message` | yes | object | - |
+| `contract` | yes | $ref: https://schema.beckn.io/Contract/v2.0/attributes.yaml#/components/schemas/Contract | - |

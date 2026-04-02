@@ -21,12 +21,12 @@ Schema definition for Fulfillment in the Beckn Protocol v2.0.1
 |---|---|---|---|
 | `@context` | yes | string | JSON-LD context URI |
 | `@type` | yes | string | - |
-| `agent` | no | $ref: https://schema.beckn.io/FulfillmentAgent/attributes.yaml#/components/schemas/FulfillmentAgent | The entity that directly performs the fulfillment |
-| `fulfillmentAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | Extensible set of domain-specific attributes describing the fulfillment |
+| `agent` | no | $ref: https://schema.beckn.io/FulfillmentAgent/v2.0/attributes.yaml#/components/schemas/FulfillmentAgent | The entity that directly performs the fulfillment |
+| `fulfillmentAttributes` | no | $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes | Extensible set of domain-specific attributes describing the fulfillment |
 | `id` | no | string | Fulfillment identifier |
 | `instructions` | no | array | - |
-| `mode` | yes | $ref: https://schema.beckn.io/FulfillmentMode/attributes.yaml#/components/schemas/FulfillmentMode | Extensible set of attributes describing the mode of fulfillment. Varies with Industry Use Case |
+| `mode` | yes | $ref: https://schema.beckn.io/FulfillmentMode/v2.0/attributes.yaml#/components/schemas/FulfillmentMode | Extensible set of attributes describing the mode of fulfillment. Varies with Industry Use Case |
 | `participants` | no | array | A list of participants who are entitled to receive the fulfillment of the order. By default, it is the consumer who placed the order |
-| `state` | no | $ref: https://schema.beckn.io/State/attributes.yaml#/components/schemas/State | The current state of fulfillment |
+| `state` | no | $ref: https://schema.beckn.io/State/v2.0/attributes.yaml#/components/schemas/State | The current state of fulfillment |
 | `stages` | no | array | The various stages of the fulfillment |
 | `trackingEnabled` | no | boolean | Whether tracking is enabled / possible for this fulfillment |

@@ -1,7 +1,6 @@
 # OnDiscoverAction — v2.0
 
-Beckn /beckn/on_discover message payload. Sent by a BPP or CDS to a BAP
-in response to a discover request. Contains matching catalogs.
+The on_discover response payload containing matching catalogs.
 
 ## Files
 
@@ -20,5 +19,4 @@ in response to a discover request. Contains matching catalogs.
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `context` | yes | allOf | - |
-| `message` | yes | object | - |
+| `catalogs` | yes | array | Array of catalogs matching the discovery request. Array of catalogs matching the discovery request. |

@@ -27,4 +27,4 @@ Schema definition for Buyer in the Beckn Protocol
 | `beckn:telephone` | no | string | Telephone number |
 | `beckn:email` | no | string | Email Address |
 | `beckn:taxID` | no | string | Tax identifier for the buyer. |
-| `beckn:buyerAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | Attribute Pack reference for richer identity: # buyer/identity.v1 (contact details: email, phone, address) # buyer/org-ids.v1 (LEI, GSTIN, ISIN, CUSIP…) # buyer/kyc.v1 (jurisdictional compliance fields) # buyer/preferences.v1 (delivery preferences, accessibility needs, etc.)  |
+| `beckn:buyerAttributes` | no | $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes | Attribute Pack reference for richer identity: # buyer/identity.v1 (contact details: email, phone, address) # buyer/org-ids.v1 (LEI, GSTIN, ISIN, CUSIP…) # buyer/kyc.v1 (jurisdictional compliance fields) # buyer/preferences.v1 (delivery preferences, accessibility needs, etc.)  |

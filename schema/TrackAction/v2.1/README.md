@@ -1,6 +1,6 @@
 # TrackAction — v2.1
 
-This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
+Details required to initiate real-time tracking (if relevant) for an ongoing transaction
 
 ## Files
 
@@ -19,4 +19,4 @@ This schema is part of the Long Term Support of Beckn Protocol V2.0 API specific
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| _none_ | - | - | - |
+| `tracking` | yes | $ref: https://schema.beckn.io/Tracking/v2.1/attributes.yaml#/components/schemas/Tracking | - |

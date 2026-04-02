@@ -24,7 +24,7 @@ A Carrier is a transport service provider responsible for moving goods across di
 | `code` | no | string | Short carrier code |
 | `logo` | no | string | URL to carrier logo |
 | `website` | no | string | - |
-| `contact` | no | $ref: https://schema.beckn.io/Contact/attributes.yaml#/components/schemas/Contact | - |
+| `contact` | no | $ref: https://schema.beckn.io/Contact/v2.0/attributes.yaml#/components/schemas/Contact | - |
 | `rating` | no | number | - |
 | `serviceTypes` | no | array | Types of logistics services offered |
 | `serviceCoverage` | no | array | Geographic regions served |

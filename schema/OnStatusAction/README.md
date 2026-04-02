@@ -1,6 +1,9 @@
 # OnStatusAction
 
-Beckn /beckn/on_status callback envelope. Sent by a BPP to a BAP in response to a /beckn/status call (or as an unsolicited status push), returning the current state of the contract.
+Beckn /beckn/on_status message payload. Sent by a BPP to a BAP in
+response to a /beckn/status call (or as an unsolicited status push),
+returning the current state of the contract.
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Versions
 

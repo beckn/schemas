@@ -1,6 +1,6 @@
 # CatalogProcessingResult
 
-Schema definition for CatalogProcessingResult in the Beckn Protocol v2.1
+Processing result for a single catalog submission.
 
 ## Versions
 

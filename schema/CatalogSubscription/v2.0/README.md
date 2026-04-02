@@ -2,8 +2,6 @@
 
 Full subscription record
 
-This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
-
 ## Files
 
 | File | Purpose |
@@ -26,6 +24,6 @@ This schema is part of the Long Term Support of Beckn Protocol V2.0 API specific
 | `schemaTypes` | no | array | Schema type URIs filtered by this subscription (empty = wildcard "*") |
 | `callbackUrl` | no | string | Delivery callback URL |
 | `status` | yes | string | Lifecycle status of the subscription |
-| `deliveryPolicy` | no | $ref: https://schema.beckn.io/DeliveryPolicy/attributes.yaml#/components/schemas/DeliveryPolicy | - |
+| `deliveryPolicy` | no | $ref: https://schema.beckn.io/DeliveryPolicy/v2.0/attributes.yaml#/components/schemas/DeliveryPolicy | - |
 | `createdAt` | no | string | - |
 | `updatedAt` | no | string | - |

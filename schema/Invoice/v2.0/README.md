@@ -25,7 +25,7 @@ Schema definition for Invoice in the Beckn Protocol
 | `beckn:number` | yes | string | Human-visible invoice number |
 | `beckn:issueDate` | yes | string | - |
 | `beckn:dueDate` | no | string | - |
-| `beckn:payee` | yes | $ref: https://schema.beckn.io/Provider/attributes.yaml#/components/schemas/Provider | Seller / issuer of the invoice |
-| `beckn:payer` | yes | $ref: https://schema.beckn.io/Buyer/attributes.yaml#/components/schemas/Buyer | Buyer being invoiced |
-| `beckn:totals` | yes | $ref: https://schema.beckn.io/PriceSpecification/attributes.yaml#/components/schemas/PriceSpecification | Invoice grand totals (tax/shipping/discount components inside) |
-| `beckn:invoiceAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | Attribute Pack for tax regime (e.g., GST/VAT), e-invoice refs, legal boilerplate, etc. |
+| `beckn:payee` | yes | $ref: https://schema.beckn.io/Provider/v2.1/attributes.yaml#/components/schemas/Provider | Seller / issuer of the invoice |
+| `beckn:payer` | yes | $ref: https://schema.beckn.io/Buyer/v2.0/attributes.yaml#/components/schemas/Buyer | Buyer being invoiced |
+| `beckn:totals` | yes | $ref: https://schema.beckn.io/PriceSpecification/v2.1/attributes.yaml#/components/schemas/PriceSpecification | Invoice grand totals (tax/shipping/discount components inside) |
+| `beckn:invoiceAttributes` | no | $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes | Attribute Pack for tax regime (e.g., GST/VAT), e-invoice refs, legal boilerplate, etc. |

@@ -22,9 +22,9 @@ A Hub is a logistics fulfillment center, sorting facility, or distribution point
 | `id` | yes | string | - |
 | `name` | yes | string | - |
 | `code` | no | string | Short hub code |
-| `place` | yes | $ref: https://schema.beckn.io/Place/attributes.yaml#/components/schemas/Place | - |
+| `place` | yes | $ref: https://schema.beckn.io/Place/v2.0/attributes.yaml#/components/schemas/Place | - |
 | `type` | no | string | - |
-| `operator` | no | $ref: https://schema.beckn.io/Operator/attributes.yaml#/components/schemas/Operator | - |
+| `operator` | no | $ref: https://schema.beckn.io/Operator/v2.0/attributes.yaml#/components/schemas/Operator | - |
 | `operatingHours` | no | object | - |
 | `processingCapacity` | no | object | Maximum packages processed per day |
 | `serviceablePincodes` | no | array | PIN codes serviced from this hub |

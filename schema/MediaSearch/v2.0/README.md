@@ -1,6 +1,6 @@
 # MediaSearch — v2.0
 
-Container for multimodal search inputs and configuration. Supports searching through **images, audio notes, and videos** alongside text, filters, and spatial predicates. For GET, this object should be JSON-encoded and URL-escaped.
+Container schemas fetched from beckn.yaml. This cannot be extended as it is a reserved schema in beckn protocol. Any additional properties added to this schema can only be made using its *Attributes property
 
 ## Files
 
@@ -19,5 +19,5 @@ Container for multimodal search inputs and configuration. Supports searching thr
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `media` | no | array | One or more references to **images, audio notes, or videos** supplied as part of a multimodal search. Each entry references a media resource accessible via HTTPS or data URI. |
-| `options` | no | $ref: https://schema.beckn.io/MediaSearchOptions/attributes.yaml#/components/schemas/MediaSearchOptions | Options controlling how the discovery engine interprets the supplied media — e.g., whether to perform OCR/ASR, semantic similarity, or object detection. |
+| `media` | no | array | - |
+| `options` | no | $ref: https://schema.beckn.io/MediaSearchOptions/v2.0/attributes.yaml#/components/schemas/MediaSearchOptions | - |

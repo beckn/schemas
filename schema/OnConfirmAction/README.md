@@ -1,6 +1,9 @@
 # OnConfirmAction
 
-Beckn /beckn/on_confirm callback envelope. Sent by a BPP to a BAP in response to a /beckn/confirm call, returning the confirmed contract with status set to CONFIRMED.
+Beckn /beckn/on_confirm message payload. Sent by a BPP to a BAP in
+response to a /beckn/confirm call, returning the confirmed contract
+with status set to CONFIRMED.
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Versions
 

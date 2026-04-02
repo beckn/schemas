@@ -22,7 +22,7 @@ Schema definition for Alert in the Beckn Protocol v2.0.1
 | `@context` | yes | string | - |
 | `@type` | yes | string | - |
 | `affectedEntities` | no | array | IDs of entities affected (route/order/fulfillment/etc.) |
-| `descriptor` | yes | $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor | - |
+| `descriptor` | yes | $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor | - |
 | `id` | yes | string | - |
 | `severity` | no | string | - |
-| `validity` | no | $ref: https://schema.beckn.io/TimePeriod/attributes.yaml#/components/schemas/TimePeriod | - |
+| `validity` | no | $ref: https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml#/components/schemas/TimePeriod | - |

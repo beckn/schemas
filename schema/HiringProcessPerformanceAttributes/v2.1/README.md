@@ -24,4 +24,4 @@ Execution state of the hiring process service. Covers the pipeline from initial 
 | `assessment_required` | no | boolean | Whether a formal technical or aptitude assessment is required. |
 | `assessment_reference` | no | string | External reference ID for the assessment (e.g. a test platform link or reference number). Only present when assessment_required = true.  |
 | `verification_requested` | no | boolean | Whether the employer has triggered credential verification for this candidate. |
-| `verification_summary` | no | $ref: ../../../VerificationSummary/attributes.jsonschema.yaml#/components/schemas/VerificationSummary | Outcome of employer-triggered credential verification. Only populated when verification_requested = true.  |
+| `verification_summary` | no | $ref: https://schema.beckn.io/VerificationSummary/v2.1/attributes.yaml#/components/schemas/VerificationSummary | Outcome of employer-triggered credential verification. Only populated when verification_requested = true.  |

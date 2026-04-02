@@ -16,8 +16,6 @@ are placed inside performanceAttributes using a well-known domain schema such as
 HyperlocalDelivery. Use the generic Attributes schema when no well-known
 domain schema exists.
 
-This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute.
-
 ## Files
 
 | File | Purpose |
@@ -36,6 +34,6 @@ This schema is part of the Long Term Support of Beckn Protocol V2.0 API specific
 | Property | Required | Type | Description |
 |---|---|---|---|
 | `id` | no | string | Unique identifier for this fulfillment record. |
-| `status` | no | $ref: https://schema.beckn.io/Descriptor/attributes.yaml#/components/schemas/Descriptor | Current status of this fulfillment, expressed as a Descriptor. Use Descriptor.code for machine-readable status values. |
+| `status` | no | $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor | Current status of this fulfillment, expressed as a Descriptor. Use Descriptor.code for machine-readable status values. |
 | `commitmentIds` | no | array | - |
-| `performanceAttributes` | no | $ref: https://schema.beckn.io/Attributes/attributes.yaml#/components/schemas/Attributes | Domain-specific extension attributes for this fulfillment. Use beckn:HyperlocalDelivery (aligned with schema:ParcelDelivery) for hyperlocal physical delivery. Use the generic Attributes schema for other fulfillment types where no well-known domain schema exists. |
+| `performanceAttributes` | no | $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes | Domain-specific extension attributes for this fulfillment. Use beckn:HyperlocalDelivery (aligned with schema:ParcelDelivery) for hyperlocal physical delivery. Use the generic Attributes schema for other fulfillment types where no well-known domain schema exists. |

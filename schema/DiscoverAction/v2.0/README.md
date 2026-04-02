@@ -1,6 +1,9 @@
 # DiscoverAction — v2.0
 
-Beckn /beckn/discover action envelope. Sent by a BAP to a BPP (or registry) to discover catalogs matching a given intent.
+Beckn /beckn/discover message payload as published at schema.beckn.io.
+Requires all discover qualifiers to be nested inside an `intent`
+container object.
+(Context wrapper stripped; only the message-content portion is inlined.)
 
 ## Files
 
@@ -19,5 +22,6 @@ Beckn /beckn/discover action envelope. Sent by a BAP to a BPP (or registry) to d
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `context` | yes | allOf | - |
-| `message` | yes | any | - |
+| `intent` | yes | $ref: https://schema.beckn.io/Intent/v2.0/attributes.yaml#/components/schemas/Intent | - |
+| `text_search` | no | string | Legacy flat free-text discover query |
+| `textSearch` | no | string | Flat free-text discover query |

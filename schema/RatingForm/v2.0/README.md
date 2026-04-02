@@ -23,5 +23,5 @@ A form designed to capture rating and feedback from a user. This can be used by 
 | `@type` | yes | string | - |
 | `target` | yes | object | The entity being rated |
 | `range` | no | any | - |
-| `feedbackForm` | no | $ref: https://schema.beckn.io/Form/attributes.yaml#/components/schemas/Form | A feedback form sent along with a rating request |
+| `feedbackForm` | no | $ref: https://schema.beckn.io/Form/v2.1/attributes.yaml#/components/schemas/Form | A feedback form sent along with a rating request |
 | `feedbackRequired` | yes | boolean | Specifies whether feedback after rating is required for acceptance of rating |

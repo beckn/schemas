@@ -1,20 +1,6 @@
 # SpatialConstraint
 
-**Spatial predicate** using **OGC CQL2 (JSON semantics)** applied to one or more geometry targets in an item. This is where clients express spatial intent.
-Key ideas: - `targets`: one or more **JSONPath-like** pointers that locate geometry
-
-  fields within each item document (e.g., `$['availableAt'][*]['geo']`).
-- `op`: spatial operator (CQL2). Common ones:
-
-    • `S_WITHIN`     (A is completely inside B)
-    • `S_INTERSECTS` (A intersects B)
-    • `S_CONTAINS`   (A contains B)
-    • `S_DWITHIN`    (A within distance of B)
-- `geometry`: **GeoJSON** literal used as the predicate reference geometry. - `distanceMeters`: required for `S_DWITHIN` when using a GeoJSON Point/shape. - `quantifier`: if a target resolves to an array, choose whether **ANY** (default),
-
-  **ALL**, or **NONE** of elements must satisfy the predicate.
-
-CRS: unless otherwise stated, all coordinates are **EPSG:4326**.
+**Spatial predicate** using **OGC CQL2 (JSON semantics)** applied to one or more geometry targets in an item. This is where clients express spatial intent. Key ideas: - `targets`: one or more **JSONPath-like** pointers that locate geometry    fields within each item document (e.g., `$['availableAt'][*]['geo']`). - `op`: spatial operator (CQL2). Common ones:      • `S_WITHIN`     (A is completely inside B)     • `S_INTERSECTS` (A intersects B)     • `S_CONTAINS`   (A contains B)     • `S_DWITHIN`    (A within distance of B) - `geometry`: **GeoJSON** literal used as the predicate reference geometry. - `distanceMeters`: required for `S_DWITHIN` when using a GeoJSON Point/shape. - `quantifier`: if a target resolves to an array, choose whether **ANY** (default),    **ALL**, or **NONE** of elements must satisfy the predicate.  CRS: unless otherwise stated, all coordinates are **EPSG:4326**.
 
 ## Versions
 
