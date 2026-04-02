@@ -1,0 +1,38 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "CredentialRequirement": "beckn:CredentialRequirement",
+    "category": "beckn:category",
+    "mandatory": "beckn:mandatory",
+    "subtype": "beckn:subtype"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:CredentialRequirement",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CredentialRequirement",
+      "rdfs:comment": "A single credential requirement or prerequisite. Specifies what a candidate or enrollee must hold. Category is a broad class; subtype is the specific credential within that class."
+    },
+    {
+      "@id": "beckn:category",
+      "@type": "rdf:Property",
+      "rdfs:label": "category",
+      "rdfs:comment": "Broad class of the required credential."
+    },
+    {
+      "@id": "beckn:mandatory",
+      "@type": "rdf:Property",
+      "rdfs:label": "mandatory",
+      "rdfs:comment": "Whether this requirement is mandatory. If true, failure to satisfy it blocks the transaction. If false, it is advisory / preferred."
+    },
+    {
+      "@id": "beckn:subtype",
+      "@type": "rdf:Property",
+      "rdfs:label": "subtype",
+      "rdfs:comment": "Specific credential within the category. Examples: \"AWS_SAA\", \"BTECH_CS\", \"LMV_LICENSE\", \"Aadhaar\", \"Java_SE_11\"."
+    }
+  ]
+}

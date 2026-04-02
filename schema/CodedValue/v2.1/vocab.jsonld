@@ -1,0 +1,45 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "CodedValue": "beckn:CodedValue",
+    "@context": "beckn:@context",
+    "@type": "beckn:@type",
+    "code": "beckn:code",
+    "label": "beckn:label"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:CodedValue",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CodedValue",
+      "rdfs:comment": "An authority-governed code value. The @context URI identifies the code system authority (e.g. UN ISIC, UNESCO ISCED, India NSQF). The @type identifies the class of code within that system. The code is the actual value. This pattern avoids hardcoding country-specific enumerations into the schema."
+    },
+    {
+      "@id": "beckn:@context",
+      "@type": "rdf:Property",
+      "rdfs:label": "@context",
+      "rdfs:comment": "URI of the canonical code system authority. Examples: \"https://unstats.un.org/unsd/classifications/Econ/isic\" (ISIC), \"https://uis.unesco.org/en/topic/international-standard-classification-education-isced\" (ISCED), \"https://www.nqfindia.org/\" (India NSQF)."
+    },
+    {
+      "@id": "beckn:@type",
+      "@type": "rdf:Property",
+      "rdfs:label": "@type",
+      "rdfs:comment": "Code class within the identified context. Examples: \"IndustryCode\", \"FieldOfEducationCode\", \"QualificationLevel\"."
+    },
+    {
+      "@id": "beckn:code",
+      "@type": "rdf:Property",
+      "rdfs:label": "code",
+      "rdfs:comment": "The actual code value as defined by the authority. Examples: \"8299\" (ISIC: other business support), \"0613\" (ISCED: software), \"4\" (NSQF Level 4)."
+    },
+    {
+      "@id": "beckn:label",
+      "@type": "rdf:Property",
+      "rdfs:label": "label",
+      "rdfs:comment": "Human-readable label for the code (optional, for display)."
+    }
+  ]
+}

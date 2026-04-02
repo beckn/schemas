@@ -1,0 +1,11 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "CredentialRequirement": "beckn:CredentialRequirement",
+    "category": "beckn:category",
+    "mandatory": "beckn:mandatory",
+    "subtype": "beckn:subtype"
+  }
+}

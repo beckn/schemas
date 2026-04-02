@@ -1,0 +1,108 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/LinkedData/v2.0/context.jsonld",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "LogisticsFare": "beckn:LogisticsFare",
+    "baseFreight": "beckn:baseFreight",
+    "breakup": "beckn:breakup",
+    "codCharge": "beckn:codCharge",
+    "currency": "beckn:currency",
+    "discount": "beckn:discount",
+    "estimatedFare": "beckn:estimatedFare",
+    "fuelSurcharge": "beckn:fuelSurcharge",
+    "gst": "beckn:gst",
+    "insuranceCharge": "beckn:insuranceCharge",
+    "odaSurcharge": "beckn:odaSurcharge",
+    "otherCharges": "beckn:otherCharges",
+    "paymentMode": "beckn:paymentMode",
+    "totalAmount": "beckn:totalAmount"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:LogisticsFare",
+      "@type": "rdfs:Class",
+      "rdfs:label": "LogisticsFare",
+      "rdfs:comment": "Total cost charged for a logistics service including base freight, surcharges, taxes."
+    },
+    {
+      "@id": "beckn:baseFreight",
+      "@type": "rdf:Property",
+      "rdfs:label": "baseFreight",
+      "rdfs:comment": "Base freight charge"
+    },
+    {
+      "@id": "beckn:breakup",
+      "@type": "rdf:Property",
+      "rdfs:label": "breakup",
+      "rdfs:comment": "Detailed fare breakup line items"
+    },
+    {
+      "@id": "beckn:codCharge",
+      "@type": "rdf:Property",
+      "rdfs:label": "codCharge",
+      "rdfs:comment": "Cash on delivery charge"
+    },
+    {
+      "@id": "beckn:currency",
+      "@type": "rdf:Property",
+      "rdfs:label": "currency",
+      "rdfs:comment": "Property currency"
+    },
+    {
+      "@id": "beckn:discount",
+      "@type": "rdf:Property",
+      "rdfs:label": "discount",
+      "rdfs:comment": "Property discount"
+    },
+    {
+      "@id": "beckn:estimatedFare",
+      "@type": "rdf:Property",
+      "rdfs:label": "estimatedFare",
+      "rdfs:comment": "Whether this is an estimate or confirmed fare"
+    },
+    {
+      "@id": "beckn:fuelSurcharge",
+      "@type": "rdf:Property",
+      "rdfs:label": "fuelSurcharge",
+      "rdfs:comment": "Property fuelSurcharge"
+    },
+    {
+      "@id": "beckn:gst",
+      "@type": "rdf:Property",
+      "rdfs:label": "gst",
+      "rdfs:comment": "GST amount"
+    },
+    {
+      "@id": "beckn:insuranceCharge",
+      "@type": "rdf:Property",
+      "rdfs:label": "insuranceCharge",
+      "rdfs:comment": "Property insuranceCharge"
+    },
+    {
+      "@id": "beckn:odaSurcharge",
+      "@type": "rdf:Property",
+      "rdfs:label": "odaSurcharge",
+      "rdfs:comment": "Out of Delivery Area surcharge"
+    },
+    {
+      "@id": "beckn:otherCharges",
+      "@type": "rdf:Property",
+      "rdfs:label": "otherCharges",
+      "rdfs:comment": "Property otherCharges"
+    },
+    {
+      "@id": "beckn:paymentMode",
+      "@type": "rdf:Property",
+      "rdfs:label": "paymentMode",
+      "rdfs:comment": "Property paymentMode"
+    },
+    {
+      "@id": "beckn:totalAmount",
+      "@type": "rdf:Property",
+      "rdfs:label": "totalAmount",
+      "rdfs:comment": "Final total payable"
+    }
+  ]
+}

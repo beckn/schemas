@@ -1,0 +1,73 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/LinkedData/v2.0/context.jsonld",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "LogisticsFareBreakup": "beckn:LogisticsFareBreakup",
+    "amount": "beckn:amount",
+    "currency": "beckn:currency",
+    "name": "beckn:name",
+    "percent": "beckn:percent",
+    "taxBreakup": "beckn:taxBreakup",
+    "title": "beckn:title",
+    "type": "beckn:type",
+    "waived": "beckn:waived"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:LogisticsFareBreakup",
+      "@type": "rdfs:Class",
+      "rdfs:label": "LogisticsFareBreakup",
+      "rdfs:comment": "A single line item in the fare breakup for a logistics service."
+    },
+    {
+      "@id": "beckn:amount",
+      "@type": "rdf:Property",
+      "rdfs:label": "amount",
+      "rdfs:comment": "Property amount"
+    },
+    {
+      "@id": "beckn:currency",
+      "@type": "rdf:Property",
+      "rdfs:label": "currency",
+      "rdfs:comment": "Property currency"
+    },
+    {
+      "@id": "beckn:name",
+      "@type": "rdf:Property",
+      "rdfs:label": "name",
+      "rdfs:comment": "Property name"
+    },
+    {
+      "@id": "beckn:percent",
+      "@type": "rdf:Property",
+      "rdfs:label": "percent",
+      "rdfs:comment": "Property percent"
+    },
+    {
+      "@id": "beckn:taxBreakup",
+      "@type": "rdf:Property",
+      "rdfs:label": "taxBreakup",
+      "rdfs:comment": "Tax sub-components if applicable"
+    },
+    {
+      "@id": "beckn:title",
+      "@type": "rdf:Property",
+      "rdfs:label": "title",
+      "rdfs:comment": "Name of the fare component"
+    },
+    {
+      "@id": "beckn:type",
+      "@type": "rdf:Property",
+      "rdfs:label": "type",
+      "rdfs:comment": "Property type"
+    },
+    {
+      "@id": "beckn:waived",
+      "@type": "rdf:Property",
+      "rdfs:label": "waived",
+      "rdfs:comment": "Whether this component was waived"
+    }
+  ]
+}

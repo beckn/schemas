@@ -1,0 +1,14 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "VerificationSummary": "beckn:VerificationSummary",
+    "checked_at": "beckn:checked_at",
+    "overall_result": "beckn:overall_result",
+    "proof_metadata_hash": "beckn:proof_metadata_hash",
+    "reason_codes": "beckn:reason_codes",
+    "verified_categories": "beckn:verified_categories",
+    "verified_subtypes": "beckn:verified_subtypes"
+  }
+}

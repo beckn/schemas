@@ -1,0 +1,59 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "VerificationSummary": "beckn:VerificationSummary",
+    "checked_at": "beckn:checked_at",
+    "overall_result": "beckn:overall_result",
+    "proof_metadata_hash": "beckn:proof_metadata_hash",
+    "reason_codes": "beckn:reason_codes",
+    "verified_categories": "beckn:verified_categories",
+    "verified_subtypes": "beckn:verified_subtypes"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:VerificationSummary",
+      "@type": "rdfs:Class",
+      "rdfs:label": "VerificationSummary",
+      "rdfs:comment": "Summary of a credential verification check. Contains the overall result, reason codes for any failures, and which credential categories were successfully verified. No VC or VP payloads are included."
+    },
+    {
+      "@id": "beckn:checked_at",
+      "@type": "rdf:Property",
+      "rdfs:label": "checked_at",
+      "rdfs:comment": "Timestamp when verification was performed."
+    },
+    {
+      "@id": "beckn:overall_result",
+      "@type": "rdf:Property",
+      "rdfs:label": "overall_result",
+      "rdfs:comment": "Aggregate outcome of the verification check."
+    },
+    {
+      "@id": "beckn:proof_metadata_hash",
+      "@type": "rdf:Property",
+      "rdfs:label": "proof_metadata_hash",
+      "rdfs:comment": "Optional hash of the VP used in verification. Provides integrity reference without storing the VP payload."
+    },
+    {
+      "@id": "beckn:reason_codes",
+      "@type": "rdf:Property",
+      "rdfs:label": "reason_codes",
+      "rdfs:comment": "Reason codes for failures or partial results. Empty if overall_result is PASS. Examples: \"MANDATORY_REQUIREMENT_MISSING\", \"EXPIRED_CREDENTIAL\", \"ISSUER_NOT_TRUSTED\", \"SIGNATURE_INVALID\"."
+    },
+    {
+      "@id": "beckn:verified_categories",
+      "@type": "rdf:Property",
+      "rdfs:label": "verified_categories",
+      "rdfs:comment": "Credential categories that were successfully verified in this check."
+    },
+    {
+      "@id": "beckn:verified_subtypes",
+      "@type": "rdf:Property",
+      "rdfs:label": "verified_subtypes",
+      "rdfs:comment": "Specific credential subtypes that were successfully verified."
+    }
+  ]
+}
