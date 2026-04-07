@@ -25,7 +25,7 @@
       "x-jsonld": {
         "@id": "beckn:timeRange"
       },
-      "$ref": "https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/TimePeriod/v2.1/schema.json"
     },
     "label": {
       "type": "string",

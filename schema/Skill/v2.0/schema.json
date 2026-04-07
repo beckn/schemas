@@ -6,10 +6,10 @@
   "type": "object",
   "properties": {
     "category": {
-      "$ref": "https://schema.beckn.io/CategoryCode/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/CategoryCode/v2.1/schema.json"
     },
     "descriptor": {
-      "$ref": "https://schema.beckn.io/Descriptor/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json"
     },
     "id": {
       "type": "string"

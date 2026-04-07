@@ -14,7 +14,7 @@
       "x-jsonld-id": "jaca:applicationReference"
     },
     "verification_summary": {
-      "$ref": "https://schema.beckn.io/VerificationSummary/v2.1/attributes.yaml",
+      "$ref": "https://schema.beckn.io/VerificationSummary/v2.1/schema.json",
       "description": "Aggregate outcome of credential verification performed during the application submission. Populated after verification completes. ",
       "x-jsonld-id": "jaca:verificationSummary"
     },
@@ -29,7 +29,7 @@
       "description": "Additional or revised requirements for which reverification has been requested. Only populated when reverification_requested = true. ",
       "x-jsonld-id": "jaca:reverificationRequirements",
       "items": {
-        "$ref": "https://schema.beckn.io/CredentialRequirement/v2.1/attributes.yaml"
+        "$ref": "https://schema.beckn.io/CredentialRequirement/v2.1/schema.json"
       }
     },
     "submitted_at": {

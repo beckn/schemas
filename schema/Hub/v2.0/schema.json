@@ -22,7 +22,7 @@
       "example": "BLR-MAIN"
     },
     "place": {
-      "$ref": "https://schema.beckn.io/Place/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Place/v2.0/schema.json"
     },
     "type": {
       "type": "string",
@@ -37,7 +37,7 @@
       "example": "SORTING_HUB"
     },
     "operator": {
-      "$ref": "https://schema.beckn.io/Operator/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Operator/v2.0/schema.json"
     },
     "operatingHours": {
       "type": "object",

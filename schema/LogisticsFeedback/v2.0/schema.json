@@ -11,7 +11,7 @@
       "type": "string"
     },
     "rating": {
-      "$ref": "https://schema.beckn.io/Rating/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Rating/v2.1/schema.json"
     },
     "review": {
       "type": "string",

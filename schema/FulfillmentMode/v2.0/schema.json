@@ -9,11 +9,11 @@
       "type": "string"
     },
     "descriptor": {
-      "$ref": "https://schema.beckn.io/Descriptor/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json"
     },
     "modeAttributes": {
       "description": "Domain-specific fulfillment mode attributes (e.g., delivery, pickup, reservation, digital)",
-      "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
     }
   },
   "additionalProperties": false,

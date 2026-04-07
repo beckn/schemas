@@ -11,14 +11,14 @@
   "type": "object",
   "properties": {
     "pickupLocation": {
-      "$ref": "https://schema.beckn.io/Location/v2.0/attributes.yaml",
+      "$ref": "https://schema.beckn.io/Location/v2.0/schema.json",
       "description": "The pickup/origin location (restaurant, warehouse, dark store). Corresponds to schema:originAddress on schema:ParcelDelivery. ",
       "x-jsonld": {
         "@id": "schema:originAddress"
       }
     },
     "deliveryLocation": {
-      "$ref": "https://schema.beckn.io/Location/v2.0/attributes.yaml",
+      "$ref": "https://schema.beckn.io/Location/v2.0/schema.json",
       "description": "The delivery destination (consumer's address). Corresponds to schema:deliveryAddress on schema:ParcelDelivery. ",
       "x-jsonld": {
         "@id": "schema:deliveryAddress"
@@ -28,14 +28,14 @@
       "type": "array",
       "description": "The items shipped in this delivery. Corresponds to schema:itemShipped on schema:ParcelDelivery. ",
       "items": {
-        "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
       },
       "x-jsonld": {
         "@id": "schema:itemShipped"
       }
     },
     "agent": {
-      "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml",
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json",
       "description": "The delivery agent (rider) carrying out this delivery. Corresponds to schema:carrier on schema:ParcelDelivery. ",
       "x-jsonld": {
         "@id": "schema:carrier"

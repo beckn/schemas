@@ -1,7 +1,7 @@
 {
   "allOf": [
     {
-      "$ref": "https://schema.beckn.io/RetailCoreItem/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/RetailCoreItem/v2.0/schema.json"
     },
     {
       "type": "object",
@@ -26,7 +26,7 @@
               },
               "value": {
                 "description": "Nutrient value expressed as Beckn core Quantity.",
-                "$ref": "https://schema.beckn.io/Quantity/v2.0/attributes.yaml"
+                "$ref": "https://schema.beckn.io/Quantity/v2.0/schema.json"
               }
             }
           }

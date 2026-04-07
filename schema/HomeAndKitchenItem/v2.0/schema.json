@@ -1,7 +1,7 @@
 {
   "allOf": [
     {
-      "$ref": "https://schema.beckn.io/RetailCoreItem/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/RetailCoreItem/v2.0/schema.json"
     },
     {
       "type": "object",

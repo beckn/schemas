@@ -67,7 +67,7 @@
       "default": false
     },
     "verification_summary": {
-      "$ref": "https://schema.beckn.io/VerificationSummary/v2.1/attributes.yaml",
+      "$ref": "https://schema.beckn.io/VerificationSummary/v2.1/schema.json",
       "description": "Outcome of employer-triggered credential verification. Only populated when verification_requested = true. ",
       "x-jsonld-id": "hppa:verificationSummary"
     }

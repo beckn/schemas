@@ -86,7 +86,7 @@
           "type": "array",
           "description": "Detailed fare breakup line items",
           "items": {
-            "$ref": "https://schema.beckn.io/LogisticsFareBreakup/v2.0/attributes.jsonschema.yaml#/properties/components/properties/schemas/properties/LogisticsFareBreakup"
+            "$ref": "https://schema.beckn.io/LogisticsFareBreakup/v2.0/schema.json"
           }
         },
         "estimatedFare": {

@@ -13,13 +13,13 @@
       "x-jsonld": {
         "@id": "schema:acceptedOffer"
       },
-      "$ref": "https://schema.beckn.io/Offer/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Offer/v2.1/schema.json"
     },
     "itemId": {
       "x-jsonld": {
         "@id": "schema:orderedItem"
       },
-      "$ref": "https://schema.beckn.io/Item/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Item/v2.1/schema.json"
     },
     "lineId": {
       "description": "Unique line id within contract",
@@ -27,20 +27,20 @@
     },
     "contractItemAttributes": {
       "description": "Line-level Attribute Pack (options, substitutions, ESG, etc.)",
-      "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
     },
     "price": {
       "description": "Line price composition (unit/tax/delivery/discount)",
       "x-jsonld": {
         "@id": "schema:priceSpecification"
       },
-      "$ref": "https://schema.beckn.io/PriceSpecification/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/PriceSpecification/v2.1/schema.json"
     },
     "quantity": {
       "x-jsonld": {
         "@id": "beckn:quantity"
       },
-      "$ref": "https://schema.beckn.io/Quantity/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Quantity/v2.0/schema.json"
     }
   },
   "required": [

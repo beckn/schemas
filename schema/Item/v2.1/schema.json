@@ -9,27 +9,27 @@
       "description": "Time periods when the item is available",
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml"
+        "$ref": "https://schema.beckn.io/TimePeriod/v2.1/schema.json"
       }
     },
     "availableAt": {
       "description": "Physical locations where the item is available",
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/Location/v2.0/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Location/v2.0/schema.json"
       }
     },
     "category": {
-      "$ref": "https://schema.beckn.io/CategoryCode/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/CategoryCode/v2.1/schema.json"
     },
     "constraints": {
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/Constraint/v2.0/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Constraint/v2.0/schema.json"
       }
     },
     "descriptor": {
-      "$ref": "https://schema.beckn.io/Descriptor/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json"
     },
     "id": {
       "description": "Unique identifier for the item",
@@ -42,7 +42,7 @@
       "default": true
     },
     "itemAttributes": {
-      "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
     },
     "networkId": {
       "description": "Array of network identifiers for the BAP (Beckn App Provider) that offers this item",
@@ -58,11 +58,11 @@
     "policies": {
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/Policy/v2.0/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Policy/v2.0/schema.json"
       }
     },
     "provider": {
-      "$ref": "https://schema.beckn.io/Provider/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Provider/v2.1/schema.json"
     },
     "rateable": {
       "description": "Whether the item can be rated by customers",
@@ -70,7 +70,7 @@
       "example": true
     },
     "rating": {
-      "$ref": "https://schema.beckn.io/Rating/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Rating/v2.1/schema.json"
     }
   },
   "required": [

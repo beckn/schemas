@@ -18,21 +18,21 @@
       ]
     },
     "checkoutAt": {
-      "$ref": "https://schema.beckn.io/CheckoutTerminal/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/CheckoutTerminal/v2.0/schema.json"
     },
     "settlementTerms": {
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/SettlementTerm/v2.0/attributes.yaml"
+        "$ref": "https://schema.beckn.io/SettlementTerm/v2.0/schema.json"
       }
     },
     "checkoutTrigger": {
       "description": "The stage in the order lifecycle when the checkout should be triggered",
-      "$ref": "https://schema.beckn.io/PaymentTrigger/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/PaymentTrigger/v2.0/schema.json"
     },
     "paymentTermsAttributes": {
       "description": "Rail-specific attribute pack (e.g., UPI: VPA/UTR; CARD: token/3DS; BNPL: plan/schedule)",
-      "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
     }
   },
   "additionalProperties": false

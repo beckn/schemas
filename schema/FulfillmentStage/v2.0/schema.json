@@ -13,27 +13,27 @@
       "description": "A set of instructions to follow during this stage of fulfillment",
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/Instruction/v2.0/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Instruction/v2.0/schema.json"
       }
     },
     "preferences": {
       "description": "A extensible set of attributes that describe the fulfillment preferences",
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
       }
     },
     "start": {
       "description": "An extensible set of attributes that describe the criteria required to start this stage of fulfillment",
-      "$ref": "https://schema.beckn.io/FulfillmentStageEndpoint/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/FulfillmentStageEndpoint/v2.0/schema.json"
     },
     "end": {
       "description": "An extensible set of attributes that describe the criteria required to end this stage of fulfillment",
-      "$ref": "https://schema.beckn.io/FulfillmentStageEndpoint/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/FulfillmentStageEndpoint/v2.0/schema.json"
     },
     "fulfillmentStageAttributes": {
       "description": "An extensible set of attributes that describe this stage of fulfillment",
-      "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
     }
   },
   "x-jsonld": {

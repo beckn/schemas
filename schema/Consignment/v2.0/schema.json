@@ -14,20 +14,20 @@
       "example": "AWB-2024-9900123"
     },
     "shipper": {
-      "$ref": "https://schema.beckn.io/Contact/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Contact/v2.0/schema.json"
     },
     "consignee": {
-      "$ref": "https://schema.beckn.io/Contact/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Contact/v2.0/schema.json"
     },
     "shipments": {
       "type": "array",
       "description": "List of shipments in this consignment",
       "items": {
-        "$ref": "https://schema.beckn.io/Shipment/v2.0/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Shipment/v2.0/schema.json"
       }
     },
     "carrier": {
-      "$ref": "https://schema.beckn.io/Carrier/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Carrier/v2.0/schema.json"
     },
     "totalWeight": {
       "type": "object",

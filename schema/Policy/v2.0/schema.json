@@ -7,7 +7,7 @@
   "properties": {
     "descriptor": {
       "description": "Validity window for this policy version",
-      "$ref": "https://schema.beckn.io/Descriptor/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json"
     },
     "id": {
       "description": "Identifier for the policy",
@@ -19,10 +19,10 @@
     },
     "validity": {
       "description": "Validity window for this policy version",
-      "$ref": "https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/TimePeriod/v2.1/schema.json"
     },
     "policyAttributes": {
-      "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
     }
   },
   "required": [

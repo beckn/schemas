@@ -32,7 +32,7 @@
       "format": "uri"
     },
     "contact": {
-      "$ref": "https://schema.beckn.io/Contact/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Contact/v2.0/schema.json"
     },
     "rating": {
       "type": "number",
@@ -87,7 +87,7 @@
       "type": "array",
       "description": "Logistics hubs operated by this carrier",
       "items": {
-        "$ref": "https://schema.beckn.io/Hub/v2.0/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Hub/v2.0/schema.json"
       }
     },
     "licenseNumber": {

@@ -47,14 +47,14 @@
       }
     },
     "trackingAction": {
-      "$ref": "https://schema.beckn.io/TrackAction/v2.1/attributes.yaml",
+      "$ref": "https://schema.beckn.io/TrackAction/v2.1/schema.json",
       "description": "Tracking entrypoint for this fulfillment, modeled as schema.org TrackAction. Use target.url for a clickable tracking URL; may also include deliveryMethod. ",
       "x-jsonld": {
         "@type": "schema:TrackAction"
       }
     },
     "beckn:deliveryAttributes": {
-      "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml",
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json",
       "description": "Bundle of attributes for the chosen mode:  # DELIVERY: endpoints, slot windows, route & events → map to schema:ParcelDelivery / schema:DeliveryEvent # PICKUP: pickupPlace, counter codes, time windows → map to schema:Place + schema:openingHoursSpecification # RESERVATION: reservationStatus, reservedTicket → map to schema:Reservation # DIGITAL: contentUrl/license/expiry → map to schema:DataDownload/schema:MediaObject "
     }
   },

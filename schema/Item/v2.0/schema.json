@@ -23,22 +23,22 @@
       "example": "gaming-laptop-001"
     },
     "beckn:descriptor": {
-      "$ref": "https://schema.beckn.io/Descriptor/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json"
     },
     "beckn:category": {
-      "$ref": "https://schema.beckn.io/CategoryCode/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/CategoryCode/v2.1/schema.json"
     },
     "beckn:availableAt": {
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/Location/v2.0/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Location/v2.0/schema.json"
       },
       "description": "Physical locations where the item is available"
     },
     "beckn:availabilityWindow": {
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml"
+        "$ref": "https://schema.beckn.io/TimePeriod/v2.1/schema.json"
       },
       "description": "Time periods when the item is available"
     },
@@ -48,7 +48,7 @@
       "example": true
     },
     "beckn:rating": {
-      "$ref": "https://schema.beckn.io/Rating/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Rating/v2.1/schema.json"
     },
     "beckn:isActive": {
       "type": "boolean",
@@ -67,10 +67,10 @@
       ]
     },
     "beckn:provider": {
-      "$ref": "https://schema.beckn.io/Provider/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Provider/v2.1/schema.json"
     },
     "beckn:itemAttributes": {
-      "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
     }
   },
   "required": [

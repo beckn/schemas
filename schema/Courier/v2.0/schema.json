@@ -57,7 +57,7 @@
       "example": "KA05AB1234"
     },
     "currentLocation": {
-      "$ref": "https://schema.beckn.io/Place/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Place/v2.0/schema.json"
     },
     "status": {
       "type": "string",

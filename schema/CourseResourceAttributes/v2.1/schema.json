@@ -16,7 +16,7 @@
       ]
     },
     "course_domain": {
-      "$ref": "https://schema.beckn.io/CodedValue/v2.1/attributes.yaml",
+      "$ref": "https://schema.beckn.io/CodedValue/v2.1/schema.json",
       "description": "Subject domain of the course, expressed using an authority-governed code system (e.g. UNESCO ISCED, India NSQF sector codes). ",
       "x-jsonld-id": "cra:courseDomain"
     },
@@ -89,7 +89,7 @@
       "description": "Credential prerequisites the enrollee must satisfy. Uses the shared CredentialRequirement type. ",
       "x-jsonld-id": "cra:prerequisites",
       "items": {
-        "$ref": "https://schema.beckn.io/CredentialRequirement/v2.1/attributes.yaml"
+        "$ref": "https://schema.beckn.io/CredentialRequirement/v2.1/schema.json"
       }
     },
     "outcome_credential": {
@@ -121,7 +121,7 @@
       }
     },
     "industry_type": {
-      "$ref": "https://schema.beckn.io/CodedValue/v2.1/attributes.yaml",
+      "$ref": "https://schema.beckn.io/CodedValue/v2.1/schema.json",
       "description": "Industry alignment of the course (optional).",
       "x-jsonld-id": "cra:industryType"
     }

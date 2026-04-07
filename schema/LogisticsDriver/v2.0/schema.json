@@ -75,7 +75,7 @@
       "example": "ON_ROUTE"
     },
     "vehicle": {
-      "$ref": "https://schema.beckn.io/Vehicle/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Vehicle/v2.0/schema.json"
     },
     "experienceYears": {
       "type": "integer",

@@ -19,16 +19,16 @@
       "example": "Bangalore to Delhi via Hyderabad"
     },
     "origin": {
-      "$ref": "https://schema.beckn.io/Place/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Place/v2.0/schema.json"
     },
     "destination": {
-      "$ref": "https://schema.beckn.io/Place/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Place/v2.0/schema.json"
     },
     "waypoints": {
       "type": "array",
       "description": "Intermediate waypoints/hubs on the route",
       "items": {
-        "$ref": "https://schema.beckn.io/Waypoint/v2.0/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Waypoint/v2.0/schema.json"
       }
     },
     "totalDistance": {

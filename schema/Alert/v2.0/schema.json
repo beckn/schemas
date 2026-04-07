@@ -13,7 +13,7 @@
       }
     },
     "descriptor": {
-      "$ref": "https://schema.beckn.io/Descriptor/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json"
     },
     "id": {
       "type": "string"
@@ -22,7 +22,7 @@
       "type": "string"
     },
     "validity": {
-      "$ref": "https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/TimePeriod/v2.1/schema.json"
     }
   },
   "required": [

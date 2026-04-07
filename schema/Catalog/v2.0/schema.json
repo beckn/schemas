@@ -21,7 +21,7 @@
       "example": "catalog-electronics-001"
     },
     "beckn:descriptor": {
-      "$ref": "https://schema.beckn.io/Descriptor/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json"
     },
     "beckn:providerId": {
       "type": "string",
@@ -40,7 +40,7 @@
       "example": "https://bpp.example.com"
     },
     "beckn:validity": {
-      "$ref": "https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/TimePeriod/v2.1/schema.json"
     },
     "beckn:isActive": {
       "type": "boolean",
@@ -51,13 +51,13 @@
       "type": "array",
       "description": "Array of beckn core Item entities in this catalog, returned directly without ItemResult wrapper for improved performance and simplified response structure ",
       "items": {
-        "$ref": "https://schema.beckn.io/Item/v2.1/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Item/v2.1/schema.json"
       }
     },
     "beckn:offers": {
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/Offer/v2.1/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Offer/v2.1/schema.json"
       }
     }
   },

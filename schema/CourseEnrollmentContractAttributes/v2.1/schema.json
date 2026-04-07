@@ -18,7 +18,7 @@
       "x-jsonld-id": "ceca:cohortId"
     },
     "prerequisite_verification_summary": {
-      "$ref": "https://schema.beckn.io/VerificationSummary/v2.1/attributes.yaml",
+      "$ref": "https://schema.beckn.io/VerificationSummary/v2.1/schema.json",
       "x-jsonld-id": "ceca:prerequisiteVerificationSummary"
     },
     "credential_issuance_pending": {

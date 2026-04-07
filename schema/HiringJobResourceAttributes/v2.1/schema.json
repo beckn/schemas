@@ -28,7 +28,7 @@
       ]
     },
     "industry_type": {
-      "$ref": "https://schema.beckn.io/CodedValue/v2.1/attributes.yaml",
+      "$ref": "https://schema.beckn.io/CodedValue/v2.1/schema.json",
       "description": "Industry classification using an authority-governed code system (e.g. ISIC, NIC). Provides international neutrality. ",
       "x-jsonld-id": "hjra:industryType"
     },
@@ -62,7 +62,7 @@
       "description": "Ordered list of credential requirements an applicant must satisfy. Mandatory requirements block the application; non-mandatory are advisory. ",
       "x-jsonld-id": "hjra:requirements",
       "items": {
-        "$ref": "https://schema.beckn.io/CredentialRequirement/v2.1/attributes.yaml"
+        "$ref": "https://schema.beckn.io/CredentialRequirement/v2.1/schema.json"
       }
     },
     "tags": {

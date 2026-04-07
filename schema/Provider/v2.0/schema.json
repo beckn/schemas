@@ -11,15 +11,15 @@
       "example": "tech-store-001"
     },
     "beckn:descriptor": {
-      "$ref": "https://schema.beckn.io/Descriptor/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json"
     },
     "beckn:validity": {
-      "$ref": "https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/TimePeriod/v2.1/schema.json"
     },
     "beckn:locations": {
       "type": "array",
       "items": {
-        "$ref": "https://schema.beckn.io/Location/v2.0/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Location/v2.0/schema.json"
       },
       "description": "Physical locations where the provider operates"
     },
@@ -29,10 +29,10 @@
       "example": true
     },
     "beckn:rating": {
-      "$ref": "https://schema.beckn.io/Rating/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Rating/v2.1/schema.json"
     },
     "beckn:providerAttributes": {
-      "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
     }
   },
   "required": [

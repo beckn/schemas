@@ -49,28 +49,28 @@
       }
     },
     "beckn:payee": {
-      "$ref": "https://schema.beckn.io/Provider/v2.1/attributes.yaml",
+      "$ref": "https://schema.beckn.io/Provider/v2.1/schema.json",
       "description": "Seller / issuer of the invoice",
       "x-jsonld": {
         "@id": "schema:provider"
       }
     },
     "beckn:payer": {
-      "$ref": "https://schema.beckn.io/Buyer/v2.0/attributes.yaml",
+      "$ref": "https://schema.beckn.io/Buyer/v2.0/schema.json",
       "description": "Buyer being invoiced",
       "x-jsonld": {
         "@id": "schema:customer"
       }
     },
     "beckn:totals": {
-      "$ref": "https://schema.beckn.io/PriceSpecification/v2.1/attributes.yaml",
+      "$ref": "https://schema.beckn.io/PriceSpecification/v2.1/schema.json",
       "description": "Invoice grand totals (tax/shipping/discount components inside)",
       "x-jsonld": {
         "@id": "schema:priceSpecification"
       }
     },
     "beckn:invoiceAttributes": {
-      "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml",
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json",
       "description": "Attribute Pack for tax regime (e.g., GST/VAT), e-invoice refs, legal boilerplate, etc."
     }
   },

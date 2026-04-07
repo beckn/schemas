@@ -9,7 +9,7 @@
       "description": "List of skills, qualifications, and credentials held by the candidate. Each entry supports graceful degradation: self-declared (attested=false) or VC-backed (attested=true, proof_request_url present). ",
       "x-jsonld-id": "cpra:skills",
       "items": {
-        "$ref": "https://schema.beckn.io/SkillEntry/v2.1/attributes.yaml"
+        "$ref": "https://schema.beckn.io/SkillEntry/v2.1/schema.json"
       }
     },
     "experience_level": {
@@ -93,7 +93,7 @@
       "description": "Industries the candidate prefers to work in, expressed as authority-governed codes for international neutrality. ",
       "x-jsonld-id": "cpra:industryPreference",
       "items": {
-        "$ref": "https://schema.beckn.io/CodedValue/v2.1/attributes.yaml"
+        "$ref": "https://schema.beckn.io/CodedValue/v2.1/schema.json"
       }
     },
     "job_type_preference": {

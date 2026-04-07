@@ -22,7 +22,7 @@
       "type": "string"
     },
     "validity": {
-      "$ref": "https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml"
+      "$ref": "https://schema.beckn.io/TimePeriod/v2.1/schema.json"
     },
     "value": {
       "description": "Constraint value",

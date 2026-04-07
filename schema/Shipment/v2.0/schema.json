@@ -37,29 +37,29 @@
       "example": "IN_TRANSIT"
     },
     "origin": {
-      "$ref": "https://schema.beckn.io/Place/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Place/v2.0/schema.json"
     },
     "destination": {
-      "$ref": "https://schema.beckn.io/Place/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Place/v2.0/schema.json"
     },
     "packages": {
       "type": "array",
       "description": "List of packages in this shipment",
       "items": {
-        "$ref": "https://schema.beckn.io/Package/v2.0/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Package/v2.0/schema.json"
       }
     },
     "carrier": {
-      "$ref": "https://schema.beckn.io/Carrier/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Carrier/v2.0/schema.json"
     },
     "driver": {
-      "$ref": "https://schema.beckn.io/Driver/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Driver/v2.0/schema.json"
     },
     "vehicle": {
-      "$ref": "https://schema.beckn.io/Vehicle/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Vehicle/v2.0/schema.json"
     },
     "route": {
-      "$ref": "https://schema.beckn.io/Route/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Route/v2.0/schema.json"
     },
     "scheduledPickup": {
       "type": "string",
@@ -77,7 +77,7 @@
       "description": "Actual delivery date and time"
     },
     "deliverySlot": {
-      "$ref": "https://schema.beckn.io/DeliverySlot/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/DeliverySlot/v2.0/schema.json"
     },
     "serviceType": {
       "type": "string",
@@ -97,32 +97,32 @@
       "example": "Handle with care. Do not tilt."
     },
     "proof": {
-      "$ref": "https://schema.beckn.io/Proof/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Proof/v2.0/schema.json"
     },
     "fare": {
-      "$ref": "https://schema.beckn.io/Fare/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Fare/v2.0/schema.json"
     },
     "receipt": {
-      "$ref": "https://schema.beckn.io/Receipt/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Receipt/v2.0/schema.json"
     },
     "cancellationPolicy": {
-      "$ref": "https://schema.beckn.io/CancellationPolicy/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/CancellationPolicy/v2.0/schema.json"
     },
     "returnPolicy": {
-      "$ref": "https://schema.beckn.io/ReturnPolicy/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/ReturnPolicy/v2.0/schema.json"
     },
     "alerts": {
       "type": "array",
       "description": "Alerts raised for this shipment",
       "items": {
-        "$ref": "https://schema.beckn.io/Alert/v2.0/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Alert/v2.0/schema.json"
       }
     },
     "trackingUpdates": {
       "type": "array",
       "description": "History of tracking updates",
       "items": {
-        "$ref": "https://schema.beckn.io/TrackingUpdate/v2.0/attributes.yaml"
+        "$ref": "https://schema.beckn.io/TrackingUpdate/v2.0/schema.json"
       }
     },
     "createdAt": {

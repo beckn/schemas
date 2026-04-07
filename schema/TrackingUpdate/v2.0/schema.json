@@ -60,13 +60,13 @@
       "example": "Your shipment has arrived at Hyderabad hub and is being sorted."
     },
     "hub": {
-      "$ref": "https://schema.beckn.io/Hub/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Hub/v2.0/schema.json"
     },
     "driver": {
-      "$ref": "https://schema.beckn.io/Driver/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Driver/v2.0/schema.json"
     },
     "vehicle": {
-      "$ref": "https://schema.beckn.io/Vehicle/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Vehicle/v2.0/schema.json"
     },
     "exceptionDetails": {
       "type": "object",

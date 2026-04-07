@@ -25,7 +25,7 @@
     },
     "paymentTrigger": {
       "description": "Describes the event which triggers the payment against this settlement term",
-      "$ref": "https://schema.beckn.io/PaymentTrigger/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/PaymentTrigger/v2.0/schema.json"
     },
     "settlementStatus": {
       "type": "string",
@@ -35,7 +35,7 @@
       ]
     },
     "settlementSchedule": {
-      "$ref": "https://schema.beckn.io/SettlementSchedule/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/SettlementSchedule/v2.0/schema.json"
     },
     "payTo": {
       "description": "Describes the details of the account where the money must be remited. It could be a bank account, a payment gateway, or a virtual payment address (like a UPI ID)",
@@ -90,7 +90,7 @@
     },
     "settlementTermAttributes": {
       "description": "Additional use case specific settlement terms that must be adhered to",
-      "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
     }
   },
   "x-tags": [

@@ -41,7 +41,7 @@
           "type": "string"
         },
         {
-          "$ref": "https://schema.beckn.io/Address/v2.0/attributes.yaml"
+          "$ref": "https://schema.beckn.io/Address/v2.0/schema.json"
         }
       ],
       "x-jsonld": {
@@ -52,7 +52,7 @@
       "type": "array",
       "description": "Credentials held by the organization",
       "items": {
-        "$ref": "https://schema.beckn.io/Credential/v2.0/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Credential/v2.0/schema.json"
       },
       "x-jsonld": {
         "@id": "schema:hasCredential"
@@ -62,7 +62,7 @@
       "type": "array",
       "description": "Skills or capabilities of the organization",
       "items": {
-        "$ref": "https://schema.beckn.io/Skill/v2.0/attributes.yaml"
+        "$ref": "https://schema.beckn.io/Skill/v2.0/schema.json"
       },
       "x-jsonld": {
         "@id": "schema:hasSkill"
@@ -70,7 +70,7 @@
     },
     "organizationAttributes": {
       "description": "Extensible attribute pack for jurisdictional or domain-specific organization properties",
-      "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml"
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
     }
   },
   "required": [
