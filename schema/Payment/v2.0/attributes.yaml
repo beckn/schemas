@@ -17,16 +17,6 @@ components:
       title: Payment
       type: object
       properties:
-        '@context':
-          type: string
-          format: uri
-          example: https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld
-        '@type':
-          type: string
-          enum:
-          - beckn:Payment
-          x-jsonld:
-            '@id': schema:Thing
         beckn:id:
           type: string
           description: Payment record identifier
@@ -34,7 +24,8 @@ components:
             '@id': schema:identifier
         beckn:paymentStatus:
           type: string
-          description: Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)
+          description: "Payment lifecycle status (Pending | Authorized | Captured\
+            \ | Failed | Refunded | PartialRefund \u2026)"
           enum:
           - INITIATED
           - PENDING
@@ -101,11 +92,10 @@ components:
             '@id': schema:beneficiary
         beckn:paymentAttributes:
           $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
-          description: 'Rail-specific attribute pack (e.g., UPI: VPA/UTR; CARD: token/3DS; BNPL: plan/schedule)
+          description: 'Rail-specific attribute pack (e.g., UPI: VPA/UTR; CARD: token/3DS;
+            BNPL: plan/schedule)
 
             '
       required:
-      - '@context'
-      - '@type'
       - beckn:paymentStatus
       additionalProperties: false

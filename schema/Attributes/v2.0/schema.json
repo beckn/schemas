@@ -4,21 +4,7 @@
   "description": "JSON-LD aware container for domain-specific attributes of an Item. MUST include @context (URI) and @type (compact or full IRI). Any additional properties are allowed and interpreted per the provided JSON-LD context.",
   "title": "Attributes",
   "type": "object",
-  "properties": {
-    "@context": {
-      "description": "Use case specific JSON-LD context URI",
-      "type": "string",
-      "default": "https://schema.beckn.io/Attributes/v2.0/context.jsonld"
-    },
-    "@type": {
-      "description": "JSON-LD type defined within the context",
-      "type": "string",
-      "default": "Attributes"
-    }
-  },
-  "required": [
-    "@context",
-    "@type"
-  ],
+  "properties": {},
+  "required": [],
   "additionalProperties": true
 }

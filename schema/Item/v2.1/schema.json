@@ -5,20 +5,6 @@
   "title": "Item",
   "type": "object",
   "properties": {
-    "@context": {
-      "description": "JSON-LD context URI for the core Item schema",
-      "type": "string",
-      "format": "uri",
-      "default": "https://schema.beckn.io/Item/v2.1/context.jsonld"
-    },
-    "@type": {
-      "description": "Type of the core item",
-      "type": "string",
-      "enum": [
-        "Item"
-      ],
-      "default": "Item"
-    },
     "availabilityWindow": {
       "description": "Time periods when the item is available",
       "type": "array",
@@ -88,8 +74,6 @@
     }
   },
   "required": [
-    "@context",
-    "@type",
     "id",
     "descriptor",
     "provider",

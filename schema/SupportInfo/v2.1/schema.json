@@ -8,15 +8,6 @@
   ],
   "type": "object",
   "properties": {
-    "@context": {
-      "type": "string",
-      "format": "uri",
-      "default": "https://schema.beckn.io/SupportInfo/v2.1/context.jsonld"
-    },
-    "@type": {
-      "type": "string",
-      "default": "SupportInfo"
-    },
     "channels": {
       "description": "Available support channels.",
       "type": "array",
@@ -65,9 +56,6 @@
       "type": "string"
     }
   },
-  "required": [
-    "@context",
-    "@type"
-  ],
+  "required": [],
   "additionalProperties": false
 }

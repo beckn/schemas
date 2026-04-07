@@ -2,7 +2,9 @@ openapi: 3.1.1
 info:
   title: SettlementTerm
   version: 2.0.0
-  description: Describes the terms of settlement associated with a given transaction. This is not to be confused with the PaymentAction as it describes all the places where the money gets disbursed after reconciliation.
+  description: Describes the terms of settlement associated with a given transaction.
+    This is not to be confused with the PaymentAction as it describes all the places
+    where the money gets disbursed after reconciliation.
   license:
     name: CC-BY-NC-SA 4.0 International
   contact:
@@ -13,17 +15,12 @@ components:
     SettlementTerm:
       $id: https://schema.beckn.io/SettlementTerm/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: Describes the terms of settlement associated with a given transaction. This is not to be confused with the PaymentAction as it describes all the places where the money gets disbursed after reconciliation.
+      description: Describes the terms of settlement associated with a given transaction.
+        This is not to be confused with the PaymentAction as it describes all the
+        places where the money gets disbursed after reconciliation.
       title: SettlementTerm
       type: object
       properties:
-        '@context':
-          type: string
-          format: uri
-          default: https://schema.beckn.io/
-        '@type':
-          type: string
-          default: beckn:SettlementTerm
         amount:
           description: Amount associated with this settlement action
           type: object
@@ -37,7 +34,8 @@ components:
               x-jsonld:
                 '@id': schema:price
         paymentTrigger:
-          description: Describes the event which triggers the payment against this settlement term
+          description: Describes the event which triggers the payment against this
+            settlement term
           $ref: https://schema.beckn.io/PaymentTrigger/v2.0/attributes.yaml#/components/schemas/PaymentTrigger
         settlementStatus:
           type: string
@@ -47,7 +45,9 @@ components:
         settlementSchedule:
           $ref: https://schema.beckn.io/SettlementSchedule/v2.0/attributes.yaml#/components/schemas/SettlementSchedule
         payTo:
-          description: Describes the details of the account where the money must be remited. It could be a bank account, a payment gateway, or a virtual payment address (like a UPI ID)
+          description: Describes the details of the account where the money must be
+            remited. It could be a bank account, a payment gateway, or a virtual payment
+            address (like a UPI ID)
           anyOf:
           - type: object
             properties:
@@ -69,7 +69,8 @@ components:
                 type: string
                 format: uri
         acceptedPaymentMethods:
-          description: Describes the methods or mechanisms accepted by the payee (described in the payTo property) for the purpose of this settlement.
+          description: Describes the methods or mechanisms accepted by the payee (described
+            in the payTo property) for the purpose of this settlement.
           type: array
           items:
             type: string
@@ -78,7 +79,8 @@ components:
             - BANK_TRANSFER
             additionalProperties: true
         settlementTermAttributes:
-          description: Additional use case specific settlement terms that must be adhered to
+          description: Additional use case specific settlement terms that must be
+            adhered to
           $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
       x-tags:
       - common

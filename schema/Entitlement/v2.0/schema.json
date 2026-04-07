@@ -5,17 +5,6 @@
   "title": "Entitlement",
   "type": "object",
   "properties": {
-    "@context": {
-      "description": "CPD",
-      "type": "string",
-      "format": "uri",
-      "default": "https://schema.beckn.io/Entitlement/v2.0/context.jsonld"
-    },
-    "@type": {
-      "description": "The domain-specific type of entitlement that allows domains to extend this schema",
-      "type": "string",
-      "default": "Entitlement"
-    },
     "id": {
       "description": "A unique identifier for this entitlement within the entitlement provider's namespace",
       "type": "string"
@@ -37,8 +26,6 @@
   },
   "additionalProperties": true,
   "required": [
-    "@context",
-    "@type",
     "id",
     "descriptor"
   ],

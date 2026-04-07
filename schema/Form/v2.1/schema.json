@@ -5,16 +5,6 @@
   "title": "Form",
   "type": "object",
   "properties": {
-    "@context": {
-      "description": "CPD",
-      "type": "string",
-      "format": "uri",
-      "default": "https://schema.beckn.io/Form/v2.1/context.jsonld"
-    },
-    "@type": {
-      "type": "string",
-      "default": "Form"
-    },
     "data": {
       "description": "The form submission data",
       "type": "object",
@@ -36,10 +26,7 @@
       "format": "uri"
     }
   },
-  "required": [
-    "@context",
-    "@type"
-  ],
+  "required": [],
   "x-tags": [
     "common"
   ]

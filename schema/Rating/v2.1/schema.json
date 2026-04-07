@@ -5,15 +5,6 @@
   "title": "Rating",
   "type": "object",
   "properties": {
-    "@context": {
-      "type": "string",
-      "format": "uri",
-      "default": "https://schema.beckn.io/Rating/v2.1/context.jsonld"
-    },
-    "@type": {
-      "type": "string",
-      "default": "Rating"
-    },
     "ratingValue": {
       "description": "Rating value (typically 0-5)",
       "type": "number",

@@ -5,15 +5,6 @@
   "title": "PaymentAction",
   "type": "object",
   "properties": {
-    "@context": {
-      "type": "string",
-      "format": "uri",
-      "default": "https://schema.beckn.io/PaymentAction/v2.0/context.jsonld"
-    },
-    "@type": {
-      "type": "string",
-      "default": "PaymentAction"
-    },
     "amount": {
       "description": "Amount associated with this payment action",
       "type": "object",
@@ -60,15 +51,6 @@
     },
     "paymentMethod": {
       "type": "object",
-      "@context": {
-        "type": "string",
-        "format": "uri",
-        "const": "https://schema.beckn.io/"
-      },
-      "@type": {
-        "type": "string",
-        "const": "PaymentMethod"
-      },
       "method": {
         "type": "string"
       }
@@ -106,8 +88,6 @@
     }
   },
   "required": [
-    "@context",
-    "@type",
     "paymentStatus"
   ],
   "additionalProperties": false,

@@ -17,13 +17,6 @@ components:
       title: Person
       type: object
       properties:
-        '@context':
-          type: string
-          format: uri
-          const: https://schema.beckn.io/
-        '@type':
-          type: string
-          default: beckn:Person
         id:
           type: string
           description: Unique identifier for the person
@@ -85,11 +78,10 @@ components:
           x-jsonld:
             '@id': schema:hasSkill
         personAttributes:
-          description: Extensible attribute pack for jurisdictional or domain-specific person properties
+          description: Extensible attribute pack for jurisdictional or domain-specific
+            person properties
           $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
       required:
-      - '@context'
-      - '@type'
       - id
       additionalProperties: false
       x-tags:

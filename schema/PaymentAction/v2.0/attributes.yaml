@@ -17,13 +17,6 @@ components:
       title: PaymentAction
       type: object
       properties:
-        '@context':
-          type: string
-          format: uri
-          const: https://schema.beckn.io/
-        '@type':
-          type: string
-          const: beckn:PaymentAction
         amount:
           description: Amount associated with this payment action
           type: object
@@ -37,7 +30,8 @@ components:
               x-jsonld:
                 '@id': schema:price
         paymentStatus:
-          description: Payment lifecycle status (Pending | Authorized | Captured | Failed | Refunded | PartialRefund …)
+          description: "Payment lifecycle status (Pending | Authorized | Captured\
+            \ | Failed | Refunded | PartialRefund \u2026)"
           type: string
           enum:
           - INITIATED
@@ -61,13 +55,6 @@ components:
             '@id': beckn:paymentStatus
         paymentMethod:
           type: object
-          '@context':
-            type: string
-            format: uri
-            const: https://schema.beckn.io/
-          '@type':
-            type: string
-            const: PaymentMethod
           method:
             type: string
         paymentUrl:
@@ -91,11 +78,10 @@ components:
           type: string
           format: date-time
         paymentActionAttributes:
-          description: Extensible set of attributes containing payment actions specific to each ecosystem.
+          description: Extensible set of attributes containing payment actions specific
+            to each ecosystem.
           $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
       required:
-      - '@context'
-      - '@type'
       - paymentStatus
       additionalProperties: false
       x-tags:

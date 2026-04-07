@@ -5,15 +5,6 @@
   "title": "Time",
   "type": "object",
   "properties": {
-    "@context": {
-      "type": "string",
-      "format": "uri",
-      "default": "https://schema.beckn.io/Time/v2.0/context.jsonld"
-    },
-    "@type": {
-      "type": "string",
-      "default": "Time"
-    },
     "timestamp": {
       "type": "string",
       "format": "date-time",

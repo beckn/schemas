@@ -17,15 +17,6 @@ components:
       title: Constraint
       type: object
       properties:
-        '@context':
-          description: CPD
-          type: string
-          format: uri
-          const: https://schema.beckn.io/
-        '@type':
-          type: string
-          enum:
-          - Constraint
         constraintType:
           description: Type of constraint (extensible term)
           type: string
@@ -44,8 +35,6 @@ components:
           description: Constraint value
           type: number
       required:
-      - '@context'
-      - '@type'
       - id
       additionalProperties: false
       x-tags:

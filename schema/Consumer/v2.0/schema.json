@@ -8,18 +8,6 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "@context": {
-          "type": "string",
-          "format": "uri",
-          "const": "https://schema.beckn.io/"
-        },
-        "@type": {
-          "type": "string",
-          "const": "beckn:Consumer",
-          "x-jsonld": {
-            "@id": "schema:Thing"
-          }
-        },
         "role": {
           "description": "The functional role of the consumer in the transaction.",
           "type": "string",
@@ -32,10 +20,7 @@
           "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml"
         }
       },
-      "required": [
-        "@context",
-        "@type"
-      ]
+      "required": []
     },
     {
       "oneOf": [

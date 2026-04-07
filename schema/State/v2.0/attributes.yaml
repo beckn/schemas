@@ -17,20 +17,9 @@ components:
       title: State
       type: object
       properties:
-        '@context':
-          description: CPD
-          type: string
-          format: uri
-          const: https://schema.beckn.io/
-        '@type':
-          description: TPD
-          type: string
-          default: beckn:State
         descriptor:
           $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor
       required:
-      - '@context'
-      - '@type'
       - descriptor
       additionalProperties: false
       x-tags:

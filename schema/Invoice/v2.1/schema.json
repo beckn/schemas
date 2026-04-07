@@ -5,23 +5,6 @@
   "title": "Invoice",
   "type": "object",
   "properties": {
-    "@context": {
-      "description": "CPD",
-      "type": "string",
-      "format": "uri",
-      "default": "https://schema.beckn.io/Invoice/v2.1/context.jsonld"
-    },
-    "@type": {
-      "description": "TPD",
-      "type": "string",
-      "enum": [
-        "Invoice"
-      ],
-      "x-jsonld": {
-        "@id": "schema:Invoice"
-      },
-      "default": "Invoice"
-    },
     "dueDate": {
       "type": [
         "string",
@@ -79,8 +62,6 @@
     }
   },
   "required": [
-    "@context",
-    "@type",
     "id",
     "number",
     "issueDate",

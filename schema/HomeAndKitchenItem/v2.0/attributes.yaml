@@ -1,6 +1,6 @@
 openapi: 3.1.1
 info:
-  title: Home & Kitchen — Item Attributes (v2)
+  title: "Home & Kitchen \u2014 Item Attributes (v2)"
   version: 2.0.0
   license:
     name: CC-BY-NC-SA 4.0 International
@@ -14,10 +14,9 @@ components:
       - $ref: https://schema.beckn.io/RetailCoreItem/v2.0/attributes.yaml#/components/schemas/RetailCoreItem
       - type: object
         additionalProperties: false
-        x-jsonld:
-          '@context': ./context.jsonld
-          '@type': hk:HomeAndKitchenItemAttributes
-        description: 'Home & Kitchen-specific extensions to RetailCoreItemAttributes. Covers care, installation and usage environment guidance.
+        x-jsonld: {}
+        description: 'Home & Kitchen-specific extensions to RetailCoreItemAttributes.
+          Covers care, installation and usage environment guidance.
 
           '
         properties:

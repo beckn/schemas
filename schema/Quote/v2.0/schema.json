@@ -8,15 +8,6 @@
   ],
   "type": "object",
   "properties": {
-    "@context": {
-      "type": "string",
-      "format": "uri",
-      "default": "https://schema.beckn.io/Quote/v2.0/context.jsonld"
-    },
-    "@type": {
-      "type": "string",
-      "default": "Quote"
-    },
     "id": {
       "description": "Unique identifier for this quote.",
       "type": "string",
@@ -122,9 +113,6 @@
       }
     }
   },
-  "required": [
-    "@context",
-    "@type"
-  ],
+  "required": [],
   "additionalProperties": false
 }

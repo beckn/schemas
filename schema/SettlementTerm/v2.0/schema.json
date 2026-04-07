@@ -5,15 +5,6 @@
   "title": "SettlementTerm",
   "type": "object",
   "properties": {
-    "@context": {
-      "type": "string",
-      "format": "uri",
-      "default": "https://schema.beckn.io/SettlementTerm/v2.0/context.jsonld"
-    },
-    "@type": {
-      "type": "string",
-      "default": "SettlementTerm"
-    },
     "amount": {
       "description": "Amount associated with this settlement action",
       "type": "object",

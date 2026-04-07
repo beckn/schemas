@@ -1,6 +1,6 @@
 openapi: 3.1.1
 info:
-  title: Grocery — Item Attributes (v2)
+  title: "Grocery \u2014 Item Attributes (v2)"
   version: 2.0.0
   license:
     name: CC-BY-NC-SA 4.0 International
@@ -14,16 +14,16 @@ components:
       - $ref: https://schema.beckn.io/RetailCoreItem/v2.0/attributes.yaml#/components/schemas/RetailCoreItem
       - type: object
         additionalProperties: false
-        x-jsonld:
-          '@context': ./context.jsonld
-          '@type': groc:GroceryItemAttributes
-        description: 'Grocery-specific extensions to RetailCoreItemAttributes. Covers nutrition information and fresh produce declarations.
+        x-jsonld: {}
+        description: 'Grocery-specific extensions to RetailCoreItemAttributes. Covers
+          nutrition information and fresh produce declarations.
 
           '
         properties:
           nutrition:
             type: array
-            description: 'Nutrition facts per serving or per 100g/100ml. Context of measurement may be specified via unit.
+            description: 'Nutrition facts per serving or per 100g/100ml. Context of
+              measurement may be specified via unit.
 
               '
             items:
@@ -42,7 +42,8 @@ components:
           freshProduce:
             type: object
             additionalProperties: false
-            description: 'Additional declaration applicable for unpackaged or loose produce.
+            description: 'Additional declaration applicable for unpackaged or loose
+              produce.
 
               '
             properties:

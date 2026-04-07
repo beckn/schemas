@@ -5,22 +5,6 @@
   "title": "Order",
   "type": "object",
   "properties": {
-    "@context": {
-      "type": "string",
-      "format": "uri",
-      "example": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld",
-      "default": "https://schema.beckn.io/Order/v2.0/context.jsonld"
-    },
-    "@type": {
-      "type": "string",
-      "enum": [
-        "beckn:Order"
-      ],
-      "x-jsonld": {
-        "@id": "schema:Order"
-      },
-      "default": "Order"
-    },
     "beckn:id": {
       "type": "string",
       "x-jsonld": {
@@ -121,8 +105,6 @@
     }
   },
   "required": [
-    "@context",
-    "@type",
     "beckn:orderStatus",
     "beckn:seller",
     "beckn:buyer",

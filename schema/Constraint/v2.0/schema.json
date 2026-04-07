@@ -5,19 +5,6 @@
   "title": "Constraint",
   "type": "object",
   "properties": {
-    "@context": {
-      "description": "CPD",
-      "type": "string",
-      "format": "uri",
-      "default": "https://schema.beckn.io/Constraint/v2.0/context.jsonld"
-    },
-    "@type": {
-      "type": "string",
-      "enum": [
-        "Constraint"
-      ],
-      "default": "Constraint"
-    },
     "constraintType": {
       "description": "Type of constraint (extensible term)",
       "type": "string"
@@ -43,8 +30,6 @@
     }
   },
   "required": [
-    "@context",
-    "@type",
     "id"
   ],
   "additionalProperties": false,

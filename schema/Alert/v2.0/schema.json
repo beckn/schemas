@@ -5,18 +5,6 @@
   "title": "Alert",
   "type": "object",
   "properties": {
-    "@context": {
-      "type": "string",
-      "format": "uri",
-      "default": "https://schema.beckn.io/Alert/v2.0/context.jsonld"
-    },
-    "@type": {
-      "type": "string",
-      "enum": [
-        "Alert"
-      ],
-      "default": "Alert"
-    },
     "affectedEntities": {
       "description": "IDs of entities affected (route/order/fulfillment/etc.)",
       "type": "array",
@@ -38,8 +26,6 @@
     }
   },
   "required": [
-    "@context",
-    "@type",
     "id",
     "descriptor"
   ],

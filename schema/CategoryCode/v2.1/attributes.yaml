@@ -19,15 +19,6 @@ components:
       - common
       type: object
       properties:
-        '@context':
-          description: JSON-LD context URI
-          type: string
-          format: uri
-          default: https://schema.beckn.io/
-        '@type':
-          description: Context-specific Type of the category code
-          type: string
-          default: beckn:CategoryCode
         codeValue:
           description: Category code value
           type: string
@@ -47,6 +38,5 @@ components:
           x-jsonld:
             '@id': schema:name
       required:
-      - '@type'
       - codeValue
       additionalProperties: false

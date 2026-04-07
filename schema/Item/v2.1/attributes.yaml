@@ -17,16 +17,6 @@ components:
       title: Item
       type: object
       properties:
-        '@context':
-          description: JSON-LD context URI for the core Item schema
-          type: string
-          format: uri
-          const: https://schema.beckn.io/
-        '@type':
-          description: Type of the core item
-          type: string
-          enum:
-          - Item
         availabilityWindow:
           description: Time periods when the item is available
           type: array
@@ -56,7 +46,8 @@ components:
         itemAttributes:
           $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
         networkId:
-          description: Array of network identifiers for the BAP (Beckn App Provider) that offers this item
+          description: Array of network identifiers for the BAP (Beckn App Provider)
+            that offers this item
           type: array
           items:
             type: string
@@ -76,8 +67,6 @@ components:
         rating:
           $ref: https://schema.beckn.io/Rating/v2.1/attributes.yaml#/components/schemas/Rating
       required:
-      - '@context'
-      - '@type'
       - id
       - descriptor
       - provider

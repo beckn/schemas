@@ -17,14 +17,6 @@ components:
       title: Alert
       type: object
       properties:
-        '@context':
-          type: string
-          format: uri
-          const: https://schema.beckn.io/
-        '@type':
-          type: string
-          enum:
-          - Alert
         affectedEntities:
           description: IDs of entities affected (route/order/fulfillment/etc.)
           type: array
@@ -39,8 +31,6 @@ components:
         validity:
           $ref: https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml#/components/schemas/TimePeriod
       required:
-      - '@context'
-      - '@type'
       - id
       - descriptor
       additionalProperties: false

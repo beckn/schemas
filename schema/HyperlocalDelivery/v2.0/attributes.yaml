@@ -2,12 +2,14 @@ openapi: 3.1.1
 info:
   title: HyperlocalDelivery
   version: 2.0.0
-  description: 'A Beckn domain schema for hyperlocal (same-city, typically sub-2-hour) physical delivery
+  description: 'A Beckn domain schema for hyperlocal (same-city, typically sub-2-hour)
+    physical delivery
 
     of goods or prepared food from an origin to a destination within a short radius.
 
 
-    HyperlocalDelivery is a concrete, domain-specific fulfillmentAttributes value for a
+    HyperlocalDelivery is a concrete, domain-specific fulfillmentAttributes value
+    for a
 
     beckn:Fulfillment entry. It is fully aligned with schema:ParcelDelivery.
 
@@ -27,12 +29,14 @@ components:
     HyperlocalDelivery:
       $id: https://schema.beckn.io/HyperlocalDelivery/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: 'A Beckn domain schema for hyperlocal (same-city, typically sub-2-hour) physical delivery
+      description: 'A Beckn domain schema for hyperlocal (same-city, typically sub-2-hour)
+        physical delivery
 
         of goods or prepared food from an origin to a destination within a short radius.
 
 
-        HyperlocalDelivery is a concrete, domain-specific fulfillmentAttributes value for a
+        HyperlocalDelivery is a concrete, domain-specific fulfillmentAttributes value
+        for a
 
         beckn:Fulfillment entry. It is fully aligned with schema:ParcelDelivery.
 
@@ -49,30 +53,26 @@ components:
       - fulfillment
       type: object
       properties:
-        '@context':
-          type: string
-          format: uri
-          const: https://schema.beckn.io/HyperlocalDelivery/v2.0/context.jsonld
-        '@type':
-          type: string
-          const: beckn:HyperlocalDelivery
         pickupLocation:
           $ref: https://schema.beckn.io/Location/v2.0/attributes.yaml#/components/schemas/Location
-          description: 'The pickup/origin location (restaurant, warehouse, dark store). Corresponds to schema:originAddress on schema:ParcelDelivery.
+          description: 'The pickup/origin location (restaurant, warehouse, dark store).
+            Corresponds to schema:originAddress on schema:ParcelDelivery.
 
             '
           x-jsonld:
             '@id': schema:originAddress
         deliveryLocation:
           $ref: https://schema.beckn.io/Location/v2.0/attributes.yaml#/components/schemas/Location
-          description: 'The delivery destination (consumer''s address). Corresponds to schema:deliveryAddress on schema:ParcelDelivery.
+          description: 'The delivery destination (consumer''s address). Corresponds
+            to schema:deliveryAddress on schema:ParcelDelivery.
 
             '
           x-jsonld:
             '@id': schema:deliveryAddress
         itemsShipped:
           type: array
-          description: 'The items shipped in this delivery. Corresponds to schema:itemShipped on schema:ParcelDelivery.
+          description: 'The items shipped in this delivery. Corresponds to schema:itemShipped
+            on schema:ParcelDelivery.
 
             '
           items:
@@ -81,7 +81,8 @@ components:
             '@id': schema:itemShipped
         agent:
           $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
-          description: 'The delivery agent (rider) carrying out this delivery. Corresponds to schema:carrier on schema:ParcelDelivery.
+          description: 'The delivery agent (rider) carrying out this delivery. Corresponds
+            to schema:carrier on schema:ParcelDelivery.
 
             '
           x-jsonld:
@@ -89,7 +90,8 @@ components:
         trackingUrl:
           type: string
           format: uri
-          description: 'Live real-time tracking URL for the rider''s location during delivery. Corresponds to schema:trackingUrl on schema:ParcelDelivery.
+          description: 'Live real-time tracking URL for the rider''s location during
+            delivery. Corresponds to schema:trackingUrl on schema:ParcelDelivery.
 
             '
           x-jsonld:
@@ -106,7 +108,5 @@ components:
           description: Latest expected delivery time (ISO 8601). Maps to schema:expectedArrivalUntil.
           x-jsonld:
             '@id': schema:expectedArrivalUntil
-      required:
-      - '@context'
-      - '@type'
+      required: []
       additionalProperties: false

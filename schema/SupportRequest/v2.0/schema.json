@@ -5,15 +5,6 @@
   "title": "SupportRequest",
   "type": "object",
   "properties": {
-    "@context": {
-      "type": "string",
-      "format": "uri",
-      "default": "https://schema.beckn.io/SupportRequest/v2.0/context.jsonld"
-    },
-    "@type": {
-      "type": "string",
-      "default": "SupportRequest"
-    },
     "orderId": {
       "description": "The order against which support is required",
       "type": "string"
@@ -30,10 +21,7 @@
       "type": "string"
     }
   },
-  "required": [
-    "@context",
-    "@type"
-  ],
+  "required": [],
   "additionalProperties": false,
   "x-tags": [
     "common"

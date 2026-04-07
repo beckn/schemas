@@ -8,15 +8,6 @@
   ],
   "type": "object",
   "properties": {
-    "@context": {
-      "type": "string",
-      "format": "uri",
-      "default": "https://schema.beckn.io/SupportResponse/v2.0/context.jsonld"
-    },
-    "@type": {
-      "type": "string",
-      "default": "SupportResponse"
-    },
     "refId": {
       "description": "Reference identifier (typically the order ID) against which support was requested.",
       "type": "string"
@@ -84,9 +75,6 @@
       "$ref": "https://schema.beckn.io/Consumer/v2.0/attributes.yaml"
     }
   },
-  "required": [
-    "@context",
-    "@type"
-  ],
+  "required": [],
   "additionalProperties": false
 }

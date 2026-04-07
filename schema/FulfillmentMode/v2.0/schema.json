@@ -5,15 +5,6 @@
   "title": "FulfillmentMode",
   "type": "object",
   "properties": {
-    "@context": {
-      "type": "string",
-      "format": "uri",
-      "default": "https://schema.beckn.io/FulfillmentMode/v2.0/context.jsonld"
-    },
-    "@type": {
-      "type": "string",
-      "default": "FulfillmentMode"
-    },
     "id": {
       "type": "string"
     },

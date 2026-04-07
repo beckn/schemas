@@ -13,20 +13,11 @@ components:
     CancellationPolicy:
       $id: https://schema.beckn.io/CancellationPolicy/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: Schema definition for CancellationPolicy in the Beckn Protocol v2.0.1
+      description: Schema definition for CancellationPolicy in the Beckn Protocol
+        v2.0.1
       title: CancellationPolicy
       x-tags:
       - common
       type: object
-      properties:
-        '@context':
-          description: CPD
-          type: string
-          format: uri
-          const: https://schema.beckn.io/
-        '@type':
-          type: string
-          const: beckn:CancellationPolicy
-          x-jsonld:
-            '@id': schema:CreativeWork
+      properties: {}
       additionalProperties: false

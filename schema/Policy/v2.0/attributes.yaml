@@ -17,14 +17,6 @@ components:
       title: Policy
       type: object
       properties:
-        '@context':
-          type: string
-          format: uri
-          const: https://schema.beckn.io/
-        '@type':
-          type: string
-          enum:
-          - Policy
         descriptor:
           description: Validity window for this policy version
           $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor
@@ -40,8 +32,6 @@ components:
         policyAttributes:
           $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
       required:
-      - '@context'
-      - '@type'
       - id
       - descriptor
       additionalProperties: false

@@ -17,14 +17,6 @@ components:
       title: FulfillmentStage
       type: object
       properties:
-        '@context':
-          description: CPD
-          type: string
-          format: uri
-          const: https://schema.beckn.io/
-        '@type':
-          type: string
-          default: beckn:FulfillmentStage
         id:
           description: A unique identifier for this stage of fulfillment
           type: string
@@ -34,24 +26,26 @@ components:
           items:
             $ref: https://schema.beckn.io/Instruction/v2.0/attributes.yaml#/components/schemas/Instruction
         preferences:
-          description: A extensible set of attributes that describe the fulfillment preferences
+          description: A extensible set of attributes that describe the fulfillment
+            preferences
           type: array
           items:
             $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
         start:
-          description: An extensible set of attributes that describe the criteria required to start this stage of fulfillment
+          description: An extensible set of attributes that describe the criteria
+            required to start this stage of fulfillment
           $ref: https://schema.beckn.io/FulfillmentStageEndpoint/v2.0/attributes.yaml#/components/schemas/FulfillmentStageEndpoint
         end:
-          description: An extensible set of attributes that describe the criteria required to end this stage of fulfillment
+          description: An extensible set of attributes that describe the criteria
+            required to end this stage of fulfillment
           $ref: https://schema.beckn.io/FulfillmentStageEndpoint/v2.0/attributes.yaml#/components/schemas/FulfillmentStageEndpoint
         fulfillmentStageAttributes:
-          description: An extensible set of attributes that describe this stage of fulfillment
+          description: An extensible set of attributes that describe this stage of
+            fulfillment
           $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
       x-jsonld:
         '@id': beckn:fulfillmentStage
       required:
-      - '@context'
-      - '@type'
       - id
       additionalProperties: false
       x-tags:

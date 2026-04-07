@@ -17,14 +17,6 @@ components:
       title: Skill
       type: object
       properties:
-        '@context':
-          type: string
-          format: uri
-          const: https://schema.beckn.io/
-        '@type':
-          type: string
-          enum:
-          - Skill
         category:
           $ref: https://schema.beckn.io/CategoryCode/v2.1/attributes.yaml#/components/schemas/CategoryCode
         descriptor:
@@ -32,8 +24,6 @@ components:
         id:
           type: string
       required:
-      - '@context'
-      - '@type'
       - id
       - descriptor
       additionalProperties: false

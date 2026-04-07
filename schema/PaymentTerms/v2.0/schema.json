@@ -8,15 +8,6 @@
   ],
   "type": "object",
   "properties": {
-    "@context": {
-      "type": "string",
-      "format": "uri",
-      "default": "https://schema.beckn.io/PaymentTerms/v2.0/context.jsonld"
-    },
-    "@type": {
-      "type": "string",
-      "default": "PaymentTerms"
-    },
     "collectedBy": {
       "description": "Describes the entity that first collects the payment from the consumer. This is the actor who is responsible to initiate the settlement process as per the terms described in the settlementTerms property.",
       "type": "string",

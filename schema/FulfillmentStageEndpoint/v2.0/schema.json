@@ -6,16 +6,6 @@
   "type": "object",
   "additionalProperties": false,
   "properties": {
-    "@context": {
-      "description": "CPD",
-      "type": "string",
-      "format": "uri",
-      "default": "https://schema.beckn.io/FulfillmentStageEndpoint/v2.0/context.jsonld"
-    },
-    "@type": {
-      "type": "string",
-      "default": "FulfillmentStageEndpoint"
-    },
     "location": {
       "$ref": "https://schema.beckn.io/Location/v2.0/attributes.yaml"
     },

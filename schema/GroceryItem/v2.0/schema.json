@@ -6,10 +6,7 @@
     {
       "type": "object",
       "additionalProperties": false,
-      "x-jsonld": {
-        "@context": "./context.jsonld",
-        "@type": "groc:GroceryItemAttributes"
-      },
+      "x-jsonld": {},
       "description": "Grocery-specific extensions to RetailCoreItemAttributes. Covers nutrition information and fresh produce declarations. ",
       "properties": {
         "nutrition": {

@@ -17,18 +17,6 @@ components:
       title: Invoice
       type: object
       properties:
-        '@context':
-          description: CPD
-          type: string
-          format: uri
-          const: https://schema.beckn.io/
-        '@type':
-          description: TPD
-          type: string
-          enum:
-          - Invoice
-          x-jsonld:
-            '@id': schema:Invoice
         dueDate:
           type:
           - string
@@ -42,7 +30,8 @@ components:
           x-jsonld:
             '@id': schema:identifier
         invoiceAttributes:
-          description: Attribute Pack for tax regime (e.g., GST/VAT), e-invoice refs, legal boilerplate, etc.
+          description: Attribute Pack for tax regime (e.g., GST/VAT), e-invoice refs,
+            legal boilerplate, etc.
           $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
         issueDate:
           type: string
@@ -69,8 +58,6 @@ components:
           items:
             $ref: https://schema.beckn.io/PriceSpecification/v2.1/attributes.yaml#/components/schemas/PriceSpecification
       required:
-      - '@context'
-      - '@type'
       - id
       - number
       - issueDate

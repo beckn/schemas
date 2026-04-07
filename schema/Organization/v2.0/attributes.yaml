@@ -2,7 +2,8 @@ openapi: 3.1.1
 info:
   title: Organization
   version: 2.0.0
-  description: An organization such as a company, non-profit, or governmental institution. Modeled after schema.org/Organization.
+  description: An organization such as a company, non-profit, or governmental institution.
+    Modeled after schema.org/Organization.
   license:
     name: CC-BY-NC-SA 4.0 International
   contact:
@@ -13,17 +14,11 @@ components:
     Organization:
       $id: https://schema.beckn.io/Organization/v2.0
       $schema: https://json-schema.org/draft/2020-12/schema
-      description: An organization such as a company, non-profit, or governmental institution. Modeled after schema.org/Organization.
+      description: An organization such as a company, non-profit, or governmental
+        institution. Modeled after schema.org/Organization.
       title: Organization
       type: object
       properties:
-        '@context':
-          type: string
-          format: uri
-          const: https://schema.beckn.io/
-        '@type':
-          type: string
-          default: beckn:Organization
         id:
           type: string
           description: Unique identifier for the organization
@@ -67,11 +62,10 @@ components:
           x-jsonld:
             '@id': schema:hasSkill
         organizationAttributes:
-          description: Extensible attribute pack for jurisdictional or domain-specific organization properties
+          description: Extensible attribute pack for jurisdictional or domain-specific
+            organization properties
           $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
       required:
-      - '@context'
-      - '@type'
       - id
       additionalProperties: false
       x-tags:

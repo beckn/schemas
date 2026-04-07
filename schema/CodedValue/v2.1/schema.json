@@ -2,24 +2,9 @@
   "type": "object",
   "description": "An authority-governed code value. The @context URI identifies the code system authority (e.g. UN ISIC, UNESCO ISCED, India NSQF). The @type identifies the class of code within that system. The code is the actual value. This pattern avoids hardcoding country-specific enumerations into the schema. ",
   "required": [
-    "@context",
-    "@type",
     "code"
   ],
   "properties": {
-    "@context": {
-      "type": "string",
-      "format": "uri",
-      "description": "URI of the canonical code system authority. Examples: \"https://unstats.un.org/unsd/classifications/Econ/isic\" (ISIC), \"https://uis.unesco.org/en/topic/international-standard-classification-education-isced\" (ISCED), \"https://www.nqfindia.org/\" (India NSQF). ",
-      "x-jsonld-id": "@context",
-      "default": "https://schema.beckn.io/CodedValue/v2.1/context.jsonld"
-    },
-    "@type": {
-      "type": "string",
-      "description": "Code class within the identified context. Examples: \"IndustryCode\", \"FieldOfEducationCode\", \"QualificationLevel\". ",
-      "x-jsonld-id": "@type",
-      "default": "CodedValue"
-    },
     "code": {
       "type": "string",
       "description": "The actual code value as defined by the authority. Examples: \"8299\" (ISIC: other business support), \"0613\" (ISCED: software), \"4\" (NSQF Level 4). ",

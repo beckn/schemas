@@ -8,15 +8,6 @@
   ],
   "type": "object",
   "properties": {
-    "@context": {
-      "type": "string",
-      "format": "uri",
-      "default": "https://schema.beckn.io/PaymentTerm/v2.0/context.jsonld"
-    },
-    "@type": {
-      "type": "string",
-      "default": "PaymentTerm"
-    },
     "id": {
       "description": "Unique identifier for this payment term within the order.",
       "type": "string",
@@ -117,9 +108,6 @@
       "type": "string"
     }
   },
-  "required": [
-    "@context",
-    "@type"
-  ],
+  "required": [],
   "additionalProperties": false
 }

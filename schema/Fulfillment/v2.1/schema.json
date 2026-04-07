@@ -8,22 +8,6 @@
   ],
   "type": "object",
   "properties": {
-    "@context": {
-      "description": "JSON-LD context URI",
-      "type": "string",
-      "format": "uri",
-      "default": "https://schema.beckn.io/Fulfillment/v2.1/context.jsonld"
-    },
-    "@type": {
-      "type": "string",
-      "enum": [
-        "Fulfillment"
-      ],
-      "x-jsonld": {
-        "@id": "schema:Thing"
-      },
-      "default": "Fulfillment"
-    },
     "agent": {
       "description": "The entity that directly performs the fulfillment",
       "$ref": "https://schema.beckn.io/FulfillmentAgent/v2.0/attributes.yaml"
@@ -78,8 +62,6 @@
     }
   },
   "required": [
-    "@context",
-    "@type",
     "mode"
   ],
   "additionalProperties": false

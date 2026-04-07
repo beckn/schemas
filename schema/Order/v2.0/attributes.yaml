@@ -17,16 +17,6 @@ components:
       title: Order
       type: object
       properties:
-        '@context':
-          type: string
-          format: uri
-          example: https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld
-        '@type':
-          type: string
-          enum:
-          - beckn:Order
-          x-jsonld:
-            '@id': schema:Order
         beckn:id:
           type: string
           x-jsonld:
@@ -100,8 +90,6 @@ components:
           $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
           description: Order-level Attribute Pack (vertical/regulatory specifics)
       required:
-      - '@context'
-      - '@type'
       - beckn:orderStatus
       - beckn:seller
       - beckn:buyer

@@ -2,7 +2,9 @@ openapi: 3.1.1
 info:
   title: Attributes
   version: 2.0.0
-  description: "Container schemas fetched from beckn.yaml. This cannot be extended as it is a reserved schema in beckn protocol. Any additional properties added to this schema can only be made using its *Attributes property"
+  description: Container schemas fetched from beckn.yaml. This cannot be extended
+    as it is a reserved schema in beckn protocol. Any additional properties added
+    to this schema can only be made using its *Attributes property
   license:
     name: CC-BY-NC-SA 4.0 International
   contact:
@@ -18,18 +20,8 @@ components:
         properties are allowed and interpreted per the provided JSON-LD context.
       title: Attributes
       type: object
-      properties:
-        '@context':
-          description: Use case specific JSON-LD context URI
-          type: string
-          example: https://example.org/schema/items/v1/ElectronicItem/schema-context.jsonld
-        '@type':
-          description: JSON-LD type defined within the context
-          type: string
-          example: ElectronicItem
-      required:
-      - '@context'
-      - '@type'
+      properties: {}
+      required: []
       additionalProperties: true
       x-tags:
       - common

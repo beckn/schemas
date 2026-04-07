@@ -17,19 +17,10 @@ components:
       title: Buyer
       type: object
       properties:
-        '@context':
-          type: string
-          format: uri
-          example: https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/core/v2/context.jsonld
-        '@type':
-          type: string
-          enum:
-          - beckn:Buyer
-          x-jsonld:
-            '@id': schema:Thing
         beckn:id:
           type: string
-          description: Unique identifier for the buyer (personId or orgId in legacy schema)
+          description: Unique identifier for the buyer (personId or orgId in legacy
+            schema)
           x-jsonld:
             '@id': schema:identifier
         beckn:role:
@@ -67,11 +58,10 @@ components:
             '@id': schema:taxID
         beckn:buyerAttributes:
           $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
-          description: 'Attribute Pack reference for richer identity: # buyer/identity.v1 (contact details: email, phone, address) # buyer/org-ids.v1 (LEI, GSTIN, ISIN, CUSIP…) # buyer/kyc.v1 (jurisdictional compliance fields) # buyer/preferences.v1 (delivery preferences, accessibility needs, etc.)
-
-            '
+          description: "Attribute Pack reference for richer identity: # buyer/identity.v1\
+            \ (contact details: email, phone, address) # buyer/org-ids.v1 (LEI, GSTIN,\
+            \ ISIN, CUSIP\u2026) # buyer/kyc.v1 (jurisdictional compliance fields)\
+            \ # buyer/preferences.v1 (delivery preferences, accessibility needs, etc.)\n"
       required:
-      - '@context'
-      - '@type'
       - beckn:id
       additionalProperties: false

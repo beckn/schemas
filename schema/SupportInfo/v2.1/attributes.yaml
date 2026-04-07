@@ -19,13 +19,6 @@ components:
       - common
       type: object
       properties:
-        '@context':
-          type: string
-          format: uri
-          default: https://schema.beckn.io/
-        '@type':
-          type: string
-          default: beckn:SupportInfo
         channels:
           description: Available support channels.
           type: array
@@ -61,9 +54,8 @@ components:
           type: string
           format: uri
         callbackStatus:
-          description: Status of a support callback request. Indicates whether a callback has been requested, scheduled, or completed.
+          description: Status of a support callback request. Indicates whether a callback
+            has been requested, scheduled, or completed.
           type: string
-      required:
-      - '@context'
-      - '@type'
+      required: []
       additionalProperties: false

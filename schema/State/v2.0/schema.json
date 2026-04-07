@@ -5,24 +5,11 @@
   "title": "State",
   "type": "object",
   "properties": {
-    "@context": {
-      "description": "CPD",
-      "type": "string",
-      "format": "uri",
-      "default": "https://schema.beckn.io/State/v2.0/context.jsonld"
-    },
-    "@type": {
-      "description": "TPD",
-      "type": "string",
-      "default": "State"
-    },
     "descriptor": {
       "$ref": "https://schema.beckn.io/Descriptor/v2.1/attributes.yaml"
     }
   },
   "required": [
-    "@context",
-    "@type",
     "descriptor"
   ],
   "additionalProperties": false,

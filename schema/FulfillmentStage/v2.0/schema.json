@@ -5,16 +5,6 @@
   "title": "FulfillmentStage",
   "type": "object",
   "properties": {
-    "@context": {
-      "description": "CPD",
-      "type": "string",
-      "format": "uri",
-      "default": "https://schema.beckn.io/FulfillmentStage/v2.0/context.jsonld"
-    },
-    "@type": {
-      "type": "string",
-      "default": "FulfillmentStage"
-    },
     "id": {
       "description": "A unique identifier for this stage of fulfillment",
       "type": "string"
@@ -50,8 +40,6 @@
     "@id": "beckn:fulfillmentStage"
   },
   "required": [
-    "@context",
-    "@type",
     "id"
   ],
   "additionalProperties": false,

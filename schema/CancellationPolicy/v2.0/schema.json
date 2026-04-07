@@ -7,20 +7,6 @@
     "common"
   ],
   "type": "object",
-  "properties": {
-    "@context": {
-      "description": "CPD",
-      "type": "string",
-      "format": "uri",
-      "default": "https://schema.beckn.io/CancellationPolicy/v2.0/context.jsonld"
-    },
-    "@type": {
-      "type": "string",
-      "x-jsonld": {
-        "@id": "schema:CreativeWork"
-      },
-      "default": "CancellationPolicy"
-    }
-  },
+  "properties": {},
   "additionalProperties": false
 }
