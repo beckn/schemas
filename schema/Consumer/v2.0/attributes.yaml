@@ -36,9 +36,9 @@ components:
           $ref: https://schema.beckn.io/Organization/v2.0/attributes.yaml#/components/schemas/Organization
       required: []
       oneOf:
-      - required:
-        - person
-      - required:
-        - organization
+        - required:
+            - person
+        - required:
+            - organization
       x-tags:
-      - common
+        - common
