@@ -3,49 +3,37 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "Schema definition for Consumer in the Beckn Protocol v2.0.1",
   "title": "Consumer",
-  "allOf": [
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "role": {
+      "description": "The functional role of the consumer in the transaction.",
+      "type": "string",
+      "x-jsonld": {
+        "@id": "schema:roleName"
+      }
+    },
+    "consumerAttributes": {
+      "description": "Attribute Pack reference for richer identity: # consumer/identity.v1 (contact details: email, phone, address) # consumer/org-ids.v1 (LEI, GSTIN, ISIN, CUSIP…) # consumer/kyc.v1 (jurisdictional compliance fields) # consumer/preferences.v1 (delivery preferences, accessibility needs, etc.)",
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
+    },
+    "person": {
+      "$ref": "https://schema.beckn.io/Person/v2.0/schema.json"
+    },
+    "organization": {
+      "$ref": "https://schema.beckn.io/Organization/v2.0/schema.json"
+    }
+  },
+  "required": [],
+  "oneOf": [
     {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "role": {
-          "description": "The functional role of the consumer in the transaction.",
-          "type": "string",
-          "x-jsonld": {
-            "@id": "schema:roleName"
-          }
-        },
-        "consumerAttributes": {
-          "description": "Attribute Pack reference for richer identity: # consumer/identity.v1 (contact details: email, phone, address) # consumer/org-ids.v1 (LEI, GSTIN, ISIN, CUSIP…) # consumer/kyc.v1 (jurisdictional compliance fields) # consumer/preferences.v1 (delivery preferences, accessibility needs, etc.)",
-          "$ref": "https://schema.beckn.io/Attributes/v2.0/attributes.yaml"
-        }
-      },
-      "required": []
+      "required": [
+        "person"
+      ]
     },
     {
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "person": {
-              "$ref": "https://schema.beckn.io/Person/v2.0/attributes.yaml"
-            }
-          },
-          "required": [
-            "person"
-          ]
-        },
-        {
-          "type": "object",
-          "properties": {
-            "organization": {
-              "$ref": "https://schema.beckn.io/Organization/v2.0/attributes.yaml"
-            }
-          },
-          "required": [
-            "organization"
-          ]
-        }
+      "required": [
+        "organization"
       ]
     }
   ],
