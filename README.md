@@ -1,11 +1,8 @@
 # Beckn Protocol Core Schema
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](./LICENSE.md)
-[![Status: Active Development](https://img.shields.io/badge/Status-Active%20Development-yellow.svg)]()
+[![Status: Active Development](https://img.shields.io/badge/Status-Live-green.svg)]()
 [![Version: v2.0](https://img.shields.io/badge/Version-v2.0-blue.svg)]()
-
-> **⚠️ Active Development Notice**  
-> This repository is under active development. All in-progress content lives in the [`draft`](../../tree/draft) branch. Content is being progressively reviewed and merged into `main` via pull requests.
 
 ---
 
