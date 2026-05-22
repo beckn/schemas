@@ -1,0 +1,38 @@
+openapi: 3.1.1
+$id: "https://schema.beckn.io/ServiceParticipant/v2.1/attributes.yaml"
+info:
+  title: ServiceParticipant Schema
+  version: "2.1.0"
+  description: >
+    Domain-neutral participant attributes for the Beckn generalised model.
+    Provides a credentialRefs array referencing Beckn Credential/2.0 objects
+    (W3C Verifiable Credentials or Document attachments) for runtime proof of
+    participant credentials. Domain-specific schemas extend this base via allOf.
+  x-beckn-container: participantAttributes
+
+components:
+  schemas:
+    ServiceParticipant:
+      type: object
+      x-beckn-container: participantAttributes
+      x-status: under-review
+      x-tags:
+        - service
+        - generic-service
+        - participant
+      x-jsonld:
+        "@context": "https://schema.beckn.io/ServiceParticipant/v2.1/context.jsonld"
+        "@type": "sp:ServiceParticipant"
+      properties:
+        credentialRefs:
+          type: array
+          description: >
+            Runtime proof references for this participant's credentials.
+            Each entry is a Beckn Credential/2.0 object — either a W3C Verifiable
+            Credential (opaque JSON object, machine-verifiable) or a Document
+            attachment reference (label + url + mimeType, for manual/offline
+            verification). Use the Document `standard` field to indicate credential
+            type (e.g. MedicalLicence, FacilityAccreditation, NGORegistration).
+          items:
+            $ref: "https://schema.beckn.io/Credential/v2.0/attributes.yaml#/components/schemas/Credential"
+          x-jsonld-id: "sp:credentialRefs"

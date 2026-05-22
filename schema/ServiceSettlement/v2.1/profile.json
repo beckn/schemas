@@ -1,0 +1,13 @@
+{
+  "id": "https://schema.beckn.io/ServiceSettlement/v2.1",
+  "name": "ServiceSettlement",
+  "version": "2.1.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": ["ServiceSettlement"],
+  "discovery_fields": [],
+  "indexable_paths": [],
+  "filterable_paths": ["paymentReceivedByProvider"],
+  "sortable_paths": ["paymentRecordedAt"],
+  "privacy_notes": ["receiptRef identifies payment transactions", "paymentRecordedAt reveals settlement timing"]
+}

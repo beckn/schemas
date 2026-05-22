@@ -1,0 +1,25 @@
+{
+  "@context": {
+    "sr": "https://schema.beckn.io/ServiceResource#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+    {"@id": "sr:ServiceUnit", "@type": "rdfs:Class", "rdfs:label": "ServiceUnit"},
+    {"@id": "sr:PER_HOUR", "@type": "sr:ServiceUnit", "rdfs:label": "Per Hour"},
+    {"@id": "sr:PER_SESSION", "@type": "sr:ServiceUnit", "rdfs:label": "Per Session"},
+    {"@id": "sr:PER_VISIT", "@type": "sr:ServiceUnit", "rdfs:label": "Per Visit"},
+    {"@id": "sr:PER_UNIT", "@type": "sr:ServiceUnit", "rdfs:label": "Per Unit"},
+    {"@id": "sr:PER_KG", "@type": "sr:ServiceUnit", "rdfs:label": "Per Kilogram"},
+    {"@id": "sr:PER_DAY", "@type": "sr:ServiceUnit", "rdfs:label": "Per Day"},
+    {"@id": "sr:PER_PIECE", "@type": "sr:ServiceUnit", "rdfs:label": "Per Piece"},
+    {"@id": "sr:OTHER", "@type": "sr:ServiceUnit", "rdfs:label": "Other"},
+    {"@id": "sr:DayOfWeek", "@type": "rdfs:Class", "rdfs:label": "DayOfWeek"},
+    {"@id": "sr:MONDAY", "@type": "sr:DayOfWeek", "rdfs:label": "Monday"},
+    {"@id": "sr:TUESDAY", "@type": "sr:DayOfWeek", "rdfs:label": "Tuesday"},
+    {"@id": "sr:WEDNESDAY", "@type": "sr:DayOfWeek", "rdfs:label": "Wednesday"},
+    {"@id": "sr:THURSDAY", "@type": "sr:DayOfWeek", "rdfs:label": "Thursday"},
+    {"@id": "sr:FRIDAY", "@type": "sr:DayOfWeek", "rdfs:label": "Friday"},
+    {"@id": "sr:SATURDAY", "@type": "sr:DayOfWeek", "rdfs:label": "Saturday"},
+    {"@id": "sr:SUNDAY", "@type": "sr:DayOfWeek", "rdfs:label": "Sunday"}
+  ]
+}

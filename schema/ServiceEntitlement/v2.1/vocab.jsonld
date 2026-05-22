@@ -1,0 +1,15 @@
+{
+  "@context": {
+    "se": "https://schema.beckn.io/ServiceEntitlement#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+    {"@id": "se:EntitlementState", "@type": "rdfs:Class", "rdfs:label": "EntitlementState"},
+    {"@id": "se:DRAFT",   "@type": "se:EntitlementState", "rdfs:label": "Draft — created but not yet confirmed"},
+    {"@id": "se:ACTIVE",  "@type": "se:EntitlementState", "rdfs:label": "Active — confirmed and redeemable"},
+    {"@id": "se:LOW",     "@type": "se:EntitlementState", "rdfs:label": "Low — remaining capacity below threshold"},
+    {"@id": "se:EXPIRED", "@type": "se:EntitlementState", "rdfs:label": "Expired — validity period has passed"},
+    {"@id": "se:REVOKED", "@type": "se:EntitlementState", "rdfs:label": "Revoked — cancelled before natural expiry"},
+    {"@id": "se:CLOSED",  "@type": "se:EntitlementState", "rdfs:label": "Closed — fully consumed or administratively closed"}
+  ]
+}

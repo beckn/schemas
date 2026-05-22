@@ -1,0 +1,8 @@
+{
+  "schema": "ServiceConsideration",
+  "version": "2.1.0",
+  "card_template": "{{totalAmount}} {{currency}} | {{selectedPaymentMethod}}",
+  "detail_template": "Price per Unit: {{pricePerUnit}} {{currency}}\nTotal: {{totalAmount}} {{currency}}\nPayment Method: {{selectedPaymentMethod}}\nAccepted Methods: {{#each paymentMethodsAccepted}}{{this}} {{/each}}",
+  "html": "<div class=\"service-consideration-card\"><span class=\"price\">{{totalAmount}}<span class=\"currency\">{{currency}}</span></span><span class=\"payment-method\">{{selectedPaymentMethod}}</span></div>",
+  "html_detail": "<div class=\"service-consideration-detail\"><h3>Pricing & Payment</h3><dl><dt>Price per Unit</dt><dd>{{pricePerUnit}} {{currency}}</dd><dt>Total Amount</dt><dd>{{totalAmount}} {{currency}}</dd><dt>Selected Payment</dt><dd>{{selectedPaymentMethod}}</dd><dt>Accepted Methods</dt><dd>{{#each paymentMethodsAccepted}}<span class=\"badge\">{{this}}</span> {{/each}}</dd>{{#if transactionRef}}<dt>Transaction Reference</dt><dd>{{transactionRef}}</dd>{{/if}}</dl></div>"
+}

@@ -1,0 +1,8 @@
+{
+  "schema": "ServiceParticipant",
+  "version": "2.1.0",
+  "card_template": "{{#if credentialRefs}}{{credentialRefs.length}} credential(s) attached{{else}}No credentials{{/if}}",
+  "detail_template": "Credentials:\n{{#each credentialRefs}}  [{{@index}}] {{#if standard}}{{standard}} — {{label}} ({{mimeType}}){{else}}Verifiable Credential (VC){{/if}}\n{{/each}}",
+  "html": "<div class=\"service-participant-card\">{{#if credentialRefs}}<span class=\"badge credentials\">{{credentialRefs.length}} credential(s)</span>{{#each credentialRefs}}{{#if standard}}<span class=\"doc-credential\">{{standard}}</span>{{else}}<span class=\"vc-credential\">VC</span>{{/if}}{{/each}}{{else}}<span class=\"no-credentials\">No credentials attached</span>{{/if}}</div>",
+  "html_detail": "<div class=\"service-participant-detail\"><h3>Participant Credentials</h3>{{#if beckn:participantAttributes.credentialRefs}}<ul class=\"credential-list\">{{#each beckn:participantAttributes.credentialRefs}}{{#if standard}}<li class=\"credential-item document\"><span class=\"credential-label\">{{label}}</span><span class=\"credential-standard badge\">{{standard}}</span>{{#if url}}<a href=\"{{url}}\" target=\"_blank\" class=\"credential-link\">View</a>{{/if}}<span class=\"credential-mime\">{{mimeType}}</span></li>{{else}}<li class=\"credential-item vc\"><span class=\"credential-label\">Verifiable Credential</span><span class=\"credential-standard badge\">W3C VC</span></li>{{/if}}{{/each}}</ul>{{else}}<p class=\"no-credentials\">No credentials attached to this participant.</p>{{/if}}</div>"
+}

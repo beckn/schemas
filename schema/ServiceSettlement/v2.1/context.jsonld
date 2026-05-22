@@ -1,0 +1,22 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "ssl": "https://schema.beckn.io/ServiceSettlement#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+
+    "ServiceSettlement": "ssl:ServiceSettlement",
+    "AdjustmentType": "ssl:AdjustmentType",
+
+    "paymentReceivedByProvider": {"@id": "ssl:paymentReceivedByProvider"},
+    "paymentRecordedAt": {"@id": "ssl:paymentRecordedAt"},
+    "receiptRef": {"@id": "ssl:receiptRef"},
+    "paymentNotes": {"@id": "ssl:paymentNotes"},
+    "adjustmentType": {"@id": "ssl:adjustmentType"},
+    "adjustmentAmount": {"@id": "ssl:adjustmentAmount"},
+    "adjustmentReason": {"@id": "ssl:adjustmentReason"},
+    "adjustedAt": {"@id": "ssl:adjustedAt"},
+    "finalSettlementRef": {"@id": "ssl:finalSettlementRef"},
+    "disputeRef": {"@id": "ssl:disputeRef"}
+  }
+}

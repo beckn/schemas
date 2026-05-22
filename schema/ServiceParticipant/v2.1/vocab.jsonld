@@ -1,0 +1,22 @@
+{
+  "@context": {
+    "@vocab": "https://schema.beckn.io/ServiceParticipant#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://schema.beckn.io/ServiceParticipant#ServiceParticipant",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ServiceParticipant",
+      "rdfs:comment": "Domain-neutral base participant attributes carrying credential references for runtime proof."
+    },
+    {
+      "@id": "https://schema.beckn.io/ServiceParticipant#credentialRefs",
+      "@type": "rdf:Property",
+      "rdfs:label": "credentialRefs",
+      "rdfs:comment": "Array of Beckn Credential/2.0 objects (W3C VC or Document Credential) proving participant qualifications.",
+      "rdfs:domain": {"@id": "https://schema.beckn.io/ServiceParticipant#ServiceParticipant"}
+    }
+  ]
+}

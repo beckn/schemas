@@ -1,0 +1,13 @@
+{
+  "id": "https://schema.beckn.io/ServiceOffer/v2.1",
+  "name": "ServiceOffer",
+  "version": "2.1.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": ["ServiceOffer"],
+  "discovery_fields": ["minimumQuantity", "maximumQuantity", "requiresAdvanceBooking"],
+  "indexable_paths": ["requiresAdvanceBooking"],
+  "filterable_paths": ["requiresAdvanceBooking", "bulkDiscountAvailable"],
+  "sortable_paths": [],
+  "privacy_notes": []
+}

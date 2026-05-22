@@ -1,0 +1,8 @@
+{
+  "schema": "ServicePerformance",
+  "version": "2.1.0",
+  "card_template": "{{confirmedAppointmentTime}} | {{serviceLocation.address}} | {{#if providerConfirmedCompletion}}Completed{{else}}Pending{{/if}}",
+  "detail_template": "Appointment: {{confirmedAppointmentTime}}\nLocation: {{serviceLocation.address}}\nRegion: {{serviceLocation.region}}, {{serviceLocation.country}}\nProvider Completed: {{providerConfirmedCompletion}}\nClient Completed: {{clientConfirmedCompletion}}\nFollow-up Required: {{followUpRequired}}",
+  "html": "<div class=\"service-performance-card\"><time>{{confirmedAppointmentTime}}</time><address>{{serviceLocation.address}}</address><span class=\"status\">{{#if providerConfirmedCompletion}}Completed{{else}}In Progress{{/if}}</span></div>",
+  "html_detail": "<div class=\"service-performance-detail\"><h3>Service Details</h3><dl><dt>Appointment</dt><dd>{{confirmedAppointmentTime}}</dd><dt>Location</dt><dd>{{serviceLocation.address}}<br/>{{serviceLocation.region}}, {{serviceLocation.country}}</dd>{{#if serviceLocation.geo}}<dt>Coordinates</dt><dd>{{serviceLocation.geo.coordinates.[0]}}, {{serviceLocation.geo.coordinates.[1]}}</dd>{{/if}}{{#if serviceLocation.locationLandmark}}<dt>Landmark</dt><dd>{{serviceLocation.locationLandmark}}</dd>{{/if}}<dt>Provider Confirmed</dt><dd>{{providerConfirmedCompletion}}</dd><dt>Client Confirmed</dt><dd>{{clientConfirmedCompletion}}</dd>{{#if followUpRequired}}<dt>Follow-up Date</dt><dd>{{followUpDate}}</dd>{{/if}}{{#if serviceNotes}}<dt>Notes</dt><dd>{{serviceNotes}}</dd>{{/if}}</dl></div>"
+}

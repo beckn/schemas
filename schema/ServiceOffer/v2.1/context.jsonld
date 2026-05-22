@@ -1,0 +1,21 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "sof": "https://schema.beckn.io/ServiceOffer#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+
+    "ServiceOffer": "sof:ServiceOffer",
+
+    "minimumQuantity": {"@id": "sof:minimumQuantity"},
+    "maximumQuantity": {"@id": "sof:maximumQuantity"},
+    "requiresAdvanceBooking": {"@id": "sof:requiresAdvanceBooking"},
+    "bulkDiscountAvailable": {"@id": "sof:bulkDiscountAvailable"},
+    "eligibilityCriteria": {"@id": "sof:eligibilityCriteria", "@container": "@list"},
+    "validityPeriodDays": {"@id": "sof:validityPeriodDays"},
+    "cancellationPolicies": {"@id": "sof:cancellationPolicies", "@container": "@list"},
+    "hoursBeforeService": {"@id": "sof:hoursBeforeService"},
+    "refundFraction": {"@id": "sof:refundFraction"},
+    "cancellationPolicyDescription": {"@id": "sof:cancellationPolicyDescription"}
+  }
+}

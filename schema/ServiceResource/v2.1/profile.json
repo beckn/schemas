@@ -1,0 +1,13 @@
+{
+  "id": "https://schema.beckn.io/ServiceResource/v2.1",
+  "name": "ServiceResource",
+  "version": "2.1.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": ["ServiceResource"],
+  "discovery_fields": ["serviceUnit", "coverageArea", "availabilitySchedule"],
+  "indexable_paths": ["serviceUnit", "coverageArea.region", "coverageArea.country"],
+  "filterable_paths": ["serviceUnit", "coverageArea.country", "languagesSupported"],
+  "sortable_paths": ["capacityPerDay", "minimumBookingAdvanceHours"],
+  "privacy_notes": []
+}

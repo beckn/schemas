@@ -1,0 +1,8 @@
+{
+  "schema": "ServiceSettlement",
+  "version": "2.1.0",
+  "card_template": "{{#if paymentReceivedByProvider}}Payment Received{{else}}Pending{{/if}} | {{paymentRecordedAt}}",
+  "detail_template": "Status: {{#if paymentReceivedByProvider}}Received{{else}}Pending{{/if}}\nRecorded: {{paymentRecordedAt}}\nReceipt: {{receiptRef}}\nNotes: {{paymentNotes}}",
+  "html": "<div class=\"service-settlement-card\"><span class=\"status {{#if paymentReceivedByProvider}}received{{else}}pending{{/if}}\">{{#if paymentReceivedByProvider}}Payment Received{{else}}Pending{{/if}}</span><time>{{paymentRecordedAt}}</time></div>",
+  "html_detail": "<div class=\"service-settlement-detail\"><h3>Payment Settlement</h3><dl><dt>Status</dt><dd>{{#if paymentReceivedByProvider}}<span class=\"badge success\">Received by Provider</span>{{else}}<span class=\"badge pending\">Pending</span>{{/if}}</dd>{{#if paymentRecordedAt}}<dt>Recorded</dt><dd>{{paymentRecordedAt}}</dd>{{/if}}{{#if receiptRef}}<dt>Receipt Reference</dt><dd>{{receiptRef}}</dd>{{/if}}{{#if paymentNotes}}<dt>Notes</dt><dd>{{paymentNotes}}</dd>{{/if}}</dl></div>"
+}

@@ -1,0 +1,53 @@
+openapi: 3.1.1
+$id: "https://schema.beckn.io/ServiceContract/v2.1/attributes.yaml"
+info:
+  title: ServiceContract Schema
+  version: "2.1.0"
+  description: Schema for representing service contract attributes in the generalised Beckn Protocol model
+  x-beckn-container: contractAttributes
+
+components:
+  schemas:
+    ServiceContract:
+      type: object
+      x-beckn-container: contractAttributes
+      x-status: under-review
+      x-tags:
+        - service
+        - generic-service
+        - contract
+      x-jsonld:
+        "@context": "https://schema.beckn.io/ServiceContract/v2.1/context.jsonld"
+        "@type": "sc:ServiceContract"
+      properties:
+        bookingChannel:
+          type: string
+          enum:
+            - APP
+            - VOICE
+            - IN_PERSON
+            - USSD
+            - WHATSAPP
+            - SMS
+            - OTHER
+          description: Channel through which the service was booked
+          x-jsonld-id: "sc:bookingChannel"
+        clientNotes:
+          type: string
+          maxLength: 500
+          description: Notes provided by the client at time of booking
+          x-jsonld-id: "sc:clientNotes"
+        cancellationReason:
+          type: string
+          maxLength: 300
+          description: Reason provided if the contract is cancelled
+          x-jsonld-id: "sc:cancellationReason"
+        facilitatorId:
+          type: string
+          description: Unique identifier of the intermediary facilitating the service if applicable
+          x-jsonld-id: "sc:facilitatorId"
+        reminderSentAt:
+          type: string
+          format: date-time
+          description: Timestamp when appointment reminder was sent to client
+          x-jsonld-id: "sc:reminderSentAt"

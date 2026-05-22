@@ -1,0 +1,8 @@
+{
+  "schema": "ServiceEntitlement",
+  "version": "2.1.0",
+  "card_template": "Entitlement {{entitlementId}} | {{remainingCapacity}} of {{totalCapacity}} remaining | {{state}} | valid until {{validUntil}}",
+  "detail_template": "Entitlement ID: {{entitlementId}}\nIssuer: {{issuerId}}\nHolder: {{holderId}}\nState: {{state}}\nCapacity: {{remainingCapacity}} / {{totalCapacity}} remaining\nValid: {{validFrom}} to {{validUntil}}\n{{#if geographyScope}}Geography: {{#each geographyScope}}{{this}} {{/each}}{{/if}}",
+  "html": "<div class=\"entitlement-card\"><span class=\"badge state-{{state}}\">{{state}}</span><span class=\"capacity\">{{remainingCapacity}}<span class=\"total\"> / {{totalCapacity}}</span></span><span class=\"validity\">Valid until {{validUntil}}</span></div>",
+  "html_detail": "<div class=\"entitlement-detail\"><h3>Service Entitlement</h3><dl><dt>Entitlement ID</dt><dd>{{entitlementId}}</dd><dt>Issuer</dt><dd>{{issuerId}}</dd><dt>Holder</dt><dd>{{holderId}}</dd><dt>State</dt><dd><span class=\"badge state-{{state}}\">{{state}}</span></dd><dt>Capacity Used</dt><dd>{{usedCapacity}} of {{totalCapacity}} ({{remainingCapacity}} remaining)</dd><dt>Valid From</dt><dd>{{validFrom}}</dd><dt>Valid Until</dt><dd>{{validUntil}}</dd>{{#if geographyScope}}<dt>Geography Scope</dt><dd>{{#each geographyScope}}<span class=\"badge\">{{this}}</span> {{/each}}</dd>{{/if}}{{#if redemptionRules}}<dt>Max per Redemption</dt><dd>{{redemptionRules.maxPerRedemption}}</dd>{{/if}}</dl></div>"
+}

@@ -1,0 +1,17 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "sc": "https://schema.beckn.io/ServiceContract#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+
+    "ServiceContract": "sc:ServiceContract",
+    "BookingChannel": "sc:BookingChannel",
+
+    "bookingChannel": {"@id": "sc:bookingChannel"},
+    "clientNotes": {"@id": "sc:clientNotes"},
+    "cancellationReason": {"@id": "sc:cancellationReason"},
+    "facilitatorId": {"@id": "sc:facilitatorId"},
+    "reminderSentAt": {"@id": "sc:reminderSentAt"}
+  }
+}
