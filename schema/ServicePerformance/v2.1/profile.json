@@ -4,10 +4,26 @@
   "version": "2.1.0",
   "protocol_version": "2.0",
   "semantic_model": "generalised",
-  "included_schemas": ["ServicePerformance"],
-  "discovery_fields": ["confirmedAppointmentTime", "serviceLocation"],
-  "indexable_paths": ["confirmedAppointmentTime", "serviceLocation.region", "serviceLocation.country"],
-  "filterable_paths": ["providerConfirmedCompletion", "clientConfirmedCompletion", "followUpRequired"],
-  "sortable_paths": ["confirmedAppointmentTime"],
-  "privacy_notes": ["serviceNotes may contain sensitive service details", "geo field exposes precise GeoJSON coordinates — restrict location data in responses where farmer privacy is required"]
+  "included_schemas": [
+    "ServicePerformance"
+  ],
+  "discovery_fields": [
+    "confirmedAppointmentTime",
+    "serviceLocation"
+  ],
+  "indexable_paths": [
+    "confirmedAppointmentTime"
+  ],
+  "filterable_paths": [
+    "providerConfirmedCompletion",
+    "clientConfirmedCompletion",
+    "followUpRequired"
+  ],
+  "sortable_paths": [
+    "confirmedAppointmentTime"
+  ],
+  "privacy_notes": [
+    "serviceNotes may contain sensitive service details",
+    "geo field exposes precise GeoJSON coordinates \u2014 restrict location data in responses where client privacy is required"
+  ]
 }

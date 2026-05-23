@@ -4,32 +4,78 @@
     "beckn": "https://schema.beckn.io/",
     "scn": "https://schema.beckn.io/ServiceConsideration#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-
     "ServiceConsideration": "scn:ServiceConsideration",
     "PaymentMethod": "scn:PaymentMethod",
     "PayerArchetype": "scn:PayerArchetype",
-
-    "pricePerUnit": {"@id": "scn:pricePerUnit"},
-    "currency": {"@id": "scn:currency"},
-    "totalAmount": {"@id": "scn:totalAmount"},
-    "discountRef": {"@id": "scn:discountRef"},
-    "netAmount": {"@id": "scn:netAmount"},
-    "paymentMethodsAccepted": {"@id": "scn:paymentMethodsAccepted", "@container": "@list"},
-    "selectedPaymentMethod": {"@id": "scn:selectedPaymentMethod"},
-    "transactionRef": {"@id": "scn:transactionRef"},
-    "payerArchetype": {"@id": "scn:payerArchetype"},
-    "paymentSchedule": {"@id": "scn:paymentSchedule", "@container": "@list"},
-    "milestoneId": {"@id": "scn:milestoneId"},
-    "amount": {"@id": "scn:amount"},
-    "description": {"@id": "scn:milestoneDescription"},
-    "dueDate": {"@id": "scn:dueDate"},
-    "paid": {"@id": "scn:paid"},
-    "paidAt": {"@id": "scn:paidAt"},
-    "paymentAuthorisation": {"@id": "scn:paymentAuthorisation"},
-    "authCode": {"@id": "scn:authCode"},
-    "authProvider": {"@id": "scn:authProvider"},
-    "authTimestamp": {"@id": "scn:authTimestamp"},
-    "authAmount": {"@id": "scn:authAmount"},
-    "entitlementRef": {"@id": "scn:entitlementRef"}
+    "pricePerUnit": {
+      "@id": "scn:pricePerUnit"
+    },
+    "currency": {
+      "@id": "scn:currency"
+    },
+    "totalAmount": {
+      "@id": "scn:totalAmount"
+    },
+    "discountRef": {
+      "@id": "scn:discountRef"
+    },
+    "netAmount": {
+      "@id": "scn:netAmount"
+    },
+    "paymentMethodsAccepted": {
+      "@id": "scn:paymentMethodsAccepted",
+      "@container": "@list"
+    },
+    "selectedPaymentMethod": {
+      "@id": "scn:selectedPaymentMethod"
+    },
+    "transactionRef": {
+      "@id": "scn:transactionRef"
+    },
+    "payerArchetype": {
+      "@id": "scn:payerArchetype"
+    },
+    "paymentSchedule": {
+      "@id": "scn:paymentSchedule",
+      "@container": "@list",
+      "@context": {
+        "description": "scn:milestoneDescription",
+        "milestoneDescription": "scn:milestoneDescription"
+      }
+    },
+    "milestoneId": {
+      "@id": "scn:milestoneId"
+    },
+    "amount": {
+      "@id": "scn:amount"
+    },
+    "dueDate": {
+      "@id": "scn:dueDate"
+    },
+    "paid": {
+      "@id": "scn:paid"
+    },
+    "paidAt": {
+      "@id": "scn:paidAt"
+    },
+    "paymentAuthorisation": {
+      "@id": "scn:paymentAuthorisation"
+    },
+    "authCode": {
+      "@id": "scn:authCode"
+    },
+    "authProvider": {
+      "@id": "scn:authProvider"
+    },
+    "authTimestamp": {
+      "@id": "scn:authTimestamp"
+    },
+    "authAmount": {
+      "@id": "scn:authAmount"
+    },
+    "entitlementRef": {
+      "@id": "scn:entitlementRef"
+    },
+    "milestoneDescription": "scn:milestoneDescription"
   }
 }

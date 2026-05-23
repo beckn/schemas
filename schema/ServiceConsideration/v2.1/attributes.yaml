@@ -5,9 +5,9 @@ info:
   version: "2.1.0"
   description: >
     Schema for representing service consideration (pricing and payment) attributes
-    in the generalised Beckn Protocol model. v2.2 enriches v2.1 with payer archetype,
-    net amount after discount, milestone payment schedules, and the bifurcation
-    discriminator between fresh payment authorisation and entitlement drawdown.
+    in the generalised Beckn Protocol model. Covers payer archetype, gross and net
+    amounts, milestone-based payment schedules, and the mutual-exclusivity discriminator
+    between fresh payment authorisation and entitlement drawdown.
   x-beckn-container: considerationAttributes
 
 components:
@@ -109,6 +109,7 @@ components:
               description:
                 type: string
                 description: Human-readable description of the milestone trigger
+                x-jsonld-id: "scn:milestoneDescription"
               dueDate:
                 type: string
                 format: date
