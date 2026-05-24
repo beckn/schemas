@@ -1,0 +1,26 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "spm": "https://schema.beckn.io/ServicePerformance#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+
+    "ServicePerformance": "spm:ServicePerformance",
+    "ServiceLocation": "spm:ServiceLocation",
+
+    "appointmentWindowStart": {"@id": "spm:appointmentWindowStart"},
+    "appointmentWindowEnd": {"@id": "spm:appointmentWindowEnd"},
+    "confirmedAppointmentTime": {"@id": "spm:confirmedAppointmentTime"},
+    "serviceLocation": {"@id": "spm:serviceLocation"},
+    "providerConfirmedCompletion": {"@id": "spm:providerConfirmedCompletion"},
+    "clientConfirmedCompletion": {"@id": "spm:clientConfirmedCompletion"},
+    "serviceNotes": {"@id": "spm:serviceNotes"},
+    "followUpRequired": {"@id": "spm:followUpRequired"},
+    "followUpDate": {"@id": "spm:followUpDate"},
+    "address": {"@id": "spm:address"},
+    "pincode": {"@id": "spm:pincode"},
+    "locationLandmark": {"@id": "spm:locationLandmark"},
+    "geo": {"@id": "spm:geo"},
+    "coordinates": {"@id": "spm:coordinates", "@container": "@list"}
+  }
+}

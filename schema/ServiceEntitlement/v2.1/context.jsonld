@@ -1,0 +1,91 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "se": "https://schema.beckn.io/ServiceEntitlement#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "ServiceEntitlement": "se:ServiceEntitlement",
+    "EntitlementState": "se:EntitlementState",
+    "entitlementId": {
+      "@id": "se:entitlementId"
+    },
+    "issuerId": {
+      "@id": "se:issuerId"
+    },
+    "holderId": {
+      "@id": "se:holderId"
+    },
+    "serviceScope": {
+      "@id": "se:serviceScope",
+      "@container": "@list"
+    },
+    "totalCapacity": {
+      "@id": "se:totalCapacity"
+    },
+    "usedCapacity": {
+      "@id": "se:usedCapacity"
+    },
+    "remainingCapacity": {
+      "@id": "se:remainingCapacity"
+    },
+    "validFrom": {
+      "@id": "se:validFrom"
+    },
+    "validUntil": {
+      "@id": "se:validUntil"
+    },
+    "geographyScope": {
+      "@id": "se:geographyScope",
+      "@container": "@list"
+    },
+    "counterpartyScope": {
+      "@id": "se:counterpartyScope",
+      "@container": "@list"
+    },
+    "redemptionRules": {
+      "@id": "se:redemptionRules",
+      "@context": {
+        "minPerRedemption": "se:minPerRedemption",
+        "maxPerRedemption": "se:maxPerRedemption",
+        "cooldownHours": "se:cooldownHours"
+      }
+    },
+    "refundRules": {
+      "@id": "se:refundRules"
+    },
+    "forfeitureRules": {
+      "@id": "se:forfeitureRules"
+    },
+    "lockedTermsSnapshot": {
+      "@id": "se:lockedTermsSnapshot",
+      "@context": {
+        "offerId": "se:lts_offerId",
+        "pricePerUnit": "se:lts_pricePerUnit",
+        "currency": "se:lts_currency",
+        "discountRef": "se:lts_discountRef",
+        "lockedAt": "se:lts_lockedAt"
+      }
+    },
+    "grievanceRef": {
+      "@id": "se:grievanceRef"
+    },
+    "state": {
+      "@id": "se:state"
+    },
+    "lts_offerId": {
+      "@id": "se:lts_offerId"
+    },
+    "lts_pricePerUnit": {
+      "@id": "se:lts_pricePerUnit"
+    },
+    "lts_currency": {
+      "@id": "se:lts_currency"
+    },
+    "lts_discountRef": {
+      "@id": "se:lts_discountRef"
+    },
+    "lts_lockedAt": {
+      "@id": "se:lts_lockedAt"
+    }
+  }
+}

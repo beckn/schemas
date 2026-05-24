@@ -1,0 +1,8 @@
+{
+  "schema": "ServiceOffer",
+  "version": "2.1.0",
+  "card_template": "Min: {{minimumQuantity}} | Max: {{maximumQuantity}} | Advance Booking: {{requiresAdvanceBooking}}",
+  "detail_template": "Quantity Range: {{minimumQuantity}} - {{maximumQuantity}}\nAdvance Booking Required: {{requiresAdvanceBooking}}\nCancellation Policies: {{#each cancellationPolicies}}Cancel > {{hoursBeforeService}}h: {{refundFraction}} refund{{#unless @last}}; {{/unless}}{{/each}}\nBulk Discount: {{bulkDiscountAvailable}}",
+  "html": "<div class=\"service-offer-card\"><span class=\"qty-range\">{{minimumQuantity}} - {{maximumQuantity}} units</span><span class=\"advance-booking\">{{#if requiresAdvanceBooking}}Advance Booking Required{{else}}Walk-in Available{{/if}}</span><span class=\"bulk-discount\">{{#if bulkDiscountAvailable}}Bulk Discounts Available{{/if}}</span></div>",
+  "html_detail": "<div class=\"service-offer-detail\"><h3>Booking Terms</h3><dl><dt>Quantity Range</dt><dd>{{minimumQuantity}} - {{maximumQuantity}} units</dd><dt>Advance Booking</dt><dd>{{#if requiresAdvanceBooking}}Required{{else}}Not Required{{/if}}</dd><dt>Cancellation Policies</dt><dd>{{#each cancellationPolicies}}<span>Cancel &gt; {{hoursBeforeService}}h: {{refundFraction}} refund</span>{{#unless @last}} &middot; {{/unless}}{{/each}}</dd><dt>Bulk Discount</dt><dd>{{#if bulkDiscountAvailable}}Available{{else}}Not Available{{/if}}</dd></dl></div>"
+}

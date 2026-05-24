@@ -1,0 +1,194 @@
+openapi: 3.1.1
+$id: "https://schema.beckn.io/ServiceConsideration/v2.1/attributes.yaml"
+info:
+  title: ServiceConsideration Schema
+  version: "2.1.0"
+  description: >
+    Schema for representing service consideration (pricing and payment) attributes
+    in the generalised Beckn Protocol model. Covers payer archetype, gross and net
+    amounts, milestone-based payment schedules, and the mutual-exclusivity discriminator
+    between fresh payment authorisation and entitlement drawdown.
+  x-beckn-container: considerationAttributes
+
+components:
+  schemas:
+    ServiceConsideration:
+      type: object
+      x-beckn-container: considerationAttributes
+      x-status: under-review
+      x-tags:
+        - service
+        - generic-service
+        - consideration
+      x-jsonld:
+        "@context": "https://schema.beckn.io/ServiceConsideration/v2.1/context.jsonld"
+        "@type": "scn:ServiceConsideration"
+      properties:
+        pricePerUnit:
+          type: number
+          minimum: 0
+          description: Price per unit of service
+          x-jsonld-id: "scn:pricePerUnit"
+        currency:
+          type: string
+          description: ISO 4217 currency code (e.g., USD, INR, EUR)
+          x-jsonld-id: "scn:currency"
+        totalAmount:
+          type: number
+          minimum: 0
+          description: Gross total amount before any discounts
+          x-jsonld-id: "scn:totalAmount"
+        discountRef:
+          type: string
+          description: Reference to an applicable discount scheme, coupon, or negotiated rate
+          x-jsonld-id: "scn:discountRef"
+        netAmount:
+          type: number
+          minimum: 0
+          description: Net amount payable after applying discounts (equals totalAmount if no discount)
+          x-jsonld-id: "scn:netAmount"
+        paymentMethodsAccepted:
+          type: array
+          items:
+            type: string
+          description: >
+            List of payment methods accepted by the provider for this consideration.
+            Values are network-defined strings — no global enum is enforced at the schema
+            layer, as valid payment methods vary by geography and network policy.
+            Common examples: CASH, CARD, BANK_TRANSFER, MOBILE_MONEY, DIGITAL_WALLET,
+            UPI, NEFT, RTGS, M_PESA, SEPA, ACH, OTHER.
+            Networks SHOULD publish their accepted payment method vocabulary in their
+            network policy documentation.
+          x-jsonld-id: "scn:paymentMethodsAccepted"
+        selectedPaymentMethod:
+          type: string
+          description: >
+            Payment method selected by the client for this engagement.
+            Must be one of the values listed in paymentMethodsAccepted for this consideration.
+            Value is a network-defined string — no global enum is enforced at the schema layer.
+            Common examples: CASH, CARD, BANK_TRANSFER, MOBILE_MONEY, DIGITAL_WALLET,
+            UPI, NEFT, RTGS, M_PESA, SEPA, ACH, OTHER.
+          x-jsonld-id: "scn:selectedPaymentMethod"
+        transactionRef:
+          type: string
+          description: Reference number or ID of the payment transaction
+          x-jsonld-id: "scn:transactionRef"
+        payerArchetype:
+          type: string
+          enum:
+            - SELF
+            - INSTITUTIONAL
+            - INSURANCE
+            - NGO
+            - GOVERNMENT
+          description: >
+            Category of entity bearing the cost of the service.
+            SELF: individual client.
+            INSTITUTIONAL: corporate or employer.
+            INSURANCE: health insurer or TPA.
+            NGO: non-governmental organisation.
+            GOVERNMENT: government scheme or department.
+          x-jsonld-id: "scn:payerArchetype"
+        paymentSchedule:
+          type: array
+          description: >
+            Milestone-based payment schedule for multi-instalment engagements
+            (e.g. bulk procurement with advance + completion payments).
+            Omit for single upfront payments — use selectedPaymentMethod + transactionRef instead.
+          x-jsonld-id: "scn:paymentSchedule"
+          items:
+            type: object
+            required:
+              - milestoneId
+              - dueDate
+              - amount
+            properties:
+              milestoneId:
+                type: string
+                description: Identifier for this payment milestone
+              description:
+                type: string
+                description: Human-readable description of the milestone trigger
+                x-jsonld-id: "scn:milestoneDescription"
+              dueDate:
+                type: string
+                format: date
+                description: Date by which this instalment is due (ISO 8601)
+              amount:
+                type: number
+                minimum: 0
+                description: Amount due at this milestone
+              paid:
+                type: boolean
+                description: Whether this milestone has been settled
+              paidAt:
+                type: string
+                format: date-time
+                description: Timestamp of settlement for this milestone (ISO 8601)
+        paymentAuthorisation:
+          type: object
+          description: >
+            Fresh payment authorisation details. Present when the engagement is
+            funded by a new payment (pay-at-counter or direct payment flows).
+            Mutually exclusive with entitlementRef — exactly one must be present
+            at confirm phase.
+          x-jsonld-id: "scn:paymentAuthorisation"
+          properties:
+            authCode:
+              type: string
+              description: Authorisation code from payment gateway or processor
+            authProvider:
+              type: string
+              description: Name or ID of the payment gateway or authorisation provider
+            authTimestamp:
+              type: string
+              format: date-time
+              description: Timestamp of payment authorisation (ISO 8601)
+            authAmount:
+              type: number
+              minimum: 0
+              description: Amount authorised
+        entitlementRef:
+          type: string
+          description: >
+            ID of the ServiceEntitlement being drawn down to fund this engagement.
+            Present when the engagement is funded by pre-purchased capacity.
+            Mutually exclusive with paymentAuthorisation — exactly one must be present
+            at confirm phase.
+          x-jsonld-id: "scn:entitlementRef"
+
+      # Funding state rule:
+      # A Consideration passes through three states across its lifecycle:
+      #   DRAFT  — catalogue time: pricing proposal only; neither paymentAuthorisation
+      #            nor entitlementRef is present yet.
+      #   QUOTED — init/on_init preview: seeker has indicated funding path but no
+      #            commitment made; funding field may be present as intent.
+      #   ACTIVE — confirm: exactly one of paymentAuthorisation (fresh payment) or
+      #            entitlementRef (entitlement drawdown) must be present.
+      # The oneOf below enforces mutual exclusivity across all three states.
+      # Uses not:{required:[field]} rather than properties:{field:{not:{}}} for
+      # broad validator compatibility.
+      oneOf:
+        - description: >
+            Draft / proposed — catalogue or pre-commit state.
+            Neither paymentAuthorisation nor entitlementRef is present.
+            Valid at on_discover (status DRAFT) and during init preview (status QUOTED)
+            before the seeker has committed a funding path.
+          not:
+            anyOf:
+              - required: [paymentAuthorisation]
+              - required: [entitlementRef]
+        - description: >
+            Fresh payment — engagement funded by a payment gateway authorisation.
+            paymentAuthorisation is required; entitlementRef must be absent.
+            Valid at on_confirm (status ACTIVE) for pay-per-engagement flows.
+          required: [paymentAuthorisation]
+          not:
+            required: [entitlementRef]
+        - description: >
+            Entitlement drawdown — engagement funded by pre-purchased capacity.
+            entitlementRef is required; paymentAuthorisation must be absent.
+            Valid at on_confirm (status ACTIVE) for procurement-funded flows.
+          required: [entitlementRef]
+          not:
+            required: [paymentAuthorisation]

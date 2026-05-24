@@ -1,0 +1,132 @@
+openapi: 3.1.1
+$id: "https://schema.beckn.io/ServiceResource/v2.1/attributes.yaml"
+info:
+  title: ServiceResource Schema
+  version: "2.1.0"
+  description: Schema for representing service resources in the generalised Beckn Protocol model
+  x-beckn-container: resourceAttributes
+
+components:
+  schemas:
+    ServiceResource:
+      type: object
+      x-beckn-container: resourceAttributes
+      x-status: under-review
+      x-tags:
+        - service
+        - generic-service
+        - resource
+      x-jsonld:
+        "@context": "https://schema.beckn.io/ServiceResource/v2.1/context.jsonld"
+        "@type": "sr:ServiceResource"
+      properties:
+        serviceUnit:
+          type: string
+          enum:
+            - PER_HOUR
+            - PER_SESSION
+            - PER_VISIT
+            - PER_UNIT
+            - PER_KG
+            - PER_DAY
+            - PER_PIECE
+            - OTHER
+          description: Billing unit of service measurement
+          x-jsonld-id: "sr:serviceUnit"
+        coverageArea:
+          type: array
+          items:
+            $ref: "#/components/schemas/ServiceCoverageArea"
+          description: >
+            Geographic coverage areas where this resource is available.
+            Multiple entries for resources serving several regions.
+          x-jsonld-id: "sr:coverageArea"
+        capacityPerDay:
+          type: integer
+          minimum: 0
+          description: Maximum number of service units available per day
+          x-jsonld-id: "sr:capacityPerDay"
+        capacityPerWeek:
+          type: integer
+          minimum: 0
+          description: Maximum number of service units available per week
+          x-jsonld-id: "sr:capacityPerWeek"
+        availabilitySchedule:
+          type: array
+          items:
+            $ref: "#/components/schemas/ServiceAvailabilitySlot"
+          description: >
+            Weekly availability expressed as day/time slot objects.
+            Use for simple recurring weekly schedules.
+          x-jsonld-id: "sr:availabilitySchedule"
+        availabilityRecurrenceRule:
+          type: string
+          description: >
+            Availability schedule expressed as an iCalendar RRULE string (RFC 5545).
+            Use for complex recurring schedules (e.g. bi-weekly, seasonal exceptions).
+            Example: "RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR;BYHOUR=9;BYMINUTE=0"
+            Takes precedence over availabilitySchedule if both are present.
+          x-jsonld-id: "sr:availabilityRecurrenceRule"
+        minimumBookingAdvanceHours:
+          type: integer
+          minimum: 0
+          description: Minimum hours in advance required to book the service. 0 = on-demand.
+          x-jsonld-id: "sr:minimumBookingAdvanceHours"
+        languagesSupported:
+          type: array
+          items:
+            type: string
+          description: BCP 47 language codes supported by this resource (e.g. ["en", "hi", "kn"])
+          x-jsonld-id: "sr:languagesSupported"
+
+    ServiceCoverageArea:
+      type: object
+      description: Geographic area where the service is available
+      properties:
+        isoCode:
+          type: string
+          description: ISO 3166-2 subdivision code (e.g. "IN-KA" for Karnataka, "IN-MH" for Maharashtra)
+          x-jsonld-id: "sr:isoCode"
+        region:
+          type: string
+          description: Human-readable region or state name
+          x-jsonld-id: "sr:region"
+        country:
+          type: string
+          description: ISO 3166-1 alpha-2 country code (e.g. "IN")
+          x-jsonld-id: "sr:country"
+        coverageRadiusKm:
+          type: number
+          minimum: 0
+          description: >
+            Coverage radius in kilometres from a central point.
+            0 indicates online-only (no geographic radius constraint).
+            Applicable for on-site services; omit for online/state-level services.
+          x-jsonld-id: "sr:coverageRadiusKm"
+
+    ServiceAvailabilitySlot:
+      type: object
+      description: Time slot for service availability on a specific day of week
+      properties:
+        dayOfWeek:
+          type: string
+          enum:
+            - MONDAY
+            - TUESDAY
+            - WEDNESDAY
+            - THURSDAY
+            - FRIDAY
+            - SATURDAY
+            - SUNDAY
+          description: Day of the week
+          x-jsonld-id: "sr:dayOfWeek"
+        startTime:
+          type: string
+          format: time
+          description: Start time in HH:MM format (24-hour)
+          x-jsonld-id: "sr:startTime"
+        endTime:
+          type: string
+          format: time
+          description: End time in HH:MM format (24-hour)
+          x-jsonld-id: "sr:endTime"

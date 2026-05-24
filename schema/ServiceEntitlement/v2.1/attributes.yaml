@@ -1,0 +1,176 @@
+openapi: 3.1.1
+$id: "https://schema.beckn.io/ServiceEntitlement/v2.1/attributes.yaml"
+info:
+  title: ServiceEntitlement Schema
+  version: "2.1.0"
+  description: >
+    Schema for a durable service-credit artifact issued at procurement commit.
+    Represents pre-purchased capacity that consuming engagements draw down
+    against. Carried in contractAttributes of the procurement Contract.
+  x-beckn-container: contractAttributes
+
+components:
+  schemas:
+    ServiceEntitlement:
+      type: object
+      x-beckn-container: contractAttributes
+      x-status: under-review
+      x-tags:
+        - service
+        - generic-service
+        - contract
+      x-jsonld:
+        "@context": "https://schema.beckn.io/ServiceEntitlement/v2.1/context.jsonld"
+        "@type": "se:ServiceEntitlement"
+      required:
+        - totalCapacity
+        - validFrom
+        - validUntil
+      if:
+        properties:
+          state:
+            const: ACTIVE
+        required: [state]
+      then:
+        required: [entitlementId, issuerId, holderId, state]
+      properties:
+        entitlementId:
+          type: string
+          format: uuid
+          description: Globally unique identifier for this entitlement artifact
+          x-jsonld-id: "se:entitlementId"
+        issuerId:
+          type: string
+          description: Network participant ID of the Provider NP that issued this entitlement
+          x-jsonld-id: "se:issuerId"
+        holderId:
+          type: string
+          description: Network participant ID of the Seeker NP (implementing agency / payer) holding this entitlement
+          x-jsonld-id: "se:holderId"
+        serviceScope:
+          type: array
+          items:
+            type: string
+          description: >
+            List of service codes or resource IDs this entitlement is valid for.
+            Empty array means entitlement is valid for all services offered by the provider.
+          x-jsonld-id: "se:serviceScope"
+        totalCapacity:
+          type: integer
+          minimum: 1
+          description: Total number of service units purchased
+          x-jsonld-id: "se:totalCapacity"
+        usedCapacity:
+          type: integer
+          minimum: 0
+          description: Number of service units consumed to date
+          x-jsonld-id: "se:usedCapacity"
+        remainingCapacity:
+          type: integer
+          minimum: 0
+          description: Remaining service units available for redemption (totalCapacity minus usedCapacity)
+          x-jsonld-id: "se:remainingCapacity"
+        validFrom:
+          type: string
+          format: date
+          description: Date from which this entitlement is redeemable (ISO 8601)
+          x-jsonld-id: "se:validFrom"
+        validUntil:
+          type: string
+          format: date
+          description: Date after which this entitlement expires and cannot be redeemed (ISO 8601)
+          x-jsonld-id: "se:validUntil"
+        geographyScope:
+          type: array
+          items:
+            type: string
+          description: >
+            Geographic codes (e.g. ISO 3166-2 state/district codes) within which
+            redemption is permitted. Empty array means unrestricted geography.
+          x-jsonld-id: "se:geographyScope"
+        counterpartyScope:
+          type: array
+          items:
+            type: string
+          description: >
+            Specific Provider NP IDs this entitlement may be redeemed against.
+            Empty array means redeemable against any provider offering matching services.
+          x-jsonld-id: "se:counterpartyScope"
+        redemptionRules:
+          type: object
+          description: Rules governing how individual redemptions may be made
+          x-jsonld-id: "se:redemptionRules"
+          properties:
+            minPerRedemption:
+              type: integer
+              minimum: 1
+              description: Minimum units that must be redeemed in a single engagement
+            maxPerRedemption:
+              type: integer
+              minimum: 1
+              description: Maximum units redeemable in a single engagement
+            cooldownHours:
+              type: integer
+              minimum: 0
+              description: Minimum hours required between successive redemptions for the same beneficiary
+        refundRules:
+          type: string
+          description: Human-readable description of refund conditions for unused capacity
+          x-jsonld-id: "se:refundRules"
+        forfeitureRules:
+          type: string
+          description: Human-readable description of forfeiture conditions (e.g. on expiry)
+          x-jsonld-id: "se:forfeitureRules"
+        lockedTermsSnapshot:
+          type: object
+          description: >
+            Structured snapshot of the offer terms locked at procurement commit.
+            Provides an immutable, machine-readable reference for dispute resolution.
+            All fields reflect the values agreed at the time the entitlement was issued
+            and must not be mutated after on_confirm.
+          x-jsonld-id: "se:lockedTermsSnapshot"
+          properties:
+            offerId:
+              type: string
+              description: ID of the offer whose terms were locked
+              x-jsonld-id: "se:lts_offerId"
+            pricePerUnit:
+              type: number
+              minimum: 0
+              description: Agreed price per unit at time of lock
+              x-jsonld-id: "se:lts_pricePerUnit"
+            currency:
+              type: string
+              description: ISO 4217 currency code
+              x-jsonld-id: "se:lts_currency"
+            discountRef:
+              type: string
+              description: Reference to the discount scheme applied at lock time (if any)
+              x-jsonld-id: "se:lts_discountRef"
+            lockedAt:
+              type: string
+              format: date-time
+              description: Timestamp when these terms were locked (ISO 8601)
+              x-jsonld-id: "se:lts_lockedAt"
+        grievanceRef:
+          type: string
+          description: Reference ID for any active grievance or dispute raised against this entitlement
+          x-jsonld-id: "se:grievanceRef"
+        state:
+          type: string
+          enum:
+            - DRAFT
+            - ACTIVE
+            - LOW
+            - EXPIRED
+            - REVOKED
+            - CLOSED
+          description: >
+            Lifecycle state of the entitlement.
+            DRAFT: created but not yet confirmed.
+            ACTIVE: confirmed and available for redemption.
+            LOW: remaining capacity below threshold (informational).
+            EXPIRED: validity period has passed.
+            REVOKED: cancelled by issuer or NFO before natural expiry.
+            CLOSED: fully consumed or administratively closed.
+          x-jsonld-id: "se:state"

@@ -1,0 +1,16 @@
+{
+  "@context": {
+    "sc": "https://schema.beckn.io/ServiceContract#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+    {"@id": "sc:BookingChannel", "@type": "rdfs:Class", "rdfs:label": "BookingChannel"},
+    {"@id": "sc:APP", "@type": "sc:BookingChannel", "rdfs:label": "Mobile/Web App"},
+    {"@id": "sc:VOICE", "@type": "sc:BookingChannel", "rdfs:label": "Voice Call"},
+    {"@id": "sc:IN_PERSON", "@type": "sc:BookingChannel", "rdfs:label": "In Person"},
+    {"@id": "sc:USSD", "@type": "sc:BookingChannel", "rdfs:label": "USSD"},
+    {"@id": "sc:WHATSAPP", "@type": "sc:BookingChannel", "rdfs:label": "WhatsApp"},
+    {"@id": "sc:SMS", "@type": "sc:BookingChannel", "rdfs:label": "SMS"},
+    {"@id": "sc:OTHER", "@type": "sc:BookingChannel", "rdfs:label": "Other"}
+  ]
+}

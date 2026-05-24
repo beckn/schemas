@@ -1,0 +1,86 @@
+openapi: 3.1.1
+$id: "https://schema.beckn.io/ServiceSettlement/v2.1/attributes.yaml"
+info:
+  title: ServiceSettlement Schema
+  version: "2.1.0"
+  description: >
+    Schema for representing service settlement attributes in the generalised
+    Beckn Protocol model. Records payment receipt confirmation, timestamps, and
+    receipt references. Includes post-completion settlement adjustment support
+    for on-actuals reconciliation (ON_ACTUALS), partial delivery (PARTIAL), and
+    full refund (FULL_REFUND) scenarios, along with dispute reference tracking.
+  x-beckn-container: settlementAttributes
+
+components:
+  schemas:
+    ServiceSettlement:
+      type: object
+      x-beckn-container: settlementAttributes
+      x-status: under-review
+      x-tags:
+        - service
+        - generic-service
+        - settlement
+      x-jsonld:
+        "@context": "https://schema.beckn.io/ServiceSettlement/v2.1/context.jsonld"
+        "@type": "ssl:ServiceSettlement"
+      properties:
+        paymentReceivedByProvider:
+          type: boolean
+          description: Whether the provider has confirmed receipt of payment
+          x-jsonld-id: "ssl:paymentReceivedByProvider"
+        paymentRecordedAt:
+          type: string
+          format: date-time
+          description: Timestamp when payment receipt was recorded (ISO 8601)
+          x-jsonld-id: "ssl:paymentRecordedAt"
+        receiptRef:
+          type: string
+          description: Reference number or ID of the payment receipt
+          x-jsonld-id: "ssl:receiptRef"
+        paymentNotes:
+          type: string
+          description: Free-text notes on the payment or settlement
+          x-jsonld-id: "ssl:paymentNotes"
+        adjustmentType:
+          type: string
+          enum:
+            - NONE
+            - ON_ACTUALS
+            - PARTIAL
+            - FULL_REFUND
+          description: >
+            Type of post-completion settlement adjustment.
+            NONE: no adjustment; original amount stands.
+            ON_ACTUALS: final amount reconciled against actual units delivered
+            (e.g. camp patients seen vs. committed).
+            PARTIAL: partial settlement due to incomplete service delivery.
+            FULL_REFUND: full refund issued (e.g. service not delivered).
+          x-jsonld-id: "ssl:adjustmentType"
+        adjustmentAmount:
+          type: number
+          description: >
+            Net adjustment amount (positive = additional charge, negative = refund).
+            Required when adjustmentType is ON_ACTUALS, PARTIAL, or FULL_REFUND.
+          x-jsonld-id: "ssl:adjustmentAmount"
+        adjustmentReason:
+          type: string
+          description: Human-readable reason for the settlement adjustment
+          x-jsonld-id: "ssl:adjustmentReason"
+        adjustedAt:
+          type: string
+          format: date-time
+          description: Timestamp when the adjustment was recorded (ISO 8601)
+          x-jsonld-id: "ssl:adjustedAt"
+        finalSettlementRef:
+          type: string
+          description: >
+            Reference to the final settled transaction after all adjustments are applied.
+            Supersedes receiptRef once adjustments are complete.
+          x-jsonld-id: "ssl:finalSettlementRef"
+        disputeRef:
+          type: string
+          description: >
+            Reference to an active or resolved dispute or grievance raised
+            against this settlement.
+          x-jsonld-id: "ssl:disputeRef"

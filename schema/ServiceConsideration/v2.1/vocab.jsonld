@@ -1,0 +1,22 @@
+{
+  "@context": {
+    "scn": "https://schema.beckn.io/ServiceConsideration#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+    {"@id": "scn:PaymentMethod", "@type": "rdfs:Class", "rdfs:label": "PaymentMethod"},
+    {"@id": "scn:CASH",           "@type": "scn:PaymentMethod", "rdfs:label": "Cash"},
+    {"@id": "scn:CARD",           "@type": "scn:PaymentMethod", "rdfs:label": "Credit/Debit Card"},
+    {"@id": "scn:BANK_TRANSFER",  "@type": "scn:PaymentMethod", "rdfs:label": "Bank Transfer"},
+    {"@id": "scn:MOBILE_MONEY",   "@type": "scn:PaymentMethod", "rdfs:label": "Mobile Money"},
+    {"@id": "scn:DIGITAL_WALLET", "@type": "scn:PaymentMethod", "rdfs:label": "Digital Wallet"},
+    {"@id": "scn:OTHER",          "@type": "scn:PaymentMethod", "rdfs:label": "Other"},
+
+    {"@id": "scn:PayerArchetype", "@type": "rdfs:Class", "rdfs:label": "PayerArchetype"},
+    {"@id": "scn:SELF",          "@type": "scn:PayerArchetype", "rdfs:label": "Self — individual client"},
+    {"@id": "scn:INSTITUTIONAL", "@type": "scn:PayerArchetype", "rdfs:label": "Institutional — corporate or employer"},
+    {"@id": "scn:INSURANCE",     "@type": "scn:PayerArchetype", "rdfs:label": "Insurance — health insurer or TPA"},
+    {"@id": "scn:NGO",           "@type": "scn:PayerArchetype", "rdfs:label": "NGO — non-governmental organisation"},
+    {"@id": "scn:GOVERNMENT",    "@type": "scn:PayerArchetype", "rdfs:label": "Government — government scheme or department"}
+  ]
+}

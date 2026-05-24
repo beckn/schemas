@@ -1,0 +1,16 @@
+{
+  "id": "https://schema.beckn.io/ServiceParticipant/v2.1",
+  "name": "ServiceParticipant",
+  "version": "2.1.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": ["ServiceParticipant"],
+  "discovery_fields": [],
+  "indexable_paths": [],
+  "filterable_paths": [],
+  "sortable_paths": [],
+  "privacy_notes": [
+    "credentialRefs may contain W3C Verifiable Credentials carrying PII in credentialSubject",
+    "documentUrl links should be time-limited and access-controlled"
+  ]
+}

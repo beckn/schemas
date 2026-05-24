@@ -1,0 +1,13 @@
+{
+  "id": "https://schema.beckn.io/ServiceContract/v2.1",
+  "name": "ServiceContract",
+  "version": "2.1.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": ["ServiceContract"],
+  "discovery_fields": ["bookingChannel"],
+  "indexable_paths": ["bookingChannel"],
+  "filterable_paths": ["bookingChannel"],
+  "sortable_paths": [],
+  "privacy_notes": ["clientNotes may contain sensitive personal health information", "cancellationReason may reveal business-sensitive information"]
+}

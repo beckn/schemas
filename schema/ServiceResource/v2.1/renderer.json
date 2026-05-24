@@ -1,0 +1,8 @@
+{
+  "schema": "ServiceResource",
+  "version": "2.1.0",
+  "card_template": "{{descriptor.name}} | {{serviceUnit}} | {{coverageArea.region}}, {{coverageArea.country}}",
+  "detail_template": "{{descriptor.name}}\n{{descriptor.shortDesc}}\nUnit: {{serviceUnit}}\nArea: {{coverageArea.region}}, {{coverageArea.country}}\nCapacity/day: {{capacityPerDay}}\nLanguages: {{#each languagesSupported}}{{this}} {{/each}}",
+  "html": "<div class=\"generic-service-resource-card\" data-resource-id=\"{{beckn:id}}\"><img src='{{get \"beckn:descriptor.schema:image[0]\"}}' alt='{{beckn:descriptor.schema:name}}' /><h3>{{beckn:descriptor.schema:name}}</h3><p>{{beckn:descriptor.beckn:shortDesc}}</p><span class=\"badge\">{{beckn:resourceAttributes.serviceUnit}}</span><span>{{beckn:resourceAttributes.coverageArea.region}}, {{beckn:resourceAttributes.coverageArea.country}}</span></div>",
+  "html_detail": "<div class=\"generic-service-resource-detail\" data-resource-id=\"{{beckn:id}}\"><h2>{{beckn:descriptor.schema:name}}</h2><p>{{beckn:descriptor.schema:description}}</p><dl><dt>Service Unit</dt><dd>{{beckn:resourceAttributes.serviceUnit}}</dd><dt>Coverage</dt><dd>{{beckn:resourceAttributes.coverageArea.region}}, {{beckn:resourceAttributes.coverageArea.country}}</dd><dt>Capacity/Day</dt><dd>{{beckn:resourceAttributes.capacityPerDay}}</dd><dt>Languages</dt><dd>{{#each beckn:resourceAttributes.languagesSupported}}<span>{{this}}</span>{{/each}}</dd></dl></div>"
+}

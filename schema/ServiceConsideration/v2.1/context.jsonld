@@ -1,0 +1,65 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "scn": "https://schema.beckn.io/ServiceConsideration#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "ServiceConsideration": "scn:ServiceConsideration",
+    "PaymentMethod": "scn:PaymentMethod",
+    "PayerArchetype": "scn:PayerArchetype",
+    "pricePerUnit": {
+      "@id": "scn:pricePerUnit"
+    },
+    "currency": {
+      "@id": "scn:currency"
+    },
+    "totalAmount": {
+      "@id": "scn:totalAmount"
+    },
+    "discountRef": {
+      "@id": "scn:discountRef"
+    },
+    "netAmount": {
+      "@id": "scn:netAmount"
+    },
+    "paymentMethodsAccepted": {
+      "@id": "scn:paymentMethodsAccepted",
+      "@container": "@list"
+    },
+    "selectedPaymentMethod": {
+      "@id": "scn:selectedPaymentMethod"
+    },
+    "transactionRef": {
+      "@id": "scn:transactionRef"
+    },
+    "payerArchetype": {
+      "@id": "scn:payerArchetype"
+    },
+    "paymentSchedule": {
+      "@id": "scn:paymentSchedule",
+      "@container": "@list",
+      "@context": {
+        "description": "scn:milestoneDescription",
+        "milestoneDescription": "scn:milestoneDescription",
+        "milestoneId": "scn:milestoneId",
+        "amount": "scn:amount",
+        "dueDate": "scn:dueDate",
+        "paid": "scn:paid",
+        "paidAt": "scn:paidAt"
+      }
+    },
+    "paymentAuthorisation": {
+      "@id": "scn:paymentAuthorisation",
+      "@context": {
+        "authCode": "scn:authCode",
+        "authProvider": "scn:authProvider",
+        "authTimestamp": "scn:authTimestamp",
+        "authAmount": "scn:authAmount"
+      }
+    },
+    "entitlementRef": {
+      "@id": "scn:entitlementRef"
+    },
+    "milestoneDescription": "scn:milestoneDescription"
+  }
+}

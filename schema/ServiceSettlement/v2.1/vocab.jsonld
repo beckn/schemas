@@ -1,0 +1,13 @@
+{
+  "@context": {
+    "ssl": "https://schema.beckn.io/ServiceSettlement#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+    {"@id": "ssl:AdjustmentType", "@type": "rdfs:Class", "rdfs:label": "AdjustmentType"},
+    {"@id": "ssl:NONE",        "@type": "ssl:AdjustmentType", "rdfs:label": "None — original amount stands"},
+    {"@id": "ssl:ON_ACTUALS",  "@type": "ssl:AdjustmentType", "rdfs:label": "On Actuals — reconciled against units delivered"},
+    {"@id": "ssl:PARTIAL",     "@type": "ssl:AdjustmentType", "rdfs:label": "Partial — partial settlement for incomplete delivery"},
+    {"@id": "ssl:FULL_REFUND", "@type": "ssl:AdjustmentType", "rdfs:label": "Full Refund — service not delivered"}
+  ]
+}

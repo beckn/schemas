@@ -1,0 +1,8 @@
+{
+  "schema": "ServiceContract",
+  "version": "2.1.0",
+  "card_template": "{{bookingChannel}} | {{#if clientNotes}}Notes provided{{/if}}",
+  "detail_template": "Booking Channel: {{bookingChannel}}\nClient Notes: {{clientNotes}}\nReminder Sent: {{reminderSentAt}}",
+  "html": "<div class=\"service-contract-card\"><span class=\"channel\">{{bookingChannel}}</span>{{#if clientNotes}}<span class=\"notes-indicator\">Notes attached</span>{{/if}}</div>",
+  "html_detail": "<div class=\"service-contract-detail\"><h3>Booking Information</h3><dl><dt>Booking Channel</dt><dd>{{bookingChannel}}</dd>{{#if clientNotes}}<dt>Client Notes</dt><dd>{{clientNotes}}</dd>{{/if}}{{#if facilitatorId}}<dt>Facilitator</dt><dd>{{facilitatorId}}</dd>{{/if}}{{#if reminderSentAt}}<dt>Reminder Sent</dt><dd>{{reminderSentAt}}</dd>{{/if}}{{#if cancellationReason}}<dt>Cancellation Reason</dt><dd>{{cancellationReason}}</dd>{{/if}}</dl></div>"
+}

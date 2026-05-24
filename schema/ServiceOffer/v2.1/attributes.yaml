@@ -1,0 +1,87 @@
+openapi: 3.1.1
+$id: "https://schema.beckn.io/ServiceOffer/v2.1/attributes.yaml"
+info:
+  title: ServiceOffer Schema
+  version: "2.1.0"
+  description: Schema for representing service offers in the generalised Beckn Protocol model
+  x-beckn-container: offerAttributes
+
+components:
+  schemas:
+    ServiceOffer:
+      type: object
+      x-beckn-container: offerAttributes
+      x-status: under-review
+      x-tags:
+        - service
+        - generic-service
+        - offer
+      x-jsonld:
+        "@context": "https://schema.beckn.io/ServiceOffer/v2.1/context.jsonld"
+        "@type": "sof:ServiceOffer"
+      properties:
+        minimumQuantity:
+          type: integer
+          minimum: 1
+          description: Minimum number of service units that must be ordered
+          x-jsonld-id: "sof:minimumQuantity"
+        maximumQuantity:
+          type: integer
+          minimum: 1
+          description: Maximum number of service units that can be ordered at once
+          x-jsonld-id: "sof:maximumQuantity"
+        requiresAdvanceBooking:
+          type: boolean
+          description: Whether advance booking is required for this offer
+          x-jsonld-id: "sof:requiresAdvanceBooking"
+        bulkDiscountAvailable:
+          type: boolean
+          description: Whether bulk discounts are available for large quantities
+          x-jsonld-id: "sof:bulkDiscountAvailable"
+        eligibilityCriteria:
+          type: array
+          items:
+            type: string
+          description: >
+            Human-readable eligibility conditions a Seeker NP must satisfy
+            to avail this offer (e.g. "Registered implementing agency", "District MOU signed").
+          x-jsonld-id: "sof:eligibilityCriteria"
+        validityPeriodDays:
+          type: integer
+          minimum: 1
+          description: >
+            Number of days from offer acceptance within which the service
+            must be availed. Relevant for bulk procurement and camp offers.
+          x-jsonld-id: "sof:validityPeriodDays"
+        cancellationPolicies:
+          type: array
+          description: >
+            Ordered list of cancellation policies, from earliest to latest cutoff.
+            Each entry defines the refund fraction applicable if cancellation is
+            made before a given number of hours from service start.
+          x-jsonld-id: "sof:cancellationPolicies"
+          items:
+            type: object
+            required:
+              - hoursBeforeService
+              - refundFraction
+            properties:
+              hoursBeforeService:
+                type: integer
+                minimum: 0
+                description: >
+                  Hours before service start within which this policy applies.
+                  0 means at or after service start time.
+                x-jsonld-id: "sof:hoursBeforeService"
+              refundFraction:
+                type: number
+                minimum: 0
+                maximum: 1
+                description: >
+                  Fraction of the paid amount refunded under this policy
+                  (1.0 = full refund, 0.0 = no refund, 0.5 = 50% refund).
+                x-jsonld-id: "sof:refundFraction"
+              description:
+                type: string
+                description: Human-readable description of this cancellation tier
+                x-jsonld-id: "sof:cancellationPolicyDescription"

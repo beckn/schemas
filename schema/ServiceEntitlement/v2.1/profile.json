@@ -1,0 +1,19 @@
+{
+  "id": "https://schema.beckn.io/ServiceEntitlement/v2.1",
+  "name": "ServiceEntitlement",
+  "version": "2.1.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": ["ServiceEntitlement"],
+  "discovery_fields": ["state", "validFrom", "validUntil"],
+  "indexable_paths": ["entitlementId", "issuerId", "holderId", "state"],
+  "filterable_paths": ["state", "issuerId", "holderId", "validFrom", "validUntil"],
+  "sortable_paths": ["validUntil", "remainingCapacity"],
+  "list_fields": ["entitlementId", "state", "remainingCapacity", "validUntil"],
+  "detail_fields": ["entitlementId", "issuerId", "holderId", "serviceScope", "totalCapacity", "usedCapacity", "remainingCapacity", "validFrom", "validUntil", "geographyScope", "redemptionRules", "state"],
+  "privacy_notes": [
+    "holderId identifies the procuring organisation — treat as business-sensitive",
+    "lockedTermsSnapshot may contain pricing information — restrict to contract parties",
+    "grievanceRef links to dispute records — restrict to contract parties and NFO"
+  ]
+}

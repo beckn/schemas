@@ -1,0 +1,12 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "sp": "https://schema.beckn.io/ServiceParticipant#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+
+    "ServiceParticipant": "sp:ServiceParticipant",
+
+    "credentialRefs": {"@id": "sp:credentialRefs", "@container": "@list"}
+  }
+}

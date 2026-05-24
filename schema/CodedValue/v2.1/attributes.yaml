@@ -1,40 +1,67 @@
 openapi: 3.1.1
+$id: "https://schema.beckn.io/CodedValue/v2.1/attributes.yaml"
 info:
-  title: "CodedValue \u2014 Shared Type"
-  version: 2.1.0
-  description: 'Standard pattern for authority-governed code values. Used wherever
-    a field''s valid values are defined by an external standards body (e.g. ISIC industry
-    codes, NSQF/ISCED domain codes, NQF qualification levels). Provides international
-    neutrality by abstracting the code system authority.
+  title: CodedValue Shared Type
+  version: "2.1.0"
+  description: >
+    Shared type definition for authority-backed coded values in the Beckn
+    generalised model. Modelled on the FHIR Coding pattern.
 
-    '
-  license:
-    name: CC-BY-NC-SA 4.0 International
-  contact:
-    name: Beckn Labs
-    url: https://beckn.io
+    CodedValue represents a single code drawn from an external or administrative
+    coding authority (e.g. LGD, KNBS, ISO, ICD-10). It is NOT a first-class
+    Beckn schema — it carries no x-beckn-container, no profile.json, and no
+    renderer.json. It is a shared sub-schema referenced via $ref by schemas
+    that need typed, machine-filterable coded values.
+
+    Thumb rules:
+      - Use CodedValue when the code system is maintained by an external authority.
+      - Use a plain enum when the value set is small, stable, and owned by the schema.
+
+    Upstream candidacy: this type is a strong candidate for promotion into the
+    Beckn Protocol core vocabulary. Until then it lives in generic-service/CodedValue/
+    as the canonical cross-pack reference point.
+
 components:
   schemas:
     CodedValue:
       type: object
-      description: 'An authority-governed code value. The @context URI identifies
-        the code system authority (e.g. UN ISIC, UNESCO ISCED, India NSQF). The @type
-        identifies the class of code within that system. The code is the actual value.
-        This pattern avoids hardcoding country-specific enumerations into the schema.
-
-        '
+      description: >
+        A single code drawn from an external or administrative coding authority.
+        The triple (@context, @type, code) uniquely identifies the value within
+        the authority's namespace.
       required:
-      - code
+        - "@context"
+        - "@type"
+        - code
       properties:
+        "@context":
+          type: string
+          format: uri
+          description: >
+            URI of the coding authority that defines and maintains this code system.
+            Examples:
+              https://lgdirectory.gov.in          — India Local Government Directory
+              https://www.knbs.or.ke              — Kenya National Bureau of Statistics
+              https://www.iso.org/iso-3166        — ISO 3166 country/subdivision codes
+              https://www.who.int/classifications — WHO ICD / ATC classifications
+              https://www.indiapost.gov.in        — India Post PIN code system
+              https://iebc.or.ke                  — Kenya IEBC ward codes
+        "@type":
+          type: string
+          description: >
+            Name of the code class within the authority's namespace. Identifies which
+            dimension of the authority's code system this entry belongs to.
+            Examples: LGDDistrict, LGDVillage, KenyaCounty, KenyaWard, PINCode,
+            GhanaDistrict, NigeriaLGA, ISOSubdivision, ICDCode.
         code:
           type: string
-          description: 'The actual code value as defined by the authority. Examples:
-            "8299" (ISIC: other business support), "0613" (ISCED: software), "4" (NSQF
-            Level 4).
-
-            '
-          x-jsonld-id: cv:code
-        label:
+          description: >
+            The actual code string as published by the authority.
+            Examples: "507" (LGD district), "022" (Kenya county), "422001" (PIN code),
+            "WD-0142" (Kenya ward), "IN-KA" (ISO 3166-2 Karnataka).
+        display:
           type: string
-          description: Human-readable label for the code (optional, for display).
-          x-jsonld-id: cv:label
+          description: >
+            Optional human-readable label for the code as defined by the authority.
+            Informational only — do not use for filtering or matching; use `code`.
+            Examples: "Nashik", "Kiambu", "Greater Bengaluru".
