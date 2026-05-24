@@ -1,7 +1,7 @@
 # ServiceParticipant — v2.1
 
 **Schema Pack Version:** 2.1.0
-**Released:** May 2025
+**Released:** May 2026
 **Status:** Initial release
 
 ## Notes

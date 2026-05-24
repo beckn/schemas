@@ -83,7 +83,7 @@ components:
             - GOVERNMENT
           description: >
             Category of entity bearing the cost of the service.
-            SELF: individual patient or client.
+            SELF: individual client.
             INSTITUTIONAL: corporate or employer.
             INSURANCE: health insurer or TPA.
             NGO: non-governmental organisation.

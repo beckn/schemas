@@ -2,6 +2,7 @@
   "@context": {
     "@vocab": "https://schema.beckn.io/ServiceParticipant#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "xsd": "http://www.w3.org/2001/XMLSchema#"
   },
   "@graph": [
@@ -16,7 +17,9 @@
       "@type": "rdf:Property",
       "rdfs:label": "credentialRefs",
       "rdfs:comment": "Array of Beckn Credential/2.0 objects (W3C VC or Document Credential) proving participant qualifications.",
-      "rdfs:domain": {"@id": "https://schema.beckn.io/ServiceParticipant#ServiceParticipant"}
+      "rdfs:domain": {
+        "@id": "https://schema.beckn.io/ServiceParticipant#ServiceParticipant"
+      }
     }
   ]
 }

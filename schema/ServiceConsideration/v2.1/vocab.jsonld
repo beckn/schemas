@@ -13,7 +13,7 @@
     {"@id": "scn:OTHER",          "@type": "scn:PaymentMethod", "rdfs:label": "Other"},
 
     {"@id": "scn:PayerArchetype", "@type": "rdfs:Class", "rdfs:label": "PayerArchetype"},
-    {"@id": "scn:SELF",          "@type": "scn:PayerArchetype", "rdfs:label": "Self — individual patient or client"},
+    {"@id": "scn:SELF",          "@type": "scn:PayerArchetype", "rdfs:label": "Self — individual client"},
     {"@id": "scn:INSTITUTIONAL", "@type": "scn:PayerArchetype", "rdfs:label": "Institutional — corporate or employer"},
     {"@id": "scn:INSURANCE",     "@type": "scn:PayerArchetype", "rdfs:label": "Insurance — health insurer or TPA"},
     {"@id": "scn:NGO",           "@type": "scn:PayerArchetype", "rdfs:label": "NGO — non-governmental organisation"},

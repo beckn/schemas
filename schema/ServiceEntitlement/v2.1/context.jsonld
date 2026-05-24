@@ -43,16 +43,12 @@
       "@container": "@list"
     },
     "redemptionRules": {
-      "@id": "se:redemptionRules"
-    },
-    "minPerRedemption": {
-      "@id": "se:minPerRedemption"
-    },
-    "maxPerRedemption": {
-      "@id": "se:maxPerRedemption"
-    },
-    "cooldownHours": {
-      "@id": "se:cooldownHours"
+      "@id": "se:redemptionRules",
+      "@context": {
+        "minPerRedemption": "se:minPerRedemption",
+        "maxPerRedemption": "se:maxPerRedemption",
+        "cooldownHours": "se:cooldownHours"
+      }
     },
     "refundRules": {
       "@id": "se:refundRules"
@@ -61,7 +57,14 @@
       "@id": "se:forfeitureRules"
     },
     "lockedTermsSnapshot": {
-      "@id": "se:lockedTermsSnapshot"
+      "@id": "se:lockedTermsSnapshot",
+      "@context": {
+        "offerId": "se:lts_offerId",
+        "pricePerUnit": "se:lts_pricePerUnit",
+        "currency": "se:lts_currency",
+        "discountRef": "se:lts_discountRef",
+        "lockedAt": "se:lts_lockedAt"
+      }
     },
     "grievanceRef": {
       "@id": "se:grievanceRef"
@@ -81,14 +84,8 @@
     "lts_discountRef": {
       "@id": "se:lts_discountRef"
     },
-
     "lts_lockedAt": {
       "@id": "se:lts_lockedAt"
-    },
-    "offerId": "se:lts_offerId",
-    "pricePerUnit": "se:lts_pricePerUnit",
-    "currency": "se:lts_currency",
-    "discountRef": "se:lts_discountRef",
-    "lockedAt": "se:lts_lockedAt"
+    }
   }
 }

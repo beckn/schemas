@@ -40,38 +40,22 @@
       "@container": "@list",
       "@context": {
         "description": "scn:milestoneDescription",
-        "milestoneDescription": "scn:milestoneDescription"
+        "milestoneDescription": "scn:milestoneDescription",
+        "milestoneId": "scn:milestoneId",
+        "amount": "scn:amount",
+        "dueDate": "scn:dueDate",
+        "paid": "scn:paid",
+        "paidAt": "scn:paidAt"
       }
     },
-    "milestoneId": {
-      "@id": "scn:milestoneId"
-    },
-    "amount": {
-      "@id": "scn:amount"
-    },
-    "dueDate": {
-      "@id": "scn:dueDate"
-    },
-    "paid": {
-      "@id": "scn:paid"
-    },
-    "paidAt": {
-      "@id": "scn:paidAt"
-    },
     "paymentAuthorisation": {
-      "@id": "scn:paymentAuthorisation"
-    },
-    "authCode": {
-      "@id": "scn:authCode"
-    },
-    "authProvider": {
-      "@id": "scn:authProvider"
-    },
-    "authTimestamp": {
-      "@id": "scn:authTimestamp"
-    },
-    "authAmount": {
-      "@id": "scn:authAmount"
+      "@id": "scn:paymentAuthorisation",
+      "@context": {
+        "authCode": "scn:authCode",
+        "authProvider": "scn:authProvider",
+        "authTimestamp": "scn:authTimestamp",
+        "authAmount": "scn:authAmount"
+      }
     },
     "entitlementRef": {
       "@id": "scn:entitlementRef"
