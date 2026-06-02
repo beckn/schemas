@@ -1,0 +1,69 @@
+openapi: 3.1.1
+info:
+  title: Catalog
+  version: 2.2.0
+  description: "Container schemas fetched from beckn.yaml. This cannot be extended as it is a reserved schema in beckn protocol. Any additional properties added to this schema can only be made using its *Attributes property"
+  license:
+    name: CC-BY-NC-SA 4.0 International
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+components:
+  schemas:
+    Catalog:
+      description:
+        "A structured representation of the resources, offers, and provider\
+        \ information that a PN makes available on the network for discovery, selection,\
+        \ and commitment by CNs.\n\nCatalogs appear in the discovery phase of the\
+        \ value-exchange lifecycle. The PN produces them and publishes them to the\
+        \ CS (Cataloging Service) via CatalogPublishAction; the CS indexes them and\
+        \ synchronizes them to the DS, which serves them to CNs in OnDiscoverAction\
+        \ responses.\n\nFabric context: Catalogs are managed by the CS, which indexes\
+        \ them for discovery and synchronizes them to the DS for delivery to subscribing\
+        \ CNs. The CS also stores and serves canonical master catalog items.\n\nRelationship:\
+        \ Composes Provider, Resource, and Offer schemas. MUST include at least one\
+        \ of a resources array or an offers array. The validity field constrains the\
+        \ temporal window during which the catalog is active, expressed as a TimePeriod."
+      title: Catalog
+      type: object
+      properties:
+        bppId:
+          description: PN (Beckn Protocol Provider) identifier that publishes this catalog
+          type: string
+          example: bpp.example.com
+        bppUri:
+          description: Beckn Protocol API base URL of the PN
+          type: string
+          format: uri
+        descriptor:
+          description: Human / Agent-readable description of this catalog
+          $ref: "https://schema.beckn.io/Descriptor/v2.0/attributes.yaml#/components/schemas/Descriptor"
+        id:
+          description: Unique identifier for the catalog
+          type: string
+          example: catalog-electronics-001
+        isActive:
+          description: Whether the catalog is active
+          type: boolean
+          default: true
+        offers:
+          description: Array of offers optionally linked to resources
+          type: array
+          items:
+            $ref: "https://schema.beckn.io/Offer/v2.0/attributes.yaml#/components/schemas/Offer"
+        resources:
+          description: Array of generalized Resource entities in this catalog (new model)
+          type: array
+          items:
+            $ref: "https://schema.beckn.io/Resource/v2.0/attributes.yaml#/components/schemas/Resource"
+        provider:
+          $ref: "https://schema.beckn.io/Provider/v2.0/attributes.yaml#/components/schemas/Provider"
+        validity:
+          description: The time period during which this catalog is valid
+          $ref: "https://schema.beckn.io/TimePeriod/v2.1/attributes.yaml#/components/schemas/TimePeriod"
+      anyOf:
+        - required:
+            - resources
+        - required:
+            - offers
+      additionalProperties: false

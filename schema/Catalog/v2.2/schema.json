@@ -1,0 +1,135 @@
+{
+  "$id": "https://schema.beckn.io/Catalog/v2.1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Catalog schema for Beckn Protocol v2.0.0",
+  "title": "Catalog",
+  "type": "object",
+  "properties": {
+    "bppId": {
+      "description": "BPP (Beckn Protocol Provider) identifier that publishes this catalog",
+      "type": "string",
+      "example": "bpp.example.com"
+    },
+    "bppUri": {
+      "description": "Beckn Protocol API base URL of the BPP",
+      "type": "string",
+      "format": "uri"
+    },
+    "publishDirectives": {
+      "deprecated": true,
+      "description": "Directives controlling publish behavior for master/regular catalog flow. Deprecated and planned for removal in a future release.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "catalogType"
+      ],
+      "properties": {
+        "catalogType": {
+          "type": "string",
+          "enum": [
+            "master",
+            "regular"
+          ],
+          "description": "master = canonical source catalog; regular = seller/provider extension catalog"
+        },
+        "updateMode": {
+          "type": "string",
+          "enum": [
+            "FULL",
+            "MERGE"
+          ],
+          "default": "FULL",
+          "description": "Used for regular updates. FULL replaces overlay; MERGE applies JSON Merge Patch semantics."
+        },
+        "resourceDirectives": {
+          "description": "Optional per-resource extension mapping for regular catalogs",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "resourceId",
+              "extends"
+            ],
+            "properties": {
+              "resourceId": {
+                "type": "string",
+                "description": "Seller/provider resource identifier in this catalog"
+              },
+              "extends": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "masterResourceId"
+                ],
+                "properties": {
+                  "masterResourceId": {
+                    "type": "string",
+                    "description": "Canonical master resource identifier being extended"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "descriptor": {
+      "description": "Human / Agent-readable description of this catalog",
+      "allOf": [
+        {
+          "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json"
+        }
+      ]
+    },
+    "id": {
+      "description": "Unique identifier for the catalog",
+      "type": "string",
+      "example": "catalog-electronics-001"
+    },
+    "isActive": {
+      "description": "Whether the catalog is active",
+      "type": "boolean",
+      "default": true
+    },
+    "offers": {
+      "description": "Array of offers optionally linked to resources",
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.beckn.io/Offer/v2.1/schema.json"
+      }
+    },
+    "resources": {
+      "description": "Array of generalized Resource entities in this catalog (new model)",
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.beckn.io/Resource/v2.0/schema.json"
+      }
+    },
+    "provider": {
+      "$ref": "https://schema.beckn.io/Provider/v2.1/schema.json"
+    },
+    "validity": {
+      "description": "The time period during which this catalog is valid",
+      "$ref": "https://schema.beckn.io/TimePeriod/v2.1/schema.json"
+    }
+  },
+  "required": [
+    "id",
+    "descriptor",
+    "provider"
+  ],
+  "anyOf": [
+    {
+      "required": [
+        "resources"
+      ]
+    },
+    {
+      "required": [
+        "offers"
+      ]
+    }
+  ],
+  "additionalProperties": false
+}
