@@ -1,0 +1,163 @@
+{
+  "$id": "https://schema.beckn.io/Dispute/v2.0",
+  "x-iri": "https://schema.beckn.io/Dispute/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A Dispute is a formal disagreement raised by one node (the claimant) against another (the respondent) over any piece of information published on the network. Anything can be disputed — a Contract, an Invoice, a Settlement, a Performance, a Consideration, contract terms, or any other published object. A dispute itemises one or more cases, each backed by a reason and supporting evidence, and tracks its lifecycle from unresolved through to resolved or withdrawn. Resolution is a tri-party process: the claimant and respondent agree on a neutral online dispute resolution (ODR) provider. A Dispute is exchanged over the dispute / on_dispute endpoints, wrapped in a DisputeAction. It may be created, updated, status-tracked, and cancelled (withdrawn).",
+  "title": "Dispute",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Stable dispute identifier (system id). While the chances of a UUID collision are rare, a combination of claimant identity and this id is recommended for global uniqueness.",
+      "type": "string",
+      "format": "uuid"
+    },
+    "raisedAt": {
+      "description": "Timestamp at which the dispute was raised.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "descriptor": {
+      "description": "Describes the nature of the dispute in human / agent readable terms.",
+      "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json"
+    },
+    "status": {
+      "description": "The lifecycle state of the dispute expressed as a Descriptor whose code MUST be one of the standard dispute state values. WITHDRAWN represents a dispute cancelled by the claimant.",
+      "allOf": [
+        {
+          "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "code": {
+              "enum": [
+                "UNRESOLVED",
+                "RESOLVED",
+                "WITHDRAWN"
+              ],
+              "default": "UNRESOLVED"
+            }
+          }
+        }
+      ]
+    },
+    "claimant": {
+      "description": "The party that raises the dispute.",
+      "$ref": "https://schema.beckn.io/Participant/v2.0/schema.json"
+    },
+    "respondent": {
+      "description": "The party against whom the dispute is raised.",
+      "$ref": "https://schema.beckn.io/Participant/v2.0/schema.json"
+    },
+    "odrProvider": {
+      "description": "The agreed online dispute resolution (ODR) provider — a neutral third party (e.g. a legal services organisation or the network facilitator organisation) that helps resolve the dispute. Dispute resolution is a tri-party arrangement; the claimant and respondent must agree on this provider, which may happen after the dispute is raised. The descriptor.code identifies the resolution role played.",
+      "allOf": [
+        {
+          "$ref": "https://schema.beckn.io/Participant/v2.0/schema.json"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "descriptor": {
+              "properties": {
+                "code": {
+                  "description": "The dispute-resolution role played by this provider.",
+                  "enum": [
+                    "MEDIATOR",
+                    "ARBITRATOR",
+                    "CONCILIATOR",
+                    "ADJUDICATOR",
+                    "OMBUDSMAN",
+                    "NEUTRAL_EVALUATOR",
+                    "EXPERT"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "cases": {
+      "description": "The disputed matters that make up this dispute. Each entry pairs a case — the disputed subject with its reason and supporting evidence — with its own resolution status. Any piece of information published on the network can be a case subject.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "case": {
+            "description": "A single disputed matter: what is being disputed, why, and the evidence backing it.",
+            "type": "object",
+            "properties": {
+              "id": {
+                "description": "Identifier of this case.",
+                "type": "string"
+              },
+              "subject": {
+                "description": "The piece of information under dispute, carried as a JSON-LD object whose @type identifies what it is — e.g. a Contract, Invoice, Settlement, Performance, Consideration, or ContractTerms. The object may be embedded inline or referenced by URL within the container.",
+                "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
+              },
+              "reason": {
+                "description": "The reason this subject is disputed. The code categorises the reason; the name / shortDesc / longDesc carry the narrative. Required — a dispute must be backed by a reason.",
+                "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json"
+              },
+              "evidence": {
+                "description": "Supporting evidence and proofs backing the dispute. Each item is a Document that may be machine-readable (e.g. a verifiable credential, via its standard/security fields) or human-readable — images, audio recordings, videos, chat histories, emails, or artifacts shared outside the network — distinguished by mimeType. A case without any attached proof, even circumstantial, may be rejected at the respondent's discretion.",
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "https://schema.beckn.io/Document/v2.0/schema.json"
+                }
+              }
+            },
+            "required": [
+              "subject",
+              "reason",
+              "evidence"
+            ],
+            "additionalProperties": false
+          },
+          "status": {
+            "description": "The resolution state of this individual case.",
+            "allOf": [
+              {
+                "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "enum": [
+                      "UNRESOLVED",
+                      "RESOLVED"
+                    ],
+                    "default": "UNRESOLVED"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "required": [
+          "case",
+          "status"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "disputeAttributes": {
+      "description": "Domain-specific extension attributes for this dispute.",
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "claimant",
+    "respondent",
+    "cases"
+  ],
+  "x-tags": [
+    "common"
+  ]
+}

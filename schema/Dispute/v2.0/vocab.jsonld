@@ -1,0 +1,115 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/LinkedData/v2.0/context.jsonld",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "Dispute": "beckn:Dispute",
+    "case": "beckn:case",
+    "cases": "beckn:cases",
+    "claimant": "beckn:claimant",
+    "code": "beckn:code",
+    "descriptor": "beckn:descriptor",
+    "disputeAttributes": "beckn:disputeAttributes",
+    "evidence": "beckn:evidence",
+    "id": "beckn:id",
+    "odrProvider": "beckn:odrProvider",
+    "raisedAt": "beckn:raisedAt",
+    "reason": "beckn:reason",
+    "respondent": "beckn:respondent",
+    "status": "beckn:status",
+    "subject": "beckn:subject"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Dispute",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Dispute",
+      "rdfs:comment": "A Dispute is a formal disagreement raised by one node (the claimant) against another (the respondent) over any piece of information published on the network. Anything can be disputed — a Contract, an Invoice, a Settlement, a Performance, a Consideration, contract terms, or any other published object. A dispute itemises one or more cases, each backed by a reason and supporting evidence, and tracks its lifecycle from unresolved through to resolved or withdrawn. Resolution is a tri-party process: the claimant and respondent agree on a neutral online dispute resolution (ODR) provider. A Dispute is exchanged over the dispute / on_dispute endpoints, wrapped in a DisputeAction. It may be created, updated, status-tracked, and cancelled (withdrawn)."
+    },
+    {
+      "@id": "beckn:case",
+      "@type": "rdf:Property",
+      "rdfs:label": "case",
+      "rdfs:comment": "A single disputed matter: what is being disputed, why, and the evidence backing it."
+    },
+    {
+      "@id": "beckn:cases",
+      "@type": "rdf:Property",
+      "rdfs:label": "cases",
+      "rdfs:comment": "The disputed matters that make up this dispute. Each entry pairs a case — the disputed subject with its reason and supporting evidence — with its own resolution status. Any piece of information published on the network can be a case subject."
+    },
+    {
+      "@id": "beckn:claimant",
+      "@type": "rdf:Property",
+      "rdfs:label": "claimant",
+      "rdfs:comment": "The party that raises the dispute."
+    },
+    {
+      "@id": "beckn:code",
+      "@type": "rdf:Property",
+      "rdfs:label": "code",
+      "rdfs:comment": "The dispute-resolution role played by this provider."
+    },
+    {
+      "@id": "beckn:descriptor",
+      "@type": "rdf:Property",
+      "rdfs:label": "descriptor",
+      "rdfs:comment": "Describes the nature of the dispute in human / agent readable terms."
+    },
+    {
+      "@id": "beckn:disputeAttributes",
+      "@type": "rdf:Property",
+      "rdfs:label": "disputeAttributes",
+      "rdfs:comment": "Domain-specific extension attributes for this dispute."
+    },
+    {
+      "@id": "beckn:evidence",
+      "@type": "rdf:Property",
+      "rdfs:label": "evidence",
+      "rdfs:comment": "Supporting evidence and proofs backing the dispute. Each item is a Document that may be machine-readable (e.g. a verifiable credential, via its standard/security fields) or human-readable — images, audio recordings, videos, chat histories, emails, or artifacts shared outside the network — distinguished by mimeType. A case without any attached proof, even circumstantial, may be rejected at the respondent's discretion."
+    },
+    {
+      "@id": "beckn:id",
+      "@type": "rdf:Property",
+      "rdfs:label": "id",
+      "rdfs:comment": "Stable dispute identifier (system id). While the chances of a UUID collision are rare, a combination of claimant identity and this id is recommended for global uniqueness."
+    },
+    {
+      "@id": "beckn:odrProvider",
+      "@type": "rdf:Property",
+      "rdfs:label": "odrProvider",
+      "rdfs:comment": "The agreed online dispute resolution (ODR) provider — a neutral third party (e.g. a legal services organisation or the network facilitator organisation) that helps resolve the dispute. Dispute resolution is a tri-party arrangement; the claimant and respondent must agree on this provider, which may happen after the dispute is raised. The descriptor.code identifies the resolution role played."
+    },
+    {
+      "@id": "beckn:raisedAt",
+      "@type": "rdf:Property",
+      "rdfs:label": "raisedAt",
+      "rdfs:comment": "Timestamp at which the dispute was raised."
+    },
+    {
+      "@id": "beckn:reason",
+      "@type": "rdf:Property",
+      "rdfs:label": "reason",
+      "rdfs:comment": "The reason this subject is disputed. The code categorises the reason; the name / shortDesc / longDesc carry the narrative. Required — a dispute must be backed by a reason."
+    },
+    {
+      "@id": "beckn:respondent",
+      "@type": "rdf:Property",
+      "rdfs:label": "respondent",
+      "rdfs:comment": "The party against whom the dispute is raised."
+    },
+    {
+      "@id": "beckn:status",
+      "@type": "rdf:Property",
+      "rdfs:label": "status",
+      "rdfs:comment": "The lifecycle state of the dispute expressed as a Descriptor whose code MUST be one of the standard dispute state values. WITHDRAWN represents a dispute cancelled by the claimant."
+    },
+    {
+      "@id": "beckn:subject",
+      "@type": "rdf:Property",
+      "rdfs:label": "subject",
+      "rdfs:comment": "The piece of information under dispute, carried as a JSON-LD object whose @type identifies what it is — e.g. a Contract, Invoice, Settlement, Performance, Consideration, or ContractTerms. The object may be embedded inline or referenced by URL within the container."
+    }
+  ]
+}

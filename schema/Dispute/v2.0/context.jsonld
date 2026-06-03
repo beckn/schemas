@@ -1,0 +1,22 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "beckn": "https://schema.beckn.io/LinkedData/v2.0/context.jsonld",
+    "Dispute": "beckn:Dispute",
+    "case": "beckn:case",
+    "cases": "beckn:cases",
+    "claimant": "beckn:claimant",
+    "code": "beckn:code",
+    "descriptor": "beckn:descriptor",
+    "disputeAttributes": "beckn:disputeAttributes",
+    "evidence": "beckn:evidence",
+    "id": "beckn:id",
+    "odrProvider": "beckn:odrProvider",
+    "raisedAt": "beckn:raisedAt",
+    "reason": "beckn:reason",
+    "respondent": "beckn:respondent",
+    "status": "beckn:status",
+    "subject": "beckn:subject"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/LinkedData/v2.0/context.jsonld",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "DisputeAction": "beckn:DisputeAction",
+    "dispute": "beckn:dispute"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:DisputeAction",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DisputeAction",
+      "rdfs:comment": "Container for the dispute / on_dispute messages exchanged between nodes. A DisputeAction carries the Dispute object being created, updated, status-tracked, or cancelled (withdrawn). The action being performed is conveyed by the endpoint (dispute / on_dispute) and the lifecycle state of the carried Dispute."
+    },
+    {
+      "@id": "beckn:dispute",
+      "@type": "rdf:Property",
+      "rdfs:label": "dispute",
+      "rdfs:comment": "The dispute being exchanged."
+    }
+  ]
+}

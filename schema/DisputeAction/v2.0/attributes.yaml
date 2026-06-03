@@ -1,0 +1,30 @@
+openapi: 3.1.1
+info:
+  title: DisputeAction
+  version: 2.0.0
+  description: Schema definition for DisputeAction in the Beckn Protocol v2.0.1
+  license:
+    name: CC-BY-NC-SA 4.0 International
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+components:
+  schemas:
+    DisputeAction:
+      x-iri: https://schema.beckn.io/DisputeAction/v2.0
+      description: Container for the dispute / on_dispute messages exchanged between
+        nodes. A DisputeAction carries the Dispute object being created, updated,
+        status-tracked, or cancelled (withdrawn). The action being performed is
+        conveyed by the endpoint (dispute / on_dispute) and the lifecycle state of
+        the carried Dispute.
+      title: DisputeAction
+      type: object
+      properties:
+        dispute:
+          description: The dispute being exchanged.
+          $ref: https://schema.beckn.io/Dispute/v2.0/attributes.yaml#/components/schemas/Dispute
+      required:
+      - dispute
+      additionalProperties: false
+      x-tags:
+      - common
