@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Timetable:
+      x-iri: https://schema.beckn.io/Timetable/v2.0
       type: object
       title: Timetable
       description: A structured schedule listing planned arrival and departure times

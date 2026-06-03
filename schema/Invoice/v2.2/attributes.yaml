@@ -11,8 +11,7 @@ info:
 components:
   schemas:
     Invoice:
-      $id: https://schema.beckn.io/Invoice/v2.2
-      $schema: https://json-schema.org/draft/2020-12/schema
+      x-iri: https://schema.beckn.io/Invoice/v2.2
       description: An Invoice is a financial statement issued by a creditor to a debtor
         that itemises the amounts owed and records how they are settled. Each line item
         is a billed financial entry — an order, refund, commission, finder fee, or

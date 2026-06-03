@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     Contact:
+      x-iri: https://schema.beckn.io/Contact/v2.0
       type: object
       title: Contact
       description: Contact information for sender, receiver, driver, or operator.

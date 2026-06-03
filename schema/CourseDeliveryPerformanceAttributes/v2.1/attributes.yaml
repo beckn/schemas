@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     CourseDeliveryPerformanceAttributes:
+      x-iri: https://schema.beckn.io/CourseDeliveryPerformanceAttributes/v2.1
       type: object
       x-beckn-container: performanceAttributes
       x-jsonld-context: ./context.jsonld

@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     Hub:
+      x-iri: https://schema.beckn.io/Hub/v2.0
       type: object
       title: Hub
       description: 'A Hub is a logistics fulfillment center, sorting facility, or distribution point where goods are consolidated, sorted, and dispatched for onward delivery. Maps to beckn:Location.

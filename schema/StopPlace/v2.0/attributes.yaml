@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     StopPlace:
+      x-iri: https://schema.beckn.io/StopPlace/v2.0
       type: object
       title: StopPlace
       description: A physical location serving as a transit stop facility, comprising

@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     ExchangePoints:
+      x-iri: https://schema.beckn.io/ExchangePoints/v2.0
       type: object
       title: ExchangePoints
       description: Locations in a transport network where fixed-route and flexible

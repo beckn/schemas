@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     TripRequest:
+      x-iri: https://schema.beckn.io/TripRequest/v2.0
       type: object
       title: TripRequest
       description: A request submitted to a journey planning system specifying origin,

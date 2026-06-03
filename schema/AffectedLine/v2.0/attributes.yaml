@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     AffectedLine:
+      x-iri: https://schema.beckn.io/AffectedLine/v2.0
       type: object
       title: AffectedLine
       description: A reference to a transport line that is affected by a service disruption

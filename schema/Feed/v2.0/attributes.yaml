@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Feed:
+      x-iri: https://schema.beckn.io/Feed/v2.0
       type: object
       title: Feed
       description: A data publication providing transit or mobility information in

@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     DayType:
+      x-iri: https://schema.beckn.io/DayType/v2.0
       type: object
       title: DayType
       description: A classification of a day (e.g., weekday, weekend, public holiday)

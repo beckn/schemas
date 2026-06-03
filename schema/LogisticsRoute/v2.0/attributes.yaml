@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     LogisticsRoute:
+      x-iri: https://schema.beckn.io/LogisticsRoute/v2.0
       type: object
       title: Route
       description: 'A Route is the planned path for a shipment from origin to destination, potentially passing through multiple hubs and waypoints. Maps to beckn:Journey.

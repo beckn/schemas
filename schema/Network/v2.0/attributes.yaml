@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Network:
+      x-iri: https://schema.beckn.io/Network/v2.0
       type: object
       title: Network
       description: A grouping of routes and lines operated under a common brand or

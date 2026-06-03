@@ -1,5 +1,4 @@
 openapi: 3.1.1
-$id: "https://schema.beckn.io/ServicePerformance/v2.1/attributes.yaml"
 info:
   title: ServicePerformance Schema
   version: "2.1.0"
@@ -9,6 +8,7 @@ info:
 components:
   schemas:
     ServicePerformance:
+      x-iri: https://schema.beckn.io/ServicePerformance/v2.1
       type: object
       x-beckn-container: performanceAttributes
       x-status: under-review
@@ -66,6 +66,7 @@ components:
           x-jsonld-id: "spm:followUpDate"
 
     ServiceLocation:
+      x-iri: https://schema.beckn.io/ServiceLocation/v2.1
       type: object
       description: Physical location where the service is or was delivered
       properties:

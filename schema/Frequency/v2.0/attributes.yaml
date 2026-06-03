@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Frequency:
+      x-iri: https://schema.beckn.io/Frequency/v2.0
       type: object
       title: Frequency
       description: A headway-based service specification indicating how often a vehicle

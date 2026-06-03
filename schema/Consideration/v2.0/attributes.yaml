@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     Consideration:
+      x-iri: https://schema.beckn.io/Consideration/v2.0
       type: object
       description: 'Generalized representation of value exchanged under a Contract.
 

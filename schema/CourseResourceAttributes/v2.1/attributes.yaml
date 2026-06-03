@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     CourseResourceAttributes:
+      x-iri: https://schema.beckn.io/CourseResourceAttributes/v2.1
       type: object
       description: 'Intrinsic attributes of a training course or program Resource. Domain-generic: applicable to any skilling vertical — vocational training, professional certification, higher education, government skill schemes, etc.
 

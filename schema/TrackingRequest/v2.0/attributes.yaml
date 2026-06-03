@@ -11,8 +11,7 @@ info:
 components:
   schemas:
     TrackingRequest:
-      $id: https://schema.beckn.io/TrackingRequest/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
+      x-iri: https://schema.beckn.io/TrackingRequest/v2.0
       description: Schema definition for TrackingRequest in the Beckn Protocol v2.0.1
       title: TrackingRequest
       x-tags:
@@ -36,7 +35,6 @@ components:
           - WS_HANDLE
         trackingDataSchema:
           description: A JSON Schema (2020-12) that describes the structure of trackingData payloads.
-          $schema: https://json-schema.org/draft/2020-12/schema
       required:
       - id
       additionalProperties: false

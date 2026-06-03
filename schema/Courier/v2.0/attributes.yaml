@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     Courier:
+      x-iri: https://schema.beckn.io/Courier/v2.0
       type: object
       title: Courier
       description: 'A Courier is an individual delivery agent responsible for last-mile pickup and delivery of packages, typically in hyperlocal or urban delivery contexts. Maps to beckn:Agent.

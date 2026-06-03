@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     FareTransferRule:
+      x-iri: https://schema.beckn.io/FareTransferRule/v2.0
       type: object
       title: FareTransferRule
       description: A rule defining how fares from different legs are combined when

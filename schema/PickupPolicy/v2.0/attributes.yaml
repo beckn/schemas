@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     PickupPolicy:
+      x-iri: https://schema.beckn.io/PickupPolicy/v2.0
       type: object
       title: PickupPolicy
       description: A set of rules governing the locations and conditions under which

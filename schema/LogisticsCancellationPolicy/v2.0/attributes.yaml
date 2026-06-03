@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     LogisticsCancellationPolicy:
+      x-iri: https://schema.beckn.io/LogisticsCancellationPolicy/v2.0
       type: object
       title: CancellationPolicy
       description: Defines terms under which a shipment booking can be cancelled.

@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     MonitoredVehicleJourney:
+      x-iri: https://schema.beckn.io/MonitoredVehicleJourney/v2.0
       type: object
       title: MonitoredVehicleJourney
       description: A real-time representation of a vehicle journey being actively

@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     RideRequest:
+      x-iri: https://schema.beckn.io/RideRequest/v2.0
       type: object
       title: RideRequest
       description: A passenger's request for an on-demand transport service between

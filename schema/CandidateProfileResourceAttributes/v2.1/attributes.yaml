@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     CandidateProfileResourceAttributes:
+      x-iri: https://schema.beckn.io/CandidateProfileResourceAttributes/v2.1
       type: object
       description: 'Discoverable profile attributes of a candidate Resource. Captures what the candidate brings (skills, experience, availability) and what they seek (location preference, work mode, job type). Designed for privacy: no name, contact, or identity data. Credentials are referenced via SkillEntry with optional VC attestation URLs.
 

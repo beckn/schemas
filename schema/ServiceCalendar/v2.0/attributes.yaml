@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     ServiceCalendar:
+      x-iri: https://schema.beckn.io/ServiceCalendar/v2.0
       type: object
       title: ServiceCalendar
       description: A schedule defining on which dates a transport service operates,

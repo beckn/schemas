@@ -1,5 +1,6 @@
 {
   "$id": "https://schema.beckn.io/NackNotFound/v2.0",
+  "x-iri": "https://schema.beckn.io/NackNotFound/v2.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "NackNotFound",
   "description": "The synchronous rejection body returned when the requested resource does not exist in the system.\n\nNackNotFound appears as the response body for 404 responses. The implementing actor produces it; the calling actor MUST NOT retry without correcting the resource identifier.\n\nRelationship: Extends the Ack schema with status constrained to NACK and adds an error field describing why the resource was not found.",

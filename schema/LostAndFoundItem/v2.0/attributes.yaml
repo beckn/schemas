@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     LostAndFoundItem:
+      x-iri: https://schema.beckn.io/LostAndFoundItem/v2.0
       type: object
       title: LostAndFoundItem
       description: An item that has been reported lost or found in connection with

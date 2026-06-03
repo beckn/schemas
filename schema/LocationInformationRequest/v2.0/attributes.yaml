@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     LocationInformationRequest:
+      x-iri: https://schema.beckn.io/LocationInformationRequest/v2.0
       type: object
       title: LocationInformationRequest
       description: A request for details about a specific geographic location, stop,

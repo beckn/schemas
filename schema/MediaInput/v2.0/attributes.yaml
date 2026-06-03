@@ -11,8 +11,7 @@ info:
 components:
   schemas:
     MediaInput:
-      $id: https://schema.beckn.io/MediaInput/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
+      x-iri: https://schema.beckn.io/MediaInput/v2.0
       description: Reference to an image, audio clip, or video used for multimodal search.
       title: MediaInput
       type: object

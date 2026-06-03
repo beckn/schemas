@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     RideOption:
+      x-iri: https://schema.beckn.io/RideOption/v2.0
       type: object
       title: RideOption
       description: A specific ride-hailing vehicle category and pricing option presented

@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     NoShowPolicy:
+      x-iri: https://schema.beckn.io/NoShowPolicy/v2.0
       type: object
       title: NoShowPolicy
       description: Rules governing the consequences and fees applied when a passenger

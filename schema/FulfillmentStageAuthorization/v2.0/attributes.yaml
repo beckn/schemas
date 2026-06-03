@@ -15,8 +15,7 @@ info:
 components:
   schemas:
     FulfillmentStageAuthorization:
-      $id: https://schema.beckn.io/FulfillmentStageAuthorization/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
+      x-iri: https://schema.beckn.io/FulfillmentStageAuthorization/v2.0
       description: 'A credential/document/proof relevant to authorization at a fulfillment
         stage endpoint. This may be a token to be verified (QR/OTP/URL) or a document
         to be inspected manually.

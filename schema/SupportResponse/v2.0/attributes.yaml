@@ -15,8 +15,7 @@ info:
 components:
   schemas:
     SupportResponse:
-      $id: https://schema.beckn.io/SupportResponse/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
+      x-iri: https://schema.beckn.io/SupportResponse/v2.0
       description: 'Support response payload returned by a BPP to a BAP in the /beckn/on_support
         callback. Contains the support ticket reference, available contact channels,
         SLA commitment, and optional consumer acknowledgement details.

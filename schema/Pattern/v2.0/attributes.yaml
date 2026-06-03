@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Pattern:
+      x-iri: https://schema.beckn.io/Pattern/v2.0
       type: object
       title: Pattern
       description: A unique sequence of stops visited by trips on a route, grouping

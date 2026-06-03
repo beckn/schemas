@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     VehicleCategory:
+      x-iri: https://schema.beckn.io/VehicleCategory/v2.0
       type: object
       title: VehicleCategory
       description: A broad classification of vehicles by their physical type, such

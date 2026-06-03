@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     CandidateAvailabilityOfferAttributes:
+      x-iri: https://schema.beckn.io/CandidateAvailabilityOfferAttributes/v2.1
       type: object
       description: 'Availability and compensation expectation terms under which a candidate profile is offered to employers. The proposedConsideration on the core Offer carries the candidate''s headline desired salary; this extension provides the full range, notice period, and contract type preferences.
 

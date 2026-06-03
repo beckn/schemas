@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     ItineraryElement:
+      x-iri: https://schema.beckn.io/ItineraryElement/v2.0
       type: object
       title: ItineraryElement
       description: A component of an aviation itinerary such as a flight segment,

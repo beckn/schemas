@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     EmployerHiringContractAttributes:
+      x-iri: https://schema.beckn.io/EmployerHiringContractAttributes/v2.1
       type: object
       description: 'Contract-level metadata for an employer-to-candidate hiring offer. Captures the specific role details being offered, compensation amount (as distinct from the candidate''s desired range), proposed joining date, offer expiry, and candidate response state.
 

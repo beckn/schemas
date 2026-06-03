@@ -1,5 +1,4 @@
 openapi: 3.1.1
-$id: "https://schema.beckn.io/ServiceEntitlement/v2.1/attributes.yaml"
 info:
   title: ServiceEntitlement Schema
   version: "2.1.0"
@@ -12,6 +11,7 @@ info:
 components:
   schemas:
     ServiceEntitlement:
+      x-iri: https://schema.beckn.io/ServiceEntitlement/v2.1
       type: object
       x-beckn-container: contractAttributes
       x-status: under-review

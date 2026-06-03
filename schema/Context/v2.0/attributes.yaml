@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     Context:
+      x-iri: https://schema.beckn.io/Context/v2.0
       description: 'Base context schema for all Beckn API calls. Contains addressing
         information
 

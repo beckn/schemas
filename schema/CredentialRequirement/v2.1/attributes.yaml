@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     CredentialRequirement:
+      x-iri: https://schema.beckn.io/CredentialRequirement/v2.1
       type: object
       description: 'A single credential requirement or prerequisite. Specifies what a candidate or enrollee must hold. Category is a broad class; subtype is the specific credential within that class.
 

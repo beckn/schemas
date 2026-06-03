@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Itinerary:
+      x-iri: https://schema.beckn.io/Itinerary/v2.0
       type: object
       title: Itinerary
       description: A complete planned trip containing an ordered sequence of legs,

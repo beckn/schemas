@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     ServiceDelivery:
+      x-iri: https://schema.beckn.io/ServiceDelivery/v2.0
       type: object
       title: ServiceDelivery
       description: The top-level response container in SIRI encapsulating one or more

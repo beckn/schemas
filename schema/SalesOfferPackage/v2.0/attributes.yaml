@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     SalesOfferPackage:
+      x-iri: https://schema.beckn.io/SalesOfferPackage/v2.0
       type: object
       title: SalesOfferPackage
       description: A combination of one or more fare products bundled for sale through

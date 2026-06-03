@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     PlaceRequest:
+      x-iri: https://schema.beckn.io/PlaceRequest/v2.0
       type: object
       title: PlaceRequest
       description: A request for a specific accommodation or seat assignment within

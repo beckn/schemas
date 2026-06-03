@@ -1,5 +1,6 @@
 {
   "$id": "https://schema.beckn.io/NackForbidden/v2.0",
+  "x-iri": "https://schema.beckn.io/NackForbidden/v2.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "NackForbidden",
   "description": "The synchronous rejection body returned when the caller is authenticated but does not have permission to access or modify the requested resource.\n\nNackForbidden appears as the response body for 403 responses. The implementing actor produces it; the calling actor MUST NOT retry without correcting its authorization.\n\nRelationship: Extends the Ack schema with status constrained to NACK and adds an error field describing the authorization failure.",

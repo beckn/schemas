@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     CourseOfferAttributes:
+      x-iri: https://schema.beckn.io/CourseOfferAttributes/v2.1
       type: object
       description: 'Commercial and availability terms under which a course is offered. The proposedConsideration on the core Offer carries the headline fee; this extension provides pricing type context and enrollment window.
 

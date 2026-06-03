@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     Proof:
+      x-iri: https://schema.beckn.io/Proof/v2.0
       type: object
       title: Proof
       description: 'Proof of delivery or pickup evidence, including photos, signatures, OTP confirmations, or digital receipts. Maps to beckn:Document.

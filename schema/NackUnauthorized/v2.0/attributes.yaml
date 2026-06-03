@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     NackUnauthorized:
+      x-iri: https://schema.beckn.io/NackUnauthorized/v2.0
       description: Invalid or missing authentication credentials; signature could
         not be verified.
       allOf:

@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     TripUpdate:
+      x-iri: https://schema.beckn.io/TripUpdate/v2.0
       type: object
       title: TripUpdate
       description: A multi-dimensional update to an in-progress or upcoming mobility

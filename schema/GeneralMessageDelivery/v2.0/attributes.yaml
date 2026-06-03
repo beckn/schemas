@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     GeneralMessageDelivery:
+      x-iri: https://schema.beckn.io/GeneralMessageDelivery/v2.0
       type: object
       title: GeneralMessageDelivery
       description: A real-time delivery of textual messages or alerts related to service

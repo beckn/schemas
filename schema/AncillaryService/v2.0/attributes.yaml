@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     AncillaryService:
+      x-iri: https://schema.beckn.io/AncillaryService/v2.0
       type: object
       title: AncillaryService
       description: An optional or additional service available for purchase alongside

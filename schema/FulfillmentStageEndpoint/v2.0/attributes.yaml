@@ -15,8 +15,7 @@ info:
 components:
   schemas:
     FulfillmentStageEndpoint:
-      $id: https://schema.beckn.io/FulfillmentStageEndpoint/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
+      x-iri: https://schema.beckn.io/FulfillmentStageEndpoint/v2.0
       description: 'A stage boundary endpoint (entry or exit) within a fulfillment,
         such as pickup, handover, warehouse in/out, border crossing, gate entry/exit,
         security check, etc. May require one or more proofs/permits/tokens/documents.

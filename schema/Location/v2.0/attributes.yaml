@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     Location:
+      x-iri: https://schema.beckn.io/Location/v2.0
       description: 'A place represented by GeoJSON geometry and optional address.
 
         Source: main/schema/core/v2/attributes.yaml#Location'

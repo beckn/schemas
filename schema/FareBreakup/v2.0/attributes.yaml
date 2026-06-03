@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     FareBreakup:
+      x-iri: https://schema.beckn.io/FareBreakup/v2.0
       type: object
       title: FareBreakup
       description: A detailed breakdown of the total fare into its constituent components,

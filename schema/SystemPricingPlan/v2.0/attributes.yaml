@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     SystemPricingPlan:
+      x-iri: https://schema.beckn.io/SystemPricingPlan/v2.0
       type: object
       title: SystemPricingPlan
       description: A pricing plan defined by a shared mobility system, describing

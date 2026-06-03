@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Fare:
+      x-iri: https://schema.beckn.io/Fare/v2.0
       type: object
       title: Fare
       description: The monetary cost of travel for a specific journey or service,

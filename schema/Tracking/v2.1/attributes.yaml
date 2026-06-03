@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     Tracking:
+      x-iri: https://schema.beckn.io/Tracking/v2.1
       description: Information regarding live tracking of the fufillment of a contract
       title: Tracking
       type: object

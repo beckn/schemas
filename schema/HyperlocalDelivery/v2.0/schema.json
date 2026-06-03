@@ -1,5 +1,6 @@
 {
   "$id": "https://schema.beckn.io/HyperlocalDelivery/v2.0",
+  "x-iri": "https://schema.beckn.io/HyperlocalDelivery/v2.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "A Beckn domain schema for hyperlocal (same-city, typically sub-2-hour) physical delivery of goods or prepared food from an origin to a destination within a short radius.  HyperlocalDelivery is a concrete, domain-specific fulfillmentAttributes value for a beckn:Fulfillment entry. It is fully aligned with schema:ParcelDelivery.  schema.org alignment: schema:ParcelDelivery (subtype of schema:Intangible) Use in: beckn:Fulfillment.fulfillmentAttributes ",
   "title": "HyperlocalDelivery",

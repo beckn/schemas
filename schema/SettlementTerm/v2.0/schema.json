@@ -1,5 +1,6 @@
 {
   "$id": "https://schema.beckn.io/SettlementTerm/v2.0",
+  "x-iri": "https://schema.beckn.io/SettlementTerm/v2.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "Describes the terms of settlement associated with a given transaction. This is not to be confused with the PaymentAction as it describes all the places where the money gets disbursed after reconciliation.",
   "title": "SettlementTerm",

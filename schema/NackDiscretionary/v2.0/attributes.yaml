@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     NackDiscretionary:
+      x-iri: https://schema.beckn.io/NackDiscretionary/v2.0
       description: 'The synchronous rejection body returned when a responding NP exercises its protocol-level
         agency to decline engagement for policy-governed reasons — insufficient caller trust, capacity
         limits, scheduled inactivity, or general refusal — without an underlying exception in the received

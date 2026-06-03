@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     LogisticsAlert:
+      x-iri: https://schema.beckn.io/LogisticsAlert/v2.0
       type: object
       title: Alert
       description: 'An Alert is a notification or warning related to a shipment, such as delays, exceptions, damage reports, or SLA breaches. Maps to beckn:Event.

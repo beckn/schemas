@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     FulfillmentStop:
+      x-iri: https://schema.beckn.io/FulfillmentStop/v2.0
       type: object
       title: FulfillmentStop
       description: A specific location associated with a fulfillment (trip or journey)

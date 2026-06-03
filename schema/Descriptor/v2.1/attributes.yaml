@@ -11,7 +11,7 @@ info:
 components:
   schemas:
     Descriptor:
-      $schema: https://json-schema.org/draft/2020-12/schema
+      x-iri: https://schema.beckn.io/Descriptor/v2.1
       description: Schema definition for Descriptor in the Beckn Protocol v2.0.1
       title: Descriptor
       type: object

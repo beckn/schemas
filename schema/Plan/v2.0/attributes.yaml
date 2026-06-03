@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Plan:
+      x-iri: https://schema.beckn.io/Plan/v2.0
       type: object
       title: Plan
       description: A journey planning response containing one or more itinerary options

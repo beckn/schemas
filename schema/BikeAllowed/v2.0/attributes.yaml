@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     BikeAllowed:
+      x-iri: https://schema.beckn.io/BikeAllowed/v2.0
       type: object
       title: BikeAllowed
       description: An indicator specifying whether bicycles are permitted on board

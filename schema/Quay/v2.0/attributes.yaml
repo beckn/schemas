@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Quay:
+      x-iri: https://schema.beckn.io/Quay/v2.0
       type: object
       title: Quay
       description: A specific platform, bay, or boarding area within a Stop Place

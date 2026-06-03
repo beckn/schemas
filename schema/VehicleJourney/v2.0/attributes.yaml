@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     VehicleJourney:
+      x-iri: https://schema.beckn.io/VehicleJourney/v2.0
       type: object
       title: VehicleJourney
       description: A specific operational instance of a vehicle traveling a defined

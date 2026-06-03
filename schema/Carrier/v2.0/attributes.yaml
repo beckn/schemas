@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     Carrier:
+      x-iri: https://schema.beckn.io/Carrier/v2.0
       type: object
       title: Carrier
       description: 'A Carrier is a transport service provider responsible for moving goods across distances. Carriers operate fleets of vehicles and may own/manage logistics hubs. Maps to beckn:Provider.

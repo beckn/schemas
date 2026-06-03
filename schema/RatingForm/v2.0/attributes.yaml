@@ -13,8 +13,7 @@ info:
 components:
   schemas:
     RatingForm:
-      $id: https://schema.beckn.io/RatingForm/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
+      x-iri: https://schema.beckn.io/RatingForm/v2.0
       description: A form designed to capture rating and feedback from a user. This
         can be used by both BAP and BPP to fetch ratings and feedback of their respective
         users.

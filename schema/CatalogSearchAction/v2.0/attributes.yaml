@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     CatalogSearchAction:
+      x-iri: https://schema.beckn.io/CatalogSearchAction/v2.0
       type: object
       description: 'The real-world act by which a caller queries the CS (Cataloging Service) for indexed
         catalogs, applying optional catalog type, network, and schema type filters with pagination control.

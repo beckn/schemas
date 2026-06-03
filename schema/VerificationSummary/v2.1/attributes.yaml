@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     VerificationSummary:
+      x-iri: https://schema.beckn.io/VerificationSummary/v2.1
       type: object
       description: 'Summary of a credential verification check. Contains the overall result, reason codes for any failures, and which credential categories were successfully verified. No VC or VP payloads are included.
 

@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Seat:
+      x-iri: https://schema.beckn.io/Seat/v2.0
       type: object
       title: Seat
       description: A specific seat position reserved or assigned to a passenger on

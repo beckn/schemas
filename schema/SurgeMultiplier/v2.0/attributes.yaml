@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     SurgeMultiplier:
+      x-iri: https://schema.beckn.io/SurgeMultiplier/v2.0
       type: object
       title: SurgeMultiplier
       description: A dynamic pricing factor applied during periods of high demand

@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Line:
+      x-iri: https://schema.beckn.io/Line/v2.0
       type: object
       title: Line
       description: A named, branded public transport service identified by a number

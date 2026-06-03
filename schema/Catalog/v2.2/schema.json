@@ -1,5 +1,6 @@
 {
   "$id": "https://schema.beckn.io/Catalog/v2.2",
+  "x-iri": "https://schema.beckn.io/Catalog/v2.2",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "A structured representation of the resources, offers, and provider information that a PN makes available on the network for discovery, selection, and commitment by CNs.\n\nCatalogs appear in the discovery phase of the value-exchange lifecycle. The PN produces them and publishes them to the CS (Cataloging Service) via CatalogPublishAction; the CS indexes them and synchronizes them to the DS, which serves them to CNs in OnDiscoverAction responses.\n\nFabric context: Catalogs are managed by the CS, which indexes them for discovery and synchronizes them to the DS for delivery to subscribing CNs. The CS also stores and serves canonical master catalog items.\n\nRelationship: Composes Provider, Resource, and Offer schemas. MUST include at least one of a resources array or an offers array. The validity field constrains the temporal window during which the catalog is active, expressed as a TimePeriod.",
   "title": "Catalog",

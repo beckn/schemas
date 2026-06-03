@@ -12,8 +12,7 @@ info:
 components:
   schemas:
     FulfillmentAgent:
-      $id: https://schema.beckn.io/FulfillmentAgent/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
+      x-iri: https://schema.beckn.io/FulfillmentAgent/v2.0
       description: The entity directly involved in fulfilling the order. It could
         be a person, an organization, a machine, a software application, or an AI
         Agent.

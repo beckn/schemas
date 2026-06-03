@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     FareEstimate:
+      x-iri: https://schema.beckn.io/FareEstimate/v2.0
       type: object
       title: FareEstimate
       description: An estimated fare for a requested trip, typically returned in response

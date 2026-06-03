@@ -11,8 +11,7 @@ info:
 components:
   schemas:
     Document:
-      $id: https://schema.beckn.io/Document/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
+      x-iri: https://schema.beckn.io/Document/v2.0
       description: A document, that can be parsed, printed, download or displayed. This has intentionally been kept separate from MediaFile as they may contain additional attributes like signature, schema etc.
       title: Document
       x-tags:

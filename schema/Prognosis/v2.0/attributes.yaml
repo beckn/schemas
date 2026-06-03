@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Prognosis:
+      x-iri: https://schema.beckn.io/Prognosis/v2.0
       type: object
       title: Prognosis
       description: A real-time prediction of a vehicle's arrival or departure time

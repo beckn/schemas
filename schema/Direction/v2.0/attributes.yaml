@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Direction:
+      x-iri: https://schema.beckn.io/Direction/v2.0
       type: object
       title: Direction
       description: The direction of travel of a transport service along a route, typically

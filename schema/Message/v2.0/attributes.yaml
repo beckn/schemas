@@ -11,8 +11,7 @@ info:
 components:
   schemas:
     Message:
-      $id: https://schema.beckn.io/Message/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
+      x-iri: https://schema.beckn.io/Message/v2.0
       title: Message
       x-tags:
       - common

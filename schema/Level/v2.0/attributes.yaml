@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Level:
+      x-iri: https://schema.beckn.io/Level/v2.0
       type: object
       title: Level
       description: A floor or vertical level within a multi-level transit station

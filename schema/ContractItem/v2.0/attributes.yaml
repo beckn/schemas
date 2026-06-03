@@ -11,8 +11,7 @@ info:
 components:
   schemas:
     ContractItem:
-      $id: https://schema.beckn.io/ContractItem/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
+      x-iri: https://schema.beckn.io/ContractItem/v2.0
       description: A line item within a Contract, linking an accepted Offer and ordered Item with quantity and price.
       title: ContractItem
       x-tags:

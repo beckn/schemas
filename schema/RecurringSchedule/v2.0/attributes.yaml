@@ -10,6 +10,7 @@ info:
 components:
   schemas:
     RecurringSchedule:
+      x-iri: https://schema.beckn.io/RecurringSchedule/v2.0
       type: object
       additionalProperties: false
       description: 'Defines a recurring temporal schedule such as operating hours or serviceability timing windows. Supports day-based recurrence and optional holiday exclusions.

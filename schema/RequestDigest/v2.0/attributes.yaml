@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     RequestDigest:
+      x-iri: https://schema.beckn.io/RequestDigest/v2.0
       title: Request Payload Digest
       description: 'A cryptographic binding that explicitly ties a callback to the
 

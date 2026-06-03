@@ -17,8 +17,7 @@ info:
 components:
   schemas:
     CatalogPublishResponse:
-      $id: https://schema.beckn.io/CatalogPublishResponse/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
+      x-iri: https://schema.beckn.io/CatalogPublishResponse/v2.0
       title: CatalogPublishResponse
       description: 'Beckn /beckn/on_catalog_publish message payload. Sent by a CDS back to a BPP
 

@@ -1,5 +1,4 @@
 openapi: 3.1.1
-$id: "https://schema.beckn.io/ServiceOffer/v2.1/attributes.yaml"
 info:
   title: ServiceOffer Schema
   version: "2.1.0"
@@ -9,6 +8,7 @@ info:
 components:
   schemas:
     ServiceOffer:
+      x-iri: https://schema.beckn.io/ServiceOffer/v2.1
       type: object
       x-beckn-container: offerAttributes
       x-status: under-review

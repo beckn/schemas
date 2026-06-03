@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     RiderCategory:
+      x-iri: https://schema.beckn.io/RiderCategory/v2.0
       type: object
       title: RiderCategory
       description: A classification of passenger type (e.g., adult, child, senior,

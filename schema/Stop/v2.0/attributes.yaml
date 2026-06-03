@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Stop:
+      x-iri: https://schema.beckn.io/Stop/v2.0
       type: object
       title: Stop
       description: A designated location where vehicles stop to allow passengers to

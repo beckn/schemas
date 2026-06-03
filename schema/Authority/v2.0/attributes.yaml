@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Authority:
+      x-iri: https://schema.beckn.io/Authority/v2.0
       type: object
       title: Authority
       description: A governmental or administrative body responsible for planning,

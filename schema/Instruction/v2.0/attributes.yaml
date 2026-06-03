@@ -11,8 +11,7 @@ info:
 components:
   schemas:
     Instruction:
-      $id: https://schema.beckn.io/Instruction/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
+      x-iri: https://schema.beckn.io/Instruction/v2.0
       description: Schema definition for Instruction in the Beckn Protocol v2.0.1
       title: Instruction
       type: object

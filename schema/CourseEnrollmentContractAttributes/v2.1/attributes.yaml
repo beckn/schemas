@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     CourseEnrollmentContractAttributes:
+      x-iri: https://schema.beckn.io/CourseEnrollmentContractAttributes/v2.1
       type: object
       x-beckn-container: contractAttributes
       x-jsonld-context: ./context.jsonld

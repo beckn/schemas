@@ -11,8 +11,7 @@ info:
 components:
   schemas:
     Order:
-      $id: https://schema.beckn.io/Order/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
+      x-iri: https://schema.beckn.io/Order/v2.0
       description: Schema definition for Order in the Beckn Protocol
       title: Order
       type: object

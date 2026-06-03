@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     DepartureMessage:
+      x-iri: https://schema.beckn.io/DepartureMessage/v2.0
       type: object
       title: DepartureMessage
       description: A real-time message containing predicted departure times for vehicles

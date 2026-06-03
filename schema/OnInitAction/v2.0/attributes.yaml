@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     OnInitAction:
+      x-iri: https://schema.beckn.io/OnInitAction/v2.0
       title: On Init Action
       description: 'Beckn /beckn/on_init message payload. Sent by a BPP to a BAP in
         response

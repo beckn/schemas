@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     FareComponent:
+      x-iri: https://schema.beckn.io/FareComponent/v2.0
       type: object
       title: FareComponent
       description: A component of an air travel fare that applies to a specific flight

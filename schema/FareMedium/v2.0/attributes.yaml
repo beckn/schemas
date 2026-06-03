@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     FareMedium:
+      x-iri: https://schema.beckn.io/FareMedium/v2.0
       type: object
       title: FareMedium
       description: The physical or digital medium used to carry or present a fare

@@ -12,8 +12,7 @@ info:
 components:
   schemas:
     FulfillmentMode:
-      $id: https://schema.beckn.io/FulfillmentMode/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
+      x-iri: https://schema.beckn.io/FulfillmentMode/v2.0
       description: Describes the mode of fulfillment. This is an extensible container
         allowing domain-specific fulfillment modes to be expressed via attributes.
       title: FulfillmentMode

@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     CourseConsiderationAttributes:
+      x-iri: https://schema.beckn.io/CourseConsiderationAttributes/v2.1
       type: object
       x-beckn-container: considerationAttributes
       x-jsonld-context: ./context.jsonld

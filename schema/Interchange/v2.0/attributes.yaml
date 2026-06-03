@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Interchange:
+      x-iri: https://schema.beckn.io/Interchange/v2.0
       type: object
       title: Interchange
       description: A planned transfer connection point where passengers switch between

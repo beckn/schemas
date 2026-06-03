@@ -11,8 +11,7 @@ info:
 components:
   schemas:
     PriceSpecification:
-      $id: https://schema.beckn.io/PriceSpecification/v2.1
-      $schema: https://json-schema.org/draft/2020-12/schema
+      x-iri: https://schema.beckn.io/PriceSpecification/v2.1
       description: Schema definition for PriceSpecification in the Beckn Protocol v2.0.1
       title: PriceSpecification
       type: object

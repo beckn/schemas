@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     TransportObject:
+      x-iri: https://schema.beckn.io/TransportObject/v2.0
       type: object
       title: TransportObject
       description: A generic transport entity in the OSLO mobility ontology representing

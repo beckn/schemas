@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     EmergencyEvent:
+      x-iri: https://schema.beckn.io/EmergencyEvent/v2.0
       type: object
       title: EmergencyEvent
       description: A critical safety or operational event requiring immediate response,

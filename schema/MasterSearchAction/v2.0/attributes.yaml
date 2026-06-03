@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     MasterSearchAction:
+      x-iri: https://schema.beckn.io/MasterSearchAction/v2.0
       type: object
       description: 'Message payload for catalog/master_search
 

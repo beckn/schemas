@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     NackTooManyRequests:
+      x-iri: https://schema.beckn.io/NackTooManyRequests/v2.0
       description: 'The synchronous rejection body returned when the responding NP has exceeded a request
         rate limit (AUT_RATE_LIMITED) or a policy-governed engagement capacity limit (POL_NP_CAPACITY_EXCEEDED).
         The caller MUST apply back-off before retrying. Implementations SHOULD include a Retry-After header

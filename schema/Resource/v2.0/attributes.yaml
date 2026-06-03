@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     Resource:
+      x-iri: https://schema.beckn.io/Resource/v2.0
       type: object
       description: "A minimal, domain-neutral abstraction representing any discoverable, \
         referenceable, or committable unit of value, capability, service, entitlement,\

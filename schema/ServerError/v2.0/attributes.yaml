@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     ServerError:
+      x-iri: https://schema.beckn.io/ServerError/v2.0
       description: Internal failure on the network participant's application; the
         request could not be processed. The response body MAY contain an `error` object
         with additional details.

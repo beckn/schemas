@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Geofence:
+      x-iri: https://schema.beckn.io/Geofence/v2.0
       type: object
       title: Geofence
       description: A virtual geographic boundary used to define service areas, restricted

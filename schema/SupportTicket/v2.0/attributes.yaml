@@ -11,8 +11,7 @@ info:
 components:
   schemas:
     SupportTicket:
-      $id: https://schema.beckn.io/SupportTicket/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
+      x-iri: https://schema.beckn.io/SupportTicket/v2.0
       description: A support ticket raised against an order
       title: SupportTicket
       x-tags:

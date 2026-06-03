@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     BaggageAllowance:
+      x-iri: https://schema.beckn.io/BaggageAllowance/v2.0
       type: object
       title: BaggageAllowance
       description: The quantity and weight of baggage a passenger is permitted to

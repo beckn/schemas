@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     CatalogPullCallbackAction:
+      x-iri: https://schema.beckn.io/CatalogPullCallbackAction/v2.0
       type: object
       description: 'The real-world act by which the CS (Cataloging Service) delivers the results of a
         previously accepted /catalog/pull request to the subscriber''s (DS) /catalog/on_pull callback

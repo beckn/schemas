@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     CallbackSignature:
+      x-iri: https://schema.beckn.io/CallbackSignature/v2.0
       title: Beckn HTTP Callback Signature
       description: "A digitally signed authentication credential transmitted in the HTTP Authorization\
         \ header of PN solicited callbacks to CN `/on_*` endpoints. Extends the standard Signature by\

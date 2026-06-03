@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     OccupancyStatus:
+      x-iri: https://schema.beckn.io/OccupancyStatus/v2.0
       type: object
       title: OccupancyStatus
       description: An indicator of the current passenger load level of a vehicle,

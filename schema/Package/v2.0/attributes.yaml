@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     Package:
+      x-iri: https://schema.beckn.io/Package/v2.0
       type: object
       title: Package
       description: 'A Package is a physical unit of goods prepared for transport within a shipment. Maps to beckn:Item.

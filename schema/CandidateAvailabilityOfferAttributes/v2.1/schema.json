@@ -75,6 +75,7 @@
     }
   },
   "$id": "https://schema.beckn.io/CandidateAvailabilityOfferAttributes/v2.1",
+  "x-iri": "https://schema.beckn.io/CandidateAvailabilityOfferAttributes/v2.1",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "CandidateAvailabilityOfferAttributes"
 }

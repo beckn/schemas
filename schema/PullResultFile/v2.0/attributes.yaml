@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     PullResultFile:
+      x-iri: https://schema.beckn.io/PullResultFile/v2.0
       type: object
       description: 'JSON body of `GET /catalog/pull/result/{requestId}/catalogs.json`.
 

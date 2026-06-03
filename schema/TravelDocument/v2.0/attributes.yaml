@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     TravelDocument:
+      x-iri: https://schema.beckn.io/TravelDocument/v2.0
       type: object
       title: TravelDocument
       description: A document (physical or digital) issued to a passenger proving

@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     AckSignature:
+      x-iri: https://schema.beckn.io/AckSignature/v2.0
       title: Beckn HTTP Ack Signature
       description: "A digitally signed authentication credential transmitted in the HTTP `Signature` response\
         \ header on every synchronous Beckn response, proving that the responding NP received and authenticated\

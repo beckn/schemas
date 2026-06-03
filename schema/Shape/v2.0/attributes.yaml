@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Shape:
+      x-iri: https://schema.beckn.io/Shape/v2.0
       type: object
       title: Shape
       description: The geographic path traced by a vehicle along a route, represented

@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Journey:
+      x-iri: https://schema.beckn.io/Journey/v2.0
       type: object
       title: Journey
       description: A complete travel itinerary from origin to destination, potentially

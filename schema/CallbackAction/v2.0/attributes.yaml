@@ -15,8 +15,7 @@ info:
 components:
   schemas:
     CallbackAction:
-      $id: https://schema.beckn.io/CallbackAction/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
+      x-iri: https://schema.beckn.io/CallbackAction/v2.0
       title: CallbackAction
       x-tags:
       - common

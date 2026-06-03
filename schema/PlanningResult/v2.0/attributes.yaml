@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     PlanningResult:
+      x-iri: https://schema.beckn.io/PlanningResult/v2.0
       type: object
       title: PlanningResult
       description: The output of a MaaS platform planning request, listing available

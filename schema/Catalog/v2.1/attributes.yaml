@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     Catalog:
+      x-iri: https://schema.beckn.io/Catalog/v2.1
       description: 'Catalog schema for Beckn Protocol v2.0.0
 
 

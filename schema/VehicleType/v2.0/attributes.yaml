@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     VehicleType:
+      x-iri: https://schema.beckn.io/VehicleType/v2.0
       type: object
       title: VehicleType
       description: A class or category of vehicle defined by its mode of transport,

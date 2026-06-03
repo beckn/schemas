@@ -12,8 +12,7 @@ info:
 components:
   schemas:
     Time:
-      $id: https://schema.beckn.io/Time/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
+      x-iri: https://schema.beckn.io/Time/v2.0
       description: Represents a moment or duration in time. Can express a timestamp,
         a duration, or a time range.
       title: Time

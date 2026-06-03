@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Trip:
+      x-iri: https://schema.beckn.io/Trip/v2.0
       type: object
       title: Trip
       description: A confirmed and booked journey from an origin to a destination,

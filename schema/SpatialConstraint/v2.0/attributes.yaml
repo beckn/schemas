@@ -11,8 +11,7 @@ info:
 components:
   schemas:
     SpatialConstraint:
-      $id: https://schema.beckn.io/SpatialConstraint/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
+      x-iri: https://schema.beckn.io/SpatialConstraint/v2.0
       description: "**Spatial predicate** using **OGC CQL2 (JSON semantics)** applied\
         \ to one or more geometry targets in an item. This is where clients express\
         \ spatial intent. Key ideas: - `targets`: one or more **JSONPath-like** pointers\

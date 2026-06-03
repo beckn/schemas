@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     StopArea:
+      x-iri: https://schema.beckn.io/StopArea/v2.0
       type: object
       title: StopArea
       description: A group of stops that collectively define a zone from which a demand-responsive

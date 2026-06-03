@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Carrier:
+      x-iri: https://schema.beckn.io/Carrier/v2.0
       type: object
       title: Carrier
       description: 'A Carrier is a transport service provider responsible for moving goods across distances. Carriers operate fleets of vehicles and may own/manage logistics hubs. Maps to beckn:Provider.
@@ -97,6 +98,7 @@ components:
           description: Whether carrier is currently active on network
           example: true
     Consignment:
+      x-iri: https://schema.beckn.io/Consignment/v2.0
       type: object
       title: Consignment
       description: 'A Consignment is a collection of packages or shipments grouped together under a single commercial transaction between a shipper and consignee. Maps to beckn:Order.
@@ -170,6 +172,7 @@ components:
           type: string
           format: date-time
     Contact:
+      x-iri: https://schema.beckn.io/Contact/v2.0
       type: object
       title: Contact
       description: Contact information for sender, receiver, driver, or operator.
@@ -193,6 +196,7 @@ components:
           type: string
           description: GST number for B2B invoicing
     Courier:
+      x-iri: https://schema.beckn.io/Courier/v2.0
       type: object
       title: Courier
       description: 'A Courier is an individual delivery agent responsible for last-mile pickup and delivery of packages, typically in hyperlocal or urban delivery contexts. Maps to beckn:Agent.
@@ -267,6 +271,7 @@ components:
           format: date
           description: Date the courier joined the network
     DeliverySlot:
+      x-iri: https://schema.beckn.io/DeliverySlot/v2.0
       type: object
       title: DeliverySlot
       description: 'A DeliverySlot is a time window offered or agreed upon for delivery of a shipment. Maps to beckn:TimeSlot.
@@ -330,6 +335,7 @@ components:
           description: Last time to book this slot
           example: '2024-03-14T22:00:00+05:30'
     Hub:
+      x-iri: https://schema.beckn.io/Hub/v2.0
       type: object
       title: Hub
       description: 'A Hub is a logistics fulfillment center, sorting facility, or distribution point where goods are consolidated, sorted, and dispatched for onward delivery. Maps to beckn:Location.
@@ -411,6 +417,7 @@ components:
           type: boolean
           example: true
     LogisticsAlert:
+      x-iri: https://schema.beckn.io/LogisticsAlert/v2.0
       type: object
       title: LogisticsAlert
       description: 'An Alert is a notification or warning related to a shipment, such as delays, exceptions, damage reports, or SLA breaches. Maps to beckn:Event.
@@ -494,6 +501,7 @@ components:
           type: string
           example: Please reschedule delivery for tomorrow.
     LogisticsCancellationPolicy:
+      x-iri: https://schema.beckn.io/LogisticsCancellationPolicy/v2.0
       type: object
       title: LogisticsCancellationPolicy
       description: Defines terms under which a shipment booking can be cancelled.
@@ -553,6 +561,7 @@ components:
           - EXPRESS
           - COURIER
     LogisticsDriver:
+      x-iri: https://schema.beckn.io/LogisticsDriver/v2.0
       type: object
       title: LogisticsDriver
       description: 'A Driver is an individual who operates a vehicle for logistics delivery. Drivers are assigned to shipments and responsible for physical transport. Maps to beckn:Agent.
@@ -640,6 +649,7 @@ components:
           - Bangalore North
           - Bangalore East
     LogisticsFare:
+      x-iri: https://schema.beckn.io/LogisticsFare/v2.0
       type: object
       title: LogisticsFare
       description: Total cost charged for a logistics service including base freight, surcharges, taxes.
@@ -700,6 +710,7 @@ components:
           - CREDIT
           example: PREPAID
     LogisticsFareBreakup:
+      x-iri: https://schema.beckn.io/LogisticsFareBreakup/v2.0
       type: object
       title: LogisticsFareBreakup
       description: A single line item in the fare breakup for a logistics service.
@@ -746,6 +757,7 @@ components:
           description: Whether this component was waived
           example: false
     LogisticsFeedback:
+      x-iri: https://schema.beckn.io/LogisticsFeedback/v2.0
       type: object
       title: LogisticsFeedback
       description: Qualitative feedback from sender or receiver about a logistics experience.
@@ -784,6 +796,7 @@ components:
           description: Whether feedback is publicly visible
           example: true
     LogisticsOperator:
+      x-iri: https://schema.beckn.io/LogisticsOperator/v2.0
       type: object
       title: LogisticsOperator
       description: Entity operating a logistics network or fleet, responsible for end-to-end delivery service.
@@ -845,6 +858,7 @@ components:
           - ISO9001
           - GDPR_COMPLIANT
     LogisticsPlace:
+      x-iri: https://schema.beckn.io/LogisticsPlace/v2.0
       type: object
       title: LogisticsPlace
       description: 'A geographic location relevant to logistics such as origin, destination, hub, or waypoint. Includes structured address and GPS coordinates. Maps to beckn:Location and schema:Place.
@@ -914,6 +928,7 @@ components:
           description: Whether the address has been geocode-verified
           example: true
     LogisticsRating:
+      x-iri: https://schema.beckn.io/LogisticsRating/v2.0
       type: object
       title: LogisticsRating
       description: A numeric score given by a user for a logistics service, driver, or carrier.
@@ -966,6 +981,7 @@ components:
           type: string
           format: date-time
     LogisticsReceipt:
+      x-iri: https://schema.beckn.io/LogisticsReceipt/v2.0
       type: object
       title: LogisticsReceipt
       description: Digital acknowledgment of payment and delivery for a logistics service.
@@ -1015,6 +1031,7 @@ components:
           format: uri
           description: URL to download PDF receipt
     LogisticsRoute:
+      x-iri: https://schema.beckn.io/LogisticsRoute/v2.0
       type: object
       title: LogisticsRoute
       description: 'A Route is the planned path for a shipment from origin to destination, potentially passing through multiple hubs and waypoints. Maps to beckn:Journey.
@@ -1110,6 +1127,7 @@ components:
           - No night driving in MP
           - Heavy vehicle ban in city center
     LogisticsSupportCase:
+      x-iri: https://schema.beckn.io/LogisticsSupportCase/v2.0
       type: object
       title: LogisticsSupportCase
       description: Customer support ticket for shipment issues — loss, damage, delay, or billing.
@@ -1187,6 +1205,7 @@ components:
           type: string
           format: date-time
     LogisticsVehicle:
+      x-iri: https://schema.beckn.io/LogisticsVehicle/v2.0
       type: object
       title: LogisticsVehicle
       description: 'A Vehicle is a transport asset used for logistics operations. Vehicle types range from bicycles for hyperlocal delivery to heavy trucks for long haul freight. Maps to beckn:Asset.
@@ -1314,6 +1333,7 @@ components:
           - INACTIVE
           example: ON_ROUTE
     Package:
+      x-iri: https://schema.beckn.io/Package/v2.0
       type: object
       title: Package
       description: 'A Package is a physical unit of goods prepared for transport within a shipment. Maps to beckn:Item.
@@ -1425,6 +1445,7 @@ components:
           description: Whether insurance is required for this package
           example: false
     Proof:
+      x-iri: https://schema.beckn.io/Proof/v2.0
       type: object
       title: Proof
       description: 'Proof of delivery or pickup evidence, including photos, signatures, OTP confirmations, or digital receipts. Maps to beckn:Document.
@@ -1495,6 +1516,7 @@ components:
           description: Driver confirmed successful delivery
           example: true
     ReturnPolicy:
+      x-iri: https://schema.beckn.io/ReturnPolicy/v2.0
       type: object
       title: ReturnPolicy
       description: Defines conditions for returning goods and reverse logistics workflows.
@@ -1548,6 +1570,7 @@ components:
         returnHubAddress:
           $ref: '#/components/schemas/LogisticsPlace'
     Shipment:
+      x-iri: https://schema.beckn.io/Shipment/v2.0
       type: object
       title: Shipment
       description: 'A Shipment represents the movement of one or more packages from an origin to a destination. It is the top-level fulfillment entity in a logistics transaction and maps to beckn:Fulfillment.
@@ -1656,6 +1679,7 @@ components:
           format: date-time
           description: Timestamp of last update
     TrackingUpdate:
+      x-iri: https://schema.beckn.io/TrackingUpdate/v2.0
       type: object
       title: TrackingUpdate
       description: 'A TrackingUpdate is a real-time or periodic update on the status and location of a shipment during transit. Maps to beckn:Event.
@@ -1737,6 +1761,7 @@ components:
           description: Whether customer was notified of this update
           example: true
     Waypoint:
+      x-iri: https://schema.beckn.io/Waypoint/v2.0
       type: object
       title: Waypoint
       description: 'A Waypoint is an intermediate stop or checkpoint on a logistics route, such as a sorting hub, relay station, or customs checkpoint. Maps to beckn:Stop.

@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     SkillEntry:
+      x-iri: https://schema.beckn.io/SkillEntry/v2.1
       type: object
       description: 'A single skill, qualification, or credential held by a candidate. The attested flag and proof_request_url are optional — allowing the schema to function in early-stage ecosystems where VC infrastructure is not yet universal. As VCs become available for specific skills, the proof_request_url can be populated without any schema change.
 

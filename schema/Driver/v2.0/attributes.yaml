@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Driver:
+      x-iri: https://schema.beckn.io/Driver/v2.0
       type: object
       title: Driver
       description: A person who operates a transport vehicle and is responsible for

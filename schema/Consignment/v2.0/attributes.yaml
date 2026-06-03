@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     Consignment:
+      x-iri: https://schema.beckn.io/Consignment/v2.0
       type: object
       title: Consignment
       description: 'A Consignment is a collection of packages or shipments grouped together under a single commercial transaction between a shipper and consignee. Maps to beckn:Order.

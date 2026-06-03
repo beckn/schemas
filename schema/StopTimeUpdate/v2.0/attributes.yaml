@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     StopTimeUpdate:
+      x-iri: https://schema.beckn.io/StopTimeUpdate/v2.0
       type: object
       title: StopTimeUpdate
       description: A real-time update to the predicted arrival or departure time of

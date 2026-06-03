@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     TripResult:
+      x-iri: https://schema.beckn.io/TripResult/v2.0
       type: object
       title: TripResult
       description: The result of a trip planning request, containing one or more journey

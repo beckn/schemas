@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     JobApplicationContractAttributes:
+      x-iri: https://schema.beckn.io/JobApplicationContractAttributes/v2.1
       type: object
       description: 'Transaction-level metadata for a job application contract. Captures the application reference, aggregate verification outcome, and reverification state. No credential payloads are stored here.
 

@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     NackConflict:
+      x-iri: https://schema.beckn.io/NackConflict/v2.0
       description: 'The synchronous rejection body returned when the request conflicts with existing state
         — for example, a subscription with the same criteria already exists for this subscriber.
 

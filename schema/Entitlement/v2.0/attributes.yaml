@@ -14,8 +14,7 @@ info:
 components:
   schemas:
     Entitlement:
-      $id: https://schema.beckn.io/Entitlement/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
+      x-iri: https://schema.beckn.io/Entitlement/v2.0
       description: A contractually granted, policy-governed right that allows a specific
         party to access, use, or claim a defined economic resource within stated scope
         and validity constraints. It represents the enforceable permission created

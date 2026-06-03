@@ -11,8 +11,7 @@ info:
 components:
   schemas:
     RatingInput:
-      $id: https://schema.beckn.io/RatingInput/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
+      x-iri: https://schema.beckn.io/RatingInput/v2.0
       description: Schema definition for RatingInput in the Beckn Protocol
       title: RatingInput
       type: object

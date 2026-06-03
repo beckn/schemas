@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     StationStatus:
+      x-iri: https://schema.beckn.io/StationStatus/v2.0
       type: object
       title: StationStatus
       description: The real-time operational state of a shared mobility station, including

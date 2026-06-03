@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Ticket:
+      x-iri: https://schema.beckn.io/Ticket/v2.0
       type: object
       title: Ticket
       description: A document or digital record granting the holder the right to travel

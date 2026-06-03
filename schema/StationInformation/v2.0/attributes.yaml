@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     StationInformation:
+      x-iri: https://schema.beckn.io/StationInformation/v2.0
       type: object
       title: StationInformation
       description: Static descriptive information about a shared mobility docking

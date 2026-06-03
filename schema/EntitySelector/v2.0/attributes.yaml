@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     EntitySelector:
+      x-iri: https://schema.beckn.io/EntitySelector/v2.0
       type: object
       title: EntitySelector
       description: A selector that identifies which transport entities (routes, trips,

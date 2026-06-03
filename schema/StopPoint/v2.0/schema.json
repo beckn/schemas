@@ -1,5 +1,6 @@
 {
   "$id": "https://schema.beckn.io/StopPoint/v2.0",
+  "x-iri": "https://schema.beckn.io/StopPoint/v2.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "StopPoint",
   "type": "object",

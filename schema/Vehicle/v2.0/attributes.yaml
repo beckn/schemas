@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Vehicle:
+      x-iri: https://schema.beckn.io/Vehicle/v2.0
       type: object
       title: Vehicle
       description: A motorized or human-powered mobility asset used to carry passengers

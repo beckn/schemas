@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     LogisticsFeedback:
+      x-iri: https://schema.beckn.io/LogisticsFeedback/v2.0
       type: object
       title: Feedback
       description: Qualitative feedback from sender or receiver about a logistics experience.

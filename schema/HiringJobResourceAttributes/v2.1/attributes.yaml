@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     HiringJobResourceAttributes:
+      x-iri: https://schema.beckn.io/HiringJobResourceAttributes/v2.1
       type: object
       description: 'Intrinsic attributes of a job opportunity Resource. Domain-generic: applicable to any hiring vertical (tech, construction, logistics, healthcare, gig economy, etc.).
 

@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     ServiceClass:
+      x-iri: https://schema.beckn.io/ServiceClass/v2.0
       type: object
       title: ServiceClass
       description: A classification of the level of service offered by a transport

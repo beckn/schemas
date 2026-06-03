@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Rider:
+      x-iri: https://schema.beckn.io/Rider/v2.0
       type: object
       title: Rider
       description: A person using a shared mobility service (such as a bike-share,

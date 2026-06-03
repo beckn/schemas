@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Passenger:
+      x-iri: https://schema.beckn.io/Passenger/v2.0
       type: object
       title: Passenger
       description: A person who travels using a transport service and is identified

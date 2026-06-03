@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     CatalogSubscriptionResponse:
+      x-iri: https://schema.beckn.io/CatalogSubscriptionResponse/v2.0
       description: 'The response envelope returned synchronously by the CS (Cataloging Service) for subscription
         management operations — create, update, list, and deactivate.
 

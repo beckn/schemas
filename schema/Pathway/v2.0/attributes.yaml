@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Pathway:
+      x-iri: https://schema.beckn.io/Pathway/v2.0
       type: object
       title: Pathway
       description: A connection between two points within a transit station (e.g.,

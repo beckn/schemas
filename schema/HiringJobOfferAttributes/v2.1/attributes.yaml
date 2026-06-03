@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     HiringJobOfferAttributes:
+      x-iri: https://schema.beckn.io/HiringJobOfferAttributes/v2.1
       type: object
       description: 'Commercial and availability terms under which a job opportunity is offered. The proposedConsideration on the core Offer object carries the midpoint or headline compensation figure; this extension provides the full range and period breakdown for display and filtering.
 

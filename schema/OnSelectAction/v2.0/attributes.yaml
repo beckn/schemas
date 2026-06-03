@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     OnSelectAction:
+      x-iri: https://schema.beckn.io/OnSelectAction/v2.0
       title: On Select Action
       description: 'Beckn /beckn/on_select message payload. Sent by a BPP to a BAP
         in

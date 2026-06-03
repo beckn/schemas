@@ -1,5 +1,6 @@
 {
   "$id": "https://schema.beckn.io/Invoice/v2.2",
+  "x-iri": "https://schema.beckn.io/Invoice/v2.2",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "An Invoice is a financial statement issued by a creditor to a debtor that itemises the amounts owed and records how they are settled. Each line item is a billed financial entry — an order, refund, commission, finder fee, or adjustment — rather than a product or service. The invoice tracks its lifecycle status, the agreed settlement terms, and the proofs of settlement (payment actions) that discharge the amount due. An invoice may be issued, updated, settled, cancelled, or disputed over its lifecycle.",
   "title": "Invoice",

@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     LogisticsSupportCase:
+      x-iri: https://schema.beckn.io/LogisticsSupportCase/v2.0
       type: object
       title: SupportCase
       description: Customer support ticket for shipment issues — loss, damage, delay, or billing.

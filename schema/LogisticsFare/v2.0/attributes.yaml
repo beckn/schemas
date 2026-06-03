@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     LogisticsFare:
+      x-iri: https://schema.beckn.io/LogisticsFare/v2.0
       type: object
       title: LogisticsFare
       description: Total cost charged for a logistics service including base freight, surcharges, taxes.

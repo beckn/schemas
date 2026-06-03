@@ -11,8 +11,7 @@ info:
 components:
   schemas:
     Quantity:
-      $id: https://schema.beckn.io/Quantity/v2.0
-      $schema: https://json-schema.org/draft/2020-12/schema
+      x-iri: https://schema.beckn.io/Quantity/v2.0
       description: Schema definition for Quantity in the Beckn Protocol v2.0.1
       title: Quantity
       type: object

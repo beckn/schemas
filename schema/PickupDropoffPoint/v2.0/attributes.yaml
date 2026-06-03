@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     PickupDropoffPoint:
+      x-iri: https://schema.beckn.io/PickupDropoffPoint/v2.0
       type: object
       title: PickupDropoffPoint
       description: A designated location used as a pickup or dropoff point for passengers

@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     ConfirmAction:
+      x-iri: https://schema.beckn.io/ConfirmAction/v2.0
       title: Confirm Action
       description: 'Beckn /beckn/confirm message payload. Sent by a BAP to a BPP to
         confirm

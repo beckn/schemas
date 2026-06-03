@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     LogisticsPlace:
+      x-iri: https://schema.beckn.io/LogisticsPlace/v2.0
       type: object
       title: Place
       description: 'A geographic location relevant to logistics such as origin, destination, hub, or waypoint. Includes structured address and GPS coordinates. Maps to beckn:Location and schema:Place.

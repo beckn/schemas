@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     EstimatedTimetableDelivery:
+      x-iri: https://schema.beckn.io/EstimatedTimetableDelivery/v2.0
       type: object
       title: EstimatedTimetableDelivery
       description: A real-time data delivery providing predicted departure and arrival

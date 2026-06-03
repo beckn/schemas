@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     HiringProcessPerformanceAttributes:
+      x-iri: https://schema.beckn.io/HiringProcessPerformanceAttributes/v2.1
       type: object
       description: 'Execution state of the hiring process service. Covers the pipeline from initial screening through to offer acceptance or withdrawal. Includes optional credential verification triggered by the employer during the hiring process.
 

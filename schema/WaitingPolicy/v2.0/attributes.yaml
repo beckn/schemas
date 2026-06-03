@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     WaitingPolicy:
+      x-iri: https://schema.beckn.io/WaitingPolicy/v2.0
       type: object
       title: WaitingPolicy
       description: Rules governing the maximum time a driver is required to wait for

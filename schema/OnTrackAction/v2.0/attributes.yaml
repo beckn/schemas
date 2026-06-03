@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     OnTrackAction:
+      x-iri: https://schema.beckn.io/OnTrackAction/v2.0
       title: On Track Action
       description: 'Beckn /beckn/on_track message payload. Sent by a BPP to a BAP
         in

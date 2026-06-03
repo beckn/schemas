@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Station:
+      x-iri: https://schema.beckn.io/Station/v2.0
       type: object
       title: Station
       description: A major transit facility serving as a hub for one or more transport

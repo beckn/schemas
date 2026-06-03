@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     FareProduct:
+      x-iri: https://schema.beckn.io/FareProduct/v2.0
       type: object
       title: FareProduct
       description: A purchasable entitlement to travel defining conditions of use,

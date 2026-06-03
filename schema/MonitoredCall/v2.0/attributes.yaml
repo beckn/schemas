@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     MonitoredCall:
+      x-iri: https://schema.beckn.io/MonitoredCall/v2.0
       type: object
       title: MonitoredCall
       description: A real-time arrival or departure prediction for a specific vehicle

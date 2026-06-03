@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     StopEvent:
+      x-iri: https://schema.beckn.io/StopEvent/v2.0
       type: object
       title: StopEvent
       description: A departure or arrival event at a stop, used to retrieve the next

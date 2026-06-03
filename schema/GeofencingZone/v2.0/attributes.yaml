@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     GeofencingZone:
+      x-iri: https://schema.beckn.io/GeofencingZone/v2.0
       type: object
       title: GeofencingZone
       description: A virtual geographic boundary used to define operational areas,

@@ -1,5 +1,4 @@
 openapi: 3.1.1
-$id: "https://schema.beckn.io/ServiceConsideration/v2.1/attributes.yaml"
 info:
   title: ServiceConsideration Schema
   version: "2.1.0"
@@ -13,6 +12,7 @@ info:
 components:
   schemas:
     ServiceConsideration:
+      x-iri: https://schema.beckn.io/ServiceConsideration/v2.1
       type: object
       x-beckn-container: considerationAttributes
       x-status: under-review

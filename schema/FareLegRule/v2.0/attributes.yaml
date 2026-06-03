@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     FareLegRule:
+      x-iri: https://schema.beckn.io/FareLegRule/v2.0
       type: object
       title: FareLegRule
       description: A rule defining how a fare is applied to a single leg of a journey

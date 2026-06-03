@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     ErrorCode:
+      x-iri: https://schema.beckn.io/ErrorCode/v2.0
       title: ErrorCode
       description: Canonical Beckn Protocol v2 error code enum. The prefix indicates the protocol stack
         layer at which the error originated. Error.code MUST be one of these values. Defined by NFH-008

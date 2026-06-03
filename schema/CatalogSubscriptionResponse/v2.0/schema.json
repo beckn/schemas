@@ -1,5 +1,6 @@
 {
   "$id": "https://schema.beckn.io/CatalogSubscriptionResponse/v2.0",
+  "x-iri": "https://schema.beckn.io/CatalogSubscriptionResponse/v2.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "CatalogSubscriptionResponse",
   "description": "The response envelope returned synchronously by the CS (Cataloging Service) for subscription management operations — create, update, list, and deactivate.\n\nThis schema appears in the Catalog Subscription phase. The CS produces it as the synchronous response to POST /catalog/subscription (creation or update), GET /catalog/subscription (listing), and DELETE /catalog/subscription (deactivation). The DS consumes it to confirm subscription state.\n\nFabric context: Produced synchronously by the CS; no async callback is delivered for subscription management operations. The context.action is always catalog/on_subscription.\n\nRelationship: Composes one or more CatalogSubscription records in the message.subscriptions array, and an optional Pagination object for list responses.",

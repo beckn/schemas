@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     PassengerGroup:
+      x-iri: https://schema.beckn.io/PassengerGroup/v2.0
       type: object
       title: PassengerGroup
       description: A collection of passengers traveling together as a group, with

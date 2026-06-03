@@ -13,6 +13,7 @@ info:
 components:
   schemas:
     JobApplicationPerformanceAttributes:
+      x-iri: https://schema.beckn.io/JobApplicationPerformanceAttributes/v2.1
       type: object
       description: 'Execution metadata for the verification and routing service performed during a job application. Includes the verification method used, per-requirement results, proof integrity reference, and routing outcome. No VC or VP payloads are stored.
 

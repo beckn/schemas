@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     LogisticsFareBreakup:
+      x-iri: https://schema.beckn.io/LogisticsFareBreakup/v2.0
       type: object
       title: LogisticsFareBreakup
       description: A single line item in the fare breakup for a logistics service.

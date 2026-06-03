@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     FareResult:
+      x-iri: https://schema.beckn.io/FareResult/v2.0
       type: object
       title: FareResult
       description: The calculated fare for a requested trip, returned as part of a

@@ -1,5 +1,6 @@
 {
   "$id": "https://schema.beckn.io/CheckoutTerminal/v2.0",
+  "x-iri": "https://schema.beckn.io/CheckoutTerminal/v2.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "The checkout terminal where the consumer makes the payment",
   "title": "CheckoutTerminal",

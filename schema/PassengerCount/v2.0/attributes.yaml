@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     PassengerCount:
+      x-iri: https://schema.beckn.io/PassengerCount/v2.0
       type: object
       title: PassengerCount
       description: The measured number of passengers currently aboard a vehicle, used

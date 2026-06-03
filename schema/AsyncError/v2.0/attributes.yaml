@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     AsyncError:
+      x-iri: https://schema.beckn.io/AsyncError/v2.0
       title: Asynchronous Error
       description: Error returned asynchronously during a callback. Wraps the base
         `Error` schema with JSON-LD type annotations to allow linked-data processing.

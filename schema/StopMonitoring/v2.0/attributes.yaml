@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     StopMonitoring:
+      x-iri: https://schema.beckn.io/StopMonitoring/v2.0
       type: object
       title: StopMonitoring
       description: A real-time data service providing predicted arrivals and departures

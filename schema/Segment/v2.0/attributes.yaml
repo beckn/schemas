@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Segment:
+      x-iri: https://schema.beckn.io/Segment/v2.0
       type: object
       title: Segment
       description: A portion of a rail journey operated continuously by a single carrier

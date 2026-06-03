@@ -1,5 +1,6 @@
 {
   "$id": "https://schema.beckn.io/SupportRequest/v2.0",
+  "x-iri": "https://schema.beckn.io/SupportRequest/v2.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "Support request by a user. If no field is set, the user can expect a public support contact info",
   "title": "SupportRequest",

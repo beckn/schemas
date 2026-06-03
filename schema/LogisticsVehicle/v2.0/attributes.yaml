@@ -11,6 +11,7 @@ info:
 components:
   schemas:
     LogisticsVehicle:
+      x-iri: https://schema.beckn.io/LogisticsVehicle/v2.0
       type: object
       title: Vehicle
       description: 'A Vehicle is a transport asset used for logistics operations. Vehicle types range from bicycles for hyperlocal delivery to heavy trucks for long haul freight. Maps to beckn:Asset.

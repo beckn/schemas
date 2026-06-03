@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     VehicleStatus:
+      x-iri: https://schema.beckn.io/VehicleStatus/v2.0
       type: object
       title: VehicleStatus
       description: The real-time operational state of a vehicle or mobility asset,

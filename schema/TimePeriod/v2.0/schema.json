@@ -1,5 +1,6 @@
 {
   "$id": "https://schema.beckn.io/TimePeriod/v2.0",
+  "x-iri": "https://schema.beckn.io/TimePeriod/v2.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "Time window with date-time precision for availability/validity",
   "title": "TimePeriod",

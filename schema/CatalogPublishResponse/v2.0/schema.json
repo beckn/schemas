@@ -1,5 +1,6 @@
 {
   "$id": "https://schema.beckn.io/CatalogPublishResponse/v2.0",
+  "x-iri": "https://schema.beckn.io/CatalogPublishResponse/v2.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "CatalogPublishResponse",
   "description": "Beckn /beckn/on_catalog_publish message payload. Sent by a CDS back to a BPP after processing a catalog publish request. Contains per-catalog processing results indicating success, failure, or partial indexing. ",

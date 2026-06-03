@@ -12,6 +12,7 @@ info:
 components:
   schemas:
     Route:
+      x-iri: https://schema.beckn.io/Route/v2.0
       type: object
       title: Route
       description: The physical or logical path followed by a transport service, defined
