@@ -1,0 +1,24 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "beckn": "https://schema.beckn.io/LinkedData/v2.2/context.jsonld",
+    "Invoice": "beckn:Invoice",
+    "amount": "beckn:amount",
+    "code": "beckn:code",
+    "consideration": "beckn:consideration",
+    "creditor": "beckn:creditor",
+    "debtor": "beckn:debtor",
+    "descriptor": "beckn:descriptor",
+    "dueDate": "beckn:dueDate",
+    "id": "beckn:id",
+    "invoiceAttributes": "beckn:invoiceAttributes",
+    "issuedAt": "beckn:issuedAt",
+    "number": "beckn:number",
+    "settlementAction": "beckn:settlementAction",
+    "settlementTerms": "beckn:settlementTerms",
+    "statement": "beckn:statement",
+    "status": "beckn:status",
+    "total": "beckn:total"
+  }
+}

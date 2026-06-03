@@ -1,0 +1,129 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/LinkedData/v2.2/context.jsonld",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "Invoice": "beckn:Invoice",
+    "amount": "beckn:amount",
+    "code": "beckn:code",
+    "consideration": "beckn:consideration",
+    "creditor": "beckn:creditor",
+    "debtor": "beckn:debtor",
+    "descriptor": "beckn:descriptor",
+    "dueDate": "beckn:dueDate",
+    "id": "beckn:id",
+    "invoiceAttributes": "beckn:invoiceAttributes",
+    "issuedAt": "beckn:issuedAt",
+    "number": "beckn:number",
+    "settlementAction": "beckn:settlementAction",
+    "settlementTerms": "beckn:settlementTerms",
+    "statement": "beckn:statement",
+    "status": "beckn:status",
+    "total": "beckn:total"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Invoice",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Invoice",
+      "rdfs:comment": "An Invoice is a financial statement issued by a creditor to a debtor that itemises the amounts owed and records how they are settled. Each line item is a billed financial entry — an order, refund, commission, finder fee, or adjustment — rather than a product or service. The invoice tracks its lifecycle status, the agreed settlement terms, and the proofs of settlement (payment actions) that discharge the amount due. An invoice may be issued, updated, settled, cancelled, or disputed over its lifecycle."
+    },
+    {
+      "@id": "beckn:amount",
+      "@type": "rdf:Property",
+      "rdfs:label": "amount",
+      "rdfs:comment": "The monetary amount for this statement entry."
+    },
+    {
+      "@id": "beckn:code",
+      "@type": "rdf:Property",
+      "rdfs:label": "code",
+      "rdfs:comment": "Property code"
+    },
+    {
+      "@id": "beckn:consideration",
+      "@type": "rdf:Property",
+      "rdfs:label": "consideration",
+      "rdfs:comment": "The value being billed by this entry. Its considerationAttributes carries the JSON-LD object (@type) identifying what is billed — e.g. a Contract, RetailOrder, DeliveryService, Commission, FinderFee, Adjustment, or Refund."
+    },
+    {
+      "@id": "beckn:creditor",
+      "@type": "rdf:Property",
+      "rdfs:label": "creditor",
+      "rdfs:comment": "The party that is owed the net amount — the seller / provider."
+    },
+    {
+      "@id": "beckn:debtor",
+      "@type": "rdf:Property",
+      "rdfs:label": "debtor",
+      "rdfs:comment": "The party the invoice is issued to and who owes the net amount — the consumer being billed."
+    },
+    {
+      "@id": "beckn:descriptor",
+      "@type": "rdf:Property",
+      "rdfs:label": "descriptor",
+      "rdfs:comment": "Describes the nature of the invoice in human / agent readable terms."
+    },
+    {
+      "@id": "beckn:dueDate",
+      "@type": "rdf:Property",
+      "rdfs:label": "dueDate",
+      "rdfs:comment": "Date by which the invoice amount is due for settlement."
+    },
+    {
+      "@id": "beckn:id",
+      "@type": "rdf:Property",
+      "rdfs:label": "id",
+      "rdfs:comment": "Stable invoice identifier (system id). While the chances of a UUID collision are rare, a combination of issuer identity and this id is recommended for global uniqueness."
+    },
+    {
+      "@id": "beckn:invoiceAttributes",
+      "@type": "rdf:Property",
+      "rdfs:label": "invoiceAttributes",
+      "rdfs:comment": "Domain-specific extension attributes for this invoice — tax regime (e.g. GST/VAT), e-invoice refs, legal boilerplate, etc."
+    },
+    {
+      "@id": "beckn:issuedAt",
+      "@type": "rdf:Property",
+      "rdfs:label": "issuedAt",
+      "rdfs:comment": "Timestamp at which the invoice was issued."
+    },
+    {
+      "@id": "beckn:number",
+      "@type": "rdf:Property",
+      "rdfs:label": "number",
+      "rdfs:comment": "Human-visible invoice number."
+    },
+    {
+      "@id": "beckn:settlementAction",
+      "@type": "rdf:Property",
+      "rdfs:label": "settlementAction",
+      "rdfs:comment": "Proofs of settlement that discharge the invoice — one entry per payment event (supporting installments and partial payments), carrying the transaction reference, method, time, amount, and status."
+    },
+    {
+      "@id": "beckn:settlementTerms",
+      "@type": "rdf:Property",
+      "rdfs:label": "settlementTerms",
+      "rdfs:comment": "The agreed terms under which the invoice is to be settled — amount, payment trigger, schedule, remittance account, and accepted methods."
+    },
+    {
+      "@id": "beckn:statement",
+      "@type": "rdf:Property",
+      "rdfs:label": "statement",
+      "rdfs:comment": "The itemised statement of charges that make up the invoice. Each entry pairs a consideration — the value being billed, whose considerationAttributes carries a JSON-LD object (by @type) identifying the underlying item such as a Contract, RetailOrder, DeliveryService, Commission, FinderFee, Adjustment, or Refund — with the monetary amount for that entry."
+    },
+    {
+      "@id": "beckn:status",
+      "@type": "rdf:Property",
+      "rdfs:label": "status",
+      "rdfs:comment": "The lifecycle state of the invoice expressed as a Descriptor whose code MUST be one of the standard invoice state values."
+    },
+    {
+      "@id": "beckn:total",
+      "@type": "rdf:Property",
+      "rdfs:label": "total",
+      "rdfs:comment": "The net amount payable for this invoice across all line items."
+    }
+  ]
+}
