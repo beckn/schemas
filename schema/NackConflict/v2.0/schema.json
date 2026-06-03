@@ -1,0 +1,33 @@
+{
+  "$id": "https://schema.beckn.io/NackConflict/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NackConflict",
+  "description": "The synchronous rejection body returned when the request conflicts with existing state — for example, a subscription with the same criteria already exists for this subscriber.\n\nNackConflict appears as the response body for 409 responses on synchronous endpoints where the conflict is with persisted resource state, not with callback processing. The implementing actor produces it; the calling actor MUST resolve the conflict (e.g., update the existing resource) before retrying.\n\nRelationship: Extends the Ack schema with status constrained to NACK and adds an error field describing the conflict.",
+  "type": "object",
+  "required": [
+    "message"
+  ],
+  "properties": {
+    "message": {
+      "type": "object",
+      "required": [
+        "status",
+        "messageId",
+        "error"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "const": "NACK"
+        },
+        "messageId": {
+          "type": "string",
+          "description": "Echoes the messageId from the triggering request's Context, for caller correlation."
+        },
+        "error": {
+          "$ref": "https://schema.beckn.io/Error/v2.0/schema.json"
+        }
+      }
+    }
+  }
+}

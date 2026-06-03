@@ -5,7 +5,6 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
     "Catalog": "beckn:Catalog",
-    "@type": "beckn:@type",
     "addOns": "beckn:addOns",
     "address": "beckn:address",
     "addressCountry": "beckn:addressCountry",
@@ -16,7 +15,6 @@
     "bbox": "beckn:bbox",
     "bppId": "beckn:bppId",
     "bppUri": "beckn:bppUri",
-    "catalogType": "beckn:catalogType",
     "checksum": "beckn:checksum",
     "checksumAlgorithm": "beckn:checksumAlgorithm",
     "code": "beckn:code",
@@ -28,7 +26,6 @@
     "endDate": "beckn:endDate",
     "endTime": "beckn:endTime",
     "extendedAddress": "beckn:extendedAddress",
-    "extends": "beckn:extends",
     "fulfillmentIds": "beckn:fulfillmentIds",
     "geo": "beckn:geo",
     "geometries": "beckn:geometries",
@@ -37,7 +34,6 @@
     "keyId": "beckn:keyId",
     "label": "beckn:label",
     "longDesc": "beckn:longDesc",
-    "masterResourceId": "beckn:masterResourceId",
     "mediaFile": "beckn:mediaFile",
     "mimeType": "beckn:mimeType",
     "name": "beckn:name",
@@ -46,10 +42,7 @@
     "postalCode": "beckn:postalCode",
     "provider": "beckn:provider",
     "providerAttributes": "beckn:providerAttributes",
-    "publishDirectives": "beckn:publishDirectives",
     "resourceAttributes": "beckn:resourceAttributes",
-    "resourceDirectives": "beckn:resourceDirectives",
-    "resourceId": "beckn:resourceId",
     "resourceIds": "beckn:resourceIds",
     "resources": "beckn:resources",
     "security": "beckn:security",
@@ -63,7 +56,6 @@
     "streetAddress": "beckn:streetAddress",
     "thumbnailImage": "beckn:thumbnailImage",
     "type": "beckn:type",
-    "updateMode": "beckn:updateMode",
     "uri": "beckn:uri",
     "url": "beckn:url",
     "validity": "beckn:validity"
@@ -73,25 +65,19 @@
       "@id": "beckn:Catalog",
       "@type": "rdfs:Class",
       "rdfs:label": "Catalog",
-      "rdfs:comment": "Catalog schema for Beckn Protocol v2.0.0\n\nThis schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute."
+      "rdfs:comment": "A structured representation of the resources, offers, and provider information that a PN makes available on the network for discovery, selection, and commitment by CNs.\n\nCatalogs appear in the discovery phase of the value-exchange lifecycle. The PN produces them and publishes them to the CS (Cataloging Service) via CatalogPublishAction; the CS indexes them and synchronizes them to the DS, which serves them to CNs in OnDiscoverAction responses.\n\nFabric context: Catalogs are managed by the CS, which indexes them for discovery and synchronizes them to the DS for delivery to subscribing CNs. The CS also stores and serves canonical master catalog items.\n\nRelationship: Composes Provider, Resource, and Offer schemas. MUST include at least one of a resources array or an offers array. The validity field constrains the temporal window during which the catalog is active, expressed as a TimePeriod."
     },
     {
       "@id": "beckn:bppId",
       "@type": "rdf:Property",
       "rdfs:label": "bppId",
-      "rdfs:comment": "BPP (Beckn Protocol Provider) identifier that publishes this catalog"
+      "rdfs:comment": "PN (Beckn Protocol Provider) identifier that publishes this catalog"
     },
     {
       "@id": "beckn:bppUri",
       "@type": "rdf:Property",
       "rdfs:label": "bppUri",
-      "rdfs:comment": "Beckn Protocol API base URL of the BPP"
-    },
-    {
-      "@id": "beckn:publishDirectives",
-      "@type": "rdf:Property",
-      "rdfs:label": "publishDirectives",
-      "rdfs:comment": "Directives controlling publish behavior for master/regular catalog flow. Deprecated and planned for removal in a future release."
+      "rdfs:comment": "Beckn Protocol API base URL of the PN"
     },
     {
       "@id": "beckn:descriptor",

@@ -1,0 +1,71 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "CatalogSubscriptionResponse": "beckn:CatalogSubscriptionResponse",
+    "action": "beckn:action",
+    "backoffMultiplier": "beckn:backoffMultiplier",
+    "bapId": "beckn:bapId",
+    "bapUri": "beckn:bapUri",
+    "bppId": "beckn:bppId",
+    "bppUri": "beckn:bppUri",
+    "callbackUrl": "beckn:callbackUrl",
+    "city": "beckn:city",
+    "code": "beckn:code",
+    "context": "beckn:context",
+    "count": "beckn:count",
+    "country": "beckn:country",
+    "createdAt": "beckn:createdAt",
+    "deliveryPolicy": "beckn:deliveryPolicy",
+    "digest": "beckn:digest",
+    "domain": "beckn:domain",
+    "id": "beckn:id",
+    "initialDelaySeconds": "beckn:initialDelaySeconds",
+    "key": "beckn:key",
+    "limit": "beckn:limit",
+    "location": "beckn:location",
+    "maxDelaySeconds": "beckn:maxDelaySeconds",
+    "maxPayloadBytes": "beckn:maxPayloadBytes",
+    "maxRetries": "beckn:maxRetries",
+    "message": "beckn:message",
+    "messageId": "beckn:messageId",
+    "networkId": "beckn:networkId",
+    "networkIds": "beckn:networkIds",
+    "offset": "beckn:offset",
+    "pagination": "beckn:pagination",
+    "requestDigest": "beckn:requestDigest",
+    "retryPolicy": "beckn:retryPolicy",
+    "schemaContext": "beckn:schemaContext",
+    "schemaTypes": "beckn:schemaTypes",
+    "status": "beckn:status",
+    "subscriptions": "beckn:subscriptions",
+    "timeoutSeconds": "beckn:timeoutSeconds",
+    "timestamp": "beckn:timestamp",
+    "transactionId": "beckn:transactionId",
+    "ttl": "beckn:ttl",
+    "updatedAt": "beckn:updatedAt",
+    "version": "beckn:version"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:CatalogSubscriptionResponse",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CatalogSubscriptionResponse",
+      "rdfs:comment": "The response envelope returned synchronously by the CS (Cataloging Service) for subscription management operations — create, update, list, and deactivate.\n\nThis schema appears in the Catalog Subscription phase. The CS produces it as the synchronous response to POST /catalog/subscription (creation or update), GET /catalog/subscription (listing), and DELETE /catalog/subscription (deactivation). The DS consumes it to confirm subscription state.\n\nFabric context: Produced synchronously by the CS; no async callback is delivered for subscription management operations. The context.action is always catalog/on_subscription.\n\nRelationship: Composes one or more CatalogSubscription records in the message.subscriptions array, and an optional Pagination object for list responses."
+    },
+    {
+      "@id": "beckn:context",
+      "@type": "rdf:Property",
+      "rdfs:label": "context",
+      "rdfs:comment": "Property context"
+    },
+    {
+      "@id": "beckn:message",
+      "@type": "rdf:Property",
+      "rdfs:label": "message",
+      "rdfs:comment": "Property message"
+    }
+  ]
+}

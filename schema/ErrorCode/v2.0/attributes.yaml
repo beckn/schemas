@@ -1,0 +1,97 @@
+openapi: 3.1.1
+info:
+  title: ErrorCode
+  version: 2.0.0
+  description: Container schemas fetched from beckn.yaml. This cannot be extended as it is a reserved
+    schema in beckn protocol. Any additional properties added to this schema can only be made using its
+    *Attributes property
+  license:
+    name: CC-BY-NC-SA 4.0 International
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+components:
+  schemas:
+    ErrorCode:
+      title: ErrorCode
+      description: Canonical Beckn Protocol v2 error code enum. The prefix indicates the protocol stack
+        layer at which the error originated. Error.code MUST be one of these values. Defined by NFH-008
+        (Handling Exceptions and Errors).
+      type: string
+      enum:
+      - CTX_MISSING_FIELD
+      - CTX_INVALID_FIELD
+      - CTX_ACTION_MISMATCH
+      - CTX_VERSION_UNSUPPORTED
+      - CTX_TTL_EXPIRED
+      - CTX_MESSAGE_ID_DUPLICATE
+      - CTX_TRANSACTION_ID_UNKNOWN
+      - CTX_CALLBACK_URL_MISSING
+      - CTX_INVALID_BPP_URI
+      - AUT_SIGNATURE_MISSING
+      - AUT_SIGNATURE_INVALID
+      - AUT_SUBSCRIBER_NOT_FOUND
+      - AUT_KEY_NOT_FOUND
+      - AUT_KEY_EXPIRED_OR_REVOKED
+      - AUT_UNAUTHORIZED_ACTION
+      - AUT_DOMAIN_NOT_ALLOWED
+      - AUT_REPLAY_DETECTED
+      - AUT_RATE_LIMITED
+      - SCH_INVALID_JSON
+      - SCH_SCHEMA_VALIDATION_FAILED
+      - SCH_REQUIRED_FIELD_MISSING
+      - SCH_FIELD_NOT_ALLOWED
+      - SCH_INVALID_ENUM
+      - SCH_INVALID_FORMAT
+      - SCH_INVALID_JSONPATH
+      - SCH_INVALID_JSONLD_CONTEXT
+      - SCH_TYPE_NOT_SUPPORTED
+      - SCH_ATTRIBUTE_PACK_INVALID
+      - SCH_INVALID_ENTITY_TYPE
+      - SCH_SCHEMA_ADAPTATION_FAILED
+      - NET_TIMEOUT
+      - NET_DOWNSTREAM_UNAVAILABLE
+      - NET_CALLBACK_FAILED
+      - NET_ACK_TIMEOUT
+      - NET_OVERLOADED
+      - NET_INTERNAL_ERROR
+      - NET_NOT_IMPLEMENTED
+      - NET_CATALOG_SOURCE_UNAVAILABLE
+      - NET_CATALOG_STALE
+      - BIZ_PROVIDER_NOT_FOUND
+      - BIZ_LOCATION_NOT_FOUND
+      - BIZ_CATEGORY_NOT_FOUND
+      - BIZ_ITEM_NOT_FOUND
+      - BIZ_OFFER_NOT_FOUND
+      - BIZ_ADDON_NOT_FOUND
+      - BIZ_ORDER_NOT_FOUND
+      - BIZ_QUANTITY_UNAVAILABLE
+      - BIZ_FULFILLMENT_UNAVAILABLE
+      - BIZ_QUOTE_EXPIRED_OR_CHANGED
+      - BIZ_PRICE_MISMATCH
+      - BIZ_PAYMENT_NOT_SUPPORTED
+      - BIZ_PAYMENT_FAILED
+      - BIZ_TRACKING_NOT_SUPPORTED
+      - BIZ_SUPPORT_NOT_AVAILABLE
+      - BIZ_NO_RESULTS_FOUND
+      - BIZ_INVALID_STATE_TRANSITION
+      - BIZ_ALREADY_CANCELLED
+      - BIZ_ALREADY_CONFIRMED
+      - BIZ_UPDATE_INCONSISTENT
+      - BIZ_INVALID_UPDATE_TARGET
+      - BIZ_INVALID_CANCELLATION_REASON
+      - BIZ_RATING_TARGET_NOT_FOUND
+      - BIZ_INVALID_RATING_VALUE
+      - BIZ_GENERIC_ERROR
+      - POL_CANCELLATION_NOT_ALLOWED
+      - POL_UPDATE_NOT_ALLOWED
+      - POL_GEO_RESTRICTED
+      - POL_ELIGIBILITY_NOT_MET
+      - POL_KYC_REQUIRED
+      - POL_CONSENT_REQUIRED
+      - POL_SANCTIONED_PARTY
+      - POL_CALLER_TRUST_INSUFFICIENT
+      - POL_NP_CAPACITY_EXCEEDED
+      - POL_NP_DORMANT
+      - POL_ENGAGEMENT_REFUSED
+      - POL_GENERIC_ERROR

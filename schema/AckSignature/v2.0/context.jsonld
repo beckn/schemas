@@ -1,0 +1,7 @@
+{
+  "@context": {
+    "@vocab": "https://schema.beckn.io/AckSignature/v2.0#",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "AckSignature": "beckn:AckSignature"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "$id": "https://schema.beckn.io/NackDiscretionary/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NackDiscretionary",
+  "description": "The synchronous rejection body returned when a responding NP exercises its protocol-level agency to decline engagement for policy-governed reasons — insufficient caller trust, capacity limits, scheduled inactivity, or general refusal — without an underlying exception in the received message. The caller MUST NOT expect an on_* callback.\n\nNackDiscretionary appears as the response body for 403 responses on action endpoints. The responding NP produces it; the calling NP MUST treat it as a terminal response for the current request. NFOs MAY restrict or prohibit discretionary NACKs for specific actions, domain contexts, or transaction lifecycle stages per CON-008-20 in NFH-008.\n\nRelationship: Extends the Ack schema with status constrained to NACK and adds an error field whose code MUST be one of the POL_ENGAGEMENT_* discretionary refusal codes.",
+  "type": "object",
+  "required": [
+    "message"
+  ],
+  "properties": {
+    "message": {
+      "type": "object",
+      "required": [
+        "status",
+        "messageId",
+        "error"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "const": "NACK"
+        },
+        "messageId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "error": {
+          "$ref": "https://schema.beckn.io/Error/v2.0/schema.json"
+        }
+      }
+    }
+  }
+}

@@ -39,7 +39,7 @@ components:
           type: string
         descriptor:
           description: Human-readable label for the category
-          $ref: https://schema.beckn.io/core/v2.0/Descriptor/attributes.yaml#components/schemas/Descriptor
+          $ref: https://schema.beckn.io/Descriptor/v2.0/attributes.yaml#/components/schemas/Descriptor
         parentCategoryId:
           description: Identifier of the parent category if hierarchical
           type: string

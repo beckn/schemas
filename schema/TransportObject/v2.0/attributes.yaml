@@ -32,7 +32,7 @@ components:
           type: string
         descriptor:
           description: Human-readable description of the item
-          $ref: https://schema.beckn.io/core/v2.0/Descriptor/attributes.yaml#components/schemas/Descriptor
+          $ref: https://schema.beckn.io/Descriptor/v2.0/attributes.yaml#/components/schemas/Descriptor
         categoryId:
           description: Category code classifying the item
           $ref: https://schema.beckn.io/CategoryCode/v2.1/attributes.yaml#/components/schemas/CategoryCode

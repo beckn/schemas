@@ -1,0 +1,35 @@
+openapi: 3.1.1
+info:
+  title: AckSignature
+  version: 2.0.0
+  description: Container schemas fetched from beckn.yaml. This cannot be extended as it is a reserved
+    schema in beckn protocol. Any additional properties added to this schema can only be made using its
+    *Attributes property
+  license:
+    name: CC-BY-NC-SA 4.0 International
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+components:
+  schemas:
+    AckSignature:
+      title: Beckn HTTP Ack Signature
+      description: "A digitally signed authentication credential transmitted in the HTTP `Signature` response\
+        \ header on every synchronous Beckn response, proving that the responding NP received and authenticated\
+        \ the specific inbound request.\n\nThe responding actor produces this by signing a four-line canonical\
+        \ signing string with its Ed25519 private key:\n\n    (created): {unix_timestamp}\n    (expires):\
+        \ {unix_timestamp}\n    digest: BLAKE2b-512={base64_response_body_hash}\n    request-signature:\
+        \ {incoming_request_raw_base64_signature}\n\nThe fourth line (`request-signature`) contains the\
+        \ raw Base64 Ed25519 signature value extracted verbatim from the `signature=\"...\"` field of\
+        \ the incoming request's `Authorization` header. This binds the Ack cryptographically to the specific\
+        \ signed request that triggered it.\n\nThe `headers` attribute MUST be `\"(created) (expires)\
+        \ digest request-signature\"`. The `keyId` identifies the responding NP. The algorithm MUST be\
+        \ `ed25519`. The body digest covers the response body using BLAKE2b-512.\n\nUsed for: all synchronous\
+        \ HTTP responses across all Beckn endpoints. For request signing, see Signature. For PN solicited\
+        \ callback signing, see CallbackSignature. See NFH-004 Authentication and Trust §5 for the full\
+        \ response signing procedure."
+      type: string
+      pattern: ^Signature keyId="[^"]+",algorithm="ed25519",created="\d+",expires="\d+",headers="\(created\)
+        \(expires\) digest request-signature",signature="[A-Za-z0-9+/]+=*"$
+      example: Signature keyId="example.ns/gro.example/bpp-key-001|ed25519",algorithm="ed25519",created="1714000060",expires="1714000660",headers="(created)
+        (expires) digest request-signature",signature="ACKSIGNATURE=="

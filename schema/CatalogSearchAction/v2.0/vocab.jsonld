@@ -1,0 +1,41 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "CatalogSearchAction": "beckn:CatalogSearchAction",
+    "filters": "beckn:filters",
+    "limit": "beckn:limit",
+    "networkIds": "beckn:networkIds",
+    "offset": "beckn:offset",
+    "schemaTypes": "beckn:schemaTypes",
+    "type": "beckn:type"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:CatalogSearchAction",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CatalogSearchAction",
+      "rdfs:comment": "The real-world act by which a caller queries the CS (Cataloging Service) for indexed catalogs, applying optional catalog type, network, and schema type filters with pagination control.\n\nThis schema appears in the Catalog Search phase. The PN produces it as the message payload of a POST /catalog/search request; the CS consumes it to filter and return matching catalogs with pagination metadata.\n\nFabric context: Processed by the CS, which queries its catalog index and returns matching items synchronously.\n\nRelationship: Composed as the message payload of the /catalog/search request body."
+    },
+    {
+      "@id": "beckn:filters",
+      "@type": "rdf:Property",
+      "rdfs:label": "filters",
+      "rdfs:comment": "Search filters. All fields are optional; omitting a field matches all values for that dimension."
+    },
+    {
+      "@id": "beckn:limit",
+      "@type": "rdf:Property",
+      "rdfs:label": "limit",
+      "rdfs:comment": "Maximum number of catalogs to return per page"
+    },
+    {
+      "@id": "beckn:offset",
+      "@type": "rdf:Property",
+      "rdfs:label": "offset",
+      "rdfs:comment": "Zero-based result offset for pagination"
+    }
+  ]
+}

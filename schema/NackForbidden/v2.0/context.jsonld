@@ -1,0 +1,14 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "NackForbidden": "beckn:NackForbidden",
+    "message": "beckn:message",
+    "error": "beckn:error",
+    "errorCode": "beckn:errorCode",
+    "errorMessage": "beckn:errorMessage",
+    "messageId": "beckn:messageId",
+    "status": "beckn:status"
+  }
+}

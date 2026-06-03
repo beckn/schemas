@@ -1,0 +1,9 @@
+{
+  "@context": {
+    "@vocab": "https://schema.beckn.io/CallbackSignature/v2.0#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "CallbackSignature": "beckn:CallbackSignature"
+  },
+  "@graph": []
+}

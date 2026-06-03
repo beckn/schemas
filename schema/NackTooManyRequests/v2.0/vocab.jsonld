@@ -1,0 +1,29 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "NackTooManyRequests": "beckn:NackTooManyRequests",
+    "error": "beckn:error",
+    "errorCode": "beckn:errorCode",
+    "errorMessage": "beckn:errorMessage",
+    "message": "beckn:message",
+    "messageId": "beckn:messageId",
+    "status": "beckn:status"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:NackTooManyRequests",
+      "@type": "rdfs:Class",
+      "rdfs:label": "NackTooManyRequests",
+      "rdfs:comment": "The synchronous rejection body returned when the responding NP has exceeded a request rate limit (AUT_RATE_LIMITED) or a policy-governed engagement capacity limit (POL_NP_CAPACITY_EXCEEDED). The caller MUST apply back-off before retrying. Implementations SHOULD include a Retry-After header on 429 responses.\n\nNackTooManyRequests appears as the response body for 429 responses on all endpoints.\n\nRelationship: Extends the Ack schema with status constrained to NACK and an error code constrained to the two retryable capacity/rate-limit codes."
+    },
+    {
+      "@id": "beckn:message",
+      "@type": "rdf:Property",
+      "rdfs:label": "message",
+      "rdfs:comment": "Property message"
+    }
+  ]
+}

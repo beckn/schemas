@@ -1,0 +1,14 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "CatalogSearchAction": "beckn:CatalogSearchAction",
+    "filters": "beckn:filters",
+    "limit": "beckn:limit",
+    "offset": "beckn:offset",
+    "networkIds": "beckn:networkIds",
+    "schemaTypes": "beckn:schemaTypes",
+    "type": "beckn:type"
+  }
+}

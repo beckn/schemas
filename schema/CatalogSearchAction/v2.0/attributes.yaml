@@ -1,0 +1,68 @@
+openapi: 3.1.1
+info:
+  title: CatalogSearchAction
+  version: 2.0.0
+  description: Container schemas fetched from beckn.yaml. This cannot be extended as it is a reserved
+    schema in beckn protocol. Any additional properties added to this schema can only be made using its
+    *Attributes property
+  license:
+    name: CC-BY-NC-SA 4.0 International
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+components:
+  schemas:
+    CatalogSearchAction:
+      type: object
+      description: 'The real-world act by which a caller queries the CS (Cataloging Service) for indexed
+        catalogs, applying optional catalog type, network, and schema type filters with pagination control.
+
+
+        This schema appears in the Catalog Search phase. The PN produces it as the message payload of
+        a POST /catalog/search request; the CS consumes it to filter and return matching catalogs with
+        pagination metadata.
+
+
+        Fabric context: Processed by the CS, which queries its catalog index and returns matching items
+        synchronously.
+
+
+        Relationship: Composed as the message payload of the /catalog/search request body.'
+      additionalProperties: false
+      properties:
+        filters:
+          type: object
+          description: Search filters. All fields are optional; omitting a field matches all values for
+            that dimension.
+          properties:
+            type:
+              type: string
+              enum:
+              - MASTER
+              - REGULAR
+              default: MASTER
+              description: Restricts results to catalogs of the specified type. MASTER — canonical resource
+                definitions reusable across the network. REGULAR — provider-specific catalogs that may
+                extend master resources. Defaults to MASTER when omitted, preserving backward-compatible
+                behaviour for existing implementations.
+            networkIds:
+              type: array
+              items:
+                type: string
+              description: Filter by network IDs (empty or omitted = all networks)
+            schemaTypes:
+              type: array
+              items:
+                type: string
+              description: Filter by schema type URIs (empty or omitted = all types)
+        limit:
+          type: integer
+          minimum: 1
+          maximum: 100
+          default: 20
+          description: Maximum number of catalogs to return per page
+        offset:
+          type: integer
+          minimum: 0
+          default: 0
+          description: Zero-based result offset for pagination

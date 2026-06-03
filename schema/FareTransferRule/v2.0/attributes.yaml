@@ -40,7 +40,7 @@ components:
           type: string
         descriptor:
           description: Human-readable description of the policy
-          $ref: https://schema.beckn.io/core/v2.0/Descriptor/attributes.yaml#components/schemas/Descriptor
+          $ref: https://schema.beckn.io/Descriptor/v2.0/attributes.yaml#/components/schemas/Descriptor
         validity:
           description: Validity window for this policy version
           $ref: https://schema.beckn.io/TimePeriod/v2.0/attributes.yaml#/components/schemas/TimePeriod

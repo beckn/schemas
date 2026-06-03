@@ -1,78 +1,19 @@
 {
-  "$id": "https://schema.beckn.io/Catalog/v2.1",
+  "$id": "https://schema.beckn.io/Catalog/v2.2",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "Catalog schema for Beckn Protocol v2.0.0",
+  "description": "A structured representation of the resources, offers, and provider information that a PN makes available on the network for discovery, selection, and commitment by CNs.\n\nCatalogs appear in the discovery phase of the value-exchange lifecycle. The PN produces them and publishes them to the CS (Cataloging Service) via CatalogPublishAction; the CS indexes them and synchronizes them to the DS, which serves them to CNs in OnDiscoverAction responses.\n\nFabric context: Catalogs are managed by the CS, which indexes them for discovery and synchronizes them to the DS for delivery to subscribing CNs. The CS also stores and serves canonical master catalog items.\n\nRelationship: Composes Provider, Resource, and Offer schemas. MUST include at least one of a resources array or an offers array. The validity field constrains the temporal window during which the catalog is active, expressed as a TimePeriod.",
   "title": "Catalog",
   "type": "object",
   "properties": {
     "bppId": {
-      "description": "BPP (Beckn Protocol Provider) identifier that publishes this catalog",
+      "description": "PN (Beckn Protocol Provider) identifier that publishes this catalog",
       "type": "string",
       "example": "bpp.example.com"
     },
     "bppUri": {
-      "description": "Beckn Protocol API base URL of the BPP",
+      "description": "Beckn Protocol API base URL of the PN",
       "type": "string",
       "format": "uri"
-    },
-    "publishDirectives": {
-      "deprecated": true,
-      "description": "Directives controlling publish behavior for master/regular catalog flow. Deprecated and planned for removal in a future release.",
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "catalogType"
-      ],
-      "properties": {
-        "catalogType": {
-          "type": "string",
-          "enum": [
-            "master",
-            "regular"
-          ],
-          "description": "master = canonical source catalog; regular = seller/provider extension catalog"
-        },
-        "updateMode": {
-          "type": "string",
-          "enum": [
-            "FULL",
-            "MERGE"
-          ],
-          "default": "FULL",
-          "description": "Used for regular updates. FULL replaces overlay; MERGE applies JSON Merge Patch semantics."
-        },
-        "resourceDirectives": {
-          "description": "Optional per-resource extension mapping for regular catalogs",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "additionalProperties": false,
-            "required": [
-              "resourceId",
-              "extends"
-            ],
-            "properties": {
-              "resourceId": {
-                "type": "string",
-                "description": "Seller/provider resource identifier in this catalog"
-              },
-              "extends": {
-                "type": "object",
-                "additionalProperties": false,
-                "required": [
-                  "masterResourceId"
-                ],
-                "properties": {
-                  "masterResourceId": {
-                    "type": "string",
-                    "description": "Canonical master resource identifier being extended"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
     },
     "descriptor": {
       "description": "Human / Agent-readable description of this catalog",

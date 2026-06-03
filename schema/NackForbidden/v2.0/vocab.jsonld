@@ -1,0 +1,29 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "NackForbidden": "beckn:NackForbidden",
+    "error": "beckn:error",
+    "errorCode": "beckn:errorCode",
+    "errorMessage": "beckn:errorMessage",
+    "message": "beckn:message",
+    "messageId": "beckn:messageId",
+    "status": "beckn:status"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:NackForbidden",
+      "@type": "rdfs:Class",
+      "rdfs:label": "NackForbidden",
+      "rdfs:comment": "The synchronous rejection body returned when the caller is authenticated but does not have permission to access or modify the requested resource.\n\nNackForbidden appears as the response body for 403 responses. The implementing actor produces it; the calling actor MUST NOT retry without correcting its authorization.\n\nRelationship: Extends the Ack schema with status constrained to NACK and adds an error field describing the authorization failure."
+    },
+    {
+      "@id": "beckn:message",
+      "@type": "rdf:Property",
+      "rdfs:label": "message",
+      "rdfs:comment": "Property message"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+openapi: 3.1.1
+info:
+  title: NackConflict
+  version: 2.0.0
+  description: Container schemas fetched from beckn.yaml. This cannot be extended as it is a reserved
+    schema in beckn protocol. Any additional properties added to this schema can only be made using its
+    *Attributes property
+  license:
+    name: CC-BY-NC-SA 4.0 International
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+components:
+  schemas:
+    NackConflict:
+      description: 'The synchronous rejection body returned when the request conflicts with existing state
+        — for example, a subscription with the same criteria already exists for this subscriber.
+
+
+        NackConflict appears as the response body for 409 responses on synchronous endpoints where the
+        conflict is with persisted resource state, not with callback processing. The implementing actor
+        produces it; the calling actor MUST resolve the conflict (e.g., update the existing resource)
+        before retrying.
+
+
+        Relationship: Extends the Ack schema with status constrained to NACK and adds an error field describing
+        the conflict.'
+      type: object
+      required:
+      - message
+      properties:
+        message:
+          type: object
+          required:
+          - status
+          - messageId
+          - error
+          properties:
+            status:
+              type: string
+              const: NACK
+            messageId:
+              type: string
+              description: Echoes the messageId from the triggering request's Context, for caller correlation.
+            error:
+              $ref: https://schema.beckn.io/Error/v2.0/attributes.yaml#/components/schemas/Error

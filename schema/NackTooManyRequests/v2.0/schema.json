@@ -1,0 +1,33 @@
+{
+  "$id": "https://schema.beckn.io/NackTooManyRequests/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NackTooManyRequests",
+  "description": "The synchronous rejection body returned when the responding NP has exceeded a request rate limit (AUT_RATE_LIMITED) or a policy-governed engagement capacity limit (POL_NP_CAPACITY_EXCEEDED). The caller MUST apply back-off before retrying. Implementations SHOULD include a Retry-After header on 429 responses.\n\nNackTooManyRequests appears as the response body for 429 responses on all endpoints.\n\nRelationship: Extends the Ack schema with status constrained to NACK and an error code constrained to the two retryable capacity/rate-limit codes.",
+  "type": "object",
+  "required": [
+    "message"
+  ],
+  "properties": {
+    "message": {
+      "type": "object",
+      "required": [
+        "status",
+        "messageId",
+        "error"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "const": "NACK"
+        },
+        "messageId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "error": {
+          "$ref": "https://schema.beckn.io/Error/v2.0/schema.json"
+        }
+      }
+    }
+  }
+}

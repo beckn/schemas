@@ -1,0 +1,96 @@
+openapi: 3.1.1
+info:
+  title: CatalogPullCallbackAction
+  version: 2.0.0
+  description: Container schemas fetched from beckn.yaml. This cannot be extended as it is a reserved
+    schema in beckn protocol. Any additional properties added to this schema can only be made using its
+    *Attributes property
+  license:
+    name: CC-BY-NC-SA 4.0 International
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+components:
+  schemas:
+    CatalogPullCallbackAction:
+      type: object
+      description: 'The real-world act by which the CS (Cataloging Service) delivers the results of a
+        previously accepted /catalog/pull request to the subscriber''s (DS) /catalog/on_pull callback
+        endpoint.
+
+
+        This schema appears in the Catalog Pull phase. The CS produces it as the message payload of the
+        async callback; the subscriber (DS) consumes it to retrieve the requested catalog data.
+
+
+        Fabric context: Produced by the CS after processing the pull request. When the result is small
+        it is returned inline in `catalogs`; when the result is too large to return inline the callback
+        carries a `downloadManifest` for downloading the result.
+
+
+        Relationship: Composed as the message payload of the /catalog/on_pull callback. The DS MUST use
+        context.messageId to correlate this callback with the originating /catalog/pull request.'
+      additionalProperties: false
+      required:
+      - status
+      properties:
+        status:
+          type: string
+          enum:
+          - COMPLETED
+          - FAILED
+          description: Status of the pull request result assigned by the CS. COMPLETED — the CS successfully
+            assembled the catalog result; the DS MUST process either catalogs[] or downloadManifest. FAILED
+            — the CS could not assemble the result; the DS MUST read the error field and MUST NOT attempt
+            to process catalogs or downloadManifest.
+        catalogs:
+          type: array
+          description: Requested catalogs inline. Present when status is COMPLETED.
+          items:
+            $ref: https://schema.beckn.io/Catalog/v2.2/attributes.yaml#/components/schemas/Catalog
+        downloadManifest:
+          type: object
+          description: Metadata required to download, verify, and decode the catalog result payload from
+            object storage. Present when status is COMPLETED and the result is too large to return inline
+            in catalogs[]. Mutually exclusive with catalogs[] — exactly one MUST be present when status
+            is COMPLETED. The CN MUST download the object at url, verify the checksum before processing,
+            and MUST NOT process the content if verification fails.
+          additionalProperties: false
+          required:
+          - url
+          - format
+          - sizeBytes
+          - checksum
+          - expiresAt
+          properties:
+            url:
+              type: string
+              description: Pre-signed object-store URL from which the catalog payload can be downloaded.
+                The DS MUST NOT attempt to download after expiresAt.
+            expiresAt:
+              type: string
+              format: date-time
+              description: ISO 8601 timestamp after which url is no longer valid. The DS MUST NOT attempt
+                to download after this time; if expired, the DS MUST re-issue POST /catalog/pull.
+            format:
+              type: string
+              enum:
+              - json
+              - json.gz
+              description: Encoding format of the downloaded payload. The CN MUST decompress json.gz before
+                parsing.
+            sizeBytes:
+              type: integer
+              minimum: 0
+              description: Size of the payload in bytes after any compression. The DS MAY use this to
+                validate download completeness.
+            checksum:
+              type: string
+              description: SHA-256 hex digest of the payload at url, prefixed with sha256:. The DS MUST
+                verify this against the downloaded content before processing. If verification fails, the
+                DS MUST discard the content and treat the pull as failed.
+        pagination:
+          $ref: https://schema.beckn.io/Pagination/v2.0/attributes.yaml#/components/schemas/Pagination
+        error:
+          description: Present when status is FAILED.
+          $ref: https://schema.beckn.io/Error/v2.0/attributes.yaml#/components/schemas/Error

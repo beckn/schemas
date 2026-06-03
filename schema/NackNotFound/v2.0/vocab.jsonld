@@ -1,0 +1,29 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "NackNotFound": "beckn:NackNotFound",
+    "error": "beckn:error",
+    "errorCode": "beckn:errorCode",
+    "errorMessage": "beckn:errorMessage",
+    "message": "beckn:message",
+    "messageId": "beckn:messageId",
+    "status": "beckn:status"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:NackNotFound",
+      "@type": "rdfs:Class",
+      "rdfs:label": "NackNotFound",
+      "rdfs:comment": "The synchronous rejection body returned when the requested resource does not exist in the system.\n\nNackNotFound appears as the response body for 404 responses. The implementing actor produces it; the calling actor MUST NOT retry without correcting the resource identifier.\n\nRelationship: Extends the Ack schema with status constrained to NACK and adds an error field describing why the resource was not found."
+    },
+    {
+      "@id": "beckn:message",
+      "@type": "rdf:Property",
+      "rdfs:label": "message",
+      "rdfs:comment": "Property message"
+    }
+  ]
+}
