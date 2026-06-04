@@ -82,6 +82,28 @@ components:
                     - OMBUDSMAN
                     - NEUTRAL_EVALUATOR
                     - EXPERT
+        supportCases:
+          description: The support cases (tickets) that underpin this dispute. A
+            dispute MUST NOT be raised until at least one unresolved support case is
+            attached — i.e. the parties are expected to have attempted support
+            resolution first. Enforced by the contains constraint requiring at least
+            one element whose status.code is UNRESOLVED.
+          type: array
+          minItems: 1
+          items:
+            $ref: https://schema.beckn.io/SupportCase/v2.0/attributes.yaml#/components/schemas/SupportCase
+          contains:
+            type: object
+            required:
+            - status
+            properties:
+              status:
+                type: object
+                required:
+                - code
+                properties:
+                  code:
+                    const: UNRESOLVED
         cases:
           description: The disputed matters that make up this dispute. Each entry pairs
             a case — the disputed subject with its reason and supporting evidence —
@@ -152,6 +174,7 @@ components:
       - id
       - claimant
       - respondent
+      - supportCases
       - cases
       x-tags:
       - common

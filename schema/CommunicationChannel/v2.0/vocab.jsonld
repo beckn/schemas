@@ -1,0 +1,17 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/LinkedData/v2.0/context.jsonld",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "CommunicationChannel": "beckn:CommunicationChannel"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:CommunicationChannel",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CommunicationChannel",
+      "rdfs:comment": "A channel through which communication or support takes place. The enumerated values are derived from SupportInfo.channels (https://schema.beckn.io/SupportInfo/v2.0)."
+    }
+  ]
+}

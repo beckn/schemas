@@ -1,0 +1,122 @@
+{
+  "$id": "https://schema.beckn.io/SupportCase/v2.0",
+  "x-iri": "https://schema.beckn.io/SupportCase/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A domain-agnostic customer support ticket used to record an issue raised between parties — its category, priority, lifecycle status, supporting attachments, and support interaction sessions. It is independent of any particular domain; domain-specific values are carried via the category descriptor and the extensible attribute bags.",
+  "title": "SupportCase",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Stable support case identifier.",
+      "type": "string",
+      "example": "SUP-2024-00789"
+    },
+    "category": {
+      "description": "The category of the issue, expressed as a Descriptor whose code is defined by the domain (e.g. SHIPMENT_LOST, BILLING_DISPUTE, SERVICE_QUALITY).",
+      "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json"
+    },
+    "description": {
+      "description": "Human-readable description of the issue.",
+      "type": "string"
+    },
+    "priority": {
+      "description": "Priority of the support case. Suggested values are P1, P2, P3; custom string values are also allowed.",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "P1",
+            "P2",
+            "P3"
+          ]
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "status": {
+      "description": "The lifecycle state of the support case expressed as a Descriptor whose code MUST be one of the standard values.",
+      "allOf": [
+        {
+          "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "code": {
+              "enum": [
+                "UNRESOLVED",
+                "RESOLVED"
+              ],
+              "default": "UNRESOLVED"
+            }
+          }
+        }
+      ]
+    },
+    "raisedBy": {
+      "description": "Identifier of the party who raised the support case.",
+      "type": "string"
+    },
+    "assignedAgent": {
+      "description": "Identifier of the support agent the case is assigned to.",
+      "type": "string"
+    },
+    "attachments": {
+      "description": "Supporting attachments / evidence for the case — documents, images, or other artifacts, distinguished by mimeType.",
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.beckn.io/Document/v2.0/schema.json"
+      }
+    },
+    "sessions": {
+      "description": "Support interaction sessions associated with this case. Each session records the channel used and any media exchanged.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Identifier of this session.",
+            "type": "string"
+          },
+          "supportChannel": {
+            "description": "The channel over which this session took place.",
+            "$ref": "https://schema.beckn.io/CommunicationChannel/v2.0/schema.json"
+          },
+          "data": {
+            "description": "Media captured or exchanged during the session.",
+            "$ref": "https://schema.beckn.io/MediaFile/v2.0/schema.json"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "claimAmount": {
+      "description": "Amount claimed in relation to this case, if any.",
+      "type": "number"
+    },
+    "resolution": {
+      "description": "Resolution details, once the case is resolved.",
+      "type": "string"
+    },
+    "createdAt": {
+      "description": "Timestamp at which the case was created.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "resolvedAt": {
+      "description": "Timestamp at which the case was resolved.",
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "id",
+    "category"
+  ],
+  "additionalProperties": false,
+  "x-tags": [
+    "common"
+  ]
+}

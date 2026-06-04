@@ -17,6 +17,7 @@
     "reason": "beckn:reason",
     "respondent": "beckn:respondent",
     "status": "beckn:status",
-    "subject": "beckn:subject"
+    "subject": "beckn:subject",
+    "supportCases": "beckn:supportCases"
   }
 }

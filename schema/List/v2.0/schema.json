@@ -1,0 +1,46 @@
+{
+  "$id": "https://schema.beckn.io/List/v2.0",
+  "x-iri": "https://schema.beckn.io/List/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A generic, domain-agnostic collection of elements. Each element carries an id, a descriptor, and an extensible listElementAttributes bag. The order property indicates whether the elements are ranked ascending, descending, or are unordered. List is designed to be extended by more specific list types.",
+  "title": "List",
+  "type": "object",
+  "properties": {
+    "elements": {
+      "description": "The members of the list.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Identifier of this element.",
+            "type": "string"
+          },
+          "descriptor": {
+            "description": "Describes this element in human / agent readable terms.",
+            "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json"
+          },
+          "listElementAttributes": {
+            "description": "Domain-specific extension attributes for this element.",
+            "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "order": {
+      "description": "The ordering of the elements within the list.",
+      "type": "string",
+      "enum": [
+        "ASCENDING",
+        "DESCENDING",
+        "UNORDERED"
+      ],
+      "default": "UNORDERED"
+    }
+  },
+  "additionalProperties": false,
+  "x-tags": [
+    "common"
+  ]
+}

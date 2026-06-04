@@ -1,0 +1,29 @@
+openapi: 3.1.1
+info:
+  title: CommunicationChannel
+  version: 2.0.0
+  description: Schema definition for CommunicationChannel in the Beckn Protocol v2.0.1
+  license:
+    name: CC-BY-NC-SA 4.0 International
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+components:
+  schemas:
+    CommunicationChannel:
+      x-iri: https://schema.beckn.io/CommunicationChannel/v2.0
+      description: A channel through which communication or support takes place. The
+        enumerated values are derived from SupportInfo.channels
+        (https://schema.beckn.io/SupportInfo/v2.0).
+      title: CommunicationChannel
+      type: string
+      enum:
+      - PHONE
+      - EMAIL
+      - WEB
+      - CHAT
+      - WHATSAPP
+      - IN_APP
+      - OTHER
+      x-tags:
+      - common

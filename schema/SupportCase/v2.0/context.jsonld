@@ -1,0 +1,24 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "beckn": "https://schema.beckn.io/LinkedData/v2.0/context.jsonld",
+    "SupportCase": "beckn:SupportCase",
+    "assignedAgent": "beckn:assignedAgent",
+    "attachments": "beckn:attachments",
+    "category": "beckn:category",
+    "claimAmount": "beckn:claimAmount",
+    "code": "beckn:code",
+    "createdAt": "beckn:createdAt",
+    "data": "beckn:data",
+    "description": "beckn:description",
+    "id": "beckn:id",
+    "priority": "beckn:priority",
+    "raisedBy": "beckn:raisedBy",
+    "resolution": "beckn:resolution",
+    "resolvedAt": "beckn:resolvedAt",
+    "sessions": "beckn:sessions",
+    "status": "beckn:status",
+    "supportChannel": "beckn:supportChannel"
+  }
+}

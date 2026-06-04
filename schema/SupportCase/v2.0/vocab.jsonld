@@ -1,0 +1,129 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/LinkedData/v2.0/context.jsonld",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "SupportCase": "beckn:SupportCase",
+    "assignedAgent": "beckn:assignedAgent",
+    "attachments": "beckn:attachments",
+    "category": "beckn:category",
+    "claimAmount": "beckn:claimAmount",
+    "code": "beckn:code",
+    "createdAt": "beckn:createdAt",
+    "data": "beckn:data",
+    "description": "beckn:description",
+    "id": "beckn:id",
+    "priority": "beckn:priority",
+    "raisedBy": "beckn:raisedBy",
+    "resolution": "beckn:resolution",
+    "resolvedAt": "beckn:resolvedAt",
+    "sessions": "beckn:sessions",
+    "status": "beckn:status",
+    "supportChannel": "beckn:supportChannel"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:SupportCase",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SupportCase",
+      "rdfs:comment": "A domain-agnostic customer support ticket used to record an issue raised between parties — its category, priority, lifecycle status, supporting attachments, and support interaction sessions. It is independent of any particular domain; domain-specific values are carried via the category descriptor and the extensible attribute bags."
+    },
+    {
+      "@id": "beckn:assignedAgent",
+      "@type": "rdf:Property",
+      "rdfs:label": "assignedAgent",
+      "rdfs:comment": "Identifier of the support agent the case is assigned to."
+    },
+    {
+      "@id": "beckn:attachments",
+      "@type": "rdf:Property",
+      "rdfs:label": "attachments",
+      "rdfs:comment": "Supporting attachments / evidence for the case — documents, images, or other artifacts, distinguished by mimeType."
+    },
+    {
+      "@id": "beckn:category",
+      "@type": "rdf:Property",
+      "rdfs:label": "category",
+      "rdfs:comment": "The category of the issue, expressed as a Descriptor whose code is defined by the domain (e.g. SHIPMENT_LOST, BILLING_DISPUTE, SERVICE_QUALITY)."
+    },
+    {
+      "@id": "beckn:claimAmount",
+      "@type": "rdf:Property",
+      "rdfs:label": "claimAmount",
+      "rdfs:comment": "Amount claimed in relation to this case, if any."
+    },
+    {
+      "@id": "beckn:code",
+      "@type": "rdf:Property",
+      "rdfs:label": "code",
+      "rdfs:comment": "Property code"
+    },
+    {
+      "@id": "beckn:createdAt",
+      "@type": "rdf:Property",
+      "rdfs:label": "createdAt",
+      "rdfs:comment": "Timestamp at which the case was created."
+    },
+    {
+      "@id": "beckn:data",
+      "@type": "rdf:Property",
+      "rdfs:label": "data",
+      "rdfs:comment": "Media captured or exchanged during the session."
+    },
+    {
+      "@id": "beckn:description",
+      "@type": "rdf:Property",
+      "rdfs:label": "description",
+      "rdfs:comment": "Human-readable description of the issue."
+    },
+    {
+      "@id": "beckn:id",
+      "@type": "rdf:Property",
+      "rdfs:label": "id",
+      "rdfs:comment": "Stable support case identifier."
+    },
+    {
+      "@id": "beckn:priority",
+      "@type": "rdf:Property",
+      "rdfs:label": "priority",
+      "rdfs:comment": "Priority of the support case. Suggested values are P1, P2, P3; custom string values are also allowed."
+    },
+    {
+      "@id": "beckn:raisedBy",
+      "@type": "rdf:Property",
+      "rdfs:label": "raisedBy",
+      "rdfs:comment": "Identifier of the party who raised the support case."
+    },
+    {
+      "@id": "beckn:resolution",
+      "@type": "rdf:Property",
+      "rdfs:label": "resolution",
+      "rdfs:comment": "Resolution details, once the case is resolved."
+    },
+    {
+      "@id": "beckn:resolvedAt",
+      "@type": "rdf:Property",
+      "rdfs:label": "resolvedAt",
+      "rdfs:comment": "Timestamp at which the case was resolved."
+    },
+    {
+      "@id": "beckn:sessions",
+      "@type": "rdf:Property",
+      "rdfs:label": "sessions",
+      "rdfs:comment": "Support interaction sessions associated with this case. Each session records the channel used and any media exchanged."
+    },
+    {
+      "@id": "beckn:status",
+      "@type": "rdf:Property",
+      "rdfs:label": "status",
+      "rdfs:comment": "The lifecycle state of the support case expressed as a Descriptor whose code MUST be one of the standard values."
+    },
+    {
+      "@id": "beckn:supportChannel",
+      "@type": "rdf:Property",
+      "rdfs:label": "supportChannel",
+      "rdfs:comment": "The channel over which this session took place."
+    }
+  ]
+}

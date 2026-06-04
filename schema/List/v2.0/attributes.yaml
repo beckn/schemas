@@ -1,0 +1,48 @@
+openapi: 3.1.1
+info:
+  title: List
+  version: 2.0.0
+  description: Schema definition for List in the Beckn Protocol v2.0.1
+  license:
+    name: CC-BY-NC-SA 4.0 International
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+components:
+  schemas:
+    List:
+      x-iri: https://schema.beckn.io/List/v2.0
+      description: A generic, domain-agnostic collection of elements. Each element
+        carries an id, a descriptor, and an extensible listElementAttributes bag. The
+        order property indicates whether the elements are ranked ascending, descending,
+        or are unordered. List is designed to be extended by more specific list types.
+      title: List
+      type: object
+      properties:
+        elements:
+          description: The members of the list.
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                description: Identifier of this element.
+                type: string
+              descriptor:
+                description: Describes this element in human / agent readable terms.
+                $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor
+              listElementAttributes:
+                description: Domain-specific extension attributes for this element.
+                $ref: https://schema.beckn.io/Attributes/v2.0/attributes.yaml#/components/schemas/Attributes
+            additionalProperties: false
+        order:
+          description: The ordering of the elements within the list.
+          type: string
+          enum:
+          - ASCENDING
+          - DESCENDING
+          - UNORDERED
+          default: UNORDERED
+      additionalProperties: false
+      x-tags:
+      - common

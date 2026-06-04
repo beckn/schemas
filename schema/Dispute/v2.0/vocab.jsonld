@@ -18,7 +18,8 @@
     "reason": "beckn:reason",
     "respondent": "beckn:respondent",
     "status": "beckn:status",
-    "subject": "beckn:subject"
+    "subject": "beckn:subject",
+    "supportCases": "beckn:supportCases"
   },
   "@graph": [
     {
@@ -110,6 +111,12 @@
       "@type": "rdf:Property",
       "rdfs:label": "subject",
       "rdfs:comment": "The piece of information under dispute, carried as a JSON-LD object whose @type identifies what it is — e.g. a Contract, Invoice, Settlement, Performance, Consideration, or ContractTerms. The object may be embedded inline or referenced by URL within the container."
+    },
+    {
+      "@id": "beckn:supportCases",
+      "@type": "rdf:Property",
+      "rdfs:label": "supportCases",
+      "rdfs:comment": "The support cases (tickets) that underpin this dispute. A dispute MUST NOT be raised until at least one unresolved support case is attached — i.e. the parties are expected to have attempted support resolution first. Enforced by the contains constraint requiring at least one element whose status.code is UNRESOLVED."
     }
   ]
 }

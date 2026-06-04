@@ -19,6 +19,7 @@ Dispute is a **generic** object: it is not tied to invoicing. Any published arti
 
 - **Parties** — `claimant` (raises the dispute) and `respondent` (the dispute is against), each a `Participant`.
 - **ODR provider** — `odrProvider` (a `Participant`) is the neutral third party. Dispute resolution is a **tri-party** arrangement; claimant and respondent must agree on this provider (which may happen after the dispute is raised, so it is optional). Its `descriptor.code` carries the resolution role: `MEDIATOR`, `ARBITRATOR`, `CONCILIATOR`, `ADJUDICATOR`, `OMBUDSMAN`, `NEUTRAL_EVALUATOR`, `EXPERT`.
+- **Support precondition** — `supportCases` is a **required** array of [`SupportCase`](../../SupportCase/v2.0/) with `minItems: 1` and a `contains` rule requiring **at least one ticket whose `status.code` is `UNRESOLVED`**. A dispute therefore cannot be raised until the parties have an open, unresolved support case — escalation must follow an attempted support resolution.
 - **Cases** — `cases` is an array of `{ case, status }`. Each `case` is `{ subject, reason, evidence }`:
   - `subject` → an `Attributes` JSON-LD bag whose `@type` identifies what is disputed (`Contract`, `Invoice`, `Settlement`, `Performance`, `Consideration`, `ContractTerms`, …); the object may be embedded or referenced by URL.
   - `reason` → a `Descriptor` (**required**).
@@ -42,5 +43,6 @@ Disputes can be created, updated, status-tracked, and cancelled. **Both nodes ar
 | `claimant` | yes | $ref: Participant/v2.0 | The party that raises the dispute. |
 | `respondent` | yes | $ref: Participant/v2.0 | The party against whom the dispute is raised. |
 | `odrProvider` | no | allOf: Participant (descriptor.code ∈ MEDIATOR, ARBITRATOR, CONCILIATOR, ADJUDICATOR, OMBUDSMAN, NEUTRAL_EVALUATOR, EXPERT) | The agreed neutral ODR provider. |
+| `supportCases` | yes | array of SupportCase/v2.0 (minItems 1, contains ≥1 UNRESOLVED) | The support tickets underpinning the dispute. At least one must be UNRESOLVED — a dispute cannot be raised without it. |
 | `cases` | yes | array of `{ case, status }` | The disputed matters. `case` = { subject (Attributes @type), reason (Descriptor), evidence (Document[]) }; `status` ∈ UNRESOLVED, RESOLVED. |
 | `disputeAttributes` | no | $ref: Attributes/v2.0 | Domain-specific extension attributes. |

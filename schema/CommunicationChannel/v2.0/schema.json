@@ -1,0 +1,20 @@
+{
+  "$id": "https://schema.beckn.io/CommunicationChannel/v2.0",
+  "x-iri": "https://schema.beckn.io/CommunicationChannel/v2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A channel through which communication or support takes place. The enumerated values are derived from SupportInfo.channels (https://schema.beckn.io/SupportInfo/v2.0).",
+  "title": "CommunicationChannel",
+  "type": "string",
+  "enum": [
+    "PHONE",
+    "EMAIL",
+    "WEB",
+    "CHAT",
+    "WHATSAPP",
+    "IN_APP",
+    "OTHER"
+  ],
+  "x-tags": [
+    "common"
+  ]
+}

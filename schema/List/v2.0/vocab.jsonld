@@ -1,0 +1,52 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/LinkedData/v2.0/context.jsonld",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "List": "beckn:List",
+    "descriptor": "beckn:descriptor",
+    "elements": "beckn:elements",
+    "id": "beckn:id",
+    "listElementAttributes": "beckn:listElementAttributes",
+    "order": "beckn:order"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:List",
+      "@type": "rdfs:Class",
+      "rdfs:label": "List",
+      "rdfs:comment": "A generic, domain-agnostic collection of elements. Each element carries an id, a descriptor, and an extensible listElementAttributes bag. The order property indicates whether the elements are ranked ascending, descending, or are unordered. List is designed to be extended by more specific list types."
+    },
+    {
+      "@id": "beckn:descriptor",
+      "@type": "rdf:Property",
+      "rdfs:label": "descriptor",
+      "rdfs:comment": "Describes this element in human / agent readable terms."
+    },
+    {
+      "@id": "beckn:elements",
+      "@type": "rdf:Property",
+      "rdfs:label": "elements",
+      "rdfs:comment": "The members of the list."
+    },
+    {
+      "@id": "beckn:id",
+      "@type": "rdf:Property",
+      "rdfs:label": "id",
+      "rdfs:comment": "Identifier of this element."
+    },
+    {
+      "@id": "beckn:listElementAttributes",
+      "@type": "rdf:Property",
+      "rdfs:label": "listElementAttributes",
+      "rdfs:comment": "Domain-specific extension attributes for this element."
+    },
+    {
+      "@id": "beckn:order",
+      "@type": "rdf:Property",
+      "rdfs:label": "order",
+      "rdfs:comment": "The ordering of the elements within the list."
+    }
+  ]
+}
