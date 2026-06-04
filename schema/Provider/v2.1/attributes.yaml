@@ -13,7 +13,7 @@ components:
     Provider:
       x-iri: https://schema.beckn.io/Provider/v2.1
       type: object
-      description: Schema definition for Provider in the Beckn Protocol v2.0.1
+      description: "A registered entity on the Beckn network that makes resources and offers available through one or more catalogs, operating from one or more physical or virtual locations.\n\nProviders appear in the discovery phase of the value-exchange lifecycle as part of a Catalog, and persist through the negotiation phase as the counterparty identified in Offers. The PN produces provider records; the CN consumes them to identify and display the source of the resources and offers being considered.\n\nRelationship: Composed within the Catalog and Offer schemas. The availableAt field composes one or more Location schemas representing the provider's physical operating sites. The providerAttributes field extends the core schema with domain-specific attributes via the Attributes schema."
       title: Provider
       properties:
         id:
@@ -22,6 +22,15 @@ components:
           example: tech-store-001
         descriptor:
           $ref: https://schema.beckn.io/Descriptor/v2.1/attributes.yaml#/components/schemas/Descriptor
+        url:
+          description: The Beckn API URL of the provider. It MUST carry a fully
+            qualified domain name (FQDN) of its host application — i.e. the Provider
+            Node. The domain name MUST be the one that the Provider Node's namespace
+            was verified against. If the domain name does not match the namespace-linked
+            domain name, the provider is assumed to be untrusted and MAY be rejected by
+            the consumer node or cataloging service.
+          type: string
+          format: uri
         availableAt:
           description: Physical locations where the provider operates
           type: array

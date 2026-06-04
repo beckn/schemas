@@ -1,0 +1,150 @@
+{
+  "@context": {
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "Context": "beckn:Context",
+    "action": "beckn:action",
+    "bapId": "beckn:bapId",
+    "bapUri": "beckn:bapUri",
+    "bppId": "beckn:bppId",
+    "bppUri": "beckn:bppUri",
+    "key": "beckn:key",
+    "messageId": "beckn:messageId",
+    "networkId": "beckn:networkId",
+    "receiverId": "beckn:receiverId",
+    "receiverUrl": "beckn:receiverUrl",
+    "requestDigest": "beckn:requestDigest",
+    "schemaContext": "beckn:schemaContext",
+    "senderId": "beckn:senderId",
+    "senderUrl": "beckn:senderUrl",
+    "timestamp": "beckn:timestamp",
+    "transactionId": "beckn:transactionId",
+    "try": "beckn:try",
+    "ttl": "beckn:ttl",
+    "version": "beckn:version"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:Context",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Context",
+      "rdfs:comment": "The message envelope header that accompanies every Beckn API call, carrying network addressing, protocol version, action identification, transaction correlation identifiers, timing constraints, and optional cryptographic metadata required to route, authenticate, and correlate messages across the asynchronous Beckn communication pattern.\n\nContext appears in every request and callback across all phases of the value-exchange lifecycle. The CN assigns bapId, bapUri, transactionId, messageId, and timestamp when originating a request; the PN assigns bppId and bppUri when it is the receiving actor. Fabric services such as the CS (Cataloging Service) and DS (Discovery Service) validate the version, action, and signature fields as part of request authentication.\n\nRelationship: Composes the RequestDigest schema via the requestDigest property, which carries the BLAKE2b-512 hash of the originating request body for non-repudiation of the asynchronous callback leg."
+    },
+    {
+      "@id": "beckn:action",
+      "@type": "rdf:Property",
+      "rdfs:label": "action",
+      "rdfs:comment": "The Beckn protocol method name being invoked by the sender, which the receiving actor MUST use to route and execute the corresponding operation. The value MUST match the action value defined in the path schema for the endpoint being called."
+    },
+    {
+      "@id": "beckn:bapId",
+      "@type": "rdf:Property",
+      "rdfs:label": "bapId",
+      "rdfs:comment": "Verified namespace identifier of the CN on dedi.global. Receiving actors MUST resolve the CN's address and key material by first resolving the subnet registry URL from context.networkId, then calling the subnet registry's lookup endpoint with context.bapId and context.networkId. The subscriber_url field in the response is the CN's network address; the key material is used for signature verification."
+    },
+    {
+      "@id": "beckn:bapUri",
+      "@type": "rdf:Property",
+      "rdfs:label": "bapUri",
+      "rdfs:comment": "The callback base URL of the CN to which the PN or Fabric service MUST deliver asynchronous callbacks. This MUST match the subscriber_url returned by the subnet registry lookup for context.bapId and context.networkId."
+    },
+    {
+      "@id": "beckn:bppId",
+      "@type": "rdf:Property",
+      "rdfs:label": "bppId",
+      "rdfs:comment": "Verified namespace identifier of the PN on dedi.global. Calling actors MUST resolve the PN's address and key material by first resolving the subnet registry URL from context.networkId, then calling the subnet registry's lookup endpoint with context.bppId and context.networkId. The subscriber_url field in the response is the PN's network address; the key material is used for signature verification."
+    },
+    {
+      "@id": "beckn:bppUri",
+      "@type": "rdf:Property",
+      "rdfs:label": "bppUri",
+      "rdfs:comment": "The request base URL of the PN to which the CN MUST send request API calls. This MUST match the subscriber_url returned by the subnet registry lookup for context.bppId and context.networkId."
+    },
+    {
+      "@id": "beckn:key",
+      "@type": "rdf:Property",
+      "rdfs:label": "key",
+      "rdfs:comment": "The encryption public key of the sender, provided when the sender intends for the receiver to use it for encrypting response payloads or establishing a secure channel. Assignment is by the CN or PN depending on message direction."
+    },
+    {
+      "@id": "beckn:messageId",
+      "@type": "rdf:Property",
+      "rdfs:label": "messageId",
+      "rdfs:comment": "A UUID that persists across a single request and its corresponding callback, assigned by the CN for request messages and generated fresh by the PN for unsolicited callbacks. The CN MUST use this value to correlate incoming callbacks with the originating request and MAY use it to detect and discard duplicate messages from the PN. A new messageId MUST be generated for every new interaction."
+    },
+    {
+      "@id": "beckn:networkId",
+      "@type": "rdf:Property",
+      "rdfs:label": "networkId",
+      "rdfs:comment": "The unique identifier of the Beckn subnet within which this transaction is occurring. Actors use this value to resolve the subnet's registry URL before performing identity and address lookups. The RECOMMENDED format is namespace_id followed by a slash followed by registry_id, for example acmenet.org/charge-net."
+    },
+    {
+      "@id": "beckn:receiverId",
+      "@type": "rdf:Property",
+      "rdfs:label": "receiverId",
+      "rdfs:comment": "The identity of the message receiver — by default the receiver node's identity on dedi.global, whose default format is `namespace_id/registry_id/record_id`. Additional identity formats are defined in the Identity and Addressing RFC (Identity_and_Addressing.md). Decentralized identifiers (DIDs) are also supported, and are typically used by ecosystems anchored outside dedi.global."
+    },
+    {
+      "@id": "beckn:receiverUrl",
+      "@type": "rdf:Property",
+      "rdfs:label": "receiverUrl",
+      "rdfs:comment": "The network address (base URL) of the message receiver, corresponding to receiverId, to which this message is delivered."
+    },
+    {
+      "@id": "beckn:requestDigest",
+      "@type": "rdf:Property",
+      "rdfs:label": "requestDigest",
+      "rdfs:comment": "Property requestDigest"
+    },
+    {
+      "@id": "beckn:schemaContext",
+      "@type": "rdf:Property",
+      "rdfs:label": "schemaContext",
+      "rdfs:comment": "Array of JSON-LD context urls representing the schemas relevant to the request in which this context object is transported."
+    },
+    {
+      "@id": "beckn:senderId",
+      "@type": "rdf:Property",
+      "rdfs:label": "senderId",
+      "rdfs:comment": "The identity of the message sender — by default the sender node's identity on dedi.global, whose default format is `namespace_id/registry_id/record_id`. Additional identity formats are defined in the Identity and Addressing RFC (Identity_and_Addressing.md). Decentralized identifiers (DIDs) are also supported, and are typically used by ecosystems anchored outside dedi.global."
+    },
+    {
+      "@id": "beckn:senderUrl",
+      "@type": "rdf:Property",
+      "rdfs:label": "senderUrl",
+      "rdfs:comment": "The network address (base URL) of the message sender, corresponding to senderId, to which responses or callbacks for this message are delivered."
+    },
+    {
+      "@id": "beckn:timestamp",
+      "@type": "rdf:Property",
+      "rdfs:label": "timestamp",
+      "rdfs:comment": "The date and time at which this message was generated by the sender, expressed in RFC 3339 date-time format. The receiving actor MAY use this value together with ttl to assess whether the message has expired before processing."
+    },
+    {
+      "@id": "beckn:transactionId",
+      "@type": "rdf:Property",
+      "rdfs:label": "transactionId",
+      "rdfs:comment": "A UUID assigned by the CN that persists across all API calls within a single transaction session from discover through confirm. The PN MAY use this value to correlate related requests, push personalized recommendations, and maintain dynamic offerings across the multi-step negotiation cycle without requiring knowledge of the specific consumer identity on the CN."
+    },
+    {
+      "@id": "beckn:try",
+      "@type": "rdf:Property",
+      "rdfs:label": "try",
+      "rdfs:comment": "A boolean flag set by the CN to activate the two-phase preview pattern: when true, the PN MUST compute and return the outcome of the requested action without persisting any state change; when false (the default), the PN MUST execute and commit the action. Applicable to the `update` and `cancel` actions only. For all other actions, sending actors MUST NOT set this flag; receiving actors MUST ignore it if present."
+    },
+    {
+      "@id": "beckn:ttl",
+      "@type": "rdf:Property",
+      "rdfs:label": "ttl",
+      "rdfs:comment": "The duration, expressed in ISO 8601 duration format, after the timestamp value during which this message remains valid. The receiving actor SHOULD reject messages whose timestamp plus ttl has elapsed before processing."
+    },
+    {
+      "@id": "beckn:version",
+      "@type": "rdf:Property",
+      "rdfs:label": "version",
+      "rdfs:comment": "The Beckn protocol version in use for this transaction, assigned by the CN when constructing the request. MUST be the const value 2.0.0 for all requests conforming to this specification."
+    }
+  ]
+}
