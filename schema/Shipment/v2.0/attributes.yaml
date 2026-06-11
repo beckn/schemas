@@ -47,9 +47,9 @@ components:
           - CANCELLED
           example: IN_TRANSIT
         origin:
-          $ref: https://schema.beckn.io/Place/v2.0/attributes.yaml#/components/schemas/Place
+          $ref: https://schema.beckn.io/LogisticsPlace/v2.0/attributes.yaml#/components/schemas/LogisticsPlace
         destination:
-          $ref: https://schema.beckn.io/Place/v2.0/attributes.yaml#/components/schemas/Place
+          $ref: https://schema.beckn.io/LogisticsPlace/v2.0/attributes.yaml#/components/schemas/LogisticsPlace
         packages:
           type: array
           description: List of packages in this shipment

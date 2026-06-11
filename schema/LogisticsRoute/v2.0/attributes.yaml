@@ -31,9 +31,9 @@ components:
           description: Human-readable route name
           example: Bangalore to Delhi via Hyderabad
         origin:
-          $ref: https://schema.beckn.io/Place/v2.0/attributes.yaml#/components/schemas/Place
+          $ref: https://schema.beckn.io/LogisticsPlace/v2.0/attributes.yaml#/components/schemas/LogisticsPlace
         destination:
-          $ref: https://schema.beckn.io/Place/v2.0/attributes.yaml#/components/schemas/Place
+          $ref: https://schema.beckn.io/LogisticsPlace/v2.0/attributes.yaml#/components/schemas/LogisticsPlace
         waypoints:
           type: array
           description: Intermediate waypoints/hubs on the route
