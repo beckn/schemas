@@ -96,7 +96,7 @@ components:
         fare:
           $ref: https://schema.beckn.io/Fare/v2.0/attributes.yaml#/components/schemas/Fare
         receipt:
-          $ref: https://schema.beckn.io/Receipt/v2.0/attributes.yaml#/components/schemas/Receipt
+          $ref: https://schema.beckn.io/LogisticsReceipt/v2.0/attributes.yaml#/components/schemas/LogisticsReceipt
         cancellationPolicy:
           $ref: https://schema.beckn.io/CancellationPolicy/v2.0/attributes.yaml#/components/schemas/CancellationPolicy
         returnPolicy:
