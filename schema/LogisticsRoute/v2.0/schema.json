@@ -19,10 +19,10 @@
       "example": "Bangalore to Delhi via Hyderabad"
     },
     "origin": {
-      "$ref": "https://schema.beckn.io/Place/v2.0/schema.json"
+      "$ref": "https://schema.beckn.io/LogisticsPlace/v2.0/schema.json"
     },
     "destination": {
-      "$ref": "https://schema.beckn.io/Place/v2.0/schema.json"
+      "$ref": "https://schema.beckn.io/LogisticsPlace/v2.0/schema.json"
     },
     "waypoints": {
       "type": "array",

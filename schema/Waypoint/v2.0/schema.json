@@ -16,7 +16,7 @@
       "example": "Hyderabad Sorting Hub"
     },
     "place": {
-      "$ref": "https://schema.beckn.io/Place/v2.0/schema.json"
+      "$ref": "https://schema.beckn.io/LogisticsPlace/v2.0/schema.json"
     },
     "type": {
       "type": "string",

@@ -37,10 +37,10 @@
       "example": "IN_TRANSIT"
     },
     "origin": {
-      "$ref": "https://schema.beckn.io/Place/v2.0/schema.json"
+      "$ref": "https://schema.beckn.io/LogisticsPlace/v2.0/schema.json"
     },
     "destination": {
-      "$ref": "https://schema.beckn.io/Place/v2.0/schema.json"
+      "$ref": "https://schema.beckn.io/LogisticsPlace/v2.0/schema.json"
     },
     "packages": {
       "type": "array",
@@ -103,7 +103,7 @@
       "$ref": "https://schema.beckn.io/Fare/v2.0/schema.json"
     },
     "receipt": {
-      "$ref": "https://schema.beckn.io/Receipt/v2.0/schema.json"
+      "$ref": "https://schema.beckn.io/LogisticsReceipt/v2.0/schema.json"
     },
     "cancellationPolicy": {
       "$ref": "https://schema.beckn.io/CancellationPolicy/v2.0/schema.json"
