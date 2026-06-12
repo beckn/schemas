@@ -72,11 +72,15 @@ components:
             in the payTo property) for the purpose of this settlement.
           type: array
           items:
-            type: string
-            enum:
-            - CASH_DEPOSIT
-            - BANK_TRANSFER
-            additionalProperties: true
+            anyOf:
+            - type: string
+              enum:
+              - CASH_DEPOSIT
+              - BANK_TRANSFER
+              - UPI
+              - PAYMENT_URL
+            - type: string
+              description: Extension payment method not covered by the standard enum.
         settlementTermAttributes:
           description: Additional use case specific settlement terms that must be
             adhered to
