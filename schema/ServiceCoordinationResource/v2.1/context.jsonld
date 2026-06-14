@@ -1,0 +1,40 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "scres": "https://schema.beckn.io/ServiceCoordinationResource#",
+    "sr": "https://schema.beckn.io/ServiceResource#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+
+    "ServiceCoordinationResource": "scres:ServiceCoordinationResource",
+    "AcceptanceMode": "scres:AcceptanceMode",
+    "UrgencyTier": "scres:UrgencyTier",
+    "ReferralCategory": "scres:ReferralCategory",
+    "TargetServiceType": "scres:TargetServiceType",
+
+    "ServiceResource": "sr:ServiceResource",
+    "ServiceCoverageArea": "sr:ServiceCoverageArea",
+    "ServiceAvailabilitySlot": "sr:ServiceAvailabilitySlot",
+
+    "coordinationScope": {
+      "@id": "scres:coordinationScope",
+      "@context": {
+        "referralCategories": {"@id": "scres:referralCategories", "@container": "@set"},
+        "targetServiceTypes": {"@id": "scres:targetServiceTypes", "@container": "@set"},
+        "programmeScope": {"@id": "scres:programmeScope", "@container": "@set"},
+        "geographyScope": {"@id": "scres:geographyScope", "@container": "@set"}
+      }
+    },
+    "acceptanceMode": {"@id": "scres:acceptanceMode"},
+    "supportedUrgencyTiers": {"@id": "scres:supportedUrgencyTiers", "@container": "@set"},
+
+    "serviceUnit": {"@id": "sr:serviceUnit"},
+    "coverageArea": {"@id": "sr:coverageArea", "@container": "@list"},
+    "capacityPerDay": {"@id": "sr:capacityPerDay"},
+    "capacityPerWeek": {"@id": "sr:capacityPerWeek"},
+    "availabilitySchedule": {"@id": "sr:availabilitySchedule", "@container": "@list"},
+    "availabilityRecurrenceRule": {"@id": "sr:availabilityRecurrenceRule"},
+    "minimumBookingAdvanceHours": {"@id": "sr:minimumBookingAdvanceHours"},
+    "languagesSupported": {"@id": "sr:languagesSupported", "@container": "@list"}
+  }
+}

@@ -1,0 +1,132 @@
+openapi: 3.1.1
+$id: "https://schema.beckn.io/ServiceCoordinationResource/v2.1/attributes.yaml"
+info:
+  title: ServiceCoordinationResource Schema
+  version: "2.1.0"
+  description: >
+    Resource-level attributes for a coordination provider (care coordinator) in the
+    generalised Beckn Protocol model. Extends ServiceResource/v2.1 with the standing
+    coordination capability the coordinator advertises — the scope of referrals it
+    handles, the downstream service types it books toward, its acceptance mode, and
+    the urgency tiers it supports. This is the coordinator's discoverable catalogue
+    entry (Discover 2). Inherited base fields (serviceUnit, coverageArea, capacityPerDay,
+    capacityPerWeek, availabilitySchedule, availabilityRecurrenceRule,
+    minimumBookingAdvanceHours, languagesSupported) come from ServiceResource/v2.1.
+  x-beckn-container: resourceAttributes
+
+components:
+  schemas:
+    ServiceCoordinationResource:
+      type: object
+      x-beckn-container: resourceAttributes
+      x-status: under-review
+      x-tags:
+        - service
+        - generic-service
+        - coordination
+        - resource
+      x-beckn-extends: "https://schema.beckn.io/ServiceResource/v2.1/attributes.yaml#/components/schemas/ServiceResource"
+      x-jsonld:
+        "@context": "https://schema.beckn.io/ServiceCoordinationResource/v2.1/context.jsonld"
+        "@type": "scres:ServiceCoordinationResource"
+      allOf:
+        - $ref: "https://schema.beckn.io/ServiceResource/v2.1/attributes.yaml#/components/schemas/ServiceResource"
+      properties:
+        coordinationScope:
+          type: object
+          description: >
+            The standing scope of coordination this coordinator provides — what kinds
+            of referral it handles, which downstream service types it books toward, and
+            its programme and geographic catchment. Seekers filter coordinators against
+            this scope at Discover 2.
+          x-jsonld-id: "scres:coordinationScope"
+          properties:
+            referralCategories:
+              type: array
+              description: >
+                Categories of coordination the coordinator handles. Self-owned CodedValue
+                (default @context is this schema's context.jsonld, @type is ReferralCategory);
+                networks may override @context to extend the value set.
+              x-jsonld-id: "scres:referralCategories"
+              items:
+                $ref: "#/components/schemas/ReferralCategory"
+            targetServiceTypes:
+              type: array
+              description: >
+                Downstream service types the coordinator books toward. Self-owned CodedValue
+                (default @context is this schema's context.jsonld, @type is TargetServiceType).
+              x-jsonld-id: "scres:targetServiceTypes"
+              items:
+                $ref: "#/components/schemas/TargetServiceType"
+            programmeScope:
+              type: array
+              description: >
+                Programme or scheme scope the coordinator operates within. Externally
+                governed CodedValue (authority such as a programme registry).
+              x-jsonld-id: "scres:programmeScope"
+              items:
+                $ref: "https://schema.beckn.io/CodedValue/v2.1/attributes.yaml#/components/schemas/CodedValue"
+            geographyScope:
+              type: array
+              description: >
+                Geographic catchment the coordinator serves. Externally governed CodedValue
+                (e.g. LGD district / PIN code authority).
+              x-jsonld-id: "scres:geographyScope"
+              items:
+                $ref: "https://schema.beckn.io/CodedValue/v2.1/attributes.yaml#/components/schemas/CodedValue"
+        acceptanceMode:
+          type: string
+          enum:
+            - AUTO_ACCEPT
+            - MANUAL_REVIEW
+          description: >
+            How the coordinator accepts an incoming coordination engagement.
+            AUTO_ACCEPT: accepts matching engagements automatically.
+            MANUAL_REVIEW: a human reviews and accepts each engagement.
+          x-jsonld-id: "scres:acceptanceMode"
+        supportedUrgencyTiers:
+          type: array
+          description: >
+            Urgency tiers the coordinator can service. Plain enum members,
+            protocol-invariant across the network.
+          x-jsonld-id: "scres:supportedUrgencyTiers"
+          items:
+            type: string
+            enum:
+              - ROUTINE
+              - URGENT
+              - EMERGENCY
+
+    ReferralCategory:
+      description: >
+        Typed code for ReferralCategory. @type is fixed (const) to ReferralCategory; @context defaults to this
+        pack's context.jsonld and may be overridden by the emitting network to point at its
+        own vocabulary. `code` is a member of that vocabulary. Detecting an unaccepted code
+        system is a network edge rule, not a schema constraint.
+      allOf:
+        - $ref: "https://schema.beckn.io/CodedValue/v2.1/attributes.yaml#/components/schemas/CodedValue"
+        - type: object
+          properties:
+            "@type":
+              const: "ReferralCategory"
+            "@context":
+              type: string
+              format: uri
+              default: "https://schema.beckn.io/ServiceCoordinationResource/v2.1/context.jsonld"
+
+    TargetServiceType:
+      description: >
+        Typed code for TargetServiceType. @type is fixed (const) to TargetServiceType; @context defaults to this
+        pack's context.jsonld and may be overridden by the emitting network to point at its
+        own vocabulary. `code` is a member of that vocabulary. Detecting an unaccepted code
+        system is a network edge rule, not a schema constraint.
+      allOf:
+        - $ref: "https://schema.beckn.io/CodedValue/v2.1/attributes.yaml#/components/schemas/CodedValue"
+        - type: object
+          properties:
+            "@type":
+              const: "TargetServiceType"
+            "@context":
+              type: string
+              format: uri
+              default: "https://schema.beckn.io/ServiceCoordinationResource/v2.1/context.jsonld"

@@ -1,0 +1,36 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "scoff": "https://schema.beckn.io/ServiceCoordinationOffer#",
+    "sof": "https://schema.beckn.io/ServiceOffer#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+
+    "ServiceCoordinationOffer": "scoff:ServiceCoordinationOffer",
+    "RetryPolicy": "scoff:RetryPolicy",
+    "UrgencyTier": "scoff:UrgencyTier",
+
+    "ServiceOffer": "sof:ServiceOffer",
+
+    "coordinationSlaWindows": {
+      "@id": "scoff:coordinationSlaWindows",
+      "@container": "@list",
+      "@context": {
+        "urgencyTier": {"@id": "scoff:slaUrgencyTier"},
+        "lapseWindowHours": {"@id": "scoff:lapseWindowHours"},
+        "slaBreachWindowHours": {"@id": "scoff:slaBreachWindowHours"}
+      }
+    },
+    "retryPolicy": {"@id": "scoff:retryPolicy"},
+    "handoffSupported": {"@id": "scoff:handoffSupported"},
+    "maxActiveReferrals": {"@id": "scoff:maxActiveReferrals"},
+
+    "minimumQuantity": {"@id": "sof:minimumQuantity"},
+    "maximumQuantity": {"@id": "sof:maximumQuantity"},
+    "requiresAdvanceBooking": {"@id": "sof:requiresAdvanceBooking"},
+    "bulkDiscountAvailable": {"@id": "sof:bulkDiscountAvailable"},
+    "eligibilityCriteria": {"@id": "sof:eligibilityCriteria", "@container": "@list"},
+    "validityPeriodDays": {"@id": "sof:validityPeriodDays"},
+    "cancellationPolicies": {"@id": "sof:cancellationPolicies", "@container": "@list"}
+  }
+}

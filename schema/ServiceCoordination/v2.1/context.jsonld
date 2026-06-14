@@ -1,0 +1,95 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "scoord": "https://schema.beckn.io/ServiceCoordination#",
+    "sc": "https://schema.beckn.io/ServiceContract#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+
+    "ServiceCoordination": "scoord:ServiceCoordination",
+    "LifecycleState": "scoord:LifecycleState",
+    "UrgencyTier": "scoord:UrgencyTier",
+    "PartyRole": "scoord:PartyRole",
+    "NotificationScope": "scoord:NotificationScope",
+    "RevocationStatus": "scoord:RevocationStatus",
+    "DeviationReasonCode": "scoord:DeviationReasonCode",
+    "ServiceCategory": "scoord:ServiceCategory",
+
+    "ServiceContract": "sc:ServiceContract",
+
+    "coordinationId": {"@id": "scoord:coordinationId"},
+    "lifecycleState": {"@id": "scoord:lifecycleState"},
+    "targetCriteria": {
+      "@id": "scoord:targetCriteria",
+      "@context": {
+        "serviceCategory": {"@id": "scoord:tc_serviceCategory"},
+        "geographyConstraint": {"@id": "scoord:tc_geographyConstraint", "@container": "@set"},
+        "schemeRequired": {"@id": "scoord:tc_schemeRequired", "@container": "@set"},
+        "modality": {"@id": "scoord:tc_modality"},
+        "urgencyTier": {"@id": "scoord:tc_urgencyTier"},
+        "timeWindow": {
+          "@id": "scoord:tc_timeWindow",
+          "@context": {
+            "start": {"@id": "scoord:tc_timeWindowStart"},
+            "end": {"@id": "scoord:tc_timeWindowEnd"}
+          }
+        }
+      }
+    },
+    "recommendedTargetRef": {
+      "@id": "scoord:recommendedTargetRef",
+      "@context": {
+        "targetProviderId": {"@id": "scoord:rt_targetProviderId"},
+        "targetResourceRef": {"@id": "scoord:rt_targetResourceRef"},
+        "targetOfferRef": {"@id": "scoord:rt_targetOfferRef"},
+        "termsSnapshot": {"@id": "scoord:rt_termsSnapshot"},
+        "snapshotAt": {"@id": "scoord:rt_snapshotAt"}
+      }
+    },
+    "targetBookingRef": {"@id": "scoord:targetBookingRef"},
+    "handoverDocument": {
+      "@id": "scoord:handoverDocument",
+      "@context": {
+        "artifactRef": {"@id": "scoord:hd_artifactRef"},
+        "credentialScope": {"@id": "scoord:hd_credentialScope"},
+        "accessWindowStart": {"@id": "scoord:hd_accessWindowStart"},
+        "accessWindowEnd": {"@id": "scoord:hd_accessWindowEnd"},
+        "revocationStatus": {"@id": "scoord:hd_revocationStatus"},
+        "revokedAt": {"@id": "scoord:hd_revokedAt"}
+      }
+    },
+    "notificationRoster": {
+      "@id": "scoord:notificationRoster",
+      "@container": "@list",
+      "@context": {
+        "partyRef": {"@id": "scoord:nr_partyRef"},
+        "partyRole": {"@id": "scoord:nr_partyRole"},
+        "notificationScope": {"@id": "scoord:nr_notificationScope"},
+        "channelRef": {"@id": "scoord:nr_channelRef"}
+      }
+    },
+    "deviation": {
+      "@id": "scoord:deviation",
+      "@context": {
+        "reasonCode": {"@id": "scoord:dv_reasonCode"},
+        "detectedBy": {"@id": "scoord:dv_detectedBy"},
+        "detectedAt": {"@id": "scoord:dv_detectedAt"},
+        "note": {"@id": "scoord:dv_note"}
+      }
+    },
+    "grievanceRef": {"@id": "scoord:grievanceRef"},
+    "handoff": {
+      "@id": "scoord:handoff",
+      "@context": {
+        "newCoordinatorId": {"@id": "scoord:ho_newCoordinatorId"},
+        "handoffAt": {"@id": "scoord:ho_handoffAt"}
+      }
+    },
+
+    "bookingChannel": {"@id": "sc:bookingChannel"},
+    "clientNotes": {"@id": "sc:clientNotes"},
+    "cancellationReason": {"@id": "sc:cancellationReason"},
+    "facilitatorId": {"@id": "sc:facilitatorId"},
+    "reminderSentAt": {"@id": "sc:reminderSentAt"}
+  }
+}

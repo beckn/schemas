@@ -1,0 +1,15 @@
+{
+  "id": "https://schema.beckn.io/ServiceCoordinationOffer/v2.1",
+  "name": "ServiceCoordinationOffer",
+  "version": "2.1.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": ["ServiceCoordinationOffer"],
+  "discovery_fields": ["retryPolicy", "handoffSupported"],
+  "indexable_paths": ["retryPolicy", "handoffSupported"],
+  "filterable_paths": ["retryPolicy", "handoffSupported", "maxActiveReferrals"],
+  "sortable_paths": ["maxActiveReferrals"],
+  "list_fields": ["retryPolicy", "handoffSupported"],
+  "detail_fields": ["coordinationSlaWindows", "retryPolicy", "handoffSupported", "maxActiveReferrals"],
+  "privacy_notes": ["coordinationSlaWindows and retryPolicy are commercial terms — non-sensitive offer metadata"]
+}

@@ -1,0 +1,8 @@
+{
+  "schema": "ServiceCoordinationOffer",
+  "version": "2.1.0",
+  "card_template": "Coordination terms | retry: {{retryPolicy}}{{#if handoffSupported}} | handoff{{/if}}",
+  "detail_template": "Retry Policy: {{retryPolicy}}\nHandoff Supported: {{handoffSupported}}\nMax Active Referrals: {{maxActiveReferrals}}\nSLA Windows: {{coordinationSlaWindows}}",
+  "html": "<div class=\"coordination-offer-card\"><span class=\"retry badge\">{{retryPolicy}}</span>{{#if handoffSupported}}<span class=\"handoff\">Handoff supported</span>{{/if}}</div>",
+  "html_detail": "<div class=\"coordination-offer-detail\"><h3>Coordination Terms</h3><dl><dt>Retry Policy</dt><dd>{{retryPolicy}}</dd><dt>Handoff Supported</dt><dd>{{handoffSupported}}</dd>{{#if maxActiveReferrals}}<dt>Max Active Referrals</dt><dd>{{maxActiveReferrals}}</dd>{{/if}}{{#if coordinationSlaWindows}}<dt>SLA Windows</dt><dd>{{coordinationSlaWindows}}</dd>{{/if}}</dl></div>"
+}

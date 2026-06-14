@@ -1,0 +1,19 @@
+{
+  "id": "https://schema.beckn.io/ServiceCoordination/v2.1",
+  "name": "ServiceCoordination",
+  "version": "2.1.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": ["ServiceCoordination"],
+  "discovery_fields": ["lifecycleState", "coordinationId"],
+  "indexable_paths": ["coordinationId", "lifecycleState", "targetBookingRef"],
+  "filterable_paths": ["lifecycleState", "coordinationId", "targetBookingRef", "targetCriteria.urgencyTier"],
+  "sortable_paths": [],
+  "list_fields": ["coordinationId", "lifecycleState", "targetBookingRef"],
+  "detail_fields": ["coordinationId", "lifecycleState", "targetCriteria", "recommendedTargetRef", "targetBookingRef", "handoverDocument", "notificationRoster", "deviation", "grievanceRef", "handoff"],
+  "privacy_notes": [
+    "handoverDocument.credentialScope gates access to a handover artifact — restrict to credentialed parties",
+    "notificationRoster identifies parties and channels — treat as PII",
+    "grievanceRef links to dispute records — restrict to coordination parties and NFO"
+  ]
+}

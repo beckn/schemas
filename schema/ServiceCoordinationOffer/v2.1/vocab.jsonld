@@ -1,0 +1,18 @@
+{
+  "@context": {
+    "scoff": "https://schema.beckn.io/ServiceCoordinationOffer#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+    {"@id": "scoff:RetryPolicy", "@type": "rdfs:Class", "rdfs:label": "RetryPolicy",
+     "rdfs:comment": "How a coordinator handles a downstream target refusal"},
+    {"@id": "scoff:NOTIFY_ON_FIRST_REFUSAL", "@type": "scoff:RetryPolicy", "rdfs:label": "Notify on First Refusal — notify the nominator on the first refusal"},
+    {"@id": "scoff:ONE_SILENT_RETRY",        "@type": "scoff:RetryPolicy", "rdfs:label": "One Silent Retry — silently re-discover and retry once before notifying"},
+
+    {"@id": "scoff:UrgencyTier", "@type": "rdfs:Class", "rdfs:label": "UrgencyTier",
+     "rdfs:comment": "Urgency tier an SLA window applies to"},
+    {"@id": "scoff:ROUTINE",   "@type": "scoff:UrgencyTier", "rdfs:label": "Routine"},
+    {"@id": "scoff:URGENT",    "@type": "scoff:UrgencyTier", "rdfs:label": "Urgent"},
+    {"@id": "scoff:EMERGENCY", "@type": "scoff:UrgencyTier", "rdfs:label": "Emergency"}
+  ]
+}

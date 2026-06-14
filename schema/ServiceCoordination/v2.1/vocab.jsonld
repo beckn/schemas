@@ -1,0 +1,231 @@
+{
+  "@context": {
+    "scoord": "https://schema.beckn.io/ServiceCoordination#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+    {
+      "@id": "scoord:LifecycleState",
+      "@type": "rdfs:Class",
+      "rdfs:label": "LifecycleState",
+      "rdfs:comment": "Lifecycle state machine of a coordination (T1). Five members (LAPSED, SLA_BREACHED, PROVIDER_CANCELLED, NO_SHOW, REVOKED) are dual-typed as DeviationReasonCode \u2014 one concept, two class memberships (per the CodedValue convention \u2014 RFC-001, draft)."
+    },
+    {
+      "@id": "scoord:DRAFT",
+      "@type": "scoord:LifecycleState",
+      "rdfs:label": "Draft \u2014 created but not yet confirmed"
+    },
+    {
+      "@id": "scoord:ACTIVE",
+      "@type": "scoord:LifecycleState",
+      "rdfs:label": "Active \u2014 confirmed; coordinator working the referral"
+    },
+    {
+      "@id": "scoord:TARGET_SELECTED",
+      "@type": "scoord:LifecycleState",
+      "rdfs:label": "Target Selected \u2014 a downstream target has been chosen"
+    },
+    {
+      "@id": "scoord:BOOKING_CONFIRMED",
+      "@type": "scoord:LifecycleState",
+      "rdfs:label": "Booking Confirmed \u2014 the downstream booking (T2) is confirmed"
+    },
+    {
+      "@id": "scoord:TARGET_NOTIFIED",
+      "@type": "scoord:LifecycleState",
+      "rdfs:label": "Target Notified \u2014 the target has been notified"
+    },
+    {
+      "@id": "scoord:ATTENDED",
+      "@type": "scoord:LifecycleState",
+      "rdfs:label": "Attended \u2014 subject attended the downstream service"
+    },
+    {
+      "@id": "scoord:NO_SHOW",
+      "@type": [
+        "scoord:LifecycleState",
+        "scoord:DeviationReasonCode"
+      ],
+      "rdfs:label": "No Show \u2014 subject did not attend"
+    },
+    {
+      "@id": "scoord:CANCELLED",
+      "@type": "scoord:LifecycleState",
+      "rdfs:label": "Cancelled \u2014 cancelled by the subject/nominator"
+    },
+    {
+      "@id": "scoord:PROVIDER_CANCELLED",
+      "@type": [
+        "scoord:LifecycleState",
+        "scoord:DeviationReasonCode"
+      ],
+      "rdfs:label": "Provider Cancelled \u2014 cancelled by the downstream provider"
+    },
+    {
+      "@id": "scoord:OUTCOME_RECEIVED",
+      "@type": "scoord:LifecycleState",
+      "rdfs:label": "Outcome Received \u2014 outcome note received"
+    },
+    {
+      "@id": "scoord:SLA_BREACHED",
+      "@type": [
+        "scoord:LifecycleState",
+        "scoord:DeviationReasonCode"
+      ],
+      "rdfs:label": "SLA Breached \u2014 an SLA window was breached"
+    },
+    {
+      "@id": "scoord:LAPSED",
+      "@type": [
+        "scoord:LifecycleState",
+        "scoord:DeviationReasonCode"
+      ],
+      "rdfs:label": "Lapsed \u2014 no target secured within the lapse window"
+    },
+    {
+      "@id": "scoord:REVOKED",
+      "@type": [
+        "scoord:LifecycleState",
+        "scoord:DeviationReasonCode"
+      ],
+      "rdfs:label": "Revoked \u2014 handover access / coordination revoked"
+    },
+    {
+      "@id": "scoord:WITHDRAWN",
+      "@type": "scoord:LifecycleState",
+      "rdfs:label": "Withdrawn \u2014 withdrawn by the subject"
+    },
+    {
+      "@id": "scoord:CLOSED",
+      "@type": "scoord:LifecycleState",
+      "rdfs:label": "Closed \u2014 terminal; completed or administratively closed"
+    },
+    {
+      "@id": "scoord:DeviationReasonCode",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DeviationReasonCode",
+      "rdfs:comment": "Self-owned CodedValue class \u2014 generic deviation reasons. Members LAPSED, SLA_BREACHED, PROVIDER_CANCELLED, NO_SHOW, REVOKED are declared (dual-typed) in the LifecycleState block above; the deviation-only members follow. Networks may extend by supplying their own @context."
+    },
+    {
+      "@id": "scoord:SUBJECT_CANCELLED",
+      "@type": "scoord:DeviationReasonCode",
+      "rdfs:label": "Subject Cancelled"
+    },
+    {
+      "@id": "scoord:RESCHEDULED",
+      "@type": "scoord:DeviationReasonCode",
+      "rdfs:label": "Rescheduled"
+    },
+    {
+      "@id": "scoord:SERVICE_FAILURE",
+      "@type": "scoord:DeviationReasonCode",
+      "rdfs:label": "Service Failure"
+    },
+    {
+      "@id": "scoord:COORDINATOR_UNAVAILABLE",
+      "@type": "scoord:DeviationReasonCode",
+      "rdfs:label": "Coordinator Unavailable"
+    },
+    {
+      "@id": "scoord:TARGET_REFUSED",
+      "@type": "scoord:DeviationReasonCode",
+      "rdfs:label": "Target Refused"
+    },
+    {
+      "@id": "scoord:ServiceCategory",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ServiceCategory",
+      "rdfs:comment": "Self-owned CodedValue class \u2014 recommended downstream service categories for targetCriteria."
+    },
+    {
+      "@id": "scoord:CONSULTATION",
+      "@type": "scoord:ServiceCategory",
+      "rdfs:label": "Consultation"
+    },
+    {
+      "@id": "scoord:PROCEDURE",
+      "@type": "scoord:ServiceCategory",
+      "rdfs:label": "Procedure"
+    },
+    {
+      "@id": "scoord:INVESTIGATION",
+      "@type": "scoord:ServiceCategory",
+      "rdfs:label": "Investigation"
+    },
+    {
+      "@id": "scoord:ADMISSION",
+      "@type": "scoord:ServiceCategory",
+      "rdfs:label": "Admission"
+    },
+    {
+      "@id": "scoord:UrgencyTier",
+      "@type": "rdfs:Class",
+      "rdfs:label": "UrgencyTier"
+    },
+    {
+      "@id": "scoord:ROUTINE",
+      "@type": "scoord:UrgencyTier",
+      "rdfs:label": "Routine"
+    },
+    {
+      "@id": "scoord:URGENT",
+      "@type": "scoord:UrgencyTier",
+      "rdfs:label": "Urgent"
+    },
+    {
+      "@id": "scoord:EMERGENCY",
+      "@type": "scoord:UrgencyTier",
+      "rdfs:label": "Emergency"
+    },
+    {
+      "@id": "scoord:PartyRole",
+      "@type": "rdfs:Class",
+      "rdfs:label": "PartyRole"
+    },
+    {
+      "@id": "scoord:NOMINATOR",
+      "@type": "scoord:PartyRole",
+      "rdfs:label": "Nominator \u2014 party who raised the referral"
+    },
+    {
+      "@id": "scoord:SUBJECT",
+      "@type": "scoord:PartyRole",
+      "rdfs:label": "Subject \u2014 party the referral concerns"
+    },
+    {
+      "@id": "scoord:OBSERVER",
+      "@type": "scoord:PartyRole",
+      "rdfs:label": "Observer \u2014 party kept informed"
+    },
+    {
+      "@id": "scoord:NotificationScope",
+      "@type": "rdfs:Class",
+      "rdfs:label": "NotificationScope"
+    },
+    {
+      "@id": "scoord:LIFECYCLE_ONLY",
+      "@type": "scoord:NotificationScope",
+      "rdfs:label": "Lifecycle Only \u2014 state transitions only"
+    },
+    {
+      "@id": "scoord:FULL",
+      "@type": "scoord:NotificationScope",
+      "rdfs:label": "Full \u2014 state transitions plus operational detail"
+    },
+    {
+      "@id": "scoord:RevocationStatus",
+      "@type": "rdfs:Class",
+      "rdfs:label": "RevocationStatus"
+    },
+    {
+      "@id": "scoord:ACCESS_ACTIVE",
+      "@type": "scoord:RevocationStatus",
+      "rdfs:label": "Active \u2014 access to the referenced Document is currently active"
+    },
+    {
+      "@id": "scoord:ACCESS_REVOKED",
+      "@type": "scoord:RevocationStatus",
+      "rdfs:label": "Revoked \u2014 access to the referenced Document has been revoked"
+    }
+  ]
+}

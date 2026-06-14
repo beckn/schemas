@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "scres": "https://schema.beckn.io/ServiceCoordinationResource#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@graph": [
+    {"@id": "scres:AcceptanceMode", "@type": "rdfs:Class", "rdfs:label": "AcceptanceMode",
+     "rdfs:comment": "How a coordinator accepts an incoming coordination engagement"},
+    {"@id": "scres:AUTO_ACCEPT",   "@type": "scres:AcceptanceMode", "rdfs:label": "Auto Accept — accepts matching engagements automatically"},
+    {"@id": "scres:MANUAL_REVIEW", "@type": "scres:AcceptanceMode", "rdfs:label": "Manual Review — a human reviews and accepts each engagement"},
+
+    {"@id": "scres:UrgencyTier", "@type": "rdfs:Class", "rdfs:label": "UrgencyTier",
+     "rdfs:comment": "Urgency tiers a coordinator can service"},
+    {"@id": "scres:ROUTINE",   "@type": "scres:UrgencyTier", "rdfs:label": "Routine"},
+    {"@id": "scres:URGENT",    "@type": "scres:UrgencyTier", "rdfs:label": "Urgent"},
+    {"@id": "scres:EMERGENCY", "@type": "scres:UrgencyTier", "rdfs:label": "Emergency"},
+
+    {"@id": "scres:ReferralCategory", "@type": "rdfs:Class", "rdfs:label": "ReferralCategory",
+     "rdfs:comment": "Self-owned CodedValue class — recommended categories of coordination a coordinator handles. Networks may extend by supplying their own @context."},
+    {"@id": "scres:CLINICAL",        "@type": "scres:ReferralCategory", "rdfs:label": "Clinical — clinical / health referral coordination"},
+    {"@id": "scres:DIAGNOSTIC",      "@type": "scres:ReferralCategory", "rdfs:label": "Diagnostic — diagnostic / investigation coordination"},
+    {"@id": "scres:SOCIAL_SUPPORT",  "@type": "scres:ReferralCategory", "rdfs:label": "Social Support — social care / welfare coordination"},
+    {"@id": "scres:FINANCIAL",       "@type": "scres:ReferralCategory", "rdfs:label": "Financial — scheme / benefit coordination"},
+
+    {"@id": "scres:TargetServiceType", "@type": "rdfs:Class", "rdfs:label": "TargetServiceType",
+     "rdfs:comment": "Self-owned CodedValue class — recommended downstream service types a coordinator books toward. Networks may extend by supplying their own @context."},
+    {"@id": "scres:CONSULTATION",   "@type": "scres:TargetServiceType", "rdfs:label": "Consultation — practitioner consultation"},
+    {"@id": "scres:PROCEDURE",      "@type": "scres:TargetServiceType", "rdfs:label": "Procedure — clinical procedure"},
+    {"@id": "scres:INVESTIGATION",  "@type": "scres:TargetServiceType", "rdfs:label": "Investigation — diagnostic investigation"},
+    {"@id": "scres:ADMISSION",      "@type": "scres:TargetServiceType", "rdfs:label": "Admission — inpatient admission"}
+  ]
+}
