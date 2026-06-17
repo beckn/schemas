@@ -68,24 +68,15 @@ components:
           x-jsonld-id: "scoord:coordinationId"
         lifecycleState:
           type: string
-          enum:
-            - DRAFT
-            - ACTIVE
-            - TARGET_SELECTED
-            - BOOKING_CONFIRMED
-            - TARGET_NOTIFIED
-            - ATTENDED
-            - NO_SHOW
-            - CANCELLED
-            - PROVIDER_CANCELLED
-            - OUTCOME_RECEIVED
-            - SLA_BREACHED
-            - LAPSED
-            - REVOKED
-            - WITHDRAWN
-            - CLOSED
+          pattern: "^[A-Z_]+$"
           description: >
-            Lifecycle state of the coordination.
+            Lifecycle state of the coordination. Open string by design: the canonical
+            generic value set is declared in vocab.jsonld (scoord:LifecycleState) and
+            enforced by a vocab-aware validator / network edge, not by a closed OpenAPI
+            enum. Leaving the base open lets domain packs (e.g. HealthReferral) add
+            their own states without an allOf enum-intersection conflict; a concrete
+            domain pack SHOULD pin its own closed enum (and its own vocab) for strict
+            validation. Canonical generic states:
             DRAFT: created but not yet confirmed.
             ACTIVE: confirmed; targetCriteria set; coordinator working the referral.
             TARGET_SELECTED: a downstream target has been chosen.

@@ -26,10 +26,14 @@ transfer (`handoff`) support. Chain: `ServiceContract <- ServiceCoordination <- 
   the substance of the referral (what the coordinator re-discovers against on
   TARGET_REFUSED / retry). `recommendedTargetRef` is an optional, non-binding named
   overlay captured at Discover 1; its presence selects named vs scoped discovery mode.
-- **`lifecycleState` state machine** — mirrors the `ServiceEntitlement.state` pattern:
-  a plain enum with conditional `required` rules expressed as separate `allOf[]`
-  if/then entries (ACTIVE requires coordinationId + targetCriteria; BOOKING_CONFIRMED
-  requires targetBookingRef).
+- **`lifecycleState` state machine** — an **open string** at the base (`type: string`,
+  `pattern: ^[A-Z_]+$`), with the canonical generic value set declared in `vocab.jsonld`
+  (`scoord:LifecycleState`) rather than a closed OpenAPI enum. This is deliberate: a
+  closed base enum cannot be widened by a domain pack via `allOf` (the intersection
+  rejects the added states), so the base stays open and domain packs (e.g. HealthReferral)
+  pin their own closed enum. State-specific requirements are expressed as separate
+  `allOf[]` if/then entries keyed on `const` (TARGET_SELECTED/ACTIVE require targetCriteria;
+  BOOKING_CONFIRMED requires targetBookingRef) — these are unaffected by opening the enum.
 - **`handoverDocument`** — a generic, credential-scoped reference: `artifactRef` is a
   label resolving to a Document in the contract's `Descriptor.docs[]`; the URL lives in
   the core Document, never in this field. `credentialScope` is a plain credential id / DID.
@@ -57,7 +61,9 @@ transfer (`handoff`) support. Chain: `ServiceContract <- ServiceCoordination <- 
 
 Self-owned coded fields (`deviation.reasonCode`, `targetCriteria.serviceCategory`) use the pinned typed-`CodedValue` pattern (`const @type`, open/defaulted `@context`). Resolution of a `code` to its value set, and value-set extension by another network, follow **the CodedValue resolution & extension convention** ([under discussion](https://github.com/beckn/schemas/discussions/60)).
 
-Small, schema-owned, operational/structural value sets — `lifecycleState`, `targetCriteria.urgencyTier`, `handoverDocument.revocationStatus`, `notificationRoster[].partyRole` / `.notificationScope` — are deliberately plain `enum`s, **not** `CodedValue`s, per that convention's thumb rule (closed, network-owned sets stay plain enums).
+Small, schema-owned, operational/structural value sets — `targetCriteria.urgencyTier`, `handoverDocument.revocationStatus`, `notificationRoster[].partyRole` / `.notificationScope` — are deliberately plain `enum`s, **not** `CodedValue`s, per that convention's thumb rule (closed, network-owned sets stay plain enums).
+
+`lifecycleState` is the one operational set that domain packs are expected to **extend** (HealthReferral adds two health states), so the base leaves it an open string with the canonical set in `vocab.jsonld`; it stays a plain string (not a `CodedValue`) because the state machine's `const`-keyed conditionals depend on a simple string value. Domain packs pin their own closed enum for strict validation.
 
 ### UrgencyTier across the coordination packs
 

@@ -15,9 +15,16 @@ The coordination contract (T1). Extends `ServiceContract/v2.1`. Specialised by
 
 ### lifecycleState (state machine)
 
+Open string at the base (`type: string`, `pattern: ^[A-Z_]+$`); the canonical generic
+value set lives in `vocab.jsonld` (`scoord:LifecycleState`) so domain packs can extend it
+without an `allOf` enum-intersection conflict. Canonical generic states:
+
 `DRAFT, ACTIVE, TARGET_SELECTED, BOOKING_CONFIRMED, TARGET_NOTIFIED, ATTENDED,
 NO_SHOW, CANCELLED, PROVIDER_CANCELLED, OUTCOME_RECEIVED, SLA_BREACHED, LAPSED,
 REVOKED, WITHDRAWN, CLOSED`
+
+Domain packs pin their own closed enum (e.g. HealthReferral adds `SCHEME_PREAUTH_PENDING`,
+`POST_FACTO_CONSENT_PENDING`).
 
 Conditional requireds (each a separate `allOf[]` if/then):
 
