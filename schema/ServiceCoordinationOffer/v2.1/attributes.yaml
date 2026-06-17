@@ -12,6 +12,10 @@ info:
     (minimumQuantity, maximumQuantity, requiresAdvanceBooking, bulkDiscountAvailable,
     eligibilityCriteria, validityPeriodDays, cancellationPolicies) come from
     ServiceOffer/v2.1.
+
+    All fields are advisory and optional — the offer carries the coordinator's terms,
+    not mandatory data. An absent or empty ServiceCoordinationOffer is valid and means
+    "no special coordination terms"; the base ServiceOffer/v2.1 defaults apply.
   x-beckn-container: offerAttributes
 
 components:

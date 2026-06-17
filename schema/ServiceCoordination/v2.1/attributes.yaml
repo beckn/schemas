@@ -43,7 +43,7 @@ components:
                 const: ACTIVE
             required: [lifecycleState]
           then:
-            required: [coordinationId, targetCriteria]
+            required: [targetCriteria]
         - if:
             properties:
               lifecycleState:
@@ -93,13 +93,13 @@ components:
             TARGET_NOTIFIED: the target has been notified of the referral.
             ATTENDED: the subject attended the downstream service.
             NO_SHOW: the subject did not attend.
-            CANCELLED: cancelled by the subject/nominator.
+            CANCELLED: ended by the subject/nominator before any T2 booking exists — nothing downstream to unwind.
             PROVIDER_CANCELLED: cancelled by the downstream provider.
             OUTCOME_RECEIVED: the outcome note has been received.
             SLA_BREACHED: an SLA window was breached.
             LAPSED: no target secured within the lapse window.
             REVOKED: handover access revoked / coordination revoked.
-            WITHDRAWN: withdrawn by the subject.
+            WITHDRAWN: subject pulls out after a T2 booking is confirmed — the downstream (T2) booking must be unwound/cancelled.
             CLOSED: terminal — completed or administratively closed.
           x-jsonld-id: "scoord:lifecycleState"
         targetCriteria:
@@ -178,7 +178,12 @@ components:
               x-jsonld-id: "scoord:rt_targetOfferRef"
             termsSnapshot:
               type: object
-              description: Snapshot of the target's terms at Discover 1 (e.g. surfaced outcome commitment)
+              description: >
+                Opaque, point-in-time snapshot of the relevant terms the recommended
+                target advertised at Discover 1 (e.g. outcome commitment, SLA window,
+                fee). Intentionally unstructured — it mirrors a domain-specific subset
+                of the target's ServiceOffer and is captured for provenance/audit, not
+                protocol logic. Receivers MUST NOT depend on any particular sub-field.
               x-jsonld-id: "scoord:rt_termsSnapshot"
             snapshotAt:
               type: string
@@ -198,6 +203,8 @@ components:
             credentialScope / accessWindow / revocationStatus fields are access
             metadata layered on the reference.
           x-jsonld-id: "scoord:handoverDocument"
+          required:
+            - artifactRef
           properties:
             artifactRef:
               type: string

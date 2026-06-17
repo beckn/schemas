@@ -23,9 +23,16 @@ Conditional requireds (each a separate `allOf[]` if/then):
 
 | When lifecycleState == | then required |
 |---|---|
-| ACTIVE | coordinationId, targetCriteria |
+| ACTIVE | targetCriteria |
 | TARGET_SELECTED | targetCriteria |
 | BOOKING_CONFIRMED | targetBookingRef |
+
+(`coordinationId`, `lifecycleState` and `targetCriteria` are required at the top level; the
+conditional rows only add state-specific requirements.)
+
+`CANCELLED` = subject/nominator ends the coordination before any T2 booking exists; `WITHDRAWN`
+= subject pulls out after T2 is confirmed (downstream booking must be unwound). `notificationRoster`
+uses `@container: @list` — order conveys notification/escalation priority.
 
 ### Key fields
 

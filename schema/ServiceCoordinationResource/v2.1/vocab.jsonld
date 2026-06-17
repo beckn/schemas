@@ -1,7 +1,9 @@
 {
   "@context": {
     "scres": "https://schema.beckn.io/ServiceCoordinationResource#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    "scoord": "https://schema.beckn.io/ServiceCoordination#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "skos": "http://www.w3.org/2004/02/skos/core#"
   },
   "@graph": [
     {"@id": "scres:AcceptanceMode", "@type": "rdfs:Class", "rdfs:label": "AcceptanceMode",
@@ -10,10 +12,10 @@
     {"@id": "scres:MANUAL_REVIEW", "@type": "scres:AcceptanceMode", "rdfs:label": "Manual Review — a human reviews and accepts each engagement"},
 
     {"@id": "scres:UrgencyTier", "@type": "rdfs:Class", "rdfs:label": "UrgencyTier",
-     "rdfs:comment": "Urgency tiers a coordinator can service"},
-    {"@id": "scres:ROUTINE",   "@type": "scres:UrgencyTier", "rdfs:label": "Routine"},
-    {"@id": "scres:URGENT",    "@type": "scres:UrgencyTier", "rdfs:label": "Urgent"},
-    {"@id": "scres:EMERGENCY", "@type": "scres:UrgencyTier", "rdfs:label": "Emergency"},
+     "rdfs:comment": "Urgency tiers a coordinator can service. Parallel to scoord:UrgencyTier (the shared anchor); members are linked via skos:exactMatch — intentionally separate-but-equivalent per the decentralised-vocabulary model (see ServiceCoordination README)."},
+    {"@id": "scres:ROUTINE",   "@type": "scres:UrgencyTier", "rdfs:label": "Routine",   "skos:exactMatch": {"@id": "scoord:ROUTINE"}},
+    {"@id": "scres:URGENT",    "@type": "scres:UrgencyTier", "rdfs:label": "Urgent",    "skos:exactMatch": {"@id": "scoord:URGENT"}},
+    {"@id": "scres:EMERGENCY", "@type": "scres:UrgencyTier", "rdfs:label": "Emergency", "skos:exactMatch": {"@id": "scoord:EMERGENCY"}},
 
     {"@id": "scres:ReferralCategory", "@type": "rdfs:Class", "rdfs:label": "ReferralCategory",
      "rdfs:comment": "Self-owned CodedValue class — recommended categories of coordination a coordinator handles. Networks may extend by supplying their own @context."},

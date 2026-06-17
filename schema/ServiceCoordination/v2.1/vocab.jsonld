@@ -8,7 +8,7 @@
       "@id": "scoord:LifecycleState",
       "@type": "rdfs:Class",
       "rdfs:label": "LifecycleState",
-      "rdfs:comment": "Lifecycle state machine of a coordination (T1). Five members (LAPSED, SLA_BREACHED, PROVIDER_CANCELLED, NO_SHOW, REVOKED) are dual-typed as DeviationReasonCode \u2014 one concept, two class memberships (per the CodedValue convention \u2014 RFC-001, draft)."
+      "rdfs:comment": "Lifecycle state machine of a coordination (T1). Five members (LAPSED, SLA_BREACHED, PROVIDER_CANCELLED, NO_SHOW, REVOKED) are dual-typed as DeviationReasonCode \u2014 one concept, two class memberships (per the CodedValue resolution & extension convention \u2014 under discussion, see https://github.com/beckn/schemas/discussions/60)."
     },
     {
       "@id": "scoord:DRAFT",
@@ -160,7 +160,8 @@
     {
       "@id": "scoord:UrgencyTier",
       "@type": "rdfs:Class",
-      "rdfs:label": "UrgencyTier"
+      "rdfs:label": "UrgencyTier",
+      "rdfs:comment": "Generic urgency tier \u2014 the shared anchor. ServiceCoordinationResource (scres:UrgencyTier) and ServiceCoordinationOffer (scoff:UrgencyTier) declare parallel UrgencyTier classes with identical members, linked to this class via skos:exactMatch. Intentionally separate-but-equivalent per the decentralised-vocabulary model (see README)."
     },
     {
       "@id": "scoord:ROUTINE",
@@ -211,21 +212,6 @@
       "@id": "scoord:FULL",
       "@type": "scoord:NotificationScope",
       "rdfs:label": "Full \u2014 state transitions plus operational detail"
-    },
-    {
-      "@id": "scoord:RevocationStatus",
-      "@type": "rdfs:Class",
-      "rdfs:label": "RevocationStatus"
-    },
-    {
-      "@id": "scoord:ACCESS_ACTIVE",
-      "@type": "scoord:RevocationStatus",
-      "rdfs:label": "Active \u2014 access to the referenced Document is currently active"
-    },
-    {
-      "@id": "scoord:ACCESS_REVOKED",
-      "@type": "scoord:RevocationStatus",
-      "rdfs:label": "Revoked \u2014 access to the referenced Document has been revoked"
     }
   ]
 }

@@ -1,7 +1,9 @@
 {
   "@context": {
     "scoff": "https://schema.beckn.io/ServiceCoordinationOffer#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    "scoord": "https://schema.beckn.io/ServiceCoordination#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "skos": "http://www.w3.org/2004/02/skos/core#"
   },
   "@graph": [
     {"@id": "scoff:RetryPolicy", "@type": "rdfs:Class", "rdfs:label": "RetryPolicy",
@@ -10,9 +12,9 @@
     {"@id": "scoff:ONE_SILENT_RETRY",        "@type": "scoff:RetryPolicy", "rdfs:label": "One Silent Retry — silently re-discover and retry once before notifying"},
 
     {"@id": "scoff:UrgencyTier", "@type": "rdfs:Class", "rdfs:label": "UrgencyTier",
-     "rdfs:comment": "Urgency tier an SLA window applies to"},
-    {"@id": "scoff:ROUTINE",   "@type": "scoff:UrgencyTier", "rdfs:label": "Routine"},
-    {"@id": "scoff:URGENT",    "@type": "scoff:UrgencyTier", "rdfs:label": "Urgent"},
-    {"@id": "scoff:EMERGENCY", "@type": "scoff:UrgencyTier", "rdfs:label": "Emergency"}
+     "rdfs:comment": "Urgency tier an SLA window applies to. Parallel to scoord:UrgencyTier (the shared anchor); members are linked via skos:exactMatch — intentionally separate-but-equivalent per the decentralised-vocabulary model (see ServiceCoordination README)."},
+    {"@id": "scoff:ROUTINE",   "@type": "scoff:UrgencyTier", "rdfs:label": "Routine",   "skos:exactMatch": {"@id": "scoord:ROUTINE"}},
+    {"@id": "scoff:URGENT",    "@type": "scoff:UrgencyTier", "rdfs:label": "Urgent",    "skos:exactMatch": {"@id": "scoord:URGENT"}},
+    {"@id": "scoff:EMERGENCY", "@type": "scoff:UrgencyTier", "rdfs:label": "Emergency", "skos:exactMatch": {"@id": "scoord:EMERGENCY"}}
   ]
 }

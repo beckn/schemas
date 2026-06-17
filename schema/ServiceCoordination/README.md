@@ -35,6 +35,13 @@ transfer (`handoff`) support. Chain: `ServiceContract <- ServiceCoordination <- 
   the core Document, never in this field. `credentialScope` is a plain credential id / DID.
 - **`deviation`** — the in-band, protocol-carried deviation signal; its `reasonCode` is a
   self-owned CodedValue. The out-of-band registry record is a separate concern (IG).
+- **`CANCELLED` vs `WITHDRAWN`** — both are subject-initiated terminations, distinguished by
+  whether a downstream booking exists: `CANCELLED` applies before any T2 booking (nothing to
+  unwind); `WITHDRAWN` applies after a T2 booking is confirmed and therefore obliges the
+  coordinator to unwind/cancel the downstream (T2) booking.
+- **`notificationRoster` ordering** — modelled with JSON-LD `@container: @list` (ordered, unlike
+  the `@set` arrays elsewhere): roster order is significant and conveys notification / escalation
+  priority. Consumers should preserve and honour the order.
 
 ## Non-goals
 
@@ -46,6 +53,16 @@ transfer (`handoff`) support. Chain: `ServiceContract <- ServiceCoordination <- 
 
 - ServiceContract (generic Beckn service contract)
 
-## Coded values
+## Coded values & enums
 
-Self-owned coded fields (`deviation.reasonCode`, `targetCriteria.serviceCategory`) use the pinned typed-`CodedValue` pattern (`const @type`, open/defaulted `@context`). Resolution of a `code` to its value set, and value-set extension by another network, follow **the CodedValue resolution & extension convention (RFC-001, draft)**.
+Self-owned coded fields (`deviation.reasonCode`, `targetCriteria.serviceCategory`) use the pinned typed-`CodedValue` pattern (`const @type`, open/defaulted `@context`). Resolution of a `code` to its value set, and value-set extension by another network, follow **the CodedValue resolution & extension convention** ([under discussion](https://github.com/beckn/schemas/discussions/60)).
+
+Small, schema-owned, operational/structural value sets — `lifecycleState`, `targetCriteria.urgencyTier`, `handoverDocument.revocationStatus`, `notificationRoster[].partyRole` / `.notificationScope` — are deliberately plain `enum`s, **not** `CodedValue`s, per that convention's thumb rule (closed, network-owned sets stay plain enums).
+
+### UrgencyTier across the coordination packs
+
+`UrgencyTier` (`ROUTINE` / `URGENT` / `EMERGENCY`) appears as a parallel RDF class in all three packs — `scoord:UrgencyTier` (this contract), `scres:UrgencyTier` (`ServiceCoordinationResource`) and `scoff:UrgencyTier` (`ServiceCoordinationOffer`). On the wire it is a plain string enum, so there is no wire-level identity concern. At the semantic-graph layer the three classes are **intentionally separate but equivalent**: `scoord:UrgencyTier` is the shared anchor, and the `scres:` / `scoff:` members carry `skos:exactMatch` links back to it. This is the decentralised-vocabulary model in miniature — each pack owns its vocabulary and equivalence is *published*, not centrally mandated. Cross-pack reconciliation is an analytics/semantic-layer concern.
+
+### Filtering
+
+`profile.json` lists `targetCriteria.urgencyTier` as a filterable path. It is a scalar enum (not a CodedValue array), so this is an ordinary nested-scalar filter; whether a given gateway supports nested-path filtering is a deployment capability.

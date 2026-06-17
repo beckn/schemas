@@ -81,4 +81,4 @@ Extension packs must `$ref` this file directly rather than defining their own co
 
 ## Resolution & extension convention
 
-How a `CodedValue` resolves to its valid `code` set, and how a network extends a value set without forking a schema, is specified in **the CodedValue resolution & extension convention (RFC-001, draft)**.
+How a `CodedValue` resolves to its valid `code` set, and how a network extends a value set without forking a schema, is specified in **the CodedValue resolution & extension convention** ([under discussion](https://github.com/beckn/schemas/discussions/60)).
