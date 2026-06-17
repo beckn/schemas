@@ -1,0 +1,8 @@
+{
+  "schema": "ServiceCoordinationResource",
+  "version": "2.1.0",
+  "card_template": "Coordinator | {{acceptanceMode}}{{#if supportedUrgencyTiers}} | {{supportedUrgencyTiers}}{{/if}}",
+  "detail_template": "Acceptance Mode: {{acceptanceMode}}\nReferral Categories: {{coordinationScope.referralCategories}}\nTarget Service Types: {{coordinationScope.targetServiceTypes}}\nProgramme Scope: {{coordinationScope.programmeScope}}\nGeography Scope: {{coordinationScope.geographyScope}}\nSupported Urgency Tiers: {{supportedUrgencyTiers}}",
+  "html": "<div class=\"coordination-resource-card\"><span class=\"role badge\">Care Coordinator</span><span class=\"acceptance\">{{acceptanceMode}}</span>{{#if supportedUrgencyTiers}}<span class=\"urgency\">{{supportedUrgencyTiers}}</span>{{/if}}</div>",
+  "html_detail": "<div class=\"coordination-resource-detail\"><h3>Coordination Capability</h3><dl><dt>Acceptance Mode</dt><dd>{{acceptanceMode}}</dd>{{#if coordinationScope.referralCategories}}<dt>Referral Categories</dt><dd>{{coordinationScope.referralCategories}}</dd>{{/if}}{{#if coordinationScope.targetServiceTypes}}<dt>Target Service Types</dt><dd>{{coordinationScope.targetServiceTypes}}</dd>{{/if}}{{#if coordinationScope.programmeScope}}<dt>Programme Scope</dt><dd>{{coordinationScope.programmeScope}}</dd>{{/if}}{{#if coordinationScope.geographyScope}}<dt>Geography Scope</dt><dd>{{coordinationScope.geographyScope}}</dd>{{/if}}{{#if supportedUrgencyTiers}}<dt>Supported Urgency Tiers</dt><dd>{{supportedUrgencyTiers}}</dd>{{/if}}</dl></div>"
+}

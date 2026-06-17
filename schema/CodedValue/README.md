@@ -78,3 +78,7 @@ $ref: "https://schema.beckn.io/CodedValue/v2.1/attributes.yaml#/components/schem
 (alongside `Credential`, `Location`, etc.). Until that promotion occurs,
 `generic-service/CodedValue/v2.1/attributes.yaml` is the canonical cross-pack reference point.
 Extension packs must `$ref` this file directly rather than defining their own copy.
+
+## Resolution & extension convention
+
+How a `CodedValue` resolves to its valid `code` set, and how a network extends a value set without forking a schema, is specified in **the CodedValue resolution & extension convention** ([under discussion](https://github.com/beckn/schemas/discussions/60)).

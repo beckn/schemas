@@ -1,0 +1,15 @@
+{
+  "id": "https://schema.beckn.io/ServiceCoordinationResource/v2.1",
+  "name": "ServiceCoordinationResource",
+  "version": "2.1.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": ["ServiceCoordinationResource"],
+  "discovery_fields": ["coordinationScope.referralCategories", "coordinationScope.programmeScope", "coordinationScope.geographyScope"],
+  "indexable_paths": ["coordinationScope.referralCategories", "coordinationScope.programmeScope", "coordinationScope.geographyScope", "acceptanceMode"],
+  "filterable_paths": ["coordinationScope.referralCategories", "coordinationScope.programmeScope", "coordinationScope.geographyScope", "acceptanceMode", "supportedUrgencyTiers"],
+  "sortable_paths": [],
+  "list_fields": ["coordinationScope.referralCategories", "acceptanceMode", "supportedUrgencyTiers"],
+  "detail_fields": ["coordinationScope.referralCategories", "coordinationScope.targetServiceTypes", "coordinationScope.programmeScope", "coordinationScope.geographyScope", "acceptanceMode", "supportedUrgencyTiers"],
+  "privacy_notes": ["coordinationScope describes standing capability — non-sensitive catalogue metadata"]
+}

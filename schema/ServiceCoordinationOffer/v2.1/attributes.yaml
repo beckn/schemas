@@ -1,0 +1,89 @@
+openapi: 3.1.1
+$id: "https://schema.beckn.io/ServiceCoordinationOffer/v2.1/attributes.yaml"
+info:
+  title: ServiceCoordinationOffer Schema
+  version: "2.1.0"
+  description: >
+    Offer-level attributes for a coordination engagement in the generalised Beckn
+    Protocol model. Extends ServiceOffer/v2.1 with the coordinator's terms for
+    accepting a coordination engagement — per-urgency SLA windows, its retry policy
+    on downstream refusal, whether it supports transfer of an in-flight coordination
+    to another coordinator, and an optional capacity signal. Inherited base fields
+    (minimumQuantity, maximumQuantity, requiresAdvanceBooking, bulkDiscountAvailable,
+    eligibilityCriteria, validityPeriodDays, cancellationPolicies) come from
+    ServiceOffer/v2.1.
+
+    All fields are advisory and optional — the offer carries the coordinator's terms,
+    not mandatory data. An absent or empty ServiceCoordinationOffer is valid and means
+    "no special coordination terms"; the base ServiceOffer/v2.1 defaults apply.
+  x-beckn-container: offerAttributes
+
+components:
+  schemas:
+    ServiceCoordinationOffer:
+      type: object
+      x-beckn-container: offerAttributes
+      x-status: under-review
+      x-tags:
+        - service
+        - generic-service
+        - coordination
+        - offer
+      x-beckn-extends: "https://schema.beckn.io/ServiceOffer/v2.1/attributes.yaml#/components/schemas/ServiceOffer"
+      x-jsonld:
+        "@context": "https://schema.beckn.io/ServiceCoordinationOffer/v2.1/context.jsonld"
+        "@type": "scoff:ServiceCoordinationOffer"
+      allOf:
+        - $ref: "https://schema.beckn.io/ServiceOffer/v2.1/attributes.yaml#/components/schemas/ServiceOffer"
+      properties:
+        coordinationSlaWindows:
+          type: array
+          description: >
+            Per urgency tier SLA commitments: how long before the coordination is
+            considered to have lapsed if no downstream target is secured, and the
+            window within which a breach is declared.
+          x-jsonld-id: "scoff:coordinationSlaWindows"
+          items:
+            type: object
+            required:
+              - urgencyTier
+            properties:
+              urgencyTier:
+                type: string
+                enum:
+                  - ROUTINE
+                  - URGENT
+                  - EMERGENCY
+                description: Urgency tier this SLA window applies to
+                x-jsonld-id: "scoff:slaUrgencyTier"
+              lapseWindowHours:
+                type: integer
+                minimum: 0
+                description: Hours after which the coordination lapses if no target is secured
+                x-jsonld-id: "scoff:lapseWindowHours"
+              slaBreachWindowHours:
+                type: integer
+                minimum: 0
+                description: Hours after which an SLA breach is declared
+                x-jsonld-id: "scoff:slaBreachWindowHours"
+        retryPolicy:
+          type: string
+          enum:
+            - NOTIFY_ON_FIRST_REFUSAL
+            - ONE_SILENT_RETRY
+          description: >
+            How the coordinator handles a downstream target refusal.
+            NOTIFY_ON_FIRST_REFUSAL: notify the nominator on the first refusal.
+            ONE_SILENT_RETRY: silently re-discover and retry once before notifying.
+          x-jsonld-id: "scoff:retryPolicy"
+        handoffSupported:
+          type: boolean
+          description: >
+            Whether this coordinator supports transferring an in-flight coordination
+            (T1) to another coordinator on its own unavailability.
+          x-jsonld-id: "scoff:handoffSupported"
+        maxActiveReferrals:
+          type: integer
+          minimum: 0
+          description: Optional capacity signal — maximum concurrently active coordinations the coordinator will hold
+          x-jsonld-id: "scoff:maxActiveReferrals"

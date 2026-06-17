@@ -1,0 +1,356 @@
+openapi: 3.1.1
+$id: "https://schema.beckn.io/ServiceCoordination/v2.1/attributes.yaml"
+info:
+  title: ServiceCoordination Schema
+  version: "2.1.0"
+  description: >
+    The coordination contract (T1) in the generalised Beckn Protocol model.
+    Extends ServiceContract/v2.1 with the persistent coordination identity, a
+    lifecycle state machine, the target criteria the coordinator discovers against,
+    an optional named-target snapshot, a credential-scoped handover document,
+    a notification roster, an in-band deviation signal, and transfer (handoff)
+    support. Chain: ServiceContract <- ServiceCoordination <- HealthReferral.
+    Inherited base fields (bookingChannel, clientNotes, cancellationReason,
+    facilitatorId, reminderSentAt) come from ServiceContract/v2.1.
+  x-beckn-container: contractAttributes
+
+components:
+  schemas:
+    ServiceCoordination:
+      type: object
+      x-beckn-container: contractAttributes
+      x-status: under-review
+      x-tags:
+        - service
+        - generic-service
+        - coordination
+        - contract
+      x-beckn-extends: "https://schema.beckn.io/ServiceContract/v2.1/attributes.yaml#/components/schemas/ServiceContract"
+      x-jsonld:
+        "@context": "https://schema.beckn.io/ServiceCoordination/v2.1/context.jsonld"
+        "@type": "scoord:ServiceCoordination"
+      required:
+        - coordinationId
+        - lifecycleState
+        - targetCriteria
+      allOf:
+        - $ref: "https://schema.beckn.io/ServiceContract/v2.1/attributes.yaml#/components/schemas/ServiceContract"
+        # State-machine conditional requirements. Each if/then is a separate allOf[]
+        # entry — YAML does not allow duplicate 'if'/'then' keys at the same level.
+        - if:
+            properties:
+              lifecycleState:
+                const: ACTIVE
+            required: [lifecycleState]
+          then:
+            required: [targetCriteria]
+        - if:
+            properties:
+              lifecycleState:
+                const: BOOKING_CONFIRMED
+            required: [lifecycleState]
+          then:
+            required: [targetBookingRef]
+        - if:
+            properties:
+              lifecycleState:
+                const: TARGET_SELECTED
+            required: [lifecycleState]
+          then:
+            required: [targetCriteria]
+      properties:
+        coordinationId:
+          type: string
+          format: uuid
+          description: >
+            Persistent identifier of this coordination. For health deployments this
+            is the Referral ID. Stable across the full lifecycle.
+          x-jsonld-id: "scoord:coordinationId"
+        lifecycleState:
+          type: string
+          enum:
+            - DRAFT
+            - ACTIVE
+            - TARGET_SELECTED
+            - BOOKING_CONFIRMED
+            - TARGET_NOTIFIED
+            - ATTENDED
+            - NO_SHOW
+            - CANCELLED
+            - PROVIDER_CANCELLED
+            - OUTCOME_RECEIVED
+            - SLA_BREACHED
+            - LAPSED
+            - REVOKED
+            - WITHDRAWN
+            - CLOSED
+          description: >
+            Lifecycle state of the coordination.
+            DRAFT: created but not yet confirmed.
+            ACTIVE: confirmed; targetCriteria set; coordinator working the referral.
+            TARGET_SELECTED: a downstream target has been chosen.
+            BOOKING_CONFIRMED: the downstream booking (T2) is confirmed.
+            TARGET_NOTIFIED: the target has been notified of the referral.
+            ATTENDED: the subject attended the downstream service.
+            NO_SHOW: the subject did not attend.
+            CANCELLED: ended by the subject/nominator before any T2 booking exists — nothing downstream to unwind.
+            PROVIDER_CANCELLED: cancelled by the downstream provider.
+            OUTCOME_RECEIVED: the outcome note has been received.
+            SLA_BREACHED: an SLA window was breached.
+            LAPSED: no target secured within the lapse window.
+            REVOKED: handover access revoked / coordination revoked.
+            WITHDRAWN: subject pulls out after a T2 booking is confirmed — the downstream (T2) booking must be unwound/cancelled.
+            CLOSED: terminal — completed or administratively closed.
+          x-jsonld-id: "scoord:lifecycleState"
+        targetCriteria:
+          type: object
+          description: >
+            The requirements a downstream target must satisfy — what the coordinator
+            discovers against. This is the substance of the referral, distinct from
+            the coordinator's standing coordinationScope. Re-used on TARGET_REFUSED /
+            retry to re-discover an alternative target.
+          x-jsonld-id: "scoord:targetCriteria"
+          properties:
+            serviceCategory:
+              $ref: "#/components/schemas/ServiceCategory"
+              description: >
+                Downstream service category required (self-owned CodedValue;
+                default @context is this schema's context.jsonld, @type ServiceCategory).
+              x-jsonld-id: "scoord:tc_serviceCategory"
+            geographyConstraint:
+              type: array
+              description: Geographic constraints the target must satisfy (externally governed CodedValue)
+              x-jsonld-id: "scoord:tc_geographyConstraint"
+              items:
+                $ref: "https://schema.beckn.io/CodedValue/v2.1/attributes.yaml#/components/schemas/CodedValue"
+            schemeRequired:
+              type: array
+              description: Schemes the target must accept (externally governed CodedValue)
+              x-jsonld-id: "scoord:tc_schemeRequired"
+              items:
+                $ref: "https://schema.beckn.io/CodedValue/v2.1/attributes.yaml#/components/schemas/CodedValue"
+            modality:
+              type: string
+              description: Required delivery modality (deployment-defined, e.g. IN_PERSON / REMOTE)
+              x-jsonld-id: "scoord:tc_modality"
+            urgencyTier:
+              type: string
+              enum:
+                - ROUTINE
+                - URGENT
+                - EMERGENCY
+              description: Urgency tier of the referral
+              x-jsonld-id: "scoord:tc_urgencyTier"
+            timeWindow:
+              type: object
+              description: Time window within which the downstream service should occur
+              x-jsonld-id: "scoord:tc_timeWindow"
+              properties:
+                start:
+                  type: string
+                  format: date-time
+                  description: Earliest acceptable date-time (ISO 8601)
+                  x-jsonld-id: "scoord:tc_timeWindowStart"
+                end:
+                  type: string
+                  format: date-time
+                  description: Latest acceptable date-time (ISO 8601)
+                  x-jsonld-id: "scoord:tc_timeWindowEnd"
+        recommendedTargetRef:
+          type: object
+          description: >
+            Optional advisory named-provider snapshot captured from Discover 1.
+            Non-binding; absent in broadly-scoped referrals. The coordinator confirms
+            live availability in T2 and may book an alternative if it refuses.
+          x-jsonld-id: "scoord:recommendedTargetRef"
+          properties:
+            targetProviderId:
+              type: string
+              description: Network participant ID of the recommended target provider
+              x-jsonld-id: "scoord:rt_targetProviderId"
+            targetResourceRef:
+              type: string
+              description: Reference to the target's resource (catalogue snapshot)
+              x-jsonld-id: "scoord:rt_targetResourceRef"
+            targetOfferRef:
+              type: string
+              description: Reference to the target's offer (catalogue snapshot)
+              x-jsonld-id: "scoord:rt_targetOfferRef"
+            termsSnapshot:
+              type: object
+              description: >
+                Opaque, point-in-time snapshot of the relevant terms the recommended
+                target advertised at Discover 1 (e.g. outcome commitment, SLA window,
+                fee). Intentionally unstructured — it mirrors a domain-specific subset
+                of the target's ServiceOffer and is captured for provenance/audit, not
+                protocol logic. Receivers MUST NOT depend on any particular sub-field.
+              x-jsonld-id: "scoord:rt_termsSnapshot"
+            snapshotAt:
+              type: string
+              format: date-time
+              description: Timestamp the snapshot was captured (ISO 8601)
+              x-jsonld-id: "scoord:rt_snapshotAt"
+        targetBookingRef:
+          type: string
+          description: Back-link to the downstream (T2) contract id once the target is booked
+          x-jsonld-id: "scoord:targetBookingRef"
+        handoverDocument:
+          type: object
+          description: >
+            Generic credential-scoped handover passed upstream to downstream. The
+            artifactRef is a label resolving to a Document in the contract's
+            Descriptor.docs[] (the URL lives in the core Document, never here). The
+            credentialScope / accessWindow / revocationStatus fields are access
+            metadata layered on the reference.
+          x-jsonld-id: "scoord:handoverDocument"
+          required:
+            - artifactRef
+          properties:
+            artifactRef:
+              type: string
+              description: Label of the handover Document in the contract's Descriptor.docs[]
+              x-jsonld-id: "scoord:hd_artifactRef"
+            credentialScope:
+              type: string
+              description: >
+                Credential id / DID that gates who may fetch the referenced Document.
+                A plain string identifier, not an embedded Credential object.
+              x-jsonld-id: "scoord:hd_credentialScope"
+            accessWindowStart:
+              type: string
+              format: date-time
+              description: Start of the access window for the referenced Document (ISO 8601)
+              x-jsonld-id: "scoord:hd_accessWindowStart"
+            accessWindowEnd:
+              type: string
+              format: date-time
+              description: End of the access window for the referenced Document (ISO 8601)
+              x-jsonld-id: "scoord:hd_accessWindowEnd"
+            revocationStatus:
+              type: string
+              enum:
+                - ACTIVE
+                - REVOKED
+              description: Whether access to the referenced Document is currently active or revoked
+              x-jsonld-id: "scoord:hd_revocationStatus"
+            revokedAt:
+              type: string
+              format: date-time
+              description: Timestamp access was revoked, if applicable (ISO 8601)
+              x-jsonld-id: "scoord:hd_revokedAt"
+        notificationRoster:
+          type: array
+          description: >
+            Parties to be notified across the coordination lifecycle, each with a role,
+            the scope of notifications they receive, and a channel reference.
+          x-jsonld-id: "scoord:notificationRoster"
+          items:
+            type: object
+            required:
+              - partyRef
+              - partyRole
+            properties:
+              partyRef:
+                type: string
+                description: Network participant ID of the party to notify
+                x-jsonld-id: "scoord:nr_partyRef"
+              partyRole:
+                type: string
+                enum:
+                  - NOMINATOR
+                  - SUBJECT
+                  - OBSERVER
+                description: Role of the party in the notification roster
+                x-jsonld-id: "scoord:nr_partyRole"
+              notificationScope:
+                type: string
+                enum:
+                  - LIFECYCLE_ONLY
+                  - FULL
+                description: >
+                  Scope of notifications this party receives.
+                  LIFECYCLE_ONLY: state transitions only.
+                  FULL: state transitions plus operational detail.
+                x-jsonld-id: "scoord:nr_notificationScope"
+              channelRef:
+                type: string
+                description: Reference to the channel (e.g. SMS/WhatsApp endpoint) for this party
+                x-jsonld-id: "scoord:nr_channelRef"
+        deviation:
+          type: object
+          description: >
+            In-band deviation signal. The reasonCode is a self-owned CodedValue
+            (default @context this schema's context.jsonld, @type DeviationReasonCode).
+          x-jsonld-id: "scoord:deviation"
+          properties:
+            reasonCode:
+              $ref: "#/components/schemas/DeviationReasonCode"
+              description: Coded deviation reason (self-owned CodedValue)
+              x-jsonld-id: "scoord:dv_reasonCode"
+            detectedBy:
+              type: string
+              description: Network participant ID that detected the deviation
+              x-jsonld-id: "scoord:dv_detectedBy"
+            detectedAt:
+              type: string
+              format: date-time
+              description: Timestamp the deviation was detected (ISO 8601)
+              x-jsonld-id: "scoord:dv_detectedAt"
+            note:
+              type: string
+              maxLength: 500
+              description: Human-readable note describing the deviation
+              x-jsonld-id: "scoord:dv_note"
+        grievanceRef:
+          type: string
+          description: Reference ID for any active grievance or dispute raised against this coordination
+          x-jsonld-id: "scoord:grievanceRef"
+        handoff:
+          type: object
+          description: >
+            Transfer of the coordination (T1) to another coordinator on unavailability.
+          x-jsonld-id: "scoord:handoff"
+          properties:
+            newCoordinatorId:
+              type: string
+              description: Network participant ID of the coordinator the coordination is handed off to
+              x-jsonld-id: "scoord:ho_newCoordinatorId"
+            handoffAt:
+              type: string
+              format: date-time
+              description: Timestamp the handoff occurred (ISO 8601)
+              x-jsonld-id: "scoord:ho_handoffAt"
+
+    ServiceCategory:
+      description: >
+        Typed code for ServiceCategory. @type is fixed (const) to ServiceCategory; @context defaults to this
+        pack's context.jsonld and may be overridden by the emitting network to point at its
+        own vocabulary. `code` is a member of that vocabulary. Detecting an unaccepted code
+        system is a network edge rule, not a schema constraint.
+      allOf:
+        - $ref: "https://schema.beckn.io/CodedValue/v2.1/attributes.yaml#/components/schemas/CodedValue"
+        - type: object
+          properties:
+            "@type":
+              const: "ServiceCategory"
+            "@context":
+              type: string
+              format: uri
+              default: "https://schema.beckn.io/ServiceCoordination/v2.1/context.jsonld"
+
+    DeviationReasonCode:
+      description: >
+        Typed code for DeviationReasonCode. @type is fixed (const) to DeviationReasonCode; @context defaults to this
+        pack's context.jsonld and may be overridden by the emitting network to point at its
+        own vocabulary. `code` is a member of that vocabulary. Detecting an unaccepted code
+        system is a network edge rule, not a schema constraint.
+      allOf:
+        - $ref: "https://schema.beckn.io/CodedValue/v2.1/attributes.yaml#/components/schemas/CodedValue"
+        - type: object
+          properties:
+            "@type":
+              const: "DeviationReasonCode"
+            "@context":
+              type: string
+              format: uri
+              default: "https://schema.beckn.io/ServiceCoordination/v2.1/context.jsonld"
