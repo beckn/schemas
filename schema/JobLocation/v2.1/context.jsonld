@@ -1,0 +1,30 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "jloc": "https://schema.beckn.io/JobLocation#",
+    "JobLocation": "jloc:JobLocation",
+    "GeoJSONGeometry": "jloc:GeoJSONGeometry",
+    "geo": {
+      "@id": "jloc:geo"
+    },
+    "geoType": {
+      "@id": "jloc:geoType"
+    },
+    "coordinates": {
+      "@id": "jloc:coordinates"
+    },
+    "address_locality": {
+      "@id": "jloc:address_locality"
+    },
+    "address_region": {
+      "@id": "jloc:address_region"
+    },
+    "postal_code": {
+      "@id": "jloc:postal_code"
+    },
+    "address_country": {
+      "@id": "jloc:address_country"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "@context": {
+    "salspec": "https://schema.beckn.io/SalarySpecification#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "salspec:SalarySpecification",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SalarySpecification",
+      "rdfs:comment": "A salary range or fixed value with currency and payment period."
+    },
+    {
+      "@id": "salspec:salary_min",
+      "@type": "rdf:Property",
+      "rdfs:label": "salary_min",
+      "rdfs:comment": "Minimum (or fixed) salary value.",
+      "rdfs:domain": {"@id": "salspec:SalarySpecification"},
+      "rdfs:range": {"@id": "xsd:decimal"}
+    },
+    {
+      "@id": "salspec:salary_max",
+      "@type": "rdf:Property",
+      "rdfs:label": "salary_max",
+      "rdfs:comment": "Maximum salary value for a range offer.",
+      "rdfs:domain": {"@id": "salspec:SalarySpecification"},
+      "rdfs:range": {"@id": "xsd:decimal"}
+    },
+    {
+      "@id": "salspec:salary_currency",
+      "@type": "rdf:Property",
+      "rdfs:label": "salary_currency",
+      "rdfs:comment": "ISO 4217 currency code.",
+      "rdfs:domain": {"@id": "salspec:SalarySpecification"},
+      "rdfs:range": {"@id": "xsd:string"}
+    },
+    {
+      "@id": "salspec:salary_period",
+      "@type": "rdf:Property",
+      "rdfs:label": "salary_period",
+      "rdfs:comment": "Payment recurrence basis.",
+      "rdfs:domain": {"@id": "salspec:SalarySpecification"},
+      "rdfs:range": {"@id": "xsd:string"}
+    }
+  ]
+}

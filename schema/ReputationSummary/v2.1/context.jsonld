@@ -1,0 +1,17 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "rsa": "https://schema.beckn.io/ReputationSummary#",
+    "ReputationSummary": "rsa:ReputationSummary",
+    "rating_value": {
+      "@id": "rsa:rating_value"
+    },
+    "rating_count": {
+      "@id": "rsa:rating_count"
+    },
+    "rating_agency": {
+      "@id": "rsa:rating_agency"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "salspec": "https://schema.beckn.io/SalarySpecification#",
+    "SalarySpecification": "salspec:SalarySpecification",
+    "salary_min": {
+      "@id": "salspec:salary_min"
+    },
+    "salary_max": {
+      "@id": "salspec:salary_max"
+    },
+    "salary_currency": {
+      "@id": "salspec:salary_currency"
+    },
+    "salary_period": {
+      "@id": "salspec:salary_period"
+    },
+    "SalaryPeriod": "salspec:SalaryPeriod"
+  }
+}

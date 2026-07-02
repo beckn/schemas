@@ -1,0 +1,78 @@
+openapi: 3.1.1
+info:
+  title: JobLocation
+  version: "2.1.0"
+  description: >
+    Shared location sub-schema for hiring-domain schemas. Intentionally flexible:
+    supports both city/region text filtering (addressLocality, addressRegion,
+    addressCountry) and geo-spatial queries via GeoJSON geometry. Both branches
+    are optional individually but at least one must be provided (anyOf constraint).
+
+    Design rationale: The core Beckn Location type requires a geo field (GeoJSON
+    geometry), which is too strict for most hiring discovery use cases where BAPs
+    typically filter by city or region text rather than by radius. At the same time,
+    some operators (especially transport/logistics) need geo-spatial proximity
+    queries via Beckn SpatialConstraint operators. By making both branches optional
+    with anyOf, this type serves text-based discovery ("jobs in Bangalore") and
+    geo-spatial discovery ("jobs within 50 km of this point") without forcing
+    operators to collect precise coordinates for every listing.
+
+components:
+  schemas:
+    GeoJSONGeometry:
+      type: object
+      description: >
+        Minimal GeoJSON geometry fragment. Supports Point, Polygon, and other
+        GeoJSON geometry types as used by Beckn SpatialConstraint operators.
+      required: [type, coordinates]
+      properties:
+        type:
+          type: string
+          description: GeoJSON geometry type (e.g. Point, Polygon).
+          x-jsonld-id: "jloc:geoType"
+        coordinates:
+          description: >
+            GeoJSON coordinates array. For a Point: [longitude, latitude].
+            For a Polygon: array of linear rings.
+          x-jsonld-id: "jloc:coordinates"
+
+    JobLocation:
+      type: object
+      x-beckn-shared-type: true
+      x-status: under-review
+      x-tags:
+        - hiring
+        - hiring-common
+        - shared-type
+      description: >
+        Flexible hiring location. Supports city/region text filtering (most common
+        use case) and GeoJSON geo-spatial queries. Either geo or at least one
+        address field must be present; both may coexist for richer indexing.
+      anyOf:
+        - required: [geo]
+        - required: [address_locality]
+        - required: [address_region]
+        - required: [address_country]
+      properties:
+        geo:
+          $ref: "#/components/schemas/GeoJSONGeometry"
+          description: >
+            GeoJSON geometry for spatial queries. MUST be locality-level precision
+            at on_discover (not precise address). Use for SpatialConstraint operators.
+          x-jsonld-id: "jloc:geo"
+        address_locality:
+          type: string
+          description: City or locality name (e.g. "Bengaluru", "Mumbai").
+          x-jsonld-id: "jloc:address_locality"
+        address_region:
+          type: string
+          description: State or province (e.g. "Karnataka", "Maharashtra").
+          x-jsonld-id: "jloc:address_region"
+        postal_code:
+          type: string
+          description: Postal or PIN code.
+          x-jsonld-id: "jloc:postal_code"
+        address_country:
+          type: string
+          description: ISO 3166-1 alpha-2 country code (e.g. "IN", "US").
+          x-jsonld-id: "jloc:address_country"
