@@ -1,0 +1,51 @@
+openapi: 3.1.1
+info:
+  title: SalarySpecification
+  version: "2.1.0"
+  description: >
+    Shared salary sub-schema for hiring-domain schemas. Captures a salary range
+    (or fixed value via min == max) with currency and payment period.
+
+    Design rationale: Salary data appears in two distinct contexts — job offers
+    (what the employer proposes) and candidate profiles (what the candidate
+    expects). Defining a single shared SalarySpecification type in hiring-common
+    eliminates duplication, ensures consistent field naming across both contexts,
+    and makes salary data machine-comparable for BAP-side matching. ISO 4217
+    currency codes and the PER_GIG period variant accommodate gig/platform
+    hiring networks alongside traditional employment.
+
+components:
+  schemas:
+    SalarySpecification:
+      type: object
+      x-beckn-shared-type: true
+      x-status: under-review
+      x-tags:
+        - hiring
+        - hiring-common
+        - shared-type
+      description: >
+        A salary range or fixed value with currency and payment period.
+        For a fixed salary set salary_min == salary_max, or provide only salary_min.
+      properties:
+        salary_min:
+          type: number
+          minimum: 0
+          description: Minimum (or fixed) salary value.
+          x-jsonld-id: "salspec:salary_min"
+        salary_max:
+          type: number
+          minimum: 0
+          description: Maximum salary value for a range offer. Omit for fixed salary.
+          x-jsonld-id: "salspec:salary_max"
+        salary_currency:
+          type: string
+          description: ISO 4217 currency code (e.g. INR, USD, EUR).
+          x-jsonld-id: "salspec:salary_currency"
+        salary_period:
+          type: string
+          enum: [ANNUAL, MONTHLY, WEEKLY, HOURLY, PER_GIG]
+          description: >
+            Payment recurrence basis. PER_GIG is for task-based or gig engagements
+            where pay is per completed unit rather than a time period.
+          x-jsonld-id: "salspec:salary_period"

@@ -1,0 +1,55 @@
+{
+  "@context": {
+    "jloc": "https://schema.beckn.io/JobLocation#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "jloc:JobLocation",
+      "@type": "rdfs:Class",
+      "rdfs:label": "JobLocation",
+      "rdfs:comment": "Flexible hiring location supporting text-based and geo-spatial filtering."
+    },
+    {
+      "@id": "jloc:geo",
+      "@type": "rdf:Property",
+      "rdfs:label": "geo",
+      "rdfs:comment": "GeoJSON geometry for spatial queries.",
+      "rdfs:domain": {"@id": "jloc:JobLocation"}
+    },
+    {
+      "@id": "jloc:address_locality",
+      "@type": "rdf:Property",
+      "rdfs:label": "address_locality",
+      "rdfs:comment": "City or locality name.",
+      "rdfs:domain": {"@id": "jloc:JobLocation"},
+      "rdfs:range": {"@id": "xsd:string"}
+    },
+    {
+      "@id": "jloc:address_region",
+      "@type": "rdf:Property",
+      "rdfs:label": "address_region",
+      "rdfs:comment": "State or province.",
+      "rdfs:domain": {"@id": "jloc:JobLocation"},
+      "rdfs:range": {"@id": "xsd:string"}
+    },
+    {
+      "@id": "jloc:postal_code",
+      "@type": "rdf:Property",
+      "rdfs:label": "postal_code",
+      "rdfs:comment": "Postal or PIN code.",
+      "rdfs:domain": {"@id": "jloc:JobLocation"},
+      "rdfs:range": {"@id": "xsd:string"}
+    },
+    {
+      "@id": "jloc:address_country",
+      "@type": "rdf:Property",
+      "rdfs:label": "address_country",
+      "rdfs:comment": "ISO 3166-1 alpha-2 country code.",
+      "rdfs:domain": {"@id": "jloc:JobLocation"},
+      "rdfs:range": {"@id": "xsd:string"}
+    }
+  ]
+}

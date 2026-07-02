@@ -1,0 +1,38 @@
+openapi: 3.1.1
+info:
+  title: ReputationSummary
+  version: "2.1.0"
+  description: >
+    Shared attestation-based reputation sub-schema for any hiring-domain schema.
+    Represents aggregated reputation data sourced from verified network ratings.
+    Applicable to both organisations (operator_reputation on job resources) and
+    candidates (reputation_summary on candidate profile resources).
+
+components:
+  schemas:
+    ReputationSummary:
+      type: object
+      x-status: under-review
+      x-tags:
+        - hiring
+        - hiring-common
+        - shared-type
+      description: >
+        Attestation-based reputation capsule. No centralised score — rating_value
+        is attested by the named rating_agency.
+      properties:
+        rating_value:
+          type: number
+          minimum: 0
+          maximum: 5
+          description: Aggregate attested rating on a 0–5 scale.
+          x-jsonld-id: "rsa:rating_value"
+        rating_count:
+          type: integer
+          minimum: 0
+          description: Number of attested ratings backing rating_value.
+          x-jsonld-id: "rsa:rating_count"
+        rating_agency:
+          type: string
+          description: Name or DID of the agency that attested the rating.
+          x-jsonld-id: "rsa:rating_agency"
