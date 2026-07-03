@@ -1,0 +1,38 @@
+{
+  "schema_name": "CandidateAvailabilityOffer",
+  "version": "2.1.0",
+  "card_template": {
+    "title": "Available from {{caoa:availableFrom}}",
+    "subtitle": "{{caoa:engagementTypesOpen}}",
+    "tags": ["{{caoa:interviewAvailability}}", "{{caoa:offerExpiryDays}} days to respond"]
+  },
+  "detail_template": {
+    "sections": [
+      {
+        "heading": "Availability Window",
+        "fields": [
+          { "label": "Available From", "value": "{{caoa:availableFrom}}" },
+          { "label": "Offer Valid Until", "value": "{{caoa:availableUntil}}" },
+          { "label": "Interview Availability", "value": "{{caoa:interviewAvailability}}" }
+        ]
+      },
+      {
+        "heading": "Engagement Preferences",
+        "fields": [
+          { "label": "Open To", "value": "{{caoa:engagementTypesOpen}}" },
+          { "label": "Min Contract", "value": "{{caoa:minContractDurationMonths}} months" },
+          { "label": "Max Contract", "value": "{{caoa:maxContractDurationMonths}} months" }
+        ]
+      },
+      {
+        "heading": "Requirements",
+        "fields": [
+          { "label": "Relocation Support Required", "value": "{{caoa:relocationSupportRequired}}" },
+          { "label": "Visa Sponsorship Required", "value": "{{caoa:visaSponsorshipRequired}}" }
+        ]
+      }
+    ]
+  },
+  "html": "<div class='offer-card'><p><strong>Available:</strong> {{caoa:availableFrom}}</p><p><strong>Open to:</strong> {{caoa:engagementTypesOpen}}</p><p><strong>Interview:</strong> {{caoa:interviewAvailability}}</p></div>",
+  "html_detail": "<div class='offer-detail'><h3>Availability & Terms</h3><section><h4>Window</h4><p>From: {{caoa:availableFrom}}</p><p>Until: {{caoa:availableUntil}}</p><p>Interviews: {{caoa:interviewAvailability}}</p></section><section><h4>Engagement</h4><p>Types: {{caoa:engagementTypesOpen}}</p>{{#if caoa:minContractDurationMonths}}<p>Min contract: {{caoa:minContractDurationMonths}} months</p>{{/if}}</section><section><h4>Requirements</h4>{{#if caoa:relocationSupportRequired}}<p>⚑ Relocation support required</p>{{/if}}{{#if caoa:visaSponsorshipRequired}}<p>⚑ Visa sponsorship required</p>{{/if}}</section></div>"
+}

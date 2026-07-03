@@ -1,0 +1,22 @@
+{
+  "schema_name": "HiringProcessPerformance",
+  "pack": "hiring-candidates",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "version": "2.1.0",
+  "beckn_container": "performanceAttributes",
+  "namespace_prefix": "hppa",
+  "namespace_iri": "https://schema.beckn.io/HiringProcessPerformance#",
+  "topology": "inverted",
+  "bap_role": "Employer App",
+  "bpp_role": "Candidate Platform",
+  "description": "Performance attributes recording individual hiring process steps: scheduling, assessment, result, and credential verification outcomes.",
+  "shared_types": ["VerificationSummary"],
+  "files": {
+    "attributes": "attributes.yaml",
+    "jsonld_context": "context.jsonld",
+    "vocab": "vocab.jsonld",
+    "renderer": "renderer.json",
+    "examples": "examples/"
+  }
+}

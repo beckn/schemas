@@ -1,0 +1,86 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "hjra": "https://schema.beckn.io/HiringJobResource#",
+    "jloc": "https://schema.beckn.io/JobLocation#",
+    "HiringJobResource": "hjra:HiringJobResource",
+    "job_title": {
+      "@id": "hjra:job_title"
+    },
+    "job_type": {
+      "@id": "hjra:job_type"
+    },
+    "work_mode": {
+      "@id": "hjra:work_mode"
+    },
+    "location": {
+      "@id": "hjra:location"
+    },
+    "shift_type": {
+      "@id": "hjra:shift_type"
+    },
+    "working_hours": {
+      "@id": "hjra:working_hours"
+    },
+    "contract_duration": {
+      "@id": "hjra:contract_duration"
+    },
+    "experience_level": {
+      "@id": "hjra:experience_level"
+    },
+    "min_experience_years": {
+      "@id": "hjra:min_experience_years"
+    },
+    "max_experience_years": {
+      "@id": "hjra:max_experience_years"
+    },
+    "skills_required": {
+      "@id": "hjra:skills_required"
+    },
+    "requirements": {
+      "@id": "hjra:requirements"
+    },
+    "industry_type": {
+      "@id": "hjra:industry_type"
+    },
+    "functional_area": {
+      "@id": "hjra:functional_area"
+    },
+    "vacancy_count": {
+      "@id": "hjra:vacancy_count"
+    },
+    "is_urgent": {
+      "@id": "hjra:is_urgent"
+    },
+    "application_deadline": {
+      "@id": "hjra:application_deadline"
+    },
+    "application_instructions": {
+      "@id": "hjra:application_instructions"
+    },
+    "operator_reputation": {
+      "@id": "hjra:operator_reputation"
+    },
+    "JobLocation": "jloc:JobLocation",
+    "geo": {
+      "@id": "jloc:geo"
+    },
+    "address_locality": {
+      "@id": "jloc:address_locality"
+    },
+    "address_region": {
+      "@id": "jloc:address_region"
+    },
+    "postal_code": {
+      "@id": "jloc:postal_code"
+    },
+    "address_country": {
+      "@id": "jloc:address_country"
+    },
+    "JobType": "hjra:JobType",
+    "WorkMode": "hjra:WorkMode",
+    "ExperienceLevel": "hjra:ExperienceLevel",
+    "ShiftType": "hjra:ShiftType"
+  }
+}

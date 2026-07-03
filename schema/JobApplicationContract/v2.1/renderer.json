@@ -1,0 +1,8 @@
+{
+  "schema": "JobApplicationContract",
+  "version": "2.1.0",
+  "card_template": "Ref: {{application_reference}} | Stage: {{stage}} | {{application_date}}",
+  "detail_template": "Application Ref: {{application_reference}}\nApplied: {{application_date}}\nStage: {{stage}}\nNotes: {{notes}}",
+  "html": "<div class=\"hiring-contract-card\"><span class=\"badge\">{{beckn:contractAttributes.stage}}</span><p style='font-size:0.85rem;margin:4px 0;'>Ref: {{beckn:contractAttributes.application_reference}}</p><p style='font-size:0.8rem;color:#666;'>{{beckn:contractAttributes.application_date}}</p></div>",
+  "html_detail": "<div class=\"hiring-contract-detail\"><h3>Application Status</h3><p><strong>Reference:</strong> {{beckn:contractAttributes.application_reference}}</p><p><strong>Applied:</strong> {{beckn:contractAttributes.application_date}}</p><p><strong>Stage:</strong> <span class=\"badge\">{{beckn:contractAttributes.stage}}</span></p>{{#if beckn:contractAttributes.rejection_reason}}<p><strong>Rejection Reason:</strong> {{beckn:contractAttributes.rejection_reason}}</p>{{/if}}{{#if beckn:contractAttributes.notes}}<p><strong>Notes:</strong> {{beckn:contractAttributes.notes}}</p>{{/if}}</div>"
+}

@@ -1,0 +1,8 @@
+{
+  "schema": "JobApplicationPerformance",
+  "version": "2.1.0",
+  "card_template": "{{screening_type}} | {{result}} | {{scheduled_at}}",
+  "detail_template": "Step: {{screening_type}}\nScheduled: {{scheduled_at}} | Conducted: {{conducted_at}}\nResult: {{result}} (Score: {{score}})\nNext: {{next_step}}",
+  "html": "<div class=\"hiring-performance-card\"><span class=\"badge\">{{beckn:performanceAttributes.screening_type}}</span> <span class=\"badge\">{{beckn:performanceAttributes.result}}</span><p style='font-size:0.85rem;margin:4px 0;'>📅 {{beckn:performanceAttributes.scheduled_at}}</p>{{#if beckn:performanceAttributes.score}}<p style='font-size:0.85rem;'>Score: <strong>{{beckn:performanceAttributes.score}}/100</strong></p>{{/if}}</div>",
+  "html_detail": "<div class=\"hiring-performance-detail\"><h4>Evaluation Step</h4><p><strong>Type:</strong> {{beckn:performanceAttributes.screening_type}}</p><p><strong>Scheduled:</strong> {{beckn:performanceAttributes.scheduled_at}}</p><p><strong>Conducted:</strong> {{beckn:performanceAttributes.conducted_at}}</p><p><strong>Result:</strong> {{beckn:performanceAttributes.result}}</p>{{#if beckn:performanceAttributes.score}}<p><strong>Score:</strong> {{beckn:performanceAttributes.score}}/100</p>{{/if}}{{#if beckn:performanceAttributes.result_notes}}<p><strong>Notes:</strong> {{beckn:performanceAttributes.result_notes}}</p>{{/if}}{{#if beckn:performanceAttributes.next_step}}<p><strong>Next:</strong> {{beckn:performanceAttributes.next_step}}</p>{{/if}}</div>"
+}

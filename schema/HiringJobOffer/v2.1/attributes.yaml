@@ -1,0 +1,102 @@
+openapi: 3.1.1
+info:
+  title: HiringJobOffer
+  version: "2.1.0"
+  description: Compensation and employment terms for a job Offer.
+
+components:
+  schemas:
+    HiringJobOffer:
+      type: object
+      x-beckn-container: offerAttributes
+      x-status: under-review
+      x-tags:
+        - hiring
+        - hiring-jobs
+        - offer
+      x-jsonld:
+        "@context": "https://schema.beckn.io/HiringJobOffer/v2.1/context.jsonld"
+        "@type": "hjoa:HiringJobOffer"
+      description: >
+        Commercial and contractual terms under which a job vacancy is offered.
+        Uses SalarySpecification from hiring-common for structured salary data
+        (supports ranges and multiple currencies/periods in a single sub-object).
+        Duration fields (probation_period, notice_period, contract_duration,
+        offer_validity) use ISO 8601 duration strings (e.g. P3M, P1Y) rather
+        than integer-day counts, enabling unambiguous machine processing across
+        calendar systems and localisation requirements. insurance_provided and
+        accommodation_provided are explicit booleans here (not buried in a
+        benefits list) because they are primary filtering criteria for many
+        hiring verticals (transport, construction, hospitality).
+      properties:
+        salary_specification:
+          $ref: "../../../hiring-common/SalarySpecification/v2.1/attributes.yaml#/components/schemas/SalarySpecification"
+          description: Structured salary range with currency and period.
+          x-jsonld-id: "hjoa:salary_specification"
+        benefits:
+          type: array
+          items:
+            type: string
+          description: Named benefit labels (e.g. Health Insurance, ESOPs, Flexible Hours).
+          x-jsonld-id: "hjoa:benefits"
+        other_benefits:
+          type: string
+          description: Free-text description of additional or non-standard benefits.
+          x-jsonld-id: "hjoa:other_benefits"
+        insurance_provided:
+          type: boolean
+          description: >
+            Whether the employer provides insurance (health, accident, or vehicle)
+            as part of the package. Explicit boolean rather than a benefits list
+            item because it is a primary discovery filter in transport and
+            field-work verticals.
+          x-jsonld-id: "hjoa:insurance_provided"
+        accommodation_provided:
+          type: boolean
+          description: >
+            Whether accommodation is included. Explicit boolean because it is a
+            primary filter for migrant workers and field-based roles.
+          x-jsonld-id: "hjoa:accommodation_provided"
+        equity_offered:
+          type: boolean
+          description: Whether equity compensation is part of the package.
+          x-jsonld-id: "hjoa:equity_offered"
+        joining_date:
+          type: string
+          format: date
+          description: Expected joining date (ISO 8601 date, e.g. 2026-06-01).
+          x-jsonld-id: "hjoa:joining_date"
+        contract_duration:
+          type: string
+          description: >
+            ISO 8601 duration for fixed-term offers (e.g. P6M, P1Y).
+            Omit for permanent/open-ended offers.
+          x-jsonld-id: "hjoa:contract_duration"
+        probation_period:
+          type: string
+          description: >
+            Probation period as ISO 8601 duration (e.g. P3M for 3 months,
+            P90D for 90 days). Replaces integer-day field for calendar-system
+            neutrality.
+          x-jsonld-id: "hjoa:probation_period"
+        notice_period:
+          type: string
+          description: >
+            Required notice period once employed, as ISO 8601 duration
+            (e.g. P2M for 2 months, P30D for 30 days).
+          x-jsonld-id: "hjoa:notice_period"
+        offer_issued_at:
+          type: string
+          format: date-time
+          description: Date and time the offer was issued.
+          x-jsonld-id: "hjoa:offer_issued_at"
+        offer_validity:
+          type: string
+          description: >
+            Duration the offer remains valid after issuance, as ISO 8601
+            duration (e.g. P7D for 7 days, P2W for 2 weeks).
+          x-jsonld-id: "hjoa:offer_validity"
+        remarks:
+          type: string
+          description: Free-text remarks or special conditions attached to the offer.
+          x-jsonld-id: "hjoa:remarks"

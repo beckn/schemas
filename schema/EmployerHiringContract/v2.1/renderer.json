@@ -1,0 +1,40 @@
+{
+  "schema_name": "EmployerHiringContract",
+  "version": "2.1.0",
+  "card_template": {
+    "title": "Hiring Contract — {{ehca:engagementType}}",
+    "subtitle": "Stage: {{ehca:hiringStage}}",
+    "tags": ["{{ehca:agreedWorkMode}}", "Start: {{ehca:agreedStartDate}}"]
+  },
+  "detail_template": {
+    "sections": [
+      {
+        "heading": "Hiring Status",
+        "fields": [
+          { "label": "Stage", "value": "{{ehca:hiringStage}}" },
+          { "label": "Engagement Type", "value": "{{ehca:engagementType}}" },
+          { "label": "Offer Reference", "value": "{{ehca:offerReference}}" }
+        ]
+      },
+      {
+        "heading": "Agreed Terms",
+        "fields": [
+          { "label": "Start Date", "value": "{{ehca:agreedStartDate}}" },
+          { "label": "Salary", "value": "{{ehca:agreedSalaryCurrency}} {{ehca:agreedSalary}} / {{ehca:agreedSalaryPeriod}}" },
+          { "label": "Work Mode", "value": "{{ehca:agreedWorkMode}}" },
+          { "label": "Location", "value": "{{ehca:agreedLocationCity}}" },
+          { "label": "Probation", "value": "{{ehca:probationPeriodDays}} days" },
+          { "label": "Notice Period", "value": "{{ehca:noticePeriodDays}} days" }
+        ]
+      },
+      {
+        "heading": "Verification",
+        "fields": [
+          { "label": "Result", "value": "{{ehca:prerequisiteVerificationSummary.overallResult}}" }
+        ]
+      }
+    ]
+  },
+  "html": "<div class='contract-card'><h3>Hiring — {{ehca:engagementType}}</h3><p class='stage'>{{ehca:hiringStage}}</p><p>Start: {{ehca:agreedStartDate}} · {{ehca:agreedWorkMode}}</p><p>{{ehca:agreedSalaryCurrency}} {{ehca:agreedSalary}} / {{ehca:agreedSalaryPeriod}}</p></div>",
+  "html_detail": "<div class='contract-detail'><h2>Hiring Contract</h2><section><h4>Status</h4><p>Stage: {{ehca:hiringStage}}</p><p>Type: {{ehca:engagementType}}</p><p>Ref: {{ehca:offerReference}}</p></section><section><h4>Agreed Terms</h4><p>Start: {{ehca:agreedStartDate}}</p><p>Salary: {{ehca:agreedSalaryCurrency}} {{ehca:agreedSalary}} / {{ehca:agreedSalaryPeriod}}</p><p>Mode: {{ehca:agreedWorkMode}}, {{ehca:agreedLocationCity}}</p><p>Probation: {{ehca:probationPeriodDays}} days</p><p>Notice: {{ehca:noticePeriodDays}} days</p></section><section><h4>Credential Verification</h4><p>Result: {{ehca:prerequisiteVerificationSummary.overallResult}}</p></section></div>"
+}

@@ -1,0 +1,64 @@
+{
+  "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+  "@context": {
+    "caoa": "https://schema.beckn.io/CandidateAvailabilityOffer#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "skos": "http://www.w3.org/2004/02/skos/core#"
+  },
+  "@graph": [
+    {
+      "@id": "caoa:InterviewAvailability",
+      "@type": "skos:ConceptScheme",
+      "rdfs:label": "Interview Availability",
+      "skos:hasTopConcept": [
+        {
+          "@id": "caoa:WEEKDAYS",
+          "skos:prefLabel": "Weekdays"
+        },
+        {
+          "@id": "caoa:WEEKENDS",
+          "skos:prefLabel": "Weekends"
+        },
+        {
+          "@id": "caoa:ANYTIME",
+          "skos:prefLabel": "Anytime"
+        },
+        {
+          "@id": "caoa:BY_APPOINTMENT",
+          "skos:prefLabel": "By Appointment"
+        }
+      ]
+    },
+    {
+      "@id": "caoa:ProcessStep",
+      "@type": "skos:ConceptScheme",
+      "rdfs:label": "Preferred Process Steps",
+      "skos:hasTopConcept": [
+        {
+          "@id": "caoa:CV_REVIEW",
+          "skos:prefLabel": "CV Review"
+        },
+        {
+          "@id": "caoa:TELEPHONIC",
+          "skos:prefLabel": "Telephonic Interview"
+        },
+        {
+          "@id": "caoa:VIDEO",
+          "skos:prefLabel": "Video Interview"
+        },
+        {
+          "@id": "caoa:WRITTEN_TEST",
+          "skos:prefLabel": "Written Test"
+        },
+        {
+          "@id": "caoa:TECHNICAL_TEST",
+          "skos:prefLabel": "Technical Test"
+        },
+        {
+          "@id": "caoa:REFERENCE_CHECK",
+          "skos:prefLabel": "Reference Check"
+        }
+      ]
+    }
+  ]
+}

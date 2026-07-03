@@ -1,0 +1,22 @@
+{
+  "schema_name": "EmployerHiringContract",
+  "pack": "hiring-candidates",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "version": "2.1.0",
+  "beckn_container": "contractAttributes",
+  "namespace_prefix": "ehca",
+  "namespace_iri": "https://schema.beckn.io/EmployerHiringContract#",
+  "topology": "inverted",
+  "bap_role": "Employer App",
+  "bpp_role": "Candidate Platform",
+  "description": "Contract attributes recording agreed hiring terms, stage, and verification outcomes. Zero PII.",
+  "shared_types": ["VerificationSummary"],
+  "files": {
+    "attributes": "attributes.yaml",
+    "jsonld_context": "context.jsonld",
+    "vocab": "vocab.jsonld",
+    "renderer": "renderer.json",
+    "examples": "examples/"
+  }
+}

@@ -1,0 +1,157 @@
+openapi: 3.1.1
+info:
+  title: JobApplicationPerformance
+  version: "2.1.0"
+  description: Performance attributes for evaluation steps in a hiring process.
+
+components:
+  schemas:
+    EvaluationStep:
+      type: object
+      description: >
+        A single evaluation step within a hiring process performance record.
+        The step_type enum covers both cognitive/interview steps and physical
+        assessments (e.g. DRIVING_TEST), making this schema reusable across
+        office hiring and field/transport hiring without sector-specific
+        extension. Keeping evaluation_steps as an array on one Performance
+        object allows a BPP to batch multiple completed steps in a single
+        on_update message, reducing message volume for multi-step assessment
+        pipelines.
+      properties:
+        step_type:
+          type: string
+          enum: [CV_REVIEW, TELEPHONIC, VIDEO, WRITTEN_TEST, TECHNICAL_TEST,
+                 APTITUDE_TEST, BACKGROUND_CHECK, DRIVING_TEST, PHYSICAL_FITNESS,
+                 MEDICAL_EXAM, REFERENCE_CHECK, OTHER]
+          description: >
+            Type of evaluation step. DRIVING_TEST and PHYSICAL_FITNESS cover
+            field/transport hiring; other values cover office and knowledge-
+            worker hiring. Domain-specific sectors may use OTHER with a
+            step_title for unlisted types.
+          x-jsonld-id: "japa:step_type"
+        title:
+          type: string
+          description: Human-readable title for the step (e.g. "Technical Round 2").
+          x-jsonld-id: "japa:title"
+        scheduled_at:
+          type: string
+          format: date-time
+          description: Scheduled date and time for this step.
+          x-jsonld-id: "japa:step_scheduled_at"
+        conducted_at:
+          type: string
+          format: date-time
+          description: Actual date and time the step was conducted.
+          x-jsonld-id: "japa:step_conducted_at"
+        assessor_ids:
+          type: array
+          items:
+            type: string
+          description: Identifiers of assessors, interviewers, or evaluators for this step.
+          x-jsonld-id: "japa:assessor_ids"
+        score:
+          type: number
+          minimum: 0
+          maximum: 100
+          description: Numeric score (0–100) for this step.
+          x-jsonld-id: "japa:step_score"
+        result:
+          type: string
+          enum: [PASS, FAIL, ON_HOLD, PENDING]
+          description: Outcome of this evaluation step.
+          x-jsonld-id: "japa:step_result"
+        notes:
+          type: string
+          description: Qualitative notes on the outcome of this step.
+          x-jsonld-id: "japa:step_notes"
+
+    JobApplicationPerformance:
+      type: object
+      x-beckn-container: performanceAttributes
+      x-status: under-review
+      x-tags:
+        - hiring
+        - hiring-jobs
+        - performance
+      x-jsonld:
+        "@context": "https://schema.beckn.io/JobApplicationPerformance/v2.1/context.jsonld"
+        "@type": "japa:JobApplicationPerformance"
+      description: >
+        Performance attributes for evaluation steps in a hiring contract.
+        lifecycle_stage is a free string (not an enum) so that each network can
+        define its own stage vocabulary without requiring a schema update —
+        the base protocol remains stable while networks extend freely. The
+        evaluation_steps array replaces the single-step model, enabling a BPP
+        to report multiple completed steps in one on_update message and
+        supporting multi-step assessment pipelines (e.g. CV review → telephonic
+        → technical → driving test) within a single Performance object.
+        Legacy single-step fields (screening_type, scheduled_at, etc.) are
+        retained for backward compatibility with v2.0 implementations.
+      properties:
+        lifecycle_stage:
+          type: string
+          description: >
+            Current lifecycle stage label. Free string — each network defines
+            its own vocabulary (e.g. APPLICATION_SUBMITTED, TELEPHONIC_SCREENING,
+            TECHNICAL_ROUND, OFFER_EXTENDED). This avoids enum lock-in at the
+            base protocol level.
+          x-jsonld-id: "japa:lifecycle_stage"
+        screening_notes:
+          type: string
+          description: General notes for this performance record (covers the whole step group).
+          x-jsonld-id: "japa:screening_notes"
+        evaluation_steps:
+          type: array
+          items:
+            $ref: "#/components/schemas/EvaluationStep"
+          description: >
+            Ordered list of evaluation steps completed or scheduled in this
+            performance cycle. An empty array is valid for a newly created
+            Performance object.
+          x-jsonld-id: "japa:evaluation_steps"
+        screening_type:
+          type: string
+          enum: [CV_REVIEW, TELEPHONIC, VIDEO, WRITTEN_TEST, TECHNICAL_TEST, BACKGROUND_CHECK, OTHER]
+          description: >
+            Legacy: type of the primary evaluation step. Prefer evaluation_steps
+            for new implementations.
+          x-jsonld-id: "japa:screening_type"
+        scheduled_at:
+          type: string
+          format: date-time
+          description: "Legacy: scheduled date and time of the primary step."
+          x-jsonld-id: "japa:scheduled_at"
+        conducted_at:
+          type: string
+          format: date-time
+          description: "Legacy: actual date and time the primary step was conducted."
+          x-jsonld-id: "japa:conducted_at"
+        interviewer_ids:
+          type: array
+          items:
+            type: string
+          description: "Legacy: identifiers of interviewers for the primary step."
+          x-jsonld-id: "japa:interviewer_ids"
+        score:
+          type: number
+          minimum: 0
+          maximum: 100
+          description: "Legacy: numeric score for the primary step."
+          x-jsonld-id: "japa:score"
+        result:
+          type: string
+          enum: [PASS, FAIL, ON_HOLD, PENDING]
+          description: "Legacy: outcome of the primary step."
+          x-jsonld-id: "japa:result"
+        result_notes:
+          type: string
+          description: "Legacy: qualitative notes on the primary step outcome."
+          x-jsonld-id: "japa:result_notes"
+        verification_summary:
+          $ref: "../../../../common/VerificationSummary/v2.1/attributes.yaml#/components/schemas/VerificationSummary"
+          description: Credential verification outcome during this performance cycle.
+          x-jsonld-id: "japa:verification_summary"
+        next_step:
+          type: string
+          description: Description of the next step in the process.
+          x-jsonld-id: "japa:next_step"

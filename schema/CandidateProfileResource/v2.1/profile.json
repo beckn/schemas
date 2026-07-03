@@ -1,0 +1,22 @@
+{
+  "schema_name": "CandidateProfileResource",
+  "pack": "hiring-candidates",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "version": "2.1.0",
+  "beckn_container": "resourceAttributes",
+  "namespace_prefix": "cpra",
+  "namespace_iri": "https://schema.beckn.io/CandidateProfileResource#",
+  "topology": "inverted",
+  "bap_role": "Employer App",
+  "bpp_role": "Candidate Platform",
+  "description": "Attributes describing a candidate profile available for discovery by employer BAPs. No PII — identity managed at contract parties level.",
+  "shared_types": ["SkillEntry", "VerificationSummary", "CodedValue"],
+  "files": {
+    "attributes": "attributes.yaml",
+    "jsonld_context": "context.jsonld",
+    "vocab": "vocab.jsonld",
+    "renderer": "renderer.json",
+    "examples": "examples/"
+  }
+}

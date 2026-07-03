@@ -1,0 +1,92 @@
+{
+  "@context": {
+    "caoa": "https://schema.beckn.io/CandidateAvailabilityOffer#",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "availableFrom": {
+      "@id": "caoa:availableFrom",
+      "@type": "xsd:date"
+    },
+    "availableUntil": {
+      "@id": "caoa:availableUntil",
+      "@type": "xsd:date"
+    },
+    "engagementTypesOpen": {
+      "@id": "caoa:engagementTypesOpen",
+      "@container": "@set"
+    },
+    "minContractDurationMonths": {
+      "@id": "caoa:minContractDurationMonths",
+      "@type": "xsd:integer"
+    },
+    "maxContractDurationMonths": {
+      "@id": "caoa:maxContractDurationMonths",
+      "@type": "xsd:integer"
+    },
+    "ratePerHour": {
+      "@id": "caoa:ratePerHour",
+      "@type": "xsd:decimal"
+    },
+    "rateCurrency": {
+      "@id": "caoa:rateCurrency"
+    },
+    "relocationSupportRequired": {
+      "@id": "caoa:relocationSupportRequired",
+      "@type": "xsd:boolean"
+    },
+    "visaSponsorshipRequired": {
+      "@id": "caoa:visaSponsorshipRequired",
+      "@type": "xsd:boolean"
+    },
+    "interviewAvailability": {
+      "@id": "caoa:interviewAvailability"
+    },
+    "preferredProcessSteps": {
+      "@id": "caoa:preferredProcessSteps",
+      "@container": "@set"
+    },
+    "offerExpiryDays": {
+      "@id": "caoa:offerExpiryDays",
+      "@type": "xsd:integer"
+    },
+    "InterviewAvailability": "caoa:InterviewAvailability",
+    "ProcessStep": "caoa:ProcessStep",
+    "available_from": {
+      "@id": "caoa:availableFrom"
+    },
+    "available_until": {
+      "@id": "caoa:availableUntil"
+    },
+    "engagement_types_open": {
+      "@id": "caoa:engagementTypesOpen"
+    },
+    "min_contract_duration_months": {
+      "@id": "caoa:minContractDurationMonths"
+    },
+    "max_contract_duration_months": {
+      "@id": "caoa:maxContractDurationMonths"
+    },
+    "rate_per_hour": {
+      "@id": "caoa:ratePerHour"
+    },
+    "rate_currency": {
+      "@id": "caoa:rateCurrency"
+    },
+    "relocation_support_required": {
+      "@id": "caoa:relocationSupportRequired"
+    },
+    "visa_sponsorship_required": {
+      "@id": "caoa:visaSponsorshipRequired"
+    },
+    "interview_availability": {
+      "@id": "caoa:interviewAvailability"
+    },
+    "preferred_process_steps": {
+      "@id": "caoa:preferredProcessSteps"
+    },
+    "offer_expiry_days": {
+      "@id": "caoa:offerExpiryDays"
+    }
+  }
+}

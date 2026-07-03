@@ -1,0 +1,64 @@
+{
+  "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "jaca": "https://schema.beckn.io/JobApplicationContract#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "ApplicationStage": "jaca:ApplicationStage",
+    "APPLIED": "jaca:APPLIED",
+    "SCREENING": "jaca:SCREENING",
+    "INTERVIEW": "jaca:INTERVIEW",
+    "ASSESSMENT": "jaca:ASSESSMENT",
+    "OFFER_ISSUED": "jaca:OFFER_ISSUED",
+    "ACCEPTED": "jaca:ACCEPTED",
+    "REJECTED": "jaca:REJECTED",
+    "WITHDRAWN": "jaca:WITHDRAWN"
+  },
+  "@graph": [
+    {
+      "@id": "jaca:ApplicationStage",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Application Stage"
+    },
+    {
+      "@id": "jaca:APPLIED",
+      "@type": "jaca:ApplicationStage",
+      "rdfs:label": "Applied"
+    },
+    {
+      "@id": "jaca:SCREENING",
+      "@type": "jaca:ApplicationStage",
+      "rdfs:label": "Screening"
+    },
+    {
+      "@id": "jaca:INTERVIEW",
+      "@type": "jaca:ApplicationStage",
+      "rdfs:label": "Interview"
+    },
+    {
+      "@id": "jaca:ASSESSMENT",
+      "@type": "jaca:ApplicationStage",
+      "rdfs:label": "Assessment"
+    },
+    {
+      "@id": "jaca:OFFER_ISSUED",
+      "@type": "jaca:ApplicationStage",
+      "rdfs:label": "Offer Issued"
+    },
+    {
+      "@id": "jaca:ACCEPTED",
+      "@type": "jaca:ApplicationStage",
+      "rdfs:label": "Accepted"
+    },
+    {
+      "@id": "jaca:REJECTED",
+      "@type": "jaca:ApplicationStage",
+      "rdfs:label": "Rejected"
+    },
+    {
+      "@id": "jaca:WITHDRAWN",
+      "@type": "jaca:ApplicationStage",
+      "rdfs:label": "Withdrawn"
+    }
+  ]
+}

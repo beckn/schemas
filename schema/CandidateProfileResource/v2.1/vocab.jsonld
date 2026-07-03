@@ -1,0 +1,125 @@
+{
+  "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+  "@context": {
+    "cpra": "https://schema.beckn.io/CandidateProfileResource#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "skos": "http://www.w3.org/2004/02/skos/core#"
+  },
+  "@graph": [
+    {
+      "@id": "cpra:ExperienceLevel",
+      "@type": "skos:ConceptScheme",
+      "rdfs:label": "Experience Level",
+      "skos:hasTopConcept": [
+        {
+          "@id": "cpra:FRESHER",
+          "skos:prefLabel": "Fresher (0\u20131 year)"
+        },
+        {
+          "@id": "cpra:JUNIOR",
+          "skos:prefLabel": "Junior (1\u20133 years)"
+        },
+        {
+          "@id": "cpra:MID",
+          "skos:prefLabel": "Mid-level (3\u20136 years)"
+        },
+        {
+          "@id": "cpra:SENIOR",
+          "skos:prefLabel": "Senior (6\u201310 years)"
+        },
+        {
+          "@id": "cpra:LEAD",
+          "skos:prefLabel": "Lead / Principal (10+ years)"
+        },
+        {
+          "@id": "cpra:EXECUTIVE",
+          "skos:prefLabel": "Executive / Director"
+        }
+      ]
+    },
+    {
+      "@id": "cpra:WorkMode",
+      "@type": "skos:ConceptScheme",
+      "rdfs:label": "Preferred Work Mode",
+      "skos:hasTopConcept": [
+        {
+          "@id": "cpra:ONSITE",
+          "skos:prefLabel": "Onsite \u2014 fully on-premises"
+        },
+        {
+          "@id": "cpra:REMOTE",
+          "skos:prefLabel": "Remote \u2014 fully distributed"
+        },
+        {
+          "@id": "cpra:HYBRID",
+          "skos:prefLabel": "Hybrid \u2014 mix of onsite and remote"
+        }
+      ]
+    },
+    {
+      "@id": "cpra:AvailabilityStatus",
+      "@type": "skos:ConceptScheme",
+      "rdfs:label": "Candidate Availability Status",
+      "skos:hasTopConcept": [
+        {
+          "@id": "cpra:ACTIVELY_LOOKING",
+          "skos:prefLabel": "Actively Looking \u2014 immediately available"
+        },
+        {
+          "@id": "cpra:OPEN_TO_OPPORTUNITIES",
+          "skos:prefLabel": "Open to Opportunities \u2014 passively browsing"
+        },
+        {
+          "@id": "cpra:NOT_LOOKING",
+          "skos:prefLabel": "Not Looking \u2014 not available"
+        }
+      ]
+    },
+    {
+      "@id": "cpra:Proficiency",
+      "@type": "skos:ConceptScheme",
+      "rdfs:label": "Skill Proficiency Level",
+      "skos:hasTopConcept": [
+        {
+          "@id": "cpra:BEGINNER",
+          "skos:prefLabel": "Beginner \u2014 learning the basics"
+        },
+        {
+          "@id": "cpra:INTERMEDIATE",
+          "skos:prefLabel": "Intermediate \u2014 working independently"
+        },
+        {
+          "@id": "cpra:ADVANCED",
+          "skos:prefLabel": "Advanced \u2014 deep expertise"
+        },
+        {
+          "@id": "cpra:EXPERT",
+          "skos:prefLabel": "Expert \u2014 recognised authority"
+        }
+      ]
+    },
+    {
+      "@id": "cpra:NoticePeriodUnit",
+      "@type": "skos:ConceptScheme",
+      "rdfs:label": "Notice Period Unit",
+      "skos:hasTopConcept": [
+        {
+          "@id": "cpra:DAYS",
+          "skos:prefLabel": "Days"
+        },
+        {
+          "@id": "cpra:WEEKS",
+          "skos:prefLabel": "Weeks"
+        },
+        {
+          "@id": "cpra:MONTHS",
+          "skos:prefLabel": "Months"
+        },
+        {
+          "@id": "cpra:IMMEDIATE",
+          "skos:prefLabel": "Immediate \u2014 can join immediately"
+        }
+      ]
+    }
+  ]
+}
