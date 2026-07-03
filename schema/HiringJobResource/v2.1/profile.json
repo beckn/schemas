@@ -1,0 +1,37 @@
+{
+  "id": "https://schema.beckn.io/HiringJobResource/v1",
+  "name": "HiringJobResource",
+  "version": "2.1.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": [
+    "HiringJobResource",
+    "JobLocation"
+  ],
+  "discovery_fields": [
+    "job_title",
+    "job_type",
+    "work_mode",
+    "experience_level",
+    "functional_area"
+  ],
+  "indexable_paths": [
+    "job_title",
+    "functional_area",
+    "skills_required"
+  ],
+  "filterable_paths": [
+    "job_type",
+    "work_mode",
+    "experience_level",
+    "industry_type.code",
+    "location.city",
+    "location.state",
+    "is_urgent"
+  ],
+  "sortable_paths": [
+    "application_deadline",
+    "vacancy_count"
+  ],
+  "privacy_notes": []
+}

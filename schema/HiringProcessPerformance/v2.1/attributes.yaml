@@ -1,0 +1,131 @@
+openapi: 3.1.1
+info:
+  title: HiringProcessPerformance
+  version: 2.1.0
+  description: >
+    Extension attributes for a hiring process performance step in a Beckn v2.1
+    hiring-candidates network. Describes a single step in the employer's
+    assessment / interview pipeline — scheduling, execution, result, and
+    credential verification outcome.
+  contact:
+    name: Beckn Protocol
+    url: https://becknprotocol.io
+
+x-beckn-pack: hiring-candidates
+x-beckn-container: performanceAttributes
+x-beckn-schema-version: "2.1.0"
+x-beckn-protocol-version: "2.0"
+
+components:
+  schemas:
+
+    ProcessStep:
+      type: string
+      enum:
+        - CV_REVIEW
+        - TELEPHONIC
+        - VIDEO
+        - WRITTEN_TEST
+        - TECHNICAL_TEST
+        - BACKGROUND_CHECK
+        - REFERENCE_CHECK
+        - OFFER_EXTENDED
+        - OTHER
+      description: Type of hiring process step being executed
+
+    StepResult:
+      type: string
+      enum: [PASS, FAIL, ON_HOLD, PENDING]
+      description: Outcome of the hiring process step
+
+    HiringProcessPerformance:
+      type: object
+      description: >
+        Domain-specific extension attributes for a single hiring process
+        performance step. Records what was done, when, by whom (role only,
+        not identity), and the outcome. Zero PII.
+      x-jsonld-context: "./context.jsonld"
+      x-beckn-container: performanceAttributes
+      x-status: under-review
+      x-tags:
+        - hiring
+        - hiring-candidates
+        - performance
+      required: [process_step]
+      properties:
+        process_step:
+          $ref: "#/components/schemas/ProcessStep"
+          description: Type of process step being recorded
+          x-jsonld-id: "hppa:processStep"
+        scheduled_at:
+          type: string
+          format: date-time
+          description: Scheduled date-time for this step (ISO 8601)
+          x-jsonld-id: "hppa:scheduledAt"
+        conducted_at:
+          type: string
+          format: date-time
+          description: Actual date-time this step was conducted (ISO 8601)
+          x-jsonld-id: "hppa:conductedAt"
+        duration_minutes:
+          type: integer
+          description: Duration of the session in minutes
+          x-jsonld-id: "hppa:durationMinutes"
+        interviewer_role:
+          type: string
+          description: >
+            Role of the interviewer(s) — e.g. "HR Manager", "Technical Lead".
+            Not a name or ID.
+          x-jsonld-id: "hppa:interviewerRole"
+        interview_format:
+          type: string
+          enum: [ONE_ON_ONE, PANEL, ASYNC, AUTOMATED]
+          description: Format of the interview or assessment
+          x-jsonld-id: "hppa:interviewFormat"
+        score:
+          type: number
+          description: Numerical score for assessments where scoring is applicable
+          x-jsonld-id: "hppa:score"
+        score_max:
+          type: number
+          description: Maximum possible score (denominator for score)
+          x-jsonld-id: "hppa:scoreMax"
+        result:
+          $ref: "#/components/schemas/StepResult"
+          description: Outcome of this process step
+          x-jsonld-id: "hppa:result"
+        result_notes:
+          type: string
+          description: Qualitative notes on the step outcome (non-PII)
+          x-jsonld-id: "hppa:resultNotes"
+        verification_summary:
+          type: object
+          description: >
+            Outcome of credential verification for this step, if applicable
+            (e.g. BACKGROUND_CHECK, REFERENCE_CHECK). References the shared
+            VerificationSummary type.
+          properties:
+            overall_result:
+              type: string
+              enum: [PASS, FAIL, PARTIAL, PENDING]
+              x-jsonld-id: "hppa:overallResult"
+            checked_at:
+              type: string
+              format: date-time
+              x-jsonld-id: "hppa:checkedAt"
+            notes:
+              type: string
+              x-jsonld-id: "hppa:notes"
+          x-jsonld-id: "hppa:verificationSummary"
+        next_step:
+          type: string
+          description: >
+            Identifier or label for the next process step to be executed.
+            Free-form string or a ProcessStep enum value.
+          x-jsonld-id: "hppa:nextStep"
+        rejection_reason:
+          type: string
+          description: >
+            Reason code or description if result is FAIL or candidate was
+            rejected at this step.
+          x-jsonld-id: "hppa:rejectionReason"

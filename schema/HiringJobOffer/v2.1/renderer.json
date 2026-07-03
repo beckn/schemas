@@ -1,0 +1,8 @@
+{
+  "schema": "HiringJobOffer",
+  "version": "2.1.0",
+  "card_template": "Salary: {{salary_min}}-{{salary_max}} {{salary_currency}}/{{salary_period}}",
+  "detail_template": "Salary: {{salary_min}}-{{salary_max}} {{salary_currency}}/{{salary_period}}\nBenefits: {{#each benefits}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}\nEquity: {{equity_offered}} | Probation: {{probation_period_days}}d | Notice: {{notice_period_days}}d",
+  "html": "<div class=\"hiring-job-offer-card\"><p style='font-weight:600;color:#2d6a4f;'>₹{{beckn:offerAttributes.salary_min}}–₹{{beckn:offerAttributes.salary_max}} <span style='font-weight:400;font-size:0.85rem;'>{{beckn:offerAttributes.salary_currency}}/{{beckn:offerAttributes.salary_period}}</span></p><div style='display:flex;gap:4px;flex-wrap:wrap;'>{{#each beckn:offerAttributes.benefits}}<span class=\"benefit-chip\">{{this}}</span>{{/each}}</div>{{#if beckn:offerAttributes.equity_offered}}<span style='font-size:0.8rem;color:#553c9a;'>🏷 Equity Offered</span>{{/if}}</div>",
+  "html_detail": "<div class=\"hiring-job-offer-detail\"><h4>Compensation</h4><p style='font-size:1.1rem;font-weight:600;'>₹{{beckn:offerAttributes.salary_min}}–₹{{beckn:offerAttributes.salary_max}} {{beckn:offerAttributes.salary_currency}}/{{beckn:offerAttributes.salary_period}}</p><h4>Benefits</h4><ul>{{#each beckn:offerAttributes.benefits}}<li>{{this}}</li>{{/each}}</ul>{{#if beckn:offerAttributes.equity_offered}}<p>✓ Equity offered</p>{{/if}}<p>Probation: {{beckn:offerAttributes.probation_period_days}}d | Notice: {{beckn:offerAttributes.notice_period_days}}d | Offer valid: {{beckn:offerAttributes.offer_validity_days}}d</p></div>"
+}

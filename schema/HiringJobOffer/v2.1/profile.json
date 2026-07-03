@@ -1,0 +1,29 @@
+{
+  "id": "https://schema.beckn.io/HiringJobOffer/v1",
+  "name": "HiringJobOffer",
+  "version": "2.1.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": [
+    "HiringJobOffer"
+  ],
+  "discovery_fields": [
+    "salary_min",
+    "salary_max",
+    "salary_period"
+  ],
+  "indexable_paths": [
+    "salary_period"
+  ],
+  "filterable_paths": [
+    "salary_min",
+    "salary_max",
+    "salary_period",
+    "equity_offered"
+  ],
+  "sortable_paths": [
+    "salary_min",
+    "salary_max"
+  ],
+  "privacy_notes": []
+}

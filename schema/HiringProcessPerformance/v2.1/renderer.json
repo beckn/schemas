@@ -1,0 +1,40 @@
+{
+  "schema_name": "HiringProcessPerformance",
+  "version": "2.1.0",
+  "card_template": {
+    "title": "{{hppa:processStep}}",
+    "subtitle": "{{hppa:scheduledAt}}",
+    "tags": ["{{hppa:result}}", "{{hppa:interviewFormat}}"]
+  },
+  "detail_template": {
+    "sections": [
+      {
+        "heading": "Process Step",
+        "fields": [
+          { "label": "Step", "value": "{{hppa:processStep}}" },
+          { "label": "Format", "value": "{{hppa:interviewFormat}}" },
+          { "label": "Interviewer Role", "value": "{{hppa:interviewerRole}}" }
+        ]
+      },
+      {
+        "heading": "Scheduling",
+        "fields": [
+          { "label": "Scheduled", "value": "{{hppa:scheduledAt}}" },
+          { "label": "Conducted", "value": "{{hppa:conductedAt}}" },
+          { "label": "Duration", "value": "{{hppa:durationMinutes}} min" }
+        ]
+      },
+      {
+        "heading": "Outcome",
+        "fields": [
+          { "label": "Result", "value": "{{hppa:result}}" },
+          { "label": "Score", "value": "{{hppa:score}} / {{hppa:scoreMax}}" },
+          { "label": "Notes", "value": "{{hppa:resultNotes}}" },
+          { "label": "Next Step", "value": "{{hppa:nextStep}}" }
+        ]
+      }
+    ]
+  },
+  "html": "<div class='performance-card'><h3>{{hppa:processStep}}</h3><p>{{hppa:scheduledAt}}</p><span class='result {{hppa:result}}'>{{hppa:result}}</span></div>",
+  "html_detail": "<div class='performance-detail'><h2>{{hppa:processStep}}</h2><section><h4>Details</h4><p>Format: {{hppa:interviewFormat}}</p><p>Interviewer: {{hppa:interviewerRole}}</p></section><section><h4>Timing</h4><p>Scheduled: {{hppa:scheduledAt}}</p><p>Conducted: {{hppa:conductedAt}}</p><p>Duration: {{hppa:durationMinutes}} min</p></section><section><h4>Result</h4><p class='{{hppa:result}}'>{{hppa:result}}</p>{{#if hppa:score}}<p>Score: {{hppa:score}} / {{hppa:scoreMax}}</p>{{/if}}<p>{{hppa:resultNotes}}</p><p>Next: {{hppa:nextStep}}</p></section></div>"
+}

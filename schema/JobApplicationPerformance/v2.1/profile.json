@@ -1,0 +1,27 @@
+{
+  "id": "https://schema.beckn.io/JobApplicationPerformance/v1",
+  "name": "JobApplicationPerformance",
+  "version": "2.1.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": [
+    "JobApplicationPerformance"
+  ],
+  "discovery_fields": [],
+  "indexable_paths": [
+    "screening_type",
+    "result"
+  ],
+  "filterable_paths": [
+    "screening_type",
+    "result"
+  ],
+  "sortable_paths": [
+    "scheduled_at",
+    "conducted_at",
+    "score"
+  ],
+  "privacy_notes": [
+    "result_notes may contain assessor opinions \u2014 restrict to employer-side participants"
+  ]
+}

@@ -1,0 +1,224 @@
+openapi: 3.1.1
+info:
+  title: CandidateProfileResource
+  version: 2.1.0
+  description: >
+    Extension attributes for a candidate profile resource in a Beckn v2.1
+    hiring-candidates network. Describes a candidate's professional profile
+    available for discovery by employer BAPs. Contains zero PII — identity
+    is managed at the beckn:parties level of the Contract object.
+  contact:
+    name: Beckn Protocol
+    url: https://becknprotocol.io
+
+x-beckn-pack: hiring-candidates
+x-beckn-container: resourceAttributes
+x-beckn-schema-version: "2.1.0"
+x-beckn-protocol-version: "2.0"
+
+components:
+  schemas:
+
+    WorkMode:
+      type: string
+      enum: [ONSITE, REMOTE, HYBRID]
+      description: Candidate's preferred work arrangement
+
+    ExperienceLevel:
+      type: string
+      enum: [FRESHER, JUNIOR, MID, SENIOR, LEAD, EXECUTIVE]
+      description: Candidate's seniority band
+
+    AvailabilityStatus:
+      type: string
+      enum: [ACTIVELY_LOOKING, OPEN_TO_OPPORTUNITIES, NOT_LOOKING]
+      description: Candidate's current job-search status
+
+    SkillEntry:
+      type: object
+      description: >
+        A single skill entry with optional VC attestation. Supports graceful
+        degradation: attested=false for self-declared skills, attested=true
+        with proof_request_url for VC-backed skills.
+      required: [skill_name, attested]
+      properties:
+        skill_name:
+          type: string
+          description: Name of the skill
+          x-jsonld-id: "cpra:skillName"
+        proficiency:
+          type: string
+          enum: [BEGINNER, INTERMEDIATE, ADVANCED, EXPERT]
+          description: Self-assessed proficiency level
+          x-jsonld-id: "cpra:proficiency"
+        years_of_experience:
+          type: number
+          description: Years of experience with this skill
+          x-jsonld-id: "cpra:yearsOfExperience"
+        attested:
+          type: boolean
+          description: Whether this skill has VC-backed attestation
+          x-jsonld-id: "cpra:attested"
+        proof_request_url:
+          type: string
+          format: uri
+          description: URI to DeDi endpoint for VC attestation (only when attested=true)
+          x-jsonld-id: "cpra:proofRequestUrl"
+        proof_metadata_hash:
+          type: string
+          description: Integrity hash of attestation metadata (only when attested=true)
+          x-jsonld-id: "cpra:proofMetadataHash"
+
+    EducationEntry:
+      type: object
+      description: An educational qualification entry
+      properties:
+        degree:
+          type: string
+          description: Degree or qualification title
+          x-jsonld-id: "cpra:degree"
+        field_of_study:
+          type: string
+          description: Subject or major
+          x-jsonld-id: "cpra:fieldOfStudy"
+        institution_type:
+          type: string
+          enum: [UNIVERSITY, COLLEGE, POLYTECHNIC, VOCATIONAL, ONLINE, OTHER]
+          description: Type of institution (no PII — not institution name)
+          x-jsonld-id: "cpra:institutionType"
+        year_of_completion:
+          type: integer
+          description: Year the qualification was completed
+          x-jsonld-id: "cpra:yearOfCompletion"
+        qualification_level:
+          $ref: "#/components/schemas/CodedValue"
+          description: NSQF or equivalent coded level
+          x-jsonld-id: "cpra:qualificationLevel"
+
+    CodedValue:
+      type: object
+      description: >
+        A value governed by an external classification authority,
+        e.g. ISIC industry codes, NSQF qualification levels.
+      required: [code]
+      properties:
+        code:
+          type: string
+          description: The classification code
+          x-jsonld-id: "cpra:code"
+        name:
+          type: string
+          description: Human-readable label for the code
+          x-jsonld-id: "cpra:name"
+        "@context":
+          type: string
+          format: uri
+          description: URI of the classification authority's code registry
+          x-jsonld-id: "cpra:context"
+
+    CandidateProfileResource:
+      type: object
+      description: >
+        Domain-specific extension attributes for a candidate profile resource.
+        Describes professional background, skills, preferences, and availability
+        for employer discovery. Zero PII — no name, contact, or identity fields.
+        preferred_location and current_location use the shared hiring-common
+        JobLocation type (supports both city/region text and GeoJSON geo-spatial
+        queries) rather than an inline CandidateLocation sub-schema, ensuring
+        consistent location semantics across job listings and candidate profiles.
+        relocation_willing is a direct property (not nested inside location) so
+        it remains independently queryable by BAPs without unpacking the location
+        sub-object.
+      x-jsonld-context: "./context.jsonld"
+      x-beckn-container: resourceAttributes
+      x-status: under-review
+      x-tags:
+        - hiring
+        - hiring-candidates
+        - resource
+        - transport-hiring
+      required: [experience_level, availability_status]
+      properties:
+        experience_level:
+          $ref: "#/components/schemas/ExperienceLevel"
+          description: Candidate's overall seniority band
+          x-jsonld-id: "cpra:experienceLevel"
+        total_experience_years:
+          type: number
+          description: Total years of professional experience
+          x-jsonld-id: "cpra:totalExperienceYears"
+        availability_status:
+          $ref: "#/components/schemas/AvailabilityStatus"
+          description: Candidate's current job-search status
+          x-jsonld-id: "cpra:availabilityStatus"
+        notice_period:
+          type: string
+          description: >
+            Notice period as ISO 8601 duration (e.g. P30D, P2M, P0D for immediate).
+            Replaces integer + unit pair for calendar-system neutrality.
+          x-jsonld-id: "cpra:noticePeriod"
+        preferred_work_mode:
+          $ref: "#/components/schemas/WorkMode"
+          description: Candidate's preferred work arrangement
+          x-jsonld-id: "cpra:preferredWorkMode"
+        preferred_location:
+          $ref: "../../../hiring-common/JobLocation/v2.1/attributes.yaml#/components/schemas/JobLocation"
+          description: Candidate's preferred work location (city/region level or geo-spatial)
+          x-jsonld-id: "cpra:preferredLocation"
+        current_location:
+          $ref: "../../../hiring-common/JobLocation/v2.1/attributes.yaml#/components/schemas/JobLocation"
+          description: Candidate's current location (city/country level only — not precise)
+          x-jsonld-id: "cpra:currentLocation"
+        relocation_willing:
+          type: boolean
+          description: >
+            Whether the candidate is willing to relocate. Direct property (not
+            nested in location) for independent BAP-side filterability.
+          x-jsonld-id: "cpra:relocationWilling"
+        skills:
+          type: array
+          items:
+            $ref: "#/components/schemas/SkillEntry"
+          description: List of skills with optional VC attestation
+          x-jsonld-id: "cpra:skills"
+        education:
+          type: array
+          items:
+            $ref: "#/components/schemas/EducationEntry"
+          description: Educational qualifications
+          x-jsonld-id: "cpra:education"
+        industry_preference:
+          type: array
+          items:
+            $ref: "#/components/schemas/CodedValue"
+          description: Preferred industries using ISIC codes
+          x-jsonld-id: "cpra:industryPreference"
+        functional_area_preference:
+          type: array
+          items:
+            type: string
+          description: Preferred job functions (e.g. Engineering, Marketing)
+          x-jsonld-id: "cpra:functionalAreaPreference"
+        expected_salary:
+          $ref: "../../../hiring-common/SalarySpecification/v2.1/attributes.yaml#/components/schemas/SalarySpecification"
+          description: Expected salary range with currency and period
+          x-jsonld-id: "cpra:expectedSalary"
+        languages:
+          type: array
+          items:
+            type: string
+          description: Languages spoken (ISO 639-1 codes)
+          x-jsonld-id: "cpra:languages"
+        open_to_job_types:
+          type: array
+          items:
+            type: string
+            enum: [FULL_TIME, PART_TIME, CONTRACT, INTERNSHIP, GIG]
+          description: Job engagement types the candidate is open to
+          x-jsonld-id: "cpra:openToJobTypes"
+        reputation_summary:
+          $ref: "../../../hiring-common/ReputationSummary/v2.1/attributes.yaml#/components/schemas/ReputationSummary"
+          description: >
+            Attested reputation summary for this candidate, sourced from
+            network-verified ratings. Safe at discovery stage — no PII.
+          x-jsonld-id: "cpra:reputationSummary"

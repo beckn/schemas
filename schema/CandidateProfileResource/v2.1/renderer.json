@@ -1,0 +1,47 @@
+{
+  "schema_name": "CandidateProfileResource",
+  "version": "2.1.0",
+  "card_template": {
+    "title": "{{descriptor.name}}",
+    "subtitle": "{{cpra:experienceLevel}} · {{cpra:preferredWorkMode}}",
+    "tags": ["{{cpra:availabilityStatus}}", "{{cpra:totalExperienceYears}} yrs exp"],
+    "badge": "{{cpra:availabilityStatus}}"
+  },
+  "detail_template": {
+    "sections": [
+      {
+        "heading": "Experience",
+        "fields": [
+          { "label": "Level", "value": "{{cpra:experienceLevel}}" },
+          { "label": "Total Experience", "value": "{{cpra:totalExperienceYears}} years" },
+          { "label": "Work Mode Preference", "value": "{{cpra:preferredWorkMode}}" }
+        ]
+      },
+      {
+        "heading": "Availability",
+        "fields": [
+          { "label": "Status", "value": "{{cpra:availabilityStatus}}" },
+          { "label": "Notice Period", "value": "{{cpra:noticePeriodValue}} {{cpra:noticePeriodUnit}}" }
+        ]
+      },
+      {
+        "heading": "Salary Expectation",
+        "fields": [
+          { "label": "Range", "value": "{{cpra:expectedSalaryCurrency}} {{cpra:expectedSalaryMin}} – {{cpra:expectedSalaryMax}} / {{cpra:expectedSalaryPeriod}}" }
+        ]
+      },
+      {
+        "heading": "Skills",
+        "list": "{{cpra:skills}}",
+        "item_template": "{{skillName}} ({{proficiency}}){{#if attested}} ✓ Attested{{/if}}"
+      },
+      {
+        "heading": "Education",
+        "list": "{{cpra:education}}",
+        "item_template": "{{degree}} in {{fieldOfStudy}} — {{institutionType}} ({{yearOfCompletion}})"
+      }
+    ]
+  },
+  "html": "<div class='candidate-card'><h3>{{descriptor.name}}</h3><p class='level'>{{cpra:experienceLevel}} · {{cpra:preferredWorkMode}}</p><span class='badge {{cpra:availabilityStatus}}'>{{cpra:availabilityStatus}}</span><p>{{cpra:totalExperienceYears}} years experience</p><p>Expected: {{cpra:expectedSalaryCurrency}} {{cpra:expectedSalaryMin}}–{{cpra:expectedSalaryMax}} / {{cpra:expectedSalaryPeriod}}</p></div>",
+  "html_detail": "<div class='candidate-detail'><h2>{{descriptor.name}}</h2><section><h4>Experience</h4><p>Level: {{cpra:experienceLevel}}</p><p>Total: {{cpra:totalExperienceYears}} years</p><p>Work Mode: {{cpra:preferredWorkMode}}</p></section><section><h4>Availability</h4><p>Status: {{cpra:availabilityStatus}}</p><p>Notice: {{cpra:noticePeriodValue}} {{cpra:noticePeriodUnit}}</p></section><section><h4>Skills</h4>{{#each cpra:skills}}<span class='skill'>{{skillName}}{{#if attested}} ✓{{/if}}</span>{{/each}}</section><section><h4>Salary Expectation</h4><p>{{cpra:expectedSalaryCurrency}} {{cpra:expectedSalaryMin}}–{{cpra:expectedSalaryMax}} / {{cpra:expectedSalaryPeriod}}</p></section></div>"
+}

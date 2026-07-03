@@ -1,0 +1,74 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "japa": "https://schema.beckn.io/JobApplicationPerformance#",
+    "JobApplicationPerformance": "japa:JobApplicationPerformance",
+    "EvaluationStep": "japa:EvaluationStep",
+    "lifecycle_stage": {
+      "@id": "japa:lifecycle_stage"
+    },
+    "screening_notes": {
+      "@id": "japa:screening_notes"
+    },
+    "evaluation_steps": {
+      "@id": "japa:evaluation_steps"
+    },
+    "step_type": {
+      "@id": "japa:step_type"
+    },
+    "title": {
+      "@id": "japa:title"
+    },
+    "step_scheduled_at": {
+      "@id": "japa:step_scheduled_at"
+    },
+    "step_conducted_at": {
+      "@id": "japa:step_conducted_at"
+    },
+    "assessor_ids": {
+      "@id": "japa:assessor_ids"
+    },
+    "step_score": {
+      "@id": "japa:step_score"
+    },
+    "step_result": {
+      "@id": "japa:step_result"
+    },
+    "step_notes": {
+      "@id": "japa:step_notes"
+    },
+    "notes": {
+      "@id": "japa:step_notes"
+    },
+    "screening_type": {
+      "@id": "japa:screening_type"
+    },
+    "scheduled_at": {
+      "@id": "japa:scheduled_at"
+    },
+    "conducted_at": {
+      "@id": "japa:conducted_at"
+    },
+    "interviewer_ids": {
+      "@id": "japa:interviewer_ids"
+    },
+    "score": {
+      "@id": "japa:score"
+    },
+    "result": {
+      "@id": "japa:result"
+    },
+    "result_notes": {
+      "@id": "japa:result_notes"
+    },
+    "verification_summary": {
+      "@id": "japa:verification_summary"
+    },
+    "next_step": {
+      "@id": "japa:next_step"
+    },
+    "ScreeningType": "japa:ScreeningType",
+    "EvaluationResult": "japa:EvaluationResult"
+  }
+}

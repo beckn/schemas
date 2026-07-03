@@ -1,0 +1,46 @@
+{
+  "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "hjoa": "https://schema.beckn.io/HiringJobOffer#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "SalaryPeriod": "hjoa:SalaryPeriod",
+    "ANNUAL": "hjoa:ANNUAL",
+    "MONTHLY": "hjoa:MONTHLY",
+    "WEEKLY": "hjoa:WEEKLY",
+    "HOURLY": "hjoa:HOURLY",
+    "PER_GIG": "hjoa:PER_GIG"
+  },
+  "@graph": [
+    {
+      "@id": "hjoa:SalaryPeriod",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Salary Period"
+    },
+    {
+      "@id": "hjoa:ANNUAL",
+      "@type": "hjoa:SalaryPeriod",
+      "rdfs:label": "Annual"
+    },
+    {
+      "@id": "hjoa:MONTHLY",
+      "@type": "hjoa:SalaryPeriod",
+      "rdfs:label": "Monthly"
+    },
+    {
+      "@id": "hjoa:WEEKLY",
+      "@type": "hjoa:SalaryPeriod",
+      "rdfs:label": "Weekly"
+    },
+    {
+      "@id": "hjoa:HOURLY",
+      "@type": "hjoa:SalaryPeriod",
+      "rdfs:label": "Hourly"
+    },
+    {
+      "@id": "hjoa:PER_GIG",
+      "@type": "hjoa:SalaryPeriod",
+      "rdfs:label": "Per Gig"
+    }
+  ]
+}

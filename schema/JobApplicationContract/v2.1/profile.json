@@ -1,0 +1,24 @@
+{
+  "id": "https://schema.beckn.io/JobApplicationContract/v1",
+  "name": "JobApplicationContract",
+  "version": "2.1.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": [
+    "JobApplicationContract"
+  ],
+  "discovery_fields": [],
+  "indexable_paths": [
+    "application_reference",
+    "stage"
+  ],
+  "filterable_paths": [
+    "stage"
+  ],
+  "sortable_paths": [
+    "application_date"
+  ],
+  "privacy_notes": [
+    "rejection_reason and notes may contain employer opinions \u2014 restrict to employer-side participants"
+  ]
+}

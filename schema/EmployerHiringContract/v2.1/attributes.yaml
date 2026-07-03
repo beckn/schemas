@@ -1,0 +1,133 @@
+openapi: 3.1.1
+info:
+  title: EmployerHiringContract
+  version: 2.1.0
+  description: >
+    Extension attributes for an employer hiring contract in a Beckn v2.1
+    hiring-candidates network. Captures the agreed hiring terms once an
+    employer BAP and a candidate BPP have agreed to proceed. Contains zero
+    PII — candidate identity is managed at the beckn:participants level.
+  contact:
+    name: Beckn Protocol
+    url: https://becknprotocol.io
+
+x-beckn-pack: hiring-candidates
+x-beckn-container: contractAttributes
+x-beckn-schema-version: "2.1.0"
+x-beckn-protocol-version: "2.0"
+
+components:
+  schemas:
+
+    HiringStage:
+      type: string
+      enum:
+        - PROFILE_SHORTLISTED
+        - INTERVIEW_SCHEDULED
+        - OFFER_EXTENDED
+        - OFFER_ACCEPTED
+        - OFFER_DECLINED
+        - WITHDRAWN
+        - REJECTED
+      description: Current stage in the employer-initiated hiring pipeline
+
+    EmployerHiringContract:
+      type: object
+      description: >
+        Domain-specific extension attributes for an employer hiring contract.
+        Records the agreed engagement terms, hiring stage, start date, and
+        verification outcomes for the candidate hired.
+      x-jsonld-context: "./context.jsonld"
+      x-beckn-container: contractAttributes
+      x-status: under-review
+      x-tags:
+        - hiring
+        - hiring-candidates
+        - contract
+      required: [hiring_stage, engagement_type]
+      properties:
+        hiring_stage:
+          $ref: "#/components/schemas/HiringStage"
+          description: Current lifecycle stage of the hiring contract
+          x-jsonld-id: "ehca:hiringStage"
+        engagement_type:
+          type: string
+          enum: [FULL_TIME, PART_TIME, CONTRACT, GIG]
+          description: Agreed employment engagement type
+          x-jsonld-id: "ehca:engagementType"
+        agreed_start_date:
+          type: string
+          format: date
+          description: Agreed joining / start date (ISO 8601)
+          x-jsonld-id: "ehca:agreedStartDate"
+        agreed_salary:
+          type: number
+          description: Agreed compensation amount
+          x-jsonld-id: "ehca:agreedSalary"
+        agreed_salary_currency:
+          type: string
+          description: ISO 4217 currency code for agreed salary
+          x-jsonld-id: "ehca:agreedSalaryCurrency"
+        agreed_salary_period:
+          type: string
+          enum: [ANNUAL, MONTHLY, WEEKLY, HOURLY, PER_GIG]
+          description: Period for the agreed salary figure
+          x-jsonld-id: "ehca:agreedSalaryPeriod"
+        agreed_work_mode:
+          type: string
+          enum: [ONSITE, REMOTE, HYBRID]
+          description: Agreed work arrangement
+          x-jsonld-id: "ehca:agreedWorkMode"
+        agreed_location_city:
+          type: string
+          description: City for onsite / hybrid work (non-PII)
+          x-jsonld-id: "ehca:agreedLocationCity"
+        contract_duration_months:
+          type: integer
+          description: For CONTRACT engagements — agreed contract duration in months
+          x-jsonld-id: "ehca:contractDurationMonths"
+        probation_period_days:
+          type: integer
+          description: Probation period in days
+          x-jsonld-id: "ehca:probationPeriodDays"
+        notice_period_days:
+          type: integer
+          description: Agreed notice period in days
+          x-jsonld-id: "ehca:noticePeriodDays"
+        offer_expiry_date:
+          type: string
+          format: date-time
+          description: Deadline by which the candidate must accept the offer (ISO 8601)
+          x-jsonld-id: "ehca:offerExpiryDate"
+        offer_reference:
+          type: string
+          description: Employer-side offer reference number (opaque string)
+          x-jsonld-id: "ehca:offerReference"
+        rejection_reason:
+          type: string
+          description: >
+            Reason code if hiring_stage is OFFER_DECLINED or REJECTED.
+            Free-form string.
+          x-jsonld-id: "ehca:rejectionReason"
+        prerequisite_verification_summary:
+          type: object
+          description: >
+            Outcome of credential verification for required prerequisites.
+            References the shared VerificationSummary type.
+          properties:
+            overall_result:
+              type: string
+              enum: [PASS, FAIL, PARTIAL, PENDING]
+              x-jsonld-id: "ehca:overallResult"
+            checked_at:
+              type: string
+              format: date-time
+              x-jsonld-id: "ehca:checkedAt"
+            notes:
+              type: string
+              x-jsonld-id: "ehca:notes"
+          x-jsonld-id: "ehca:prerequisiteVerificationSummary"
+        notes:
+          type: string
+          description: Internal recruiter or employer notes (non-PII)
+          x-jsonld-id: "ehca:notes"

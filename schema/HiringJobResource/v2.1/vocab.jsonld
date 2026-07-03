@@ -1,0 +1,107 @@
+{
+  "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "hjra": "https://schema.beckn.io/HiringJobResource#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "JobType": "hjra:JobType",
+    "FULL_TIME": "hjra:FULL_TIME",
+    "PART_TIME": "hjra:PART_TIME",
+    "CONTRACT": "hjra:CONTRACT",
+    "INTERNSHIP": "hjra:INTERNSHIP",
+    "GIG": "hjra:GIG",
+    "WorkMode": "hjra:WorkMode",
+    "ONSITE": "hjra:ONSITE",
+    "REMOTE": "hjra:REMOTE",
+    "HYBRID": "hjra:HYBRID",
+    "ExperienceLevel": "hjra:ExperienceLevel",
+    "FRESHER": "hjra:FRESHER",
+    "JUNIOR": "hjra:JUNIOR",
+    "MID": "hjra:MID",
+    "SENIOR": "hjra:SENIOR",
+    "LEAD": "hjra:LEAD"
+  },
+  "@graph": [
+    {
+      "@id": "hjra:JobType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Job Type",
+      "rdfs:comment": "Employment engagement type."
+    },
+    {
+      "@id": "hjra:FULL_TIME",
+      "@type": "hjra:JobType",
+      "rdfs:label": "Full Time"
+    },
+    {
+      "@id": "hjra:PART_TIME",
+      "@type": "hjra:JobType",
+      "rdfs:label": "Part Time"
+    },
+    {
+      "@id": "hjra:CONTRACT",
+      "@type": "hjra:JobType",
+      "rdfs:label": "Contract"
+    },
+    {
+      "@id": "hjra:INTERNSHIP",
+      "@type": "hjra:JobType",
+      "rdfs:label": "Internship"
+    },
+    {
+      "@id": "hjra:GIG",
+      "@type": "hjra:JobType",
+      "rdfs:label": "Gig"
+    },
+    {
+      "@id": "hjra:WorkMode",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Work Mode"
+    },
+    {
+      "@id": "hjra:ONSITE",
+      "@type": "hjra:WorkMode",
+      "rdfs:label": "Onsite"
+    },
+    {
+      "@id": "hjra:REMOTE",
+      "@type": "hjra:WorkMode",
+      "rdfs:label": "Remote"
+    },
+    {
+      "@id": "hjra:HYBRID",
+      "@type": "hjra:WorkMode",
+      "rdfs:label": "Hybrid"
+    },
+    {
+      "@id": "hjra:ExperienceLevel",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Experience Level"
+    },
+    {
+      "@id": "hjra:FRESHER",
+      "@type": "hjra:ExperienceLevel",
+      "rdfs:label": "Fresher"
+    },
+    {
+      "@id": "hjra:JUNIOR",
+      "@type": "hjra:ExperienceLevel",
+      "rdfs:label": "Junior"
+    },
+    {
+      "@id": "hjra:MID",
+      "@type": "hjra:ExperienceLevel",
+      "rdfs:label": "Mid"
+    },
+    {
+      "@id": "hjra:SENIOR",
+      "@type": "hjra:ExperienceLevel",
+      "rdfs:label": "Senior"
+    },
+    {
+      "@id": "hjra:LEAD",
+      "@type": "hjra:ExperienceLevel",
+      "rdfs:label": "Lead"
+    }
+  ]
+}

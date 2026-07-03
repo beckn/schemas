@@ -1,0 +1,82 @@
+{
+  "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "japa": "https://schema.beckn.io/JobApplicationPerformance#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "ScreeningType": "japa:ScreeningType",
+    "CV_REVIEW": "japa:CV_REVIEW",
+    "TELEPHONIC": "japa:TELEPHONIC",
+    "VIDEO": "japa:VIDEO",
+    "WRITTEN_TEST": "japa:WRITTEN_TEST",
+    "TECHNICAL_TEST": "japa:TECHNICAL_TEST",
+    "BACKGROUND_CHECK": "japa:BACKGROUND_CHECK",
+    "EvaluationResult": "japa:EvaluationResult",
+    "PASS": "japa:PASS",
+    "FAIL": "japa:FAIL",
+    "ON_HOLD": "japa:ON_HOLD",
+    "PENDING": "japa:PENDING"
+  },
+  "@graph": [
+    {
+      "@id": "japa:ScreeningType",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Screening Type"
+    },
+    {
+      "@id": "japa:CV_REVIEW",
+      "@type": "japa:ScreeningType",
+      "rdfs:label": "CV Review"
+    },
+    {
+      "@id": "japa:TELEPHONIC",
+      "@type": "japa:ScreeningType",
+      "rdfs:label": "Telephonic"
+    },
+    {
+      "@id": "japa:VIDEO",
+      "@type": "japa:ScreeningType",
+      "rdfs:label": "Video"
+    },
+    {
+      "@id": "japa:WRITTEN_TEST",
+      "@type": "japa:ScreeningType",
+      "rdfs:label": "Written Test"
+    },
+    {
+      "@id": "japa:TECHNICAL_TEST",
+      "@type": "japa:ScreeningType",
+      "rdfs:label": "Technical Test"
+    },
+    {
+      "@id": "japa:BACKGROUND_CHECK",
+      "@type": "japa:ScreeningType",
+      "rdfs:label": "Background Check"
+    },
+    {
+      "@id": "japa:EvaluationResult",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Evaluation Result"
+    },
+    {
+      "@id": "japa:PASS",
+      "@type": "japa:EvaluationResult",
+      "rdfs:label": "Pass"
+    },
+    {
+      "@id": "japa:FAIL",
+      "@type": "japa:EvaluationResult",
+      "rdfs:label": "Fail"
+    },
+    {
+      "@id": "japa:ON_HOLD",
+      "@type": "japa:EvaluationResult",
+      "rdfs:label": "On Hold"
+    },
+    {
+      "@id": "japa:PENDING",
+      "@type": "japa:EvaluationResult",
+      "rdfs:label": "Pending"
+    }
+  ]
+}

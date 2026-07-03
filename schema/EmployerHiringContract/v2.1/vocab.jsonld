@@ -1,0 +1,68 @@
+{
+  "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+  "@context": {
+    "ehca": "https://schema.beckn.io/EmployerHiringContract#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "skos": "http://www.w3.org/2004/02/skos/core#"
+  },
+  "@graph": [
+    {
+      "@id": "ehca:HiringStage",
+      "@type": "skos:ConceptScheme",
+      "rdfs:label": "Employer Hiring Stage",
+      "skos:hasTopConcept": [
+        {
+          "@id": "ehca:PROFILE_SHORTLISTED",
+          "skos:prefLabel": "Profile Shortlisted"
+        },
+        {
+          "@id": "ehca:INTERVIEW_SCHEDULED",
+          "skos:prefLabel": "Interview Scheduled"
+        },
+        {
+          "@id": "ehca:OFFER_EXTENDED",
+          "skos:prefLabel": "Offer Extended \u2014 awaiting response"
+        },
+        {
+          "@id": "ehca:OFFER_ACCEPTED",
+          "skos:prefLabel": "Offer Accepted \u2014 hiring confirmed"
+        },
+        {
+          "@id": "ehca:OFFER_DECLINED",
+          "skos:prefLabel": "Offer Declined \u2014 candidate declined"
+        },
+        {
+          "@id": "ehca:WITHDRAWN",
+          "skos:prefLabel": "Withdrawn \u2014 employer withdrew the offer"
+        },
+        {
+          "@id": "ehca:REJECTED",
+          "skos:prefLabel": "Rejected \u2014 candidate did not pass screening"
+        }
+      ]
+    },
+    {
+      "@id": "ehca:VerificationResult",
+      "@type": "skos:ConceptScheme",
+      "rdfs:label": "Credential Verification Result",
+      "skos:hasTopConcept": [
+        {
+          "@id": "ehca:PASS",
+          "skos:prefLabel": "Pass \u2014 all credentials verified"
+        },
+        {
+          "@id": "ehca:FAIL",
+          "skos:prefLabel": "Fail \u2014 one or more credentials failed"
+        },
+        {
+          "@id": "ehca:PARTIAL",
+          "skos:prefLabel": "Partial \u2014 some credentials pending or failed"
+        },
+        {
+          "@id": "ehca:PENDING",
+          "skos:prefLabel": "Pending \u2014 verification not yet complete"
+        }
+      ]
+    }
+  ]
+}

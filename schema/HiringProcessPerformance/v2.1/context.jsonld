@@ -1,0 +1,99 @@
+{
+  "@context": {
+    "hppa": "https://schema.beckn.io/HiringProcessPerformance#",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "processStep": {
+      "@id": "hppa:processStep"
+    },
+    "scheduledAt": {
+      "@id": "hppa:scheduledAt",
+      "@type": "xsd:dateTime"
+    },
+    "conductedAt": {
+      "@id": "hppa:conductedAt",
+      "@type": "xsd:dateTime"
+    },
+    "durationMinutes": {
+      "@id": "hppa:durationMinutes",
+      "@type": "xsd:integer"
+    },
+    "interviewerRole": {
+      "@id": "hppa:interviewerRole"
+    },
+    "interviewFormat": {
+      "@id": "hppa:interviewFormat"
+    },
+    "score": {
+      "@id": "hppa:score",
+      "@type": "xsd:decimal"
+    },
+    "scoreMax": {
+      "@id": "hppa:scoreMax",
+      "@type": "xsd:decimal"
+    },
+    "result": {
+      "@id": "hppa:result"
+    },
+    "resultNotes": {
+      "@id": "hppa:resultNotes"
+    },
+    "verificationSummary": {
+      "@id": "hppa:verificationSummary",
+      "@type": "@id"
+    },
+    "overallResult": {
+      "@id": "hppa:overallResult"
+    },
+    "checkedAt": {
+      "@id": "hppa:checkedAt",
+      "@type": "xsd:dateTime"
+    },
+    "notes": {
+      "@id": "hppa:notes"
+    },
+    "nextStep": {
+      "@id": "hppa:nextStep"
+    },
+    "rejectionReason": {
+      "@id": "hppa:rejectionReason"
+    },
+    "ProcessStep": "hppa:ProcessStep",
+    "StepResult": "hppa:StepResult",
+    "InterviewFormat": "hppa:InterviewFormat",
+    "process_step": {
+      "@id": "hppa:processStep"
+    },
+    "scheduled_at": {
+      "@id": "hppa:scheduledAt"
+    },
+    "conducted_at": {
+      "@id": "hppa:conductedAt"
+    },
+    "duration_minutes": {
+      "@id": "hppa:durationMinutes"
+    },
+    "interviewer_role": {
+      "@id": "hppa:interviewerRole"
+    },
+    "interview_format": {
+      "@id": "hppa:interviewFormat"
+    },
+    "score_max": {
+      "@id": "hppa:scoreMax"
+    },
+    "result_notes": {
+      "@id": "hppa:resultNotes"
+    },
+    "verification_summary": {
+      "@id": "hppa:verificationSummary"
+    },
+    "next_step": {
+      "@id": "hppa:nextStep"
+    },
+    "rejection_reason": {
+      "@id": "hppa:rejectionReason"
+    }
+  }
+}

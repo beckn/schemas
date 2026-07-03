@@ -1,0 +1,98 @@
+openapi: 3.1.1
+info:
+  title: CandidateAvailabilityOffer
+  version: 2.1.0
+  description: >
+    Extension attributes for a candidate availability offer in a Beckn v2.1
+    hiring-candidates network. Describes the terms under which a candidate
+    profile is offered to employer BAPs — including availability window,
+    engagement preferences, and rate expectations.
+  contact:
+    name: Beckn Protocol
+    url: https://becknprotocol.io
+
+x-beckn-pack: hiring-candidates
+x-beckn-container: offerAttributes
+x-beckn-schema-version: "2.1.0"
+x-beckn-protocol-version: "2.0"
+
+components:
+  schemas:
+
+    CandidateAvailabilityOffer:
+      type: object
+      description: >
+        Domain-specific extension attributes for a candidate availability offer.
+        Defines when and how a candidate is available for engagement, rate
+        expectations, and terms the employer BAP must meet to initiate hiring.
+      x-jsonld-context: "./context.jsonld"
+      x-beckn-container: offerAttributes
+      x-status: under-review
+      x-tags:
+        - hiring
+        - hiring-candidates
+        - offer
+      properties:
+        available_from:
+          type: string
+          format: date
+          description: Earliest date the candidate can start (ISO 8601)
+          x-jsonld-id: "caoa:availableFrom"
+        available_until:
+          type: string
+          format: date
+          description: Offer expiry date — after which availability may change (ISO 8601)
+          x-jsonld-id: "caoa:availableUntil"
+        engagement_types_open:
+          type: array
+          items:
+            type: string
+            enum: [FULL_TIME, PART_TIME, CONTRACT, INTERNSHIP, GIG]
+          description: Employment types the candidate is willing to accept for this offer
+          x-jsonld-id: "caoa:engagementTypesOpen"
+        min_contract_duration_months:
+          type: integer
+          description: >
+            For CONTRACT engagements — minimum contract duration the candidate
+            will accept, in months
+          x-jsonld-id: "caoa:minContractDurationMonths"
+        max_contract_duration_months:
+          type: integer
+          description: >
+            For CONTRACT engagements — maximum contract duration the candidate
+            will consider, in months
+          x-jsonld-id: "caoa:maxContractDurationMonths"
+        rate_per_hour:
+          type: number
+          description: Hourly rate for GIG or CONTRACT engagements
+          x-jsonld-id: "caoa:ratePerHour"
+        rate_currency:
+          type: string
+          description: ISO 4217 currency code for hourly rate
+          x-jsonld-id: "caoa:rateCurrency"
+        relocation_support_required:
+          type: boolean
+          description: Whether the candidate requires relocation support from the employer
+          x-jsonld-id: "caoa:relocationSupportRequired"
+        visa_sponsorship_required:
+          type: boolean
+          description: Whether the candidate requires visa sponsorship
+          x-jsonld-id: "caoa:visaSponsorshipRequired"
+        interview_availability:
+          type: string
+          enum: [WEEKDAYS, WEEKENDS, ANYTIME, BY_APPOINTMENT]
+          description: When the candidate is available for interviews
+          x-jsonld-id: "caoa:interviewAvailability"
+        preferred_process_steps:
+          type: array
+          items:
+            type: string
+            enum: [CV_REVIEW, TELEPHONIC, VIDEO, WRITTEN_TEST, TECHNICAL_TEST, REFERENCE_CHECK]
+          description: Assessment steps the candidate is comfortable with
+          x-jsonld-id: "caoa:preferredProcessSteps"
+        offer_expiry_days:
+          type: integer
+          description: >
+            Number of days after a job offer is extended within which the candidate
+            will respond. Defaults to 7 if not set.
+          x-jsonld-id: "caoa:offerExpiryDays"

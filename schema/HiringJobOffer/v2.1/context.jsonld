@@ -1,0 +1,61 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "hjoa": "https://schema.beckn.io/HiringJobOffer#",
+    "salspec": "https://schema.beckn.io/SalarySpecification#",
+    "HiringJobOffer": "hjoa:HiringJobOffer",
+    "salary_specification": {
+      "@id": "hjoa:salary_specification"
+    },
+    "benefits": {
+      "@id": "hjoa:benefits"
+    },
+    "other_benefits": {
+      "@id": "hjoa:other_benefits"
+    },
+    "insurance_provided": {
+      "@id": "hjoa:insurance_provided"
+    },
+    "accommodation_provided": {
+      "@id": "hjoa:accommodation_provided"
+    },
+    "equity_offered": {
+      "@id": "hjoa:equity_offered"
+    },
+    "joining_date": {
+      "@id": "hjoa:joining_date"
+    },
+    "contract_duration": {
+      "@id": "hjoa:contract_duration"
+    },
+    "probation_period": {
+      "@id": "hjoa:probation_period"
+    },
+    "notice_period": {
+      "@id": "hjoa:notice_period"
+    },
+    "offer_issued_at": {
+      "@id": "hjoa:offer_issued_at"
+    },
+    "offer_validity": {
+      "@id": "hjoa:offer_validity"
+    },
+    "remarks": {
+      "@id": "hjoa:remarks"
+    },
+    "SalarySpecification": "salspec:SalarySpecification",
+    "salary_min": {
+      "@id": "salspec:salary_min"
+    },
+    "salary_max": {
+      "@id": "salspec:salary_max"
+    },
+    "salary_currency": {
+      "@id": "salspec:salary_currency"
+    },
+    "salary_period": {
+      "@id": "salspec:salary_period"
+    }
+  }
+}

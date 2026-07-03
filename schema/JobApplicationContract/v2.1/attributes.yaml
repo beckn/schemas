@@ -1,0 +1,133 @@
+openapi: 3.1.1
+info:
+  title: JobApplicationContract
+  version: "2.1.0"
+  description: Contract-level tracking attributes for a job application lifecycle.
+
+components:
+  schemas:
+    SubmittedDocument:
+      type: object
+      description: >
+        Metadata about a document submitted by the candidate during the
+        application process. Document content is never carried inside Beckn
+        messages — only a reference pointer and verification status are stored.
+        Separating submitted_documents into a structured array (rather than a
+        free-text notes field) enables network-level automation of document
+        checklist completion tracking.
+      required: [document_type, document_reference]
+      properties:
+        document_type:
+          type: string
+          description: >
+            Type of document (e.g. RESUME, DRIVING_LICENCE, MEDICAL_FITNESS_CERT,
+            POLICE_VERIFICATION, EDUCATIONAL_CERT). Network defines the vocabulary.
+          x-jsonld-id: "jaca:document_type"
+        document_reference:
+          type: string
+          description: Opaque reference identifier for the submitted document.
+          x-jsonld-id: "jaca:document_reference"
+        upload_url:
+          type: string
+          format: uri
+          description: >
+            URL where the document can be accessed (stage-gated — not disclosed
+            at on_discover). MUST be a signed URL or DeDi-backed pointer.
+          x-pii-disclosure-stage: init
+          x-jsonld-id: "jaca:upload_url"
+        verified:
+          type: boolean
+          description: Whether the document has been verified by the network or employer.
+          x-jsonld-id: "jaca:verified"
+
+    JobApplicationContract:
+      type: object
+      x-beckn-container: contractAttributes
+      x-status: under-review
+      x-tags:
+        - hiring
+        - hiring-jobs
+        - contract
+      x-jsonld:
+        "@context": "https://schema.beckn.io/JobApplicationContract/v2.1/context.jsonld"
+        "@type": "jaca:JobApplicationContract"
+      description: >
+        Pipeline state and lifecycle metadata for a job application contract.
+        Models the full arc from application submission through offer acceptance
+        to onboarding. Structured document tracking (submitted_documents) replaces
+        free-text document notes to enable automated checklist verification. The
+        offer_status and onboarding_status fields are explicit enumerations so
+        BAP and BPP can drive workflow state machines without parsing free text.
+        employee_id is disclosed only post-acceptance (MUST NOT appear before
+        ACCEPTED stage).
+      properties:
+        application_reference:
+          type: string
+          description: Business reference number (distinct from Beckn Contract id).
+          x-jsonld-id: "jaca:application_reference"
+        application_date:
+          type: string
+          format: date-time
+          description: Date and time the application was submitted.
+          x-jsonld-id: "jaca:application_date"
+        stage:
+          type: string
+          enum: [APPLIED, SCREENING, INTERVIEW, ASSESSMENT, OFFER_ISSUED, ACCEPTED, REJECTED, WITHDRAWN]
+          description: Current stage in the hiring pipeline.
+          x-jsonld-id: "jaca:stage"
+        rejection_reason:
+          type: string
+          description: Reason for rejection if stage is REJECTED.
+          x-jsonld-id: "jaca:rejection_reason"
+        notes:
+          type: string
+          description: Free-text notes from the recruiter.
+          x-jsonld-id: "jaca:notes"
+        prerequisite_verification_summary:
+          $ref: "../../../../common/VerificationSummary/v2.1/attributes.yaml#/components/schemas/VerificationSummary"
+          description: Outcome of credential verification checks.
+          x-jsonld-id: "jaca:prerequisite_verification_summary"
+        identity_reference:
+          type: string
+          description: >
+            Reference to the candidate's identity document or DID. PII —
+            MUST NOT appear in on_discover responses.
+          x-pii-disclosure-stage: init
+          x-jsonld-id: "jaca:identity_reference"
+        submitted_documents:
+          type: array
+          items:
+            $ref: "#/components/schemas/SubmittedDocument"
+          description: >
+            Documents submitted by the candidate as part of the application.
+            Stage-gated: upload_url fields within documents MUST be redacted
+            at on_discover and on_search.
+          x-jsonld-id: "jaca:submitted_documents"
+        offer_reference:
+          type: string
+          description: Reference to the specific offer extended to the candidate.
+          x-jsonld-id: "jaca:offer_reference"
+        offer_status:
+          type: string
+          enum: [PENDING, ACCEPTED, DECLINED, LAPSED]
+          description: >
+            Status of the job offer extended to the candidate. Explicit enum
+            enables offer-acceptance workflow automation without free-text parsing.
+          x-jsonld-id: "jaca:offer_status"
+        acceptance_timestamp:
+          type: string
+          format: date-time
+          description: Date and time the candidate accepted the offer.
+          x-jsonld-id: "jaca:acceptance_timestamp"
+        onboarding_status:
+          type: string
+          enum: [NOT_STARTED, IN_PROGRESS, COMPLETED, CANCELLED]
+          description: Current status of the post-acceptance onboarding process.
+          x-jsonld-id: "jaca:onboarding_status"
+        employee_id:
+          type: string
+          description: >
+            Employee ID assigned post-joining. MUST NOT be disclosed before
+            ACCEPTED stage. PII — stage-gated.
+          x-pii-disclosure-stage: confirm
+          x-jsonld-id: "jaca:employee_id"

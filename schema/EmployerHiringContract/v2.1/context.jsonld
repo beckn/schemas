@@ -1,0 +1,117 @@
+{
+  "@context": {
+    "ehca": "https://schema.beckn.io/EmployerHiringContract#",
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "hiringStage": {
+      "@id": "ehca:hiringStage"
+    },
+    "engagementType": {
+      "@id": "ehca:engagementType"
+    },
+    "agreedStartDate": {
+      "@id": "ehca:agreedStartDate",
+      "@type": "xsd:date"
+    },
+    "agreedSalary": {
+      "@id": "ehca:agreedSalary",
+      "@type": "xsd:decimal"
+    },
+    "agreedSalaryCurrency": {
+      "@id": "ehca:agreedSalaryCurrency"
+    },
+    "agreedSalaryPeriod": {
+      "@id": "ehca:agreedSalaryPeriod"
+    },
+    "agreedWorkMode": {
+      "@id": "ehca:agreedWorkMode"
+    },
+    "agreedLocationCity": {
+      "@id": "ehca:agreedLocationCity"
+    },
+    "contractDurationMonths": {
+      "@id": "ehca:contractDurationMonths",
+      "@type": "xsd:integer"
+    },
+    "probationPeriodDays": {
+      "@id": "ehca:probationPeriodDays",
+      "@type": "xsd:integer"
+    },
+    "noticePeriodDays": {
+      "@id": "ehca:noticePeriodDays",
+      "@type": "xsd:integer"
+    },
+    "offerExpiryDate": {
+      "@id": "ehca:offerExpiryDate",
+      "@type": "xsd:dateTime"
+    },
+    "offerReference": {
+      "@id": "ehca:offerReference"
+    },
+    "rejectionReason": {
+      "@id": "ehca:rejectionReason"
+    },
+    "prerequisiteVerificationSummary": {
+      "@id": "ehca:prerequisiteVerificationSummary",
+      "@type": "@id"
+    },
+    "overallResult": {
+      "@id": "ehca:overallResult"
+    },
+    "checkedAt": {
+      "@id": "ehca:checkedAt",
+      "@type": "xsd:dateTime"
+    },
+    "notes": {
+      "@id": "ehca:notes"
+    },
+    "HiringStage": "ehca:HiringStage",
+    "VerificationResult": "ehca:VerificationResult",
+    "hiring_stage": {
+      "@id": "ehca:hiringStage"
+    },
+    "engagement_type": {
+      "@id": "ehca:engagementType"
+    },
+    "agreed_start_date": {
+      "@id": "ehca:agreedStartDate"
+    },
+    "agreed_salary": {
+      "@id": "ehca:agreedSalary"
+    },
+    "agreed_salary_currency": {
+      "@id": "ehca:agreedSalaryCurrency"
+    },
+    "agreed_salary_period": {
+      "@id": "ehca:agreedSalaryPeriod"
+    },
+    "agreed_work_mode": {
+      "@id": "ehca:agreedWorkMode"
+    },
+    "agreed_location_city": {
+      "@id": "ehca:agreedLocationCity"
+    },
+    "contract_duration_months": {
+      "@id": "ehca:contractDurationMonths"
+    },
+    "probation_period_days": {
+      "@id": "ehca:probationPeriodDays"
+    },
+    "notice_period_days": {
+      "@id": "ehca:noticePeriodDays"
+    },
+    "offer_expiry_date": {
+      "@id": "ehca:offerExpiryDate"
+    },
+    "offer_reference": {
+      "@id": "ehca:offerReference"
+    },
+    "rejection_reason": {
+      "@id": "ehca:rejectionReason"
+    },
+    "prerequisite_verification_summary": {
+      "@id": "ehca:prerequisiteVerificationSummary"
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+  "@context": {
+    "hppa": "https://schema.beckn.io/HiringProcessPerformance#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "skos": "http://www.w3.org/2004/02/skos/core#"
+  },
+  "@graph": [
+    {
+      "@id": "hppa:ProcessStep",
+      "@type": "skos:ConceptScheme",
+      "rdfs:label": "Hiring Process Step Type",
+      "skos:hasTopConcept": [
+        {
+          "@id": "hppa:CV_REVIEW",
+          "skos:prefLabel": "CV Review"
+        },
+        {
+          "@id": "hppa:TELEPHONIC",
+          "skos:prefLabel": "Telephonic Screen"
+        },
+        {
+          "@id": "hppa:VIDEO",
+          "skos:prefLabel": "Video Interview"
+        },
+        {
+          "@id": "hppa:WRITTEN_TEST",
+          "skos:prefLabel": "Written Test"
+        },
+        {
+          "@id": "hppa:TECHNICAL_TEST",
+          "skos:prefLabel": "Technical Assessment"
+        },
+        {
+          "@id": "hppa:BACKGROUND_CHECK",
+          "skos:prefLabel": "Background Check"
+        },
+        {
+          "@id": "hppa:REFERENCE_CHECK",
+          "skos:prefLabel": "Reference Check"
+        },
+        {
+          "@id": "hppa:OFFER_EXTENDED",
+          "skos:prefLabel": "Offer Extended"
+        },
+        {
+          "@id": "hppa:OTHER",
+          "skos:prefLabel": "Other"
+        }
+      ]
+    },
+    {
+      "@id": "hppa:StepResult",
+      "@type": "skos:ConceptScheme",
+      "rdfs:label": "Process Step Result",
+      "skos:hasTopConcept": [
+        {
+          "@id": "hppa:PASS",
+          "skos:prefLabel": "Pass"
+        },
+        {
+          "@id": "hppa:FAIL",
+          "skos:prefLabel": "Fail"
+        },
+        {
+          "@id": "hppa:ON_HOLD",
+          "skos:prefLabel": "On Hold \u2014 deferred"
+        },
+        {
+          "@id": "hppa:PENDING",
+          "skos:prefLabel": "Pending \u2014 not yet evaluated"
+        }
+      ]
+    },
+    {
+      "@id": "hppa:InterviewFormat",
+      "@type": "skos:ConceptScheme",
+      "rdfs:label": "Interview Format",
+      "skos:hasTopConcept": [
+        {
+          "@id": "hppa:ONE_ON_ONE",
+          "skos:prefLabel": "One-on-One"
+        },
+        {
+          "@id": "hppa:PANEL",
+          "skos:prefLabel": "Panel Interview"
+        },
+        {
+          "@id": "hppa:ASYNC",
+          "skos:prefLabel": "Async / Pre-recorded"
+        },
+        {
+          "@id": "hppa:AUTOMATED",
+          "skos:prefLabel": "Automated Assessment"
+        }
+      ]
+    }
+  ]
+}

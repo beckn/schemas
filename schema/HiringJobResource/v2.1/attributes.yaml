@@ -1,0 +1,131 @@
+openapi: 3.1.1
+info:
+  title: HiringJobResource
+  version: "2.1.0"
+  description: Extension attributes for a job vacancy Resource in the Beckn hiring domain.
+
+components:
+  schemas:
+    HiringJobResource:
+      type: object
+      x-beckn-container: resourceAttributes
+      x-status: under-review
+      x-tags:
+        - hiring
+        - hiring-jobs
+        - resource
+        - transport-hiring
+      x-jsonld:
+        "@context": "https://schema.beckn.io/HiringJobResource/v2.1/context.jsonld"
+        "@type": "hjra:HiringJobResource"
+      description: >
+        Intrinsic metadata about a job vacancy. Compensation terms live in
+        HiringJobOffer. JobLocation is sourced from hiring-common to support
+        both city/region text filters and GeoJSON spatial queries — see
+        hiring-common/JobLocation for design rationale. Shift and schedule fields
+        are placed here rather than in the Offer because they describe the nature
+        of the work, not the compensation package, and must be visible at
+        discovery (on_discover) for effective job-seeker filtering.
+      properties:
+        job_title:
+          type: string
+          description: Title of the job position.
+          x-jsonld-id: "hjra:job_title"
+        job_type:
+          type: string
+          enum: [FULL_TIME, PART_TIME, CONTRACT, INTERNSHIP, GIG]
+          description: Employment engagement type.
+          x-jsonld-id: "hjra:job_type"
+        work_mode:
+          type: string
+          enum: [ONSITE, REMOTE, HYBRID]
+          description: Physical location model for the role.
+          x-jsonld-id: "hjra:work_mode"
+        location:
+          $ref: "../../../hiring-common/JobLocation/v2.1/attributes.yaml#/components/schemas/JobLocation"
+          description: Work location using the shared JobLocation type.
+          x-jsonld-id: "hjra:location"
+        shift_type:
+          type: string
+          enum: [NO_SHIFT, MORNING, AFTERNOON, NIGHT, ROTATING, SPLIT, FLEXIBLE]
+          default: NO_SHIFT
+          description: >
+            Shift pattern for the role. Defaults to NO_SHIFT for standard
+            9-to-5 or office-hours roles. Explicitly modelled here (not in the
+            Offer) because shift requirements are a primary discovery filter for
+            many job seekers (e.g. drivers, healthcare workers, logistics staff).
+          x-jsonld-id: "hjra:shift_type"
+        working_hours:
+          type: string
+          description: >
+            Human-readable working hours description (e.g. "8am–4pm Mon–Sat",
+            "24x7 rotational"). Supplement to shift_type for richer display.
+          x-jsonld-id: "hjra:working_hours"
+        contract_duration:
+          type: string
+          description: >
+            ISO 8601 duration string for fixed-term roles (e.g. P6M for 6 months,
+            P1Y for 1 year). Omit for permanent/open-ended engagements.
+          x-jsonld-id: "hjra:contract_duration"
+        experience_level:
+          type: string
+          enum: [FRESHER, JUNIOR, MID, SENIOR, LEAD]
+          description: Required seniority level.
+          x-jsonld-id: "hjra:experience_level"
+        min_experience_years:
+          type: number
+          minimum: 0
+          description: Minimum years of relevant experience.
+          x-jsonld-id: "hjra:min_experience_years"
+        max_experience_years:
+          type: number
+          minimum: 0
+          description: Maximum years of experience (upper bound).
+          x-jsonld-id: "hjra:max_experience_years"
+        skills_required:
+          type: array
+          items:
+            type: string
+          description: Skill names required for this role.
+          x-jsonld-id: "hjra:skills_required"
+        requirements:
+          type: array
+          items:
+            $ref: "../../../../common/CredentialRequirement/v2.1/attributes.yaml#/components/schemas/CredentialRequirement"
+          description: Credential or certification prerequisites.
+          x-jsonld-id: "hjra:requirements"
+        industry_type:
+          $ref: "../../../../common/CodedValue/v2.1/attributes.yaml#/components/schemas/CodedValue"
+          description: Industry classification (e.g. ISIC authority code).
+          x-jsonld-id: "hjra:industry_type"
+        functional_area:
+          type: string
+          description: Department or functional area (e.g. Engineering, Finance).
+          x-jsonld-id: "hjra:functional_area"
+        vacancy_count:
+          type: integer
+          minimum: 1
+          description: Number of open positions.
+          x-jsonld-id: "hjra:vacancy_count"
+        is_urgent:
+          type: boolean
+          description: Whether the role has urgent hiring priority.
+          x-jsonld-id: "hjra:is_urgent"
+        application_deadline:
+          type: string
+          format: date-time
+          description: Last date and time to submit applications.
+          x-jsonld-id: "hjra:application_deadline"
+        application_instructions:
+          type: string
+          description: >
+            Instructions for applying. SHOULD NOT appear in on_discover responses;
+            revealed at on_select or later stages only.
+          x-pii-disclosure-stage: on_select
+          x-jsonld-id: "hjra:application_instructions"
+        operator_reputation:
+          $ref: "../../../hiring-common/ReputationSummary/v2.1/attributes.yaml#/components/schemas/ReputationSummary"
+          description: >
+            Attested reputation summary for the hiring organisation. Safe at
+            discovery stage — no PII.
+          x-jsonld-id: "hjra:operator_reputation"

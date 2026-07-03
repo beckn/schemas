@@ -1,0 +1,63 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "jaca": "https://schema.beckn.io/JobApplicationContract#",
+    "JobApplicationContract": "jaca:JobApplicationContract",
+    "SubmittedDocument": "jaca:SubmittedDocument",
+    "application_reference": {
+      "@id": "jaca:application_reference"
+    },
+    "application_date": {
+      "@id": "jaca:application_date"
+    },
+    "stage": {
+      "@id": "jaca:stage"
+    },
+    "rejection_reason": {
+      "@id": "jaca:rejection_reason"
+    },
+    "notes": {
+      "@id": "jaca:notes"
+    },
+    "prerequisite_verification_summary": {
+      "@id": "jaca:prerequisite_verification_summary"
+    },
+    "identity_reference": {
+      "@id": "jaca:identity_reference"
+    },
+    "submitted_documents": {
+      "@id": "jaca:submitted_documents"
+    },
+    "document_type": {
+      "@id": "jaca:document_type"
+    },
+    "document_reference": {
+      "@id": "jaca:document_reference"
+    },
+    "upload_url": {
+      "@id": "jaca:upload_url"
+    },
+    "verified": {
+      "@id": "jaca:verified"
+    },
+    "offer_reference": {
+      "@id": "jaca:offer_reference"
+    },
+    "offer_status": {
+      "@id": "jaca:offer_status"
+    },
+    "acceptance_timestamp": {
+      "@id": "jaca:acceptance_timestamp"
+    },
+    "onboarding_status": {
+      "@id": "jaca:onboarding_status"
+    },
+    "employee_id": {
+      "@id": "jaca:employee_id"
+    },
+    "ApplicationStage": "jaca:ApplicationStage",
+    "OfferStatus": "jaca:OfferStatus",
+    "OnboardingStatus": "jaca:OnboardingStatus"
+  }
+}
