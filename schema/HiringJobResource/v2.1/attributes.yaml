@@ -42,7 +42,7 @@ components:
           description: Physical location model for the role.
           x-jsonld-id: "hjra:work_mode"
         location:
-          $ref: "../../../hiring-common/JobLocation/v2.1/attributes.yaml#/components/schemas/JobLocation"
+          $ref: "https://schema.beckn.io/JobLocation/v2.1/attributes.yaml#/components/schemas/JobLocation"
           description: Work location using the shared JobLocation type.
           x-jsonld-id: "hjra:location"
         shift_type:
@@ -91,11 +91,11 @@ components:
         requirements:
           type: array
           items:
-            $ref: "../../../../common/CredentialRequirement/v2.1/attributes.yaml#/components/schemas/CredentialRequirement"
+            $ref: "https://schema.beckn.io/CredentialRequirement/v2.1/attributes.yaml#/components/schemas/CredentialRequirement"
           description: Credential or certification prerequisites.
           x-jsonld-id: "hjra:requirements"
         industry_type:
-          $ref: "../../../../common/CodedValue/v2.1/attributes.yaml#/components/schemas/CodedValue"
+          $ref: "https://schema.beckn.io/CodedValue/v2.1/attributes.yaml#/components/schemas/CodedValue"
           description: Industry classification (e.g. ISIC authority code).
           x-jsonld-id: "hjra:industry_type"
         functional_area:
@@ -124,7 +124,7 @@ components:
           x-pii-disclosure-stage: on_select
           x-jsonld-id: "hjra:application_instructions"
         operator_reputation:
-          $ref: "../../../hiring-common/ReputationSummary/v2.1/attributes.yaml#/components/schemas/ReputationSummary"
+          $ref: "https://schema.beckn.io/ReputationSummary/v2.1/attributes.yaml#/components/schemas/ReputationSummary"
           description: >
             Attested reputation summary for the hiring organisation. Safe at
             discovery stage — no PII.

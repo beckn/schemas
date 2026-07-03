@@ -148,7 +148,7 @@ components:
           description: "Legacy: qualitative notes on the primary step outcome."
           x-jsonld-id: "japa:result_notes"
         verification_summary:
-          $ref: "../../../../common/VerificationSummary/v2.1/attributes.yaml#/components/schemas/VerificationSummary"
+          $ref: "https://schema.beckn.io/VerificationSummary/v2.1/attributes.yaml#/components/schemas/VerificationSummary"
           description: Credential verification outcome during this performance cycle.
           x-jsonld-id: "japa:verification_summary"
         next_step:

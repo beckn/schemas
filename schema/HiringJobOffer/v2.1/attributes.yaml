@@ -30,7 +30,7 @@ components:
         hiring verticals (transport, construction, hospitality).
       properties:
         salary_specification:
-          $ref: "../../../hiring-common/SalarySpecification/v2.1/attributes.yaml#/components/schemas/SalarySpecification"
+          $ref: "https://schema.beckn.io/SalarySpecification/v2.1/attributes.yaml#/components/schemas/SalarySpecification"
           description: Structured salary range with currency and period.
           x-jsonld-id: "hjoa:salary_specification"
         benefits:
