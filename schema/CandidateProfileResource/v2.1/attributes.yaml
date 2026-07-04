@@ -162,11 +162,11 @@ components:
           description: Candidate's preferred work arrangement
           x-jsonld-id: "cpra:preferredWorkMode"
         preferred_location:
-          $ref: "../../../hiring-common/JobLocation/v2.1/attributes.yaml#/components/schemas/JobLocation"
+          $ref: "https://schema.beckn.io/JobLocation/v2.1/attributes.yaml#/components/schemas/JobLocation"
           description: Candidate's preferred work location (city/region level or geo-spatial)
           x-jsonld-id: "cpra:preferredLocation"
         current_location:
-          $ref: "../../../hiring-common/JobLocation/v2.1/attributes.yaml#/components/schemas/JobLocation"
+          $ref: "https://schema.beckn.io/JobLocation/v2.1/attributes.yaml#/components/schemas/JobLocation"
           description: Candidate's current location (city/country level only — not precise)
           x-jsonld-id: "cpra:currentLocation"
         relocation_willing:
@@ -200,7 +200,7 @@ components:
           description: Preferred job functions (e.g. Engineering, Marketing)
           x-jsonld-id: "cpra:functionalAreaPreference"
         expected_salary:
-          $ref: "../../../hiring-common/SalarySpecification/v2.1/attributes.yaml#/components/schemas/SalarySpecification"
+          $ref: "https://schema.beckn.io/SalarySpecification/v2.1/attributes.yaml#/components/schemas/SalarySpecification"
           description: Expected salary range with currency and period
           x-jsonld-id: "cpra:expectedSalary"
         languages:
@@ -217,7 +217,7 @@ components:
           description: Job engagement types the candidate is open to
           x-jsonld-id: "cpra:openToJobTypes"
         reputation_summary:
-          $ref: "../../../hiring-common/ReputationSummary/v2.1/attributes.yaml#/components/schemas/ReputationSummary"
+          $ref: "https://schema.beckn.io/ReputationSummary/v2.1/attributes.yaml#/components/schemas/ReputationSummary"
           description: >
             Attested reputation summary for this candidate, sourced from
             network-verified ratings. Safe at discovery stage — no PII.

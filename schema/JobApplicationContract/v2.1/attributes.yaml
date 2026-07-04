@@ -84,7 +84,7 @@ components:
           description: Free-text notes from the recruiter.
           x-jsonld-id: "jaca:notes"
         prerequisite_verification_summary:
-          $ref: "../../../../common/VerificationSummary/v2.1/attributes.yaml#/components/schemas/VerificationSummary"
+          $ref: "https://schema.beckn.io/VerificationSummary/v2.1/attributes.yaml#/components/schemas/VerificationSummary"
           description: Outcome of credential verification checks.
           x-jsonld-id: "jaca:prerequisite_verification_summary"
         identity_reference:
