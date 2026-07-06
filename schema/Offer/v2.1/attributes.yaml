@@ -35,7 +35,7 @@ components:
           type: array
           description: References (IDs) to resources covered by this offer.
           items:
-            $ref: '#/components/schemas/Resource/properties/id'
+            $ref: https://schema.beckn.io/Resource/v2.0/attributes.yaml#/components/schemas/Resource/properties/id
         addOns:
           type: array
           description: IDs of optional extra Offers or Resources that can be attached.
@@ -44,7 +44,7 @@ components:
         considerationIds:
           type: array
           items:
-            $ref: '#/components/schemas/Consideration/properties/id'
+            $ref: https://schema.beckn.io/Consideration/v2.0/attributes.yaml#/components/schemas/Consideration/properties/id
         fulfillmentIds:
           description: Details regarding the fulfillment of this offer
           $ref: https://schema.beckn.io/Consideration/v2.0/attributes.yaml#/components/schemas/Consideration
