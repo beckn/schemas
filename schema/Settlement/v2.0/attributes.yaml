@@ -17,7 +17,7 @@ components:
         id:
           type: string
         considerationId:
-          $ref: '#/components/schemas/Consideration/properties/id'
+          $ref: https://schema.beckn.io/Consideration/v2.0/attributes.yaml#/components/schemas/Consideration/properties/id
         status:
           type: string
           enum:
