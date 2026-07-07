@@ -329,6 +329,7 @@ domain schema exists. |
 | [Plan](https://schema.beckn.io/Plan/README.md) | v2.0 | A journey planning response containing one or more itinerary options for a given trip request. |
 | [PlanningResult](https://schema.beckn.io/PlanningResult/README.md) | v2.0 | The output of a MaaS platform planning request, listing available transport options for a requested trip. |
 | [Policy](https://schema.beckn.io/Policy/README.md) | v2.0 | Schema definition for Policy in the Beckn Protocol v2.0.1 |
+| [PriceComponent](https://schema.beckn.io/PriceComponent/README.md) | v2.2 | A single line item within a PriceSpecification breakup, such as a base charge, tax, delivery cost, discount, fee, or surcharge. Beyond the monetary amount, a PriceComponent MAY carry a JSON-LD componentAttributes bag that richly describes why the component applies, how it is calculated, and any governing terms. This lets a receiving node render or act on the line without performing any price computation of its own. |
 | [PriceSpecification](https://schema.beckn.io/PriceSpecification/README.md) | v2.1 | Schema definition for PriceSpecification in the Beckn Protocol v2.0.1 |
 | [ProcessingNotice](https://schema.beckn.io/ProcessingNotice/README.md) | v2.0 | Schema definition for ProcessingNotice in the Beckn Protocol v2.0.1 |
 | [Prognosis](https://schema.beckn.io/Prognosis/README.md) | v2.0 | A real-time prediction of a vehicle's arrival or departure time at a stop, including an indication of prediction confidence. |
