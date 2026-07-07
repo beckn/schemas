@@ -42,10 +42,6 @@
       "description": "Items available for discovery from this provider",
       "$ref": "https://schema.beckn.io/Item/v2.1/schema.json"
     },
-    "fulfillments": {
-      "description": "Fulfillment options offered by this provider",
-      "$ref": "https://schema.beckn.io/Fulfillment/v2.1/schema.json"
-    },
     "ratingsTotal": {
       "description": "Total number of ratings received",
       "type": "number"

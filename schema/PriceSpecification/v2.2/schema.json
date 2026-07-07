@@ -1,0 +1,38 @@
+{
+  "$id": "https://schema.beckn.io/PriceSpecification/v2.2",
+  "x-iri": "https://schema.beckn.io/PriceSpecification/v2.2",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Schema definition for PriceSpecification in the Beckn Protocol v2.0.1",
+  "title": "PriceSpecification",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "currency": {
+      "type": "string",
+      "description": "ISO 4217 code"
+    },
+    "value": {
+      "type": "number",
+      "description": "Total value for this price specification"
+    },
+    "applicableQuantity": {
+      "$ref": "https://schema.beckn.io/Quantity/v2.0/schema.json",
+      "x-jsonld": {
+        "@id": "schema:eligibleQuantity"
+      }
+    },
+    "components": {
+      "type": "array",
+      "description": "Optional itemised breakup of this price (base charge, tax, delivery, discount, fee, surcharge). Each element is a PriceComponent, which may carry a JSON-LD componentAttributes bag describing the rationale, calculation, and terms of the line.",
+      "items": {
+        "$ref": "https://schema.beckn.io/PriceComponent/v2.2/schema.json"
+      }
+    }
+  },
+  "x-jsonld": {
+    "@id": "schema:PriceSpecification"
+  },
+  "x-tags": [
+    "common"
+  ]
+}

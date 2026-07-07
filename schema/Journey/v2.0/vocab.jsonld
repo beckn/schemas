@@ -136,7 +136,7 @@
         "@language": "en"
       },
       "rdfs:comment": {
-        "@value": "Unique identifier for the contract",
+        "@value": "Unique identifier for the journey",
         "@language": "en"
       },
       "rdfs:domain": {
@@ -157,7 +157,7 @@
         "@language": "en"
       },
       "rdfs:comment": {
-        "@value": "Human-readable description of the contract",
+        "@value": "Human-readable description of the journey",
         "@language": "en"
       },
       "rdfs:domain": {
@@ -165,60 +165,6 @@
       },
       "rdfs:range": {
         "@id": "https://schema.beckn.io/core/v2.0/#Descriptor"
-      }
-    },
-    {
-      "@id": "beckn:items",
-      "@type": "rdf:Property",
-      "rdfs:label": {
-        "@value": "items",
-        "@language": "en"
-      },
-      "rdfs:comment": {
-        "@value": "Line items within the contract",
-        "@language": "en"
-      },
-      "rdfs:domain": {
-        "@id": "beckn:Journey"
-      },
-      "rdfs:range": {
-        "@id": "https://schema.beckn.io/core/v2.0/#ContractItem"
-      }
-    },
-    {
-      "@id": "beckn:fulfillments",
-      "@type": "rdf:Property",
-      "rdfs:label": {
-        "@value": "fulfillments",
-        "@language": "en"
-      },
-      "rdfs:comment": {
-        "@value": "Fulfillments associated with this contract",
-        "@language": "en"
-      },
-      "rdfs:domain": {
-        "@id": "beckn:Journey"
-      },
-      "rdfs:range": {
-        "@id": "https://schema.beckn.io/core/v2.0/#Fulfillment"
-      }
-    },
-    {
-      "@id": "beckn:state",
-      "@type": "rdf:Property",
-      "rdfs:label": {
-        "@value": "state",
-        "@language": "en"
-      },
-      "rdfs:comment": {
-        "@value": "Current state of the contract",
-        "@language": "en"
-      },
-      "rdfs:domain": {
-        "@id": "beckn:Journey"
-      },
-      "rdfs:range": {
-        "@id": "https://schema.beckn.io/core/v2.0/#State"
       }
     }
   ]

@@ -1,0 +1,103 @@
+{
+  "$id": "https://schema.beckn.io/PriceComponent/v2.2",
+  "x-iri": "https://schema.beckn.io/PriceComponent/v2.2",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PriceComponent",
+  "description": "A single line item within a PriceSpecification breakup, such as a base charge, tax, delivery cost, discount, fee, or surcharge. Beyond the monetary amount, a PriceComponent MAY carry a JSON-LD `componentAttributes` bag that richly describes why the component applies, how it is calculated, and any governing terms. This lets a receiving node render or act on the line (for example, highlight a surge charge or notify the user) without performing any price computation of its own.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The nature of this price component.",
+      "enum": [
+        "UNIT",
+        "RENTAL",
+        "USAGE",
+        "OVERAGE",
+        "TAX",
+        "WITHHOLDING_TAX",
+        "DELIVERY",
+        "HANDLING_FEE",
+        "PACKAGING_FEE",
+        "INSTALLATION_FEE",
+        "FUEL_SURCHARGE",
+        "TOLL",
+        "WAITING_CHARGE",
+        "FEE",
+        "SERVICE_FEE",
+        "SERVICE_CHARGE",
+        "PROCESSING_FEE",
+        "CONVENIENCE_FEE",
+        "PLATFORM_FEE",
+        "BOOKING_FEE",
+        "SETUP_FEE",
+        "MEMBERSHIP_FEE",
+        "SUBSCRIPTION_FEE",
+        "COMMISSION",
+        "FOREIGN_TRANSACTION_FEE",
+        "MINIMUM_ORDER_FEE",
+        "REGULATORY_FEE",
+        "ENVIRONMENTAL_FEE",
+        "SURCHARGE",
+        "SURGE",
+        "COVER_CHARGE",
+        "PENALTY",
+        "CANCELLATION_FEE",
+        "LATE_FEE",
+        "NO_SHOW_FEE",
+        "DISCOUNT",
+        "PROMOTION",
+        "COUPON",
+        "VOUCHER",
+        "CASHBACK",
+        "LOYALTY_REDEMPTION",
+        "CREDIT",
+        "REFUND",
+        "DEPOSIT_REFUNDABLE",
+        "DEPOSIT_NON_REFUNDABLE",
+        "ADVANCE",
+        "DOWN_PAYMENT",
+        "PRINCIPAL",
+        "INTEREST",
+        "INSTALLMENT",
+        "TRANCHE",
+        "CARRY_FORWARD",
+        "WALLET",
+        "CHARGEBACK",
+        "SETTLEMENT",
+        "INSURANCE",
+        "WARRANTY",
+        "TIP",
+        "DONATION",
+        "ROUNDING",
+        "ADJUSTMENT",
+        "SUBTOTAL",
+        "TOTAL",
+        "OTHER"
+      ]
+    },
+    "value": {
+      "type": "number",
+      "description": "Monetary amount of this component, expressed in `currency`."
+    },
+    "currency": {
+      "type": "string",
+      "description": "ISO 4217 currency code for `value`."
+    },
+    "description": {
+      "type": "string",
+      "description": "Human-readable label for this component."
+    },
+    "componentAttributes": {
+      "description": "JSON-LD aware container describing the rationale, calculation basis, and governing terms of this price component (for example a SurgeMultiplier, a FareLegRule with TariffZones, or a tax jurisdiction). Follows the same composability rules as Attributes: MUST include @context and @type; any further properties are interpreted per the provided context.",
+      "$ref": "https://schema.beckn.io/Attributes/v2.0/schema.json"
+    }
+  },
+  "additionalProperties": false,
+  "x-jsonld": {
+    "@id": "beckn:PriceComponent"
+  },
+  "x-tags": [
+    "common"
+  ]
+}

@@ -23,7 +23,7 @@ A specific ride-hailing vehicle category and pricing option presented to a passe
 | `estimatedArrival` | no | string | Estimated vehicle arrival time at the pickup point |
 | `estimatedDuration` | no | string | Estimated trip duration |
 | `estimatedDistance` | no | number | Estimated trip distance in kilometres |
-| `pricingModel` | no | $ref: https://schema.beckn.io/PricingModel/v2.0/attributes.yaml#/components/schemas/PricingModel | Pricing model applicable to this ride option |
+| `pricingModel` | no | $ref: https://schema.beckn.io/SystemPricingPlan/v2.0/attributes.yaml#/components/schemas/SystemPricingPlan | Pricing model applicable to this ride option |
 | `id` | no | string | Unique identifier for the offer |
 | `descriptor` | no | $ref: https://schema.beckn.io/core/v2.0/Descriptor/attributes.yaml#components/schemas/Descriptor | Human-readable description of the offer |
 | `price` | no | $ref: https://schema.beckn.io/PriceSpecification/v2.1/attributes.yaml#/components/schemas/PriceSpecification | Price specification for this offer |

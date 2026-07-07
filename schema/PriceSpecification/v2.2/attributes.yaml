@@ -1,0 +1,38 @@
+openapi: 3.1.1
+info:
+  title: PriceSpecification
+  version: 2.2.0
+  description: Schema definition for PriceSpecification in the Beckn Protocol v2.0.1
+  license:
+    name: CC-BY-NC-SA 4.0 International
+  contact:
+    name: Beckn Labs
+    url: https://beckn.io
+components:
+  schemas:
+    PriceSpecification:
+      x-iri: https://schema.beckn.io/PriceSpecification/v2.2
+      description: Schema definition for PriceSpecification in the Beckn Protocol v2.0.1
+      title: PriceSpecification
+      type: object
+      additionalProperties: true
+      properties:
+        currency:
+          type: string
+          description: ISO 4217 code
+        value:
+          type: number
+          description: Total value for this price specification
+        applicableQuantity:
+          $ref: https://schema.beckn.io/Quantity/v2.0/attributes.yaml#/components/schemas/Quantity
+          x-jsonld:
+            '@id': schema:eligibleQuantity
+        components:
+          type: array
+          description: Optional itemised breakup of this price (base charge, tax, delivery, discount, fee, surcharge). Each element is a PriceComponent, which may carry a JSON-LD componentAttributes bag describing the rationale, calculation, and terms of the line.
+          items:
+            $ref: https://schema.beckn.io/PriceComponent/v2.2/attributes.yaml#/components/schemas/PriceComponent
+      x-jsonld:
+        '@id': schema:PriceSpecification
+      x-tags:
+      - common

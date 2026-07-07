@@ -57,9 +57,6 @@ components:
         agent:
           description: The entity responsible for performing the fulfillment
           $ref: https://schema.beckn.io/FulfillmentAgent/v2.0/attributes.yaml#/components/schemas/FulfillmentAgent
-        state:
-          description: Current state of the fulfillment
-          $ref: https://schema.beckn.io/State/v2.0/attributes.yaml#/components/schemas/State
         participants:
           description: Participants entitled to receive this fulfillment
           $ref: https://schema.beckn.io/Participant/v2.0/attributes.yaml#/components/schemas/Participant

@@ -40,18 +40,9 @@ components:
           description: Ordered list of legs comprising this journey
           $ref: https://schema.beckn.io/Leg/v2.0/attributes.yaml#/components/schemas/Leg
         id:
-          description: Unique identifier for the contract
+          description: Unique identifier for the journey
           type: string
         descriptor:
-          description: Human-readable description of the contract
+          description: Human-readable description of the journey
           $ref: https://schema.beckn.io/Descriptor/v2.0/attributes.yaml#/components/schemas/Descriptor
-        items:
-          description: Line items within the contract
-          $ref: https://schema.beckn.io/ContractItem/v2.0/attributes.yaml#/components/schemas/ContractItem
-        fulfillments:
-          description: Fulfillments associated with this contract
-          $ref: https://schema.beckn.io/Fulfillment/v2.1/attributes.yaml#/components/schemas/Fulfillment
-        state:
-          description: Current state of the contract
-          $ref: https://schema.beckn.io/State/v2.0/attributes.yaml#/components/schemas/State
       additionalProperties: false

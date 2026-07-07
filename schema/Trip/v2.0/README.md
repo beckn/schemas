@@ -27,8 +27,5 @@ A confirmed and booked journey from an origin to a destination, representing a c
 | `distance` | no | number | Total distance of the trip in kilometres |
 | `driverRef` | no | $ref: https://schema.beckn.io/Driver/v2.0/attributes.yaml#/components/schemas/Driver | Reference to the driver for this trip |
 | `vehicleRef` | no | $ref: https://schema.beckn.io/Vehicle/v2.0/attributes.yaml#/components/schemas/Vehicle | Reference to the vehicle for this trip |
-| `id` | no | string | Unique identifier for the contract |
-| `descriptor` | no | $ref: https://schema.beckn.io/core/v2.0/Descriptor/attributes.yaml#components/schemas/Descriptor | Human-readable description of the contract |
-| `items` | no | $ref: https://schema.beckn.io/ContractItem/v2.0/attributes.yaml#/components/schemas/ContractItem | Line items within the contract |
-| `fulfillments` | no | $ref: https://schema.beckn.io/Fulfillment/v2.1/attributes.yaml#/components/schemas/Fulfillment | Fulfillments associated with this contract |
-| `state` | no | $ref: https://schema.beckn.io/State/v2.0/attributes.yaml#/components/schemas/State | Current state of the contract |
+| `id` | no | string | Unique identifier for the trip |
+| `descriptor` | no | $ref: https://schema.beckn.io/core/v2.0/Descriptor/attributes.yaml#components/schemas/Descriptor | Human-readable description of the trip |

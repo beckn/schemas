@@ -29,7 +29,6 @@ A specific operational instance of a vehicle traveling a defined route at a sche
 | `type` | no | string | Type of fulfillment (extensible term) |
 | `agent` | no | $ref: https://schema.beckn.io/FulfillmentAgent/v2.0/attributes.yaml#/components/schemas/FulfillmentAgent | The entity responsible for performing the fulfillment |
 | `mode` | no | $ref: https://schema.beckn.io/FulfillmentMode/v2.0/attributes.yaml#/components/schemas/FulfillmentMode | Mode of fulfillment |
-| `state` | no | $ref: https://schema.beckn.io/State/v2.0/attributes.yaml#/components/schemas/State | Current state of the fulfillment |
 | `participants` | no | $ref: https://schema.beckn.io/Participant/v2.0/attributes.yaml#/components/schemas/Participant | Participants entitled to receive this fulfillment |
 | `stages` | no | $ref: https://schema.beckn.io/FulfillmentStage/v2.0/attributes.yaml#/components/schemas/FulfillmentStage | Stages in the fulfillment lifecycle |
 | `instructions` | no | $ref: https://schema.beckn.io/core/v2.0/Descriptor/attributes.yaml#components/schemas/Descriptor | Instructions for fulfillment |

@@ -12,7 +12,6 @@
     "type": "beckn:type",
     "agent": "beckn:agent",
     "mode": "beckn:mode",
-    "state": "beckn:state",
     "participants": "beckn:participants",
     "stages": "beckn:stages",
     "instructions": "beckn:instructions"

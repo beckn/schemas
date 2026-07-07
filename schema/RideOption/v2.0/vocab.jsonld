@@ -22,7 +22,7 @@
       },
       "rdfs:seeAlso": [
         {
-          "@id": "beckn:PricingModel"
+          "@id": "beckn:SystemPricingPlan"
         },
         {
           "@id": "beckn:VehicleCategory"
@@ -128,10 +128,10 @@
         "@id": "beckn:RideOption"
       },
       "rdfs:range": {
-        "@id": "beckn:PricingModel"
+        "@id": "beckn:SystemPricingPlan"
       },
       "rdfs:seeAlso": {
-        "@id": "../PricingModel/v2.0/vocab.jsonld#beckn:PricingModel"
+        "@id": "../SystemPricingPlan/v2.0/vocab.jsonld#beckn:SystemPricingPlan"
       }
     },
     {

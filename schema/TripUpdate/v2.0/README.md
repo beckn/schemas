@@ -25,8 +25,5 @@ A multi-dimensional update to an in-progress or upcoming mobility trip, covering
 | `trackingEndpoint` | no | $ref: https://schema.beckn.io/Tracking/v2.1/attributes.yaml#/components/schemas/Tracking | Real-time tracking endpoint including URL, protocol, and data schema reference |
 | `driverRef` | no | $ref: https://schema.beckn.io/Driver/v2.0/attributes.yaml#/components/schemas/Driver | Reference to the current driver if changed from the originally assigned driver |
 | `updatedAt` | no | string | Timestamp when this trip update was issued |
-| `id` | no | string | Unique identifier for the contract |
-| `descriptor` | no | $ref: https://schema.beckn.io/core/v2.0/Descriptor/attributes.yaml#components/schemas/Descriptor | Human-readable description of the contract |
-| `items` | no | $ref: https://schema.beckn.io/ContractItem/v2.0/attributes.yaml#/components/schemas/ContractItem | Line items within the contract |
-| `fulfillments` | no | $ref: https://schema.beckn.io/Fulfillment/v2.1/attributes.yaml#/components/schemas/Fulfillment | Fulfillments associated with this contract |
-| `state` | no | $ref: https://schema.beckn.io/State/v2.0/attributes.yaml#/components/schemas/State | Current state of the contract |
+| `id` | no | string | Unique identifier for the trip update |
+| `descriptor` | no | $ref: https://schema.beckn.io/core/v2.0/Descriptor/attributes.yaml#components/schemas/Descriptor | Human-readable description of the trip update |

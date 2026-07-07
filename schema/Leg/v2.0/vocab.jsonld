@@ -270,24 +270,6 @@
       }
     },
     {
-      "@id": "beckn:state",
-      "@type": "rdf:Property",
-      "rdfs:label": {
-        "@value": "state",
-        "@language": "en"
-      },
-      "rdfs:comment": {
-        "@value": "Current state of the fulfillment",
-        "@language": "en"
-      },
-      "rdfs:domain": {
-        "@id": "beckn:Leg"
-      },
-      "rdfs:range": {
-        "@id": "https://schema.beckn.io/core/v2.0/#State"
-      }
-    },
-    {
       "@id": "beckn:participants",
       "@type": "rdf:Property",
       "rdfs:label": {
