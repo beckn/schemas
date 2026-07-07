@@ -37,7 +37,7 @@ components:
           type: number
         pricingModel:
           description: Pricing model applicable to this ride option
-          $ref: https://schema.beckn.io/PricingModel/v2.0/attributes.yaml#/components/schemas/PricingModel
+          $ref: https://schema.beckn.io/SystemPricingPlan/v2.0/attributes.yaml#/components/schemas/SystemPricingPlan
         id:
           description: Unique identifier for the offer
           type: string

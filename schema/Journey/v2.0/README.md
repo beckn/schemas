@@ -24,8 +24,5 @@ A complete travel itinerary from origin to destination, potentially comprising m
 | `departureTime` | no | string | Planned departure time |
 | `arrivalTime` | no | string | Planned arrival time |
 | `legs` | no | $ref: https://schema.beckn.io/Leg/v2.0/attributes.yaml#/components/schemas/Leg | Ordered list of legs comprising this journey |
-| `id` | no | string | Unique identifier for the contract |
-| `descriptor` | no | $ref: https://schema.beckn.io/core/v2.0/Descriptor/attributes.yaml#components/schemas/Descriptor | Human-readable description of the contract |
-| `items` | no | $ref: https://schema.beckn.io/ContractItem/v2.0/attributes.yaml#/components/schemas/ContractItem | Line items within the contract |
-| `fulfillments` | no | $ref: https://schema.beckn.io/Fulfillment/v2.1/attributes.yaml#/components/schemas/Fulfillment | Fulfillments associated with this contract |
-| `state` | no | $ref: https://schema.beckn.io/State/v2.0/attributes.yaml#/components/schemas/State | Current state of the contract |
+| `id` | no | string | Unique identifier for the journey |
+| `descriptor` | no | $ref: https://schema.beckn.io/core/v2.0/Descriptor/attributes.yaml#components/schemas/Descriptor | Human-readable description of the journey |

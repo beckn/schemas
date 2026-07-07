@@ -13,7 +13,6 @@
     "id": "beckn:id",
     "type": "beckn:type",
     "agent": "beckn:agent",
-    "state": "beckn:state",
     "participants": "beckn:participants",
     "stages": "beckn:stages",
     "instructions": "beckn:instructions"

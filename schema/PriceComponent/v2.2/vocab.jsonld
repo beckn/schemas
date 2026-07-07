@@ -1,0 +1,55 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "beckn": "https://schema.beckn.io/LinkedData/v2.1/context.jsonld",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "PriceComponent": "beckn:PriceComponent",
+    "type": "beckn:type",
+    "value": "beckn:value",
+    "currency": "beckn:currency",
+    "description": "beckn:description",
+    "componentAttributes": "beckn:componentAttributes"
+  },
+  "@graph": [
+    {
+      "@id": "beckn:PriceComponent",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Price Component",
+      "rdfs:comment": "A single line item within a PriceSpecification breakup (base charge, tax, delivery, discount, fee, or surcharge), optionally enriched with a JSON-LD componentAttributes bag describing its rationale, calculation, and terms."
+    },
+    {
+      "@id": "beckn:type",
+      "@type": "rdf:Property",
+      "rdfs:label": "type",
+      "rdfs:comment": "The nature of this price component (UNIT, TAX, DELIVERY, DISCOUNT, FEE, SURCHARGE)."
+    },
+    {
+      "@id": "beckn:value",
+      "@type": "rdf:Property",
+      "rdfs:label": "value",
+      "rdfs:comment": "Monetary amount of this component, expressed in currency."
+    },
+    {
+      "@id": "beckn:currency",
+      "@type": "rdf:Property",
+      "rdfs:label": "currency",
+      "rdfs:comment": "ISO 4217 currency code for value."
+    },
+    {
+      "@id": "beckn:description",
+      "@type": "rdf:Property",
+      "rdfs:label": "description",
+      "rdfs:comment": "Human-readable label for this component."
+    },
+    {
+      "@id": "beckn:componentAttributes",
+      "@type": "rdf:Property",
+      "rdfs:label": "component Attributes",
+      "rdfs:comment": "JSON-LD aware container describing the rationale, calculation basis, and governing terms of this price component."
+    }
+  ]
+}

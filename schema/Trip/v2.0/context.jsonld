@@ -11,9 +11,6 @@
     "driverRef": "beckn:driverRef",
     "vehicleRef": "beckn:vehicleRef",
     "id": "beckn:id",
-    "descriptor": "beckn:descriptor",
-    "items": "beckn:items",
-    "fulfillments": "beckn:fulfillments",
-    "state": "beckn:state"
+    "descriptor": "beckn:descriptor"
   }
 }

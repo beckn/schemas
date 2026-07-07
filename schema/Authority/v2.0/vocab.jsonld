@@ -181,24 +181,6 @@
       }
     },
     {
-      "@id": "beckn:fulfillments",
-      "@type": "rdf:Property",
-      "rdfs:label": {
-        "@value": "fulfillments",
-        "@language": "en"
-      },
-      "rdfs:comment": {
-        "@value": "Fulfillment options offered by this provider",
-        "@language": "en"
-      },
-      "rdfs:domain": {
-        "@id": "beckn:Authority"
-      },
-      "rdfs:range": {
-        "@id": "https://schema.beckn.io/core/v2.0/#Fulfillment"
-      }
-    },
-    {
       "@id": "beckn:ratingsTotal",
       "@type": "rdf:Property",
       "rdfs:label": {

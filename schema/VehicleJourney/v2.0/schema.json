@@ -46,10 +46,6 @@
       "description": "Mode of fulfillment",
       "$ref": "https://schema.beckn.io/FulfillmentMode/v2.0/schema.json"
     },
-    "state": {
-      "description": "Current state of the fulfillment",
-      "$ref": "https://schema.beckn.io/State/v2.0/schema.json"
-    },
     "participants": {
       "description": "Participants entitled to receive this fulfillment",
       "$ref": "https://schema.beckn.io/Participant/v2.0/schema.json"

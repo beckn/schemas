@@ -32,24 +32,12 @@
       "format": "date-time"
     },
     "id": {
-      "description": "Unique identifier for the contract",
+      "description": "Unique identifier for the trip update",
       "type": "string"
     },
     "descriptor": {
-      "description": "Human-readable description of the contract",
+      "description": "Human-readable description of the trip update",
       "$ref": "https://schema.beckn.io/Descriptor/v2.1/schema.json"
-    },
-    "items": {
-      "description": "Line items within the contract",
-      "$ref": "https://schema.beckn.io/ContractItem/v2.0/schema.json"
-    },
-    "fulfillments": {
-      "description": "Fulfillments associated with this contract",
-      "$ref": "https://schema.beckn.io/Fulfillment/v2.1/schema.json"
-    },
-    "state": {
-      "description": "Current state of the contract",
-      "$ref": "https://schema.beckn.io/State/v2.0/schema.json"
     }
   },
   "additionalProperties": false,

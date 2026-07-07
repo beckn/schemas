@@ -27,6 +27,5 @@ A governmental or administrative body responsible for planning, regulating, and 
 | `categories` | no | $ref: https://schema.beckn.io/CategoryCode/v2.1/attributes.yaml#/components/schemas/CategoryCode | Service categories offered by the provider |
 | `locations` | no | $ref: https://schema.beckn.io/Location/v2.0/attributes.yaml#/components/schemas/Location | Locations where the provider offers services |
 | `items` | no | $ref: https://schema.beckn.io/Item/v2.1/attributes.yaml#/components/schemas/Item | Items available for discovery from this provider |
-| `fulfillments` | no | $ref: https://schema.beckn.io/Fulfillment/v2.1/attributes.yaml#/components/schemas/Fulfillment | Fulfillment options offered by this provider |
 | `ratingsTotal` | no | number | Total number of ratings received |
 | `rating` | no | $ref: https://schema.beckn.io/Rating/v2.0/attributes.yaml#/components/schemas/Rating | Aggregate rating of the provider |
