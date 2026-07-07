@@ -1,4 +1,4 @@
-# PriceSpecification — v2.1
+# PriceSpecification — v2.2
 
 Schema definition for PriceSpecification in the Beckn Protocol v2.0.1
 

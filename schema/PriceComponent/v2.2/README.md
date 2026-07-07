@@ -1,4 +1,4 @@
-# PriceComponent — v2.1
+# PriceComponent — v2.2
 
 A single line item within a `PriceSpecification` breakup, such as a base charge, tax, delivery cost, discount, fee, or surcharge. Beyond the monetary amount, a `PriceComponent` MAY carry a JSON-LD `componentAttributes` bag that richly describes why the component applies, how it is calculated, and any governing terms — enabling a receiving node to render or act on the line (for example, highlight a surge charge or notify the user) without performing any price computation of its own.
 
@@ -15,7 +15,7 @@ A single line item within a `PriceSpecification` breakup, such as a base charge,
 
 | Property | Required | Type | Description |
 |---|---|---|---|
-| `type` | no | string (enum) | The nature of this price component: `UNIT`, `TAX`, `DELIVERY`, `DISCOUNT`, `FEE`, `SURCHARGE`, `DEPOSIT_REFUNDABLE`, `DEPOSIT`, `ADVANCE`, `TIP`, `CARRY_FORWARD`, `PENALTY`, `DONATION`, `TRANCHE`, `CASHBACK`, `SERVICE_FEE`, `PROCESSING_FEE`, `CONVENIENCE_FEE`, `REFUND`, `TOTAL`, `OTHER` |
+| `type` | no | string (enum) | The nature of this price component: `UNIT`, `TAX`, `DELIVERY`, `DISCOUNT`, `FEE`, `SURCHARGE`, `DEPOSIT_REFUNDABLE`, `DEPOSIT_NON_REFUNDABLE`, `ADVANCE`, `TIP`, `CARRY_FORWARD`, `PENALTY`, `DONATION`, `TRANCHE`, `CASHBACK`, `SERVICE_FEE`, `PROCESSING_FEE`, `CONVENIENCE_FEE`, `REFUND`, `TOTAL`, `OTHER` |
 | `value` | no | number | Monetary amount of this component, expressed in `currency` |
 | `currency` | no | string | ISO 4217 currency code for `value` |
 | `description` | no | string | Human-readable label for this component |
