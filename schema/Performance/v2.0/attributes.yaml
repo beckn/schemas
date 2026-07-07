@@ -57,7 +57,7 @@ components:
         commitmentIds:
           type: array
           items:
-            $ref: '#/components/schemas/Commitment/properties/id'
+            $ref: https://schema.beckn.io/Commitment/v2.0/attributes.yaml#/components/schemas/Commitment/properties/id
         performanceAttributes:
           description: Domain-specific extension attributes for this fulfillment.
             Use beckn:HyperlocalDelivery (aligned with schema:ParcelDelivery) for
