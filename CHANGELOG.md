@@ -6,6 +6,21 @@ This changelog follows the format: **Added**, **Changed**, **Deprecated**, **Rem
 
 ---
 
+## 2026-11-12 — Logistics schema packs moved to `beckn/logistics`
+
+**Classification:** Major for this repository (schemas removed). No change for consumers of the published URLs.
+
+### Removed
+
+The 26 logistics schema packs now live in [beckn/logistics](https://github.com/beckn/logistics/tree/main/schema) and are published from there. Their URLs on `https://schema.nfh.global/<Name>/v2.0/` are unchanged.
+
+- `Carrier`, `Consignment`, `Contact`, `Courier`, `DeliverySlot`, `Hub`, `Logistics`, `Package`, `Proof`, `ReturnPolicy`, `Shipment`, `TrackingUpdate`, `Waypoint`
+- `LogisticsAlert`, `LogisticsCancellationPolicy`, `LogisticsDriver`, `LogisticsFare`, `LogisticsFareBreakup`, `LogisticsFeedback`, `LogisticsOperator`, `LogisticsPlace`, `LogisticsRating`, `LogisticsReceipt`, `LogisticsRoute`, `LogisticsSupportCase`, `LogisticsVehicle`
+
+No schema that remains in this repository references any of them. See issue #29.
+
+---
+
 ## [v2.0.0] — 2026-02-23
 
 **Initial release of the Beckn Protocol Core Schema v2.0.**
