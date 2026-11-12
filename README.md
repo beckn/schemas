@@ -279,7 +279,7 @@ core_schema/
 | `beckn/mobility` *(planned)* | Tier 3 | Mobility domain schema pack |
 | `beckn/healthcare` *(planned)* | Tier 3 | Healthcare domain schema pack |
 | `beckn/energy` *(planned)* | Tier 3 | Energy domain schema pack |
-| `beckn/logistics` *(planned)* | Tier 3 | Logistics domain schema pack |
+| [beckn/logistics](https://github.com/beckn/logistics) | Tier 3 | Logistics domain schema packs |
 
 ---
 

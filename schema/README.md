@@ -32,7 +32,6 @@ retrieve cancellation terms and fees before committing.
 | [CancellationReason](https://schema.nfh.global/CancellationReason/README.md) | v2.0 | Schema definition for CancellationReason in the Beckn Protocol v2.0.1 |
 | [CandidateAvailabilityOfferAttributes](https://schema.nfh.global/CandidateAvailabilityOfferAttributes/README.md) | v2.1 | Availability and compensation expectation terms under which a candidate profile is offered to employers. The proposedConsideration on the core Offer carries the candidate's headline desired salary; this extension provides the full range, notice period, and contract type preferences. |
 | [CandidateProfileResourceAttributes](https://schema.nfh.global/CandidateProfileResourceAttributes/README.md) | v2.1 | Discoverable profile attributes of a candidate Resource. Captures what the candidate brings (skills, experience, availability) and what they seek (location preference, work mode, job type). Designed for privacy: no name, contact, or identity data. Credentials are referenced via SkillEntry with optional VC attestation URLs. |
-| [Carrier](https://schema.nfh.global/Carrier/README.md) | v2.0 | A Carrier is a transport service provider responsible for moving goods across distances. Carriers operate fleets of vehicles and may own/manage logistics hubs. Maps to beckn:Provider. |
 | [Catalog](https://schema.nfh.global/Catalog/README.md) | v2.1 | Catalog schema for Beckn Protocol v2.0.0
 
 This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute. |
@@ -66,10 +65,8 @@ Consideration is domain-neutral and may represent:
 - Asset transfer
 - Service exchange
 - Compliance artifact |
-| [Consignment](https://schema.nfh.global/Consignment/README.md) | v2.0 | A Consignment is a collection of packages or shipments grouped together under a single commercial transaction between a shipper and consignee. Maps to beckn:Order. |
 | [Constraint](https://schema.nfh.global/Constraint/README.md) | v2.0 | Schema definition for Constraint in the Beckn Protocol v2.0.1 |
 | [Consumer](https://schema.nfh.global/Consumer/README.md) | v2.0 | Schema definition for Consumer in the Beckn Protocol v2.0.1 |
-| [Contact](https://schema.nfh.global/Contact/README.md) | v2.0 | Contact information for sender, receiver, driver, or operator. |
 | [Context](https://schema.nfh.global/Context/README.md) | v2.0 | Base context schema for all Beckn API calls. Contains addressing information
 (BAP/BPP identifiers and API URLs), protocol version, the action being called,
 transaction and message IDs, timestamp, TTL, and optional encryption key.
@@ -94,7 +91,6 @@ digest: BLAKE-512={base64DigestOfAckBody}
 (request-digest): BLAKE-512={base64DigestOfInboundRequestBody}
 (message-id): {messageId}
 ``` |
-| [Courier](https://schema.nfh.global/Courier/README.md) | v2.0 | A Courier is an individual delivery agent responsible for last-mile pickup and delivery of packages, typically in hyperlocal or urban delivery contexts. Maps to beckn:Agent. |
 | [CourseConsiderationAttributes](https://schema.nfh.global/CourseConsiderationAttributes/README.md) | v2.1 | Beckn v2.1 extension schema for the considerationAttributes container. Captures value-exchange specifics for a course enrollment — fee category, payment schedule, installment count, subsidy source, and refund policy. Used when course pricing_type is FULL_FEE, SUBSIDIZED, or SCHOLARSHIP. |
 | [CourseDeliveryPerformanceAttributes](https://schema.nfh.global/CourseDeliveryPerformanceAttributes/README.md) | v2.1 | Beckn v2.1 extension schema for the performanceAttributes container. Captures course delivery execution details: delivery URL (for ACCESS mode), session schedule (for SERVICE mode), attendance tracking, completion criteria, completion status, and issued credential reference. |
 | [CourseEnrollmentContractAttributes](https://schema.nfh.global/CourseEnrollmentContractAttributes/README.md) | v2.1 | Beckn v2.1 extension schema for the contractAttributes container. Represents the transaction-level state of a course enrollment: enrollment reference, cohort assignment, prerequisite verification outcome, and credential issuance tracking. Parties: SKILL_SEEKER and SKILL_PROVIDER. |
@@ -106,7 +102,6 @@ digest: BLAKE-512={base64DigestOfAckBody}
 | [DeliveryPolicy](https://schema.nfh.global/DeliveryPolicy/README.md) | v2.0 | Callback delivery retry configuration
 
 This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute. |
-| [DeliverySlot](https://schema.nfh.global/DeliverySlot/README.md) | v2.0 | A DeliverySlot is a time window offered or agreed upon for delivery of a shipment. Maps to beckn:TimeSlot. |
 | [DepartureMessage](https://schema.nfh.global/DepartureMessage/README.md) | v2.0 | A real-time message containing predicted departure times for vehicles at a stop, as used in VDV real-time standards. |
 | [Descriptor](https://schema.nfh.global/Descriptor/README.md) | v2.1 | Schema definition for Descriptor in the Beckn Protocol v2.0.1 |
 | [Direction](https://schema.nfh.global/Direction/README.md) | v2.0 | The direction of travel of a transport service along a route, typically expressed as inbound or outbound. |
@@ -188,7 +183,6 @@ Use in: beckn:Commitment.commitmentAttributes for F&B orders |
 | [HiringJobResourceAttributes](https://schema.nfh.global/HiringJobResourceAttributes/README.md) | v2.1 | Intrinsic attributes of a job opportunity Resource. Domain-generic: applicable to any hiring vertical (tech, construction, logistics, healthcare, gig economy, etc.). |
 | [HiringProcessPerformanceAttributes](https://schema.nfh.global/HiringProcessPerformanceAttributes/README.md) | v2.1 | Execution state of the hiring process service. Covers the pipeline from initial screening through to offer acceptance or withdrawal. Includes optional credential verification triggered by the employer during the hiring process. |
 | [HomeAndKitchenItem](https://schema.nfh.global/HomeAndKitchenItem/README.md) | v2.0 | - |
-| [Hub](https://schema.nfh.global/Hub/README.md) | v2.0 | A Hub is a logistics fulfillment center, sorting facility, or distribution point where goods are consolidated, sorted, and dispatched for onward delivery. Maps to beckn:Location. |
 | [HyperlocalDelivery](https://schema.nfh.global/HyperlocalDelivery/README.md) | v2.0 | A Beckn domain schema for hyperlocal (same-city, typically sub-2-hour) physical delivery
 of goods or prepared food from an origin to a destination within a short radius.
 
@@ -220,20 +214,6 @@ Source: main/schema/core/v2/attributes.yaml#Location |
 | [LocationGroup](https://schema.nfh.global/LocationGroup/README.md) | v2.0 | A set of geographic locations (stops or areas) that can collectively serve as an origin or destination for flexible transit services. |
 | [LocationGroupStop](https://schema.nfh.global/LocationGroupStop/README.md) | v2.0 | An association between a stop and a location group, used in flexible transit service planning. |
 | [LocationInformationRequest](https://schema.nfh.global/LocationInformationRequest/README.md) | v2.0 | A request for details about a specific geographic location, stop, or point of interest in the transport network. |
-| [Logistics](https://schema.nfh.global/Logistics/README.md) | v2.0 | A Carrier is a transport service provider responsible for moving goods across distances. Carriers operate fleets of vehicles and may own/manage logistics hubs. Maps to beckn:Provider. |
-| [LogisticsAlert](https://schema.nfh.global/LogisticsAlert/README.md) | v2.0 | An Alert is a notification or warning related to a shipment, such as delays, exceptions, damage reports, or SLA breaches. Maps to beckn:Event. |
-| [LogisticsCancellationPolicy](https://schema.nfh.global/LogisticsCancellationPolicy/README.md) | v2.0 | Defines terms under which a shipment booking can be cancelled. |
-| [LogisticsDriver](https://schema.nfh.global/LogisticsDriver/README.md) | v2.0 | A Driver is an individual who operates a vehicle for logistics delivery. Drivers are assigned to shipments and responsible for physical transport. Maps to beckn:Agent. |
-| [LogisticsFare](https://schema.nfh.global/LogisticsFare/README.md) | v2.0 | Total cost charged for a logistics service including base freight, surcharges, taxes. |
-| [LogisticsFareBreakup](https://schema.nfh.global/LogisticsFareBreakup/README.md) | v2.0 | A single line item in the fare breakup for a logistics service. |
-| [LogisticsFeedback](https://schema.nfh.global/LogisticsFeedback/README.md) | v2.0 | Qualitative feedback from sender or receiver about a logistics experience. |
-| [LogisticsOperator](https://schema.nfh.global/LogisticsOperator/README.md) | v2.0 | Entity operating a logistics network or fleet, responsible for end-to-end delivery service. |
-| [LogisticsPlace](https://schema.nfh.global/LogisticsPlace/README.md) | v2.0 | A geographic location relevant to logistics such as origin, destination, hub, or waypoint. Includes structured address and GPS coordinates. Maps to beckn:Location and schema:Place. |
-| [LogisticsRating](https://schema.nfh.global/LogisticsRating/README.md) | v2.0 | A numeric score given by a user for a logistics service, driver, or carrier. |
-| [LogisticsReceipt](https://schema.nfh.global/LogisticsReceipt/README.md) | v2.0 | Digital acknowledgment of payment and delivery for a logistics service. |
-| [LogisticsRoute](https://schema.nfh.global/LogisticsRoute/README.md) | v2.0 | A Route is the planned path for a shipment from origin to destination, potentially passing through multiple hubs and waypoints. Maps to beckn:Journey. |
-| [LogisticsSupportCase](https://schema.nfh.global/LogisticsSupportCase/README.md) | v2.0 | Customer support ticket for shipment issues — loss, damage, delay, or billing. |
-| [LogisticsVehicle](https://schema.nfh.global/LogisticsVehicle/README.md) | v2.0 | A Vehicle is a transport asset used for logistics operations. Vehicle types range from bicycles for hyperlocal delivery to heavy trucks for long haul freight. Maps to beckn:Asset. |
 | [LostAndFoundItem](https://schema.nfh.global/LostAndFoundItem/README.md) | v2.0 | An item that has been reported lost or found in connection with a transport service. |
 | [MasterSearchAction](https://schema.nfh.global/MasterSearchAction/README.md) | v2.0 | Message payload for catalog/master_search
 
@@ -292,7 +272,6 @@ returning the updated contract state.
 | [Order](https://schema.nfh.global/Order/README.md) | v2.0 | Schema definition for Order in the Beckn Protocol |
 | [OrderItem](https://schema.nfh.global/OrderItem/README.md) | v2.0 | Schema definition for OrderItem in the Beckn Protocol |
 | [Organization](https://schema.nfh.global/Organization/README.md) | v2.0 | An organization such as a company, non-profit, or governmental institution. Modeled after schema.org/Organization. |
-| [Package](https://schema.nfh.global/Package/README.md) | v2.0 | A Package is a physical unit of goods prepared for transport within a shipment. Maps to beckn:Item. |
 | [Pagination](https://schema.nfh.global/Pagination/README.md) | v2.0 | Pagination metadata returned with list responses
 
 This schema is part of the Long Term Support of Beckn Protocol V2.0 API specification and MUST NOT be extended. Any domain-specific extension must use the property of this schema which is of type Attribute. |
@@ -333,7 +312,6 @@ domain schema exists. |
 | [PriceSpecification](https://schema.nfh.global/PriceSpecification/README.md) | v2.1 | Schema definition for PriceSpecification in the Beckn Protocol v2.0.1 |
 | [ProcessingNotice](https://schema.nfh.global/ProcessingNotice/README.md) | v2.0 | Schema definition for ProcessingNotice in the Beckn Protocol v2.0.1 |
 | [Prognosis](https://schema.nfh.global/Prognosis/README.md) | v2.0 | A real-time prediction of a vehicle's arrival or departure time at a stop, including an indication of prediction confidence. |
-| [Proof](https://schema.nfh.global/Proof/README.md) | v2.0 | Proof of delivery or pickup evidence, including photos, signatures, OTP confirmations, or digital receipts. Maps to beckn:Document. |
 | [Provider](https://schema.nfh.global/Provider/README.md) | v2.1 | Schema definition for Provider in the Beckn Protocol v2.0.1 |
 | [PullResultFile](https://schema.nfh.global/PullResultFile/README.md) | v2.0 | JSON body of `GET /catalog/pull/result/{requestId}/catalogs.json`.
 Same structure as the inline `catalog` array in the callback payload —
@@ -380,7 +358,6 @@ extend RetailItem with additional domain-specific attributes.
 
 Inheritance: beckn:Resource ← beckn:RetailItem
 Use in: beckn:Commitment.commitmentAttributes for retail orders |
-| [ReturnPolicy](https://schema.nfh.global/ReturnPolicy/README.md) | v2.0 | Defines conditions for returning goods and reverse logistics workflows. |
 | [RideOption](https://schema.nfh.global/RideOption/README.md) | v2.0 | A specific ride-hailing vehicle category and pricing option presented to a passenger in response to a ride request. |
 | [RideRequest](https://schema.nfh.global/RideRequest/README.md) | v2.0 | A passenger's request for an on-demand transport service between two points, specifying origin, destination, and travel preferences. |
 | [Rider](https://schema.nfh.global/Rider/README.md) | v2.0 | A person using a shared mobility service (such as a bike-share, scooter, or car-share) who has a registered account with the provider. |
@@ -401,7 +378,6 @@ items and offers from a catalog, initiating the negotiation cycle.
 | [SettlementSchedule](https://schema.nfh.global/SettlementSchedule/README.md) | v2.0 | Schema definition for SettlementSchedule in the Beckn Protocol v2.0.1 |
 | [SettlementTerm](https://schema.nfh.global/SettlementTerm/README.md) | v2.0 | Describes the terms of settlement associated with a given transaction. This is not to be confused with the PaymentAction as it describes all the places where the money gets disbursed after reconciliation. |
 | [Shape](https://schema.nfh.global/Shape/README.md) | v2.0 | The geographic path traced by a vehicle along a route, represented as an ordered sequence of geographic coordinates. |
-| [Shipment](https://schema.nfh.global/Shipment/README.md) | v2.0 | A Shipment represents the movement of one or more packages from an origin to a destination. It is the top-level fulfillment entity in a logistics transaction and maps to beckn:Fulfillment. |
 | [ShippingFare](https://schema.nfh.global/ShippingFare/README.md) | v2.0 | Total cost charged for a logistics service including base freight, surcharges, taxes. |
 | [ShippingFareBreakup](https://schema.nfh.global/ShippingFareBreakup/README.md) | v2.0 | A single line item in the fare breakup for a logistics service. |
 | [Signature](https://schema.nfh.global/Signature/README.md) | v2.0 | A digitally signed authentication credential in the HTTP `Authorization` header.
@@ -463,7 +439,6 @@ This schema is part of the Long Term Support of Beckn Protocol V2.0 API specific
 | [TrackAction](https://schema.nfh.global/TrackAction/README.md) | v2.1 | Details required to initiate real-time tracking (if relevant) for an ongoing transaction |
 | [Tracking](https://schema.nfh.global/Tracking/README.md) | v2.1 | Information regarding live tracking of the fufillment of a contract |
 | [TrackingRequest](https://schema.nfh.global/TrackingRequest/README.md) | v2.0 | Schema definition for TrackingRequest in the Beckn Protocol v2.0.1 |
-| [TrackingUpdate](https://schema.nfh.global/TrackingUpdate/README.md) | v2.0 | A TrackingUpdate is a real-time or periodic update on the status and location of a shipment during transit. Maps to beckn:Event. |
 | [TransactionEndpoint](https://schema.nfh.global/TransactionEndpoint/README.md) | v2.0 | Beckn protocol transaction endpoint identifier. |
 | [Transfer](https://schema.nfh.global/Transfer/README.md) | v2.0 | A defined connection rule between two routes or services at a common stop, specifying minimum transfer time or transfer type. |
 | [TransportObject](https://schema.nfh.global/TransportObject/README.md) | v2.0 | A generic transport entity in the OSLO mobility ontology representing any object involved in transport operations. |
@@ -488,4 +463,3 @@ change quantities). The context.try flag must be true during negotiation.
 | [VehicleType](https://schema.nfh.global/VehicleType/README.md) | v2.0 | A class or category of vehicle defined by its mode of transport, capacity, propulsion type, and accessibility features. |
 | [VerificationSummary](https://schema.nfh.global/VerificationSummary/README.md) | v2.1 | Summary of a credential verification check. Contains the overall result, reason codes for any failures, and which credential categories were successfully verified. No VC or VP payloads are included. |
 | [WaitingPolicy](https://schema.nfh.global/WaitingPolicy/README.md) | v2.0 | Rules governing the maximum time a driver is required to wait for a passenger at the pickup location before being permitted to cancel the booking. |
-| [Waypoint](https://schema.nfh.global/Waypoint/README.md) | v2.0 | A Waypoint is an intermediate stop or checkpoint on a logistics route, such as a sorting hub, relay station, or customs checkpoint. Maps to beckn:Stop. |
